@@ -19,7 +19,7 @@ app = Flask(
 # Allow:
 #   - Module_*.json
 #   - Pharm_*.json
-#   - Learning_Questions_*.json   <-- newly added
+#   - Learning_Questions_*.json
 ALLOWED_JSON = re.compile(
     r"^(?:Module_[\w-]+|Pharm_[\w-]+|Learning_Questions_[\w-]+)\.json$",
     re.IGNORECASE,
@@ -31,16 +31,13 @@ def healthz():
 
 @app.get("/")
 def index():
-    # Expects templates/index.html (recommended).
+    # Expects templates/index.html
     return render_template("index.html")
 
 @app.get("/modules")
 def list_modules():
     """
-    Returns a JSON object with available test banks (stem only, no .json),
-    filtered by the ALLOWED_JSON whitelist.
-    Example:
-      { "modules": ["Module_1", "Module_2", "Module_3", "Pharm_Quiz_HESI", "Learning_Questions_Module_1_2"] }
+    Return available banks as: { "modules": ["Module_1", ...] }
     """
     banks = []
     for p in BASE_DIR.glob("*.json"):
@@ -50,21 +47,12 @@ def list_modules():
     banks.sort(key=str.lower)
     return jsonify({"modules": banks})
 
-# Important: only match root-level JSON names of the form "<name>.json"
-# This avoids shadowing /static/... because we do NOT accept slashes here.
+# Serve only root-level "<name>.json" files that pass the whitelist.
 @app.route("/<string:filename>.json", methods=["GET", "HEAD"])
 def serve_bank(filename: str):
     """
     Serve whitelisted JSON banks from the repo root.
-
-    Examples that will work:
-      /Module_1.json
-      /Module_2.json
-      /Module_3.json
-      /Pharm_Quiz_HESI.json
-      /Learning_Questions_Module_1_2.json
     """
-    # Build a safe basename and validate
     safe_name = os.path.basename(f"{filename}.json")
     if not ALLOWED_JSON.fullmatch(safe_name):
         abort(404)
@@ -73,6 +61,7 @@ def serve_bank(filename: str):
     if not (path.exists() and path.is_file()):
         abort(404)
 
+    # Explicit mimetype avoids odd defaults on some hosts
     return send_from_directory(BASE_DIR, safe_name, mimetype="application/json")
 
 if __name__ == "__main__":
