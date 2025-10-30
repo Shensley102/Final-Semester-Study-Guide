@@ -5,7 +5,7 @@ from flask import Flask, render_template, send_from_directory, abort, jsonify
 
 # --- Paths ---
 BASE_DIR = Path(__file__).resolve().parent
-# Support either "templates" or "template" (your repo screenshot showed "template")
+# Support either "templates" or "template"
 TEMPLATES_DIR = BASE_DIR / ("templates" if (BASE_DIR / "templates").exists() else "template")
 STATIC_DIR = BASE_DIR / "static"
 
@@ -17,9 +17,11 @@ app = Flask(
     template_folder=str(TEMPLATES_DIR),
 )
 
-# NEW naming convention: only allow banks that start with "Final-Semester-Study-Guide_"
+# Accept both the NEW naming and the current legacy names during migration.
+# New:    Final-Semester-Study-Guide_*.json
+# Legacy: Module_*.json, Pharm_*.json, Learning_Questions_*.json
 ALLOWED_JSON = re.compile(
-    r"^Final-Semester-Study-Guide_[\w-]+\.json$",
+    r"^(?:Final-Semester-Study-Guide_[\w-]+|Module_[\w-]+|Pharm_[\w-]+|Learning_Questions_[\w-]+)\.json$",
     re.IGNORECASE,
 )
 
@@ -29,13 +31,12 @@ def healthz():
 
 @app.get("/")
 def index():
-    # Expects templates/index.html or template/index.html
     return render_template("index.html")
 
 @app.get("/modules")
 def list_modules():
     """
-    Return available banks as: { "modules": ["Final-Semester-Study-Guide_Module_1", ...] }
+    Return available banks as: { "modules": ["<stem>", ...] }
     """
     banks = []
     for p in BASE_DIR.glob("*.json"):
@@ -48,9 +49,6 @@ def list_modules():
 # Serve only root-level "<name>.json" files that pass the whitelist.
 @app.route("/<string:filename>.json", methods=["GET", "HEAD"])
 def serve_bank(filename: str):
-    """
-    Serve whitelisted JSON banks from the repo root.
-    """
     safe_name = os.path.basename(f"{filename}.json")
     if not ALLOWED_JSON.fullmatch(safe_name):
         abort(404)
@@ -62,5 +60,4 @@ def serve_bank(filename: str):
     return send_from_directory(BASE_DIR, safe_name, mimetype="application/json")
 
 if __name__ == "__main__":
-    # Local dev: python study_tool.py
     app.run(host="0.0.0.0", port=5000, debug=True)
