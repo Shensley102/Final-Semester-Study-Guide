@@ -1,10 +1,10 @@
 /* -----------------------------------------------------------
-   Study Quiz - frontend
-   - Discovers available banks from /modules
-   - Fetches <name>.json and normalizes into internal format
+   Final-Semester-Study-Guide - Quiz Frontend
+   - Discovers banks from /modules
+   - Fetches <name>.json and normalizes to internal format
    - Random sampling (10/25/50/100/Full)
-   - Mastery loop + adaptive "wrong buffer" reinjection
-   - Keyboard support: Enter (submit/next), A–Z toggle
+   - Mastery loop + adaptive "wrong buffer" reinjection (15%)
+   - Keyboard: Enter (submit/next), A–Z toggle
    - Rationale stays hidden until AFTER submit
 ----------------------------------------------------------- */
 
@@ -53,9 +53,9 @@ async function discoverModules(){
       moduleSel.innerHTML = mods.map(m => `<option value="${m}">${m}</option>`).join('');
     }
   } catch {
-    // Fallback: keep whatever is in HTML, plus probe a common bank
-    fetch('/Pharm_Quiz_HESI.json', { method: 'HEAD' })
-      .then(r => { if (r.ok) moduleSel.add(new Option('Pharm_Quiz_HESI', 'Pharm_Quiz_HESI')); })
+    // Fallback: keep whatever is in HTML; probe a likely bank under the NEW naming convention
+    fetch('/Final-Semester-Study-Guide_Pharm_Quiz_HESI.json', { method: 'HEAD' })
+      .then(r => { if (r.ok) moduleSel.add(new Option('Final-Semester-Study-Guide_Pharm_Quiz_HESI', 'Final-Semester-Study-Guide_Pharm_Quiz_HESI')); })
       .catch(() => {});
   }
 }
@@ -111,17 +111,14 @@ function normalizeQuestions(raw){
     let options = item.options || item.choices || item.answers || item.Options || null;
 
     if (Array.isArray(options)) {
-      // Convert array -> letters
       const obj = {};
       const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
       options.forEach((opt, i) => {
-        const text = typeof opt === 'string' ? opt
-                   : (opt.text || opt.label || opt.value || '');
+        const text = typeof opt === 'string' ? opt : (opt.text || opt.label || opt.value || '');
         obj[letters[i]] = text;
       });
       q.options = obj;
     } else if (options && typeof options === 'object') {
-      // Normalize keys to letters A, B, C...
       const obj = {};
       for (const [k,v] of Object.entries(options)) {
         const letter = (k.match(/[A-Z]/i) ? k.toUpperCase() : null);
@@ -150,7 +147,6 @@ function toLetterArray(val, optionsObj){
   if (!val) return [];
   const letters = new Set('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''));
 
-  // If already array
   if (Array.isArray(val)) {
     const arr = [];
     for (const v of val) {
@@ -306,14 +302,10 @@ function loadNext(){
     quiz.classList.add('hidden');
     summary.classList.remove('hidden');
 
-    const total = state.totalRequested;
-    const firstTry = state.totalFirstTry;
-    const firstPct = total ? Math.round((firstTry / total) * 100) : 0;
-
     reviewEl.open = false;
     reviewList.innerHTML = state.review.map(buildReviewItemHTML).join('');
 
-    runCounter.textContent = `Run complete — ${total} questions`;
+    runCounter.textContent = `Run complete — ${state.totalRequested} questions`;
     remainingCounter.textContent = '';
     return;
   }
