@@ -1,11 +1,11 @@
 /* -----------------------------------------------------------
    Final-Semester-Study-Guide - Quiz Frontend
-   - Discovers banks from /modules
-   - Fetches <name>.json and normalizes to internal format
-   - Random sampling (10/25/50/100/Full)
-   - Mastery loop + adaptive "wrong buffer" reinjection (15%)
-   - Keyboard: Enter (submit/next), A–Z toggle
-   - Rationale stays hidden until AFTER submit
+   - SATA answers on separate lines
+   - Auto-scroll after submit & on next question
+   - Dynamic page title / H1 per selected module
+   - Sans-serif, no bold (handled in CSS)
+   - Adaptive buffer: 5% for Full, 15% otherwise
+   - Full runs are fully shuffled
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -30,6 +30,11 @@ const feedback      = $('feedback');
 const answerLine    = $('answerLine');
 const rationale     = $('rationale');
 
+// Title
+const pageTitleEl = $('pageTitle');
+const defaultTitleText = pageTitleEl?.textContent || document.title;
+const defaultDocTitle  = document.title;
+
 // Summary + review
 const summary     = $('summary');
 const reviewEl    = $('review');
@@ -53,7 +58,7 @@ async function discoverModules(){
       moduleSel.innerHTML = mods.map(m => `<option value="${m}">${m}</option>`).join('');
     }
   } catch {
-    // Fallback: keep whatever is in HTML; probe a likely bank under the NEW naming convention
+    // Fallback probe for a likely bank under the new naming
     fetch('/Final-Semester-Study-Guide_Pharm_Quiz_HESI.json', { method: 'HEAD' })
       .then(r => { if (r.ok) moduleSel.add(new Option('Final-Semester-Study-Guide_Pharm_Quiz_HESI', 'Final-Semester-Study-Guide_Pharm_Quiz_HESI')); })
       .catch(() => {});
@@ -81,9 +86,19 @@ function randomInt(max){
   return Math.floor(Math.random() * max);
 }
 
+function shuffleInPlace(arr){
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = randomInt(i + 1);
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
+
 function sampleQuestions(arr, requested){
   const copy = arr.slice();
-  if (requested === 'full' || requested >= copy.length) return copy;
+  if (requested === 'full' || requested >= copy.length) {
+    return shuffleInPlace(copy); // FULL: fully randomized
+  }
 
   const k = Math.max(0, requested | 0);
   // partial Fisher–Yates
@@ -96,7 +111,7 @@ function sampleQuestions(arr, requested){
 
 // -------------------- Normalization --------------------
 function normalizeQuestions(raw){
-  // Some banks use { questions: [...] }, others are already arrays.
+  // Some banks use { questions: [...] }, others are arrays.
   const items = Array.isArray(raw) ? raw : (raw.questions || raw.Questions || []);
   let idCounter = 1;
 
@@ -205,7 +220,8 @@ function initAdaptiveBufferForQuiz(){
   wrongSinceInjection = 0;
 
   const n = state.totalRequested || 0;
-  reinjectThreshold = Math.max(1, Math.ceil(n * 0.15));
+  const pct = state.isFullRun ? 0.05 : 0.15;   // 5% for Full, 15% otherwise
+  reinjectThreshold = Math.max(1, Math.ceil(n * pct));
 }
 
 function addToWrongBuffer(q){
@@ -263,7 +279,6 @@ function renderQuestion(q){
     optionsForm.appendChild(label);
   });
 
-  // Enable/disable submit whenever selection changes
   optionsForm.addEventListener('change', updateSubmitEnabled);
 
   submitBtn.disabled = true;
@@ -276,6 +291,11 @@ function renderQuestion(q){
   // Hide rationale until submit
   rationale.textContent = '';
   rationale.classList.add('hidden');
+
+  // Scroll the card to the top when a question is presented
+  requestAnimationFrame(() => {
+    quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 }
 
 function updateSubmitEnabled(){
@@ -286,7 +306,10 @@ function updateSubmitEnabled(){
 function formatCorrectAnswers(q){
   const letters = q.correctLetters?.length ? q.correctLetters : [];
   const parts = letters.map(L => `${L}. ${q.options[L] ?? ''}`);
-  return parts.join('  •  ');
+
+  // SATA (multi) -> each on its own line; single -> inline
+  const isMulti = (q.type === 'multi_select') || EXACT_SATA.test(q.question) || (letters.length > 1);
+  return isMulti ? parts.join('<br>') : parts.join('  •  ');
 }
 
 function setsEqual(aSet, bSet){
@@ -325,16 +348,16 @@ function buildReviewItemHTML(entry){
   const user = entry.userLetters || [];
   const isCorrect = entry.wasCorrect;
 
-  const correctText = correct.map(L => `${L}. ${escapeHTML(q.options[L] || '')}`).join('  •  ');
-  const userText = user.map(L => `${L}. ${escapeHTML(q.options[L] || '')}`).join('  •  ');
+  const correctText = correct.map(L => `${L}. ${escapeHTML(q.options[L] || '')}`).join('<br>');
+  const userText = user.map(L => `${L}. ${escapeHTML(q.options[L] || '')}`).join('<br>');
 
   const rationaleHTML = q.rationale ? `<div class="rev-rationale"><strong>Rationale:</strong> ${escapeHTML(q.rationale)}</div>` : '';
 
   return `
     <div class="rev-item ${isCorrect ? 'ok' : 'bad'}">
       <div class="rev-q">${escapeHTML(q.question)}</div>
-      <div class="rev-ans"><strong>Correct:</strong> ${correctText || '(none provided)'}</div>
-      <div class="rev-user"><strong>Your answer:</strong> ${userText || '(none)'}</div>
+      <div class="rev-ans"><strong>Correct:</strong><br>${correctText || '(none provided)'}</div>
+      <div class="rev-user"><strong>Your answer:</strong><br>${userText || '(none)'}</div>
       ${rationaleHTML}
     </div>
   `;
@@ -364,8 +387,13 @@ async function startQuiz(){
       review: [],
       totalFirstTry: 0,
       totalRequested: chosen.length,
-      totalSubmissions: 0
+      totalSubmissions: 0,
+      isFullRun: (pickedLength === 'full') || (chosen.length === all.length)
     };
+
+    // Update the page title/H1 to the selected module stem
+    document.title = selected;
+    if (pageTitleEl) pageTitleEl.textContent = selected;
 
     initAdaptiveBufferForQuiz();
 
@@ -412,7 +440,7 @@ function handleSubmit(){
 
     feedback.textContent = 'Correct!';
     feedback.className = 'feedback ok';
-    answerLine.innerHTML = `<div class="answerText">${escapeHTML(fullCorrectText)}</div>`;
+    answerLine.innerHTML = `<div class="answerText">${fullCorrectText}</div>`;
 
     removeFromWrongBufferById(q.id);
   } else {
@@ -420,7 +448,7 @@ function handleSubmit(){
     feedback.className = 'feedback bad';
     answerLine.innerHTML = `
       <div class="answerLabel">Correct Answer:</div>
-      <div class="answerText">${escapeHTML(fullCorrectText)}</div>
+      <div class="answerText">${fullCorrectText}</div>
     `;
 
     addToWrongBuffer(q);
@@ -435,6 +463,11 @@ function handleSubmit(){
     rationale.textContent = '';
     rationale.classList.add('hidden');
   }
+
+  // Auto-scroll to show the complete answer + rationale
+  requestAnimationFrame(() => {
+    (rationale.textContent ? rationale : answerLine).scrollIntoView({ behavior: 'smooth', block: 'end' });
+  });
 
   // Record for review
   const correctLettersCopy = [...correctSet];
@@ -466,6 +499,10 @@ function resetQuiz(){
   wrongBufferSet = new Set();
   wrongSinceInjection = 0;
 
+  // Restore titles
+  document.title = defaultDocTitle;
+  if (pageTitleEl) pageTitleEl.textContent = defaultTitleText;
+
   // Hide quiz UI, show launcher
   quiz.classList.add('hidden');
   summary.classList.add('hidden');
@@ -488,13 +525,6 @@ function resetQuiz(){
   nextBtn.disabled = true;
 
   currentInputsByLetter = {};
-
-  // Optional: restore default length button styling
-  const def = lengthBtns.querySelector('[data-len].seg-btn');
-  if (def) {
-    [...lengthBtns.querySelectorAll('.seg-btn')].forEach(b => b.classList.remove('active'));
-    def.classList.add('active');
-  }
 }
 
 // -------------------- Counters --------------------
@@ -520,7 +550,11 @@ document.addEventListener('keydown', (e) => {
       handleSubmit();
     } else if (canNext) {
       e.preventDefault();
+      // Scroll to top when going to next
       loadNext();
+      requestAnimationFrame(() => {
+        quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
     }
     return;
   }
@@ -551,7 +585,12 @@ document.addEventListener('keydown', (e) => {
 // -------------------- Event wiring --------------------
 startBtn.addEventListener('click', startQuiz);
 submitBtn.addEventListener('click', handleSubmit);
-nextBtn.addEventListener('click', loadNext);
+nextBtn.addEventListener('click', () => {
+  loadNext();
+  requestAnimationFrame(() => {
+    quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
 
 // Bind to ANY plausible reset trigger
 const resetCandidates = [
