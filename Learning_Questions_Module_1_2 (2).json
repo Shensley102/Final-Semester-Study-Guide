@@ -1,0 +1,2667 @@
+{
+  "module": "Learning Questions: Modules 1 & 2 — Leadership & Ethics + Professional Identity/Clinical Judgment (incl. ANA Code & Florida NPA)",
+  "questions": [
+    {
+      "id": "Module_1_Q3",
+      "stem": "A new registered nurse asks the registered nurse (RN) preceptor what could be done to become more professional. What is the preceptor's best response?",
+      "options": [
+        "Attend nursing educational meetings",
+        "Listen to other nurses",
+        "Read the agency newsletter.",
+        "Pass the licensing exam."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Knowledge and commitment are essential components of professionalism. Attending nursing educational meetings can promote collaborative learning with peers and maintenance of competence in an ever-changing healthcare environment. Listening can promote professionalism, and communication is certainly a component of professionalism; however, there is also a social sense to listening, and without the educational/learning component, this is not the best answer. An agency newsletter could include information about professional opportunities, but it is not the best answer. The new nurse would have already passed the licensing exam, the legal requirement to be considered a nurse.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q4",
+      "stem": "The qualities of leadership, clinical expertise and judgment, mentorship, and lifelong learning would best describe which type of nurse?",
+      "options": [
+        "Administrator",
+        "Certified nurse specialist",
+        "Practitioner",
+        "Professional"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "The qualities listed are those of a professional nurse. The other options are all nurses who may have these qualities, but the focus of their title includes qualities not essential for the professional nurse. The administrator would have management qualities; the clinical nurse specialist would have specialty area knowledge; and the practitioner would meet legal requirements as a healthcare provider.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q5",
+      "stem": "The American Nurses Association (ANA) outlines expectations of nurses' self-care habits in which type of documentation?",
+      "options": [
+        "Nurse Practice Acts",
+        "Board of Nursing",
+        "Code of Ethics",
+        "Hospital Facility Protocols"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "The ANA focuses on the importance of nurses developing their own personal self-care habits as part of their ethical code. This information is presented in the ANA Code of Ethics. Nurse Practice Acts define the scope of practice relative to the specific type of health professional. The Board of Nursing provides minimum competency requirements for specific types of health professionals and identifies licensing, academic, and practice requirements. Hospital facilities provide policies and protocols related to members of the interdisciplinary healthcare team.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q8",
+      "stem": "A student nurse is studying clinical judgment theories and is working with Tanner's Model of Clinical Judgment. How can the student nurse best generalize this model?",
+      "options": [
+        "A reflective process where the nurse notices, interprets, responds, and reflects in action",
+        "One conceptual mechanism for critiquing ideas and establishing goal-oriented care",
+        "Researching best practice literature to create care pathways for certain populations",
+        "Assessing, diagnosing, implementing, and evaluating the nursing care plans"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Looking across theories and definitions of clinical judgment, they all have in common the ability to reflect on data and choose actions. Reflection also considers evaluating the result of the actions to determine whether they were effective. Although critiquing ideas and establishing goal-oriented care could be considered part of a generalized statement of critical thinking, this is not broad enough without reflection and evaluation. Clinical judgment would most likely be used to create care paths derived from the evidence; however, this is not the cornerstone of the Tanner Model. Clinical judgment is used when engaging in the nursing process, but this is too narrow in focus to capture the essence of critical thinking definitions and theories. Critical thinking is not synonymous with the nursing process.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q9",
+      "stem": "A nurse is caring for a patient in a long-term care facility who has not been sleeping well. She notes that the patient is new to the facility, has been refusing therapy, and is also not eating well. The nurse interprets this to mean that the patient has been having trouble adjusting. The nurse decides to meet with the patient's care team. The team decides to assess the patient's willingness to participate in group recreational activities. The patient agrees to participate. After 1 week, the nurse reevaluates the plan of care and notes that the patient has been sleeping much better. Which of the following terms best describes processes used in the nurse's plan? (Select all that apply.)",
+      "options": [
+        "Clinical judgment",
+        "Evidence-based practice",
+        "The nursing process",
+        "Collaborative care planning",
+        "Positive reward process"
+      ],
+      "correct": [
+        "A",
+        "C",
+        "D"
+      ],
+      "rationale": "Clinical judgment is a reflective process by which the nurse notices, interprets, responds, and reflects in action. The nursing process is a process by which the nurse assesses, diagnoses, implements, and evaluates the nursing care plan. Consulting and gaining input from the healthcare team is collaborative care planning. Evidence-based practice refers to using interventions found in research studies. The positive reward process is not a term used in care planning.",
+      "type": "multi_select"
+    },
+    {
+      "id": "Module_1_Q10",
+      "stem": "The nurse is implementing a plan of care for a patient newly diagnosed with type 2 diabetes mellitus. The plan includes educating the patient about diet choices. The patient states that they enjoy exercising and understand the need to diet; however, they can't see living without chocolate on a daily basis. Using the principles of responding in the Model of Clinical Judgment, how would the nurse proceed with the teaching?",
+      "options": [
+        "The nurse explains to the patient that chocolate has a high glycemic index. The nurse then focuses on foods that have low glycemic indexes and provides a list for the patient to choose from.",
+        "The nurse explains that the patient may eat whatever they would like as long as the patient's glucose reading and A1c remain stable.",
+        "The nurse derives a new nursing diagnosis of Knowledge Deficit and readjusts the plan of care to include additional sessions with the registered dietician.",
+        "The nurse examines the patient's daily glucose log and incorporates the snack into the time of day that has the lowest readings. The nurse then follows up and evaluates the response in 1 week."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Responding entails adjusting the plan of care to the particular patient issue through one or more nursing interventions. In this case, the nurse is working with the patient's wishes, knowing that the patient will most likely cheat. The patient will be allowed to \"cheat.\" The plan will be evaluated to be sure the snack does not elevate the glucose excessively and will be readjusted if warranted. While it is true that most chocolate has a high glycemic index, providing a list of foods that do not include the one thing the patient enjoys will most likely lead to nonadherence to the diet. Advising the patient that they can have whatever they want to eat may lead to further dietary indiscretions and cause side effects such as obesity or high glucose readings. Knowledge Deficit is an inaccurate diagnosis for this patient, as evidenced by the patient stating they understand the need to exercise and the need to diet.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q21",
+      "stem": "A nurse manager has decided that she must institute some personal time-management steps to survive work and home life. Her first step should be to:",
+      "options": [
+        "Determine what takes up so much of her time and energy.",
+        "Organize her personal and work spaces.",
+        "purchase a handheld personal digital assistant to help remind her of important meetings.",
+        "determine her personal and professional goals."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Personal time management refers, in part, to the knowing of self. Self-awareness is a critical leadership skill, and being self-aware and setting goals helps managers determine how their time is best spent.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q22",
+      "stem": "A hospice nurse has been feeling very stressed at work because of both the physical strain and the emotional drain of working with clients with AIDS. She aims to walk 1 to 2 miles three times a week and regularly discusses her work-related feelings with her husband. One reasonable stress-management strategy would be to:",
+      "options": [
+        "Start taking yoga lessons.",
+        "Make an appointment to meet with a psychiatrist.",
+        "Start jogging 5 to 6 miles every day.",
+        "plans to go out for a drink with fellow nurses after work every day."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Stress relief techniques include 30 minutes of exercise five times a week, as well as techniques such as yoga that relieve mental stress.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q23",
+      "stem": "The nurse manager is implementing a shared governance model to help with communication and decision-making. Although staff members like the concept, change is difficult. Staff nurses feel:",
+      "options": [
+        "more empowered.",
+        "more communicative.",
+        "less stressed.",
+        "more powerless and devalued."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Change can lead to feelings of being overwhelmed and powerless, especially if complexity compression or rapid, intense changes have been involved.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q25",
+      "stem": "The staff development educator presents a series of programs on stress management to the nurse managers. Research has indicated that an individual's ability to deal with stress is moderated by psychological hardiness. Psychological hardness is a composite of:",
+      "options": [
+        "commitment, control, and challenge.",
+        "commitment, powerlessness, and passivity.",
+        "commitment, control, and passivity.",
+        "decreased isolation, challenge, and passivity."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Some people have the capacity to accept changes in life with good humor and resilience, which, in turn, influences behavior that prevents illness. Hardiness involves the capacity to manage time and stress, to reframe situations positively, and to commit.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q26",
+      "stem": "The chief nursing officer understands that a nurse manager can exhibit stress that is related to trying to keep up with the number of electronic messages that arrive, as well as trying to remain accessible to staff. What is a strategy that would assist the manager in managing the information overload effectively?",
+      "options": [
+        "Ignore messages unless they are labeled as important.",
+        "Determine who is most likely to send useful or important information or requests.",
+        "Check e-mail messages once a day.",
+        "Encourage face-to-face meetings rather than e-mail."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Reduction of stress related to information overload requires the development of information-receiving and information-sending skills. Information-sending skills include determining the most common sources of useful data, labeling files and folders to which e-mail messages can be directed, deleting e-mails, and focusing on the most important pieces. Information-sending skills include keeping e-mail messages short (and calling if the message needs to be long) and considering the most appropriate medium for messages (telephone, fax, face-to-face).",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q27",
+      "stem": "In helping nurse managers to manage their time, the chief nursing officer suggests that they:",
+      "options": [
+        "maintain a perfectionistic attitude.",
+        "Set up a complaint list.",
+        "have good negotiation skills.",
+        "have good information literacy skills."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Time can be saved by using information technology effectively, as it assists with effective data retrieval and information gathering and with communication related to a variety of needs in the management setting.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q33",
+      "stem": "Sources of occupational stress in nursing include all except which of the following?",
+      "options": [
+        "Authoritarian leadership",
+        "Concern about moral wrongdoing by colleagues",
+        "Multiple changes in a short time",
+        "Rotating shifts"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Ethical distress, complexity compression, rotating shifts, high acuity levels, and workload are all sources of work-related stress for nurses.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q38",
+      "stem": "―Stress-buffering behaviors can be elicited to reduce stress. All of the following behavioral coping responses can be used by nurse managers to reduce and manage stress, except :",
+      "options": [
+        "distancing oneself from work.",
+        "using cognitive reframing to change irrational thoughts.",
+        "Refusing a request to sit on a committee to evaluate scheduling software.",
+        "exercising regularly."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Achieving balance between work and leisure is a useful strategy for stress reduction. Distancing, however, can be a sign of depersonalization that includes negative attitudes as well and is a characteristic of burnout.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q40",
+      "stem": "Time management is essential for the nurse manager. Which of the following is not a good time-management technique?",
+      "options": [
+        "Decide what not to do.",
+        "Learn to say ―No.",
+        "Learn to delegate.",
+        "Break down your workload into smaller, manageable tasks."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "To manage time successfully, it is important to break down your workload into smaller, manageable tasks. Developing PERT and Gantt charts will aid in dealing with larger, complex projects. Both charts can be used to outline how an individual will approach a large project.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q47",
+      "stem": "A strategic goal for nursing in the facility, developed by the chief nursing officer, is to implement an evidence-based practice program. What is an appropriate strategy that can be used by a nurse manager who is beginning to implement an evidence-based practice program on the unit?",
+      "options": [
+        "Conducting a review of adverse events and incident reports",
+        "Soliciting input from staff members",
+        "Reviewing specialty organization guidelines",
+        "Identifying patients with extended lengths of stay"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Stakeholders need to be involved early, and staff members need to be involved when initiatives involve direct patient care. Involvement assists in understanding issues and concerns, motivations, and unmet needs.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q49",
+      "stem": "Before the implementation of the new policy and procedure on central line catheter care, the nurse manager uses an appraisal system to evaluate the evidence. What is important in using an appraisal system to evaluate the evidence gathered in preparation for the development of a new protocol?",
+      "options": [
+        "Limiting the search to randomized clinical trials",
+        "Matching the appraisal tool to the type of evidence",
+        "Eliminating qualitative research studies",
+        "Using only preprocessed evidence"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Appraisal tools are specific to the number of studies, as well as to the study design (type of evidence), type of review, and strategy for determining the applicability of evidence to your practice.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q50",
+      "stem": "To help staff nurses adjust to using research in practice, what strategy would the nurse manager use?",
+      "options": [
+        "Attendance at a regional research conference",
+        "Formal classes in electronic search techniques",
+        "Establishing a journal club",
+        "Issuing reports on the adverse consequences of outdated practices"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Journal clubs provide opportunities for engagement in reading research and considering how it might be applied to clinical practice problems, which is considered very effective in behavioral change.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q51",
+      "stem": "What is a strategy that can be used by a small community hospital with limited resources to develop an evidence-based nursing practice program?",
+      "options": [
+        "Hiring a nurse researcher",
+        "Partnering with nurse researchers at a local university",
+        "Subscribing to journals devoted to evidence-based nursing",
+        "Including research competencies in managers‘ job descriptions"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Partnering with nurse researchers assists in providing nurse researcher expertise and leadership to organizations that do not have the size or the resources to hire nurse researchers.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q53",
+      "stem": "After searching the literature, Tara, the unit manager, develops a table that outlines the findings of studies on the management of incontinence. She then examines the studies in terms of risk and whether the findings fit within her practice context and for her population of moderately to severely cognitively impaired patients. Which phase of a research utilization model is this?",
+      "options": [
+        "Preparatory",
+        "Validation",
+        "Evaluation",
+        "Application"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "The third phase, comparative evaluation and decision making, involves making a decision about the applicability of the studies by synthesizing cumulative findings; evaluating the degree and nature of other criteria, such as risk, feasibility, and readiness of the findings; and making a recommendation about using the findings of the studies.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q60",
+      "stem": "Within a multisite healthcare system, the most appropriate strategy for translation of research would be:",
+      "options": [
+        "widespread development of protocols using EBP at unit levels.",
+        "dissemination of EBP and recommendations to individuals, units, and the organization.",
+        "development of the skills of individual managers on how to build guidelines based on EBP.",
+        "establishment of an interdisciplinary center to guide and lead the translation of research findings into practice."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "At a systems level, the most appropriate approach would be establishing a center that leads, guides, and promotes EBP across and at various levels.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q65",
+      "stem": "As the unit manager, you are interested in determining whether patient autonomy is preserved through informed consent in surgical settings. You determine that participatory action research is the best method to address this question. Which of the following is consistent with a participatory action research design?",
+      "options": [
+        "You interview patients who have recently undergone surgery and transcribe the interviews to determine themes. Themes are validated with an expert in informed consent.",
+        "You circulate a questionnaire to patients who recently underwent surgery and ask for their opinions regarding consent. Data is analyzed, and the findings are distributed to the administration and other groups.",
+        "An audit is undertaken of signed consents for treatment to determine if the consent is properly witnessed and signed. Findings are used to inform changes in policies.",
+        "You meet with a patient group to determine which questions should be asked about patient informed consent and what issues might be encountered and addressed during the research."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "In participatory action research (PAR), the members of the community being studied are integral members of the research team and are involved in identifying the questions and addressing the issues involved in the implementation of the research project.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q69",
+      "stem": "A manager relies on his director (immediate supervisor) for advice about enrolling in graduate school to prepare for a career as a nurse executive. What kinds of power may the director exercise in the relationship with the manager in this advisory situation?",
+      "options": [
+        "Expert, coercive, and referent",
+        "Reward, connection, and information",
+        "Referent, expert, and information",
+        "Reward, referent, and information"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Because the director is in a leadership role, he comes with the knowledge or expertise required to assume a leadership role, and he has information that he is willing to share, which gives him the power of information. The employee sees him as credible and seeks his advice, which gives him referent power.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q73",
+      "stem": "A nurse manager recognizes the need to expand her professional network as she begins a job search for a middle-management position. What action is least likely to expand her job-searching network?",
+      "options": [
+        "Reviewing her address book or card file for names and phone numbers of former colleagues who are now in middle-management positions",
+        "Making an appointment to meet with a former instructor from her graduate program in nursing administration",
+        "Making a long overdue return call to a former colleague who is now a chief nurse executive",
+        "Attending state-level conferences for nurse managers and executives and volunteering to help with professional organizations‘ informal luncheons and receptions"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Networking is the result of identifying, valuing, and maintaining relationships with a system of individuals who are sources of information, advice, and support. Many nurses have relatively limited networks within the organizations where they are employed. Active participation in nursing organizations is the most effective method of establishing a professional network outside one‘s place of employment.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q75",
+      "stem": "The nurse manager of a rehab unit wants to purchase a new antiembolic stocking for use with patients. To make a high-quality decision, the nurse manager would:",
+      "options": [
+        "involve the rehab staff in the decision.",
+        "involve the sales representative.",
+        "make the decision alone.",
+        "involve administration in the decision."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "In a shared decision model, the decisions are made through an interactive, deliberate process, and the staff may express and discuss options and preferences. The shared decision model has been shown to increase work performance and productivity, decrease employee turnover, and enhance employee satisfaction.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q85",
+      "stem": "Justin is a nurse manager in a rehabilitation unit in a small urban center. There is a high turnover rate among rehab assistants because of the heavy work assignments. Despite his need for staff, Justin decides to review each application thoroughly and interview candidates carefully because he recognizes that it is important to hire staff who can best provide high-quality care and who will fit well with the team. Which of the following decision-making solutions should Justin consider to have a more efficient department?",
+      "options": [
+        "Replace staff only with qualified applicants.",
+        "Determine what the problem or problems are before hiring new staff.",
+        "Consult with the human resources department and develop a plan for hiring new staff.",
+        "All listed are appropriate to consider."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Decision making involves a goal-oriented consideration of many options that are objectively weighed according to their possible risks, consequences, and positive outcomes. The options should be ranked in the order in which they are likely to result in the desired goals or objectives. The solution selected should be the one that is most feasible and satisfactory and has the fewest undesirable consequences. In this instance, all of the options listed might be considered and weighed.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q87",
+      "stem": "John Smith, one of three managers at BSG Labs, drafted a policy that would allow his department to do more testing in his lab. This policy included the times for regular collection as well as a new process for emergency laboratory testing. The policy and procedures were never followed. The reason was that:",
+      "options": [
+        "The policy was too lengthy and inundated readers with too much detail.",
+        "The policy made decisions for other departments in the company.",
+        "The staff did not believe that the new policy would be effective.",
+        "Testing should not be done in the lab."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Two primary criteria make for effective decisions. First, the decision must be of high quality; that is, it achieves the predefined goals, objectives, and outcomes. Second, those who are responsible for its implementation must accept the decision. Higher quality decisions are more likely to result if groups are involved in the decision-making and problem-solving process. Taking ownership of the process and outcome provides a smoother transition in changes.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q91",
+      "stem": "The institution where you are a nurse manager has resisted the adoption of a new document management software, citing cost as a concern. You meet with other nurse managers who are in favor of the software and prepare a proposal to take to the senior executive with the goal of persuading the executive to adopt the software. This is an example of:",
+      "options": [
+        "collaboration.",
+        "a coalition.",
+        "networking.",
+        "policy building."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "The formation of temporary groups to achieve particular goals involves the development of coalitions.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q99",
+      "stem": "During a fire drill, the nurse manager becomes very assertive and directive in her communications with staff. This type of situational leadership depends on:",
+      "options": [
+        "supportive behavior by the leader and immature followers.",
+        "the development level of the followers and the behavior based on the situation.",
+        "well-developed followers combined with a strong leader who acts quickly.",
+        "the leader‘s ability to evaluate personnel and communicate that evaluation."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "When abilities, relationships, and/or time are limited (as in a crisis situation), the leader assumes a bigger role in guiding and in making decisions, or ―telling behavior. Leaders need to behave differently and use different leadership styles in different situations.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q100",
+      "stem": "The unit manager is working in a large metropolitan facility and is told that two UNPs are to be assigned to work with her. Delegation begins with:",
+      "options": [
+        "Acknowledging the arrival of the second UNP on the unit.",
+        "providing clear directions to both UNPs.",
+        "matching tasks with qualified persons.",
+        "receiving reports from the prior shift."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "In delegating to the UNPs, the nurse must consider what cannot be delegated, as well as the factors of safety, time, critical thinking, and stability of patients.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q101",
+      "stem": "During staff-development programs, staff nurses verbalize their frustration about their workloads and having to delegate so many tasks to others. One of the main reasons that delegation has emerged as an issue is because of:",
+      "options": [
+        "The amount of paperwork required to complete care.",
+        "the complexity of care required by patients.",
+        "earlier discharge practices.",
+        "the number of other disciplines present on a given unit."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "The Complexity of client care, a multilevel nursing model (registered nurses, mixed with LPNs/LVNs, and UNPs), and community-based care provide many challenges in determining the care required and outcomes desired and/or mandated, and in matching needs with the various abilities and authority of regulated and unregulated healthcare providers. The nurse manager should ensure that staff are clinically competent and trained in their roles in patient safety.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q102",
+      "stem": "The day shift nurse asks an LPN/LVN to complete a task for a patient. The day shift nurse is engaging in what function?",
+      "options": [
+        "Delegating",
+        "Assigning",
+        "Sharing",
+        "Authorizing"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Delegation refers to the transfer of responsibility for work; the day shift nurse retains accountability for the outcomes of patient care, therefore, is using the assignment of the task rather than delegation.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q104",
+      "stem": "With delegation, responsibility and accountability remain with the:",
+      "options": [
+        "physician.",
+        "A professional who delegates.",
+        "an individual who receives the delegation.",
+        "an individual who previously performed the task."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Even though the delegatee (the one who receives the delegation) receives direction from the professional who delegates a task and must have the authority to complete it, the delegator retains accountability for the overall outcome and completion of the activity. The delegatee has responsibility (obligation to engage in the task) and authority for the task.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q105",
+      "stem": "Which of the following exemplifies accountability? Karen, the nurse manager on 5E:",
+      "options": [
+        "consistently submits her budgets on time.",
+        "gets along well with her staff and with other managers.",
+        "outlines her rationale for the reduction of RN coverage on nights to the Nursing Practice Committee after a serious patient injury.",
+        "actively solicits ideas regarding scheduling from her staff."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Reliability, dependability, and obligation to fulfill the roles and responsibilities of the nurse manager are consistent with responsibility. Accountability refers to being answerable for actions and results.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q108",
+      "stem": "In delegating to a UNP in a home health setting, which of the following represents the most appropriate delegation communication?",
+      "options": [
+        "You will be taking care of Mrs. S., who needs assistance with her bath.",
+        "You will need to help Mrs. S. get into and out of her shower. Ensure that you check the condition of her feet, and let me know if you have any concerns when you check in.",
+        "I am not sure that you know how to do this, but I am giving you Mrs. S. She is quite obese and needs skin care.",
+        "Mrs. S. needs help to get into and out of her bathtub. Her bath will need to be completed by 10:00. When you are helping her to dry, please check between her toes and toenails, and phone me by 10:30 if you notice nail discoloration or redness."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Delegation communication includes what is being delegated (and what is not), outcomes, specific deadlines (if applicable), specific reporting guidelines (what, when), and who may be consulted. Communication also includes conveying recognition of the authority to do what is expected.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q113",
+      "stem": "You ask Evelyn, a new UNP, to check what is left in Mrs. N.‘s inhaler when Evelyn makes visits to Mrs. N., and also to check whether Mrs. N. is receiving any positive effect from the medication. Evelyn reports for 3 weeks that Mrs. N. is using the inhaler and that there is enough medication left in the device. The day of her last visit to Mrs. N., Mrs. N. was admitted to the hospital in severe respiratory distress. When she is admitted, she tells the physician that she has not been using the inhaler for 4 weeks. Determination of Evelyn‘s educational preparation and certification is related to the concept of:",
+      "options": [
+        "accountability.",
+        "authority.",
+        "role performance.",
+        "assignment."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Authority refers to the right to do and may be designated by law, educational preparation, or job description.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q115",
+      "stem": "County Hospital has position descriptions for all staff, including RN Team Leaders. Sarah, a team leader on the rehab unit, assesses the needs of the patients in her area, assesses the skills and backgrounds of each of the individuals on her team, and then assigns and delegates the appropriate care provider to each patient and task. Sarah provides Colleen, her RN colleague, with details regarding the patients to whom Colleen has been assigned on the day shift. This is an example of:",
+      "options": [
+        "accountability.",
+        "responsibility.",
+        "assignment.",
+        "delegation."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "When an RN assigns care to another RN, it is termed an assignment and not a delegation, because both accountability and responsibility are transferred.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q120",
+      "stem": "During an employment interview for the manager's position in a home health agency, the applicant asks questions about the medical director and about the retention of staff. The nurse executive assures the applicant that the agency has few personnel problems and receives excellent support from the medical director. The applicant knows that the agency has a 50% turnover rate and has had three medical directors in the past year. The nurse executive is:",
+      "options": [
+        "unaware of the turnover rate and difficulties with the medical director.",
+        "lying about the problems and hoping to resolve them by hiring the applicant.",
+        "denying that the agency has a turnover problem with staff or medical directors.",
+        "minimizing the challenges of the position to make a positive impression on the applicant."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "During the dating phase or preview period in the role transition process, the potential employer attempts to make a favorable impression, which may result in minimizing the challenges of the position.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q121",
+      "stem": "The new head nurse on telemetry has been in the position for 3 months. The head nurse and the administrator disagree on how much time the head nurse should allot to various aspects of the role. Staff members in the unit complain that the head nurse is unavailable for clinical concerns because of being off the unit while attending meetings. To facilitate the process of role transition, the head nurse should:",
+      "options": [
+        "Develop policies consistent with the head nurse‘s prior workplace.",
+        "Attend a workshop on how to deal with difficult people.",
+        "decides to give the position three more months and then leave if things do not improve.",
+        "Schedule a series of meetings with staff and the administrator to clarify expectations."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "During role transition, it is important for the manager to negotiate the role by writing down the manager‘s expectations of the role and determining the expectations of others (staff, supervisors) in order to clarify expectations and reduce or ameliorate role ambiguity and role strain. It can take up to a year to understand the role, system, and boundaries in a new job role.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q122",
+      "stem": "A nurse manager values a colleague who is a few years older and has more experience in nursing management. The colleague works in another hospital, but they meet for lunch once a month. In these meetings, they share their feelings about nursing management and their lives. The function of a mentor that is missing in the relationship is:",
+      "options": [
+        "sponsorship.",
+        "role modeling.",
+        "social interaction.",
+        "mutual positive regard."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Sponsorship involves building the competency of the mentee through exposure or by creating opportunities for achievement in order for the mentee to develop a reputation of competence.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q127",
+      "stem": "A nurse manager notices that Nathan, an RN who has been on the unit for approximately 3 years, has an interest in health technology and seems to be very enthused about working with software and hardware at home. She speaks with Nathan and asks him if he would lead the investigation of software applications on the unit. This is an example of:",
+      "options": [
+        "opportunity.",
+        "delegation.",
+        "role negotiation.",
+        "role transition."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Nathan‘s nurse manager recognizes Nathan‘s interest in technology as an opportunity for the unit and as an untapped resource that can be used to meet unit goals.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q128",
+      "stem": "Sarah is a nursing graduate of 5 years who is very confident in her clinical skills. She has taken some certificate courses in leadership and management and has considered beginning a graduate degree with this focus. She is excited about being able to use her knowledge and interest by being hired as a nurse manager. Before beginning her new position, Sarah spends time with her nurse executive to clarify the executive‘s expectations of her and of the unit that she has been hired to manage. Sarah‘s actions are important in avoiding the role:",
+      "options": [
+        "ambiguity.",
+        "transition.",
+        "development.",
+        "negotiation."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Clarification of implicit and explicit expectations regarding the role assists in avoiding role ambiguity and role strain.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q129",
+      "stem": "After beginning her new position as nurse manager, Sarah finds that she spends a great deal of time in direct patient care. Her staff begins to complain that they are never able to find her when they need her, and that some aspects of her responsibilities fall behind, such as scheduling. Sarah is most likely:",
+      "options": [
+        "lacking an understanding of the nurse management role.",
+        "is attempting to prove her clinical skills to the nursing staff.",
+        "is experiencing difficulty in unlearning old roles.",
+        "is lacking enjoyment in her new role."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Role transition involves transforming one‘s identity. Although any of the answers listed might be correct, as a new manager, her confidence in her clinical skills suggests that she is having difficulty in the transformation process and in unlearning her role as a clinician.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q130",
+      "stem": "A strategy that may help to make the transition to a new management role and to respond to relationships and situations in the new position is:",
+      "options": [
+        "Avoiding discussion of personal beliefs with staff until ready to do so.",
+        "finding a network of clinicians with interests similar to their own.",
+        "researching clinical literature to maintain clinical assessment skills for the unit.",
+        "recognizing a strong commitment to care in the management process"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "During the transition period, it is important to recognize, use, and strengthen values and beliefs, translate these for staff, and adapt behaviors to the situation. Understanding personal and professional beliefs and values assists in helping the manager respond to situations and relationships.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q132",
+      "stem": "A staff member in a new management position finds a mentor who has been in the role of unit manager for 3 years and has a similar interest in clinical excellence. During their frequent meetings, the mentor provides assistance with learning aspects of the manager‘s role, including technical aspects, such as how to interpret budget printouts and to achieve budget outcomes. The success of the mentor's coaching depends on:",
+      "options": [
+        "clarity of the mentor‘s information.",
+        "organizational support for the mentor relationship.",
+        "the congruence of the mentor‘s beliefs with the mentoree‘s beliefs.",
+        "willingness of the mentoree to receive feedback."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Coaching provides information about how to improve performance and learning aspects of the role. Coaching requires willingness on the part of the mentee to accept feedback.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q135",
+      "stem": "A new nurse manager finds that she is now comfortable with the expectations of staff and her supervisor regarding her management role and responsibilities, and has been able to effect a strong commitment to quality clinical care on the unit. At this point, she has likely attained this role:",
+      "options": [
+        "development.",
+        "acceptance.",
+        "symmetry.",
+        "internalization."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Role internalization is achieved when the manager experiences performance of the role as being congruent with his or her own beliefs. Role acceptance refers to accepting the contract and making a public announcement of the acceptance.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q136",
+      "stem": "As a new manager, you reflect on what professional development would be most valuable to assist you in taking on this role. Which of the following would you most likely identify?",
+      "options": [
+        "Opportunities to hone clinical skills that are used most often in the unit that you will manage",
+        "A workshop on conflict management and communication skills",
+        "Attendance at a conference on global healthcare economics",
+        "Attendance at a workshop on survey tool development and statistical measurement"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "In a qualitative descriptive study that explored the professional development needs of nursing leaders, a number of recommendations were made based on what charge nurses indicated about their needs. The recommendations included education and orientation to the role, managing performance and development of staff, and communication skills. Additional education should be focused on unit finances and patient relations. Leadership support was found to be pivotal for charge nurses to feel successful or hinder their work.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q138",
+      "stem": "Seth is hired as the nurse manager for a surgical unit. After a year, the hospital reorganizes, and his position is lost. In leaving the unit, it is important for Seth to:",
+      "options": [
+        "engage in clarifying why the hospital did not state its expectations for the unit at the time of hiring.",
+        "hire a lawyer to represent his interests during this unexpected role transition.",
+        "seeks counseling to deal with his shock and anger.",
+        "negotiate a reasonable settlement."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "When a role transition occurs as a result of restructuring, the unit manager should request and negotiate reasonable compensation and assistance, even if it is not offered initially by the employer.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q139",
+      "stem": "After several months in the role of manager of a dialysis unit, Maryanne finds herself still questioning the gap in expectations between her and her staff and management, and is also questioning whether she can reconcile her concerns about quality care with the strong cost-containment orientation of the facility. At this point, Maryanne is in which stage of role transition?",
+      "options": [
+        "Internalization",
+        "Acceptance",
+        "Development",
+        "Discrepancy"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "At this point, Maryanne is still experiencing discomfort and disillusionment with the gap between what she expected and what others expect of her in the performance of her role as manager. She is considering the significance and fit of the relationship for her, which is consistent with role discrepancy.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q140",
+      "stem": "In assisting new graduates to make the role transition to graduate nurse, Ted, the unit manager, initiates which of the following?",
+      "options": [
+        "Self-check list to assess competencies that have been strengthened",
+        "Discussions that focus on what the new graduates have yet to learn",
+        "Fixed target dates for acquisition of competency and transition to RN role",
+        "Frequent formal meetings to provide feedback on performance and areas to be strengthened"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Transition to the new role is facilitated through reflection and ongoing development of awareness of strengths (as compared with a focus on weaknesses) and of weaknesses. The value of the employee may not depend on quickness in making the role transition.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q141",
+      "stem": "Who of the following might be the most appropriate mentor for Becky, a new nurse manager on the cardiac unit who has 4 years of previous clinical experience?",
+      "options": [
+        "Sam, near retirement. He has 20 years of clinical nursing experience and recently assumed the role of head nurse in an interim capacity because of the incumbent‘s illness.",
+        "Leslie, who has been a clinical educator at the institution for a number of years. She has tired of her role and aspires to become a nurse manager. She looks at mentorship as an opportunity to understand the role better.",
+        "Courtney, who has been a nurse manager for 3 years. Her staff and supervisor value her skills and her leadership acumen and championship of innovation.",
+        "Ben, who was a nurse manager for 3 years, soon after graduation. He left the role because he was uncomfortable with the expectations, and had been a team leader on surgery for 15 years."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "A mentor needs to have sufficient professional experience and organizational authority so that he or she can mentor the career of the mentee. Mentors need competencies that include interpersonal and communication effectiveness, risk-taking and creativity, and the ability to inspire change.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q142",
+      "stem": "The department manager makes a list of interview questions for a new position. Which of the following questions are inappropriate?",
+      "options": [
+        "What are your short-term and long-term goals?",
+        "Do you have any disabilities we need to know about?",
+        "Will you be able to meet our attendance expectations?",
+        "Do you understand our philosophy and mission?"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Only questions related to the position and its description are legitimate. Employers should not ask unrelated questions, and applicants should decline to answer if asked inappropriate questions, for example, about disabilities.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q144",
+      "stem": "A cover letter should be included with your resume when applying for a position. A cover letter is the key to:",
+      "options": [
+        "Getting your resume read and into the interview process",
+        "asking questions about the position.",
+        "listing all of the positions you have held in the past.",
+        "revealing information about your personal life.."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "The key to getting your résumé or curriculum vitae read and entry to the interview process is a cover letter.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q147",
+      "stem": "Thomas has been a nurse in your ICU for 10 years. In facilitating Thomas‘ professional development, the nurse manager would focus on:",
+      "options": [
+        "certification for the ICU environment.",
+        "discussions about how Thomas can fit with role expectations and relationships.",
+        "possible changes to other ICU environments.",
+        "is encouraging him to lead changes that leave long-term impacts after his retirement."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Thomas is a mid-career professional. As such, you would expect him to be interested in honing areas of expertise (such as leadership or developing a deeper expertise in a particular area of ICU nursing) as opposed to gaining skills necessary for his work environment, such as certification or becoming comfortable with his role and relationships in ICU, which would be critical to an early career nurse. Legacy building is characteristic of mid-career professionals.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q151",
+      "stem": "An experienced staff nurse applies for a distinct position of patient advocate at a new clinic. Based on the various tools available to her, which of the following should she bring to her interview to best present her skills?",
+      "options": [
+        "Résumé",
+        "Annual evaluations",
+        "Portfolio",
+        "Patient advocacy project"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "A portfolio enables prospective employers to view evidence of significant achievements and responsibilities that would be pertinent to the position.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q152",
+      "stem": "During performance appraisal interviews, Joanne‘s nurse manager notices Joanne‘s excitement when she talks about how she has helped patients on a rehab unit understand the complexities of their regimens. When Joanne‘s nurse manager asks her about her career path plans, Joanne says that she wants to become a nurse administrator. The best response to Joanne would be:",
+      "options": [
+        "Nursing administration is rewarding. What experiences would help you along this path?",
+        "You do not appear excited about nursing administration. Unless you are excited by that career path, I wouldn‘t advise going in that direction.",
+        "You seem to find teaching others very rewarding. Have you considered that as a possible career path?",
+        "You are too inexperienced to consider administration. Work for a few years, and then consider administration."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Joanne evidences excitement about teaching patients, and although administration could be a rewarding path for her, education might be a better option for her to consider. Looking at job aspects that are rewarding is helpful in determining which career direction to pursue.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_1_Q163",
+      "stem": "To enhance team leadership skills for your team leaders, you arrange opportunities for:",
+      "options": [
+        "certification.",
+        "continuing education.",
+        "graduate courses.",
+        "volunteerism."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Continuing education provides systematic learning opportunities that augment existing skills and knowledge for the delivery of quality care and the advancement of career goals. Graduate and certification courses provide advanced knowledge and skills.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q2",
+      "stem": "What are the main features of complexity science that are relevant to nursing leadership? (Select all that apply.)",
+      "options": [
+        "Focused on creating organizational change and looking at the whole versus individual parts",
+        "Defined by efforts of leadership to mandate organizational change",
+        "Autocratic in nature with a top-down structure for change",
+        "Dependent on employees knowing what change is necessary and acting independently",
+        "Non-linear and dynamic in nature, versus a static process"
+      ],
+      "correct": [
+        "A",
+        "E"
+      ],
+      "rationale": "Complexity science posits that interactions of the parts within a system are more important than the individual parts. Complexity science, however, recognizes that organizational processes are often non-linear and unpredictable. Through the dynamic interplay of negative and positive feedback, an organization is able to make changes to keep abreast of the environmental context. The autocratic top-down decision-making and mandates do not create a sustainable change. Being dependent on employees knowing what change is necessary and acting independently lacks the interaction of leadership to stimulate change and adaptation among employees.",
+      "type": "multi_select"
+    },
+    {
+      "id": "Module_2_Q3",
+      "stem": "The nurse who is certified as a Critical Care Registered Nurse (CCRN) represents the unit on the organizational performance improvement team. This is an example of which type of leadership?",
+      "options": [
+        "Formal",
+        "Unit",
+        "Organizational",
+        "Informal"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Informal leaders are recognized as leaders because of their capabilities and actions. Formal leaders are recognized because of the position they hold, such as director or manager. Unit leadership refers to the leader of the particular unit. Organizational leadership refers to any leader within the organization.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q4",
+      "stem": "The hospital must reduce the number of readmissions from 11% to 8% in the next year. Which of the following best represents the transformational leadership style in accomplishing this goal?",
+      "options": [
+        "The Director communicates the goal of reducing readmissions to the hospital operations team and tells them to submit their action plan by the end of the week.",
+        "The organization charters three work teams to identify solutions for the top three causes for readmissions. These teams are given full authority to implement their solution.",
+        "The Director of Quality develops a vision statement and action plan to achieve the goal. The director works directly with the involved departments to implement the action plan.",
+        "The Chief Executive Officer (CEO) communicates the goal to the organizational directors and managers and states that they are entrusted to solve the problem."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Transformational leaders communicate a vision and motivate employees to accomplish the goal. The Director, who communicates the goal of reducing readmissions to the hospital operations team and tells them to submit their action plan by the end of the week, leaves the solution to achieve the goal to the followers to develop without motivating them. The solution that is left to the work teams to resolve is not an example of transformational leadership. The CEO entrusts the managers and directors to solve the problem without giving them a vision or engaging in the solution with them.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q5",
+      "stem": "The new Director of Case Management assessed the need to improve the organization’s patient satisfaction with the discharge process. Which statement below illustrates the vision that would lead the team to this goal?",
+      "options": [
+        "“The department will deliver reliable, collaborative, and compassionate discharge planning services to all patients.”",
+        "“The department will hold weekly meetings every Tuesday at 11:00 AM.”",
+        "“There will be implementation of a new uniform policy so staff can be readily identified.”",
+        "“Staff are encouraged to complain about difficult patients, families, and physicians.”"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "A vision is a statement about the long-term desired state for the department. The other choices describe specific actions, not a long-term vision statement.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q7",
+      "stem": "A nurse is reviewing decision-making theories. Which statement is accurate according to situational and contingency theory?",
+      "options": [
+        "The theory challenges the concept that one leadership style is always best.",
+        "The theory supports employee feelings, morale, and feedback during the change process.",
+        "Motivation through inspiration and recognition is the focus for transforming employee behavior.",
+        "A leader is someone who possesses great intelligence and decision-making authority."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Situational and contingency theory challenge the assumption that there is “one best way” to lead. A theory that supports employee feelings, morale, and feedback during the change process describes behavioral leadership. Motivation through inspiration and recognition is the focus for transforming employee behavior, which describes transformational leadership. A leader is someone who possesses great intelligence and decision-making authority, as described by the Great Man or Trait theory.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q9",
+      "stem": "A patient suffered a brain injury from a motor vehicle accident and has no brain activity. The patient has a living will that states no heroic measures. The family requests that no additional heroic measures be instituted for their son. The nurse respects this decision in keeping with which principle?",
+      "options": [
+        "Accountability",
+        "Autonomy",
+        "Nonmaleficence",
+        "Veracity"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Patients and families must be treated in a way that respects their autonomy and their ability to express their wishes and make informed choices about their treatment. Accountability is inherent in the nurse’s ethical obligation to uphold the highest standards of practice and care, assume full personal and professional responsibility for every action, and commit to maintaining quality in the skill and knowledge base of the profession. Nonmaleficence is a principle that implies a duty not to inflict harm. In ethical terms, nonmaleficence means to abstain from injuring others and to help others further their own well-being by removing harm and eliminating threats. Veracity means telling the truth as a moral and ethical requirement.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q10",
+      "stem": "A drug-addicted nurse switches a patient’s morphine injection with normal saline so that the nurse can use the morphine. The nurse is violating which principles of ethics? (Select all that apply.)",
+      "options": [
+        "Autonomy",
+        "Utilitarianism",
+        "Beneficence",
+        "Dilemmas",
+        "Veracity"
+      ],
+      "correct": [
+        "A",
+        "B",
+        "C",
+        "E"
+      ],
+      "rationale": "Beneficence is providing benefit to others by promoting their welfare. In general terms, to be beneficent is to promote goodness, kindness, and charity. By taking the patient’s pain medication and substituting saline, the nurse did harm, not good, for the patient. Autonomy is the principle of respect for the individual person; the nurse does not respect someone upon whom the nurse is inflicting harm. Utilitarianism is the principle that assumes that an action is right if it leads to the greatest possible balance of good consequences or to the least possible balance of bad consequences. Because the patient’s pain medication was taken away, the consequences were all bad. Dilemmas are not included as a principle of ethics. Veracity involves truth-telling.",
+      "type": "multi_select"
+    },
+    {
+      "id": "Module_2_Q11",
+      "stem": "A male patient suffered a brain injury from a motor vehicle accident and has no brain activity. The spouse has come up to see the patient every day for the past 2 months. She asks the nurse, “Do you think when he moves his hands, he is responding to my voice?” The nurse feels bad because she believes the movements are involuntary, and the prognosis is grim for this patient. She states, “He can hear you, and it appears he did respond to your voice.” The nurse is violating which principle of ethics?",
+      "options": [
+        "Autonomy",
+        "Veracity",
+        "Utilitarianism",
+        "Deontology"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Veracity is the principle of telling the truth in a given situation. Autonomy is the principle of respect for the individual person; this concept states that humans have incalculable worth or moral dignity. Utilitarianism is an approach that is rooted in the assumption that an action or practice is right if it leads to the greatest possible balance of good consequences or to the least possible balance of bad consequences. Giving the spouse false reassurance is not a good consequence. Deontological theory claims that a decision is right only if it conforms to an overriding moral duty and wrong only if it violates that moral duty. Persons are to be treated as ends in themselves and never as means to the ends of others.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q13",
+      "stem": "A nursing student is conducting a survey of fellow nursing students. Which ethical concept is the student following when calculating the risk-to-benefit ratio and concluding that no harmful effects were associated with a survey?",
+      "options": [
+        "Beneficence",
+        "Human dignity",
+        "Justice",
+        "Human rights"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Beneficence is a term that is defined as promoting goodness, kindness, and charity. In ethical terms, beneficence means to provide benefit to others by promoting their good. Human dignity is the inherent worth and uniqueness of a person. Justice involves upholding moral and legal principles. Human rights are the basic rights of each individual.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q14",
+      "stem": "A nurse on the unit makes an error in the calculation of the dose of medication for a critically ill patient. The patient suffered no ill consequences from the administration. The nurse decides not to report the error or file an incident report. The nurse is violating which principle of ethics?",
+      "options": [
+        "Fidelity",
+        "Individuality",
+        "Justice",
+        "Values clarification"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Fidelity is the principle that requires us to act in ways that are loyal. In the role of a nurse, such actions include keeping your promises, doing what is expected of you, performing your duties, and being trustworthy. Individuality is something that distinguishes one person or thing from others. Injustice is when a person is denied a right or entitlement. Values clarification is a tool that allows the nurse to examine personal values in terms of ethical situations.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q15",
+      "stem": "An unconscious patient is treated in the emergency department for head trauma. The patient was unconscious and on life support for 2 weeks prior to making a full recovery. The initial actions of the medical team are based on which ethical principle?",
+      "options": [
+        "Utilitarianism",
+        "Deontology",
+        "Autonomy",
+        "Veracity"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Deontology is an approach that is rooted in the assumption that humans are rational and act out of principles that are consistent and objective and that compel them to do what is right. Deontological theory claims that a decision is right only if it conforms to an overriding moral duty and wrong only if it violates that moral duty. Utilitarianism is an approach that is rooted in the assumption that an action or practice is right if it leads to the greatest possible balance of good consequences or to the least possible balance of bad consequences. An attempt is made to determine which actions will lead to the greatest ratio of benefit to harm for all persons involved in the dilemma. Autonomy is the principle of respect for the individual person. People are free to form their own judgments and perform whatever actions they choose. Veracity is defined as telling the truth in personal communication as a moral and ethical requirement.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q16",
+      "stem": "A nurse manager of a 20-bed medical unit finds that 80% of the patients are older adults. She is asked to assess and adapt the unit to better meet the unique needs of the older adult patient. Using complexity principles, what would be the best approach to take for the implementation of this change?",
+      "options": [
+        "Leverage the hierarchical management position to get unit staff involved in assessment and planning.",
+        "Engage involved staff at all levels in the decision-making process.",
+        "Focus the assessment on the unit and omit the hospital and community environment.",
+        "Hire a geriatric specialist to oversee and control the project."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Complexity theory suggests that systems interact and adapt and that decision-making occurs throughout the systems, as opposed to being held in a hierarchy. In complexity theory, every voice counts, and therefore, all levels of staff would be involved in decision-making.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q17",
+      "stem": "A new graduate nurse wonders about the directions that her preceptor has given her regarding the management of incontinent, confused patients. The new nurse brings the preceptor evidence-based information she located regarding incontinence interventions for confused patients and asks to talk about the guidance that was given after the preceptor reviews the information in the article. What is the new nurse demonstrating in this situation? (Select all that apply.)",
+      "options": [
+        "Assertiveness",
+        "Followership",
+        "Management",
+        "Insubordination"
+      ],
+      "correct": [
+        "A",
+        "B"
+      ],
+      "rationale": "This is an example of followership in which a staff nurse is demonstrating assertive behavior and presenting evidence that may influence the decision-making of her nurse leader and manager.",
+      "type": "multi_select"
+    },
+    {
+      "id": "Module_2_Q20",
+      "stem": "At a second negotiation session, the unit manager and staff nurse are unable to reach a resolution. What is the appropriate next step?",
+      "options": [
+        "Arrange another meeting in a week‘s time so as to allow a cooling-off period.",
+        "Elevate the next negotiation session to the next manager, one level above.",
+        "Insist that participants continue to talk until a resolution has been reached.",
+        "Back the unit manager‘s actions and end the dispute."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Part of leadership is understanding conflict resolution and the ability to negotiate and manage for the resolution of issues and concerns. This situation has failed a second negotiation session; elevation to a manager with additional training to facilitate conflict resolution is important at this point.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q21",
+      "stem": "The manager of a surgical area has a vision for the future that requires the addition of RN assistants or unlicensed persons to feed, bathe, and ambulate patients. The RNs on the staff have always practiced in a primary nursing-delivery system and are very resistant to this idea. What would be the best initial strategy for the implementation of this change?",
+      "options": [
+        "Exploring the values and feelings of the RN group in relation to this change",
+        "Leaving the RNs alone for a time so they can think about the change before it is implemented",
+        "Dropping the idea and trying for the change in a year or so, when some of the present RNs have retired",
+        "Hiring the assistants and allowing the RNs to see what good additions they are"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Influencing others requires emotional intelligence in domains such as empathy, handling relationships, deepening self-awareness in self and others, motivating others, and managing emotions. Motivating others recognizes that values are powerful forces that influence acceptance of change. Leaving the RNs alone for a period of time before implementation does not provide an opportunity to explore different perspectives and values. Avoiding discussion until the team changes may not promote adoption of the change until there is an opportunity to explore perspectives and values related to the change. Hiring of the assistants demonstrates a lack of empathy for the perspectives of the RN staff.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q23",
+      "stem": "The nurse manager wants to increase motivation by providing motivating factors for the nurses on the unit. What action would be appropriate to motivate the staff?",
+      "options": [
+        "Collaborate with the human resources/personnel department to develop on-site daycare services.",
+        "Provide a hierarchical organizational structure.",
+        "Implement a model of shared governance.",
+        "Promote the development of a flexible benefits package."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Complexity theory suggests that systems interact and adapt and that decision-making occurs throughout systems, as opposed to being held in a hierarchy. In complexity theory, every voice counts, and therefore, all levels of staff would be involved in decision-making. This principle is the foundation of shared governance.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q24",
+      "stem": "The nurse manager has been asked to implement an evidence-based approach to teach ostomy patients self-management skills postoperatively. The program is to be implemented across the entire facility. What illustrates effective leadership in this situation?",
+      "options": [
+        "The training modules are left in the staff room for times when staff are available.",
+        "The current approach is continued because it is also evidence-based and is more familiar to staff.",
+        "You decide to implement the approach at a later date because of feedback from the RNs that the new approach takes too much time.",
+        "An RN who is already familiar with the new approach of volunteers to take the lead in mentoring and teaching others how to implement it."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Followership occurs when there is acquiescence to a peer who is leading in a setting where a team has gathered to ensure the best clinical decision making, and actions are taken to achieve clinical or organizational outcomes. Followership promotes good clinical decisions and the use of clinical resources.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q25",
+      "stem": "You overhear a new graduate RN telling a nurse colleague that leadership and management belong to the unit manager, not to her. As a nursing colleague, what do you know to be true in regard to the statement?",
+      "options": [
+        "The statement is correct. Leadership is not the role of the staff nurse.",
+        "The new graduate would benefit from further understanding of her role as a professional, whose influence may affect the decision-making of patients, colleagues, and other professionals.",
+        "The new graduate has been influenced by nurse leaders and managers who leave for other positions.",
+        "The general perception is that nurse leaders and managers are not satisfied in their jobs."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Care coordination that involves the intersection of individual, family, and community-based needs requires that nurses have self-confidence, knowledge of organizations and health systems, and an inner desire to lead and manage. There is often a view that leadership is isolated to those holding managerial positions, and that a direct care nurse is subject to following the direction of others. Such views fail to acknowledge that to be a nurse requires each licensed individual to lead, manage, and follow when practicing at the point-of-care and beyond.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q28",
+      "stem": "Chart audits have revealed significant omissions of data that could have legal and financial guideline ramifications. The unit manager meets with the staff to discuss audit findings and to find approaches that will address the gaps in charting and achieve desired goals. What is the manager demonstrating?",
+      "options": [
+        "Leadership",
+        "Management",
+        "Decision making",
+        "Vision"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "The process of guiding others to meet established goals, outcomes, and procedures is management. This can require collaborative decision-making to determine how best to reach predetermined goals and follow established practices.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q30",
+      "stem": "A family is keeping vigil at a critically ill patient‘s bedside. The nurse approaches the unit manager with concern over the family dynamics of the patient. There are patient-family conflicts based on the patient‘s wishes. The nurse suggests that the patient‘s provider may need to discuss the treatment plan with the family. The unit manager states he will arrange a discussion with the patient‘s provider and ask the nurse to support the provider‘s decisions. What is the role of the nurse in this situation?",
+      "options": [
+        "Leadership",
+        "Management",
+        "Follower",
+        "Evidence-based"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "In the followership role, you bring to the manager your concerns about patients and the outcomes, and accept the direction given by the manager in response to your concerns.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q31",
+      "stem": "The manager calls the staff together to assess a situation in which the family of a seriously ill patient is anxious and is absorbing a great deal of staff time in consultation, discussion, and questioning of treatment decisions. Staff members are becoming distanced from the family. After addressing the concerns of staff, the manager explains that the organization values patient-centered care and that evidence supports that acting as an advocate and a listener is helpful to families. The manager asks the staff for ideas and strategies that are effectively patient-centered in dealing with families in similar situations. What is the role of the nurse manager in this situation?",
+      "options": [
+        "Leadership",
+        "Management",
+        "Follower",
+        "Visionary"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "As a leader, the manager is providing and communicating vision and direction based on evidence and experience. The manager is engaging others in decision-making that moves them toward the vision with a reasonable level of risk-taking.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q32",
+      "stem": "The manager of a unit is finding it difficult to work with a new graduate nurse. The new nurse has many ideas; however, his manner of presenting them irritates the manager. After reflection and discussion with others, the manager recognizes that she feels threatened by his behavior. She comes to understand that the new nurse is trying to establish his own role on the unit; is not trying to challenge her; and needs guidance, coaching, and affirmation. What is the nurse manager demonstrating in this situation?",
+      "options": [
+        "A positive self-concept",
+        "Deepening self-awareness",
+        "Leadership",
+        "Acquiescence"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Stepping outside oneself to envision the situation while assuming ownership is a component of emotional intelligence. This is an example of self-awareness to identify the resolve to self-conflict in this situation.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q33",
+      "stem": "As the head of a nursing program, you consistently invite the ideas of your team about innovations in teaching, community partnerships, and curriculum design, and invite participation in decisions. Many of these ideas have been implemented successfully, and your staff members are keen to try out other ideas. What is the leadership you are employing?",
+      "options": [
+        "Situational",
+        "Trait-based",
+        "Contingency-based",
+        "Transformational"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Transformational leadership involves attending to the needs and motives of followers, which results in creativity, improvement, and employee development.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q34",
+      "stem": "As a leader on a rehab unit, the manager encourages all staff members to see themselves as having a role in decision-making and quality care. The manager sees their role as involving particular responsibilities in decision-making but not as a hierarchical role. What is this view of the role consistent with in this situation?",
+      "options": [
+        "Trait theories",
+        "Complexity theory",
+        "Situated theory",
+        "Emotional intelligence"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Complexity theory involves envisioning each member of the team involved in decision making, management, and leadership, with the leader not seen in a hierarchical relationship to other team members.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q35",
+      "stem": "A staff nurse has been recently promoted to unit manager. During the time on the unit, the nurse formed a strong social network among staff, promoted the development of relationships between staff and workers in other areas of the organization, and formed relationships that generate ideas from patient organizations and the local nursing education program. According to complexity theory, what principle is being engaged?",
+      "options": [
+        "Empowerment",
+        "Systematic thinking",
+        "Development of networks",
+        "Bottom-up interactions"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "According to complexity theory, social networks evolve around areas of common interest and are able to respond to problems in creative and novel ways.   8",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q37",
+      "stem": "During a staff meeting held to discuss developing a mission statement for the unit, the idea of placing patient needs first was discussed. What is considered when the suggestion by the manager is for the unit's mission to be derived from the organization's mission?",
+      "options": [
+        "Empowering",
+        "A leadership task",
+        "A symbol",
+        "A management task"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "According to complexity theory, leadership tasks, which are similar to values, reflect the patient-centered philosophies and values-driven characteristics that define an organization and give it personality.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q39",
+      "stem": "The unit is shifting from primary nursing to a team model in an effort to contain costs. Staff members are upset about the change and ask for a meeting to discuss the new model. After hearing their concerns related to a reduction in professional autonomy, what is the initial response by the manager to address the concerns?",
+      "options": [
+        "Acknowledge the loss.",
+        "Explain the reasons for change, emphasizing the need to reduce costs.",
+        "Repeat the information several times, giving detailed budget overviews.",
+        "Adjourn the meeting and provide an explanation through e-mail."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Visioning involves engaging with others to assess the current reality, specify the end point, and then strategize to reduce differences. This requires trusting relationships that acknowledge the differences in values and ideas. When done well, the nurse manager and the nurses within a unit experience creative tension that inspires working in concert to achieve desired goals.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q40",
+      "stem": "The manager in the coronary care unit believes an important ethical consideration in performance evaluations is to include the employee‘s good qualities and give positive direction for professional growth. What ethical principle does this represent?",
+      "options": [
+        "Justice",
+        "Fidelity",
+        "Beneficence",
+        "Nonmaleficence"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Nonmaleficence refers to doing no harm.  For a nurse manager following this pr inciple, performance evaluation should emphasize an employee‘s good qualities and give positive direction for growth. Destroying the employee‘s self-esteem and self-worth would be considered doing harm under this principle.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q41",
+      "stem": "One of your staff nurses asks for your advice because a patient refuses to sign a consent for surgery. The patient says that he won‘t sign because he doesn‘t understand the nature of the surgery. You advise that: (Select all that apply.)",
+      "options": [
+        "consent must not be coerced.",
+        "The patient has a right to choose not to consent.",
+        "The patient must sign the consent because the doctor wants him to sign.",
+        "witnessing a consent is related only to the voluntary nature of the signature."
+      ],
+      "correct": [
+        "A",
+        "B",
+        "D"
+      ],
+      "rationale": "Consent must be voluntary and not coerced; the patient must understand what he is signing, must have legal capacity, and must understand the consequences of refusal. Witnessing a consent means attesting to the voluntary nature of the patient‘s signature.",
+      "type": "multi_select"
+    },
+    {
+      "id": "Module_2_Q42",
+      "stem": "A staff nurse in the area that you manage has excelled in the delivery of patient education. You are considering implementing a new job description that would broaden her opportunity to teach patients and orient new staff members to the value of patient education. What ethical principle is being reinforced?",
+      "options": [
+        "Justice",
+        "Fidelity   18",
+        "Paternalism",
+        "Respect for others"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "The principle of paternalism allows one person to make partial decisions for another and is most frequently deemed to be a negative or undesirable principle. Paternalism, however, may be used to assist persons in making decisions when they do not have sufficient data or expertise. Paternalism becomes undesirable when the entire decision is taken away from the employee.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q43",
+      "stem": "With regard to nursing practice, nurse managers are held responsible for: (Select all that apply.)",
+      "options": [
+        "practicing within legal guidelines established under state law and nurse practice acts.",
+        "ensuring that nursing staff under their supervision are currently licensed to practice.",
+        "Referring all errors in nursing judgment to state discipline boards.",
+        "ensuring that physicians are properly licensed to provide care on patient care units."
+      ],
+      "correct": [
+        "A",
+        "B"
+      ],
+      "rationale": "Nurses are responsible for knowing and practicing under state law and nurse practice acts. Managers are responsible for monitoring staff practice and ensuring that staff hold current, valid licensure.",
+      "type": "multi_select"
+    },
+    {
+      "id": "Module_2_Q44",
+      "stem": "A patient refuses a simple procedure that you believe is in the patient‘s best interest. What two ethical principles are in conflict in this situation?",
+      "options": [
+        "Fidelity and justice",
+        "Veracity and fidelity",
+        "Autonomy and beneficence",
+        "Paternalism and respect for others"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Autonomy refers to the freedom to make a choice (e.g., refuse a procedure), and beneficence refers to doing good (performing a procedure that will benefit the patient).",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q47",
+      "stem": "In keeping with the standards of The Joint Commission (TJC), the nurse manager organizes an orientation for new staff members. As part of the orientation, the nurse manager reviews the employee handbook. What is the basis that binds employers to statements in the employee handbook?",
+      "options": [
+        "Under the doctrine of apparent agency",
+        "Under the doctrine of respondent agency",
+        "Based on the employee‘s or the employer‘s expectations",
+        "Based on the theory that the handbook creates an explicit contract"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "The handbook is an implied contract and frames the employment contract. This contract binds the employer to meeting the handbook statements.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q48",
+      "stem": "To reduce the incidence of falls in a skilled nursing unit, the nurse manager contacts the risk manager. Risk management is a process that attempts to identify potential hazards and:",
+      "options": [
+        "compensate for previous injuries.",
+        "Eliminate these risks before anyone else is harmed.",
+        "supersede the need for staff members to file incident reports.",
+        "discipline staff members who have been involved in previous incident reports."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Risk management involves taking proactive steps to identify and eliminate risks and liability.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q50",
+      "stem": "A colleague asks you to give her your password access so that she can view her partner‘s healthcare record without using her login. This request violates the patient‘s right to:",
+      "options": [
+        "privacy.",
+        "confidentiality.",
+        "undue authorization of treatment.",
+        "protection against slander."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "20 Privacy refers to the right to protection against unreasonable and unwarranted interference with the patient‘s solitude. Privacy standards limit how personal health information may be used or shared and mandate safeguards for the protection of health information. Institutions can reduce potential liability in this area by allowing access to patient data, either written or oral, only to those with a need to know.  Persons with a need to know include physicians and nurses caring for the patient, technicians, unit clerks, therapists, social service workers, and patient advocates. Others wishing to access patient data must first ask the patient for permission to review a record.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q54",
+      "stem": "The parents of a toddler who died after being brought to the ER launch a lawsuit, claiming that the failure of nurses to pursue concerns related to their son‘s deteriorating condition contributed to his death. How is the senior nurse executive named in the suit?",
+      "options": [
+        "As a global respondent",
+        "Under the doctrine of respondent superior",
+        "As a frivolous action",
+        "Under the element of causation"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Known as vicarious liability, the doctrine of respondent superior makes employers accountable for the negligence of their employees, using the rationale that the employee could not have been in a position to have caused the wrongdoing unless hired by the employer.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q57",
+      "stem": "Three gravely ill patients are candidates for the only available bed in the ICU. As the supervisor, you assign the bed to the patient with the best chance of recovery. This decision reflects which of the following ethical principles?",
+      "options": [
+        "Beneficence",
+        "Autonomy",
+        "Veracity",
+        "Nonmaleficence"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Beneficence refers to doing what‘s good for the patient; in this situation, doing what‘s good means providing care to the patient with the best likelihood of recovery.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q58",
+      "stem": "Which ethical principle is primarily involved in informed consent?",
+      "options": [
+        "Veracity",
+        "Autonomy",
+        "Beneficence",
+        "Nonmaleficence"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Autonomy refers to the right to choose freely, which is inherent in informed consent.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q59",
+      "stem": "The principle that requires nurses to uphold a professional code of ethics, to practice within the code of ethics, and to remain competent is which of the following?",
+      "options": [
+        "Veracity",
+        "Autonomy",
+        "Fidelity",
+        "Honesty"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Fidelity refers to promise keeping or upholding one‘s promise to practice as a reasonable and prudent nurse would do and in an ethically competent manner.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q60",
+      "stem": "Mr. M. complains to you that one of your staff asked him details about his sexual relationships and financial affairs. He says that these questions were probing and unnecessary to his care, but he felt that if he refused to answer, the nurse would be angry with him and would not provide him with good care. Mr. M.‘s statements reflect concern with:",
+      "options": [
+        "privacy.",
+        "confidentiality.",
+        "veracity.",
+        "informed consent."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Privacy protection includes protection against unwarranted intrusion into the patient‘s affairs.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q61",
+      "stem": "To satisfy the duty of care to a patient, a nurse manager is legally responsible for all of the following except :",
+      "options": [
+        "notifying staff of changes to policies related to medication administration.",
+        "Scheduling and staffing to ensure safe care.",
+        "Delegating in accordance with practice acts.",
+        "supervising the practice of the physician."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Legally, the nurse manager is accountable to nursing practice standards, standards for nurse administrators, and hospital policies and procedures.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q64",
+      "stem": "While walking past a patient‘s room, you overhear one of the RN staff telling a patient that the patient has no right to refuse chemotherapy treatment because the family and the doctor think the treatment is the best option for the patient. This patient is 40 years of age and alert. When you meet later to discuss what you heard with the RN, it is important to:",
+      "options": [
+        "Discuss how statute law enforces the right of the doctor, but not of families, to ensure that patients comply with recommended treatment plans.",
+        "Discuss that statute law provides for patient autonomy and refusal of treatment.",
+        "Remind the nurse to provide clearer explanations to aid in the patient‘s comprehension of the treatment and compliance.",
+        "acknowledge the nurse‘s role in ensuring that she does not fail in her duty of care for the patient."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Statute law states that the patient must be given sufficient information, in terms he or she can reasonably be expected to comprehend, to make an informed choice. Inherent in the doctrine of informed consent is the right of the patient to informed refusal. Patients must clearly understand the possible consequences of their refusal.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q72",
+      "stem": "Maintaining a culturally diverse staff and working with a culturally diverse patient population are important functions of a nurse manager who works in a large medical center. In your palliative care unit, you have recently received complaints from families about ineffective pain management for their family members, and you have determined that this occurs primarily when certain nurses are working. What approach might you take to resolve the concerns of the families, patients, and potentially, the staff?",
+      "options": [
+        "Reinforce to staff that practice guidelines support as-needed analgesia for the terminally ill.",
+        "Ask staff input on the development of stricter guidelines to ensure that all terminally ill patients are given sufficient analgesia.",
+        "Encourage conversation with patients and among staff that facilitates learning about cultural beliefs and priorities in dying.",
+        "Advise families that the administration of analgesia is based on the expert clinical judgment of nurses who are familiar with the care of patients in palliative care."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "The cultural and religious backgrounds of nurses influence their perceptions of dignity-conserving care. For example, foreign-born Catholic nurses stated the dying experience should not be altered by analgesics to relieve suffering or by attempts to hasten death by forgoing curative therapy or by other means. Approaches to working with differences in the diverse cultural and religious backgrounds of patients, families, and nurses alike include taking time to have conversational chats with patients in end-of-life care and with colleagues who will facilitate learning about each other and provide care that fits with the patient‘s cultural beliefs about dying.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q73",
+      "stem": "Because an increasing number of Hispanic patients are being admitted, a nurse manager designs a staff-development program to help her staff understand the Hispanic culture. A nurse should understand that culture is determined by which of the following?",
+      "options": [
+        "Behavior",
+        "Love for people",
+        "Shared vision",
+        "Genetic predisposition"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Culture is determined by behaviors and beliefs and develops slowly.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q77",
+      "stem": "When interviewing a candidate for a nursing position who has an Aboriginal background, you recognize that the candidate‘s lack of eye contact reflects the candidate‘s:",
+      "options": [
+        "lack of confidence.",
+        "professional behavior.",
+        "cultural sensitivity.",
+        "ethnicity."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Ethnicity refers to groups of people who are classified according to common racial, tribal, religious, linguistic, or cultural backgrounds.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q78",
+      "stem": "When interviewing a candidate for a nursing position who has an Aboriginal background, you recognize that the candidate‘s lack of eye contact reflects the candidate‘s cultural sensitivity. You are exhibiting:",
+      "options": [
+        "acculturation.",
+        "cultural sensitivity.",
+        "ethnocentrism.",
+        "transculturalism."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Cultural sensitivity refers to the affective capacity to feel, convey, or react to ideas, habits, customs, or traditions unique to a group of people. In this situation, acknowledgment of the candidate‘s background in relation to eye contact demonstrates cultural sensitivity.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q82",
+      "stem": "During managers‘ meetings, Lindsay is surprised by the forthrightness of male managers. She finds that, during discussions, she would be more likely to say:",
+      "options": [
+        "I wonder if we should consider changing our policy on performance appraisals? What do you think?",
+        "Sean, your approach to appraisal is completely off track and does not reflect available evidence.",
+        "The system that has been developed needs to be implemented. We have already spent enough time in discussion.",
+        "Forget about the change in this policy. It is fine as it is."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Males and females in the workplace are likely to have different management styles, and although not all males are authoritative or females more participatory, women are likely to use more participatory and inclusive methods.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q84",
+      "stem": "During the performance appraisal, you praise Xia for her attention to and care for nursing details. You suggest that her care would be further enhanced by a greater acknowledgment of patients‘ feelings. Xia bursts into tears and leaves the office. Later, you learn that criticism is perceived as akin to failure in Xia‘s culture. You reflect on how you could modify your approach in the future to acknowledge different cultural interpretations of feedback. Your response is indicative of:",
+      "options": [
+        "bias.",
+        "cultural awareness.",
+        "cultural diversity.",
+        "ethnocentricity."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Cultural awareness involves self-examination and in-depth exploration of one‘s own cultural and professional background, including biases, prejudices, and assumptions, including assumptions about thinking modes and decision making.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q88",
+      "stem": "In caring for a patient from an East Indian culture, the staff expresses frustration that many people are in the room at any one time, which interferes with care. As the nurse manager, you provide leadership in understanding that this behavior of the family and friend network reflects:",
+      "options": [
+        "lack of understanding of the seriousness of the patient‘s illness.",
+        "lack of communication between family members.",
+        "The social organization of friendships and family networks in East Indian culture.",
+        "lack of caring about the hospital environment by the friends and family."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "The Giger and Davidhizar Transcultural Model identifies six phenomena to assess the provision of care for patients who are from different cultures, including social organizations, which include how relationships are formed and expressed in different cultures.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q90",
+      "stem": "As a new nurse manager, you are aware of leadership, management, and followership principles. What is the first step to becoming an effective leader?",
+      "options": [
+        "Being an effective follower",
+        "Taking a class on leadership",
+        "Taking a class on management",
+        "Getting an advanced degree"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Being an effective follower is the first step in becoming an effective leader. A leader may take classes on leadership and classes on management, as well as secure and advanced degrees. The first step to effective leadership is effective followership.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q91",
+      "stem": "As a nurse manager and the leader of the unit, you are aware of multiple avenues for learning leadership traits. Which avenues would you pursue for learning leadership traits? (Select all that apply.)",
+      "options": [
+        "Attending professional conferences",
+        "Reading books on leadership",
+        "Joining professional organizations",
+        "Connecting with other leaders in the organization",
+        "Experiences from new nurses"
+      ],
+      "correct": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "rationale": "",
+      "type": "multi_select"
+    },
+    {
+      "id": "Module_2_Q92",
+      "stem": "As a nurse manager, you are a leader in health care and on the unit you manage. Looking at the larger picture of health care and patient environment on the unit, what is your primary role when evaluating the care provided on your nursing unit?",
+      "options": [
+        "Focus on cost outcomes.",
+        "Assess staff for contentment in the unit.",
+        "Ensure quality patient care on the unit.",
+        "Provide education to the staff of the unit."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "50 Your primary role as a nurse manager is ensuring quality patient care. You must also focus on cost outcomes, assess your staff frequently, and provide education to the staff. However, as a leader in evaluating the larger picture of health care, quality care is a priority.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q96",
+      "stem": "A new graduate nurse has accepted a position in an intensive care unit. The nurse is assigned a preceptor with several years of experience. The new nurse also notices that the other staff seek this nurse out for answers to questions and as a resource to the unit. What does the new nurse consider the role of the mentor nurse?",
+      "options": [
+        "A formal leader",
+        "A positional leader",
+        "An official leader",
+        "An informal leader"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Formal leaders, positional leaders, and official leaders hold positions of leadership or titles. In this scenario, the nurse is the formal leader of the unit. The nurse is noted to be an informal leader, one who does not hold an actual leadership title, but leads from an informal position based on experience and behavior.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q97",
+      "stem": "The manager of a nursing unit is having difficulty working with a new graduate nurse. The new graduate nurse is excited and full of ideas she wants to try. The manager decides to journal her feelings regarding the new nurse. What is the nurse manager practicing in this situation?",
+      "options": [
+        "Leadership",
+        "Reflection",
+        "Knowledge",
+        "Action"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Using reflection to evaluate her own feelings, the nurse manager is practicing self-awareness to go beyond the surface and evaluate herself for the determination of personal feelings. This is a higher level of thinking and assists in exploring one‘s individual thoughts and experiences.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q98",
+      "stem": "A staff nurse is taking leadership classes in an advanced degree program, as the nurse wants to become a manager. The instructor requires the students to create a journal and make notes of their feelings when they experience conflicts at work over the next few weeks. The assignment calls for the use of reflection. What is the purpose of this assignment?",
+      "options": [
+        "Log of conflicts that occur",
+        "Reflection for self-awareness in conflict situations",
+        "Assess the students' conflict management skills",
+        "Analysis of student lead conflicts"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "The use of journaling, when done with self-reflection and the use of values to evaluate situations and reflect, assists in self-awareness of situations. In this instance, the instructor wants the students to use self-awareness through the evaluation of conflict occurrences.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q99",
+      "stem": "The nurse manager is working with a group of new nurses. The new nurses ask questions about leadership and the role of a manager in leading nursing. The manager shares that she has incorporated her core values and beliefs into her role and responsibilities as a nurse manager. What type of leadership has she described?",
+      "options": [
+        "Positional leadership",
+        "Personal leadership",
+        "Formal leadership",
+        "Information leadership"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "The manager has described the use of personal leadership. This incorporates core values and beliefs of the person to improve their role and responsibilities.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q101",
+      "stem": "A nurse manager, when in a formal leadership position, attempts to translate the picture or vision of her facility across to the staff nurses. The manager is faced with a staff who is resistant to the vision of the facility. What is the theory the manager needs to incorporate to be effective?",
+      "options": [
+        "Model the Way",
+        "Inspire a Shared Vision",
+        "Challenge the Process",
+        "The Four Agreements"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "In this instance, the nurse manager needs to utilize the theory of Inspire a Share Vision. This is an expectation of leaders to be able to contribute by translating the big picture vision to the staff.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q102",
+      "stem": "The manager is using self-reflection to gain insight into improving leadership skills. By using self-awareness, what does a leader develop?",
+      "options": [
+        "New knowledge",
+        "Personal growth",
+        "Improved self-esteem",
+        "Management skills"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "By using self-awareness, an essential task for leadership, the leader cultivates personal insights and new knowledge of themselves as a leader. Personal growth may or may not occur with self-reflection, improved self-esteem is not guaranteed, and management skills are not obtained.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q103",
+      "stem": "In developing leadership skills, one should focus on authentic leadership. The theory of authentic leadership focuses on various factors. What is the top priority in the development of authentic leadership?",
+      "options": [
+        "Honest relationships",
+        "Organizational task",
+        "Accomplishment of goals",
+        "Exploring others"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "The top priority in the development of authentic leadership is the development of honest relationships. Valuing what each person brings to the group, trusting the group, exploring other ideas, accomplishing goals, and being an ineffective organizer are important. However, development and honest relationships is the foundation of authentic leadership.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q104",
+      "stem": "As a leader in nursing, one must seek new insights and establish personal tools to improve their lifelong learning. Which behavior by a manager would be a concern for a chief nursing executive?",
+      "options": [
+        "Journaling for self-reflection",
+        "Authentic relationships",
+        "Complacent behavior",
+        "Improved knowledge of staff"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "A chief nursing officer should be concerned if a manager demonstrates complacent behavior. A manager should continually seek to improve leadership skills. All other options are ways to improve personal leadership.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q108",
+      "stem": "Which of the following is an example of a formal leadership position on a nursing unit?",
+      "options": [
+        "Staff nurse",
+        "Unit secretary",
+        "Unit manager",
+        "Nursing assistant"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "The unit manager of a nursing unit is a formal leadership position. A formal leadership position is defined as a role that exerts influence over others and they are in charge.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q109",
+      "stem": "A new nurse leader wants to be the best leader she can. The nurse takes classes, finds a leadership mentor, seeks input from her unit, and employs other strategies for leadership development. What is another strategy for the leader to develop and improve leadership skills?",
+      "options": [
+        "Proactive learning",
+        "Ignoring feedback",
+        "Being in charge",
+        "Authoritative position"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Being an effective leader requires wanting to be proactive in their learning to develop effective leadership skills. Good leaders do not ignore feedback; they take authoritative positions when required, and do not come across as being in charge but rather as being a leader of a group.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q113",
+      "stem": "The nurse manager frequently interacts with staff and other hospice facility employees. Communication is purposeful because the manager assesses current issues, such as specific satisfactions and dissatisfactions with the newly implemented computerized documentation system. Informally, the manager gathers available staff members to address similar learning needs. Many times, staff members are found coaching other staff about improving the use of the new system. According to Senge (1990), the activities demonstrated in this example are:",
+      "options": [
+        "dialogue, team learning.",
+        "resilience, personal mastery.",
+        "shared vision, systems thinking.",
+        "mental models, teachable moments."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Building a shared vision occurs when leaders involve all members in moving personal visions of the future into a consolidated vision common to members and leaders.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q115",
+      "stem": "The nurse decides to involve those who will be affected by the change early in the change management process. This can positively result in:",
+      "options": [
+        "coordination.",
+        "resistance.",
+        "anticipation.",
+        "participation."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Successful change means persistence and advancement of the change, which requires the undivided focus of all team members. Early involvement and participation are critical to capturing the undivided focus of team members.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q122",
+      "stem": "Planning is a process designed to achieve goals in dynamic, competitive environments. As a new manager, what is the first step you will undertake to develop a strategic plan of action for a congestive heart failure program?",
+      "options": [
+        "Search the environment to determine changes that may affect the organization.",
+        "Appraise the organization‘s strengths and weaknesses.",
+        "Identify the major opportunities for and threats to the organization.",
+        "Identify and evaluate the various strategies available to the organization."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Assessment of the external environment is the first step in the strategic planning process.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q124",
+      "stem": "As a nursing leadership student, you have had the opportunity to develop a palliative care manual that will be utilized by the palliative care network (PCN) in your region for teaching healthcare professionals. The PCN has requested that you provide a prioritized plan of action for marketing the manual on a regional and state basis. What is the first priority?",
+      "options": [
+        "Motivate the target market.",
+        "Research the target market.",
+        "Communicate benefits to the target group.",
+        "Package the product."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "To put a strategic plan into place for marketing, it is necessary to conduct an external assessment.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q125",
+      "stem": "The chief nursing officer has to write a strategic plan. The most difficult stage in the strategic planning process is:",
+      "options": [
+        "Assessment of the external and internal environment.",
+        "Review of mission statement, goals, and objectives.",
+        "Identification of strategies.",
+        "Implementation of strategies."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Determination of strengths, weaknesses, opportunities, and threats requires openness to what is being said and observed and is critical to setting the stage for relevant responses in the latter phases of strategic planning.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q126",
+      "stem": "The reasons cited by nursing administrators for not planning in a systematic manner include:",
+      "options": [
+        "lack of understanding of the planning process.",
+        "lack of knowledge regarding the internal and external operations of the organization.",
+        "not enough hours in the day for both day-to-day operations and planning.",
+        "delegation of the task to subordinates."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "The nurse manager should participate in strategic planning and quality initiatives with the governing body. Lack of knowledge is a common reason for nonparticipation in planning initiatives.   133",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q127",
+      "stem": "From your observation of planning activities in the organization, you have noticed that planning and decision-making occur at various levels of the organization. The nurse manager has overall responsibility for which of the following?",
+      "options": [
+        "Sending out postcards",
+        "Organizing a telephone follow-up",
+        "Monitoring ongoing activities and projects",
+        "Listing the patient population"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "The nurse manager should articulate organizational decision-making for the criteria model adopted by the organization and monitor ongoing implementation of the plan.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q130",
+      "stem": "In assessing the internal environment, the strategic planning team at Pacific Hospital discovers that 90% of staff members have no idea what the current mission statement means. This is most likely related to:",
+      "options": [
+        "The level of abstraction inherent in mission statements.",
+        "development of the statement by the administration team with no other staff involvement.",
+        "outdated goals and objectives contained in the mission statement.",
+        "failure to provide action statements within the mission statement."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "A mission statement reflects the beliefs of the organization in relation to those it serves and the services it provides, and it communicates the direction of an organization. Covey (1990) believes that the process of developing the mission statement is vital to an organization‘s success and should involve everyone.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q132",
+      "stem": "At the beginning of the strategic planning processes, Pacific Hospital learns that nursing staff members are uncomfortable with utilizing evidence-based practice, and that staff members perceive that only limited resources are available to support translation of evidence into their usual practice. Because this issue has been identified, the management team determines that a plan of action is required to address the issue. Who should be involved at this point?",
+      "options": [
+        "Nursing unit managers",
+        "Staff nurses",
+        "All staff",
+        "Administration"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "The first phase in planning is conducting an assessment of the external and internal environments. Assessment of the internal environment should include all levels of staff and facilitate feedback on the effectiveness of strengths and weaknesses of systems and processes within the institution.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q133",
+      "stem": "In implementing the strategic plan for effective utilization of evidence to guide nursing practice at Pacific Hospital, the nursing unit managers take the next step, which is the implementation. Implementation most likely would involve:",
+      "options": [
+        "Revisiting the mission statement and objectives.",
+        "Re-evaluating external and internal factors affecting evidence-based practice.",
+        "Preparing a budget to support implementation.",
+        "Developing unit-based objectives related to the plan."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "The previous planning (assessment of internal and external environments, development of a mission and plan, and allocation of resources) has already been completed. The next step involves adapting the strategic plan to the nursing units.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q136",
+      "stem": "A nurse manager is experiencing conflicts between herself and staff members. She had tried to develop a team by using a shared leadership model to empower the staff. Staff members are functioning:",
+      "options": [
+        "as a team.",
+        "independently.",
+        "interdependently.",
+        "as a group."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "A group is a collection of interconnected individuals working together, with a high degree of interdependence, for the same purpose. A team is a unified group that is committed to a common purpose, performance goals, and approach, for which they hold themselves mutually accountable. The conflict indicates that the staff may not be united in a common purpose.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q137",
+      "stem": "Mobilizing others to accomplish extraordinary things requires what leadership behaviors? (Select all that apply.)",
+      "options": [
+        "Celebrating the successes of others",
+        "Demonstrating exceptional technical skills",
+        "Imagining possibilities",
+        "Establishing a sense of being in this together"
+      ],
+      "correct": [
+        "A",
+        "C",
+        "D",
+      ],
+      "rationale": "Leaders who inspire teams to accomplish extraordinary things or to display synergy model the way, inspire shared vision, challenge the status quo, and encourage the heart by celebration of success.",
+      "type": "multi_select"
+    },
+    {
+      "id": "Module_2_Q138",
+      "stem": "The nurse manager used a mediator to help resolve conflicts on the unit. During the mediation process, the nurse manager saw signs of potential team building. One key concept of an effective team is:",
+      "options": [
+        "conflict.",
+        "task clarity.",
+        "commitment.",
+        "a designated leader."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Team building involves moving toward a common vision, which requires commitment. Conflict and clarification of tasks are components in the development of this commitment.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q139",
+      "stem": "A mediator suggested that the nurse manager and staff members decide on a method to resolve conflicts. It is important to have agreements about how team members will work together because:",
+      "options": [
+        "If there are no agreements, each member will make up rules about how to handle disagreements and relationships.",
+        "People are naturally difficult and will not work well together without such agreements.",
+        "People will naturally ask for agreements about how to be together. A way to eliminate nonproductive team members must be available."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "People must agree on the goals and mission with which they are involved. They have to reach some understanding of how they w ill exist together. Tenets or agreements such as ―I will respectfully speak promptly with any team member with whom I have a problem, and I go a long way to avoid gossiping, backbiting, bickering, and misinterpreting others. Without agreement, people have implicit permission to behave in any manner they choose toward one another, including angry, hostile, hurtful, and acting-out behavior.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q140",
+      "stem": "By following a shared leadership model, the nurse manager believes that staff members will learn to function synergistically. Some teams function synergistically because members:",
+      "options": [
+        "Do not volunteer unwanted information.",
+        "actively listen to each other.",
+        "Listen to the person who believes he or she is an expert.",
+        "do not speak unless they are absolutely sure they are correct in their views."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Active listening in a group creates synergy in that team members really hear one another‘s ideas and share in decision-making.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q141",
+      "stem": "The chief nursing officer decided that the nurse managers need a series of staff-development programs on team building through communication and partnerships. She understood that the nurse managers needed to build confidence in ways of handling various situations. The greatest deterrent to confidence is:",
+      "options": [
+        "lack of clarity in the mission.",
+        "lack of control of the environment.",
+        "fear that one can‘t handle the consequences.",
+        "fear that the boss will not like one‘s work."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Fear of not being able to manage consequences undermines confidence and a sense of competency.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q153",
+      "stem": "In the cardiac intensive care unit, there has been simmering discontent about the new nurse manager, who avoids any discussion about her scheduling and practice decisions. The staff have begun to sort into different camps depending on how they feel about the manager or the decisions. Which of the following statements MOST accurately describes this situation?",
+      "options": [
+        "The tension that has been generated will result in creative solutions.",
+        "Staff will become a cohesive group that takes a stand against the manager.",
+        "The conflict will result in increased dialogue about practice and scheduling options.",
+        "Patient care may suffer because attention and energy are being diverted toward the unit relationships."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Destructive conflict polarizes groups, saps group morale, deepens differences in values, and diverts energy from more important activities, such as patient care. Constructive conflict opens up issues of importance, results in solutions to problems, and enables authentic communication.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q158",
+      "stem": "The unit manager was addressing nursing students in the lounge area and was discussing team leadership and team effectiveness. She stated, ―One can agree to disagree with another team member‘s perspective even when one doesn‘t necessarily see that perspective as being the correct one. In being creative, what did she mean?",
+      "options": [
+        "Championing one‘s own opinion",
+        "Being compassionate",
+        "Being flexible",
+        "Committing to resolution"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Caregivers must listen to the other person‘s perspective, listen to the message accurately, identify differences, and creatively seek resolutions.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q162",
+      "stem": "A nurse manager is discussing with unit staff the repeated lack of staff compliance in documenting exercise activity for post -cardiac surgery clients. The unit‘s licensed practical/vocational nurses are responsible for ensuring that clients carry out the prescribed exercise regimen and that the activity is documented. Using Drucker‘s five basic functions of a manager, identify appropriate functions for the nurse manager to use when addressing this situation: (Select all that apply.)",
+      "options": [
+        "Divide the necessary activities into manageable tasks, so clients adhere to the exercise regimen.",
+        "Establish objectives and goals for each area and decide who is accountable for them.",
+        "allow clients to organize the activities.",
+        "engage in activities that motivate the team and communicate effectively with the responsible staff members.",
+        "analyze, appraise, and interpret the performance of responsible staff, and communicate these findings to staff management. F. allow clients to establish objectives and goals."
+      ],
+      "correct": [
+        "A",
+        "B",
+        "D",
+        "E"
+      ],
+      "rationale": "Drucker‘s five basic functions include division of work into tasks, development and communication of goals and outcomes, motivation and communication, and analysis, approval, and interpretation of staff performance.",
+      "type": "multi_select"
+    },
+    {
+      "id": "Module_2_Q163",
+      "stem": "Recruiting among the emerging workforce (18 to 35 year olds) is a challenge for healthcare agencies. Marketing brochures should address the leadership and vision of the healthcare agency. Which of the following workplace environments will attract applicants in the emerging workforce?",
+      "options": [
+        "A highly professional environment",
+        "A nurturing and receptive environment",
+        "An environment highlighted by lots of meetings, so staff members can have lots of input",
+        "A totally online environment, so staff members will not have to interface with uncaring colleagues"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "A study of student nurses who represent this age group indicates that they want a leader who is receptive, approachable, a team player, and motivating.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q164",
+      "stem": "The nurse manager, as the leader of the unit‘s customer (client) first initiative, has asked the staff nurses to develop and administer a survey to every client before discharge. In asking the staff nurses to accomplish this task, the nurse manager is demonstrating:",
+      "options": [
+        "accountability.",
+        "shared leadership.",
+        "a common purpose.",
+        "independence in the nursing manager‘s role."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Healthy work environments are facilitated by involving staff and others in decision making; gaining access to information is one characteristic of shared decision making. Shared decision-making enables staff to feel valued in policy development and in directing and leading.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q165",
+      "stem": "A nurse manager is experiencing considerable conflict among staff members because of weekend staffing coverage. During a called staff meeting, the nurse manager asks the disgruntled staff to meet as a group and determine the best staffing practices. In doing this, the nurse manager is using the concept of collaboration to:",
+      "options": [
+        "demonstrate interdependence.",
+        "depict flexibility and broadmindedness.",
+        "Focus all energies of staff members on the best possible strategy.",
+        "defuse the possibility that staff members will escalate their discontent when staffing the unit on weekends."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "When collaboration is used to solve a conflict or to create new directions, the energies of all parties are focused on solving the problem, versus defeating the opposing party and creating the best possible direction, versus an okay direction. When groups come together and mutual expectations are discussed and fostered, communication and collaboration are enhanced, which results in a more structurally empowered workforce.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q166",
+      "stem": "A nurse manager‘s responsibility for financial management involves making budgetary decisions. Budgets that allow the nurse manager to allocate resources at the unit level allow:",
+      "options": [
+        "minimal nurse manager input.",
+        "limited rationale for budgetary requests.",
+        "budgetary allocations at the executive nurse level.",
+        "budgetary decision making at the point-of-service (POS)."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "In organizational structures where decision making occurs at the POS, nurse managers are given some self-control, which includes preparing and implementing a budget that meets the long- and short-term needs of their unit without requiring hierarchical approval.   222",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q168",
+      "stem": "The hospital administrator approves a case management position for a new rehabilitation unit to help reduce costs. In developing the job description, the nurse manager understands that a key element of case management is:",
+      "options": [
+        "managing of care by nurse managers.",
+        "coordination of resources for effective outcomes.",
+        "rapid discharge of clients to decrease costs.",
+        "managing of care for outpatient clients only."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "The key to effective case management is proactive coordination of care from the point of admission to accomplish appropriate and effective outcomes. Case management involves components such as case selection, multidisciplinary assessment, collective planning, coordination of events, negotiation, and evaluation and documentation of the outcomes of patient status in measures of cost. Case management is employed in a variety of settings.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q169",
+      "stem": "In planning a new wing, the nurse manager complies with the workplace safety requirements of the Occupational Safety & Health Administration (OSHA). Which of the following groups is considered to be at high risk for violence in the workplace?",
+      "options": [
+        "Pediatric staff",
+        "Postsurgical unit staff",
+        "Emergency Department staff",
+        "Medical oncology unit staff"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Nurse managers have responsibility for both patient and staff safety. High-risk areas, such as the Emergency Department, require special attention.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q172",
+      "stem": "While interviewing for a nurse manager position, Ann is asked to give an example of a situation in which she demonstrated leadership. Which of the following examples exemplifies leadership?",
+      "options": [
+        "Through research and investigation of best practice and practice-based evidence, she proposed a change in the management of incontinence in older adult patients.",
+        "She ensures that new policies related to parenteral infusions are implemented consistently within her team.",
+        "When asked by her students about institutional policies, she readily and patiently interprets policies to facilitate quality care.",
+        "She organizes the team and delegates responsibilities effectively in providing nursing care."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Nurse managers are responsible for making day-to-day decisions for their units and interpreting established policies, procedures, and mandates. They meet their goals by organizing, staffing, controlling, and solving problems. By contrast, leaders develop a vision and translate that direction into action.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q173",
+      "stem": "Budgeting and protection of revenues is a function of:",
+      "options": [
+        "leadership.",
+        "management.",
+        "team leadership.",
+        "followers."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Managers address complex issues such as planning, budgeting, and allocating resources, whereas leaders address change.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q175",
+      "stem": "As a nurse manager on a urology unit, you note that there has been a marked increase in medication errors on the unit. Which of the following actions would be consistent with the National Database of Nursing Quality Indicators (NDNQI) measures?",
+      "options": [
+        "Staff are consulted regarding improvements in interprofessional approaches to patient care.",
+        "Nursing staff are asked for input regarding the purchase of new medication carts.",
+        "A recognition program is developed to acknowledge nurses who have provided safe and exemplary care utilizing skills in the staffing mix to optimize the delivery of patient care.",
+        "Recent changes in staffing mixes are examined to determine if the timing of changes coincides with the increase in errors."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "The NDNQI measures are specifically concerned with patient safety and aspects of quality of care that may be affected by changes in the delivery of care or staffing resources. The quality indicators address staff mix and nursing hours for acute-care settings, as well as other care components. The NDNQI project is designed to assist healthcare organizations in identifying links between nursing care and patient outcomes.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q176",
+      "stem": "A nurse manager in a hospital is deeply concerned that senior administration makes decisions about budgetary directions that affect staffing and other resources without sharing the rationale for changes or demonstrating concern as to how these changes may affect patients or staff. She says she does not feel respected and is emotionally tired as a result. This situation represents:",
+      "options": [
+        "bureaucratic organization.",
+        "realities of current health care.",
+        "negative organizational culture.",
+        "lack of engagement by the administration."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Organizational culture refers to the basic assumptions and values of an organization, and whether they contribute to relationships and decision-making that are marked by empowerment, information sharing, and truthfulness. Positive work cultures contribute to a perception of being respected in the work environment. Collaborative organizational cultures are essential for nurse managers to proactively work in today‘s complex healthcare environment in a manner that engages them in their work. Interpersonal relationships can be fostered with organizational designs that foster a culture of collaboration, reward and recognition, communication, and a mentoring environment. This demonstrates a lack of engagement by the administration.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q177",
+      "stem": "As the clinical director of 24 employees, you have been asked to explain to staff members why they are not getting a raise this year, even though they have been working short-handed for many months and patient satisfaction scores have never been higher. Because you believe yourself to be a transformational leader, you will approach this problem by:",
+      "options": [
+        "telling the assistant clinical director and asking her to share the bad news with the other staff members.",
+        "posting a note on the bulletin board that includes the phone number of the chief nursing officer, so anyone who has complaints may express them.",
+        "showing staff members the budget and asking for input about how to cut costs so that raises will be possible in the future.",
+        "meeting with a small group of seasoned staff members and asking them how to break the news."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Transformational leadership involves engaging those being led and inspiring shared vision in moving toward a goal that all will accept as desirable. This involves enabling and empowering others to believe that their input and effort will make a difference in solving problems.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q178",
+      "stem": "Nurses on Unit 17 complain that their manager frequently checks up on them and encourages little involvement in decision making, and yet, during performance reviews, praises them for their outstanding performance. Nurses on Unit 18 indicate that their experience is different from that of nurses on Unit 17. The manager on Unit 18 encourages active involvement in decision-making and provides authentic, growth-promoting feedback. The practices on Units 17 and 18 reflect.",
+      "options": [
+        "differences in the managers‘ expectations of their role.",
+        "shaping of the workplace behavior of employees.",
+        "different approaches to cooperation and collaboration.",
+        "recognition of institutional priorities."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Management theory addresses how managers address employees‘ concerns and needs and the interactions of managers with employees. Expectations of the managerial role affect expectations of self as the manager and of others. McGregor‘s (1960) Theory X and Theory Y made two basic opposing assumptions about employees and how the manager should interact with them. Theory X suggests that people do not like their work and that lower-order needs are more important. Theory Y adopts an optimistic view in which people are seen as capable of self-direction and autonomy.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q179",
+      "stem": "John is interested in leadership positions within his nursing organization. Although he has been in the same unit for 10 years, he has attended two workshops during that time and has steadfastly refused opportunities to engage in leadership development opportunities or other learning offered as part of the hospital‘s succession planning strategy. He says that he is interested in a leadership role primarily because it will give him a more stable work schedule and will enable him to spend more time with his family. In coaching John, it would be important to:",
+      "options": [
+        "Affirm that his years of service and stability on the unit are the most important attributes for assumption of a leadership role.",
+        "Reinforce that his concern with maintaining balance outside work would be a key factor in selecting him for a leadership position.",
+        "encourage him to consider the financial rewards of the position, as well as the positive effect on his work schedule.",
+        "encourage him to seek out new experiences and learning that will complement his existing strengths derived from experience and his interest in work-life balance."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "According to Covey, effective leaders continually engage in learning and self-renewal, as well as in maintaining a balanced life, radiating positive energy, believing in other people, being concerned with the common good, and being synergistic.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q180",
+      "stem": "The new head nurse on G Unit has been the subject of a great deal of discussion and complaining during breaks. She is a competent nurse of tremendous integrity with approximately 30 years‘ experience. Her predominant method of problem-solving and communication is through meetings, which can go over the allotted time. The staff may:",
+      "options": [
+        "is represented by a high number of Baby Boomers.",
+        "be presenting different generational values and attitudes than the head nurse.",
+        "be unresponsive to her transactional leadership style.",
+        "wants a leader rather than a manager."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Leaders who come out of the Baby Boomer generation may be more comfortable with collective action than followers who come out of the Emerging Workforce generation, who are more comfortable with interactions if they are seen as having value for them and with activities if they are seen as having benefit. A group that is highly weighted toward the Emerging workforce generation may find the approach of a leader who is part of the Baby Boomer generation frustrating and may not understand the meaning or value of the meetings.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q181",
+      "stem": "Kari, a head nurse on the dialysis unit, has been informed during budget planning meetings that budget cuts are likely. She discusses this at the next unit meeting and tells staff members that unless they do their jobs well, their positions may be terminated, and there will be no replacement. Kari is enacting which management style?",
+      "options": [
+        "Transformational",
+        "Transactional",
+        "Trusting",
+        "Truthful"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Transactional leaders tend to rely on position and power, and they tend to reward and punish according to performance and conformity with expectations.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q182",
+      "stem": "The nurse manager plays a unique role in institutional management in that the nurse manager:",
+      "options": [
+        "encourages shared decision making.",
+        "models professional nursing behavior.",
+        "interprets healthcare trends and their impact on revenues.",
+        "coordinates care and allocates resources."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Encouragement of shared decision making, coordination of resources, and interface between internal and external factors, and a unit are all associated with effective management, but could be performed by a manager from any discipline. The nurse manager‘s unique role is modeling professional behavior.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q183",
+      "stem": "In developing an orientation program, the hospital educator breaks essential organizational information down into chunks, which she develops as online modules. This is an application of which of Drucker‘s functions of management?",
+      "options": [
+        "Establishment of goals and objectives",
+        "Motivation and communication",
+        "Analysis and interpretation of performance",
+        "Organization of activities into manageable tasks"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Organizing the information into online modules is an application of Drucker‘s organizational analysis and the division of activities, decisions, and relations into manageable tasks.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_2_Q184",
+      "stem": "Nancy is a staff nurse who works on a rehabilitation unit. Nancy tells you that the assistants are experiencing difficulty with the new lift and wonders what your thoughts are on organizing an in-service training. Nancy is exhibiting which trait of a follower?",
+      "options": [
+        "Provides a vision for safety that is communicated.",
+        "Thrives on taking risks in identifying the problem with safety.",
+        "Coordinates the development of knowledge and skills necessary to use the lift.",
+        "Assumes responsibility for identifying a safety concern and concedes authority for the solution to you."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Communication of a vision and risk-taking are leader traits, whereas coordination is associated with manager traits. Taking responsibility while conceding authority to the leader is characteristic of followers.",
+      "type": "single_select"
+    },
+    {
+      "id": "ANA_ea11de1c",
+      "type": "single_select",
+      "stem": "A competent adult refuses a recommended medication before discharge, stating, “I don’t want that med.” What is the nurse’s best initial action under the ANA Code of Ethics?",
+      "options": [
+        "Administer the medication because it is in the patient’s best interest",
+        "Ask the provider to discharge the patient AMA",
+        "Explore the patient’s goals and provide information to support informed self-determination",
+        "Document refusal and move on without further discussion"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Provision 1 emphasizes respect for human dignity and the patient's right to self-determination; clarify values and support informed choice."
+    },
+    {
+      "id": "ANA_4bfbeadc",
+      "type": "single_select",
+      "stem": "You observe a colleague bypassing barcode scanning. Which ANA provision most directly obligates you to act?",
+      "options": [
+        "Provision 1: Respect for dignity",
+        "Provision 3: Advocate for rights, health, and safety; promote a culture of safety",
+        "Provision 5: Duties to self and professional growth",
+        "Provision 10: Professional values and policy"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Provision 3 requires nurses to protect patients and promote a culture of safety, including responding to unsafe practices."
+    },
+    {
+      "id": "ANA_404dfe1a",
+      "type": "single_select",
+      "stem": "A nurse smells alcohol on a coworker’s breath and notes slurred speech. What is the most ethical action?",
+      "options": [
+        "Avoid reporting to preserve collegiality",
+        "Report to a supervisor to protect patients and support intervention for the colleague",
+        "Confront privately and drop it if denied",
+        "Post concerns anonymously online"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Provision 3 includes taking action regarding impaired practice to protect patients and obtain help for the colleague."
+    },
+    {
+      "id": "ANA_d4372ebe",
+      "type": "single_select",
+      "stem": "Which statement best reflects Provision 4 regarding nursing authority and accountability?",
+      "options": [
+        "Accountability rests primarily with the employing institution",
+        "Only advanced practice nurses are accountable for clinical decisions",
+        "Nurses have authority over nursing practice and are responsible and accountable for their practice",
+        "Nurses share accountability equally with delegatees for all tasks"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Provision 4 affirms nurses’ authority over nursing practice and responsibility and accountability, including assignment and delegation."
+    },
+    {
+      "id": "ANA_FL_106c0e4a",
+      "type": "single_select",
+      "stem": "Which task is MOST appropriate to delegate by an RN to a trained CNA under Florida law and ethical guidance?",
+      "options": [
+        "Assess a new post-op patient and titrate IV opioids",
+        "Teach self-injection of insulin",
+        "Obtain routine vital signs on a stable patient using an established procedure",
+        "Interpret telemetry changes and call the provider"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "FL 464.0156 allows delegation of tasks that are routine, follow established steps, have predictable outcomes, and require no ongoing assessment."
+    },
+    {
+      "id": "FL_dee2ff46",
+      "type": "single_select",
+      "stem": "Under Florida Statute 464.0156, which statement about delegating medication administration is correct?",
+      "options": [
+        "RNs may delegate IV opioid administration to CNAs if supervised",
+        "RNs may not delegate Schedule II–IV controlled substances, except limited insulin devices",
+        "RNs may delegate any oral controlled medication if policy permits",
+        "Medication administration may never be delegated in home health"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "FL 464.0156 prohibits delegation of controlled substances (II–IV) with narrow exceptions for certain prefilled insulin."
+    },
+    {
+      "id": "FL_003a1a1e",
+      "type": "single_select",
+      "stem": "Delegating prescription medications to a CNA in a nursing home in Florida requires which condition?",
+      "options": [
+        "Only that the resident is stable",
+        "That the CNA meets statute-defined training and competency requirements",
+        "Only verbal instructions from the RN at the time of delegation",
+        "Approval from the resident’s family"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Florida law permits limited medication delegation if the CNA meets specific training/competency requirements and setting criteria."
+    },
+    {
+      "id": "FL_f0ef61fb",
+      "type": "single_select",
+      "stem": "Which activity is explicitly included in Florida’s definition of the practice of professional nursing (s. 464.003)?",
+      "options": [
+        "Diagnosing and treating disease independently without protocols",
+        "Supervising and teaching other personnel in the performance of nursing acts",
+        "Prescribing Schedule II medications as an RN",
+        "Performing surgery under physician orders"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "FL 464.003 includes health teaching and supervision/teaching of personnel in nursing acts as part of professional nursing."
+    },
+    {
+      "id": "FL_db380612",
+      "type": "single_select",
+      "stem": "Florida law states that a professional nurse is responsible and accountable for decisions based on:",
+      "options": [
+        "Institutional policies only",
+        "Orders from providers exclusively",
+        "The nurse’s educational preparation and experience",
+        "Consensus of the team"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "FL 464.003 specifies accountability based on educational preparation and experience."
+    },
+    {
+      "id": "FL_0665c426",
+      "type": "single_select",
+      "stem": "In Florida, practicing professional nursing without an active license is classified as:",
+      "options": [
+        "A civil infraction with a fine only",
+        "A misdemeanor of the first degree",
+        "A felony of the third degree",
+        "Not addressed in statute"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "FL 464.016 identifies unlicensed practice as a third-degree felony."
+    },
+    {
+      "id": "FL_e7a73cb4",
+      "type": "single_select",
+      "stem": "Using the title “Registered Nurse (RN)” in Florida without holding an RN license is:",
+      "options": [
+        "Permitted if the person is a graduate nurse awaiting results",
+        "A misdemeanor of the first degree under title protection",
+        "Allowed if working under direct supervision",
+        "Not regulated by law"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "FL 464.015 restricts title use; unauthorized use is a first-degree misdemeanor."
+    },
+    {
+      "id": "FL_90465056",
+      "type": "single_select",
+      "stem": "Which action is a ground for disciplinary action under FL 464.018?",
+      "options": [
+        "Refusing an unsafe assignment",
+        "Making or filing a false report or record signed in the nurse’s capacity",
+        "Reporting an impaired coworker to the supervisor",
+        "Declining an optional committee role"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "FL 464.018 lists making or filing false records/reports among grounds for discipline."
+    },
+    {
+      "id": "FL_45425465",
+      "type": "single_select",
+      "stem": "A nurse knows a colleague is unsafe due to impairment. Under FL 464.018, the nurse should:",
+      "options": [
+        "Ignore it to maintain privacy",
+        "Refer to an impaired practitioner program (s. 456.076) as an alternative to reporting to the department",
+        "Post concerns on social media",
+        "Immediately terminate the colleague’s employment"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Florida law allows referral to an impaired practitioner program to protect patients while assisting the nurse."
+    },
+    {
+      "id": "FL_79a15512",
+      "type": "single_select",
+      "stem": "An APRN registered for autonomous practice experiences an adverse incident associated with a nursing intervention that led to a hospital transfer. By when must the report be postmarked?",
+      "options": [
+        "Within 24 hours of the incident",
+        "Within 3 days of discovering the incident",
+        "Within 15 days of the occurrence (or discovery if not in direct care)",
+        "Within 30 days of the occurrence"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "FL 464.0155 requires reporting within 15 days after occurrence (or discovery if not in direct care)."
+    },
+    {
+      "id": "ANA_fe599c5d",
+      "type": "single_select",
+      "stem": "A nurse is pressured to float to an ICU without recent competency validation. Which ANA provision supports declining until safe orientation occurs?",
+      "options": [
+        "Provision 1: Respect for human dignity",
+        "Provision 3: Culture of safety",
+        "Provision 5: Duties to self, including maintaining competence and a safe work environment",
+        "Provision 9: Professional values in policy"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Provision 5 affirms duties to self, including maintaining competence and expecting a safe work environment."
+    },
+    {
+      "id": "ANA_6717f53c",
+      "type": "single_select",
+      "stem": "In discussing a high-risk procedure, the nurse ensures the patient understands risks, benefits, and alternatives and supports the patient’s choice. This MOST aligns with:",
+      "options": [
+        "Beneficence alone",
+        "The right to self-determination and respect for autonomy",
+        "Justice",
+        "Fidelity"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Provision 1 (1.4) emphasizes self-determination; nurses support informed choices consistent with patient values."
+    },
+    {
+      "id": "ANA_0d896cdb",
+      "type": "single_select",
+      "stem": "Posting a de-identified but unique case on a public forum without authorization most directly conflicts with which obligation?",
+      "options": [
+        "Provision 3.1: Privacy and confidentiality",
+        "Provision 7: Advancement of the profession",
+        "Provision 8: Collaboration",
+        "Provision 10: Professional values in policy"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Provision 3.1 addresses protecting privacy and confidentiality beyond legal minima; online posts risk re-identification."
+    },
+    {
+      "id": "ANA_455edd58",
+      "type": "single_select",
+      "stem": "After delegating blood glucose checks to a trained UAP, the RN remains accountable for:",
+      "options": [
+        "Nothing once the UAP accepts the task",
+        "Only documenting the result if normal",
+        "Supervision and evaluation of outcomes, intervening based on assessment",
+        "Ordering insulin doses independently"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Provision 4.4: RNs retain accountability for appropriate delegation, supervision, and evaluation of outcomes."
+    },
+    {
+      "id": "FL_171aa245",
+      "type": "single_select",
+      "stem": "Which scenario best exemplifies a violation under FL 464.017 (sexual misconduct)?",
+      "options": [
+        "Accepting a small thank-you card",
+        "Developing a social relationship with a former patient after discharge",
+        "Using the nurse–patient relationship to solicit sexual activity outside accepted examination or treatment",
+        "Providing chaperoned gender-congruent exams"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "FL 464.017 defines sexual misconduct as leveraging the nurse–patient relationship to induce sexual activity outside accepted care."
+    },
+    {
+      "id": "ANA_21b1cdcd",
+      "type": "single_select",
+      "stem": "Advocating to ensure a non-English-speaking patient receives qualified medical interpretation aligns MOST with:",
+      "options": [
+        "Provision 2: Primary commitment to the patient",
+        "Provision 5: Duties to self",
+        "Provision 8: Collaboration to protect human rights and reduce disparities",
+        "Provision 10: Professional values in policy"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Provision 8 highlights collaboration to protect human rights and address inequities such as language access."
+    }
+  ]
+}
