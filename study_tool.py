@@ -5,7 +5,7 @@ from flask import Flask, render_template, send_from_directory, abort, jsonify
 
 # --- Paths ---
 BASE_DIR = Path(__file__).resolve().parent
-# Support either "templates" or "template"
+# Support either "templates" or "template" (your repo may use either)
 TEMPLATES_DIR = BASE_DIR / ("templates" if (BASE_DIR / "templates").exists() else "template")
 STATIC_DIR = BASE_DIR / "static"
 
@@ -17,7 +17,7 @@ app = Flask(
     template_folder=str(TEMPLATES_DIR),
 )
 
-# Accept both the NEW naming and the current legacy names during migration.
+# Accept NEW naming and legacy names (so modules show during migration).
 # New:    Final-Semester-Study-Guide_*.json
 # Legacy: Module_*.json, Pharm_*.json, Learning_Questions_*.json
 ALLOWED_JSON = re.compile(
