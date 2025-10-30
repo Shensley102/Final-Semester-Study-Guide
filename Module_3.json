@@ -1,0 +1,1627 @@
+{
+  "module": "Module_3",
+  "questions": [
+    {
+      "id": "Module_3_Q1",
+      "stem": "A patient states, “I had a bad nightmare. When I woke up, I felt emotionally drained, as though I hadn’t rested well.” Which response by the nurse would be an example of interpersonal therapeutic communication?",
+      "options": [
+        "“It sounds as though you were uncomfortable with the content of your dream.”",
+        "“I understand what you’re saying. Bad dreams leave me feeling tired, too.”",
+        "“So, all in all, you feel as though you had a rather poor night’s sleep?”",
+        "“Can you give me an example of what you mean by a ‘bad nightmare’?”"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "The technique of clarification is therapeutic and helps the nurse examine meaning. The distracters focus on patient feelings but fail to clarify the meaning of the patient’s comment.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q2",
+      "stem": "The nurse is admitting a patient to the medical/surgical unit. Which communication technique would be considered appropriate for this interaction?",
+      "options": [
+        "“I’ve also had traumatic life experiences. Maybe it would help if I told you about them.”",
+        "“Why do you think you had so much difficulty adjusting to this change in your life?”",
+        "“You will feel better after getting accustomed to how this unit operates.”",
+        "“I’d like to sit with you for a while to help you get comfortable talking to me.”"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Because the patient is newly admitted to the unit, allowing the patient to become comfortable with the setting is a technique that can assist in establishing the nurse-patient relationship. It helps build trust and conveys that the nurse cares about the patient. The nurse should not reveal their life experiences as this is not therapeutic. Asking why the patient is having difficulty may provide insight; however, this would be best saved for an established relationship with the patient. Assuring the patient that they will feel better may not be true depending on the reason for the admission.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q3",
+      "stem": "The nurse is seeking clarification of a statement that was made by a patient. What is the best way for the nurse to seek clarification?",
+      "options": [
+        "“What are the common elements here?”",
+        "“Tell me again about your experiences.”",
+        "“Am I correct in understanding that …”",
+        "“Tell me everything from the beginning.”"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Clarification ensures that both the nurse and the patient share mutual understanding of the communication. The distracters encourage comparison rather than clarification and present implied questions that suggest the nurse was not listening.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q4",
+      "stem": "A nurse is conducting a therapeutic session with a patient in the inpatient psychiatric facility. Which remark by the nurse would be an appropriate way to begin an interview session?",
+      "options": [
+        "“How shall we start today?”",
+        "“Shall we talk about losing your privileges yesterday?”",
+        "“Let’s get started discussing your marital relationship.”",
+        "“What happened when your family visited yesterday?”"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "The interview is patient centered; thus, the patient chooses issues. The nurse assists the patient by using communication skills and actively listening to provide opportunities for the patient to reach goals. In the distracters, the nurse selects the topic.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q5",
+      "stem": "The nurse and the patient are conversing face to face. What communication technique is being demonstrated?",
+      "options": [
+        "Linguistic",
+        "Paralinguistic",
+        "Explicit",
+        "Metacommunication"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Conversing face to face, reading newspapers and books, and even texting are all common forms of linguistic communication. Paralinguistics include less recognizable but important means of transmitting messages such as the use of gestures, eye contact, and facial expressions. Explicit communication is not a therapeutic communication technique. Metacommunication factors that affect how messages are received and interpreted would include internal personal states (such as disturbances in mood), environmental stimuli related to the setting of the communication, and contextual variables (such as the relationship between the people in the communication episode).",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q6",
+      "stem": "The nurse is working with a patient diagnosed with posttraumatic stress disorder related to childhood sexual abuse. The patient is crying and states, “I should be over this by now; this happened years ago.” Which response(s) by the nurse will facilitate communication? (Select all that apply.)",
+      "options": [
+        "“Why do you think you are so upset?”",
+        "“I can see that this situation really bothers you.”",
+        "“The abuse you endured is very painful for you.”",
+        "“Crying is a way of expressing the hurt you’re experiencing.”",
+        "“Let’s talk about something else, since this subject is upsetting you.”"
+      ],
+      "correct": [
+        "B",
+        "C",
+        "D"
+      ],
+      "rationale": "Reflecting and giving information are therapeutic techniques. “Why” questions often imply criticism or seem intrusive or judgmental. They are difficult to ANSWER. Changing the subject is a barrier to communication.",
+      "type": "multi_select"
+    },
+    {
+      "id": "Module_3_Q7",
+      "stem": "The staff nurse who uses informatics in promoting quality patient care is most likely to access data in which domain?",
+      "options": [
+        "Certified clinical information systems (CIS)",
+        "Clinical healthcare informatics",
+        "Public health/population informatics",
+        "Translational bioinformatics"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Clinical healthcare informatics and the subset, nursing informatics, provides for the development of direct approaches to patients and their families which can be used by the staff nurse to promote quality patient care. Certified CIS refers to the tools for achieving quality outcomes, including electronic health records, clinical data repositories, decision support programs, and handheld devices—not the data. Public health/population informatics is the domain which relates information, computer science, and technology to public health science to improve the health of populations; this domain would provide data for the nurse working with communities. Translational bioinformatics refers to the research science domain where biomedical and genomic data are combined; it is a new term that describes the domain of where bioinformatics meets clinical medicine, generally for healthcare research rather than direct patient care.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q8",
+      "stem": "When discussing the purposes of healthcare informatics with a nurse during orientation, the nurse educator would be concerned if the nurse orientee stated that which is one purpose of informatics?",
+      "options": [
+        "Develop a cognitive science.",
+        "Improve disease tracking.",
+        "Improve the health provider’s work flow.",
+        "Increase administrative efficiencies."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Cognitive science is one of the theories that play a role in the implementation of informatics. Its development is not a purpose, and the nurse educator would use this incorrect response of the orientee to plan additional teaching about the purposes of healthcare informatics. Purposes of information health technology include to improve health provider work flow, improve healthcare quality, prevent medical errors, reduce healthcare costs, increase administrative efficiencies, decrease paperwork, and improve disease tracking.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q9",
+      "stem": "To design and implement a decubitus ulcer risk management protocol in the electronic health record, the informatics nurse would first perform which action?",
+      "options": [
+        "Build the screens in the electronic health record.",
+        "Determine evidence supporting decubitus ulcer risk management.",
+        "Develop the training program for staff.",
+        "Select the appropriate standardized language."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Collecting the evidence related to the issue is the first step in addressing a problem (remember the nursing process, the foundation of nursing practice). Based on the evidence, an assessment tool or tools and data needed from a patient perspective would be identified. The screens in the electronic record would be based on the workflow surrounding the patient assessment. A training program could not be developed until the protocol is adopted. The appropriate standardized language is selected based on what needs to be documented and what has been approved for use by the agency (e.g., ANA recognized terminologies).",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q10",
+      "stem": "The application of information processing that deals with the storage, retrieval sharing, and use of healthcare data, information, and knowledge for communication and decision making is the definition of which area?",
+      "options": [
+        "Computer science",
+        "Health informatics",
+        "Health information technology",
+        "Nursing informatics"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "This is the definition of health information technology. Computer science is a branch of engineering that studies computation and computer technology, hardware, software, and the theoretical foundations of information and computation techniques. Health informatics is a discipline in which health data are stored, analyzed, and disseminated through the application of information and communication technology. Nursing informatics is a specialty that integrates nursing science, computer science, and information science to manage and communicate data, information, knowledge, and wisdom in nursing practice.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q11",
+      "stem": "The nurse manager of a medical/surgical unit wants to increase the use of healthcare technology on the unit and is working with an ANA-certified informatics nurse to reduce which barriers to health information exchange?",
+      "options": [
+        "Basic informatics knowledge and skills",
+        "Offering the best set of tools",
+        "Privacy and security policies",
+        "Unit-specific terminology"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Unit-specific terminology would be a barrier to sharing health information because there could be confusion about terms. Standardized terminology within the electronic health record is critical for communicating care to the interprofessional team and exchanging health information. Competency in informatics including basic informatics knowledge and skills could facilitate the use of informatics; lack of competency could be a barrier. Offering the best set of tools could promote the ease of data entry and access. Privacy and security policies reduce legal and ethical concerns about sharing data, thus reducing barriers to health information exchange.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q12",
+      "stem": "A nurse is reviewing concepts related to documentation in the electronic health record. Which statement best represents the concept of “meaningful use”?",
+      "options": [
+        "Allows for privacy of information",
+        "Uses individualized log on for access",
+        "Completes charting in a timely manner",
+        "Meets established criteria related to technological use"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "The concept of “meaningful use” refers to the establishment of criteria related to technological use of the electronic health record as determined by federal guidelines. HIPAA policy mandates privacy of personal information and patient medical records. Use of an individualized log on to access relates to security concerns. Completing charting in a timely manner is an expectation of prudent practice.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q13",
+      "stem": "Which are exemplars of the health informatics concept?",
+      "options": [
+        "Clinical research informatics",
+        "Hardware and software",
+        "Privacy and security",
+        "Standard terminology"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Exemplars of the health informatics concept include clinical healthcare informatics, clinical research informatics, public/population health informatics, and translational bioinformatics. Hardware and software, privacy and security, and standardized information systems and terminology are considered attributes related to the concept, not exemplars.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q14",
+      "stem": "A group of staff nurses is dissatisfied with the new ideas presented by the newly hired nurse manager. The staff wants to keep their old procedures, and they resist the changes. Conflict arises from:",
+      "options": [
+        "group decision-making options.",
+        "perceptions of incompatibility.",
+        "increases in group cohesiveness.",
+        "debates, negotiations, and compromises."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Conflict involves disagreement in values or beliefs within oneself or between people that causes harm or has the potential to cause harm. Conflict may result from the interaction of interdependent people who perceive incompatibility and the potential for interference.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q15",
+      "stem": "Two staff nurses are arguing about whose turn it is to work on the upcoming holiday. In trying to resolve this conflict, the nurse manager understands that interpersonal conflict arises when:",
+      "options": [
+        "risk taking seems to be unavoidable.",
+        "people see events differently.",
+        "personal and professional priorities do not match.",
+        "the ways in which people should act do not match the ways in which they do act."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "By definition, conflict involves a difference in perception between two or more individuals.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q16",
+      "stem": "The nurse manager is aware that conflict is occurring on her unit; however, she is focused on preparing for a state health department visit, so she ignores the problem. What factor can increase stress and escalate conflict?",
+      "options": [
+        "The use of avoidance",
+        "An enhanced nursing work force",
+        "Accepting that some conflict is normal",
+        "Managing the effects of fatigue and error"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Avoidance as a conflict-management style prolongs conflict and tends to escalate conflict.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q17",
+      "stem": "The nurse manager decides to use a mediator to help resolve the staff‘s conflict. A basic strategy for truly addressing this conflict is to:",
+      "options": [
+        "identify the conflicting facts.",
+        "be determined to resolve the conflict.",
+        "schedule a meeting time for resolution.",
+        "have a clear understanding of the differences between the parties in conflict."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "It is important for each person in the conflict to clarify the conflict as I see it and how it makes me respond‖ before all the persons involved in the conflict can define the conflict, develop a shared conceptualization, and resolve their differences.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q18",
+      "stem": "Sarah, a staff nurse on your unit, witnesses another nurse striking a patient. Sarah wants to remain friends with her colleague and worries that confrontation with her colleague or reporting her colleague will destroy their relationship. Sarah is experiencing which type of conflict?",
+      "options": [
+        "Intrapersonal",
+        "Interpersonal",
+        "Organizational",
+        "Professional"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Intrapersonal conflict occurs within a person when confronted with the need to think or act in a way that seems at odds with that person‘s sense of self. Questions often arise that create a conflict over priorities, ethical standards, and values. Some issues present a conflict over comfortably maintaining the status quo and taking risks to confront people when needed, which can lead to interpersonal conflict.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q19",
+      "stem": "The chief nursing officer plans a series of staff development workshops for the nurse managers to help them deal with conflicts. The first workshop introduces the four stages of conflict, which are:",
+      "options": [
+        "frustration, competition, negotiation, and action.",
+        "frustration, conceptualization, action, and outcomes.",
+        "frustration, cooperation, collaboration, and action outcomes.",
+        "frustration, conceptualization, negotiation, and action outcomes."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Thomas (1992) determined that conflict proceeds through these four stages in this particular order.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q20",
+      "stem": "After using a mediator to resolve a conflict between the nurse manager and two staff nurses, the chief nursing officer decides to:",
+      "options": [
+        "observe to make sure the conflict has been resolved.",
+        "fire both staff nurses.",
+        "reassign both staff nurses.",
+        "reassign the nurse manager."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "The nurse leader should follow up to determine if the conflict has been resolved because, in professional practice environments, unresolved conflict among nurses is a significant issue that results in job dissatisfaction, absenteeism, and turnover, as well as in decreased patient satisfaction and poorer quality in patient care.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q21",
+      "stem": "A nursing instructor is teaching a class on conflict and conflict resolution. She relates to the class that conflict in an organization is important, and that an optimal level of conflict will generate:",
+      "options": [
+        "creativity, a problem-solving atmosphere, a weak team spirit, and motivation of its workers.",
+        "creativity, a staid atmosphere, a weak team spirit, and motivation of its workers.",
+        "creativity, a problem-solving atmosphere, a strong team spirit, and motivation for its workers.",
+        "a bureaucratic atmosphere, a strong team spirit, and motivation for its workers."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Differences in ideas, perceptions, and approaches, when managed well, can lead to creative solutions and deepened human relationships. Work on conflict suggests that complete resolution of conflict is counterproductive to the achievement of organizational goals, organizational change, and cohesiveness of employees.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q22",
+      "stem": "Jane has transferred from the ICU to the CCU. She is very set in the way she makes assignments and encourages her new peers to adopt this method without sharing the rationale for why it is better. This is a good example of a process and procedure that creates which type of conflict?",
+      "options": [
+        "Organizational",
+        "Intrapersonal",
+        "Interpersonal",
+        "Disruptive"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Interpersonal conflict transferrers between and among nurses, physicians, members of other departments, and patients.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q23",
+      "stem": "Two nurses on a psychiatric unit come from different backgrounds and have graduated from different universities. They are given a set of new orders from the unit manager. Each nurse displays different emotions in response to the orders. Nurse A indicates that the new orders include too many changes; Nurse B disagrees and verbally indicates why. This step in the process is which of the following in Thomas‘ stages of conflict?",
+      "options": [
+        "Frustration",
+        "Conceptualization",
+        "Action",
+        "Outcomes"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Thomas‘ Stages of Conflict include conceptualization, which involves different ideas and emphasis on what is important or not or about what should occur.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q24",
+      "stem": "Mrs. Hill, aged 68, was hospitalized after a stroke. The speech therapist recommended that oral feeding be stopped because of her dysplasia. During visiting hours, Mr. Hill fed his wife some noodles. The nurse noticed this and stopped Mr. Hill from feeding his wife, telling him it was the doctor‘s decision. An hour later, the nurse returned and found Mr. Hill feeding his wife again. The nurse tried to stop him again. Mr. Hill refused and claimed that the clinical staff was trying to starve his wife; he also threatened to get violent with the nurse. The nurse decided to walk away and documented the event in Mrs. Hill‘s chart. According to Thomas‘ four stages of conflict, in which stage could the nurse have been more effective?",
+      "options": [
+        "Frustration",
+        "Conceptualizing",
+        "Action",
+        "Outcomes"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q25",
+      "stem": "Mrs. Hill, aged 68, was hospitalized after a stroke. The speech therapist recommended that oral feeding be stopped because of her dysplasia. During visiting hours, Mr. Hill fed his wife some noodles. The nurse noticed this and stopped Mr. Hill from feeding his wife, telling him it was the doctor‘s decision. An hour later, the nurse returned and found Mr. Hill feeding his wife again. The nurse tried to stop him again. Mr. Hill refused and claimed that the clinical staff was trying to starve his wife; he also threatened to get violent with the nurse. The nurse decided to walk away and documented the event in Mrs. Hill‘s chart. The outcome as depicted by Thomas‘ conflict stages can be considered to be:",
+      "options": [
+        "compromising.",
+        "confronting.",
+        "constructive.",
+        "destructive."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Resolution was absent because the nurse did not have time to effectively deal with the issues in the conflict. This can lead to negativity, increased frustration, and further distancing between individuals or groups, including between patients and nurses.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q26",
+      "stem": "Jill is the head nurse on a unit in a large hospital. Two of the staff nurses are constantly arguing and blaming each other, and a resolution has not occurred in months. To solve the existing conflict, which is the most creative conflict resolution?",
+      "options": [
+        "Avoiding",
+        "Competing",
+        "Compromising",
+        "Collaborating"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Collaboration, although time consuming, is the most creative stance. The collaboration technique involves both sides in the conflict working together to develop an optimal outcome. This results in a win-win solution.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q27",
+      "stem": "A nurse educator is giving a workshop on conflict. During the sessions, he makes various statements regarding conflict. All of the statements are true except:",
+      "options": [
+        "conflict can decrease creativity, thus acting as a deterrent for the development of new ideas.",
+        "horizontal violence involves those with similar status but little power in the larger context.",
+        "interprofessional collaboration reduces unresolved conflicts.",
+        "all conflicts involve some level of disagreement."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "The opposite is true because research has shown that conflict, like change, increases creativity and allows for the development of new ideas.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q28",
+      "stem": "Sarah is a nurse manager in a surgical unit. She is concerned about a conflict between Lucy (a staff nurse) and one of the maintenance personnel. Sarah explains to Lucy that unsatisfactory resolution of the conflict is typically destructive and will result in:",
+      "options": [
+        "decreased frustration between the maintenance worker and her.",
+        "a good relationship with the maintenance department.",
+        "eventual resolution of the problem without further intervention.",
+        "decreased productivity on her part."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Productivity decreases with destructive conflict, whereas constructive conflict strengthens relationships.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q29",
+      "stem": "Staff at Valley Hospital are concerned that recent staffing cuts will affect their ability to provide quality patient care, and they express their concerns to senior management. The CEO of Valley Hospital makes the following statement: We need to contain costs because our funding has been decreased. This is a good example of which of the following conditions that propel a situation toward conflict?",
+      "options": [
+        "Incompatible goals",
+        "Role conflicts",
+        "Structural conflict",
+        "Competition for resources"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Conflicts arise in four areas: goals, facts, approaches, and values. Conflicts among goals arise from competing priorities such as the provision of quality patient care and containment of costs.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q30",
+      "stem": "Kala, a unit manager, in discussing a role the CEO would like her to perform, makes the following statement, I will sit on the hospital task force on improving morale if you send me to the hospital‘s leadership training classes next week, so I can further develop my skills and thus be more effective. Which of the following conflict management styles is Kala using?",
+      "options": [
+        "Collaborating",
+        "Avoiding",
+        "Negotiating",
+        "Accommodating"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Negotiation involves an exchange of concessions (membership on a committee in return for attendance at a workshop) or trading. This strategy supports a balance of power.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q31",
+      "stem": "John is a circulating nurse in the operating room. He is usually assigned to general surgery, but on this day he is assigned to the orthopedic room. He is unfamiliar with the routines and studies the doctor‘s preference cards before each patient. The fourth patient comes into the room and John prepares a site for a biopsy using a Betadine solution. The surgeon prefers another solution. He notices what John has done and immediately corrects him by rudely insulting John. What is the appropriate approach to conflict resolution in this example?",
+      "options": [
+        "Collaboration",
+        "Compromising",
+        "Avoiding",
+        "Withdraw"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Compromise involves negotiation or an exchange of concessions and supports a balance of power.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q32",
+      "stem": "Factors that influence the ease with which conflict is resolved include all except which of the following?",
+      "options": [
+        "Level of interdependence of the parties",
+        "Interprofessional collaboration",
+        "Expression of one‘s own needs and ideas",
+        "Avoidance of the issue or concern"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Conflict involves a level of interdependence and is a condition for conflict but not necessarily for continuance of the conflict. Expression of one‘s ideas and concerns is considered assertive and effective in resolving conflict if the concerns and needs of the other are also considered. Interprofessional collaboration has been shown to be effective in resolving conflict. Avoidance tends to prolong and sometimes escalate conflict.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q33",
+      "stem": "The head nurse and a staff nurse are having a conflict over how to use and apply a new procedure for dressings in the medical/surgical area. The staff nurse wishes to use the new procedure based on newly released nursing research. The head nurse wishes to use a protocol that has been used in the department for a number of years. The head nurse later makes comments to other staff on her unit about the credibility of the staff nurse. This behavior is associated with:",
+      "options": [
+        "lateral violence.",
+        "horizontal violence.",
+        "confrontation.",
+        "bullying."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Bullying involves aggressive or destructive behavior or psychological harassment of a recipient who is in a position of power differential with the perpetrator (the head nurse). Bullying is closely related to lateral or horizontal violence and involves such behaviors as incivility or intimidation.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q34",
+      "stem": "Which of the following exemplifies the predominant conflict management style of nurse managers?",
+      "options": [
+        "Elizabeth, the head nurse on neurology, finds that Tom, the RN nurse on nights, is irritable in relation to any suggestions or new ideas, and so she comes in to work after Tom leaves the unit.",
+        "The technology committee has recommended a clinical system for implementation on the nursing unit. Staff is anxious about the change. Tim, the head nurse, asks staff for ideas on how to meet the technology goals and to meet staff needs.",
+        "During management meetings, George, the head nurse on nephrology, dominates meetings and decisions. Lee, the head nurse on the cardiac step-down unit, begins to miss the management meetings.",
+        "Ann, RN, asks her head nurse if she can go on the permanent evening shift. The head nurse, Rajib, agrees, as long as Ann agrees to be involved in assisting to mentor evening staff in the use of the new clinical information system."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Compromise involves trading and negotiation and is the predominant conflict management style of managers.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q35",
+      "stem": "Lee, the head nurse in ER, has attempted to meet Jillian, one of her staff RNs, for several days to discuss concerns about Jillian‘s relationships with her team members. Lee hopes to offer Jillian coaching so that Jillian‘s relationships can be more satisfying for Jillian and her team members. Each time Lee and Jillian set a time to meet, Jillian phones in sick. In this situation, Lee and Jillian are demonstrating:",
+      "options": [
+        "similar conflict management strategies.",
+        "escalation of conflict.",
+        "avoidance and compromise strategies.",
+        "competing and compromise strategies."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Jillian is demonstrating avoidance by staying away from meetings to discuss her team relationships, and Lee is demonstrating compromise by offering coaching in return for Jillian‘s being able to engage in more satisfying relationships.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q36",
+      "stem": "What exemplifies the predominant style of conflict management for staff nurses?",
+      "options": [
+        "Sarah and Jonas, two RNs, disagree about the best approach to assisting a family that has complex needs. They decide that they will consult with family and together will decide what is best.",
+        "Jennifer needs to switch a shift to attend a family function. She arranges to trade with Nancy, who wants a day off next to a 3-day break.",
+        "Lindsay asks Melody to stay late for the third day in a row. Melody refuses, stating that she has already helped out for 2 days by staying late for Lindsay.",
+        "Lara asks Stacey to switch shifts with her because Lara wants to attend a concert. Stacey would prefer not to but does to enable Lara, who is new in town, to be with her friends."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Avoidance and accommodation are the predominant conflict management styles of nurses. Accommodating involves neglecting one‘s own needs while trying to satisfy the needs of another.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q37",
+      "stem": "In trying to achieve Magnet® status, the chief nursing officer establishes a shared governance model to help nurses experience job satisfaction. However, some nurses who have enjoyed working with less autonomy resist this change and begin to criticize and make rude comments about managers who embrace this model, as well as colleagues who support it. The comments are largely ignored because those who are making them are well-established nurses who are often vocal about their displeasure with the organization. Organizational conflict is arising from which of the following?",
+      "options": [
+        "Staffing practices",
+        "Increased participation in decision making",
+        "Allocation of resources",
+        "Tolerance of incivility"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Organizational conflict arises from discord related to policies and procedures (such as staffing policies and practices and allocation of resources), personnel codes or conduct or accepted norms of behavior (such as incivility), and patterns of communication. A major source conflict in organizations stems from strategies that promote more participation and autonomy of staff nurses.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q38",
+      "stem": "Nurses entering the work force today are faced with which of the following relationships that could create organizational conflict? (Select all that apply.)",
+      "options": [
+        "Nurse-physician relationship",
+        "Nurse-nurse relationship",
+        "Nurse-patient relationship",
+        "Nurse-chief nursing officer relationship",
+        "Nurse-auxiliary personnel relationships"
+      ],
+      "correct": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "rationale": "By nature, conflict is potentially present in all interpersonal situations. The nurse manager should create an environment that recognizes and values differences in staff, physicians, patients, and communities.",
+      "type": "multi_select"
+    },
+    {
+      "id": "Module_3_Q39",
+      "stem": "A nurse manager was orienting new staff members to computerized charting. To understand computerized charting, staff members must understand informatics. The three core concepts in informatics are:",
+      "options": [
+        "hardware, software, and printers.",
+        "data, information, and knowledge.",
+        "decision making, data gathering, and reporting.",
+        "wireless technology, voice recognition, and handheld devices."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Informatics is the application of technology to all fields of nursing to facilitate and extend nurses‘ decision-making abilities and to support nurses in the use, storage, and linkage of clinical information to provide effective and efficient patient care.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q40",
+      "stem": "The nursing manager of a surgical unit has been asked by administration to evaluate client outcomes post cardiac catheterization. Using data about client outcomes post cardiac catheterization for the past 6 months in order to modify practice is an example of:",
+      "options": [
+        "information.",
+        "cost-effective care.",
+        "meeting standards.",
+        "evidence-based practice."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Technology enables evidence-based practice by collecting good clinical knowledge, translating nursing knowledge into reference materials that can be accessed at the point-of-care, and, potentially, assisting nurses to take action based on best evidence for practice.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q41",
+      "stem": "Mr. Cruiser has been surfing the Web. He is looking for healthcare information on low back pain. He shows the clinic nurse a webpage he thinks is great and tells her that he has been following the exercises recommended by the author. He wants to know what she thinks about the site. When the clinic nurse evaluates this site, she discovers that its author is a personal trainer. No credentials are listed. In several testimonials on the page, people (their pictures are included) say how wonderful they feel after having done these exercises. The exercises all have animated demos when you click on the pertinent highlighted text or icon. They seem easy to follow. The site was posted 5 years earlier and was last updated 3 years before. The clinic nurse advises Mr. Cruiser to:",
+      "options": [
+        "avoid this site.",
+        "check with his primary healthcare provider.",
+        "continue with the exercises.",
+        "contact the author for additional exercise and feedback."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Patients need coaching as to how to use and decipher information that is available through the Internet. In this situation, the provider on the site lacks credibility because no credentials are listed, and the information is not current.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q42",
+      "stem": "A primary care clinic in a small urban center sees a high volume of cardiology patients. Patients who attend the clinic have smart cards that they use at hospitals, clinics, and Emergency Departments within that region of the state. A primary benefit of the smart card for these patients would be:",
+      "options": [
+        "rapid and accurate treatment in emergency situations.",
+        "reduced wait times to see specialists.",
+        "e-mail notification of test results.",
+        "readily available information regarding medications."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Credit card–like devices called smart cards store a limited number of pages of data on a computer chip and serve as a bridge between the clinician terminal and the central repository of the electronic health record (EHR), making patient information available to the caregiver quickly and cheaply at the point-of-service. Smart cards provide information to healthcare providers regarding the patient‘s demographic and contact information, allergies, immunizations, lab results, and past patient care encounters and are presented at the point-of-service.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q43",
+      "stem": "The clinic nurse has just accessed a client‘s chart on the computer. The resident comes over and asks her to stay logged on because he needs to add a note to that client‘s chart. She should say:",
+      "options": [
+        "No problem. Just log me off when you‘re done.",
+        "I‘ll put the note in for you. What do you want to say?",
+        "Just make sure that you sign your note because it‘s under my password",
+        "I‘m sorry, but you will have to enter the information using your own password."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "System users must never share the passwords that allow them access to information in computerized clinical information systems. Each password uniquely identifies a user to the system by name and title, gives approval to carry out certain functions, and provides access to data appropriate to the user. All users must be aware of their responsibilities for the confidentiality and security of the data they gather and for the security of their passwords.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q44",
+      "stem": "A home health nurse has been assigned to cover a 300-square-mile area of remote Montana. Mrs. Baker has just been discharged home following bowel surgery and has a new colostomy. She will need daily contacts for at least 2 weeks and then regular weekly contact following that week. Because it is not possible to visit Mrs. Baker in person every day and see all of the other clients, the nurse gives her a laptop computer with net meeting software installed. Each morning, both dial in at an agreed-upon time and discuss her progress. The home health nurse assesses whether or not the client needs to be seen that day and is able to view the colostomy site. This type of technology is called:",
+      "options": [
+        "distance learning.",
+        "knowledge software.",
+        "telecommunications.",
+        "biomedical technology."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Telecommunications and systems technology facilitate clinical oversight of health care via telephone or cable lines, remote monitoring, information links, and the Internet. Patients sitting in front of the teleconferencing camera can be diagnosed, treated, monitored, and educated by nurses and physicians. EKGs and radiographs can be viewed and transmitted.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q45",
+      "stem": "At a newly built outpatient surgical center, an integrated information system has been purchased. The chief nursing officer creates a series of staff development classes to orient the staff to this new system. One of the advantages of an integrated information system is that client-care data from all sites can be stored in and retrieved from a:",
+      "options": [
+        "nursing information system.",
+        "central data repository.",
+        "nurse expert system.",
+        "handheld device."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Computer information systems manage large volumes of data, examine data patterns and trends, solve problems, and answer questions. In other words, computers can help translate data into information from both within and among organizations. Data from all patient encounters with the healthcare system are stored in a central data repository, where they are accessible to authorized users. Patient information in a centralized database is organized, legible, and easily retrievable from a variety of sources and reflects a variety of data.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q46",
+      "stem": "Nurses need to know how to operate a computer, compare data across time, and look for patterns in client responses to treatments. These are examples of:",
+      "options": [
+        "JCAHO standards.",
+        "information systems.",
+        "informatics competencies.",
+        "requirements for nursing licensure."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "The Quality and Safety Education for Nurses (QSEN) project identified informatics competency as a necessary component of the knowledge, skills, and attitudes for quality patient care. Nurses are anticipated to be able to use information and technology to communicate, manage knowledge, mitigate error, and support decision making. Nurses must utilize hospital database management, decision support, and expert system programs to access information and analyze data from disparate sources for use in planning for patient care processes and systems.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q47",
+      "stem": "Leaders in nursing must advocate for information and knowledge systems that support nursing practice. This is best accomplished by:",
+      "options": [
+        "participating in organizational information technology committees.",
+        "submitting written requests for needed information systems.",
+        "requesting budgetary funds needed for systems.",
+        "sending staff nurses to conferences that discuss cutting-edge technologies."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Nurse leaders and direct care nurses must be members of the selection team, participate actively, and have a voice in the selection decision. The information system must make sense to the people who use it and fit effectively with the processes for providing patient care.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q48",
+      "stem": "You are in the process of designing a patient education program that will provide education and monitoring for patients with hypertension. To support your planning, you draw out and present patient data from:",
+      "options": [
+        "a clinical database.",
+        "biomedical technologies.",
+        "e-mail.",
+        "Internet sources."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Clinical databases are collections of elements organized and structured for the processing, organization, and presentation of data for interpretation as information, which, in this particular instance, includes outpatient data.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q49",
+      "stem": "You document your patient‘s vital signs into a bedside documentation device and are able to compare your patient‘s vital signs with patients who have similar diagnoses and similar medications, and who are of a similar age. You are accessing:",
+      "options": [
+        "e-mail.",
+        "telecommunications.",
+        "a database.",
+        "technology."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "A database is a collection of data elements stored and organized together for the purposes of interpreting information such as vital signs.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q50",
+      "stem": "In an ICU, you order new devices to measure heart rhythm and rate, respiratory rate, oxygen levels, and intracranial pressure. These devices involve:",
+      "options": [
+        "biomedical technology.",
+        "telecommunications.",
+        "retrieval of patient history information.",
+        "Internet."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Physiologic monitoring devices and patient surveillance systems involve biomedical technology.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q51",
+      "stem": "As the head nurse involved in leading determination of which patient surveillance systems to acquire for your unit, one of your aims is to avoid adverse events through the implementation of appropriate technology. This particular aim recognizes that:",
+      "options": [
+        "human error is significant in contributing to adverse events.",
+        "documentation of patient data is often illegible and therefore, misinterpreted.",
+        "data systems provide backup documentation with adverse events that staff cannot provide.",
+        "physiologic monitoring systems enable detection of early changes before an adverse event occurs."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Data about adverse events suggests that a majority of physiologic abnormalities are not detected early enough and may be present hours before the event actually occurs. Physiologic monitoring aids in early detection of changes.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q52",
+      "stem": "A 39-year-old patient awaits a kidney transplant. Because he must immediately arrange to get to the hospital when a donor kidney is available, it is important that he can be reached anywhere and at any time. To ensure that he receives the message, what type of technology is most effective?",
+      "options": [
+        "Internet",
+        "Telecommunications",
+        "WL pager",
+        "CDS"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Wireless (WL) communication is an extension of an existing wired network environment and uses radio-based systems to transmit data signals through the air without any physical connections. Patients awaiting organ transplants are provided with WL pagers so that they can be notified if a donor is found.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q53",
+      "stem": "A recent nursing graduate in a busy Emergency Department triages a patient who has sustained a large, deep puncture wound in his foot while working at a construction site. He is bleeding and is in pain. The nurse enters the triage data that she has obtained from the patient into a computerized, standard emergency patient-classification system. After she enters the assessment data, she notices an alert on the computer screen that prompts her to ask the patient about the status of his tetanus immunization. What system of technology is involved in generating the alert?",
+      "options": [
+        "Clinical decision support",
+        "WL technology",
+        "Computerized provider order",
+        "Electronic health record"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Clinical decision support (CDS) is a clinical computer system, computer application, or process that helps health professionals make clinical decisions to enhance patient care. The clinical knowledge embedded in computer applications or work processes can range from simple facts and relationships to best practices for managing patients with specific disease states, new medical knowledge from clinical research, and other types of information.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q54",
+      "stem": "Despite the implementation of bar-code medication administration (BCMA) on your busy medical unit, you notice that the number of medication errors has not significantly decreased. Which of the following reasons might explain the lack of change in errors?",
+      "options": [
+        "A number of new medications have been introduced into the hospital pharmacy that are not yet recognized in the CDS.",
+        "There have been an unusually high number of patients on the unit who have been unable to confirm their identity at the time of medication administration.",
+        "Lack of staff understanding and support for BCMA has led to overrides or failures to scan bar codes during busy times.",
+        "Clinical data that have been entered into the system to guide administration of the medications are outdated."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Most errors related to technology involve mislabeled bar codes on medications, mistakes at order entry because of confusing computer screens, or issues with management of information. Errors also are related to dispensing devices and human factors, such as failure to scan bar codes or overrides of bar-code warnings.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q55",
+      "stem": "A rural-urban health consortium enables physicians in a rural remote setting to consult with specialists in care through electronic conferencing, which includes consultation using intranet radiology images. This system may be in which phase of electronic medical technology adoption, according to the Healthcare Information and Management Systems Society (HIMSS)?",
+      "options": [
+        "0",
+        "1",
+        "3",
+        "6"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "According to the HIMSS, this healthcare organization may be in phase 6, which includes the capacity to trANSWERmit all radiology images through intranet or another secure source. Level 1 refers to the installation of major ancillary clinical systems (such as radiology) and level 3 to the retrieval of radiology images from picture archives and communication systems.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q56",
+      "stem": "As a nurse manager representative on a clinical information system selection team, you would be particularly concerned if the favored system:",
+      "options": [
+        "involves screen displays that are best configured for nonclinical users.",
+        "requires an upgrade to servers in the facility.",
+        "requires staff orientation and training during implementation of the software.",
+        "minimizes the amount of data entry necessary."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "An ideal hospital information system should include as much instrumentation as possible to minimize data entry. As a clinical end user, you would expect orientation and training on how the screen display can be configured so as to suit the purposes and preferences of users in clinical areas.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q57",
+      "stem": "When assessing the appropriateness of adopting WL COWs for a nursing unit, you need to consider the advantages, which include:",
+      "options": [
+        "mobility of the carts.",
+        "small display screen.",
+        "font size.",
+        "speed of operation."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Installing computers on mobile carts, also known as computers on wheels or COWs, may increase work efficiency and save time. However, if the cart is cumbersome to move around or if concern about infection risk is associated with moving the cart from one room to another, some organizations favor keeping one cart stationed in each patient care room or installing hardwired bedside computers.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q58",
+      "stem": "A nurse manager is excited by the possible use of speech recognition (SR) systems for documentation of patient care, especially during crisis situations when staff members need to focus on performing rapid assessments and implementation of procedures. She learns, however, that SR systems would be impractical at this point. What would lead to this conclusion?",
+      "options": [
+        "SR systems are not available outside pilot projects.",
+        "The type of speech required for voice recognition is unlikely to occur in a pressured situation.",
+        "The hands-free function has not been perfected in SR technology.",
+        "Wireless communications are prone to unreliability in transmission."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Speech recognition systems rely on staccato-like speech, pauses between words, and programming for each user, any and all of which would be unlikely in a pressured crisis situation. SR is being used primarily for therapeutic purposes and in situations where data entry is stable.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q59",
+      "stem": "As a nurse manager, one challenge is to orient new staff to your agency‘s policies and procedures, as well as to provide training across various shifts. A cost-effective and effective learning strategy would be:",
+      "options": [
+        "development of new learning modules and software to support document retrieval.",
+        "e-mail distribution to staff home e-mail addresses regarding important policies.",
+        "preparation of DVDs that can be viewed on computers at the nursing station during down times.",
+        "linking policies and procedures to the network for access when required at the point-of-care."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Knowledge technology consists of systems that generate or process knowledge and provide clinical decision support (CDS). The clinical knowledge embedded in computer applications can range from simple facts and relationships to best practices for managing patients with specific disease states, new medical knowledge from clinical research, and other types of information. The most accessible and cost-effective approach would be utilization of what is already available in the work environment, such as the systems that provide CDS.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q60",
+      "stem": "A necessary, basic condition for successful integration of clinical information systems is:",
+      "options": [
+        "software.",
+        "standard medical nomenclature.",
+        "confirmatory evidence from nursing-led studies.",
+        "strong interdisciplinary cultures."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "An integrated clinical information system draws on specific knowledge from many involved disciplines that interface at the patient. Successful integration of clinical information systems requires that the various disciplines work together collaboratively to transform the data into meaningful knowledge.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q61",
+      "stem": "To improve outcomes on the stroke recovery unit, the unit manager leads an evidence-based practice (EBP) project. The goal of this project is to:",
+      "options": [
+        "enable detection of variations in clinical outcomes from well-researched standards that are supported by confirmatory evidence.",
+        "gain quick access to literature based on studies of patients and families who have experienced stroke.",
+        "develop a list of articles that could be accessed to address clinical issues and problems with stroke patients.",
+        "advance the development of staff who are able to conduct independent nursing research on stroke outcomes."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Several intelligent‖ clinical information systems are in place that collect good data and then translate nursing knowledge, such as well-researched standards, into reference materials at the point-of-care. In addition, computer applications assist nurses to take action and provide patient care based on the best evidence for practice.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q62",
+      "stem": "As part of an information technology implementation team, you are implementing a clinical decision support system. Particular considerations for successful implementation of this project include:",
+      "options": [
+        "ensuring that the system is reliable.",
+        "ensuring that patient information is reliable.",
+        "developing unique identifiers for individuals.",
+        "developing rules that support inferences."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Clinical decision support systems provide support for novice nurses, in particular, as they enable entry of real-time data from patient situations and inferences that apply the logic that expert nurses would use. These inferences require rules to be developed for the system.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q63",
+      "stem": "As a nurse manager, you want to institute point-of-care devices on your unit. The rationale that you provide to support the point-of-care devices includes: (Select all that apply.)",
+      "options": [
+        "reduction in incidents of medication error.",
+        "immediate documentation of care.",
+        "comparison of patient data with previous data.",
+        "immediate access to staffing schedules."
+      ],
+      "correct": [
+        "A",
+        "B",
+        "C"
+      ],
+      "rationale": "Point-of-care devices that allow documentation of assessment, care, and teaching at the bedside reduce the gap in time between care and documentation, thereby reducing error, increasing accuracy, and improving communication of care. Medication devices and patient databases enable accurate clinical decision making.",
+      "type": "multi_select"
+    },
+    {
+      "id": "Module_3_Q64",
+      "stem": "Nurses need to prepare for the eventual infusion of systems that possess knowledge-generating capabilities such:",
+      "options": [
+        "artificial intelligence.",
+        "data, information, and knowledge.",
+        "contemporary digital health technologies.",
+        "wireless technology, voice recognition, and handheld devices."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Preliminary evidence generated in the academic literature suggest that the wider-scale adoption of these kinds of intelligent systems is in the not-too-distant future.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q65",
+      "stem": "As artificial intelligence devices emerge, it is important that at least a core of nurses engaged in the work that leads to improvement of AI-related devices to ensure that:",
+      "options": [
+        "if it doesn‘t work, they are not to blame.",
+        "the thinking of nurses is a part of the development process.",
+        "it meets their standards.",
+        "they can contact the manufacture about complaints."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Having at least a core of nurses engaged in the work that leads to improvement of AI-related devices ensures that the thinking of nurses is a part of the developmental process.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q66",
+      "stem": "Medication errors which directly resulted from the redevelopment of processes and workflow brought about by the implementation of BCMA are considered:",
+      "options": [
+        "unintended consequences related to technology.",
+        "intended response to change.",
+        "reasons to return to paper-based medication administration processes.",
+        "an expected response to technology-based nursing."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Considerable research has been completed about unintended consequences related to health technology. Increasing recognition of technology can and will influence the actions of humans in both intended and unintended.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q67",
+      "stem": "Technology can influence human social systems and humans can reciprocally influence technology. This relationship is known as:",
+      "options": [
+        "knowledge.",
+        "informatics.",
+        "wisdom.",
+        "sociotechnical."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Although we can conceptualize and view the nuanced relationship humans have with technology in many ways, we suggest a sociotechnical systems lens to better understand this relationship (Berg et al., 2003).",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q68",
+      "stem": "The cascading continuum that is extremely important when exploring digital health technology, especially with some of the modern technologies present today is:",
+      "options": [
+        "data-information-knowledge-wisdom",
+        "tools-technology-intelligence-response",
+        "illness-symptoms-treatment-nursing care",
+        "automation-task-ability-hybridized"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Data-information-knowledge-wisdom, while appearing logical, is extremely important when exploring digital health technology, especially with some of the modern technologies present today. Unfortunately, many of the digital health technologies used by nurses today lack sensitivity to various elements of nursing knowledge and wisdom.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q69",
+      "stem": "The nurse can identify various apparatuses, processes, or systems that have experienced some form of automation. Tasks and processes undertaken by nurses that introduce some level of automation include:",
+      "options": [
+        "electronic medical records (EMR).",
+        "point-of-care devices.",
+        "telecommunications.",
+        "barcode medication administration (BCMA)."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "All contemporary digital health technologies—including EMR, BCMA, and point-of-care devices—introduce some level of automation on tasks and processes undertaken by nurses..",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q70",
+      "stem": "Nurses complete many tasks that requiring skill, judgment, fine motor control, and other types of expertise that are difficult to replicate with AI. One such skill would be:",
+      "options": [
+        "collection of materials and supplies.",
+        "wound care.",
+        "contacting members of the care team.",
+        "screening applicants for open positions."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Many of the tasks completed by nurses are extremely nuanced, requiring skill, judgment, fine motor control, and other types of expertise that are difficult to replicate mechanically. Wound care is an extremely knowledge-intense task due to the complexity of wound healing, patient complexity, dressing products, treatment trajectory, and a host of other important clinical and contextual factors.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q71",
+      "stem": "An AI-enabled care management system used in an American healthcare context systematically underestimated the healthcare needs of predominantly Black patients. This is an example of:",
+      "options": [
+        "stereotyping.",
+        "situational awareness.",
+        "automation of inequities.",
+        "task automation."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Automation of inequities is a phrase that has become a term used by both researchers and the media to denote the occurrence of when a self-learning technology unintentionally reinforces systematic biases or other types of inequity during its insight generation (Bullock, 2019; Eubanks, 2018).",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q72",
+      "stem": "The nurse in a large hospital working in the emergency room is caring for a patient having a myocardial infarction. The hospital has recently implemented an order entry system that uses artificial intelligence (AI). The nurse should be aware that AI should never take the place of:",
+      "options": [
+        "knowledge and wisdom.",
+        "nurses notes.",
+        "nursing experience.",
+        "tasks and procedures."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "The types of knowledge and wisdom brought by nurses is extremely difficult to functionally replicate within technology.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q73",
+      "stem": "The term data refers to the smallest unit of insight, commonly presented without background context, and possesses little meaning in isolation:",
+      "options": [
+        "data.",
+        "information.",
+        "knowledge.",
+        "wisdom."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Data is the smallest unit of insight, for example the number 150.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q74",
+      "stem": "Information that could be conceived as data that has been further contextualized to possess meaning, data plus meaning, is:",
+      "options": [
+        "data.",
+        "information.",
+        "knowledge.",
+        "wisdom."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Information is described by Matney et   al. (2011) as ―data plus meaning. Therefore, information could be conceived as data that has been further contextualized to possess meaning. For instance, the number 110 and 70 are both meaningless data. If the numbers of 110 and 70 are placed within the context and alignment of representing a blood pressure reading measured in millimeters of mercury (mm Hg), then the 110 and 70 can become evolved into information. W.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q75",
+      "stem": "Information that has been synthesized so that relationships are identified and formalized‖ is referred to as:",
+      "options": [
+        "data.",
+        "information.",
+        "knowledge.",
+        "wisdom."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "It is knowledge that allows a practitioner to rationalize through the information and promote the 110 and 70 in light of the correct context (i.e., systolic, diastolic measurements) and reasoning into knowledge.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q76",
+      "stem": "Actualized knowledge that uses insight to ―manage and solve human problems‖ is:",
+      "options": [
+        "data.",
+        "information.",
+        "knowledge.",
+        "wisdom."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "While knowledge is one of the higher levels of insight that a practitioner can possess, the extension to wisdom takes actualized knowledge and uses this insight to ―manage and solve human problems‖. Therefore, knowing a blood pressure of 110/70mm Hg was within a normal range would allow a clinician to execute wisdom traits and actions to man_age the care of a patient—including continuing clinical treatment and interventions for a patient presentation in which a blood pressure of 110/70mmHg is deemed normal.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q77",
+      "stem": "The use of AI intelligence in healthcare is to help nurses:",
+      "options": [
+        "see more patients in a shorter amount of time.",
+        "decrease the need for nurses to further their education",
+        "provide data to assist the nurses to make decisions.",
+        "make patient decisions"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Nurses need to prepare for the eventual infusion of systems that possess knowledge-generating capabilities such as those found with AI.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q78",
+      "stem": "A recent nursing graduate in a busy Emergency Department triages a patient who has sustained a large, deep puncture wound in his foot while working at a construction site. He is bleeding and is in pain. The nurse enters the triage data that she has obtained from the patient into a computerized, standard emergency patient-classification system. After she enters the assessment data, she notices an alert on the computer screen that prompts her to ask the patient about the status of his tetanus immunization. What system of technology is involved in generating the alert?",
+      "options": [
+        "Clinical decision support (CDS)",
+        "WL technology",
+        "Computerized provider order",
+        "Electronic health record"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Clinical decision support (CDS) is a clinical computer system, computer application, or process that helps health professionals make clinical decisions to enhance patient care. The clinical knowledge embedded in computer applications or work processes can range from simple facts and relationships to best practices for managing patients with specific disease states, new medical knowledge from clinical research, and other types of information.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q79",
+      "stem": "Despite the implementation of bar-code medication administration (BCMA) on your busy medical unit, you notice that the number of medication errors has not significantly decreased. Which of the following reasons might explain the lack of change in errors?",
+      "options": [
+        "A number of new medications have been introduced into the hospital pharmacy that are not yet recognized in the CDS.",
+        "There have been an unusually high number of patients on the unit who have been unable to confirm their identity at the time of medication administration.",
+        "Lack of staff understanding and support for BCMA has led to overrides or failures to scan bar codes during busy times.",
+        "Clinical data that have been entered into the system to guide administration of the medications are outdated."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Most errors related to technology involve mislabeled bar codes on medications, mistakes at order entry because of confusing computer screens, or issues with management of information. Errors also are related to dispensing devices and human factors, such as failure to scan bar codes or overrides of bar-code warnings.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q80",
+      "stem": "Robotics within healthcare environments can conceivably be described as task automating systems. Using devices such as TUG or Moxi can improve nurses‘ efficiency by:",
+      "options": [
+        "reducing the number of retrieval trips to various areas when supplies on a unit are inadequate",
+        "making decisions about the care a patient is to receive.",
+        "entering physician‘s orders into the hospital data system.",
+        "performing minor surgical procedures."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "The Moxi robot that can assist nurses with a variety of lower-knowledge tasks, including the collection of supplies, delivering lab samples, distribution of personal protective equipment, and couriering of medications. TUG boast similar functionalities in terms of being able to ferry equipment and supplies around a healthcare environment.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q81",
+      "stem": "As a nurse manager, one challenge is to orient new staff to your agency‘s policies and procedures, as well as to provide training across various shifts. A cost-effective and effective learning strategy would be:",
+      "options": [
+        "development of new learning modules and software to support document retrieval.",
+        "e-mail distribution to staff home e-mail addresses regarding important policies.",
+        "preparation of DVDs that can be viewed on computers at the nursing station during ―down times.",
+        "linking policies and procedures to the network for access when required at the point-of-care."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Knowledge technology consists of systems that generate or process knowledge and provide clinical decision support (CDS). The clinical knowledge embedded in computer applications can range from simple facts and relationships to best practices for managing patients with specific disease states, new medical knowledge from clinical research, and other types of information. The most accessible and cost-effective approach would be utilization of what is already available in the work environment, such as the systems that provide CDS.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q82",
+      "stem": "To improve outcomes on the stroke recovery unit, the unit manager leads an evidence-based practice (EBP) project. The goal of this project is to:",
+      "options": [
+        "enable detection of variations in clinical outcomes from well-researched standards that are supported by confirmatory evidence.",
+        "gain quick access to literature based on studies of patients and families who have experienced stroke.",
+        "develop a list of articles that could be accessed to address clinical issues and problems with stroke patients.",
+        "advance the development of staff who are able to conduct independent nursing research on stroke outcomes."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Several intelligent‖ clinical information systems are in place that collect good data and then translate nursing knowledge, such as well-researched standards, into reference materials at the point-of-care. In addition, computer applications assist nurses to take action and provide patient care based on the best evidence for practice.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q83",
+      "stem": "As part of an information technology implementation team, you are implementing a clinical decision support system. Particular considerations for successful implementation of this project include:",
+      "options": [
+        "ensuring that the system is reliable.",
+        "ensuring that patient information is reliable.",
+        "developing unique identifiers for individuals.",
+        "developing rules that support inferences."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Clinical decision support systems provide support for novice nurses, in particular, as they enable entry of real-time data from patient situations and inferences that apply the logic that expert nurses would use. These inferences require rules to be developed for the system.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q84",
+      "stem": "Automation technologies such as Moxi and TUG speaks to an emergent reality that the nursing profession must reflect on, including (Select all that apply.)",
+      "options": [
+        "tasks that should be allocated or provided to nonhuman service drones",
+        "deciding the tasks that nonhuman service drones will adopt.",
+        "nursing profession being eliminated due to robotics.",
+        "drone robots and other task automation technologies being factored into the clinical processes, care models, and health system delivery attributes of the future."
+      ],
+      "correct": [
+        "A",
+        "B",
+        "D"
+      ],
+      "rationale": "The use of process automation technologies also presents a range of evolving existential questions for the profession to consider, including (1) how much automation will be tolerated by clinicians and patients?; (2) what types of activities, knowledge, and behaviors can or should be automated?; and (3) what are the intended and unintended consequences of amplifying automation of nursing-centric activities and knowledge?",
+      "type": "multi_select"
+    },
+    {
+      "id": "Module_3_Q85",
+      "stem": "Nursing professionals in the twenty-first century will accomplish most of their work: a. through teams of internationally prepared professionals.",
+      "options": [
+        "in teams and through group work.",
+        "through long term, secure jobs.",
+        "in competitive environments and work groups."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "The future is about teams and group work. Competition will be out and collaboration will be in. Job security will be out and career options will be in. Our brightest and best may leave more often than they do at present to pursue career options internationally.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q86",
+      "stem": "Based on studies of workplace environments for nurses and future projections, the workplace of the future will be:",
+      "options": [
+        "less intense because of more technology.",
+        "about the same as it is now.",
+        "more intense because of more technology.",
+        "fluctuating between intense periods and less intense periods."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Technology will continue to revolutionize health care and contribute to complexity compression. In addition to access to knowledge, electronic records, and current applications of technology, technology will include robotics, which will change how chronic disease can be managed, and bioengineering will make possible interventions that do not yet exist.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q87",
+      "stem": "Which of the following actions is most representative of how health care of the future might be delivered? As a nurse leader, you:",
+      "options": [
+        "refer families who require immediate help to a local food bank. You also work with local agencies and families to establish mothers collective in which mothers learn about nutrition and prepare low-cost, nutritious meals that are shared with the mothers in the collective.",
+        "work together with a local agency to set up a free clinic in which addicts and the homeless can receive free health care and prescriptions for immediate needs.",
+        "ensure that individuals who are admitted to your unit are asked about their smoking history and that preoperative and postoperative planning takes into account how smoking will affect status during and after surgery.",
+        "address the health of those who are overweight and obese on your unit by ensuring that hospital meals offer nutritious, healthy food choices that are satisfying."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Referral to a food bank addresses the needs of a specific population, while exemplifying an important leadership strength: thinking long-term, acting short-term. The project that involves mothers will teach mothers about nutrition and engage them in preparation of low-cost, healthy meals while promoting longer term changes in healthy eating.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q88",
+      "stem": "You notice that wait times in your Emergency Department are growing longer, because of factors such as increases in the numbers of persons with chronic disorders, discharge of patients into the community at a higher level of acuity, and limited resources for transfer of inpatients. You begin to think about an application that would use your knowledge of the Emergency Department but also software and business applications and wonder if this would reduce wait times. You have not encountered anything similar to this idea. According to the Wise Forecast Model©, you are in what phase?",
+      "options": [
+        "Wild thinking",
+        "Act widely",
+        "Think wildly",
+        "Learn widely"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "The second step in the Wise Forecast Model© is to think wildly. Step two is designed to create connections among disparate thoughts. This thinking might be seen as the start of innovations.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q89",
+      "stem": "Your organization is in the middle of re-designing patient care units, with decisions based on best practices and various other sources of evidence. In the middle of the transition, there is a temporary halt called to the transition because of a re-design of the health care system and greater emphasis on primary care. What would be a healthy response to this situation?",
+      "options": [
+        "Salvage as much of the original planning as possible so as to reduce expenditures.",
+        "Engage in consultation to create innovative solutions that bridge the existing plans and the new directions.",
+        "Abandon the current planning in favor of addressing the new trends.",
+        "Continue with the current planning because trends come and go."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Stability and total chaos are the ends of a continuum. Moving in some way between those two ends suggests that we live in a constant state of disequilibrium in which we strive toward stability while recognizing we experience chaos. As we continue to move from ―traditional‖ practices to evidence-based ones and from a heavy focus on tertiary care to one that values primary care, we can assume that we might experience more chaos. Chaos can lead to new learning and new, innovative solutions. As nurses, it is important to be able to function in an evolving environment.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q90",
+      "stem": "As a nurse manager, it is important to become a future thinker. Which is an example of a future thinker?",
+      "options": [
+        "Keeping traditional practices",
+        "Moving toward evidence-based practices",
+        "Finding less need for more knowledge",
+        "Believing that macromarketing will be a necessity"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Future forecasts include evolutions in power, structure, and knowledge; rapid change in the healthcare system; the demise of macromarketing; and increased evidence-based practice.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q91",
+      "stem": "As a team, you and the staff have determined that there is a need to reduce medication errors on your unit. Together, you developed the questions that you would like addressed and searched the literature for relevant research studies. Based on the evidence, you suggested a change to your practices and now are involved in implementation of these changes. Today, there was a major study released that would significantly change what you have decided to do. What are you and your staff experiencing?",
+      "options": [
+        "Compression complexity",
+        "Distress",
+        "Information lag",
+        "Technology advancement"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "This situation exemplifies complexity compression, a term that means many changes are happening almost simultaneously and before one practice can be firmly implanted in our minds, we are already addressing some other new change. This compression can be distracting or useful.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q92",
+      "stem": "Nursing research has indicated that the foundation for becoming a nursing leader is the ability to:",
+      "options": [
+        "write effectively.",
+        "speak two or three languages.",
+        "focus on day-to-day priorities.",
+        "think futuristically."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q93",
+      "stem": "The chief nursing officer has been developing her portfolio for years. What is the chief nursing officer modeling?",
+      "options": [
+        "Her clinical expertise",
+        "Affection for tradition",
+        "Her employability",
+        "Her busy professional life"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Being employed is no longer sufficient; we must be employable. A portfolio outlines achievements and experiences that communicate employability.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q94",
+      "stem": "Your unit has several patients who have undergone limb amputation. In working with the clients, you begin to think beyond therapies such as pharmacotherapeutics and surgery and you explore biomechanics, robotics, mind-body approaches, and cognitive behavioral therapies as possibilities in working with these clients. You begin to amass information in several areas with which you previously had little familiarity. According to the Wise Forecast Model©, you are:",
+      "options": [
+        "acting wildly.",
+        "learning wildly.",
+        "engaging in interprofessional care.",
+        "increasing your complexity compression."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "The first step, learn widely, means that we must extend our sources of knowledge beyond our role and clinical areas of interest. In fact we must extend our learning beyond nursing and health care. Widely might encompass another discipline such as architecture or engineering.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q95",
+      "stem": "The starfish analogy is exemplified in which of the following?",
+      "options": [
+        "A unit manager resigns after continued tension between the administration and her regarding implementation of primary nursing. The primary nursing project dies.",
+        "Nurses try to establish a clinic that provides ambulatory care to parents and young children in an impoverished neighborhood. Community members advocate for funding from political leaders and insurers.",
+        "Alana, a new graduate, promotes continence care based on evidence. When she presents her ideas, senior staff refuses to consider it.",
+        "The head of a community health service moves on to another position. Programs are disbanded."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "The starfish analogy points to the connectivity that we have with one another and how we influence and are influenced by others all the time. This affords many opportunities for leadership that are dependent not on formal titles but on opportunities to shape the work at hand.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q96",
+      "stem": "Which of the following will require greater attention in the future?",
+      "options": [
+        "Chronic disorders",
+        "Obstetrical outcomes",
+        "Prevention of hospital-based errors",
+        "Team conflict resolution strategies"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Lifestyle choices, obesity, and an aging population will lead to an increased emphasis on prevention, personal accountability, and innovations such as robotics in the management of chronic illnesses.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q97",
+      "stem": "Which of the following strategies is most important in developing a strong vision?",
+      "options": [
+        "Seeking out evidence to support trends and out-of-the-box thinking",
+        "Spending time with others with whom we discuss ideas",
+        "Setting up focus groups to provide information on current realities",
+        "Being honest and open about what we think for the future"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Regardless of how we go about developing our vision (gathering evidence, testing ideas with others), honesty and openness are foundational to a strong vision.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q98",
+      "stem": "To move beyond stereotypical thinking and toward thinking about the future, which of the following would be most consistent with thinking wildly in the Wise Forecast Model©?",
+      "options": [
+        "Listing everything that we know about our current situation",
+        "Defining which practices will remain unchanged and which will change",
+        "Asking someone with a great deal of experience to share ideas about best practice",
+        "Challenging current and future practices with questions of ―what if?"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Thinking wildly includes creating wild questions. Sometimes they are what lead to a wild idea.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q99",
+      "stem": "Which aspect of our tradition and history in nursing may impede our movement toward future-oriented thinking?",
+      "options": [
+        "Lack of confidence",
+        "Focus on the discipline of nursing",
+        "Focus on details in the everyday practice",
+        "Mistrust of trends and new evidence"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Because of our history of attention to details, we may need to challenge ourselves in developing our ability for leadership. Moving from micromanaging to focusing on setting expectations for those for whom we are accountable may feel uncomfortable. However, that movement reinforces our ability to deal with longer term issues.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q100",
+      "stem": "A stroke unit experiences numerous changes related to implementation of new technology, a changed nursing care delivery model, and staff turnover within a period of 6 months. Staff members begin to show signs of reluctance to implement any more changes. This exemplifies:",
+      "options": [
+        "a poor relationship between leaders and staff.",
+        "lack of knowledge regarding the importance of changes.",
+        "striving to achieve stability during great disequilibrium.",
+        "the importance of chaos in promoting adherence with established practices."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Stability and chaos are at opposite ends of a continuum. When chaos is present, change occurs but life may seem uncontrollable. Resisting further change is a move toward establishment of equilibrium.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q101",
+      "stem": "A stroke unit experiences numerous changes related to implementation of new technology, a changed nursing care delivery model, and staff turnover within a period of 6 months. Staff members begin to show signs of reluctance to implement any more changes. The phenomenon experienced by the staff is termed:",
+      "options": [
+        "eustress.",
+        "care process.",
+        "stereotypical thinking.",
+        "complexity compression."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Complexity compression refers to many changes occurring simultaneously before time is sufficient to assimilate the change.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q102",
+      "stem": "A business condition that may assist forecasting but add to the complexity of change is:",
+      "options": [
+        "consulting with professional groups about change.",
+        "researching about trends on futuristic sites.",
+        "asking patients to examine options for change.",
+        "building profit projects and sustainability into planning."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "It is suggested to ask the customer for feedback on options may assist with forecasting. Adopting this strategy runs counter to current practice and would increase the complexity of healthcare planning and forecasting.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q103",
+      "stem": "Several changes are introduced to a unit, including changes to familiar clinical procedures and the use of WOWs to enable bedside documentation. You, as unit manager, anticipate which of the following will contribute most to complexity compression?",
+      "options": [
+        "Meaning of the change",
+        "Pace of changes",
+        "Previous experiences with change",
+        "Confidence of the leader in the value of the change"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Complexity compression is a term that means that many changes are happening almost simultaneously and before one practice can be firmly implanted in our minds, we are already addressing some other change",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q104",
+      "stem": "In order to plan long term, you consider what the client of the future will look like. Which of the following client profiles would best capture shifting demographics and trends in health care?",
+      "options": [
+        "Younger, knowledgeable about health options",
+        "Female, uses emergency care services for parents and children",
+        "Older, one or more chronic disorders, diverse background",
+        "Male, various occupationally generated disorders, diverse ethnic background ANWERS: C",
+        "The expectations and design of educational programs means that new graduates are better prepared for the work force.",
+        "The new graduate will still have to learn, but it will be job-specific learning.",
+        "An ideal learning plan for nurses emphasizes followership.",
+        "The amount and intensity of knowledge demands lifelong learning that includes assessment of relevancy of knowledge for practice."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Knowledge will change dramatically, requiring that we all be dedicated learners. With or without state law, continuing education will be mandatory and essential. Knowledge will evolve from the intensity of the current information evolution so that we will access content with meaning and applicability for our work.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q105",
+      "stem": "A necessary leadership strength for nurses of the future is:",
+      "options": [
+        "inspiring others to work their best to create the future.",
+        "understanding the nuances of fundraising to make up funding shortfall.",
+        "guarding the tendency of other professions to encroach on nursing roles.",
+        "adapting work life to an aging nursing work force."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Senge said that leadership is really about people working at their best to create the future. Predictions of the future highlight the importance of interprofessional teams and of a shift toward understanding the importance of health care.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q106",
+      "stem": "Nathan tells you that he has selected nursing as a career because many jobs are available and he will have job security. Your best response to Nathan is:",
+      "options": [
+        "With many young people going overseas, many jobs and options will be available. Stable jobs and job security will be part of the nursing employment market.",
+        "The job market for nurses will be diminished with funding cuts to hospitals.",
+        "The employment prospects for nurses are positive with many options to choose from. Flexibility and adaptability are essential to income security.",
+        "It is unlikely that nursing will survive in the long term with funding cuts and a declining population of seniors."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Employment for nurses continues to be positive, although roles will change in a rapidly changing environment, which will increase options. With the number of options available and sporadic work opportunities, nurses will need to be flexible and able to adapt rapidly. Job security will be out; career options will be in.",
+      "type": "single_select"
+    },
+    {
+      "id": "Module_3_Q107",
+      "stem": "In developing curricula that will address needs based on forecasts for the future, nursing educators need to contemplate: (Select all that apply.)",
+      "options": [
+        "prevention strategies.",
+        "leadership skills and knowledge.",
+        "violence de-escalation strategies.",
+        "strategies for job security."
+      ],
+      "correct": [
+        "A",
+        "B",
+        "C"
+      ],
+      "rationale": "Future forecasts suggest that health factors such as obesity that are implicated in the development of chronic disorders will increase, as will chronic disease. Leadership skills have been identified as a key competence for nurses of tomorrow, and competence with technology will be needed as technology continues to revolutionize health care. Rather than emphasizing job security, nurses will need to be prepared to be in an environment with many options and episodic employment.",
+      "type": "multi_select"
+    }
+  ]
+}
