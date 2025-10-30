@@ -5,7 +5,7 @@
    - Random sampling (10/25/50/100/Full)
    - Mastery loop + adaptive "wrong buffer" reinjection
    - Keyboard support: Enter (submit/next), A–Z toggle
-   - Rationale is hidden until AFTER submit
+   - Rationale stays hidden until AFTER submit
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -32,7 +32,6 @@ const rationale     = $('rationale');
 
 // Summary + review
 const summary     = $('summary');
-const restartBtn  = $('restartBtn');
 const reviewEl    = $('review');
 const reviewList  = $('reviewList');
 
@@ -54,7 +53,7 @@ async function discoverModules(){
       moduleSel.innerHTML = mods.map(m => `<option value="${m}">${m}</option>`).join('');
     }
   } catch {
-    // Fallback: let any options in the HTML remain, and try a light probe
+    // Fallback: keep whatever is in HTML, plus probe a common bank
     fetch('/Pharm_Quiz_HESI.json', { method: 'HEAD' })
       .then(r => { if (r.ok) moduleSel.add(new Option('Pharm_Quiz_HESI', 'Pharm_Quiz_HESI')); })
       .catch(() => {});
@@ -158,12 +157,10 @@ function toLetterArray(val, optionsObj){
       if (typeof v === 'string' && letters.has(v.toUpperCase())) {
         arr.push(v.toUpperCase());
       } else if (typeof v === 'number') {
-        // index -> letter
         const idx = v|0;
         const letter = indexToLetter(idx);
         if (optionsObj[letter]) arr.push(letter);
       } else if (typeof v === 'string') {
-        // try to match by option text
         const letter = findLetterByText(v, optionsObj);
         if (letter) arr.push(letter);
       }
@@ -172,11 +169,9 @@ function toLetterArray(val, optionsObj){
   }
 
   if (typeof val === 'string') {
-    // Handle "B", "AC", "A, C", "B and D", etc.
     const s = val.toUpperCase();
     const found = s.match(/[A-Z]/g);
     if (found) return [...new Set(found)];
-    // Maybe it's full text
     const byText = findLetterByText(val, optionsObj);
     return byText ? [byText] : [];
   }
@@ -232,7 +227,6 @@ function removeFromWrongBufferById(id){
 }
 
 function maybeInjectWrongBuffer(){
-  // Inject if threshold met OR when queue drained but buffer still has items
   if ((wrongSinceInjection >= reinjectThreshold && wrongBuffer.length) ||
       (state.queue.length === 0 && wrongBuffer.length)) {
     state.queue = wrongBuffer.splice(0).concat(state.queue);
@@ -306,11 +300,9 @@ function setsEqual(aSet, bSet){
 }
 
 function loadNext(){
-  // If queue empty, try to inject wrong buffer
   maybeInjectWrongBuffer();
 
   if (state.queue.length === 0) {
-    // End of run
     quiz.classList.add('hidden');
     summary.classList.remove('hidden');
 
@@ -323,8 +315,6 @@ function loadNext(){
 
     runCounter.textContent = `Run complete — ${total} questions`;
     remainingCounter.textContent = '';
-    summary.querySelector('[data-first-try]')?.remove?.();
-    // If your HTML has a summary block, you can inject stats here.
     return;
   }
 
@@ -475,31 +465,44 @@ function handleSubmit(){
   updateCounters();
 }
 
-function loadFirstQuestion(){
-  state.idx = 0;
-  loadNext();
-}
-
 function resetQuiz(){
+  // Clear state
   state = null;
+
+  // Clear adaptive buffer
+  wrongBuffer = [];
+  wrongBufferSet = new Set();
+  wrongSinceInjection = 0;
+
+  // Hide quiz UI, show launcher
   quiz.classList.add('hidden');
   summary.classList.add('hidden');
   launcher.classList.remove('hidden');
 
+  // Reset UI pieces
   runCounter.textContent = '';
   remainingCounter.textContent = '';
-
   optionsForm.innerHTML = '';
   feedback.textContent = '';
   feedback.className = 'feedback';
   answerLine.innerHTML = '';
+
+  // Hide rationale
   rationale.textContent = '';
   rationale.classList.add('hidden');
 
+  // Disable action buttons until a new selection is made
   submitBtn.disabled = true;
   nextBtn.disabled = true;
 
   currentInputsByLetter = {};
+
+  // Optional: restore default length button styling
+  const def = lengthBtns.querySelector('[data-len].seg-btn');
+  if (def) {
+    [...lengthBtns.querySelectorAll('.seg-btn')].forEach(b => b.classList.remove('active'));
+    def.classList.add('active');
+  }
 }
 
 // -------------------- Counters --------------------
@@ -538,13 +541,11 @@ document.addEventListener('keydown', (e) => {
     if (input.type === 'checkbox') {
       input.checked = !input.checked;
     } else if (input.type === 'radio') {
-      // allow unselecting the same radio by pressing again
       if (input.checked) {
         input.checked = false;
       } else {
         input.checked = true;
       }
-      // ensure only one radio remains selected
       if (input.checked) {
         [...optionsForm.querySelectorAll('input[type="radio"]')].forEach(r => {
           if (r !== input) r.checked = false;
@@ -559,7 +560,29 @@ document.addEventListener('keydown', (e) => {
 startBtn.addEventListener('click', startQuiz);
 submitBtn.addEventListener('click', handleSubmit);
 nextBtn.addEventListener('click', loadNext);
-restartBtn.addEventListener('click', resetQuiz);
+
+// Bind to ANY plausible reset trigger
+const resetCandidates = [
+  document.getElementById('restartBtn'),
+  document.getElementById('resetBtn'),
+  document.querySelector('[data-reset]'),
+  document.querySelector('.reset-quiz')
+].filter(Boolean);
+
+resetCandidates.forEach(el => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    resetQuiz();
+  });
+});
+
+// Delegated safety net for dynamically-rendered reset buttons
+document.addEventListener('click', (e) => {
+  const t = e.target.closest('#restartBtn, #resetBtn, [data-reset], .reset-quiz');
+  if (!t) return;
+  e.preventDefault();
+  resetQuiz();
+});
 
 // -------------------- Utils --------------------
 function escapeHTML(s=''){
