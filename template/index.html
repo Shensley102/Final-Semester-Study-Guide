@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Study Quiz</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <h1>Study Quiz</h1>
+      <div class="meta">
+        <span id="runCounter" aria-live="polite"></span>
+        <span id="remainingCounter" aria-live="polite"></span>
+      </div>
+    </header>
+
+    <!-- Launcher -->
+    <section id="launcher" class="card">
+      <div class="row">
+        <label for="moduleSel">Module</label>
+        <select id="moduleSel">
+          <!-- Will be auto-populated from /modules; leave blank fallback optional -->
+          <option value="Module_1">Module_1</option>
+          <option value="Module_2">Module_2</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label>Length</label>
+        <div id="lengthBtns" class="seg">
+          <button data-len="10" class="seg-btn active">10</button>
+          <button data-len="25" class="seg-btn">25</button>
+          <button data-len="50" class="seg-btn">50</button>
+          <button data-len="100" class="seg-btn">100</button>
+          <button data-len="full" class="seg-btn">Full</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <button id="startBtn" class="primary">Start Quiz</button>
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section id="quiz" class="card hidden" aria-live="polite">
+      <div id="qHead" class="qhead">
+        <div id="qNumber"></div>
+      </div>
+
+      <h2 id="questionText" class="qtext"></h2>
+
+      <form id="optionsForm" class="options" autocomplete="off"></form>
+
+      <div class="actions">
+        <button id="submitBtn" class="primary" disabled>Submit</button>
+        <button id="nextBtn" class="ghost" disabled>Next</button>
+      </div>
+
+      <div id="feedback" class="feedback" aria-live="polite"></div>
+      <div id="answerLine" class="answer"></div>
+      <div id="rationale" class="rationale"></div>
+
+      <div class="bottomRow">
+        <button id="resetQuizBtn" class="ghost danger" type="button">Reset Quiz</button>
+      </div>
+    </section>
+
+    <!-- Summary -->
+    <section id="summary" class="card hidden">
+      <h2>All questions mastered!</h2>
+
+      <div class="summaryStats">
+        <div id="fta"></div>
+        <div id="totalSub"></div>
+      </div>
+
+      <div class="row">
+        <button id="restartBtn" class="primary">Start New Quiz</button>
+      </div>
+
+      <details id="review" class="review">
+        <summary>Review all questions, answers & rationales</summary>
+        <div id="reviewList"></div>
+      </details>
+    </section>
+  </main>
+
+  <script src="/static/script.js" defer></script>
+</body>
+</html>
