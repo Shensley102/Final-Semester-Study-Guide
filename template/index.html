@@ -68,7 +68,19 @@
 
     <!-- Summary / Review -->
     <section id="summary" class="card hidden">
-      <h2>Review</h2>
+      <h2>Results</h2>
+
+      <!-- New: first-try stats -->
+      <div id="firstTrySummary" class="summary-stats hidden">
+        <div class="stat-row">
+          <span class="stat-label">First-try correct:</span>
+          <span class="stat-value">
+            <span id="firstTryPct">0%</span>
+            <span class="stat-small">(<span id="firstTryCount">0</span>/<span id="firstTryTotal">0</span>)</span>
+          </span>
+        </div>
+      </div>
+
       <details id="review" open>
         <summary>Show results</summary>
         <div id="reviewList" class="review-list"></div>
