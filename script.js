@@ -1,11 +1,11 @@
 /* -----------------------------------------------------------
-   Study Quiz - frontend
-   - Discovers available banks from /modules
-   - Fetches <name>.json and normalizes into internal format
-   - Random sampling (10/25/50/100/Full)
-   - Mastery loop + adaptive "wrong buffer" reinjection
-   - Keyboard support: Enter (submit/next), A–Z toggle
-   - Rationale is hidden until AFTER submit
+   Final-Semester-Study-Guide - Quiz Frontend (first-try % fixed)
+   - SATA answers on separate lines
+   - Auto-scroll after submit & on next question
+   - Dynamic page title / H1 per selected module
+   - Adaptive buffer: 5% for Full, 15% otherwise
+   - FULL runs are fully shuffled
+   - Summary shows % correct on first try (robust)
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -30,11 +30,19 @@ const feedback      = $('feedback');
 const answerLine    = $('answerLine');
 const rationale     = $('rationale');
 
+// Title
+const pageTitleEl = $('pageTitle');
+const defaultTitleText = pageTitleEl?.textContent || document.title;
+const defaultDocTitle  = document.title;
+
 // Summary + review
-const summary     = $('summary');
-const restartBtn  = $('restartBtn');
-const reviewEl    = $('review');
-const reviewList  = $('reviewList');
+const summary        = $('summary');
+const reviewEl       = $('review');
+const reviewList     = $('reviewList');
+const firstTryWrap   = $('firstTrySummary');
+const firstTryPctEl  = $('firstTryPct');
+const firstTryCntEl  = $('firstTryCount');
+const firstTryTotEl  = $('firstTryTotal');
 
 // -------------------- App state --------------------
 let state = null;  // null when no quiz is running
@@ -54,9 +62,9 @@ async function discoverModules(){
       moduleSel.innerHTML = mods.map(m => `<option value="${m}">${m}</option>`).join('');
     }
   } catch {
-    // Fallback: let any options in the HTML remain, and try a light probe
-    fetch('/Pharm_Quiz_HESI.json', { method: 'HEAD' })
-      .then(r => { if (r.ok) moduleSel.add(new Option('Pharm_Quiz_HESI', 'Pharm_Quiz_HESI')); })
+    // Fallback probe for a likely bank under the new naming
+    fetch('/Final-Semester-Study-Guide_Pharm_Quiz_HESI.json', { method: 'HEAD' })
+      .then(r => { if (r.ok) moduleSel.add(new Option('Final-Semester-Study-Guide_Pharm_Quiz_HESI', 'Final-Semester-Study-Guide_Pharm_Quiz_HESI')); })
       .catch(() => {});
   }
 }
@@ -81,13 +89,17 @@ function randomInt(max){
   }
   return Math.floor(Math.random() * max);
 }
-
+function shuffleInPlace(arr){
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = randomInt(i + 1);
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
 function sampleQuestions(arr, requested){
   const copy = arr.slice();
-  if (requested === 'full' || requested >= copy.length) return copy;
-
+  if (requested === 'full' || requested >= copy.length) return shuffleInPlace(copy);
   const k = Math.max(0, requested | 0);
-  // partial Fisher–Yates
   for (let i = 0; i < k; i++) {
     const j = i + randomInt(copy.length - i);
     [copy[i], copy[j]] = [copy[j], copy[i]];
@@ -97,32 +109,24 @@ function sampleQuestions(arr, requested){
 
 // -------------------- Normalization --------------------
 function normalizeQuestions(raw){
-  // Some banks use { questions: [...] }, others are already arrays.
   const items = Array.isArray(raw) ? raw : (raw.questions || raw.Questions || []);
   let idCounter = 1;
 
   return items.map((item) => {
     const q = {};
     q.id = item.id || `q${idCounter++}`;
-
-    // Stem
     q.question = (item.question || item.stem || item.prompt || '').toString().trim();
 
-    // Options can be object {A:"",B:""} or array
     let options = item.options || item.choices || item.answers || item.Options || null;
-
     if (Array.isArray(options)) {
-      // Convert array -> letters
       const obj = {};
       const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
       options.forEach((opt, i) => {
-        const text = typeof opt === 'string' ? opt
-                   : (opt.text || opt.label || opt.value || '');
+        const text = typeof opt === 'string' ? opt : (opt.text || opt.label || opt.value || '');
         obj[letters[i]] = text;
       });
       q.options = obj;
     } else if (options && typeof options === 'object') {
-      // Normalize keys to letters A, B, C...
       const obj = {};
       for (const [k,v] of Object.entries(options)) {
         const letter = (k.match(/[A-Z]/i) ? k.toUpperCase() : null);
@@ -133,67 +137,45 @@ function normalizeQuestions(raw){
       q.options = { A: 'Option 1', B: 'Option 2', C: 'Option 3', D: 'Option 4' };
     }
 
-    // Correct answers -> array of letters
     const corr = item.correct ?? item.answer ?? item.answers ?? item.Correct ?? item.correct_answer ?? item.correctAnswers;
     q.correctLetters = toLetterArray(corr, q.options);
 
-    // Rationale / explanation
     q.rationale = (item.rationale || item.explanation || item.reason || '').toString();
-
-    // Keep type if provided; fallback to SATA detection later
     q.type = item.type || null;
-
     return q;
   }).filter(q => q.question && Object.keys(q.options).length);
 }
-
 function toLetterArray(val, optionsObj){
   if (!val) return [];
   const letters = new Set('ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(''));
-
-  // If already array
   if (Array.isArray(val)) {
     const arr = [];
     for (const v of val) {
-      if (typeof v === 'string' && letters.has(v.toUpperCase())) {
-        arr.push(v.toUpperCase());
-      } else if (typeof v === 'number') {
-        // index -> letter
-        const idx = v|0;
-        const letter = indexToLetter(idx);
+      if (typeof v === 'string' && letters.has(v.toUpperCase())) arr.push(v.toUpperCase());
+      else if (typeof v === 'number') {
+        const letter = indexToLetter(v|0);
         if (optionsObj[letter]) arr.push(letter);
       } else if (typeof v === 'string') {
-        // try to match by option text
         const letter = findLetterByText(v, optionsObj);
         if (letter) arr.push(letter);
       }
     }
     return [...new Set(arr)];
   }
-
   if (typeof val === 'string') {
-    // Handle "B", "AC", "A, C", "B and D", etc.
     const s = val.toUpperCase();
     const found = s.match(/[A-Z]/g);
     if (found) return [...new Set(found)];
-    // Maybe it's full text
     const byText = findLetterByText(val, optionsObj);
     return byText ? [byText] : [];
   }
-
   if (typeof val === 'number') {
     const letter = indexToLetter(val|0);
     return optionsObj[letter] ? [letter] : [];
   }
-
   return [];
 }
-
-function indexToLetter(i){
-  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  return letters[i] || 'A';
-}
-
+function indexToLetter(i){ return 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[i] || 'A'; }
 function findLetterByText(text, optionsObj){
   const norm = (''+text).trim().toLowerCase();
   for (const [L, t] of Object.entries(optionsObj)) {
@@ -212,27 +194,20 @@ function initAdaptiveBufferForQuiz(){
   wrongBuffer = [];
   wrongBufferSet = new Set();
   wrongSinceInjection = 0;
-
   const n = state.totalRequested || 0;
-  reinjectThreshold = Math.max(1, Math.ceil(n * 0.15));
+  const pct = state.isFullRun ? 0.05 : 0.15;   // 5% for Full, 15% otherwise
+  reinjectThreshold = Math.max(1, Math.ceil(n * pct));
 }
-
 function addToWrongBuffer(q){
-  if (!wrongBufferSet.has(q.id)) {
-    wrongBuffer.push(q);
-    wrongBufferSet.add(q.id);
-  }
+  if (!wrongBufferSet.has(q.id)) { wrongBuffer.push(q); wrongBufferSet.add(q.id); }
 }
-
 function removeFromWrongBufferById(id){
   if (wrongBufferSet.has(id)) {
     wrongBuffer = wrongBuffer.filter(x => x.id !== id);
     wrongBufferSet.delete(id);
   }
 }
-
 function maybeInjectWrongBuffer(){
-  // Inject if threshold met OR when queue drained but buffer still has items
   if ((wrongSinceInjection >= reinjectThreshold && wrongBuffer.length) ||
       (state.queue.length === 0 && wrongBuffer.length)) {
     state.queue = wrongBuffer.splice(0).concat(state.queue);
@@ -268,12 +243,10 @@ function renderQuestion(q){
     text.innerHTML = `<span class="letter">${letter}.</span> ${escapeHTML(q.options[letter])}`;
 
     currentInputsByLetter[letter] = input;
-
     label.append(input, text);
     optionsForm.appendChild(label);
   });
 
-  // Enable/disable submit whenever selection changes
   optionsForm.addEventListener('change', updateSubmitEnabled);
 
   submitBtn.disabled = true;
@@ -283,48 +256,52 @@ function renderQuestion(q){
   feedback.className = 'feedback';
   answerLine.innerHTML = '';
 
-  // Hide rationale until submit
   rationale.textContent = '';
   rationale.classList.add('hidden');
-}
 
+  requestAnimationFrame(() => {
+    quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
 function updateSubmitEnabled(){
   const anyChecked = optionsForm.querySelector('input:checked') !== null;
   submitBtn.disabled = !anyChecked;
 }
-
 function formatCorrectAnswers(q){
   const letters = q.correctLetters?.length ? q.correctLetters : [];
   const parts = letters.map(L => `${L}. ${q.options[L] ?? ''}`);
-  return parts.join('  •  ');
+  const isMulti = (q.type === 'multi_select') || EXACT_SATA.test(q.question) || (letters.length > 1);
+  return isMulti ? parts.join('<br>') : parts.join('  •  ');
 }
-
 function setsEqual(aSet, bSet){
   if (aSet.size !== bSet.size) return false;
   for (const v of aSet) if (!bSet.has(v)) return false;
   return true;
 }
 
+// -------------------- Flow --------------------
 function loadNext(){
-  // If queue empty, try to inject wrong buffer
   maybeInjectWrongBuffer();
 
   if (state.queue.length === 0) {
-    // End of run
     quiz.classList.add('hidden');
     summary.classList.remove('hidden');
 
-    const total = state.totalRequested;
-    const firstTry = state.totalFirstTry;
-    const firstPct = total ? Math.round((firstTry / total) * 100) : 0;
+    // Compute robust first-try stats from the finished pool
+    const total = state.totalRequested || 0;
+    const first = (state.pool || []).filter(q => q.firstTryCorrect).length;
+    const pct = total ? Math.round((first / total) * 100) : 0;
+
+    if (firstTryPctEl) firstTryPctEl.textContent = `${pct}%`;
+    if (firstTryCntEl) firstTryCntEl.textContent = String(first);
+    if (firstTryTotEl) firstTryTotEl.textContent = String(total);
+    if (firstTryWrap) firstTryWrap.classList.remove('hidden');
 
     reviewEl.open = false;
     reviewList.innerHTML = state.review.map(buildReviewItemHTML).join('');
 
     runCounter.textContent = `Run complete — ${total} questions`;
     remainingCounter.textContent = '';
-    summary.querySelector('[data-first-try]')?.remove?.();
-    // If your HTML has a summary block, you can inject stats here.
     return;
   }
 
@@ -336,23 +313,22 @@ function loadNext(){
   renderQuestion(q);
   updateCounters();
 }
-
 function buildReviewItemHTML(entry){
   const q = entry.q;
   const correct = entry.correctLetters || [];
   const user = entry.userLetters || [];
   const isCorrect = entry.wasCorrect;
 
-  const correctText = correct.map(L => `${L}. ${escapeHTML(q.options[L] || '')}`).join('  •  ');
-  const userText = user.map(L => `${L}. ${escapeHTML(q.options[L] || '')}`).join('  •  ');
+  const correctText = correct.map(L => `${L}. ${escapeHTML(q.options[L] || '')}`).join('<br>');
+  const userText = user.map(L => `${L}. ${escapeHTML(q.options[L] || '')}`).join('<br>');
 
   const rationaleHTML = q.rationale ? `<div class="rev-rationale"><strong>Rationale:</strong> ${escapeHTML(q.rationale)}</div>` : '';
 
   return `
     <div class="rev-item ${isCorrect ? 'ok' : 'bad'}">
       <div class="rev-q">${escapeHTML(q.question)}</div>
-      <div class="rev-ans"><strong>Correct:</strong> ${correctText || '(none provided)'}</div>
-      <div class="rev-user"><strong>Your answer:</strong> ${userText || '(none)'}</div>
+      <div class="rev-ans"><strong>Correct:</strong><br>${correctText || '(none provided)'}</div>
+      <div class="rev-user"><strong>Your answer:</strong><br>${userText || '(none)'}</div>
       ${rationaleHTML}
     </div>
   `;
@@ -361,7 +337,6 @@ function buildReviewItemHTML(entry){
 // -------------------- Handlers --------------------
 async function startQuiz(){
   startBtn.disabled = true;
-
   try {
     const selected = moduleSel.value;
     if (!selected) throw new Error('Select a module first.');
@@ -369,21 +344,25 @@ async function startQuiz(){
 
     const res = await fetch(`/${bankName}?_=${Date.now()}`, { cache: 'no-store' });
     if (!res.ok) throw new Error(`Failed to fetch ${bankName}`);
-    const data = await res.json();
+    const text = await res.text();
+    const data = JSON.parse(text);
 
     const all = normalizeQuestions(data);
     const chosen = sampleQuestions(all, pickedLength);
 
     state = {
-      pool: chosen.map(q => ({ ...q, attempts: 0, mastered: false })),
+      pool: chosen.map(q => ({ ...q, attempts: 0, mastered: false, firstTryCorrect: false })),
       queue: chosen.slice(),
       idx: 0,
       shownCount: 0,
       review: [],
-      totalFirstTry: 0,
       totalRequested: chosen.length,
-      totalSubmissions: 0
+      isFullRun: (pickedLength === 'full') || (chosen.length === all.length)
     };
+
+    // Dynamic page title/H1
+    document.title = selected;
+    if (pageTitleEl) pageTitleEl.textContent = selected;
 
     initAdaptiveBufferForQuiz();
 
@@ -407,7 +386,6 @@ async function startQuiz(){
     startBtn.disabled = false;
   }
 }
-
 function handleSubmit(){
   const q = state?.pool[state?.idx];
   if (!q) return;
@@ -415,7 +393,6 @@ function handleSubmit(){
   const picked = [...optionsForm.querySelectorAll('input:checked')].map(i => i.value);
   if (picked.length === 0) return;
 
-  state.totalSubmissions += 1;
   q.attempts += 1;
 
   const correctSet = new Set((q.correctLetters || []).map(s => s.toUpperCase()));
@@ -425,12 +402,12 @@ function handleSubmit(){
   const fullCorrectText = formatCorrectAnswers(q);
 
   if (isCorrect) {
-    if (q.attempts === 1) state.totalFirstTry += 1;
+    if (q.attempts === 1) q.firstTryCorrect = true; // <— record first-try success
     q.mastered = true;
 
     feedback.textContent = 'Correct!';
     feedback.className = 'feedback ok';
-    answerLine.innerHTML = `<div class="answerText">${escapeHTML(fullCorrectText)}</div>`;
+    answerLine.innerHTML = `<div class="answerText">${fullCorrectText}</div>`;
 
     removeFromWrongBufferById(q.id);
   } else {
@@ -438,14 +415,12 @@ function handleSubmit(){
     feedback.className = 'feedback bad';
     answerLine.innerHTML = `
       <div class="answerLabel">Correct Answer:</div>
-      <div class="answerText">${escapeHTML(fullCorrectText)}</div>
+      <div class="answerText">${fullCorrectText}</div>
     `;
-
     addToWrongBuffer(q);
     wrongSinceInjection += 1;
   }
 
-  // Show rationale only after submit
   if (q.rationale && q.rationale.trim()) {
     rationale.textContent = q.rationale;
     rationale.classList.remove('hidden');
@@ -454,41 +429,41 @@ function handleSubmit(){
     rationale.classList.add('hidden');
   }
 
-  // Record for review
+  requestAnimationFrame(() => {
+    (rationale.textContent ? rationale : answerLine).scrollIntoView({ behavior: 'smooth', block: 'end' });
+  });
+
+  // Review log (latest outcome wins)
   const correctLettersCopy = [...correctSet];
   const pickedLettersCopy  = [...pickedSet];
-  if (isCorrect && !state.review.find(r => r.q.id === q.id)) {
-    state.review.push({ q, correctLetters: correctLettersCopy, userLetters: pickedLettersCopy, wasCorrect: true });
-  } else if (!isCorrect) {
-    const existing = state.review.find(r => r.q.id === q.id);
-    if (existing) {
-      existing.userLetters = pickedLettersCopy;
-      existing.wasCorrect  = false;
-    } else {
-      state.review.push({ q, correctLetters: correctLettersCopy, userLetters: pickedLettersCopy, wasCorrect: false });
-    }
+  const existing = state.review.find(r => r.q.id === q.id);
+  if (existing) {
+    existing.userLetters = pickedLettersCopy;
+    existing.wasCorrect  = isCorrect;
+  } else {
+    state.review.push({ q, correctLetters: correctLettersCopy, userLetters: pickedLettersCopy, wasCorrect: isCorrect });
   }
 
   submitBtn.disabled = true;
   nextBtn.disabled = false;
-
   updateCounters();
 }
-
-function loadFirstQuestion(){
-  state.idx = 0;
-  loadNext();
-}
-
 function resetQuiz(){
   state = null;
+
+  wrongBuffer = [];
+  wrongBufferSet = new Set();
+  wrongSinceInjection = 0;
+
+  document.title = defaultDocTitle;
+  if (pageTitleEl) pageTitleEl.textContent = defaultTitleText;
+
   quiz.classList.add('hidden');
   summary.classList.add('hidden');
   launcher.classList.remove('hidden');
 
   runCounter.textContent = '';
   remainingCounter.textContent = '';
-
   optionsForm.innerHTML = '';
   feedback.textContent = '';
   feedback.className = 'feedback';
@@ -496,9 +471,13 @@ function resetQuiz(){
   rationale.textContent = '';
   rationale.classList.add('hidden');
 
+  if (firstTryWrap) firstTryWrap.classList.add('hidden');
+  if (firstTryPctEl) firstTryPctEl.textContent = '0%';
+  if (firstTryCntEl) firstTryCntEl.textContent = '0';
+  if (firstTryTotEl) firstTryTotEl.textContent = '0';
+
   submitBtn.disabled = true;
   nextBtn.disabled = true;
-
   currentInputsByLetter = {};
 }
 
@@ -507,13 +486,15 @@ function updateCounters(){
   if (!state) { runCounter.textContent=''; remainingCounter.textContent=''; return; }
   const shown = state.shownCount || 0;
   const total = state.totalRequested || 0;
-
   const remaining = (state.queue.length) + wrongBuffer.length;
-  runCounter.textContent = `Question: ${Math.min(shown+1, total)}`;
+
+  // Show a human-friendly current question number starting at 1
+  const currentNumber = Math.min(shown, total) || 1;
+  runCounter.textContent = `Question: ${currentNumber}`;
   remainingCounter.textContent = `Remaining to master: ${remaining}`;
 }
 
-// -------------------- Keyboard --------------------
+// -------------------- Keyboard shortcuts --------------------
 document.addEventListener('keydown', (e) => {
   if (quiz.classList.contains('hidden')) return;
 
@@ -521,11 +502,12 @@ document.addEventListener('keydown', (e) => {
     const canSubmit = !submitBtn.disabled;
     const canNext = !nextBtn.disabled;
     if (canSubmit) {
-      e.preventDefault();
-      handleSubmit();
+      e.preventDefault(); handleSubmit();
     } else if (canNext) {
-      e.preventDefault();
-      loadNext();
+      e.preventDefault(); loadNext();
+      requestAnimationFrame(() => {
+        quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
     }
     return;
   }
@@ -538,17 +520,9 @@ document.addEventListener('keydown', (e) => {
     if (input.type === 'checkbox') {
       input.checked = !input.checked;
     } else if (input.type === 'radio') {
-      // allow unselecting the same radio by pressing again
+      input.checked = !input.checked ? true : false;
       if (input.checked) {
-        input.checked = false;
-      } else {
-        input.checked = true;
-      }
-      // ensure only one radio remains selected
-      if (input.checked) {
-        [...optionsForm.querySelectorAll('input[type="radio"]')].forEach(r => {
-          if (r !== input) r.checked = false;
-        });
+        [...optionsForm.querySelectorAll('input[type="radio"]')].forEach(r => { if (r !== input) r.checked = false; });
       }
     }
     updateSubmitEnabled();
@@ -558,8 +532,24 @@ document.addEventListener('keydown', (e) => {
 // -------------------- Event wiring --------------------
 startBtn.addEventListener('click', startQuiz);
 submitBtn.addEventListener('click', handleSubmit);
-nextBtn.addEventListener('click', loadNext);
-restartBtn.addEventListener('click', resetQuiz);
+nextBtn.addEventListener('click', () => {
+  loadNext();
+  requestAnimationFrame(() => { quiz.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+});
+
+// Bind to ANY plausible reset trigger (quiz + summary)
+const resetCandidates = [
+  document.getElementById('restartBtn'),
+  document.getElementById('restartBtnSummary'),
+  document.getElementById('resetBtn'),
+  document.querySelector('[data-reset]'),
+  document.querySelector('.reset-quiz')
+].filter(Boolean);
+resetCandidates.forEach(el => el.addEventListener('click', (e) => { e.preventDefault(); resetQuiz(); }));
+document.addEventListener('click', (e) => {
+  const t = e.target.closest('#restartBtn, #restartBtnSummary, #resetBtn, [data-reset], .reset-quiz');
+  if (!t) return; e.preventDefault(); resetQuiz();
+});
 
 // -------------------- Utils --------------------
 function escapeHTML(s=''){
