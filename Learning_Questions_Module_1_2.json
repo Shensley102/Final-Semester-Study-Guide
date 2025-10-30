@@ -171,7 +171,7 @@
     },
     {
       "id": "Module_1_Q27",
-      "stem": "In helping nurse managers to manage their time, the chief nursing officer suggests that they:   36",
+      "stem": "In helping nurse managers to manage their time, the chief nursing officer suggests that they:",
       "options": [
         "maintain a perfectionistic attitude.",
         "Set up a complaint list.",
@@ -1943,7 +1943,7 @@
       "stem": "In implementing the strategic plan for effective utilization of evidence to guide nursing practice at Pacific Hospital, the nursing unit managers take the next step, which is the implementation. Implementation most likely would involve:",
       "options": [
         "Revisiting the mission statement and objectives.",
-        "Reevaluating external and internal factors affecting evidence-based practice.",
+        "Re-evaluating external and internal factors affecting evidence-based practice.",
         "Preparing a budget to support implementation.",
         "Developing unit-based objectives related to the plan."
       ],
@@ -1981,7 +1981,6 @@
         "A",
         "C",
         "D",
-        "E"
       ],
       "rationale": "Leaders who inspire teams to accomplish extraordinary things or to display synergy model the way, inspire shared vision, challenge the status quo, and encourage the heart by celebration of success.",
       "type": "multi_select"
@@ -2178,7 +2177,9 @@
         "Emergency Department staff",
         "Medical oncology unit staff"
       ],
-      "correct": [],
+      "correct": [
+        "C"
+      ],
       "rationale": "Nurse managers have responsibility for both patient and staff safety. High-risk areas, such as the Emergency Department, require special attention.",
       "type": "single_select"
     },
