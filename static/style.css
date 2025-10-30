@@ -34,6 +34,7 @@ body {
   box-shadow: 0 12px 32px rgba(16,24,40,.05);
   padding: 22px;
   margin-top: 18px;
+  position: relative;           /* allow absolute-positioned reset button */
 }
 .hidden { display: none !important; }
 
@@ -105,3 +106,31 @@ body {
 .stat-label { color: var(--ink-soft); }
 .stat-value { font-weight: 600; }
 .stat-small { color: var(--ink-soft); font-weight: 400; margin-left: 6px; }
+
+/* === Your new layout tweaks === */
+
+/* Submit button: half width and centered */
+#submitBtn {
+  width: 50% !important;        /* override .primary width */
+  margin: 0 auto;
+  display: block;
+}
+
+/* Reset button: top-right of quiz card, ~1/8 width */
+#quiz #restartBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 12.5% !important;      /* about 1/8 of the card width */
+  min-width: 110px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  line-height: 1.2;
+}
+
+/* Remove extra space where the bottom reset button used to sit */
+#quiz .footer-actions {
+  margin: 0;
+  padding: 0;
+  min-height: 0;
+}
