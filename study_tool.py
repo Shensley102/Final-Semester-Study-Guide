@@ -5,7 +5,8 @@ from flask import Flask, render_template, send_from_directory, abort, jsonify
 
 # --- Paths ---
 BASE_DIR = Path(__file__).resolve().parent
-TEMPLATES_DIR = BASE_DIR / "templates"
+# Support either "templates" or "template" (your repo screenshot showed "template")
+TEMPLATES_DIR = BASE_DIR / ("templates" if (BASE_DIR / "templates").exists() else "template")
 STATIC_DIR = BASE_DIR / "static"
 
 # --- Flask app ---
@@ -16,12 +17,9 @@ app = Flask(
     template_folder=str(TEMPLATES_DIR),
 )
 
-# Allow:
-#   - Module_*.json
-#   - Pharm_*.json
-#   - Learning_Questions_*.json
+# NEW naming convention: only allow banks that start with "Final-Semester-Study-Guide_"
 ALLOWED_JSON = re.compile(
-    r"^(?:Module_[\w-]+|Pharm_[\w-]+|Learning_Questions_[\w-]+)\.json$",
+    r"^Final-Semester-Study-Guide_[\w-]+\.json$",
     re.IGNORECASE,
 )
 
@@ -31,13 +29,13 @@ def healthz():
 
 @app.get("/")
 def index():
-    # Expects templates/index.html
+    # Expects templates/index.html or template/index.html
     return render_template("index.html")
 
 @app.get("/modules")
 def list_modules():
     """
-    Return available banks as: { "modules": ["Module_1", ...] }
+    Return available banks as: { "modules": ["Final-Semester-Study-Guide_Module_1", ...] }
     """
     banks = []
     for p in BASE_DIR.glob("*.json"):
@@ -61,7 +59,6 @@ def serve_bank(filename: str):
     if not (path.exists() and path.is_file()):
         abort(404)
 
-    # Explicit mimetype avoids odd defaults on some hosts
     return send_from_directory(BASE_DIR, safe_name, mimetype="application/json")
 
 if __name__ == "__main__":
