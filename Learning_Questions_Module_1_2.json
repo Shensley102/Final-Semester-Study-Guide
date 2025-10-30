@@ -1980,8 +1980,7 @@
       "correct": [
         "A",
         "C",
-        "D",
-        "E"
+        "D"
       ],
       "rationale": "Leaders who inspire teams to accomplish extraordinary things or to display synergy model the way, inspire shared vision, challenge the status quo, and encourage the heart by celebration of success.",
       "type": "multi_select"
