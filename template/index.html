@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Study Quiz</title>
+  <title>Final Semester Study Guide</title>
   <link rel="stylesheet" href="/static/style.css" />
 </head>
 <body>
   <main class="container">
 
     <header class="topbar">
-      <h1>Study Quiz</h1>
+      <h1>Final Semester Study Guide</h1>
       <div class="counters">
         <span id="runCounter">Question: 0</span>
         <span id="remainingCounter">Remaining to master: 0</span>
@@ -22,8 +22,7 @@
       <div class="form-row">
         <label for="moduleSel" class="lbl">Module</label>
         <select id="moduleSel" class="select">
-          <!-- Will be populated from /modules; you can keep a couple of fallbacks here if you want -->
-          <!-- <option value="Module_1">Module_1</option> -->
+          <!-- Populated from /modules -->
         </select>
       </div>
 
@@ -59,7 +58,7 @@
       <div id="feedback" class="feedback" aria-live="polite"></div>
       <div id="answerLine" class="answer-line"></div>
 
-      <!-- This stays hidden until AFTER submit (JS toggles .hidden) -->
+      <!-- Hidden until AFTER submit (JS toggles .hidden) -->
       <div id="rationale" class="rationale hidden"></div>
 
       <div class="footer-actions">
@@ -73,9 +72,7 @@
       <h2>Review</h2>
       <details id="review" open>
         <summary>Show results</summary>
-        <div id="reviewList" class="review-list">
-          <!-- per-question review entries are injected here -->
-        </div>
+        <div id="reviewList" class="review-list"></div>
       </details>
 
       <div class="footer-actions">
@@ -87,12 +84,10 @@
 
   <script src="/static/script.js"></script>
   <script>
-    // Make the summary “Start Another Run” act as a reset too.
+    // Make the summary button act as a reset too (the JS listens for [data-reset])
     (function(){
       const btn = document.getElementById('restartBtnSummary');
-      if (btn) {
-        btn.setAttribute('data-reset', 'true');
-      }
+      if (btn) btn.setAttribute('data-reset', 'true');
     })();
   </script>
 </body>
