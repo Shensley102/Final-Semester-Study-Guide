@@ -780,8 +780,8 @@
       "options": [
         "Internet",
         "Telecommunications",
-        "WL pager",
-        "CDS"
+        "Wireless pager",
+        "Clinical decision suppor (CDS) "
       ],
       "correct": [
         "C"
