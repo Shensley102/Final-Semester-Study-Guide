@@ -10,7 +10,7 @@
   <main class="container">
 
     <header class="topbar">
-      <h1>Final Semester Study Guide</h1>
+      <h1 id="pageTitle">Final Semester Study Guide</h1>
       <div class="counters">
         <span id="runCounter">Question: 0</span>
         <span id="remainingCounter">Remaining to master: 0</span>
@@ -62,7 +62,6 @@
       <div id="rationale" class="rationale hidden"></div>
 
       <div class="footer-actions">
-        <!-- Use id="restartBtn" to match the JS; the JS also supports #resetBtn, [data-reset], .reset-quiz -->
         <button type="button" id="restartBtn" class="link-danger outline block">Reset Quiz</button>
       </div>
     </section>
@@ -76,19 +75,12 @@
       </details>
 
       <div class="footer-actions">
-        <button type="button" id="restartBtnSummary" class="primary">Start Another Run</button>
+        <button type="button" id="restartBtnSummary" class="primary" data-reset="true">Start Another Run</button>
       </div>
     </section>
 
   </main>
 
   <script src="/static/script.js"></script>
-  <script>
-    // Make the summary button act as a reset too (the JS listens for [data-reset])
-    (function(){
-      const btn = document.getElementById('restartBtnSummary');
-      if (btn) btn.setAttribute('data-reset', 'true');
-    })();
-  </script>
 </body>
 </html>
