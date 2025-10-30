@@ -16,7 +16,6 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--ink);
-  /* Sans-serif, easier on eyes */
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", "Liberation Sans", sans-serif;
   font-weight: 400;
   font-size: 17px; /* slightly larger than default */
@@ -96,3 +95,13 @@ body {
 .rev-item.bad { border-color: #ffd1cd; }
 .rev-q { margin-bottom: 8px; font-weight: 400; }
 .rev-ans, .rev-user, .rev-rationale { margin-top: 6px; }
+
+/* Summary stats */
+.summary-stats {
+  display: grid; gap: 8px; margin-bottom: 14px; padding: 10px 12px;
+  background: #f8fafc; border: 1px solid var(--border); border-radius: 12px;
+}
+.stat-row { display: flex; align-items: baseline; gap: 8px; }
+.stat-label { color: var(--ink-soft); }
+.stat-value { font-weight: 600; }
+.stat-small { color: var(--ink-soft); font-weight: 400; margin-left: 6px; }
