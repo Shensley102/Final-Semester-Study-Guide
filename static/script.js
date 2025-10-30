@@ -5,7 +5,8 @@
    - Dynamic page title / H1 per selected module
    - Sans-serif, no bold (handled in CSS)
    - Adaptive buffer: 5% for Full, 15% otherwise
-   - Full runs are fully shuffled
+   - FULL runs are fully shuffled
+   - Summary shows % correct on first try
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -36,9 +37,13 @@ const defaultTitleText = pageTitleEl?.textContent || document.title;
 const defaultDocTitle  = document.title;
 
 // Summary + review
-const summary     = $('summary');
-const reviewEl    = $('review');
-const reviewList  = $('reviewList');
+const summary        = $('summary');
+const reviewEl       = $('review');
+const reviewList     = $('reviewList');
+const firstTryWrap   = $('firstTrySummary');
+const firstTryPctEl  = $('firstTryPct');
+const firstTryCntEl  = $('firstTryCount');
+const firstTryTotEl  = $('firstTryTotal');
 
 // -------------------- App state --------------------
 let state = null;  // null when no quiz is running
@@ -101,7 +106,6 @@ function sampleQuestions(arr, requested){
   }
 
   const k = Math.max(0, requested | 0);
-  // partial Fisher–Yates
   for (let i = 0; i < k; i++) {
     const j = i + randomInt(copy.length - i);
     [copy[i], copy[j]] = [copy[j], copy[i]];
@@ -111,7 +115,6 @@ function sampleQuestions(arr, requested){
 
 // -------------------- Normalization --------------------
 function normalizeQuestions(raw){
-  // Some banks use { questions: [...] }, others are arrays.
   const items = Array.isArray(raw) ? raw : (raw.questions || raw.Questions || []);
   let idCounter = 1;
 
@@ -122,7 +125,7 @@ function normalizeQuestions(raw){
     // Stem
     q.question = (item.question || item.stem || item.prompt || '').toString().trim();
 
-    // Options can be object {A:"",B:""} or array
+    // Options
     let options = item.options || item.choices || item.answers || item.Options || null;
 
     if (Array.isArray(options)) {
@@ -144,14 +147,14 @@ function normalizeQuestions(raw){
       q.options = { A: 'Option 1', B: 'Option 2', C: 'Option 3', D: 'Option 4' };
     }
 
-    // Correct answers -> array of letters
+    // Correct answers
     const corr = item.correct ?? item.answer ?? item.answers ?? item.Correct ?? item.correct_answer ?? item.correctAnswers;
     q.correctLetters = toLetterArray(corr, q.options);
 
     // Rationale / explanation
     q.rationale = (item.rationale || item.explanation || item.reason || '').toString();
 
-    // Keep type if provided; fallback to SATA detection later
+    // Type (optional)
     q.type = item.type || null;
 
     return q;
@@ -325,10 +328,20 @@ function loadNext(){
     quiz.classList.add('hidden');
     summary.classList.remove('hidden');
 
+    // NEW: populate first-try stats
+    const total = state.totalRequested || 0;
+    const first = state.totalFirstTry || 0;
+    const pct = total ? Math.round((first / total) * 100) : 0;
+
+    if (firstTryPctEl) firstTryPctEl.textContent = `${pct}%`;
+    if (firstTryCntEl) firstTryCntEl.textContent = String(first);
+    if (firstTryTotEl) firstTryTotEl.textContent = String(total);
+    if (firstTryWrap) firstTryWrap.classList.remove('hidden');
+
     reviewEl.open = false;
     reviewList.innerHTML = state.review.map(buildReviewItemHTML).join('');
 
-    runCounter.textContent = `Run complete — ${state.totalRequested} questions`;
+    runCounter.textContent = `Run complete — ${total} questions`;
     remainingCounter.textContent = '';
     return;
   }
@@ -391,7 +404,7 @@ async function startQuiz(){
       isFullRun: (pickedLength === 'full') || (chosen.length === all.length)
     };
 
-    // Update the page title/H1 to the selected module stem
+    // Dynamic page title/H1
     document.title = selected;
     if (pageTitleEl) pageTitleEl.textContent = selected;
 
@@ -455,7 +468,7 @@ function handleSubmit(){
     wrongSinceInjection += 1;
   }
 
-  // Show rationale only after submit
+  // Show rationale after submit
   if (q.rationale && q.rationale.trim()) {
     rationale.textContent = q.rationale;
     rationale.classList.remove('hidden');
@@ -464,7 +477,7 @@ function handleSubmit(){
     rationale.classList.add('hidden');
   }
 
-  // Auto-scroll to show the complete answer + rationale
+  // Scroll to show answer/rationale
   requestAnimationFrame(() => {
     (rationale.textContent ? rationale : answerLine).scrollIntoView({ behavior: 'smooth', block: 'end' });
   });
@@ -515,12 +528,15 @@ function resetQuiz(){
   feedback.textContent = '';
   feedback.className = 'feedback';
   answerLine.innerHTML = '';
-
-  // Hide rationale
   rationale.textContent = '';
   rationale.classList.add('hidden');
 
-  // Disable action buttons until a new selection is made
+  // Hide summary stat values
+  if (firstTryWrap) firstTryWrap.classList.add('hidden');
+  if (firstTryPctEl) firstTryPctEl.textContent = '0%';
+  if (firstTryCntEl) firstTryCntEl.textContent = '0';
+  if (firstTryTotEl) firstTryTotEl.textContent = '0';
+
   submitBtn.disabled = true;
   nextBtn.disabled = true;
 
@@ -550,7 +566,6 @@ document.addEventListener('keydown', (e) => {
       handleSubmit();
     } else if (canNext) {
       e.preventDefault();
-      // Scroll to top when going to next
       loadNext();
       requestAnimationFrame(() => {
         quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
