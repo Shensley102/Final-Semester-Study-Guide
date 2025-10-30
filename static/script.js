@@ -1,6 +1,11 @@
 /* -----------------------------------------------------------
    Final-Semester-Study-Guide - Quiz Frontend
-   (with UI tweaks: counter starts at 1, submit half width, reset top-right)
+   - SATA answers on separate lines
+   - Auto-scroll after submit & on next question
+   - Dynamic page title / H1 per selected module
+   - Adaptive buffer: 5% for Full, 15% otherwise
+   - FULL runs are fully shuffled
+   - Summary shows % correct on first try (robust)
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -40,7 +45,7 @@ const firstTryCntEl  = $('firstTryCount');
 const firstTryTotEl  = $('firstTryTotal');
 
 // -------------------- App state --------------------
-let state = null;
+let state = null;  // null when no quiz is running
 let currentInputsByLetter = {};
 let pickedLength = 10;
 
@@ -57,6 +62,7 @@ async function discoverModules(){
       moduleSel.innerHTML = mods.map(m => `<option value="${m}">${m}</option>`).join('');
     }
   } catch {
+    // Fallback probe for a likely bank under the new naming
     fetch('/Final-Semester-Study-Guide_Pharm_Quiz_HESI.json', { method: 'HEAD' })
       .then(r => { if (r.ok) moduleSel.add(new Option('Final-Semester-Study-Guide_Pharm_Quiz_HESI', 'Final-Semester-Study-Guide_Pharm_Quiz_HESI')); })
       .catch(() => {});
@@ -113,8 +119,11 @@ function normalizeQuestions(raw){
   return items.map((item) => {
     const q = {};
     q.id = item.id || `q${idCounter++}`;
+
+    // Stem
     q.question = (item.question || item.stem || item.prompt || '').toString().trim();
 
+    // Options can be object {A:"",B:""} or array
     let options = item.options || item.choices || item.answers || item.Options || null;
 
     if (Array.isArray(options)) {
@@ -136,9 +145,14 @@ function normalizeQuestions(raw){
       q.options = { A: 'Option 1', B: 'Option 2', C: 'Option 3', D: 'Option 4' };
     }
 
+    // Correct answers -> array of letters
     const corr = item.correct ?? item.answer ?? item.answers ?? item.Correct ?? item.correct_answer ?? item.correctAnswers;
     q.correctLetters = toLetterArray(corr, q.options);
+
+    // Rationale / explanation
     q.rationale = (item.rationale || item.explanation || item.reason || '').toString();
+
+    // Keep type if provided; fallback to SATA detection later
     q.type = item.type || null;
 
     return q;
@@ -152,9 +166,11 @@ function toLetterArray(val, optionsObj){
   if (Array.isArray(val)) {
     const arr = [];
     for (const v of val) {
-      if (typeof v === 'string' && letters.has(v.toUpperCase())) arr.push(v.toUpperCase());
-      else if (typeof v === 'number') {
-        const idx = v|0, letter = indexToLetter(idx);
+      if (typeof v === 'string' && letters.has(v.toUpperCase())) {
+        arr.push(v.toUpperCase());
+      } else if (typeof v === 'number') {
+        const idx = v|0;
+        const letter = indexToLetter(idx);
         if (optionsObj[letter]) arr.push(letter);
       } else if (typeof v === 'string') {
         const letter = findLetterByText(v, optionsObj);
@@ -273,9 +289,11 @@ function renderQuestion(q){
   feedback.className = 'feedback';
   answerLine.innerHTML = '';
 
+  // Hide rationale until submit
   rationale.textContent = '';
   rationale.classList.add('hidden');
 
+  // Scroll the card to the top when a question is presented
   requestAnimationFrame(() => {
     quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
@@ -289,6 +307,8 @@ function updateSubmitEnabled(){
 function formatCorrectAnswers(q){
   const letters = q.correctLetters?.length ? q.correctLetters : [];
   const parts = letters.map(L => `${L}. ${q.options[L] ?? ''}`);
+
+  // SATA (multi) -> each on its own line; single -> inline
   const isMulti = (q.type === 'multi_select') || EXACT_SATA.test(q.question) || (letters.length > 1);
   return isMulti ? parts.join('<br>') : parts.join('  •  ');
 }
@@ -306,8 +326,9 @@ function loadNext(){
     quiz.classList.add('hidden');
     summary.classList.remove('hidden');
 
+    // Robust first-try stats computed from final pool
     const total = state.totalRequested || 0;
-    const first = state.totalFirstTry || 0;
+    const first = (state.pool || []).filter(q => q.firstTryCorrect).length;
     const pct = total ? Math.round((first / total) * 100) : 0;
 
     if (firstTryPctEl) firstTryPctEl.textContent = `${pct}%`;
@@ -372,17 +393,16 @@ async function startQuiz(){
     const chosen = sampleQuestions(all, pickedLength);
 
     state = {
-      pool: chosen.map(q => ({ ...q, attempts: 0, mastered: false })),
+      pool: chosen.map(q => ({ ...q, attempts: 0, mastered: false, firstTryCorrect: false })),
       queue: chosen.slice(),
       idx: 0,
       shownCount: 0,
       review: [],
-      totalFirstTry: 0,
       totalRequested: chosen.length,
-      totalSubmissions: 0,
       isFullRun: (pickedLength === 'full') || (chosen.length === all.length)
     };
 
+    // Dynamic page title/H1
     document.title = selected;
     if (pageTitleEl) pageTitleEl.textContent = selected;
 
@@ -416,7 +436,6 @@ function handleSubmit(){
   const picked = [...optionsForm.querySelectorAll('input:checked')].map(i => i.value);
   if (picked.length === 0) return;
 
-  state.totalSubmissions += 1;
   q.attempts += 1;
 
   const correctSet = new Set((q.correctLetters || []).map(s => s.toUpperCase()));
@@ -426,7 +445,7 @@ function handleSubmit(){
   const fullCorrectText = formatCorrectAnswers(q);
 
   if (isCorrect) {
-    if (q.attempts === 1) state.totalFirstTry += 1;
+    if (q.attempts === 1) q.firstTryCorrect = true; // <-- critical fix
     q.mastered = true;
 
     feedback.textContent = 'Correct!';
@@ -446,6 +465,7 @@ function handleSubmit(){
     wrongSinceInjection += 1;
   }
 
+  // Show rationale only after submit
   if (q.rationale && q.rationale.trim()) {
     rationale.textContent = q.rationale;
     rationale.classList.remove('hidden');
@@ -454,23 +474,20 @@ function handleSubmit(){
     rationale.classList.add('hidden');
   }
 
+  // Auto-scroll to show the complete answer + rationale
   requestAnimationFrame(() => {
     (rationale.textContent ? rationale : answerLine).scrollIntoView({ behavior: 'smooth', block: 'end' });
   });
 
-  // Record for review
+  // Record latest outcome for review
   const correctLettersCopy = [...correctSet];
   const pickedLettersCopy  = [...pickedSet];
-  if (isCorrect && !state.review.find(r => r.q.id === q.id)) {
-    state.review.push({ q, correctLetters: correctLettersCopy, userLetters: pickedLettersCopy, wasCorrect: true });
-  } else if (!isCorrect) {
-    const existing = state.review.find(r => r.q.id === q.id);
-    if (existing) {
-      existing.userLetters = pickedLettersCopy;
-      existing.wasCorrect  = false;
-    } else {
-      state.review.push({ q, correctLetters: correctLettersCopy, userLetters: pickedLettersCopy, wasCorrect: false });
-    }
+  const existing = state.review.find(r => r.q.id === q.id);
+  if (existing) {
+    existing.userLetters = pickedLettersCopy;
+    existing.wasCorrect  = isCorrect;
+  } else {
+    state.review.push({ q, correctLetters: correctLettersCopy, userLetters: pickedLettersCopy, wasCorrect: isCorrect });
   }
 
   submitBtn.disabled = true;
@@ -480,27 +497,36 @@ function handleSubmit(){
 }
 
 function resetQuiz(){
+  // Clear state
   state = null;
+
+  // Clear adaptive buffer
   wrongBuffer = [];
   wrongBufferSet = new Set();
   wrongSinceInjection = 0;
 
+  // Restore titles
   document.title = defaultDocTitle;
   if (pageTitleEl) pageTitleEl.textContent = defaultTitleText;
 
+  // Hide quiz UI, show launcher
   quiz.classList.add('hidden');
   summary.classList.add('hidden');
   launcher.classList.remove('hidden');
 
+  // Reset UI pieces
   runCounter.textContent = '';
   remainingCounter.textContent = '';
   optionsForm.innerHTML = '';
   feedback.textContent = '';
   feedback.className = 'feedback';
   answerLine.innerHTML = '';
+
+  // Hide rationale
   rationale.textContent = '';
   rationale.classList.add('hidden');
 
+  // Hide summary stat values
   if (firstTryWrap) firstTryWrap.classList.add('hidden');
   if (firstTryPctEl) firstTryPctEl.textContent = '0%';
   if (firstTryCntEl) firstTryCntEl.textContent = '0';
@@ -517,10 +543,10 @@ function updateCounters(){
   if (!state) { runCounter.textContent=''; remainingCounter.textContent=''; return; }
   const shown = state.shownCount || 0;
   const total = state.totalRequested || 0;
-  const remaining = (state.queue.length) + wrongBuffer.length;
 
-  // FIX: show the real current index (starts at 1)
-  const currentNumber = shown > 0 ? shown : 1;
+  const remaining = (state.queue.length) + wrongBuffer.length;
+  // Show real current index starting at 1
+  const currentNumber = Math.min(shown + 0, total) || 1; // shown increments when question loads
   runCounter.textContent = `Question: ${currentNumber}`;
   remainingCounter.textContent = `Remaining to master: ${remaining}`;
 }
