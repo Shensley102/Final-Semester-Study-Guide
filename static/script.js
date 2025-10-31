@@ -1,11 +1,11 @@
 /* -----------------------------------------------------------
    Final-Semester-Study-Guide - Quiz Frontend
-   Counting & grading fixed:
+   - One-button flow: Submit ➜ Next (green)
    - "Question" counts every attempt (retries included)
    - "Remaining to master" only drops on correct submission
-   - First-try % = (# first-try correct / total unique) robust
-   Other features preserved: SATA lines, auto-scroll, dynamic title,
-   5%/15% reinforcement, keyboard shortcuts, reset button, etc.
+   - First-try % = (# first-try correct / total unique)
+   - SATA lines, auto-scroll, dynamic title, 5%/15% reinforcement
+   - Keyboard shortcuts (Enter / A–Z)
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -24,8 +24,8 @@ const startBtn   = $('startBtn');
 const quiz          = $('quiz');
 const questionText  = $('questionText');
 const optionsForm   = $('optionsForm');
-const submitBtn     = $('submitBtn');
-const nextBtn       = $('nextBtn');
+const submitBtn     = $('submitBtn');   // we will morph this into "Next"
+const nextBtn       = $('nextBtn');     // legacy Next (we'll hide it via CSS)
 const feedback      = $('feedback');
 const answerLine    = $('answerLine');
 const rationale     = $('rationale');
@@ -48,6 +48,7 @@ const firstTryTotEl = $('firstTryTotal');
 let state = null;
 let currentInputsByLetter = {};
 let pickedLength = 10;
+let btnMode = 'submit';  // 'submit' | 'next'
 
 const EXACT_SATA = /\(Select all that apply\.\)/i;
 
@@ -58,11 +59,9 @@ async function discoverModules() {
     if (!res.ok) throw new Error();
     const data = await res.json();
     const mods = (data.modules || []).filter(Boolean);
-    if (mods.length) {
-      moduleSel.innerHTML = mods.map(m => `<option value="${m}">${m}</option>`).join('');
-    }
+    if (mods.length) moduleSel.innerHTML = mods.map(m => `<option value="${m}">${m}</option>`).join('');
   } catch {
-    // Fallback probe (harmless if not present)
+    // Harmless fallback probe
     fetch('/Final-Semester-Study-Guide_Pharm_Quiz_HESI.json', { method: 'HEAD' })
       .then(r => { if (r.ok) moduleSel.add(new Option('Final-Semester-Study-Guide_Pharm_Quiz_HESI', 'Final-Semester-Study-Guide_Pharm_Quiz_HESI')); })
       .catch(() => {});
@@ -82,28 +81,18 @@ lengthBtns.addEventListener('click', (e) => {
 /* ---------- Helpers ---------- */
 function randomInt(max){
   if (max <= 0) return 0;
-  if (crypto?.getRandomValues) {
-    const b = new Uint32Array(1);
-    crypto.getRandomValues(b);
-    return b[0] % max;
-  }
+  if (crypto?.getRandomValues) { const b = new Uint32Array(1); crypto.getRandomValues(b); return b[0] % max; }
   return Math.floor(Math.random() * max);
 }
 function shuffleInPlace(arr){
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = randomInt(i + 1);
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
+  for (let i = arr.length - 1; i > 0; i--) { const j = randomInt(i + 1); [arr[i], arr[j]] = [arr[j], arr[i]]; }
   return arr;
 }
 function sampleQuestions(all, req){
   const a = all.slice();
   if (req === 'full' || req >= a.length) return shuffleInPlace(a);
   const k = Math.max(0, req|0);
-  for (let i = 0; i < k; i++) {
-    const j = i + randomInt(a.length - i);
-    [a[i], a[j]] = [a[j], a[i]];
-  }
+  for (let i = 0; i < k; i++) { const j = i + randomInt(a.length - i); [a[i], a[j]] = [a[j], a[i]]; }
   return a.slice(0, k);
 }
 
@@ -118,8 +107,7 @@ function normalizeQuestions(raw){
 
     let options = item.options || item.choices || item.answers || item.Options || null;
     if (Array.isArray(options)) {
-      const obj = {};
-      const L = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      const obj = {}, L = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
       options.forEach((opt, i) => {
         const t = typeof opt === 'string' ? opt : (opt?.text ?? opt?.label ?? opt?.value ?? '');
         obj[L[i]] = t;
@@ -127,7 +115,7 @@ function normalizeQuestions(raw){
       q.options = obj;
     } else if (options && typeof options === 'object') {
       const obj = {};
-      for (const [k, v] of Object.entries(options)) {
+      for (const [k,v] of Object.entries(options)) {
         const letter = (k.match(/[A-Z]/i) ? k.toUpperCase() : null);
         if (letter) obj[letter] = typeof v === 'string' ? v : (v?.text ?? v?.value ?? '');
       }
@@ -143,9 +131,9 @@ function normalizeQuestions(raw){
     q.type = item.type || null;
 
     // runtime fields
-    q.attempts = 0;                 // how many times THIS question has been submitted
-    q.firstTryCorrect = null;       // true/false recorded ONLY on the first submission; never changes later
-    q.mastered = false;             // flips true on first correct submission
+    q.attempts = 0;           // times THIS question submitted
+    q.firstTryCorrect = null; // set true/false on first submission; never mutated later
+    q.mastered = false;       // flips true on first correct submit
 
     return q;
   }).filter(q => q.question && Object.keys(q.options).length);
@@ -157,35 +145,24 @@ function toLetterArray(val, optionsObj){
     const out = [];
     for (const v of val) {
       if (typeof v === 'string' && letters.has(v.toUpperCase())) out.push(v.toUpperCase());
-      else if (typeof v === 'number') {
-        const L = indexToLetter(v|0);
-        if (optionsObj[L]) out.push(L);
-      } else if (typeof v === 'string') {
-        const L = findLetterByText(v, optionsObj);
-        if (L) out.push(L);
-      }
+      else if (typeof v === 'number') { const L = indexToLetter(v|0); if (optionsObj[L]) out.push(L); }
+      else if (typeof v === 'string') { const L = findLetterByText(v, optionsObj); if (L) out.push(L); }
     }
     return [...new Set(out)];
   }
   if (typeof val === 'string') {
-    const s = val.toUpperCase();
-    const found = s.match(/[A-Z]/g);
+    const s = val.toUpperCase(), found = s.match(/[A-Z]/g);
     if (found) return [...new Set(found)];
     const L = findLetterByText(val, optionsObj);
     return L ? [L] : [];
   }
-  if (typeof val === 'number') {
-    const L = indexToLetter(val|0);
-    return optionsObj[L] ? [L] : [];
-  }
+  if (typeof val === 'number') { const L = indexToLetter(val|0); return optionsObj[L] ? [L] : []; }
   return [];
 }
 function indexToLetter(i){ return 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'[i] || 'A'; }
 function findLetterByText(text, optionsObj){
   const norm = (''+text).trim().toLowerCase();
-  for (const [L, t] of Object.entries(optionsObj)) {
-    if ((t||'').toString().trim().toLowerCase() === norm) return L;
-  }
+  for (const [L,t] of Object.entries(optionsObj)) if ((t||'').toString().trim().toLowerCase() === norm) return L;
   return null;
 }
 
@@ -193,28 +170,17 @@ function findLetterByText(text, optionsObj){
 let wrongBuffer = [];
 let wrongBufferSet = new Set();
 let wrongSinceInjection = 0;
-let reinjectThreshold = 1; // inject after this many non-injections (or when queue empties)
+let reinjectThreshold = 1;
 
 function initAdaptiveBufferForQuiz(){
-  wrongBuffer = [];
-  wrongBufferSet = new Set();
-  wrongSinceInjection = 0;
-
+  wrongBuffer = []; wrongBufferSet = new Set(); wrongSinceInjection = 0;
   const n = state.totalRequested || 0;
-  const pct = state.isFullRun ? 0.05 : 0.15;               // 5% for full, 15% otherwise
+  const pct = state.isFullRun ? 0.05 : 0.15;            // 5% for full, 15% otherwise
   reinjectThreshold = Math.max(1, Math.ceil(n * pct));
 }
-function addToWrongBuffer(q){
-  if (!wrongBufferSet.has(q.id)) {
-    wrongBuffer.push(q);
-    wrongBufferSet.add(q.id);
-  }
-}
+function addToWrongBuffer(q){ if (!wrongBufferSet.has(q.id)) { wrongBuffer.push(q); wrongBufferSet.add(q.id); } }
 function removeFromWrongBufferById(id){
-  if (wrongBufferSet.has(id)) {
-    wrongBuffer = wrongBuffer.filter(x => x.id !== id);
-    wrongBufferSet.delete(id);
-  }
+  if (wrongBufferSet.has(id)) { wrongBuffer = wrongBuffer.filter(x => x.id !== id); wrongBufferSet.delete(id); }
 }
 function maybeInjectWrongBuffer(){
   if ((wrongSinceInjection >= reinjectThreshold && wrongBuffer.length) ||
@@ -224,6 +190,29 @@ function maybeInjectWrongBuffer(){
     wrongSinceInjection = 0;
   }
 }
+
+/* ---------- Button mode: submit <-> next ---------- */
+function setButtonMode(mode){
+  btnMode = mode;
+  if (mode === 'submit') {
+    submitBtn.textContent = 'Submit';
+    submitBtn.classList.remove('success');
+    submitBtn.disabled = true;                // enabled once an option is selected
+  } else {
+    submitBtn.textContent = 'Next';
+    submitBtn.classList.add('success');       // green
+    submitBtn.disabled = false;
+  }
+}
+
+/* Single click handler controls both modes */
+submitBtn.addEventListener('click', () => {
+  if (btnMode === 'submit') {
+    if (!submitBtn.disabled) handleSubmit();
+  } else {
+    goNext();
+  }
+});
 
 /* ---------- Rendering & flow ---------- */
 function renderQuestion(q){
@@ -241,10 +230,7 @@ function renderQuestion(q){
     label.setAttribute('for', id);
 
     const input = document.createElement('input');
-    input.type = type;
-    input.name = 'opt';
-    input.id = id;
-    input.value = letter;
+    input.type = type; input.name = 'opt'; input.id = id; input.value = letter;
 
     const span = document.createElement('span');
     span.innerHTML = `<span class="letter">${letter}.</span> ${escapeHTML(q.options[letter])}`;
@@ -256,9 +242,6 @@ function renderQuestion(q){
 
   optionsForm.addEventListener('change', updateSubmitEnabled);
 
-  submitBtn.disabled = true;
-  nextBtn.disabled = true;
-
   feedback.textContent = '';
   feedback.className = 'feedback';
   answerLine.innerHTML = '';
@@ -266,15 +249,16 @@ function renderQuestion(q){
   rationale.textContent = '';
   rationale.classList.add('hidden');
 
-  // show counters for the NEXT attempt: attempts so far + 1
+  // Reset button to "Submit" mode for a fresh question
+  setButtonMode('submit');
+
+  // show counters for the NEXT attempt (attempts so far + 1)
   updateCounters();
 
-  requestAnimationFrame(() => {
-    quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
+  requestAnimationFrame(() => { quiz.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
 }
 function updateSubmitEnabled(){
-  submitBtn.disabled = !optionsForm.querySelector('input:checked');
+  if (btnMode === 'submit') submitBtn.disabled = !optionsForm.querySelector('input:checked');
 }
 function setsEqual(aSet, bSet){
   if (aSet.size !== bSet.size) return false;
@@ -317,6 +301,12 @@ function loadNext(){
   state.current = q;
   renderQuestion(q);
 }
+function goNext(){
+  loadNext();
+  requestAnimationFrame(() => {
+    quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
 
 function buildReviewItemHTML(entry){
   const q = entry.q;
@@ -354,11 +344,11 @@ async function startQuiz(){
     const chosen = sampleQuestions(all, pickedLength);
 
     state = {
-      questions: chosen,          // unique items selected for this run
-      queue: chosen.slice(),      // work queue
+      questions: chosen,
+      queue: chosen.slice(),
       review: [],
-      attemptedCount: 0,          // TOTAL attempts across the run (all repeats)
-      masteredCount: 0,           // number of unique questions mastered
+      attemptedCount: 0,       // TOTAL attempts across the run (retries included)
+      masteredCount: 0,        // unique mastered questions
       totalRequested: chosen.length,
       current: null,
       isFullRun: (pickedLength === 'full') || (chosen.length === all.length)
@@ -373,7 +363,6 @@ async function startQuiz(){
     summary.classList.add('hidden');
     quiz.classList.remove('hidden');
 
-    nextBtn.disabled = true;
     feedback.textContent = '';
     feedback.className = 'feedback';
     answerLine.innerHTML = '';
@@ -406,16 +395,15 @@ function handleSubmit(){
 
   const fullCorrectText = formatCorrectAnswers(q);
 
-  // Record first-try outcome ONCE
+  // Record first-try outcome exactly once
   if (firstSubmission) q.firstTryCorrect = !!isCorrect;
 
   if (isCorrect) {
     if (!q.mastered) {
       q.mastered = true;
-      state.masteredCount += 1;     // Remaining-to-master drops only here
+      state.masteredCount += 1;    // Remaining only drops here
       removeFromWrongBufferById(q.id);
     }
-
     feedback.textContent = 'Correct!';
     feedback.className = 'feedback ok';
     answerLine.innerHTML = `<div class="answerText">${fullCorrectText}</div>`;
@@ -430,7 +418,7 @@ function handleSubmit(){
     wrongSinceInjection += 1;
   }
 
-  // Rationale only after submit
+  // Show rationale only after submit
   if (q.rationale && q.rationale.trim()) {
     rationale.textContent = q.rationale;
     rationale.classList.remove('hidden');
@@ -439,37 +427,29 @@ function handleSubmit(){
     rationale.classList.add('hidden');
   }
 
-  // Save for review (latest outcome wins)
+  // Review log (latest outcome wins)
   const correctLettersCopy = [...correctSet];
   const pickedLettersCopy  = [...pickedSet];
   const existing = state.review.find(r => r.q.id === q.id);
-  if (existing) {
-    existing.userLetters = pickedLettersCopy;
-    existing.wasCorrect  = isCorrect;
-  } else {
-    state.review.push({ q, correctLetters: correctLettersCopy, userLetters: pickedLettersCopy, wasCorrect: isCorrect });
-  }
+  if (existing) { existing.userLetters = pickedLettersCopy; existing.wasCorrect = isCorrect; }
+  else { state.review.push({ q, correctLetters: correctLettersCopy, userLetters: pickedLettersCopy, wasCorrect: isCorrect }); }
 
-  // Scroll to rationale/answer
+  // Scroll to answer/rationale
   requestAnimationFrame(() => {
     (rationale.textContent ? rationale : answerLine).scrollIntoView({ behavior: 'smooth', block: 'end' });
   });
 
-  submitBtn.disabled = true;
-  nextBtn.disabled = false;
+  // Switch the single button into "Next" mode (green)
+  setButtonMode('next');
 
-  // After submission, update counters for the upcoming attempt:
-  // - Question = attempts so far + 1
-  // - Remaining = total - mastered (unchanged if wrong)
+  // Update counters for the upcoming attempt (attempts + 1)
   updateCounters();
 }
 
 function resetQuiz(){
   state = null;
 
-  wrongBuffer = [];
-  wrongBufferSet = new Set();
-  wrongSinceInjection = 0;
+  wrongBuffer = []; wrongBufferSet = new Set(); wrongSinceInjection = 0;
 
   document.title = defaultDocTitle;
   if (pageTitleEl) pageTitleEl.textContent = defaultTitleText;
@@ -492,20 +472,16 @@ function resetQuiz(){
   if (firstTryCntEl) firstTryCntEl.textContent = '0';
   if (firstTryTotEl) firstTryTotEl.textContent = '0';
 
-  submitBtn.disabled = true;
-  nextBtn.disabled = true;
+  setButtonMode('submit'); // reset label/color
   currentInputsByLetter = {};
 }
 
 /* ---------- Counters ---------- */
 function updateCounters(){
   if (!state) { runCounter.textContent=''; remainingCounter.textContent=''; return; }
-
-  // Show the number of the NEXT attempt (so it increases past the total when items repeat)
-  const currentAttemptNumber = state.attemptedCount + 1;
+  const currentAttemptNumber = state.attemptedCount + 1; // keeps rising with repeats
   runCounter.textContent = `Question: ${currentAttemptNumber}`;
 
-  // Remaining to master: only changes when a new mastery happens
   const remaining = Math.max(0, (state.totalRequested || 0) - (state.masteredCount || 0));
   remainingCounter.textContent = `Remaining to master: ${remaining}`;
 }
@@ -513,35 +489,23 @@ function updateCounters(){
 /* ---------- Keyboard shortcuts ---------- */
 document.addEventListener('keydown', (e) => {
   if (quiz.classList.contains('hidden')) return;
-
   if (e.key === 'Enter') {
-    const canSubmit = !submitBtn.disabled;
-    const canNext = !nextBtn.disabled;
-    if (canSubmit) {
-      e.preventDefault();
-      handleSubmit();
-    } else if (canNext) {
-      e.preventDefault();
-      loadNext();
-      requestAnimationFrame(() => {
-        quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
+    if (btnMode === 'submit') {
+      if (!submitBtn.disabled) { e.preventDefault(); handleSubmit(); }
+    } else {
+      e.preventDefault(); goNext();
     }
     return;
   }
-
-  const letter = (e.key && e.key.length === 1) ? e.key.toUpperCase() : '';
-  if (letter && currentInputsByLetter[letter]) {
+  // Letter shortcuts A..Z
+  const L = (e.key && e.key.length === 1) ? e.key.toUpperCase() : '';
+  if (L && currentInputsByLetter[L]) {
     e.preventDefault();
-    const input = currentInputsByLetter[letter];
-
-    if (input.type === 'checkbox') {
-      input.checked = !input.checked;
-    } else if (input.type === 'radio') {
+    const input = currentInputsByLetter[L];
+    if (input.type === 'checkbox') input.checked = !input.checked;
+    else if (input.type === 'radio') {
       input.checked = !input.checked ? true : false;
-      if (input.checked) {
-        [...optionsForm.querySelectorAll('input[type="radio"]')].forEach(r => { if (r !== input) r.checked = false; });
-      }
+      if (input.checked) [...optionsForm.querySelectorAll('input[type="radio"]')].forEach(r => { if (r !== input) r.checked = false; });
     }
     updateSubmitEnabled();
   }
@@ -549,13 +513,6 @@ document.addEventListener('keydown', (e) => {
 
 /* ---------- Events ---------- */
 startBtn.addEventListener('click', startQuiz);
-submitBtn.addEventListener('click', handleSubmit);
-nextBtn.addEventListener('click', () => {
-  loadNext();
-  requestAnimationFrame(() => {
-    quiz.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
 
 // Reset (quiz + results)
 [
