@@ -1,11 +1,13 @@
 /* -----------------------------------------------------------
    Final-Semester-Study-Guide - Quiz Frontend
-   - One-button flow: Submit ➜ Next (green)
-   - "Question" counts every attempt (retries included)
-   - "Remaining to master" only drops on correct submission
-   - First-try % = (# first-try correct / total unique)
-   - SATA lines, auto-scroll, dynamic title, 5%/15% reinforcement
-   - Keyboard shortcuts (Enter / A–Z)
+   One-button flow:
+     - Submit ➜ Next (same size, green) after submission
+   Counting & grading:
+     - Question counts every attempt (retries included)
+     - Remaining only drops on correct submission
+     - First-try % = (# first-try correct / total unique)
+   Plus: SATA line breaks, auto-scroll, dynamic title, 5%/15% reinforcement,
+         keyboard shortcuts (Enter / A–Z), top-right Reset.
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -24,8 +26,8 @@ const startBtn   = $('startBtn');
 const quiz          = $('quiz');
 const questionText  = $('questionText');
 const optionsForm   = $('optionsForm');
-const submitBtn     = $('submitBtn');   // we will morph this into "Next"
-const nextBtn       = $('nextBtn');     // legacy Next (we'll hide it via CSS)
+const submitBtn     = $('submitBtn');   // morphs from Submit ➜ Next
+const nextBtn       = $('nextBtn');     // hidden via CSS
 const feedback      = $('feedback');
 const answerLine    = $('answerLine');
 const rationale     = $('rationale');
@@ -59,9 +61,10 @@ async function discoverModules() {
     if (!res.ok) throw new Error();
     const data = await res.json();
     const mods = (data.modules || []).filter(Boolean);
-    if (mods.length) moduleSel.innerHTML = mods.map(m => `<option value="${m}">${m}</option>`).join('');
+    if (mods.length) {
+      moduleSel.innerHTML = mods.map(m => `<option value="${m}">${m}</option>`).join('');
+    }
   } catch {
-    // Harmless fallback probe
     fetch('/Final-Semester-Study-Guide_Pharm_Quiz_HESI.json', { method: 'HEAD' })
       .then(r => { if (r.ok) moduleSel.add(new Option('Final-Semester-Study-Guide_Pharm_Quiz_HESI', 'Final-Semester-Study-Guide_Pharm_Quiz_HESI')); })
       .catch(() => {});
@@ -85,7 +88,10 @@ function randomInt(max){
   return Math.floor(Math.random() * max);
 }
 function shuffleInPlace(arr){
-  for (let i = arr.length - 1; i > 0; i--) { const j = randomInt(i + 1); [arr[i], arr[j]] = [arr[j], arr[i]]; }
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = randomInt(i + 1);
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
   return arr;
 }
 function sampleQuestions(all, req){
@@ -130,10 +136,10 @@ function normalizeQuestions(raw){
     q.rationale = (item.rationale || item.explanation || item.reason || '').toString();
     q.type = item.type || null;
 
-    // runtime fields
-    q.attempts = 0;           // times THIS question submitted
-    q.firstTryCorrect = null; // set true/false on first submission; never mutated later
-    q.mastered = false;       // flips true on first correct submit
+    // runtime
+    q.attempts = 0;            // submissions of THIS question
+    q.firstTryCorrect = null;  // set true/false on first submission; never changed later
+    q.mastered = false;        // first correct ➜ mastered
 
     return q;
   }).filter(q => q.question && Object.keys(q.options).length);
@@ -191,21 +197,21 @@ function maybeInjectWrongBuffer(){
   }
 }
 
-/* ---------- Button mode: submit <-> next ---------- */
+/* ---------- One-button mode ---------- */
 function setButtonMode(mode){
   btnMode = mode;
   if (mode === 'submit') {
     submitBtn.textContent = 'Submit';
-    submitBtn.classList.remove('success');
-    submitBtn.disabled = true;                // enabled once an option is selected
+    submitBtn.classList.remove('success'); // blue
+    submitBtn.disabled = true;             // enabled once an option is chosen
   } else {
     submitBtn.textContent = 'Next';
-    submitBtn.classList.add('success');       // green
+    submitBtn.classList.add('success');    // green
     submitBtn.disabled = false;
   }
 }
 
-/* Single click handler controls both modes */
+// Single handler for both actions
 submitBtn.addEventListener('click', () => {
   if (btnMode === 'submit') {
     if (!submitBtn.disabled) handleSubmit();
@@ -249,12 +255,9 @@ function renderQuestion(q){
   rationale.textContent = '';
   rationale.classList.add('hidden');
 
-  // Reset button to "Submit" mode for a fresh question
-  setButtonMode('submit');
+  setButtonMode('submit'); // reset for new question
 
-  // show counters for the NEXT attempt (attempts so far + 1)
-  updateCounters();
-
+  updateCounters();        // show attempts+1
   requestAnimationFrame(() => { quiz.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
 }
 function updateSubmitEnabled(){
@@ -347,8 +350,8 @@ async function startQuiz(){
       questions: chosen,
       queue: chosen.slice(),
       review: [],
-      attemptedCount: 0,       // TOTAL attempts across the run (retries included)
-      masteredCount: 0,        // unique mastered questions
+      attemptedCount: 0,      // all attempts (retries included)
+      masteredCount: 0,       // unique mastered
       totalRequested: chosen.length,
       current: null,
       isFullRun: (pickedLength === 'full') || (chosen.length === all.length)
@@ -401,7 +404,7 @@ function handleSubmit(){
   if (isCorrect) {
     if (!q.mastered) {
       q.mastered = true;
-      state.masteredCount += 1;    // Remaining only drops here
+      state.masteredCount += 1;     // Remaining only drops here
       removeFromWrongBufferById(q.id);
     }
     feedback.textContent = 'Correct!';
@@ -418,7 +421,7 @@ function handleSubmit(){
     wrongSinceInjection += 1;
   }
 
-  // Show rationale only after submit
+  // Rationale only after submit
   if (q.rationale && q.rationale.trim()) {
     rationale.textContent = q.rationale;
     rationale.classList.remove('hidden');
@@ -434,12 +437,12 @@ function handleSubmit(){
   if (existing) { existing.userLetters = pickedLettersCopy; existing.wasCorrect = isCorrect; }
   else { state.review.push({ q, correctLetters: correctLettersCopy, userLetters: pickedLettersCopy, wasCorrect: isCorrect }); }
 
-  // Scroll to answer/rationale
+  // Scroll to rationale/answer
   requestAnimationFrame(() => {
     (rationale.textContent ? rationale : answerLine).scrollIntoView({ behavior: 'smooth', block: 'end' });
   });
 
-  // Switch the single button into "Next" mode (green)
+  // Switch to "Next" mode (green)
   setButtonMode('next');
 
   // Update counters for the upcoming attempt (attempts + 1)
@@ -472,14 +475,14 @@ function resetQuiz(){
   if (firstTryCntEl) firstTryCntEl.textContent = '0';
   if (firstTryTotEl) firstTryTotEl.textContent = '0';
 
-  setButtonMode('submit'); // reset label/color
+  setButtonMode('submit');
   currentInputsByLetter = {};
 }
 
 /* ---------- Counters ---------- */
 function updateCounters(){
   if (!state) { runCounter.textContent=''; remainingCounter.textContent=''; return; }
-  const currentAttemptNumber = state.attemptedCount + 1; // keeps rising with repeats
+  const currentAttemptNumber = state.attemptedCount + 1;     // keeps rising with repeats
   runCounter.textContent = `Question: ${currentAttemptNumber}`;
 
   const remaining = Math.max(0, (state.totalRequested || 0) - (state.masteredCount || 0));
@@ -489,6 +492,7 @@ function updateCounters(){
 /* ---------- Keyboard shortcuts ---------- */
 document.addEventListener('keydown', (e) => {
   if (quiz.classList.contains('hidden')) return;
+
   if (e.key === 'Enter') {
     if (btnMode === 'submit') {
       if (!submitBtn.disabled) { e.preventDefault(); handleSubmit(); }
@@ -497,6 +501,7 @@ document.addEventListener('keydown', (e) => {
     }
     return;
   }
+
   // Letter shortcuts A..Z
   const L = (e.key && e.key.length === 1) ? e.key.toUpperCase() : '';
   if (L && currentInputsByLetter[L]) {
