@@ -223,7 +223,7 @@
       "correct": [
         "A"
       ],
-      "rationale": "When TJC, a not-for-profit organization that accredits healthcare organizations, changed its focus from processes to outcomes, it emphasized patient safety and set specific annual patient safety goals.",
+      "rationale": "When The Joint Commission (TJC), a not-for-profit organization that accredits healthcare organizations, changed its focus from processes to outcomes, it emphasized patient safety and set specific annual patient safety goals.",
       "type": "single_select"
     },
     {
@@ -485,7 +485,7 @@
     },
     {
       "id": "Module_4_Q33",
-      "stem": "A nurse manager at a home healthcare service has resigned to take a position at a local ambulatory care center. She has been hired because of her expertise in TJC accreditation. To initiate the changes, the nurse manager has to be knowledgeable about the differences between a home healthcare institution and an ambulatory care center, which is a primary care institution. Primary care institutions are facilities that provide:",
+      "stem": "A nurse manager at a home healthcare service has resigned to take a position at a local ambulatory care center. She has been hired because of her expertise in The Joint Commision (TJC) accreditation. To initiate the changes, the nurse manager has to be knowledgeable about the differences between a home healthcare institution and an ambulatory care center, which is a primary care institution. Primary care institutions are facilities that provide:",
       "options": [
         "Rehabilitative or long-term care.",
         "Disease-restorative care.",
