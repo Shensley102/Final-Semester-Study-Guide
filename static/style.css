@@ -126,6 +126,15 @@ body{
   #submitBtn{ width:min(560px, 50%); margin:0 auto; }
 }
 
+/* One-button flow: when it turns into "Next", make it green */
+#submitBtn.success{
+  background:#1a7f37 !important;   /* accessible green */
+  color:#fff;
+}
+
+/* Hide legacy Next button from layout (we morph Submit into Next) */
+#nextBtn{ display:none !important; }
+
 /* Reset: top-right, responsive sizing */
 #quiz #restartBtn{
   position:absolute; top:8px; right:8px; z-index:1;
