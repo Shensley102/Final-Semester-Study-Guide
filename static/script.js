@@ -6,8 +6,9 @@
      - Question counts every attempt (retries included)
      - Remaining only drops on correct submission
      - First-try % = (# first-try correct / total unique)
-   Plus: SATA line breaks, auto-scroll-to-bottom after submit,
+   Plus: SATA line breaks, scroll-to-bottom after submit,
          dynamic title, 5%/15% reinforcement, keyboard shortcuts.
+   Results page: "Your answer" REMOVED.
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -308,21 +309,19 @@ function goNext(){
   });
 }
 
+/* --------- Review list item (NO "Your answer" block) --------- */
 function buildReviewItemHTML(entry){
   const q = entry.q;
   const correct = entry.correctLetters || [];
-  const user = entry.userLetters || [];
   const isCorrect = entry.wasCorrect;
 
   const correctText = correct.map(L => `${L}. ${escapeHTML(q.options[L] || '')}`).join('<br>');
-  const userText = user.map(L => `${L}. ${escapeHTML(q.options[L] || '')}`).join('<br>');
   const rationaleHTML = q.rationale ? `<div class="rev-rationale"><strong>Rationale:</strong> ${escapeHTML(q.rationale)}</div>` : '';
 
   return `
     <div class="rev-item ${isCorrect ? 'ok' : 'bad'}">
       <div class="rev-q">${escapeHTML(q.question)}</div>
       <div class="rev-ans"><strong>Correct:</strong><br>${correctText || '(none provided)'}</div>
-      <div class="rev-user"><strong>Your answer:</strong><br>${userText || '(none)'}</div>
       ${rationaleHTML}
     </div>
   `;
@@ -427,14 +426,14 @@ function handleSubmit(){
     rationale.classList.add('hidden');
   }
 
-  // Review log (latest outcome wins)
+  // Review log (latest outcome wins) — still track correctness internally
   const correctLettersCopy = [...correctSet];
   const pickedLettersCopy  = [...pickedSet];
   const existing = state.review.find(r => r.q.id === q.id);
   if (existing) { existing.userLetters = pickedLettersCopy; existing.wasCorrect = isCorrect; }
   else { state.review.push({ q, correctLetters: correctLettersCopy, userLetters: pickedLettersCopy, wasCorrect: isCorrect }); }
 
-  // === NEW: Scroll the whole page to the bottom so the entire rationale is visible ===
+  // Scroll entire page to bottom so the rationale is fully visible
   scrollToBottomSmooth();
 
   // Switch to "Next" mode (green)
