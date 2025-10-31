@@ -6,8 +6,8 @@
      - Question counts every attempt (retries included)
      - Remaining only drops on correct submission
      - First-try % = (# first-try correct / total unique)
-   Plus: SATA line breaks, auto-scroll, dynamic title, 5%/15% reinforcement,
-         keyboard shortcuts (Enter / A–Z), top-right Reset.
+   Plus: SATA line breaks, auto-scroll-to-bottom after submit,
+         dynamic title, 5%/15% reinforcement, keyboard shortcuts.
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -88,10 +88,7 @@ function randomInt(max){
   return Math.floor(Math.random() * max);
 }
 function shuffleInPlace(arr){
-  for (let i = arr.length - 1; i > 0; i--) {
-    const j = randomInt(i + 1);
-    [arr[i], arr[j]] = [arr[j], arr[i]];
-  }
+  for (let i = arr.length - 1; i > 0; i--) { const j = randomInt(i + 1); [arr[i], arr[j]] = [arr[j], arr[i]]; }
   return arr;
 }
 function sampleQuestions(all, req){
@@ -202,7 +199,7 @@ function setButtonMode(mode){
   btnMode = mode;
   if (mode === 'submit') {
     submitBtn.textContent = 'Submit';
-    submitBtn.classList.remove('success'); // blue
+    submitBtn.classList.remove('success'); // blue (default)
     submitBtn.disabled = true;             // enabled once an option is chosen
   } else {
     submitBtn.textContent = 'Next';
@@ -437,10 +434,8 @@ function handleSubmit(){
   if (existing) { existing.userLetters = pickedLettersCopy; existing.wasCorrect = isCorrect; }
   else { state.review.push({ q, correctLetters: correctLettersCopy, userLetters: pickedLettersCopy, wasCorrect: isCorrect }); }
 
-  // Scroll to rationale/answer
-  requestAnimationFrame(() => {
-    (rationale.textContent ? rationale : answerLine).scrollIntoView({ behavior: 'smooth', block: 'end' });
-  });
+  // === NEW: Scroll the whole page to the bottom so the entire rationale is visible ===
+  scrollToBottomSmooth();
 
   // Switch to "Next" mode (green)
   setButtonMode('next');
@@ -541,4 +536,13 @@ function escapeHTML(s=''){
     .replaceAll('>','&gt;')
     .replaceAll('"','&quot;')
     .replaceAll("'",'&#39;');
+}
+
+/* Smoothly scroll the entire page to the very bottom AFTER rationale paints */
+function scrollToBottomSmooth() {
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      window.scrollTo({ top: document.documentElement.scrollHeight, behavior: 'smooth' });
+    });
+  });
 }
