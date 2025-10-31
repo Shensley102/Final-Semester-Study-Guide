@@ -28,7 +28,7 @@
       "correct": [
         "C"
       ],
-      "rationale": "The IOM (2010) emphasizes the need for nurses to engage in lifelong learning and to use evidence and best practices to inform practice and ensure safety.",
+      "rationale": "The Institute of Medicine (IOM) (2010) emphasizes the need for nurses to engage in lifelong learning and to use evidence and best practices to inform practice and ensure safety.",
       "type": "single_select"
     },
     {
@@ -43,7 +43,7 @@
       "correct": [
         "C"
       ],
-      "rationale": "The IOM report (2004) highlighted the importance of the attendance of the senior nurse executive at board meetings to be a key spokesperson on safety and quality issues.",
+      "rationale": "The Institute of Medicine (IOM) report (2004) highlighted the importance of the attendance of the senior nurse executive at board meetings to be a key spokesperson on safety and quality issues.",
       "type": "single_select"
     },
     {
@@ -63,7 +63,7 @@
     },
     {
       "id": "Module_4_Q5",
-      "stem": "What did the IOM Health Professions Education report highlight as a concern for patient safety?",
+      "stem": "What did the Institute of Medicine (IOM) Health Professions Education report highlight as a concern for patient safety?",
       "options": [
         "A normal risk in professional practice",
         "A result of disciplinary silos",
@@ -118,7 +118,7 @@
       "correct": [
         "D"
       ],
-      "rationale": "Focusing on the patient moves care from concern about who controls care to a focus on what care is provided to and with patients, which was an aim identified in the IOM report Crossing the Quality Chasm.",
+      "rationale": "Focusing on the patient moves care from concern about who controls care to a focus on what care is provided to and with patients, which was an aim identified in the Institute of Medicine (IOM) report Crossing the Quality Chasm.",
       "type": "single_select"
     },
     {
@@ -138,7 +138,7 @@
     },
     {
       "id": "Module_4_Q10",
-      "stem": "As a nurse manager on the West Surgery Unit, you are interested in increasing patient safety and reducing morbidity and mortality on your unit. What recommendations would be consistent with the IOM The Future of Nursing report?",
+      "stem": "As a nurse manager on the West Surgery Unit, you are interested in increasing patient safety and reducing morbidity and mortality on your unit. What recommendations would be consistent with the Institute of Medicine (IOM) The Future of Nursing report?",
       "options": [
         "Careful screening of nursing staff for substance use and abuse",
         "Increased RN staffing on the unit",
