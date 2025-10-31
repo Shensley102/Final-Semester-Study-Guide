@@ -1,0 +1,1896 @@
+{
+  "name": "Learning_Questions_Module_3_4_",
+  "generated_on": "2025-10-31T20:40:31Z",
+  "source_modules": [
+    "Module_3.json",
+    "Module_4.json"
+  ],
+  "total_questions": 93,
+  "questions": [
+    {
+      "id": "Module_3_Q1",
+      "stem": "A patient states, “I had a bad nightmare. When I woke up, I felt emotionally drained, as though I hadn’t rested well.” Which response by the nurse would be an example of interpersonal therapeutic communication?",
+      "options": [
+        "“It sounds as though you were uncomfortable with the content of your dream.”",
+        "“I understand what you’re saying. Bad dreams leave me feeling tired, too.”",
+        "“So, all in all, you feel as though you had a rather poor night’s sleep?”",
+        "“Can you give me an example of what you mean by a ‘bad nightmare’?”"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "The technique of clarification is therapeutic and helps the nurse examine meaning. The distracters focus on patient feelings but fail to clarify the meaning of the patient’s comment.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Communication"
+      ]
+    },
+    {
+      "id": "Module_3_Q2",
+      "stem": "The nurse is admitting a patient to the medical/surgical unit. Which communication technique would be considered appropriate for this interaction?",
+      "options": [
+        "“I’ve also had traumatic life experiences. Maybe it would help if I told you about them.”",
+        "“Why do you think you had so much difficulty adjusting to this change in your life?”",
+        "“You will feel better after getting accustomed to how this unit operates.”",
+        "“I’d like to sit with you for a while to help you get comfortable talking to me.”"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Because the patient is newly admitted to the unit, allowing the patient to become comfortable with the setting is a technique that can assist in establishing the nurse-patient relationship. It helps build trust and conveys that the nurse cares about the patient. The nurse should not reveal their life experiences as this is not therapeutic. Asking why the patient is having difficulty may provide insight; however, this would be best saved for an established relationship with the patient. Assuring the patient that they will feel better may not be true depending on the reason for the admission.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Communication"
+      ]
+    },
+    {
+      "id": "Module_3_Q3",
+      "stem": "The nurse is seeking clarification of a statement that was made by a patient. What is the best way for the nurse to seek clarification?",
+      "options": [
+        "“What are the common elements here?”",
+        "“Tell me again about your experiences.”",
+        "“Am I correct in understanding that …”",
+        "“Tell me everything from the beginning.”"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Clarification ensures that both the nurse and the patient share mutual understanding of the communication. The distracters encourage comparison rather than clarification and present implied questions that suggest the nurse was not listening.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Communication"
+      ]
+    },
+    {
+      "id": "Module_3_Q4",
+      "stem": "A nurse is conducting a therapeutic session with a patient in the inpatient psychiatric facility. Which remark by the nurse would be an appropriate way to begin an interview session?",
+      "options": [
+        "“How shall we start today?”",
+        "“Shall we talk about losing your privileges yesterday?”",
+        "“Let’s get started discussing your marital relationship.”",
+        "“What happened when your family visited yesterday?”"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "The interview is patient centered; thus, the patient chooses issues. The nurse assists the patient by using communication skills and actively listening to provide opportunities for the patient to reach goals. In the distracters, the nurse selects the topic.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Communication"
+      ]
+    },
+    {
+      "id": "Module_3_Q5",
+      "stem": "The nurse and the patient are conversing face to face. What communication technique is being demonstrated?",
+      "options": [
+        "Linguistic",
+        "Paralinguistic",
+        "Explicit",
+        "Metacommunication"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Conversing face to face, reading newspapers and books, and even texting are all common forms of linguistic communication. Paralinguistics include less recognizable but important means of transmitting messages such as the use of gestures, eye contact, and facial expressions. Explicit communication is not a therapeutic communication technique. Metacommunication factors that affect how messages are received and interpreted would include internal personal states (such as disturbances in mood), environmental stimuli related to the setting of the communication, and contextual variables (such as the relationship between the people in the communication episode).",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Communication"
+      ]
+    },
+    {
+      "id": "Module_3_Q6",
+      "stem": "The nurse is working with a patient diagnosed with posttraumatic stress disorder related to childhood sexual abuse. The patient is crying and states, “I should be over this by now; this happened years ago.” Which response(s) by the nurse will facilitate communication? (Select all that apply.)",
+      "options": [
+        "“Why do you think you are so upset?”",
+        "“I can see that this situation really bothers you.”",
+        "“The abuse you endured is very painful for you.”",
+        "“Crying is a way of expressing the hurt you’re experiencing.”",
+        "“Let’s talk about something else, since this subject is upsetting you.”"
+      ],
+      "correct": [
+        "B",
+        "C",
+        "D"
+      ],
+      "rationale": "Reflecting and giving information are therapeutic techniques. “Why” questions often imply criticism or seem intrusive or judgmental. They are difficult to ANSWER. Changing the subject is a barrier to communication.",
+      "type": "multi_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Communication"
+      ]
+    },
+    {
+      "id": "Module_3_Q7",
+      "stem": "The staff nurse who uses informatics in promoting quality patient care is most likely to access data in which domain?",
+      "options": [
+        "Certified clinical information systems (CIS)",
+        "Clinical healthcare informatics",
+        "Public health/population informatics",
+        "Translational bioinformatics"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Clinical healthcare informatics and the subset, nursing informatics, provides for the development of direct approaches to patients and their families which can be used by the staff nurse to promote quality patient care. Certified CIS refers to the tools for achieving quality outcomes, including electronic health records, clinical data repositories, decision support programs, and handheld devices—not the data. Public health/population informatics is the domain which relates information, computer science, and technology to public health science to improve the health of populations; this domain would provide data for the nurse working with communities. Translational bioinformatics refers to the research science domain where biomedical and genomic data are combined; it is a new term that describes the domain of where bioinformatics meets clinical medicine, generally for healthcare research rather than direct patient care.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Informatics/Technology"
+      ]
+    },
+    {
+      "id": "Module_3_Q8",
+      "stem": "When discussing the purposes of healthcare informatics with a nurse during orientation, the nurse educator would be concerned if the nurse orientee stated that which is one purpose of informatics?",
+      "options": [
+        "Develop a cognitive science.",
+        "Improve disease tracking.",
+        "Improve the health provider’s work flow.",
+        "Increase administrative efficiencies."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Cognitive science is one of the theories that play a role in the implementation of informatics. Its development is not a purpose, and the nurse educator would use this incorrect response of the orientee to plan additional teaching about the purposes of healthcare informatics. Purposes of information health technology include to improve health provider work flow, improve healthcare quality, prevent medical errors, reduce healthcare costs, increase administrative efficiencies, decrease paperwork, and improve disease tracking.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Informatics/Technology"
+      ]
+    },
+    {
+      "id": "Module_3_Q9",
+      "stem": "To design and implement a decubitus ulcer risk management protocol in the electronic health record, the informatics nurse would first perform which action?",
+      "options": [
+        "Build the screens in the electronic health record.",
+        "Determine evidence supporting decubitus ulcer risk management.",
+        "Develop the training program for staff.",
+        "Select the appropriate standardized language."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Collecting the evidence related to the issue is the first step in addressing a problem (remember the nursing process, the foundation of nursing practice). Based on the evidence, an assessment tool or tools and data needed from a patient perspective would be identified. The screens in the electronic record would be based on the workflow surrounding the patient assessment. A training program could not be developed until the protocol is adopted. The appropriate standardized language is selected based on what needs to be documented and what has been approved for use by the agency (e.g., ANA recognized terminologies).",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Informatics/Technology"
+      ]
+    },
+    {
+      "id": "Module_3_Q10",
+      "stem": "The application of information processing that deals with the storage, retrieval sharing, and use of healthcare data, information, and knowledge for communication and decision making is the definition of which area?",
+      "options": [
+        "Computer science",
+        "Health informatics",
+        "Health information technology",
+        "Nursing informatics"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "This is the definition of health information technology. Computer science is a branch of engineering that studies computation and computer technology, hardware, software, and the theoretical foundations of information and computation techniques. Health informatics is a discipline in which health data are stored, analyzed, and disseminated through the application of information and communication technology. Nursing informatics is a specialty that integrates nursing science, computer science, and information science to manage and communicate data, information, knowledge, and wisdom in nursing practice.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Communication",
+        "Informatics/Technology"
+      ]
+    },
+    {
+      "id": "Module_3_Q11",
+      "stem": "The nurse manager of a medical/surgical unit wants to increase the use of healthcare technology on the unit and is working with an ANA-certified informatics nurse to reduce which barriers to health information exchange?",
+      "options": [
+        "Basic informatics knowledge and skills",
+        "Offering the best set of tools",
+        "Privacy and security policies",
+        "Unit-specific terminology"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Unit-specific terminology would be a barrier to sharing health information because there could be confusion about terms. Standardized terminology within the electronic health record is critical for communicating care to the interprofessional team and exchanging health information. Competency in informatics including basic informatics knowledge and skills could facilitate the use of informatics; lack of competency could be a barrier. Offering the best set of tools could promote the ease of data entry and access. Privacy and security policies reduce legal and ethical concerns about sharing data, thus reducing barriers to health information exchange.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Informatics/Technology"
+      ]
+    },
+    {
+      "id": "Module_3_Q12",
+      "stem": "A nurse is reviewing concepts related to documentation in the electronic health record. Which statement best represents the concept of “meaningful use”?",
+      "options": [
+        "Allows for privacy of information",
+        "Uses individualized log on for access",
+        "Completes charting in a timely manner",
+        "Meets established criteria related to technological use"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "The concept of “meaningful use” refers to the establishment of criteria related to technological use of the electronic health record as determined by federal guidelines. HIPAA policy mandates privacy of personal information and patient medical records. Use of an individualized log on to access relates to security concerns. Completing charting in a timely manner is an expectation of prudent practice.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Informatics/Technology"
+      ]
+    },
+    {
+      "id": "Module_3_Q13",
+      "stem": "Which are exemplars of the health informatics concept?",
+      "options": [
+        "Clinical research informatics",
+        "Hardware and software",
+        "Privacy and security",
+        "Standard terminology"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Exemplars of the health informatics concept include clinical healthcare informatics, clinical research informatics, public/population health informatics, and translational bioinformatics. Hardware and software, privacy and security, and standardized information systems and terminology are considered attributes related to the concept, not exemplars.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Informatics/Technology"
+      ]
+    },
+    {
+      "id": "Module_3_Q14",
+      "stem": "A group of staff nurses is dissatisfied with the new ideas presented by the newly hired nurse manager. The staff wants to keep their old procedures, and they resist the changes. Conflict arises from:",
+      "options": [
+        "Group decision-making options.",
+        "Perceptions of incompatibility.",
+        "Increases in group cohesiveness.",
+        "Debates, negotiations, and compromises."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Conflict involves disagreement in values or beliefs within oneself or between people that causes harm or has the potential to cause harm. Conflict may result from the interaction of interdependent people who perceive incompatibility and the potential for interference.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q15",
+      "stem": "Two staff nurses are arguing about whose turn it is to work on the upcoming holiday. In trying to resolve this conflict, the nurse manager understands that interpersonal conflict arises when:",
+      "options": [
+        "Risk taking seems to be unavoidable.",
+        "People see events differently.",
+        "Personal and professional priorities do not match.",
+        "The ways in which people should act do not match the ways in which they do act."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "By definition, conflict involves a difference in perception between two or more individuals.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q16",
+      "stem": "The nurse manager is aware that conflict is occurring on her unit; however, she is focused on preparing for a state health department visit, so she ignores the problem. What factor can increase stress and escalate conflict?",
+      "options": [
+        "The use of avoidance",
+        "An enhanced nursing work force",
+        "Accepting that some conflict is normal",
+        "Managing the effects of fatigue and error"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Avoidance as a conflict-management style prolongs conflict and tends to escalate conflict.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q17",
+      "stem": "The nurse manager decides to use a mediator to help resolve the staff‘s conflict. A basic strategy for truly addressing this conflict is to:",
+      "options": [
+        "Identify the conflicting facts.",
+        "Be determined to resolve the conflict.",
+        "Schedule a meeting time for resolution.",
+        "Have a clear understanding of the differences between the parties in conflict."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "It is important for each person in the conflict to clarify the conflict as I see it and how it makes me respond‖ before all the persons involved in the conflict can define the conflict, develop a shared conceptualization, and resolve their differences.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q18",
+      "stem": "Sarah, a staff nurse on your unit, witnesses another nurse striking a patient. Sarah wants to remain friends with her colleague and worries that confrontation with her colleague or reporting her colleague will destroy their relationship. Sarah is experiencing which type of conflict?",
+      "options": [
+        "Intrapersonal",
+        "Interpersonal",
+        "Organizational",
+        "Professional"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Intrapersonal conflict occurs within a person when confronted with the need to think or act in a way that seems at odds with that person‘s sense of self. Questions often arise that create a conflict over priorities, ethical standards, and values. Some issues present a conflict over comfortably maintaining the status quo and taking risks to confront people when needed, which can lead to interpersonal conflict.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q19",
+      "stem": "The chief nursing officer plans a series of staff development workshops for the nurse managers to help them deal with conflicts. The first workshop introduces the four stages of conflict, which are:",
+      "options": [
+        "Frustration, competition, negotiation, and action.",
+        "Frustration, conceptualization, action, and outcomes.",
+        "Frustration, cooperation, collaboration, and action outcomes.",
+        "Frustration, conceptualization, negotiation, and action outcomes."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Thomas (1992) determined that conflict proceeds through these four stages in this particular order.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q20",
+      "stem": "After using a mediator to resolve a conflict between the nurse manager and two staff nurses, the chief nursing officer decides to:",
+      "options": [
+        "Observe to make sure the conflict has been resolved.",
+        "Fire both staff nurses.",
+        "Reassign both staff nurses.",
+        "Reassign the nurse manager."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "The nurse leader should follow up to determine if the conflict has been resolved because, in professional practice environments, unresolved conflict among nurses is a significant issue that results in job dissatisfaction, absenteeism, and turnover, as well as in decreased patient satisfaction and poorer quality in patient care.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q21",
+      "stem": "A nursing instructor is teaching a class on conflict and conflict resolution. She relates to the class that conflict in an organization is important, and that an optimal level of conflict will generate:",
+      "options": [
+        "Creativity, a problem-solving atmosphere, a weak team spirit, and motivation of its workers.",
+        "Creativity, a staid atmosphere, a weak team spirit, and motivation of its workers.",
+        "Creativity, a problem-solving atmosphere, a strong team spirit, and motivation for its workers.",
+        "A bureaucratic atmosphere, a strong team spirit, and motivation for its workers."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Differences in ideas, perceptions, and approaches, when managed well, can lead to creative solutions and deepened human relationships. Work on conflict suggests that complete resolution of conflict is counterproductive to the achievement of organizational goals, organizational change, and cohesiveness of employees.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q22",
+      "stem": "Jane has transferred from the ICU to the CCU. She is very set in the way she makes assignments and encourages her new peers to adopt this method without sharing the rationale for why it is better. This is a good example of a process and procedure that creates which type of conflict?",
+      "options": [
+        "Organizational",
+        "Intrapersonal",
+        "Interpersonal",
+        "Disruptive"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Interpersonal conflict transferrers between and among nurses, physicians, members of other departments, and patients.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q23",
+      "stem": "Two nurses on a psychiatric unit come from different backgrounds and have graduated from different universities. They are given a set of new orders from the unit manager. Each nurse displays different emotions in response to the orders. Nurse A indicates that the new orders include too many changes; Nurse B disagrees and verbally indicates why. This step in the process is which of the following in Thomas‘ stages of conflict?",
+      "options": [
+        "Frustration",
+        "Conceptualization",
+        "Action",
+        "Outcomes"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Thomas‘ Stages of Conflict include conceptualization, which involves different ideas and emphasis on what is important or not or about what should occur.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q24",
+      "stem": "Mrs. Hill, aged 68, was hospitalized after a stroke. The speech therapist recommended that oral feeding be stopped because of her dysplasia. During visiting hours, Mr. Hill fed his wife some noodles. The nurse noticed this and stopped Mr. Hill from feeding his wife, telling him it was the doctor‘s decision. An hour later, the nurse returned and found Mr. Hill feeding his wife again. The nurse tried to stop him again. Mr. Hill refused and claimed that the clinical staff was trying to starve his wife; he also threatened to get violent with the nurse. The nurse decided to walk away and documented the event in Mrs. Hill‘s chart. According to Thomas‘ four stages of conflict, in which stage could the nurse have been more effective?",
+      "options": [
+        "Frustration",
+        "Conceptualizing",
+        "Action",
+        "Outcomes"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q25",
+      "stem": "Mrs. Hill, aged 68, was hospitalized after a stroke. The speech therapist recommended that oral feeding be stopped because of her dysplasia. During visiting hours, Mr. Hill fed his wife some noodles. The nurse noticed this and stopped Mr. Hill from feeding his wife, telling him it was the doctor‘s decision. An hour later, the nurse returned and found Mr. Hill feeding his wife again. The nurse tried to stop him again. Mr. Hill refused and claimed that the clinical staff was trying to starve his wife; he also threatened to get violent with the nurse. The nurse decided to walk away and documented the event in Mrs. Hill‘s chart. The outcome as depicted by Thomas‘ conflict stages can be considered to be:",
+      "options": [
+        "Compromising.",
+        "Confronting.",
+        "Constructive.",
+        "Destructive."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Resolution was absent because the nurse did not have time to effectively deal with the issues in the conflict. This can lead to negativity, increased frustration, and further distancing between individuals or groups, including between patients and nurses.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q26",
+      "stem": "Jill is the head nurse on a unit in a large hospital. Two of the staff nurses are constantly arguing and blaming each other, and a resolution has not occurred in months. To solve the existing conflict, which is the most creative conflict resolution?",
+      "options": [
+        "Avoiding",
+        "Competing",
+        "Compromising",
+        "Collaborating"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Collaboration, although time consuming, is the most creative stance. The collaboration technique involves both sides in the conflict working together to develop an optimal outcome. This results in a win-win solution.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q27",
+      "stem": "A nurse educator is giving a workshop on conflict. During the sessions, he makes various statements regarding conflict. All of the statements are true except:",
+      "options": [
+        "Conflict can decrease creativity, thus acting as a deterrent for the development of new ideas.",
+        "Horizontal violence involves those with similar status but little power in the larger context.",
+        "Interprofessional collaboration reduces unresolved conflicts.",
+        "All conflicts involve some level of disagreement."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "The opposite is true because research has shown that conflict, like change, increases creativity and allows for the development of new ideas.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Communication",
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q28",
+      "stem": "Sarah is a nurse manager in a surgical unit. She is concerned about a conflict between Lucy (a staff nurse) and one of the maintenance personnel. Sarah explains to Lucy that unsatisfactory resolution of the conflict is typically destructive and will result in:",
+      "options": [
+        "Decreased frustration between the maintenance worker and her.",
+        "A good relationship with the maintenance department.",
+        "Eventual resolution of the problem without further intervention.",
+        "Decreased productivity on her part."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Productivity decreases with destructive conflict, whereas constructive conflict strengthens relationships.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q29",
+      "stem": "Staff at Valley Hospital are concerned that recent staffing cuts will affect their ability to provide quality patient care, and they express their concerns to senior management. The CEO of Valley Hospital makes the following statement: We need to contain costs because our funding has been decreased. This is a good example of which of the following conditions that propel a situation toward conflict?",
+      "options": [
+        "Incompatible goals",
+        "Role conflicts",
+        "Structural conflict",
+        "Competition for resources"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Conflicts arise in four areas: goals, facts, approaches, and values. Conflicts among goals arise from competing priorities such as the provision of quality patient care and containment of costs.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q30",
+      "stem": "Kala, a unit manager, in discussing a role the CEO would like her to perform, makes the following statement, I will sit on the hospital task force on improving morale if you send me to the hospital‘s leadership training classes next week, so I can further develop my skills and thus be more effective. Which of the following conflict management styles is Kala using?",
+      "options": [
+        "Collaborating",
+        "Avoiding",
+        "Negotiating",
+        "Accommodating"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Negotiation involves an exchange of concessions (membership on a committee in return for attendance at a workshop) or trading. This strategy supports a balance of power.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q31",
+      "stem": "John is a circulating nurse in the operating room. He is usually assigned to general surgery, but on this day he is assigned to the orthopedic room. He is unfamiliar with the routines and studies the doctor‘s preference cards before each patient. The fourth patient comes into the room and John prepares a site for a biopsy using a Betadine solution. The surgeon prefers another solution. He notices what John has done and immediately corrects him by rudely insulting John. What is the appropriate approach to conflict resolution in this example?",
+      "options": [
+        "Collaboration",
+        "Compromising",
+        "Avoiding",
+        "Withdraw"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Compromise involves negotiation or an exchange of concessions and supports a balance of power.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q32",
+      "stem": "Factors that influence the ease with which conflict is resolved include all except which of the following?",
+      "options": [
+        "Level of interdependence of the parties",
+        "Interprofessional collaboration",
+        "Expression of one‘s own needs and ideas",
+        "Avoidance of the issue or concern"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Conflict involves a level of interdependence and is a condition for conflict but not necessarily for continuance of the conflict. Expression of one‘s ideas and concerns is considered assertive and effective in resolving conflict if the concerns and needs of the other are also considered. Interprofessional collaboration has been shown to be effective in resolving conflict. Avoidance tends to prolong and sometimes escalate conflict.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q33",
+      "stem": "The head nurse and a staff nurse are having a conflict over how to use and apply a new procedure for dressings in the medical/surgical area. The staff nurse wishes to use the new procedure based on newly released nursing research. The head nurse wishes to use a protocol that has been used in the department for a number of years. The head nurse later makes comments to other staff on her unit about the credibility of the staff nurse. This behavior is associated with:",
+      "options": [
+        "Lateral violence.",
+        "Horizontal violence.",
+        "Confrontation.",
+        "Bullying."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Bullying involves aggressive or destructive behavior or psychological harassment of a recipient who is in a position of power differential with the perpetrator (the head nurse). Bullying is closely related to lateral or horizontal violence and involves such behaviors as incivility or intimidation.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q34",
+      "stem": "Which of the following exemplifies the predominant conflict management style of nurse managers?",
+      "options": [
+        "Elizabeth, the head nurse on neurology, finds that Tom, the RN nurse on nights, is irritable in relation to any suggestions or new ideas, and so she comes in to work after Tom leaves the unit.",
+        "The technology committee has recommended a clinical system for implementation on the nursing unit. Staff is anxious about the change. Tim, the head nurse, asks staff for ideas on how to meet the technology goals and to meet staff needs.",
+        "During management meetings, George, the head nurse on nephrology, dominates meetings and decisions. Lee, the head nurse on the cardiac step-down unit, begins to miss the management meetings.",
+        "Ann, RN, asks her head nurse if she can go on the permanent evening shift. The head nurse, Rajib, agrees, as long as Ann agrees to be involved in assisting to mentor evening staff in the use of the new clinical information system."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Compromise involves trading and negotiation and is the predominant conflict management style of managers.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q36",
+      "stem": "What exemplifies the predominant style of conflict management for staff nurses?",
+      "options": [
+        "Sarah and Jonas, two RNs, disagree about the best approach to assisting a family that has complex needs. They decide that they will consult with family and together will decide what is best.",
+        "Jennifer needs to switch a shift to attend a family function. She arranges to trade with Nancy, who wants a day off next to a 3-day break.",
+        "Lindsay asks Melody to stay late for the third day in a row. Melody refuses, stating that she has already helped out for 2 days by staying late for Lindsay.",
+        "Lara asks Stacey to switch shifts with her because Lara wants to attend a concert. Stacey would prefer not to but does to enable Lara, who is new in town, to be with her friends."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Avoidance and accommodation are the predominant conflict management styles of nurses. Accommodating involves neglecting one‘s own needs while trying to satisfy the needs of another.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q37",
+      "stem": "In trying to achieve Magnet® status, the chief nursing officer establishes a shared governance model to help nurses experience job satisfaction. However, some nurses who have enjoyed working with less autonomy resist this change and begin to criticize and make rude comments about managers who embrace this model, as well as colleagues who support it. The comments are largely ignored because those who are making them are well-established nurses who are often vocal about their displeasure with the organization. Organizational conflict is arising from which of the following?",
+      "options": [
+        "Staffing practices",
+        "Increased participation in decision making",
+        "Allocation of resources",
+        "Tolerance of incivility"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Organizational conflict arises from discord related to policies and procedures (such as staffing policies and practices and allocation of resources), personnel codes or conduct or accepted norms of behavior (such as incivility), and patterns of communication. A major source conflict in organizations stems from strategies that promote more participation and autonomy of staff nurses.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q38",
+      "stem": "Nurses entering the work force today are faced with which of the following relationships that could create organizational conflict? (Select all that apply.)",
+      "options": [
+        "Nurse-physician relationship",
+        "Nurse-nurse relationship",
+        "Nurse-patient relationship",
+        "Nurse-chief nursing officer relationship",
+        "Nurse-auxiliary personnel relationships"
+      ],
+      "correct": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "rationale": "By nature, conflict is potentially present in all interpersonal situations. The nurse manager should create an environment that recognizes and values differences in staff, physicians, patients, and communities.",
+      "type": "multi_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Conflict & Team Dynamics"
+      ]
+    },
+    {
+      "id": "Module_3_Q39",
+      "stem": "A nurse manager was orienting new staff members to computerized charting. To understand computerized charting, staff members must understand informatics. The three core concepts in informatics are:",
+      "options": [
+        "Hardware, software, and printers.",
+        "Data, information, and knowledge.",
+        "Decision making, data gathering, and reporting.",
+        "Wireless technology, voice recognition, and handheld devices."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Informatics is the application of technology to all fields of nursing to facilitate and extend nurses‘ decision-making abilities and to support nurses in the use, storage, and linkage of clinical information to provide effective and efficient patient care.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Informatics/Technology"
+      ]
+    },
+    {
+      "id": "Module_3_Q53",
+      "stem": "A recent nursing graduate in a busy Emergency Department triages a patient who has sustained a large, deep puncture wound in his foot while working at a construction site. He is bleeding and is in pain. The nurse enters the triage data that she has obtained from the patient into a computerized, standard emergency patient-classification system. After she enters the assessment data, she notices an alert on the computer screen that prompts her to ask the patient about the status of his tetanus immunization. What system of technology is involved in generating the alert?",
+      "options": [
+        "Clinical decision support",
+        "WL technology",
+        "Computerized provider order",
+        "Electronic health record"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Clinical decision support (CDS) is a clinical computer system, computer application, or process that helps health professionals make clinical decisions to enhance patient care. The clinical knowledge embedded in computer applications or work processes can range from simple facts and relationships to best practices for managing patients with specific disease states, new medical knowledge from clinical research, and other types of information.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Informatics/Technology"
+      ]
+    },
+    {
+      "id": "Module_3_Q62",
+      "stem": "As part of an information technology implementation team, you are implementing a clinical decision support system. Particular considerations for successful implementation of this project include:",
+      "options": [
+        "Ensuring that the system is reliable.",
+        "Ensuring that patient information is reliable.",
+        "Developing unique identifiers for individuals.",
+        "Developing rules that support inferences."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Clinical decision support systems provide support for novice nurses, in particular, as they enable entry of real-time data from patient situations and inferences that apply the logic that expert nurses would use. These inferences require rules to be developed for the system.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Informatics/Technology"
+      ]
+    },
+    {
+      "id": "Module_3_Q78",
+      "stem": "A recent nursing graduate in a busy Emergency Department triages a patient who has sustained a large, deep puncture wound in his foot while working at a construction site. He is bleeding and is in pain. The nurse enters the triage data that she has obtained from the patient into a computerized, standard emergency patient-classification system. After she enters the assessment data, she notices an alert on the computer screen that prompts her to ask the patient about the status of his tetanus immunization. What system of technology is involved in generating the alert?",
+      "options": [
+        "Clinical decision support (CDS)",
+        "WL technology",
+        "Computerized provider order",
+        "Electronic health record"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Clinical decision support (CDS) is a clinical computer system, computer application, or process that helps health professionals make clinical decisions to enhance patient care. The clinical knowledge embedded in computer applications or work processes can range from simple facts and relationships to best practices for managing patients with specific disease states, new medical knowledge from clinical research, and other types of information.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Informatics/Technology"
+      ]
+    },
+    {
+      "id": "Module_3_Q83",
+      "stem": "As part of an information technology implementation team, you are implementing a clinical decision support system. Particular considerations for successful implementation of this project include:",
+      "options": [
+        "Ensuring that the system is reliable.",
+        "Ensuring that patient information is reliable.",
+        "Developing unique identifiers for individuals.",
+        "Developing rules that support inferences."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Clinical decision support systems provide support for novice nurses, in particular, as they enable entry of real-time data from patient situations and inferences that apply the logic that expert nurses would use. These inferences require rules to be developed for the system.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Informatics/Technology"
+      ]
+    },
+    {
+      "id": "Module_3_Q94",
+      "stem": "Your unit has several patients who have undergone limb amputation. In working with the clients, you begin to think beyond therapies such as pharmacotherapeutics and surgery and you explore biomechanics, robotics, mind-body approaches, and cognitive behavioral therapies as possibilities in working with these clients. You begin to amass information in several areas with which you previously had little familiarity. According to the Wise Forecast Model©, you are:",
+      "options": [
+        "Acting wildly.",
+        "Learning wildly.",
+        "Engaging in interprofessional care.",
+        "Increasing your complexity compression."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "The first step, learn widely, means that we must extend our sources of knowledge beyond our role and clinical areas of interest. In fact we must extend our learning beyond nursing and health care. Widely might encompass another discipline such as architecture or engineering.",
+      "type": "single_select",
+      "_module": "Module_3",
+      "_source_file": "Module_3.json",
+      "_learning_themes": [
+        "Communication"
+      ]
+    },
+    {
+      "id": "Module_4_Q1",
+      "stem": "In an effort to control costs and maximize revenues, the Rehabilitation Unit at Cross Hospital reduced the number of its managers and increased the number of units for which each manager was responsible. Within a year, the number of adverse events in the units had doubled. How does the increase in adverse events relate to decreased managers?",
+      "options": [
+        "The overload of staff nurse duties",
+        "Resistance to change by staff",
+        "A change in the reporting system for everyone",
+        "Fewer clinical leaders to facilitate best practice"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Eliminating barriers to the implementation of best practices is the role of managers and leaders. When there are insufficient resources for leadership to encourage a culture in which evidence-based practice is embraced, frontline nurses recognize this as a stumbling block for delivering quality care.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q2",
+      "stem": "The Rehabilitation Unit at Pleasant Valley Hospital has a high number of falls. What Interventions might assist in reducing the number of falls in the unit?",
+      "options": [
+        "Determining who is responsible for the falls",
+        "Strengthening unit policies to avoid inappropriate admissions",
+        "Encouraging involvement of nurses in education related to falls and safety",
+        "Ensuring that patients are appropriately restrained if they are at risk for falls"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "The Institute of Medicine (IOM) (2010) emphasizes the need for nurses to engage in lifelong learning and to use evidence and best practices to inform practice and ensure safety.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q3",
+      "stem": "How would the nurse executive begin to increase safety in the patient care areas of the Valley Hospital?",
+      "options": [
+        "Asking the community what the safety issues are",
+        "Consulting with a management expert about staffing schedules",
+        "Ensuring that the senior nursing officer attends the board meetings",
+        "Instituting improved practices to reduce needlestick injuries"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "The Institute of Medicine (IOM) report (2004) highlighted the importance of the attendance of the senior nurse executive at board meetings to be a key spokesperson on safety and quality issues.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q5",
+      "stem": "What did the Institute of Medicine (IOM) Health Professions Education report highlight as a concern for patient safety?",
+      "options": [
+        "A normal risk in professional practice",
+        "A result of disciplinary silos",
+        "A reflection of frontline staff",
+        "Related to systems errors"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "The IOM Health Professions Education report (2004) highlighted the education of health disciplines in silos as a major concern in patient safety and endorsed five recommendations. One is to increase and improve communication between the health disciplines.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q6",
+      "stem": "A nurse manager is implementing strategies to support the steps in the AHRQ Team Strategies and Tools to Enhance Performance and Patient Safety (Team STEPPS 2.0). What does the manager include in the implementation?",
+      "options": [
+        "Train staff in teamwork skills to work with patients who have difficulty communicating in English.",
+        "Rules and decisions are made through centralized processes.",
+        "You monitor the performance of each staff member closely.",
+        "Preference is given to increasing staff numbers rather than staff credentials."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "One of the most widely used evidence-based teamwork systems to improve communication and teamwork skills to improve patient safety within organizations is the AHRQ Team Strategies and Tools to Enhance Performance and Patient Safety (Team STEPPS 2.0). Teamwork is one of the key safety initiatives that can transform a healthcare culture.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q7",
+      "stem": "After consulting with practice environments about quality and safety concerns in health care, a dean in a health care program implements what to improve quality and safety in health care?",
+      "options": [
+        "A nursing program that emphasizes the development of a strong disciplinary identity.",
+        "Programming that stresses discipline-based research.",
+        "Partnerships with health care to develop software for the reporting of adverse events.",
+        "An interdisciplinary program for nurses, pharmacists, and medical practitioners that emphasizes collaborative learning teams."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Health Professions Education identified that education related to health disciplines in silos leads to compromised communication and an inability to function as an integrated whole for patient-centered care.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q10",
+      "stem": "As a nurse manager on the West Surgery Unit, you are interested in increasing patient safety and reducing morbidity and mortality on your unit. What recommendations would be consistent with the Institute of Medicine (IOM) The Future of Nursing report?",
+      "options": [
+        "Careful screening of nursing staff for substance use and abuse",
+        "Increased RN staffing on the unit",
+        "Salary and benefits that reflect nursing accountabilities",
+        "Increase in the percentage of baccalaureate-prepared nurses to 80%"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "The Future of Nursing advocates for having 80% of the nursing population at a baccalaureate-prepared level. This recommendation reflects research that suggests that improved mortality and morbidity rates occur with a better-educated workforce.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q11",
+      "stem": "On the West Surgery unit, you want to institute a new system for checking armbands that evidence suggests may increase safety in medication administration. The system involves technology. What strategy may assist with the rapid adoption of the technology and system?",
+      "options": [
+        "Employ a centralized decision-making approach.",
+        "Use simulators for initial practice to build confidence.",
+        "Bring in a nurse consultant who is familiar with the technology.",
+        "Use early adopters among the staff as leaders and role models in implementation."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "The Institute for Healthcare Improvement (IHI) is dedicated to rapid improvement in patient care through a variety of mechanisms, such as rapid cycle change. Rapid cycle change diffuses innovation and changes quickly through early adopters who share information and energy over time and act as role models for others.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q12",
+      "stem": "To achieve Nurse-Sensitive Care Standards developed by the NQF, you advocate for which of the following in your health facility?",
+      "options": [
+        "Evidence-based practice to reduce the prevalence of pressure sores",
+        "Implementation of informatics at the bedside",
+        "Staff-manager conferences to review reporting of adverse medical events",
+        "Patient councils to review food, recreation, and nurse-patient relations"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "The National Quality Forum (NQF) outlines nursing-centered intervention measures related to the prevalence of pressure sores, ventilator-associated pneumonias, volunteer turnover, nursing care hours per day, and skill mix of staff.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Policy & Governance/Law",
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q14",
+      "stem": "The NQF provides a model for the advancement of healthcare quality that could be used in healthcare organizations. What does the use of this model by the Centers for Medicare and Medicaid Services specifically link with adverse patient events for healthcare facilities?",
+      "options": [
+        "Staffing",
+        "Funding",
+        "Composition of executive councils",
+        "Composition of consumer-based councils"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "The Centers for Medicare and Medicaid Services (CMS) has adopted a policy based on the NQF‘s ―Never Events.‖ The CMS will no longer pay for patient conditions or events that result from poor practice while patients are under the care of a health professional.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Policy & Governance/Law",
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q15",
+      "stem": "Pleasant Valley Hospital has amended its safety practices and policies. What has the hospital elected to emphasize in accordance with changes by The Joint Commission (TJC)?",
+      "options": [
+        "Safety goals specific to Pleasant Valley",
+        "Decision-making processes",
+        "Sufficient staffing for safe care",
+        "Increased numbers of baccalaureate-prepared RNs"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "When The Joint Commission (TJC), a not-for-profit organization that accredits healthcare organizations, changed its focus from processes to outcomes, it emphasized patient safety and set specific annual patient safety goals.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Policy & Governance/Law",
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q16",
+      "stem": "What would managers and staff review annually in order to ensure compliance with The Joint Commission (TJC) to improve patient safety?",
+      "options": [
+        "Appropriateness of charting terms and abbreviations",
+        "Nursing hours per patient",
+        "Acuity of patient admissions",
+        "Wait times for care"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "The Joint Commission issues setting-specific patient goals annually, as well as a list of do-not-use‖ terms, abbreviations, and symbols, and sentinel events.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Policy & Governance/Law",
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q17",
+      "stem": "How would a nurse manager and the staff prepare for redesignation as a Magnet Hospital?",
+      "options": [
+        "Commit staff resources over a 6-month period to updating procedure manuals.",
+        "Educate staff through meetings and training sessions regarding appropriate answers to questions.",
+        "Prepare a manual that outlines orientation procedures and ensure that all safety issues are addressed.",
+        "Ensure that there are empirical data to support the review of patient outcomes, actions taken, and results of actions."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Through the Magnet model, organizations must demonstrate how they provide excellence in five areas. Between designation and redesignation as a Magnet organization, greater emphasis is placed on empirical quality results.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q19",
+      "stem": "What does the SBAR approach to patient safety encourage?",
+      "options": [
+        "Consistency in assessment and practices",
+        "Continuing education",
+        "Multidisciplinary approaches",
+        "Patient feedback"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "The use of SBAR (Situation, Background, Assessment, and Recommendation) checklists is designed to decrease omission of important information and practices.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q22",
+      "stem": "Mary, an 85-year-old patient with cognitive impairment and gross instability, wanders continuously. Lately, she has fallen twice, and the family demands that she be restrained. As the unit manager, you have initiated a least restraint practice. What is an appropriate action in this situation?",
+      "options": [
+        "Setting up a nursing team meeting to review practices",
+        "Calling the family to inform them of the practice",
+        "Initiating a multidisciplinary and family meeting to focus on Mary‘s needs",
+        "Restraining Mary to satisfy the family‘s wishes"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Crossing the Quality Chasm emphasizes the importance of rendering care to the client (client-centered) rather than to the client. In this situation, the patient includes family in transparent discussions about quality needs and takes a team approach that involves healthcare professionals, the family, Mary‘s needs, and evidence associated with safe practice.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Patient-/Person-Centered Care"
+      ]
+    },
+    {
+      "id": "Module_4_Q24",
+      "stem": "As the manager on an acute care medical unit, you note that the incidence of medication errors has increased since the implementation of staffing changes. What is an important stratagem to reduce errors?",
+      "options": [
+        "Revisit reporting standards for medication errors in your organization.",
+        "Ensure that medication errors are consistently reported.",
+        "Provide staff with additional education related to safe practice in medication administration.",
+        "Involve RN staff in determining reasons for errors and practice solutions to increase the safety of medication administration."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Keeping Patients Safe: Transforming the Work Environment of Nurses (2004) identified many past practices that had a negative impact on nurses, and thus on patients, and recommended the inclusion of nurses in direct care in decision-making involving their practice. Future of Nursing: Leading Change, Advancing Health (2010) also emphasizes the role of nurses as leaders in changes that improve health.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models",
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q25",
+      "stem": "What patients would be considered at-risk consumers during a healthcare visit? (Select all that apply.)",
+      "options": [
+        "Clyde requires an anticoagulant. He tells the nurse about his medications. He does not include an herbal supplement.",
+        "George is very shy and withdrawn. He asks the nurse to leave him alone.",
+        "Sarah is a new parent who finds that nurses on the children‘s unit are very helpful. She is eager to accept all suggestions, including those that she does not yet understand.",
+        "Claude is booked for bowel surgery. His doctor explains about the colostomy. Later, Claude tells his wife that he really doesn‘t know what the doctor meant by colostomy."
+      ],
+      "correct": [
+        "A",
+        "C",
+        "D"
+      ],
+      "rationale": "Safer health care involves the patient as an active consumer who keeps and brings a list of all medications, including natural remedies, and questions if there are doubts, concerns, or a lack of understanding.",
+      "type": "multi_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Patient-/Person-Centered Care"
+      ]
+    },
+    {
+      "id": "Module_4_Q26",
+      "stem": "To prepare for the orientation of newly hired nurses, the nurse manager plans a presentation outlining the concept of healthcare networks. Healthcare networks are:",
+      "options": [
+        "Units that provide only primary care services.",
+        "Owned by the institutions.",
+        "A feature of all public institutions.",
+        "Units that serve large populations."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Healthcare networks are interconnected units. Their aim is to serve large regional populations.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q27",
+      "stem": "A local hospital has formed a corporate partnership with a reputable HMO (health maintenance organization). The nurse manager has had to educate staff and personnel about the financial implications of this partnership. An HMO:",
+      "options": [
+        "Provides more expensive care than other types of insurance plans.",
+        "Has a centralized administration that directs and compensates physician services.",
+        "Pays physicians on a fee-for-service basis.",
+        "Does not pay as much for acute care as other practice plans."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "The HMO is a configuration of healthcare agencies that provide basic and supplemental health maintenance and treatment services to voluntary enrollees who prepay a fixed periodic fee without regard to the amount of services used. HMOs have a centralized administration that directs and pays salaries for physician practice (e.g., HMOs).",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q28",
+      "stem": "With the help of a federal grant, the local school nurse has established a spreadsheet that contains relevant nursing data so that she can analyze children‘s health. School health programs are:",
+      "options": [
+        "Increasingly seen as primary care sites for children.",
+        "Providing only health education programs for children and their parents.",
+        "Capable only of providing referrals for health problems to primary care providers.",
+        "Funded exclusively by local authorities."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Traditionally, school health programs were organized to control infectious disease outbreaks, treat and control on-site injuries, and educate parents and children about basic health. Increasingly, schools are being seen as primary healthcare sites for children.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q29",
+      "stem": "The local health department nurse manager has developed and implemented a disaster readiness plan as part of a community service. Community services:",
+      "options": [
+        "Care for the specific needs of individual families in the community.",
+        "Focus on the treatment of community-wide problems rather than on individual health problems.",
+        "Do not include services provided by public health departments.",
+        "Provide personal health follow-up for all acute care hospitalizations."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Community services, including public health departments, are focused on the treatment of the community rather than that of the individual. These funds provide personal health services, care for communicable diseases, services for children with birth defects, mental health care, investigation of epidemiology, and treatment of bioterrorism threats and attacks. Monies are also allocated for environmental services and for health resources.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q30",
+      "stem": "A nursing informatics specialist hired by Blue Cross/Blue Shield Insurance System (a form of third-party payers benefit package for a prepaid fee that uses specific standards to approve a period of time for the use of inpatient and community health services) is participating in:",
+      "options": [
+        "Critical pathways.",
+        "Healthcare networks.",
+        "Health maintenance organizations.",
+        "Managed care."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Managed care strives to contain costs (e.g., through limitation of time in care) while maintaining quality. Managed care combines care delivery with financing and provides comprehensive services for a fixed prepaid fee. Group practice plans take various forms. One form has a centralized administration that directs and pays salaries for physician practice (e.g., HMOs).",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q31",
+      "stem": "A merger has occurred between a hospital and a local home health agency, creating new roles for the nursing staff in both agencies. The nurse managers of both systems begin to evaluate and revise patient care processes and systems. With the merger, the healthcare organization‘s changes are:",
+      "options": [
+        "Creating more jobs in the community for registered nurses.",
+        "Resulting in an overall loss of jobs for registered nurses.",
+        "Controlled by the federal and state governments.",
+        "Controlled by the insurance agency."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Home care agencies staffed appropriately with adequate numbers of professional nurses have the potential to keep older adults, those with disabilities, and persons with chronic illnesses comfortable and safe at home. Home care is the fastest-growing segment in health care, and the volume of home health care may have a subsequent impact on the number of nurses required.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q32",
+      "stem": "You are a nurse manager in a facility that is part of a national system of specialized hospitals that provide services to children and that is funded and managed through a religious charity organization. This system emphasizes compassionate, faith-based care. What level of consolidated system is represented in this example?",
+      "options": [
+        "First level",
+        "Second level",
+        "Fourth level",
+        "Fifth level"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Consolidated systems tend to be organized into five levels. The fifth level involves special interest groups that own and operate units along religious lines, teaching interests, or related special interests that drive their activities. In this example, the facilities are funded and managed by a religious organization that provides care that is congruent with its particular faith-based values.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q33",
+      "stem": "A nurse manager at a home healthcare service has resigned to take a position at a local ambulatory care center. She has been hired because of her expertise in The Joint Commision (TJC) accreditation. To initiate the changes, the nurse manager has to be knowledgeable about the differences between a home healthcare institution and an ambulatory care center, which is a primary care institution. Primary care institutions are facilities that provide:",
+      "options": [
+        "Rehabilitative or long-term care.",
+        "Disease-restorative care.",
+        "First access to care.",
+        "Only outpatient services."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "The spectrum of care services provided is typically described as primary care (first-access care), secondary care (disease-restorative care), and tertiary care (rehabilitative or long-term care). Ambulatory care centers are an example of primary care.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models",
+        "Policy & Governance/Law",
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q34",
+      "stem": "A nurse manager working for a not-for-profit organization should be familiar with the regulations that impact the organization. Not-for-profit organizations:",
+      "options": [
+        "Pay dividends to stockholders.",
+        "Can refuse clients who are unable to pay.",
+        "Have no paid employees.",
+        "Pay no taxes."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Not-for-profit organizations, often referred to as voluntary organizations, are controlled by voluntary boards and provide services to both paying and charity clients. Funds are redirected toward maintenance and growth as opposed to profit shares for stockholders. Historically, non-profit organizations have been exempt from paying taxes as they commit to providing an important community service.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q36",
+      "stem": "A facility that provides care for patients whose average length of stay is less than 30 days and for patients whose average length of stay is longer than 30 days, and who require inpatient and ambulatory care for addictions, through a spectrum of wellness and illness services and providers, would be considered:",
+      "options": [
+        "A healthcare network.",
+        "A tertiary care institution.",
+        "Rehabilitative.",
+        "Long-term care."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Healthcare networks embrace and provide wellness and illness services, including primary, secondary, and tertiary care, through a network of providers.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q38",
+      "stem": "You are the nurse manager for a not-for-profit health service for the homeless and for drug users in an impoverished neighborhood. As the manager, your concern about sustainability is related to:",
+      "options": [
+        "The possibility of violence.",
+        "An increase in prescription drugs available for abuse.",
+        "Decisions of the public board.",
+        "An increase in uncompensated care events."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Public and nonprofit hospitals are tax-exempt and have a concomitant responsibility to provide mandated community service, such as delivering care to the poor and indigent. To keep a nonprofit status, facilities must make a good-faith effort to provide community service and charity care. Nonprofit organizations located in impoverished urban and rural areas are often economically disadvantaged by the amount of uncompensated care that they provide.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q39",
+      "stem": "A nurse manager in a for-profit environment finds it difficult to recruit staff. This difficulty may be most related to aggressive profit goals and:",
+      "options": [
+        "Lower salary compensation for staff.",
+        "Rising expectations of impoverished and indigent individuals for services.",
+        "Poor orientation and retention practices for staff.",
+        "An overwhelming emphasis on accepting learners from health disciplines."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "For-profit hospitals tend to have lower wage and salary costs that are most likely connected to aggressive goals for profit.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q40",
+      "stem": "What is an example of an HMO?",
+      "options": [
+        "Nurse practitioners are paid promptly at discounted fees for each service rendered at a women‘s health clinic.",
+        "Physicians in a large urban center are reimbursed for visits made to their clients.",
+        "Physicians are paid for each service delivered to enrolled patients through a prepaid plan.",
+        "Patients pay fixed annual fees for ambulatory care services, regardless of actual utilization of health services."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Fee-for-service systems provide compensation to healthcare providers in group practices based on fee-for-service, which in PPQs means that fees are paid promptly but at a discounted rate. HMOs are configurations of healthcare agencies that provide health maintenance and services for enrolled patients for a preestablished fee, regardless of utilization of services.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q41",
+      "stem": "As a nurse manager, you have been asked to assist in designing a subacute facility for open-heart patients who require further complex care after hospitalization. In setting up the facility, what would require reassessment?",
+      "options": [
+        "Patients admitted to the facility must have adequate health insurance to cover the services provided.",
+        "A local nurse education program asks you if nursing students can gain clinical experience with recovering surgical patients in the facility.",
+        "Public funding will be provided to enable the care of patients who have an ordinary course of recovery.",
+        "The facility is an older house that is more than 30 minutes away from the acute care center."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Because of the types of patients being accepted for care and the distance of the subacute facility from acute care, emergency response and seamless transfer issues in the event of an unanticipated crisis must be addressed. As a nurse manager, an important part of your position may be assisting in developing strategies to maximize the benefits and minimize the risks in this situation.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q42",
+      "stem": "What would be the most appropriate focus in developing a business plan for a nurse-owned home healthcare service?",
+      "options": [
+        "Programs to educate the community on preparing healthy meals for a limited cost",
+        "Reduction of injuries from alcohol-related accidents",
+        "Pain management for patients with low back pain",
+        "Reduction of falls among seniors"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Nurse-managed and nurse-owned healthcare services are part of a growing number of organizations that extend health care beyond that offered through traditional services. Growth in these organizations and services has been spurred by the implementation of the prospective payment system, which resulted in early discharge of many patients from acute care facilities. These nurse-managed and nurse-owned services focus on the care of individuals and families rather than on community-based outcomes for populations such as older adults or on community-based issues such as injuries related to drunk driving.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q44",
+      "stem": "A group of patients with early Alzheimer's disease and their spouses approach you regarding help with the establishment of a local Alzheimer Society for the support and education of affected individuals and their families. As a manager in an ambulatory care clinic, what suggestion or advice would you offer this group?",
+      "options": [
+        "Self-help groups are, by nature, directed, funded, and led by those requiring help, and therefore, the patients and families should need no help from your clinic.",
+        "Your healthcare organization would be pleased to help as long as your organization financially takes over responsibility for direction, leadership, and management.",
+        "Through partnership, you will provide support, if possible, that the patients and spouses themselves identify as necessary in the establishment of the group.",
+        "The services that the patients and spouses are proposing are likely being offered somewhere else already."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Self-help groups often are made up of and are directed by peers who have healthcare needs. A growing trend is the development of community-based geriatric organizations in partnership with healthcare organizations. The request of the patients and their spouses indicates that this service is needed in the community and that they are looking for assistance in setting up the Alzheimer Society rather than having your agency take over the management of the group.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q46",
+      "stem": "The Wellington Mental Health Institute is fully accredited by the AOA and not directly by the CMS. This means that the Wellington facility:",
+      "options": [
+        "Cannot accept mental health patients who are Medicare beneficiaries.",
+        "Can care for only Medicaid and not Medicare beneficiaries.",
+        "Has not met the standards set by the CMS as determined by an external review panel.",
+        "Has been reviewed and accredited by the AOA, which is a deeming authority for CMS."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "CMS accreditation or external review of an organization‘s compliance with the standards set by the CMS can be conducted by the AOA, which is a deeming authority for CMS.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Policy & Governance/Law",
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q50",
+      "stem": "As a nurse manager in a for-profit hospital, you are interested in promoting teaching programs for physicians, because evidence suggests that hospitals with teaching programs tend to promote better care for patients. Your administration indicates that it cannot support your ideas or proposal because of: (Select all that apply.)",
+      "options": [
+        "Increased salary costs.",
+        "Duplication of tests and procedures.",
+        "Graduate medical education.",
+        "Potential damage to reputation through learner error."
+      ],
+      "correct": [
+        "A",
+        "B",
+        "C"
+      ],
+      "rationale": "Teaching hospitals tend to incur higher costs because of the salaries required for supervision of physicians, duplication of tests and procedures through the learning process, longer times required to process patients, costs of state-of-the-art technology, biomedical research, and stand-by capacity of specialized care. Because of the additional costs, few for-profit agencies and organizations support teaching programs.",
+      "type": "multi_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q53",
+      "stem": "The nurse manager in a pediatric intensive care unit wants to evaluate patient satisfaction. The nurse manager understands that ultimately, positive relationships with consumers of care are evaluated by the:",
+      "options": [
+        "Cultural sensitivity of staff.",
+        "Cost-effectiveness of care delivery.",
+        "Economic value of service.",
+        "Outcomes for clients and their perceptions of care."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Patient satisfaction and perception of the quality of care are affected by the quality of the nurse-patient relationship. Valid measurement of patient satisfaction is an evolving science; nurses do not always accurately gauge what factors are most important to patients. Satisfaction measures are often skewed in a positive direction with scores clustered at the top of the scale.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Patient-/Person-Centered Care"
+      ]
+    },
+    {
+      "id": "Module_4_Q57",
+      "stem": "In an acute care unit, the nurse manager utilizes the functional nursing method as the care delivery model. The nurse manager‘s main responsibility is the needs of the:",
+      "options": [
+        "Department.",
+        "Unit.",
+        "Staff.",
+        "Patient."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "In a functional nursing model, where other team members are focused on performing specific tasks, the nurse manager assumes primary responsibility for patient outcomes.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q62",
+      "stem": "John is an older adult patient who comes regularly to the multigroup practice in which you are a nurse practitioner. He says that he doesn‘t understand what he is supposed to be doing about his medications, because every time he comes to the clinic, he sees a different provider. John‘s experience represents what aspect of the current consumer experience?",
+      "options": [
+        "Nurses are well-trusted members of the healthcare team.",
+        "Fragmentation of care results in a lack of respect and trust.",
+        "Care providers often have conflicting ideas about care.",
+        "The public does not trust care providers other than nurses."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "When consumers visit a multigroup practice, they do not have the option of selecting a specific healthcare provider, and thus, there is less opportunity to build a trusting relationship with a provider.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Patient-/Person-Centered Care"
+      ]
+    },
+    {
+      "id": "Module_4_Q63",
+      "stem": "Case managed care may enhance profit in a for-profit health organization by:",
+      "options": [
+        "Minimizing costs in high resource consumption areas.",
+        "Combining licensed and non-licensed care providers in delivering patient care.",
+        "Increasing reimbursement from third-party payers.",
+        "Reducing the amount of technology used to support clinical decision making."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Case managed care is not revenue-generating but rather revenue-protecting in that better coordination of care enables efficient achievement of patient outcomes, can result in shorter length of stay, and can prevent readmission.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q79",
+      "stem": "What are two major foci of The Joint Commission (TJC) in the delivery of health care?",
+      "options": [
+        "Cost containment, safety",
+        "Safety, quality",
+        "Quality, assessment",
+        "Assessment, evaluation"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "The focus of TJC is quality and safety for patient care. TJC does not address cost containment, assessment of care, or evaluation of care.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Policy & Governance/Law",
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q91",
+      "stem": "A hospital organization is applying for Magnet status to show excellence in nursing practice. What components would indicate that the hospital is meeting Magnet principles? (Select all that apply.)",
+      "options": [
+        "The education budget for nursing has been cut to provide for new laboratory equipment.",
+        "On average, 40% of new nurses leave within 1 year of hire.",
+        "Nurses are active participants on all major hospital committees.",
+        "Quality improvement projects are planned and evaluated by nurses.",
+        "Patient care outcome data are reported in the annual executive board meeting."
+      ],
+      "correct": [
+        "C",
+        "D"
+      ],
+      "rationale": "",
+      "type": "multi_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Quality & Safety"
+      ]
+    },
+    {
+      "id": "Module_4_Q92",
+      "stem": "A definition of health policy includes which of the following elements?",
+      "options": [
+        "Funding for public education",
+        "Appropriation of funds for roadwork",
+        "Selection of congressional members of committees",
+        "Public policy made to support health-related goals"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Health policy is defined as public policy pertaining to health that is the result of an authoritative public decision-making process. Public education funding, appropriation of funding for roads, and selection of members of committees are not part of healthcare policy. They are under a different funding arm of the government.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Policy & Governance/Law"
+      ]
+    },
+    {
+      "id": "Module_4_Q93",
+      "stem": "Which branch of government is responsible for the execution of laws passed by legislatures?",
+      "options": [
+        "Legislative",
+        "Judicial",
+        "Executive",
+        "Local"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "The executive branch of federal and state governments is responsible for the execution of laws passed. The legislative branch is responsible for passing laws. The judicial branch of government determines if rights are being upheld. Local governments are not considered a branch of the government.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Policy & Governance/Law"
+      ]
+    },
+    {
+      "id": "Module_4_Q95",
+      "stem": "Which of the following components are included in health policy at the state level?",
+      "options": [
+        "Americans with Disabilities Act of 1990",
+        "Scope of nursing practice",
+        "Health Insurance Portability and Accountability Act (HIPAA) of 1996",
+        "Patient Safety and Quality Improvement Act of 2005"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "The scope of nursing practice is correct because it is controlled at the state level by state boards of nursing. The Americans with Disabilities Act of 1990, the HIPAA of 1996, and the Patient Safety and Quality Improvement Act of 2005 are all regulated at the national level.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Policy & Governance/Law"
+      ]
+    },
+    {
+      "id": "Module_4_Q99",
+      "stem": "The new nurse correctly defines a law when stating which information?",
+      "options": [
+        "“Law is a fundamental concept for healthcare professionals.”",
+        "“Law’s rule is developed by the employee’s organization.”",
+        "“Law’s rule is enacted by a government agency that defines what must be done in a given circumstance.”",
+        "“Law is a mandate from the Joint Commission or other accrediting agency.”"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "This is the correct definition of a law.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Policy & Governance/Law"
+      ]
+    },
+    {
+      "id": "Module_4_Q101",
+      "stem": "Which is an example of the regulatory power to make law?",
+      "options": [
+        "The Joint Commission is establishing a medication reconciliation standard",
+        "Centers for Disease Control and Prevention (CDC) is developing recommendations for childhood immunizations",
+        "Institute of Medicine (IOM) defines the approximate number of medication errors that result in significant patient harm or death",
+        "Centers for Medicare and Medicaid Services (CMS) enacting rules for restraint and seclusion for participating hospitals"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "The Centers for Medicare and Medicaid Services (CMS) enacting rules for restraint and seclusion for participating hospitals refers to the enactment of law, while the other answers discuss the development of standards and recommendations that do not have the authority of law. There are some healthcare rules that may define expected behavior, but if these rules were not created by a government entity with legal authority, then they are not healthcare laws.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Policy & Governance/Law"
+      ]
+    },
+    {
+      "id": "Module_4_Q102",
+      "stem": "What is one of the major attributes of healthcare law?",
+      "options": [
+        "It defines the expected behavior of persons in the business of health care.",
+        "The law or rule is easy to interpret and comply with.",
+        "It is established by any healthcare authority.",
+        "The creator must be an expert in health care."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "A healthcare law or rule defines the expected behavior of persons in the business of health care or in healthcare relationships. Healthcare law is not easy to interpret or comply with, and can only be established by organizations with legal authority for lawmaking. Creators of healthcare law are often not experts in healthcare.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Policy & Governance/Law"
+      ]
+    },
+    {
+      "id": "Module_4_Q104",
+      "stem": "Which of the following is an example of a nurse violating the Health Insurance Portability and Accountability Act (HIPAA) of 1996?",
+      "options": [
+        "The nurse asks the unit clerk to look up lab values for her relative, recently admitted to the hospital.",
+        "A group of fellow employees is discussing a patient’s clinical status in a public place. The nurse manager requests that they step into a private room to complete the discussion.",
+        "After entering the progress notes on a patient’s electronic medical record, the nurse logs off the computer to allow her coworker to use the terminal.",
+        "As a family approaches the nursing desk, the nurse removes the patient census sheet from view on the counter."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "When the nurse asks the unit clerk to look up lab values for her relative recently admitted to the hospital, the nurse is accessing protected health information not required for the nurse to perform his or her job. This is a violation of privacy, even if it is a relative. The other choices are all actions that are consistent with protecting a patient’s right to privacy, as defined by",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q105",
+      "stem": "In which of the following answers is the hospital in compliance with the Consolidated Omnibus Budget Reconciliation Act and Emergency Medical Treatment and Active Labor Act of 1986 (EMTALA)?",
+      "options": [
+        "The emergency department staff asks a patient to stay in the waiting room until the patients with insurance are treated.",
+        "The emergency registration personnel explain to a patient that they must have proper identification to receive treatment.",
+        "A patient with chest pain is triaged directly to a room for evaluation, and registration information is obtained after the patient is stabilized.",
+        "The emergency department physician discharges and instructs a patient who is actively suicidal to go to the neighborhood facility that has psychiatric services."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "EMTALA requires that any hospital that operates an emergency department and receives Medicare funds provide an appropriate screening exam to anyone who presents and stabilizes any emergency medical condition prior to transfer to another facility. The other choices are in conflict with EMTALA because a medical screening exam must be provided without consideration of the patient’s insurance, whether the patient has identification, or the facility’s services.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Organizations & Delivery Models"
+      ]
+    },
+    {
+      "id": "Module_4_Q106",
+      "stem": "Which of the following is false regarding state licensure laws?",
+      "options": [
+        "These laws establish the requirements for licensure to practice.",
+        "Licensure is not necessary if the individual has completed training.",
+        "The state regulatory agencies, such as the state board of nursing, are responsible for creating and enforcing these rules.",
+        "The scope of practice defines what the professional can and cannot do within the scope of their licensure."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Licensure is required to practice after the completion of all required training for the profession. The state laws establish the requirements to practice, and the state regulatory agencies are responsible for creating and enforcing the rules. The scope of practice defines what activities the professional is legally authorized to perform.",
+      "type": "single_select",
+      "_module": "Module_4",
+      "_source_file": "Module_4.json",
+      "_learning_themes": [
+        "Policy & Governance/Law"
+      ]
+    }
+  ]
+}
