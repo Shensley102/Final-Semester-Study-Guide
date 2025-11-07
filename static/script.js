@@ -1,10 +1,8 @@
 /* -----------------------------------------------------------
    Final-Semester-Study-Guide - Quiz Frontend
    - Single action button: Submit (green & wide) ➜ Next (blue)
-   - Keyboard shortcuts:
-       • A–Z toggles the corresponding option (radio/checkbox)
-       • Enter submits (or goes Next if already submitted)
-   - Safe rendering and /modules auto-discovery
+   - Only one Reset (top-right), extra in-quiz reset removed
+   - Keyboard shortcuts: A–Z toggle, Enter submits/next
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -38,8 +36,7 @@ const firstTryPct      = $('firstTryPct');
 const firstTryCount    = $('firstTryCount');
 const firstTryTotal    = $('firstTryTotal');
 const reviewList       = $('reviewList');
-const restartBtn       = $('restartBtn');
-const restartBtn2      = $('restartBtnSummary');
+const restartBtn2      = $('restartBtnSummary'); // Start Another Run (not a reset)
 const resetAll         = $('resetAll');
 
 // ---------- Utilities ----------
@@ -96,7 +93,6 @@ async function fetchModules(){
     const data = await res.json();
     return Array.isArray(data.modules) ? data.modules : [];
   } catch {
-    // Fallback (in case /modules not available)
     return ["Module_1","Module_2","Module_3","Module_4","Pharm_Quiz_HESI",
             "Learning_Questions_Module_1_2","Learning_Questions_Module_3_4_",
             "Pharmacology_1","Pharmacology_2","Pharmacology_3"];
@@ -118,7 +114,6 @@ async function initModules(){
   if (mods.length) moduleSel.value = mods[0];
 }
 
-// Allow user to add any *.json present in repo root
 async function addModuleToList(name){
   let v = (name || '').trim();
   if (!v) return;
@@ -140,8 +135,6 @@ addModuleBtn.addEventListener('click', () => addModuleToList(customModule.value)
 
 // ---------- Parse/normalize ----------
 function normalizeQuestions(raw){
-  // Expected schema:
-  // { module: "Name", questions: [ { id, stem, options:[], correct:["A"...], rationale, type:"single_select"|"multi_select" } ] }
   const questions = Array.isArray(raw?.questions) ? raw.questions : [];
   const norm = [];
 
@@ -164,16 +157,15 @@ function normalizeQuestions(raw){
 
 // ---------- Single-action button helpers ----------
 function setActionState(state){
-  // state: 'submit' | 'next'
   if (state === 'submit') {
     submitBtn.dataset.mode = 'submit';
     submitBtn.textContent = 'Submit';
-    submitBtn.classList.remove('btn-blue'); // green by default (.primary)
-    submitBtn.disabled = true;              // enable after a selection
+    submitBtn.classList.remove('btn-blue');
+    submitBtn.disabled = true;
   } else {
     submitBtn.dataset.mode = 'next';
     submitBtn.textContent = 'Next';
-    submitBtn.classList.add('btn-blue');    // turn blue
+    submitBtn.classList.add('btn-blue');
     submitBtn.disabled = false;
   }
 }
@@ -198,7 +190,6 @@ function renderQuestion(q){
   const isMulti = q.type === 'multi_select';
   form.setAttribute('role', isMulti ? 'group' : 'radiogroup');
 
-  // Render stable A,B,C,D... (no shuffling)
   Object.entries(q.options).forEach(([L, text]) => {
     const wrap = document.createElement('div');
     wrap.className = 'opt';
@@ -218,10 +209,7 @@ function renderQuestion(q){
     form.appendChild(wrap);
   });
 
-  // We don't use the separate Next button anymore
   nextBtn?.classList.add('hidden');
-
-  // Reset action button to Submit (green)
   setActionState('submit');
 }
 
@@ -259,7 +247,7 @@ function recordAnswer(q, userLetters, isCorrect){
 }
 
 function pushReinforcement(q, wasCorrect){
-  const chance = wasCorrect ? 0.05 : 0.15; // 5% when correct, 15% when incorrect
+  const chance = wasCorrect ? 0.05 : 0.15;
   if (Math.random() < chance) run.wrongBuffer.push(q);
 }
 
@@ -359,10 +347,9 @@ startBtn.addEventListener('click', startQuiz);
 
 form.addEventListener('change', onSelectionChanged);
 
-// Single action button click handler (Submit or Next)
+// Single action button (Submit or Next)
 submitBtn.addEventListener('click', () => {
   if (submitBtn.dataset.mode === 'next') {
-    // advance
     const next = nextIndex();
     const q = next.q;
     if (!q) return endRun();
@@ -372,7 +359,6 @@ submitBtn.addEventListener('click', () => {
     return;
   }
 
-  // mode === 'submit' -> grade the question
   const q = currentQuestion();
   if (!q) return;
 
@@ -388,23 +374,22 @@ submitBtn.addEventListener('click', () => {
   rationaleBox.textContent = q.rationale || '';
   rationaleBox.classList.remove('hidden');
 
-  // Lock inputs after submit
   form.querySelectorAll('input').forEach(i => i.disabled = true);
 
-  // Switch button to "Next" (blue)
   setActionState('next');
 
   scrollToBottomSmooth();
   updateCounters();
 });
 
-restartBtn.addEventListener('click', () => { location.reload(); });
-restartBtn2.addEventListener('click', () => { location.reload(); });
+// Top-right reset (the only reset now)
 resetAll.addEventListener('click', () => { localStorage.clear(); location.reload(); });
+
+// "Start Another Run" in summary (not a Reset)
+restartBtn2.addEventListener('click', () => { location.reload(); });
 
 // ---------- Keyboard shortcuts ----------
 document.addEventListener('keydown', (e) => {
-  // Ignore when not on quiz or when typing in inputs/textareas
   if (quiz.classList.contains('hidden')) return;
   if (isTextEditingTarget(e.target)) return;
   if (e.altKey || e.ctrlKey || e.metaKey) return;
@@ -412,16 +397,12 @@ document.addEventListener('keydown', (e) => {
   const key = e.key || '';
   const upper = key.toUpperCase();
 
-  // Enter submits or goes Next
   if (key === 'Enter') {
     e.preventDefault();
-    if (!submitBtn.disabled || submitBtn.dataset.mode === 'next') {
-      submitBtn.click();
-    }
+    if (!submitBtn.disabled || submitBtn.dataset.mode === 'next') submitBtn.click();
     return;
   }
 
-  // A–Z toggles the corresponding option (only before submit)
   if (/^[A-Z]$/.test(upper) && submitBtn.dataset.mode === 'submit') {
     const input = document.getElementById(`opt-${upper}`);
     if (!input || input.disabled) return;
@@ -429,17 +410,10 @@ document.addEventListener('keydown', (e) => {
     e.preventDefault();
 
     if (input.type === 'radio') {
-      // Toggle behavior for single-select:
-      if (input.checked) {
-        input.checked = false;
-      } else {
-        input.checked = true; // radios auto-uncheck others by name
-      }
+      input.checked = !input.checked;
     } else {
-      // Checkbox: toggle
       input.checked = !input.checked;
     }
-
     onSelectionChanged();
   }
 });
