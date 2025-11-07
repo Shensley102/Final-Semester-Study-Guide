@@ -57,8 +57,10 @@
       <form id="optionsForm" class="opts" aria-describedby="answerLine"></form>
 
       <div class="actions">
+        <!-- Single action button: starts as Submit (green), becomes Next (blue) -->
         <button type="button" id="submitBtn" class="primary" disabled>Submit</button>
-        <button type="button" id="nextBtn" class="secondary" disabled>Next</button>
+        <!-- Keep the original Next button but hidden (not used) -->
+        <button type="button" id="nextBtn" class="secondary hidden" disabled>Next</button>
       </div>
 
       <div id="feedback" class="feedback" aria-live="polite"></div>
