@@ -1,8 +1,8 @@
 /* -----------------------------------------------------------
    Final-Semester-Study-Guide - Quiz Frontend
    - Single action button: Submit (green & wide) ➜ Next (blue)
-   - Only one Reset (top-right), extra in-quiz reset removed
-   - Keyboard shortcuts: A–Z toggle, Enter submits/next
+   - Show top-right Reset only after quiz starts
+   - Keyboard: A–Z toggle options; Enter submits/next
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -36,8 +36,8 @@ const firstTryPct      = $('firstTryPct');
 const firstTryCount    = $('firstTryCount');
 const firstTryTotal    = $('firstTryTotal');
 const reviewList       = $('reviewList');
-const restartBtn2      = $('restartBtnSummary'); // Start Another Run (not a reset)
-const resetAll         = $('resetAll');
+const restartBtn2      = $('restartBtnSummary'); // Start Another Run
+const resetAll         = $('resetAll');          // top-right Reset (hidden initially)
 
 // ---------- Utilities ----------
 function escapeHTML(s=''){
@@ -80,9 +80,9 @@ let run = {
   bank: '',
   order: [],
   i: 0,
-  answered: new Map(),  // id -> { firstTryCorrect: bool, correct: bool, userLetters: [] }
+  answered: new Map(),
   uniqueSeen: new Set(),
-  wrongBuffer: [],      // queue for reinforcement
+  wrongBuffer: [],
 };
 
 // ---------- Module loading ----------
@@ -98,7 +98,6 @@ async function fetchModules(){
             "Pharmacology_1","Pharmacology_2","Pharmacology_3"];
   }
 }
-
 function ensureOption(sel, value, label){
   if (![...sel.options].some(o => o.value === value)){
     const opt = document.createElement('option');
@@ -106,20 +105,17 @@ function ensureOption(sel, value, label){
     sel.appendChild(opt);
   }
 }
-
 async function initModules(){
   moduleSel.innerHTML = '';
   const mods = await fetchModules();
   for (const m of mods) ensureOption(moduleSel, m, m);
   if (mods.length) moduleSel.value = mods[0];
 }
-
 async function addModuleToList(name){
   let v = (name || '').trim();
   if (!v) return;
   if (!/\.json$/i.test(v)) v += '.json';
   const base = v.replace(/\.json$/i, '');
-
   try {
     const res = await fetch(`/${encodeURIComponent(base)}.json`, { method: 'HEAD', cache: 'no-store' });
     if (!res.ok) throw new Error(`not found: ${base}.json`);
@@ -137,7 +133,6 @@ addModuleBtn.addEventListener('click', () => addModuleToList(customModule.value)
 function normalizeQuestions(raw){
   const questions = Array.isArray(raw?.questions) ? raw.questions : [];
   const norm = [];
-
   for (const q of questions){
     const id   = String(q.id ?? crypto.randomUUID());
     const stem = String(q.stem ?? '');
@@ -145,11 +140,9 @@ function normalizeQuestions(raw){
     const opts = Array.isArray(q.options) ? q.options.map(String) : [];
     const correctLetters = Array.isArray(q.correct) ? q.correct.map(String) : [];
     const rationale = String(q.rationale ?? '');
-
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').slice(0, opts.length);
     const options = {};
     letters.forEach((L, i) => { options[L] = opts[i] ?? ''; });
-
     norm.push({ id, stem, options, correctLetters, rationale, type });
   }
   return norm;
@@ -169,7 +162,6 @@ function setActionState(state){
     submitBtn.disabled = false;
   }
 }
-
 function onSelectionChanged(){
   if (submitBtn.dataset.mode === 'submit') {
     const any = form.querySelector('input:checked');
@@ -191,21 +183,14 @@ function renderQuestion(q){
   form.setAttribute('role', isMulti ? 'group' : 'radiogroup');
 
   Object.entries(q.options).forEach(([L, text]) => {
-    const wrap = document.createElement('div');
-    wrap.className = 'opt';
-
+    const wrap = document.createElement('div'); wrap.className = 'opt';
     const input = document.createElement('input');
     input.type = isMulti ? 'checkbox' : 'radio';
-    input.name = 'opt';
-    input.value = L;
-    input.id = `opt-${L}`;
-
+    input.name = 'opt'; input.value = L; input.id = `opt-${L}`;
     const lab = document.createElement('label');
     lab.htmlFor = input.id;
     lab.innerHTML = `<span class="k">${L}.</span> <span class="ans">${escapeHTML(text || '')}</span>`;
-
-    wrap.appendChild(input);
-    wrap.appendChild(lab);
+    wrap.appendChild(input); wrap.appendChild(lab);
     form.appendChild(wrap);
   });
 
@@ -215,14 +200,12 @@ function renderQuestion(q){
 
 // ---------- Current info ----------
 function currentQuestion(){ return run.order[run.i] || null; }
-
 function getUserLetters(){
   const isMulti = currentQuestion().type === 'multi_select';
   const inputs = [...form.querySelectorAll('input')];
   const picked = inputs.filter(i => i.checked).map(i => i.value);
   return isMulti ? picked.sort() : picked.slice(0, 1);
 }
-
 function formatCorrectAnswers(q){
   const letters = q.correctLetters || [];
   const parts = letters.map(L => `${L}. ${escapeHTML(q.options[L] || '')}`);
@@ -236,7 +219,6 @@ function updateCounters(){
   const remaining = run.order.filter(q => !run.answered.get(q.id)?.correct).length;
   remainingCounter.textContent = `Remaining to master: ${remaining}`;
 }
-
 function recordAnswer(q, userLetters, isCorrect){
   const firstTime = !run.answered.has(q.id);
   const entry = run.answered.get(q.id) || { firstTryCorrect: null, correct: false, userLetters: [] };
@@ -245,12 +227,10 @@ function recordAnswer(q, userLetters, isCorrect){
   entry.userLetters = userLetters.slice();
   run.answered.set(q.id, entry);
 }
-
 function pushReinforcement(q, wasCorrect){
   const chance = wasCorrect ? 0.05 : 0.15;
   if (Math.random() < chance) run.wrongBuffer.push(q);
 }
-
 function nextIndex(){
   if (run.wrongBuffer.length && Math.random() < 0.4) {
     return { fromBuffer: true, q: run.wrongBuffer.shift() };
@@ -266,26 +246,17 @@ async function startQuiz(){
   startBtn.disabled = true;
 
   const res = await fetch(`/${encodeURIComponent(bank)}.json`, { cache: 'no-store' });
-  if (!res.ok) {
-    alert(`Could not load ${bank}.json`);
-    startBtn.disabled = false;
-    return;
-  }
+  if (!res.ok) { alert(`Could not load ${bank}.json`); startBtn.disabled = false; return; }
   const raw = await res.json();
   allQuestions = normalizeQuestions(raw);
 
-  run = {
-    bank,
-    order: sampleQuestions(allQuestions, qty),
-    i: 0,
-    answered: new Map(),
-    uniqueSeen: new Set(),
-    wrongBuffer: [],
-  };
+  run = { bank, order: sampleQuestions(allQuestions, qty), i: 0,
+          answered: new Map(), uniqueSeen: new Set(), wrongBuffer: [] };
 
   launcher.classList.add('hidden');
   summary.classList.add('hidden');
   quiz.classList.remove('hidden');
+  resetAll.classList.remove('hidden');     // <-- show Reset once quiz starts
 
   const q0 = run.order[0];
   run.uniqueSeen.add(q0.id);
@@ -298,6 +269,7 @@ async function startQuiz(){
 function endRun(){
   quiz.classList.add('hidden');
   summary.classList.remove('hidden');
+  // Keep Reset visible on summary page (optional convenience)
 
   const uniq = [...run.answered.values()];
   const ftCorrect = uniq.filter(x => x.firstTryCorrect).length;
@@ -317,21 +289,13 @@ function endRun(){
     const ans = run.answered.get(q.id);
     row.className = 'rev-item ' + (ans?.correct ? 'ok' : 'bad');
 
-    const qEl = document.createElement('div');
-    qEl.className = 'rev-q';
-    qEl.textContent = q.stem;
-
-    const caEl = document.createElement('div');
-    caEl.className = 'rev-ans';
+    const qEl = document.createElement('div'); qEl.className = 'rev-q'; qEl.textContent = q.stem;
+    const caEl = document.createElement('div'); caEl.className = 'rev-ans';
     caEl.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
-
-    const rEl = document.createElement('div');
-    rEl.className = 'rev-rationale';
+    const rEl = document.createElement('div'); rEl.className = 'rev-rationale';
     rEl.innerHTML = `<strong>Rationale:</strong> ${escapeHTML(q.rationale || '')}`;
 
-    row.appendChild(qEl);
-    row.appendChild(caEl);
-    row.appendChild(rEl);
+    row.appendChild(qEl); row.appendChild(caEl); row.appendChild(rEl);
     reviewList.appendChild(row);
   });
 }
@@ -342,9 +306,7 @@ lengthBtns.addEventListener('click', (e) => {
   lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
 });
-
 startBtn.addEventListener('click', startQuiz);
-
 form.addEventListener('change', onSelectionChanged);
 
 // Single action button (Submit or Next)
@@ -359,9 +321,7 @@ submitBtn.addEventListener('click', () => {
     return;
   }
 
-  const q = currentQuestion();
-  if (!q) return;
-
+  const q = currentQuestion(); if (!q) return;
   const userLetters = getUserLetters();
   const correctLetters = (q.correctLetters || []).slice().sort();
   const isCorrect = JSON.stringify(userLetters) === JSON.stringify(correctLetters);
@@ -375,17 +335,16 @@ submitBtn.addEventListener('click', () => {
   rationaleBox.classList.remove('hidden');
 
   form.querySelectorAll('input').forEach(i => i.disabled = true);
-
   setActionState('next');
 
   scrollToBottomSmooth();
   updateCounters();
 });
 
-// Top-right reset (the only reset now)
+// Top-right reset (shown only after quiz starts)
 resetAll.addEventListener('click', () => { localStorage.clear(); location.reload(); });
 
-// "Start Another Run" in summary (not a Reset)
+// "Start Another Run" in summary
 restartBtn2.addEventListener('click', () => { location.reload(); });
 
 // ---------- Keyboard shortcuts ----------
@@ -406,14 +365,8 @@ document.addEventListener('keydown', (e) => {
   if (/^[A-Z]$/.test(upper) && submitBtn.dataset.mode === 'submit') {
     const input = document.getElementById(`opt-${upper}`);
     if (!input || input.disabled) return;
-
     e.preventDefault();
-
-    if (input.type === 'radio') {
-      input.checked = !input.checked;
-    } else {
-      input.checked = !input.checked;
-    }
+    input.checked = !input.checked;
     onSelectionChanged();
   }
 });
