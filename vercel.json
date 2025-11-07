@@ -5,8 +5,5 @@
   ],
   "routes": [
     { "src": "/(.*)", "dest": "study_tool.py" }
-  ],
-  "functions": {
-    "study_tool.py": { "runtime": "python3.12" }
-  }
+  ]
 }
