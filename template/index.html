@@ -15,20 +15,31 @@
         <span id="runCounter">Question: 0</span>
         <span id="remainingCounter">Remaining to master: 0</span>
       </div>
+      <button id="resetAll" class="link" title="Reset everything">Reset</button>
     </header>
 
-    <!-- Launcher / Setup -->
+    <!-- Launcher -->
     <section id="launcher" class="card">
       <div class="form-row">
         <label for="moduleSel" class="lbl">Module</label>
-        <select id="moduleSel" class="select">
+        <select id="moduleSel" class="select" aria-label="Question bank">
           <!-- Populated from /modules -->
         </select>
       </div>
 
+      <!-- Add-your-own JSON name -->
+      <div class="form-row">
+        <label for="customModule" class="lbl">Add JSON</label>
+        <div class="add-wrap">
+          <input id="customModule" class="select" placeholder="e.g. Pharmacology_4.json" />
+          <button id="addModuleBtn" type="button" class="secondary">Add to list</button>
+        </div>
+        <div class="hint">Place your <code>.json</code> file in the repo root; enter its filename exactly.</div>
+      </div>
+
       <div class="form-row">
         <div class="lbl">Length</div>
-        <div id="lengthBtns" class="seg">
+        <div id="lengthBtns" class="seg" role="group" aria-label="Length">
           <button type="button" class="seg-btn active" data-len="10">10</button>
           <button type="button" class="seg-btn" data-len="25">25</button>
           <button type="button" class="seg-btn" data-len="50">50</button>
@@ -46,9 +57,8 @@
     <section id="quiz" class="card hidden" aria-live="polite">
       <h2 id="questionText" class="q"></h2>
 
-      <form id="optionsForm" class="opts" aria-describedby="answerLine" role="radiogroup">
-        <!-- options injected here -->
-      </form>
+      <!-- role is set dynamically by JS (radiogroup for single, group for multi) -->
+      <form id="optionsForm" class="opts" aria-describedby="answerLine"></form>
 
       <div class="actions">
         <button type="button" id="submitBtn" class="primary" disabled>Submit</button>
@@ -70,18 +80,15 @@
     <section id="summary" class="card hidden">
       <h2>Results</h2>
 
-      <!-- New: first-try stats -->
       <div id="firstTrySummary" class="summary-stats hidden">
         <div class="stat-row">
-          <span class="stat-label">First-try correct:</span>
-          <span class="stat-value">
-            <span id="firstTryPct">0%</span>
-            <span class="stat-small">(<span id="firstTryCount">0</span>/<span id="firstTryTotal">0</span>)</span>
-          </span>
+          <div class="stat-label">First-try correct:</div>
+          <div class="stat-value"><span id="firstTryPct">0%</span></div>
+          <div class="stat-small">(<span id="firstTryCount">0</span> of <span id="firstTryTotal">0</span>)</div>
         </div>
       </div>
 
-      <details id="review" open>
+      <details id="review" class="review">
         <summary>Show results</summary>
         <div id="reviewList" class="review-list"></div>
       </details>
