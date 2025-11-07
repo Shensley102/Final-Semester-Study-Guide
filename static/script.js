@@ -1,9 +1,10 @@
 /* -----------------------------------------------------------
-   Final-Semester-Study-Guide - Quiz Frontend (updated)
-   - Safer rendering (escapeHTML everywhere, including answer line)
-   - Auto-discovers *.json via /modules
-   - Lets you add any root-level *.json to the list
-   - Keeps one-button Submit ➜ Next flow
+   Final-Semester-Study-Guide - Quiz Frontend
+   - Single action button: Submit (green & wide) ➜ Next (blue)
+   - Keyboard shortcuts:
+       • A–Z toggles the corresponding option (radio/checkbox)
+       • Enter submits (or goes Next if already submitted)
+   - Safe rendering and /modules auto-discovery
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -24,8 +25,8 @@ const startBtn     = $('startBtn');
 const quiz         = $('quiz');
 const qText        = $('questionText');
 const form         = $('optionsForm');
-const submitBtn    = $('submitBtn');
-const nextBtn      = $('nextBtn');
+const submitBtn    = $('submitBtn');   // single action button now (Submit/Next)
+const nextBtn      = $('nextBtn');     // hidden/unused
 const feedback     = $('feedback');
 const answerLine   = $('answerLine');
 const rationaleBox = $('rationale');
@@ -50,7 +51,6 @@ function escapeHTML(s=''){
     .replaceAll('"','&quot;')
     .replaceAll("'",'&#39;');
 }
-const sleep = (ms) => new Promise(r => setTimeout(r, ms));
 const randomInt = (n) => Math.floor(Math.random() * n);
 function shuffleInPlace(arr){
   for (let i = arr.length - 1; i > 0; i--) {
@@ -72,6 +72,10 @@ function scrollToBottomSmooth() {
     });
   });
 }
+function isTextEditingTarget(el){
+  return el &&
+    (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT' || el.isContentEditable);
+}
 
 // ---------- State ----------
 let allQuestions = [];
@@ -92,7 +96,7 @@ async function fetchModules(){
     const data = await res.json();
     return Array.isArray(data.modules) ? data.modules : [];
   } catch {
-    // Fallback names (if /modules unavailable)
+    // Fallback (in case /modules not available)
     return ["Module_1","Module_2","Module_3","Module_4","Pharm_Quiz_HESI",
             "Learning_Questions_Module_1_2","Learning_Questions_Module_3_4_",
             "Pharmacology_1","Pharmacology_2","Pharmacology_3"];
@@ -122,7 +126,6 @@ async function addModuleToList(name){
   const base = v.replace(/\.json$/i, '');
 
   try {
-    // HEAD request confirms file is routable on server
     const res = await fetch(`/${encodeURIComponent(base)}.json`, { method: 'HEAD', cache: 'no-store' });
     if (!res.ok) throw new Error(`not found: ${base}.json`);
   } catch {
@@ -159,6 +162,29 @@ function normalizeQuestions(raw){
   return norm;
 }
 
+// ---------- Single-action button helpers ----------
+function setActionState(state){
+  // state: 'submit' | 'next'
+  if (state === 'submit') {
+    submitBtn.dataset.mode = 'submit';
+    submitBtn.textContent = 'Submit';
+    submitBtn.classList.remove('btn-blue'); // green by default (.primary)
+    submitBtn.disabled = true;              // enable after a selection
+  } else {
+    submitBtn.dataset.mode = 'next';
+    submitBtn.textContent = 'Next';
+    submitBtn.classList.add('btn-blue');    // turn blue
+    submitBtn.disabled = false;
+  }
+}
+
+function onSelectionChanged(){
+  if (submitBtn.dataset.mode === 'submit') {
+    const any = form.querySelector('input:checked');
+    submitBtn.disabled = !any;
+  }
+}
+
 // ---------- Rendering ----------
 function renderQuestion(q){
   qText.textContent = q.stem;
@@ -192,10 +218,14 @@ function renderQuestion(q){
     form.appendChild(wrap);
   });
 
-  submitBtn.disabled = true;
-  nextBtn.disabled = true;
+  // We don't use the separate Next button anymore
+  nextBtn?.classList.add('hidden');
+
+  // Reset action button to Submit (green)
+  setActionState('submit');
 }
 
+// ---------- Current info ----------
 function currentQuestion(){ return run.order[run.i] || null; }
 
 function getUserLetters(){
@@ -206,7 +236,6 @@ function getUserLetters(){
 }
 
 function formatCorrectAnswers(q){
-  // Escape each option, then join with <br> — avoids XSS
   const letters = q.correctLetters || [];
   const parts = letters.map(L => `${L}. ${escapeHTML(q.options[L] || '')}`);
   return parts.join('<br>');
@@ -328,12 +357,22 @@ lengthBtns.addEventListener('click', (e) => {
 
 startBtn.addEventListener('click', startQuiz);
 
-form.addEventListener('change', () => {
-  const any = form.querySelector('input:checked');
-  submitBtn.disabled = !any;
-});
+form.addEventListener('change', onSelectionChanged);
 
-submitBtn.addEventListener('click', async () => {
+// Single action button click handler (Submit or Next)
+submitBtn.addEventListener('click', () => {
+  if (submitBtn.dataset.mode === 'next') {
+    // advance
+    const next = nextIndex();
+    const q = next.q;
+    if (!q) return endRun();
+    run.uniqueSeen.add(q.id);
+    renderQuestion(q);
+    updateCounters();
+    return;
+  }
+
+  // mode === 'submit' -> grade the question
   const q = currentQuestion();
   if (!q) return;
 
@@ -349,28 +388,61 @@ submitBtn.addEventListener('click', async () => {
   rationaleBox.textContent = q.rationale || '';
   rationaleBox.classList.remove('hidden');
 
+  // Lock inputs after submit
   form.querySelectorAll('input').forEach(i => i.disabled = true);
 
-  submitBtn.disabled = true;
-  nextBtn.disabled = false;
+  // Switch button to "Next" (blue)
+  setActionState('next');
 
   scrollToBottomSmooth();
-  updateCounters();
-});
-
-nextBtn.addEventListener('click', () => {
-  const next = nextIndex();
-  const q = next.q;
-  if (!q) return endRun();
-
-  run.uniqueSeen.add(q.id);
-  renderQuestion(q);
   updateCounters();
 });
 
 restartBtn.addEventListener('click', () => { location.reload(); });
 restartBtn2.addEventListener('click', () => { location.reload(); });
 resetAll.addEventListener('click', () => { localStorage.clear(); location.reload(); });
+
+// ---------- Keyboard shortcuts ----------
+document.addEventListener('keydown', (e) => {
+  // Ignore when not on quiz or when typing in inputs/textareas
+  if (quiz.classList.contains('hidden')) return;
+  if (isTextEditingTarget(e.target)) return;
+  if (e.altKey || e.ctrlKey || e.metaKey) return;
+
+  const key = e.key || '';
+  const upper = key.toUpperCase();
+
+  // Enter submits or goes Next
+  if (key === 'Enter') {
+    e.preventDefault();
+    if (!submitBtn.disabled || submitBtn.dataset.mode === 'next') {
+      submitBtn.click();
+    }
+    return;
+  }
+
+  // A–Z toggles the corresponding option (only before submit)
+  if (/^[A-Z]$/.test(upper) && submitBtn.dataset.mode === 'submit') {
+    const input = document.getElementById(`opt-${upper}`);
+    if (!input || input.disabled) return;
+
+    e.preventDefault();
+
+    if (input.type === 'radio') {
+      // Toggle behavior for single-select:
+      if (input.checked) {
+        input.checked = false;
+      } else {
+        input.checked = true; // radios auto-uncheck others by name
+      }
+    } else {
+      // Checkbox: toggle
+      input.checked = !input.checked;
+    }
+
+    onSelectionChanged();
+  }
+});
 
 // ---------- Init ----------
 initModules();
