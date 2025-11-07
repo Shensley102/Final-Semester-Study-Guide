@@ -22,9 +22,7 @@
     <section id="launcher" class="card">
       <div class="form-row">
         <label for="moduleSel" class="lbl">Module</label>
-        <select id="moduleSel" class="select" aria-label="Question bank">
-          <!-- Populated from /modules -->
-        </select>
+        <select id="moduleSel" class="select" aria-label="Question bank"></select>
       </div>
 
       <!-- Add-your-own JSON name -->
@@ -56,8 +54,6 @@
     <!-- Quiz -->
     <section id="quiz" class="card hidden" aria-live="polite">
       <h2 id="questionText" class="q"></h2>
-
-      <!-- role is set dynamically by JS (radiogroup for single, group for multi) -->
       <form id="optionsForm" class="opts" aria-describedby="answerLine"></form>
 
       <div class="actions">
@@ -68,7 +64,6 @@
       <div id="feedback" class="feedback" aria-live="polite"></div>
       <div id="answerLine" class="answer-line"></div>
 
-      <!-- Hidden until AFTER submit (JS toggles .hidden) -->
       <div id="rationale" class="rationale hidden"></div>
 
       <div class="footer-actions">
