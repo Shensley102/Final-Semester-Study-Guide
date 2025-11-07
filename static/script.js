@@ -1,11 +1,9 @@
 /* -----------------------------------------------------------
-   Final-Semester-Study-Guide - Quiz Frontend
-
-   Fixes in this version:
-   - Template path now /template/index.html (server supports both).
-   - Safer rendering (escapeHTML everywhere; safe "Correct answer" line).
-   - Module picker auto-discovers *.json + lets you add filenames.
-   - Consistent keyboard + one-button flow (Submit ➜ Next).
+   Final-Semester-Study-Guide - Quiz Frontend (updated)
+   - Safer rendering (escapeHTML everywhere, including answer line)
+   - Auto-discovers *.json via /modules
+   - Lets you add any root-level *.json to the list
+   - Keeps one-button Submit ➜ Next flow
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -94,10 +92,10 @@ async function fetchModules(){
     const data = await res.json();
     return Array.isArray(data.modules) ? data.modules : [];
   } catch {
-    // Fallback (in case /modules not available)
-    return ["Module_1", "Module_2", "Module_3", "Module_4", "Pharm_Quiz_HESI",
-            "Learning_Questions_Module_1_2", "Learning_Questions_Module_3_4_",
-            "Pharmacology_1", "Pharmacology_2", "Pharmacology_3"];
+    // Fallback names (if /modules unavailable)
+    return ["Module_1","Module_2","Module_3","Module_4","Pharm_Quiz_HESI",
+            "Learning_Questions_Module_1_2","Learning_Questions_Module_3_4_",
+            "Pharmacology_1","Pharmacology_2","Pharmacology_3"];
   }
 }
 
@@ -123,11 +121,11 @@ async function addModuleToList(name){
   if (!/\.json$/i.test(v)) v += '.json';
   const base = v.replace(/\.json$/i, '');
 
-  // Quick HEAD to ensure it exists & is allowed server-side
   try {
+    // HEAD request confirms file is routable on server
     const res = await fetch(`/${encodeURIComponent(base)}.json`, { method: 'HEAD', cache: 'no-store' });
     if (!res.ok) throw new Error(`not found: ${base}.json`);
-  } catch (e) {
+  } catch {
     alert(`Could not find ${base}.json in the repo root.\n\nTip: Commit the file to the root of Final-Semester-Study-Guide and try again.`);
     return;
   }
@@ -135,12 +133,11 @@ async function addModuleToList(name){
   moduleSel.value = base;
   customModule.value = '';
 }
-
 addModuleBtn.addEventListener('click', () => addModuleToList(customModule.value));
 
 // ---------- Parse/normalize ----------
 function normalizeQuestions(raw){
-  // Accept the provided JSON schema:
+  // Expected schema:
   // { module: "Name", questions: [ { id, stem, options:[], correct:["A"...], rationale, type:"single_select"|"multi_select" } ] }
   const questions = Array.isArray(raw?.questions) ? raw.questions : [];
   const norm = [];
@@ -153,7 +150,6 @@ function normalizeQuestions(raw){
     const correctLetters = Array.isArray(q.correct) ? q.correct.map(String) : [];
     const rationale = String(q.rationale ?? '');
 
-    // Build A, B, C... map
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').slice(0, opts.length);
     const options = {};
     letters.forEach((L, i) => { options[L] = opts[i] ?? ''; });
@@ -167,7 +163,6 @@ function normalizeQuestions(raw){
 function renderQuestion(q){
   qText.textContent = q.stem;
 
-  // Clear
   form.innerHTML = '';
   answerLine.textContent = '';
   rationaleBox.textContent = '';
@@ -201,9 +196,7 @@ function renderQuestion(q){
   nextBtn.disabled = true;
 }
 
-function currentQuestion(){
-  return run.order[run.i] || null;
-}
+function currentQuestion(){ return run.order[run.i] || null; }
 
 function getUserLetters(){
   const isMulti = currentQuestion().type === 'multi_select';
@@ -213,7 +206,7 @@ function getUserLetters(){
 }
 
 function formatCorrectAnswers(q){
-  // Safer answer line (escape each option, then join with <br>)
+  // Escape each option, then join with <br> — avoids XSS
   const letters = q.correctLetters || [];
   const parts = letters.map(L => `${L}. ${escapeHTML(q.options[L] || '')}`);
   return parts.join('<br>');
@@ -237,13 +230,11 @@ function recordAnswer(q, userLetters, isCorrect){
 }
 
 function pushReinforcement(q, wasCorrect){
-  // 5% if correct, 15% if incorrect
-  const chance = wasCorrect ? 0.05 : 0.15;
+  const chance = wasCorrect ? 0.05 : 0.15; // 5% when correct, 15% when incorrect
   if (Math.random() < chance) run.wrongBuffer.push(q);
 }
 
 function nextIndex(){
-  // If there are pending reinforcement questions, pop one occasionally
   if (run.wrongBuffer.length && Math.random() < 0.4) {
     return { fromBuffer: true, q: run.wrongBuffer.shift() };
   }
@@ -266,7 +257,6 @@ async function startQuiz(){
   const raw = await res.json();
   allQuestions = normalizeQuestions(raw);
 
-  // Build run
   run = {
     bank,
     order: sampleQuestions(allQuestions, qty),
@@ -276,7 +266,6 @@ async function startQuiz(){
     wrongBuffer: [],
   };
 
-  // First question
   launcher.classList.add('hidden');
   summary.classList.add('hidden');
   quiz.classList.remove('hidden');
@@ -293,7 +282,6 @@ function endRun(){
   quiz.classList.add('hidden');
   summary.classList.remove('hidden');
 
-  // First-try stat
   const uniq = [...run.answered.values()];
   const ftCorrect = uniq.filter(x => x.firstTryCorrect).length;
   const totalUnique = uniq.length;
@@ -306,7 +294,6 @@ function endRun(){
     firstTrySummary.classList.add('hidden');
   }
 
-  // Review (no "Your answer" line by design)
   reviewList.innerHTML = '';
   run.order.forEach(q => {
     const row = document.createElement('div');
@@ -342,7 +329,6 @@ lengthBtns.addEventListener('click', (e) => {
 startBtn.addEventListener('click', startQuiz);
 
 form.addEventListener('change', () => {
-  // enable submit if at least one is selected
   const any = form.querySelector('input:checked');
   submitBtn.disabled = !any;
 });
@@ -358,13 +344,11 @@ submitBtn.addEventListener('click', async () => {
   recordAnswer(q, userLetters, isCorrect);
   pushReinforcement(q, isCorrect);
 
-  // Visuals
   feedback.textContent = isCorrect ? 'Correct!' : 'Incorrect';
   answerLine.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
   rationaleBox.textContent = q.rationale || '';
   rationaleBox.classList.remove('hidden');
 
-  // Lock inputs
   form.querySelectorAll('input').forEach(i => i.disabled = true);
 
   submitBtn.disabled = true;
