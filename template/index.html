@@ -15,8 +15,8 @@
         <span id="runCounter">Question: 0</span>
         <span id="remainingCounter">Remaining to master: 0</span>
       </div>
-      <!-- Keep ONLY this reset and style it red -->
-      <button id="resetAll" class="link" title="Reset everything">Reset</button>
+      <!-- Hidden initially; JS shows it when the quiz starts -->
+      <button id="resetAll" class="link hidden" title="Reset everything">Reset</button>
     </header>
 
     <!-- Launcher -->
@@ -66,8 +66,6 @@
       <div id="answerLine" class="answer-line"></div>
 
       <div id="rationale" class="rationale hidden"></div>
-
-      <!-- Removed the extra "Reset Quiz" button here -->
     </section>
 
     <!-- Summary / Review -->
@@ -88,7 +86,6 @@
       </details>
 
       <div class="footer-actions">
-        <!-- This isn't a "Reset"; it just starts another run -->
         <button type="button" id="restartBtnSummary" class="primary" data-reset="true">Start Another Run</button>
       </div>
     </section>
