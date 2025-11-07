@@ -15,6 +15,7 @@
         <span id="runCounter">Question: 0</span>
         <span id="remainingCounter">Remaining to master: 0</span>
       </div>
+      <!-- Keep ONLY this reset and style it red -->
       <button id="resetAll" class="link" title="Reset everything">Reset</button>
     </header>
 
@@ -25,7 +26,6 @@
         <select id="moduleSel" class="select" aria-label="Question bank"></select>
       </div>
 
-      <!-- Add-your-own JSON name -->
       <div class="form-row">
         <label for="customModule" class="lbl">Add JSON</label>
         <div class="add-wrap">
@@ -57,9 +57,8 @@
       <form id="optionsForm" class="opts" aria-describedby="answerLine"></form>
 
       <div class="actions">
-        <!-- Single action button: starts as Submit (green), becomes Next (blue) -->
+        <!-- Single action button: Submit (green) ➜ Next (blue) -->
         <button type="button" id="submitBtn" class="primary" disabled>Submit</button>
-        <!-- Keep the original Next button but hidden (not used) -->
         <button type="button" id="nextBtn" class="secondary hidden" disabled>Next</button>
       </div>
 
@@ -68,9 +67,7 @@
 
       <div id="rationale" class="rationale hidden"></div>
 
-      <div class="footer-actions">
-        <button type="button" id="restartBtn" class="link-danger outline block">Reset Quiz</button>
-      </div>
+      <!-- Removed the extra "Reset Quiz" button here -->
     </section>
 
     <!-- Summary / Review -->
@@ -91,6 +88,7 @@
       </details>
 
       <div class="footer-actions">
+        <!-- This isn't a "Reset"; it just starts another run -->
         <button type="button" id="restartBtnSummary" class="primary" data-reset="true">Start Another Run</button>
       </div>
     </section>
