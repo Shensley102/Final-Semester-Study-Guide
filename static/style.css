@@ -7,7 +7,7 @@ html { scroll-behavior: smooth; }
   --card:#fff;
   --ink:#0b1320;
   --ink-soft:#4a5568;
-  --primary:#2f61f3;
+  --primary:#2f61f3;  /* blue for Next state */
   --danger:#d33a2c;
   --ring:#cdd9ff;
   --border:#e7eaf3;
@@ -58,6 +58,23 @@ button{ appearance:none; -webkit-appearance:none; }
 .outline{ background:#fff; }
 .block{ width:100%; }
 .hidden{ display:none !important; }
+
+/* Make the main action (Submit/Next) wider */
+#submitBtn{
+  min-width:200px;
+  padding:12px 24px;
+}
+
+/* Blue variant when the single button becomes "Next" */
+.primary.btn-blue{
+  background:var(--primary);
+  color:#fff;
+  border:none;
+}
+.primary.btn-blue:disabled{
+  opacity:0.6;
+  cursor:not-allowed;
+}
 
 .feedback{ margin-top:6px; font-weight:600; }
 .answer-line{ margin-top:4px; color:var(--ink-soft); }
