@@ -24,7 +24,18 @@ body{ margin:0; font:16px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Helve
 .topbar{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:16px; }
 .topbar h1{ font-size:20px; margin:0; }
 .topbar .counters{ display:flex; gap:14px; color:var(--ink-soft); font-size:14px; }
-.link{ background:none; border:none; color:var(--primary); cursor:pointer; padding:0; }
+
+/* Make the top-right Reset stand out with a red box */
+#resetAll{
+  background:#fff;
+  color:#b42318;
+  border:2px solid var(--danger);
+  padding:8px 12px;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+}
+#resetAll:hover{ background:#fff5f5; }
 
 /* Card */
 .card{ background:var(--card); border-radius:var(--radius); box-shadow:var(--shadow); padding:16px; border:1px solid var(--border); }
@@ -59,7 +70,7 @@ button{ appearance:none; -webkit-appearance:none; }
 .block{ width:100%; }
 .hidden{ display:none !important; }
 
-/* Make the main action (Submit/Next) wider */
+/* Wider single action button */
 #submitBtn{
   min-width:200px;
   padding:12px 24px;
