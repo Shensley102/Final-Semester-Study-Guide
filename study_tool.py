@@ -3,13 +3,13 @@ import re
 from pathlib import Path
 from flask import Flask, render_template, send_from_directory, abort, jsonify
 
-# --- Paths ---
+# ---------- Paths ----------
 BASE_DIR = Path(__file__).resolve().parent
-# Support either "templates" or "template" (your repo may use either)
+# Support either "templates" or "template"
 TEMPLATES_DIR = BASE_DIR / ("templates" if (BASE_DIR / "templates").exists() else "template")
 STATIC_DIR = BASE_DIR / "static"
 
-# --- Flask app ---
+# ---------- Flask ----------
 app = Flask(
     __name__,
     static_url_path="/static",
@@ -17,40 +17,51 @@ app = Flask(
     template_folder=str(TEMPLATES_DIR),
 )
 
-# Accept NEW naming and legacy names (so modules show during migration).
-# New:    Final-Semester-Study-Guide_*.json
-# Legacy: Module_*.json, Pharm_*.json, Learning_Questions_*.json
-ALLOWED_JSON = re.compile(
-    r"^(?:Final-Semester-Study-Guide_[\w-]+|Module_[\w-]+|Pharm_[\w-]+|Learning_Questions_[\w-]+)\.json$",
-    re.IGNORECASE,
-)
+# Safe JSON filename pattern (no path traversal, only simple names)
+SAFE_JSON_RE = re.compile(r"^(?!\.)[A-Za-z0-9_\-\.]+\.json$")
 
-@app.get("/healthz")
-def healthz():
-    return "ok", 200
-
-@app.get("/")
-def index():
-    return render_template("index.html")
-
-@app.get("/modules")
-def list_modules():
-    """
-    Return available banks as: { "modules": ["<stem>", ...] }
-    """
+def list_banks():
+    """Return all *.json files in the repo root that match SAFE_JSON_RE."""
     banks = []
     for p in BASE_DIR.glob("*.json"):
         name = p.name
-        if ALLOWED_JSON.fullmatch(name):
-            banks.append(p.stem)
-    banks.sort(key=str.lower)
-    return jsonify({"modules": banks})
+        if SAFE_JSON_RE.fullmatch(name):
+            # strip the extension for the client (client re-adds .json)
+            banks.append(name[:-5])
+    # Stable + friendly order: show Pharmacology banks first if present
+    def sort_key(n):
+        # prioritize "Pharmacology_*", then others alphabetically
+        return (0 if n.lower().startswith("pharmacology_") else 1, n.lower())
+    banks.sort(key=sort_key)
+    return banks
 
-# Serve only root-level "<name>.json" files that pass the whitelist.
+@app.route("/", methods=["GET"])
+def index():
+    # Renders /template/index.html (or /templates/index.html)
+    return render_template("index.html")
+
+@app.route("/healthz", methods=["GET"])
+def healthz():
+    return "ok", 200
+
+@app.route("/modules", methods=["GET"])
+def modules():
+    """
+    Returns a JSON payload of available quiz modules (filenames without .json).
+    The frontend can also add custom names manually; this endpoint is for convenience.
+    """
+    return jsonify({"modules": list_banks()})
+
 @app.route("/<string:filename>.json", methods=["GET", "HEAD"])
 def serve_bank(filename: str):
+    """
+    Serve a JSON bank by basename. We only allow files that:
+      - live in the repo root,
+      - match SAFE_JSON_RE,
+      - actually exist.
+    """
     safe_name = os.path.basename(f"{filename}.json")
-    if not ALLOWED_JSON.fullmatch(safe_name):
+    if not SAFE_JSON_RE.fullmatch(safe_name):
         abort(404)
 
     path = BASE_DIR / safe_name
@@ -60,4 +71,5 @@ def serve_bank(filename: str):
     return send_from_directory(BASE_DIR, safe_name, mimetype="application/json")
 
 if __name__ == "__main__":
+    # Local dev
     app.run(host="0.0.0.0", port=5000, debug=True)
