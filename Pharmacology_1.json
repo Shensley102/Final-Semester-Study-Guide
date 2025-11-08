@@ -1565,13 +1565,13 @@
       "id": "Pharm2_Q98",
       "stem": "A pregnant patient at 28 weeks’ gestation is Rh-negative. Her antibody screen is negative. What order does the nurse anticipate?",
       "options": [
-        "Administer Rho(",
+        "RhoGAM is only given if the antibody screen is positive.",
         "No RhoGAM is needed until after delivery.",
-        "Start the patient on weekly RhoGAM injections until delivery.d. RhoGAM is only given if the antibody screen is positive.",
-        "immune globulin (RhoGAM) now and again after delivery if the infant is Rh-positive."
+        "Start the patient on weekly RhoGAM injections until delivery.",
+        "Administer Rho(D) immune globulin (RhoGAM) now and again after delivery if the infant is Rh-positive."
       ],
       "correct": [
-        "A"
+        "D"
       ],
       "rationale": "Standard prophylaxis is to give Rh-negative mothers RhoGAM at around 28 weeks gestation (if antibody screen is negative) and again within 72 hours postpartum if the newborn is Rh-positive. So option a is correct. If the antibody screen were positive, it’s too late for prophylaxis (it means she’s already sensitized). Weekly injections are not protocol (it’s typically a single dose at 28 weeks). It is not withheld until after delivery; the 28-week dose is important.",
       "type": "single_select"
