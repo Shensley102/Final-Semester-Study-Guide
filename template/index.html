@@ -44,21 +44,20 @@
         <button id="startBtn" class="primary">Start Quiz</button>
       </div>
 
-      <!-- NEW: Overview / Hotkeys -->
+      <!-- Overview / Hotkeys -->
       <details id="help" class="help" open>
         <summary>How it works &amp; hotkeys</summary>
         <div class="help-body">
           <ul class="help-list">
             <li><strong>Start:</strong> Pick a <em>Module</em>, choose a <em>Length</em>, then click <strong>Start Quiz</strong>.</li>
             <li><strong>Answering:</strong> Click an option or press a letter key
-                <span class="kbd">A</span>–<span class="kbd">Z</span> to toggle the option with that label.</li>
+              <span class="kbd">A</span>–<span class="kbd">Z</span> to toggle the option with that label.</li>
             <li><strong>De-select:</strong> For single-select questions, pressing the same letter again unselects it.</li>
             <li><strong>Submit / Next:</strong> Press <span class="kbd">Enter</span> to submit. After submitting, the green
-                <strong>Submit</strong> button turns blue and becomes <strong>Next</strong>. Press <span class="kbd">Enter</span> again to go next.</li>
-            <li><strong>After you submit:</strong> You’ll see <em>Correct/Incorrect</em>, the <em>Correct Answer</em>, and a short
-                <em>Rationale</em>. Options are locked until you go <strong>Next</strong>.</li>
-            <li><strong>End of run:</strong> You’ll get a summary plus a review list with answers and rationales.</li>
-            <li><strong>Reset:</strong> A red <strong>Reset</strong> button shows in the top-right only during an active quiz. It clears progress and returns you here.</li>
+              <strong>Submit</strong> button turns blue and becomes <strong>Next</strong>. Press <span class="kbd">Enter</span> again to go next.</li>
+            <li><strong>After you submit:</strong> You’ll see <em>Correct/Incorrect</em>, the <em>Correct Answer</em>, and the <em>Rationale</em>.</li>
+            <li><strong>Results:</strong> End of run shows a summary and a review list with answers and rationales.</li>
+            <li><strong>Reset:</strong> A red <strong>Reset</strong> button shows top-right only during an active quiz. It clears progress.</li>
           </ul>
         </div>
       </details>
@@ -78,7 +77,6 @@
 
       <div id="feedback" class="feedback" aria-live="polite"></div>
       <div id="answerLine" class="answer-line"></div>
-
       <div id="rationale" class="rationale hidden"></div>
     </section>
 
