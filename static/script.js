@@ -140,6 +140,45 @@ function normalizeQuestions(raw){
   return norm;
 }
 
+// ---------- Stable shuffling helpers ----------
+function seededShuffle(arr, seed) {
+  const a = arr.slice();
+  // derive a numeric seed from the string
+  let s = 0;
+  for (let i = 0; i < seed.length; i++) {
+    s = (s * 31 + seed.charCodeAt(i)) >>> 0;
+  }
+  for (let i = a.length - 1; i > 0; i--) {
+    // LCG constants (same as used in many RNG implementations)
+    s = (s * 1664525 + 1013904223) >>> 0;
+    const j = s % (i + 1);
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+function shuffleQuestionOptions(q) {
+  // Convert the existing options mapping (A->text, B->text, ...) into an
+  // array of { letter, text } objects so we can shuffle while retaining
+  // knowledge of which original letter each option came from.
+  const pairs = Object.entries(q.options).map(([letter, text]) => ({ letter, text }));
+  // Shuffle deterministically based on the question id
+  const shuffled = seededShuffle(pairs, q.id);
+  const newOptions = {};
+  const oldToNew = {};
+  shuffled.forEach((item, idx) => {
+    const newLetter = String.fromCharCode(65 + idx);
+    newOptions[newLetter] = item.text;
+    oldToNew[item.letter] = newLetter;
+  });
+  // Remap the correct letters to their new positions. Any missing mapping
+  // will be filtered out; then we sort the letters to simplify comparison
+  const newCorrectLetters = (q.correctLetters || [])
+    .map((oldL) => oldToNew[oldL])
+    .filter((x) => x)
+    .sort();
+  return { ...q, options: newOptions, correctLetters: newCorrectLetters };
+}
+
 // ---------- Single-action button helpers ----------
 function setActionState(state){
   // state: 'submit' | 'next'
@@ -178,7 +217,7 @@ function renderQuestion(q){
   const isMulti = q.type === 'multi_select';
   form.setAttribute('role', isMulti ? 'group' : 'radiogroup');
 
-  // Render stable A,B,C,D... (no shuffling)
+  // Render stable A,B,C,D... (no shuffling at render time; shuffling is done when the quiz starts)
   Object.entries(q.options).forEach(([L, text]) => {
     const wrap = document.createElement('div');
     wrap.className = 'opt';
@@ -260,10 +299,17 @@ async function startQuiz(){
   }
   const raw = await res.json();
   allQuestions = normalizeQuestions(raw);
+  // When starting a quiz, shuffle each question's options deterministically
+  // based on its ID. This ensures that every question's answers remain
+  // correctly paired with its stem and rationale while introducing variety
+  // in the option order. We sample the desired number of questions first
+  // then apply the shuffle to each one.
+  const sampled = sampleQuestions(allQuestions, qty);
+  const shuffledQuestions = sampled.map((q) => shuffleQuestionOptions(q));
 
   run = {
     bank,
-    order: sampleQuestions(allQuestions, qty),
+    order: shuffledQuestions,
     i: 0,
     answered: new Map(),
     uniqueSeen: new Set(),
