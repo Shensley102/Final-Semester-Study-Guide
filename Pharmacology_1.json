@@ -1173,12 +1173,12 @@
     },
     {
       "id": "Pharm2_Q72",
-      "stem": "A patient is prescribed theophylline (Theo-24) for COP",
+      "stem": "A patient is prescribed theophylline (Theo-24) for COPD. Which of the following should the nurse include in the teaching plan?",
       "options": [
-        "Which of the following should the nurse include in the teaching plan?",
+        "Theophylline will give quick relief during acute bronchospasm.",
         "This medication has no food or drug interactions to be concerned about.",
         "Avoid large amounts of coffee or other caffeinated beverages while on this medication.",
-        "It’s okay to smoke while taking theophylline.”d. “Theophylline will give quick relief during acute bronchospasm."
+        "It’s okay to smoke while taking theophylline."
       ],
       "correct": [
         "C"
@@ -1747,7 +1747,7 @@
       "options": [
         "Yes, acetaminophen (Tylenol) is fine; it’s not related to Percocet.",
         "Take ibuprofen instead of Tylenol while you’re on Percocet.",
-        "Be careful not to exceed 3,000 mg of acetaminophen in 24 hours from all sources.",
+        "Be careful not to exceed 4,000 mg of acetaminophen in 24 hours from all sources.",
         "No, you should not take any acetaminophen while on Percocet."
       ],
       "correct": [
