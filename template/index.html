@@ -7,32 +7,28 @@
   <link rel="stylesheet" href="/static/style.css" />
 </head>
 <body>
-  <main class="container">
+  <div class="container">
+    <!-- Keep this exact text for landing; JS will swap it after Start -->
+    <h1 id="pageTitle">Final Semester Study Guide</h1>
 
-    <header class="topbar">
-      <h1 id="pageTitle">Final Semester Study Guide</h1>
-
-      <!-- Counters are hidden on the landing page -->
-      <div id="countersBox" class="counters hidden">
-        <span id="runCounter">Question: 0</span>
-        <span id="remainingCounter">Remaining to master: 0</span>
-      </div>
-
-      <!-- Reset appears only after the quiz starts -->
-      <button id="resetAll" class="link hidden" title="Reset everything">Reset</button>
-    </header>
+    <!-- Counters (shown only during an active quiz) -->
+    <div id="countersBox" class="hidden counters">
+      <div id="runCounter">Question: 0</div>
+      <div id="remainingCounter">Remaining to master: 0</div>
+      <button id="resetAll" class="btn danger hidden">Reset</button>
+    </div>
 
     <!-- Launcher -->
     <section id="launcher" class="card">
-      <div class="form-row">
-        <label for="moduleSel" class="lbl">Module</label>
-        <select id="moduleSel" class="select" aria-label="Question bank"></select>
+      <div class="field">
+        <label for="moduleSel">Module</label>
+        <select id="moduleSel"></select>
       </div>
 
-      <div class="form-row">
-        <div class="lbl">Length</div>
-        <div id="lengthBtns" class="seg" role="group" aria-label="Length">
-          <button type="button" class="seg-btn active" data-len="10">10</button>
+      <div class="field">
+        <label>Length</label>
+        <div id="lengthBtns" class="seg">
+          <button type="button" class="seg-btn" data-len="10">10</button>
           <button type="button" class="seg-btn" data-len="25">25</button>
           <button type="button" class="seg-btn" data-len="50">50</button>
           <button type="button" class="seg-btn" data-len="100">100</button>
@@ -40,70 +36,43 @@
         </div>
       </div>
 
-      <div class="form-row">
-        <button id="startBtn" class="primary">Start Quiz</button>
+      <div class="actions">
+        <button id="startBtn" class="btn primary">Start Quiz</button>
       </div>
-
-      <!-- Overview / Hotkeys -->
-      <details id="help" class="help" open>
-        <summary>How it works &amp; hotkeys</summary>
-        <div class="help-body">
-          <ul class="help-list">
-            <li><strong>Start:</strong> Pick a <em>Module</em>, choose a <em>Length</em>, then click <strong>Start Quiz</strong>.</li>
-            <li><strong>Answering:</strong> Click an option or press a letter key
-              <span class="kbd">A</span>–<span class="kbd">Z</span> to toggle the option with that label.</li>
-            <li><strong>De-select:</strong> For single-select questions, pressing the same letter again unselects it.</li>
-            <li><strong>Submit / Next:</strong> Press <span class="kbd">Enter</span> to submit. After submitting, the green
-              <strong>Submit</strong> button turns blue and becomes <strong>Next</strong>. Press <span class="kbd">Enter</span> again to go next.</li>
-            <li><strong>After you submit:</strong> You’ll see <em>Correct/Incorrect</em>, the <em>Correct Answer</em>, and the <em>Rationale</em>.</li>
-            <li><strong>Results:</strong> End of run shows a summary and a review list with answers and rationales.</li>
-            <li><strong>Reset:</strong> A red <strong>Reset</strong> button shows top-right only during an active quiz. It clears progress.</li>
-          </ul>
-        </div>
-      </details>
-      <!-- /Overview -->
     </section>
 
     <!-- Quiz -->
-    <section id="quiz" class="card hidden" aria-live="polite">
-      <h2 id="questionText" class="q"></h2>
-      <form id="optionsForm" class="opts" aria-describedby="answerLine"></form>
+    <section id="quiz" class="card hidden">
+      <div id="questionText" class="question"></div>
+
+      <form id="optionsForm" class="options"></form>
 
       <div class="actions">
-        <!-- Single action button: Submit (green) ➜ Next (blue) -->
-        <button type="button" id="submitBtn" class="primary" disabled>Submit</button>
-        <button type="button" id="nextBtn" class="secondary hidden" disabled>Next</button>
+        <button id="submitBtn" class="btn primary" disabled>Submit</button>
+        <button id="nextBtn" class="btn btn-blue hidden">Next</button>
       </div>
 
-      <div id="feedback" class="feedback" aria-live="polite"></div>
+      <div id="feedback" class="feedback"></div>
       <div id="answerLine" class="answer-line"></div>
       <div id="rationale" class="rationale hidden"></div>
     </section>
 
-    <!-- Summary / Review -->
+    <!-- Summary -->
     <section id="summary" class="card hidden">
-      <h2>Results</h2>
-
-      <div id="firstTrySummary" class="summary-stats hidden">
-        <div class="stat-row">
-          <div class="stat-label">First-try correct:</div>
-          <div class="stat-value"><span id="firstTryPct">0%</span></div>
-          <div class="stat-small">(<span id="firstTryCount">0</span> of <span id="firstTryTotal">0</span>)</div>
-        </div>
+      <div id="firstTrySummary" class="first-try">
+        <strong>First-try mastery:</strong>
+        <span id="firstTryPct">0%</span>
+        (<span id="firstTryCount">0</span> / <span id="firstTryTotal">0</span>)
       </div>
 
-      <details id="review" class="review">
-        <summary>Show results</summary>
-        <div id="reviewList" class="review-list"></div>
-      </details>
+      <div id="reviewList" class="review-list"></div>
 
-      <div class="footer-actions">
-        <button type="button" id="restartBtnSummary" class="primary" data-reset="true">Start Another Run</button>
+      <div class="actions">
+        <button id="restartBtnSummary" class="btn primary">Start Another Run</button>
       </div>
     </section>
+  </div>
 
-  </main>
-
-  <script src="/static/script.js"></script>
+  <script src="/static/script.js" defer></script>
 </body>
 </html>
