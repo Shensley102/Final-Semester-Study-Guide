@@ -408,12 +408,12 @@
     },
     {
       "id": "Pharm2_Q21",
-      "stem": "Adenosine (Adenocar",
+      "stem": "Adenosine (Adenocard) is ordered for a patient with supraventricular tachycardia (SVT). How should the nurse administer this medication?",
       "options": [
-        "is ordered for a patient with supraventricular tachycardia (SVT). How should the nurse administer this medication?",
+        "Dilute it in 100 mL and infuse over 30 minutes.",
         "Give it as a rapid IV push followed by a normal saline flush.",
         "Infuse it slowly over 10 minutes to prevent flushing.",
-        "Administer it intramuscularly in a large muscle.d. Dilute it in 100 mL and infuse over 30 minutes."
+        "Administer it intramuscularly in a large muscle."
       ],
       "correct": [
         "B"
