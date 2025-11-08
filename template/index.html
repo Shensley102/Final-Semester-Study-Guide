@@ -16,7 +16,7 @@
         <span id="runCounter">Question: 0</span>
         <span id="remainingCounter">Remaining to master: 0</span>
       </div>
-      <!-- Reset is also hidden until the quiz starts -->
+      <!-- Reset is hidden until the quiz starts -->
       <button id="resetAll" class="link hidden" title="Reset everything">Reset</button>
     </header>
 
@@ -25,15 +25,6 @@
       <div class="form-row">
         <label for="moduleSel" class="lbl">Module</label>
         <select id="moduleSel" class="select" aria-label="Question bank"></select>
-      </div>
-
-      <div class="form-row">
-        <label for="customModule" class="lbl">Add JSON</label>
-        <div class="add-wrap">
-          <input id="customModule" class="select" placeholder="e.g. Pharmacology_4.json" />
-          <button id="addModuleBtn" type="button" class="secondary">Add to list</button>
-        </div>
-        <div class="hint">Place your <code>.json</code> file in the repo root; enter its filename exactly.</div>
       </div>
 
       <div class="form-row">
