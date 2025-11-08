@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "study_tool.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "study_tool.py" }
+  ]
+}
