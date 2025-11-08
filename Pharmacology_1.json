@@ -1414,12 +1414,12 @@
     },
     {
       "id": "Pharm2_Q88",
-      "stem": "Which statement by a patient on levothyroxine (Synthroi",
+      "stem": "Which statement by a patient on levothyroxine (Synthroid) indicates a need for further teaching?",
       "options": [
         "I know I will likely need to take this medication for the rest of my life.",
         "I will report chest pain or a rapid heartbeat to my doctor right away.",
-        "I can stop taking this if my thyroid levels return to normal.”d. “I should not switch brands of this medication without checking with my doctor.",
-        "indicates a need for further teaching?"
+        "I can stop taking this if my thyroid levels return to normal.”d. “",
+        "I should not switch brands of this medication without checking with my doctor."
       ],
       "correct": [
         "C"
