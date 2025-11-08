@@ -3,15 +3,15 @@
    - Single action button: Submit (green & wide) ➜ Next (blue)
    - Counters + Reset only visible during an active quiz
    - Keyboard: A–Z toggle options; Enter submits / next
-   - Removed "Add JSON / Add to list" feature
+   - Feedback now bigger & colored (green for correct, red for incorrect)
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
 
 // Top info
-const runCounter   = $('runCounter');
+const runCounter       = $('runCounter');
 const remainingCounter = $('remainingCounter');
-const countersBox  = $('countersBox');
+const countersBox      = $('countersBox');
 
 // Launcher
 const launcher   = $('launcher');
@@ -122,7 +122,7 @@ function normalizeQuestions(raw){
   for (const q of questions){
     const id   = String(q.id ?? crypto.randomUUID());
     const stem = String(q.stem ?? '');
-    const type = String(q.type ?? 'single_select');
+    the type = String(q.type ?? 'single_select');
     const opts = Array.isArray(q.options) ? q.options.map(String) : [];
     const correctLetters = Array.isArray(q.correct) ? q.correct.map(String) : [];
     const rationale = String(q.rationale ?? '');
@@ -164,7 +164,10 @@ function renderQuestion(q){
   answerLine.textContent = '';
   rationaleBox.textContent = '';
   rationaleBox.classList.add('hidden');
+
+  // reset feedback styling/text
   feedback.textContent = '';
+  feedback.classList.remove('ok','bad');
 
   const isMulti = q.type === 'multi_select';
   form.setAttribute('role', isMulti ? 'group' : 'radiogroup');
@@ -344,7 +347,11 @@ submitBtn.addEventListener('click', () => {
   recordAnswer(q, userLetters, isCorrect);
   pushReinforcement(q, isCorrect);
 
+  // Set feedback text + color class
   feedback.textContent = isCorrect ? 'Correct!' : 'Incorrect';
+  feedback.classList.remove('ok','bad');
+  feedback.classList.add(isCorrect ? 'ok' : 'bad');
+
   answerLine.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
   rationaleBox.textContent = q.rationale || '';
   rationaleBox.classList.remove('hidden');
