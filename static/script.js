@@ -1,27 +1,29 @@
 /* -----------------------------------------------------------
-   Show counters only during an active quiz.
+   Final-Semester-Study-Guide - Quiz Frontend
+   - Single action button: Submit (green & wide) ➜ Next (blue)
+   - Counters + Reset only visible during an active quiz
+   - Keyboard: A–Z toggle options; Enter submits / next
+   - Removed "Add JSON / Add to list" feature
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
 
 // Top info
-const runCounter       = $('runCounter');
+const runCounter   = $('runCounter');
 const remainingCounter = $('remainingCounter');
-const countersBox      = $('countersBox');  // <— wrapper we’ll show/hide
+const countersBox  = $('countersBox');
 
 // Launcher
-const launcher     = $('launcher');
-const moduleSel    = $('moduleSel');
-const customModule = $('customModule');
-const addModuleBtn = $('addModuleBtn');
-const lengthBtns   = $('lengthBtns');
-const startBtn     = $('startBtn');
+const launcher   = $('launcher');
+const moduleSel  = $('moduleSel');
+const lengthBtns = $('lengthBtns');
+const startBtn   = $('startBtn');
 
 // Quiz UI
 const quiz         = $('quiz');
 const qText        = $('questionText');
 const form         = $('optionsForm');
-const submitBtn    = $('submitBtn');   // single action button now (Submit/Next)
+const submitBtn    = $('submitBtn');   // single action button (Submit/Next)
 const nextBtn      = $('nextBtn');     // hidden/unused
 const feedback     = $('feedback');
 const answerLine   = $('answerLine');
@@ -35,7 +37,7 @@ const firstTryCount    = $('firstTryCount');
 const firstTryTotal    = $('firstTryTotal');
 const reviewList       = $('reviewList');
 const restartBtn2      = $('restartBtnSummary');
-const resetAll         = $('resetAll');          // hidden initially
+const resetAll         = $('resetAll'); // hidden until quiz starts
 
 // ---------- Utilities ----------
 function escapeHTML(s=''){
@@ -78,7 +80,7 @@ let run = {
   bank: '',
   order: [],
   i: 0,
-  answered: new Map(),
+  answered: new Map(),  // id -> { firstTryCorrect: bool, correct: bool, userLetters: [] }
   uniqueSeen: new Set(),
   wrongBuffer: [],
 };
@@ -91,6 +93,7 @@ async function fetchModules(){
     const data = await res.json();
     return Array.isArray(data.modules) ? data.modules : [];
   } catch {
+    // Fallback list if /modules endpoint isn’t available
     return ["Module_1","Module_2","Module_3","Module_4","Pharm_Quiz_HESI",
             "Learning_Questions_Module_1_2","Learning_Questions_Module_3_4_",
             "Pharmacology_1","Pharmacology_2","Pharmacology_3"];
@@ -109,26 +112,11 @@ async function initModules(){
   for (const m of mods) ensureOption(moduleSel, m, m);
   if (mods.length) moduleSel.value = mods[0];
 }
-async function addModuleToList(name){
-  let v = (name || '').trim();
-  if (!v) return;
-  if (!/\.json$/i.test(v)) v += '.json';
-  const base = v.replace(/\.json$/i, '');
-  try {
-    const res = await fetch(`/${encodeURIComponent(base)}.json`, { method: 'HEAD', cache: 'no-store' });
-    if (!res.ok) throw new Error(`not found: ${base}.json`);
-  } catch {
-    alert(`Could not find ${base}.json in the repo root.\n\nTip: Commit the file to the root of Final-Semester-Study-Guide and try again.`);
-    return;
-  }
-  ensureOption(moduleSel, base, base);
-  moduleSel.value = base;
-  customModule.value = '';
-}
-addModuleBtn.addEventListener('click', () => addModuleToList(customModule.value));
 
 // ---------- Parse/normalize ----------
 function normalizeQuestions(raw){
+  // Expected schema:
+  // { module: "Name", questions: [ { id, stem, options:[], correct:["A"...], rationale, type:"single_select"|"multi_select" } ] }
   const questions = Array.isArray(raw?.questions) ? raw.questions : [];
   const norm = [];
   for (const q of questions){
@@ -148,15 +136,16 @@ function normalizeQuestions(raw){
 
 // ---------- Single-action button helpers ----------
 function setActionState(state){
+  // state: 'submit' | 'next'
   if (state === 'submit') {
     submitBtn.dataset.mode = 'submit';
     submitBtn.textContent = 'Submit';
-    submitBtn.classList.remove('btn-blue');
-    submitBtn.disabled = true;
+    submitBtn.classList.remove('btn-blue'); // green by default (.primary)
+    submitBtn.disabled = true;              // enable after a selection
   } else {
     submitBtn.dataset.mode = 'next';
     submitBtn.textContent = 'Next';
-    submitBtn.classList.add('btn-blue');
+    submitBtn.classList.add('btn-blue');    // turn blue
     submitBtn.disabled = false;
   }
 }
@@ -180,19 +169,30 @@ function renderQuestion(q){
   const isMulti = q.type === 'multi_select';
   form.setAttribute('role', isMulti ? 'group' : 'radiogroup');
 
+  // Render stable A,B,C,D... (no shuffling)
   Object.entries(q.options).forEach(([L, text]) => {
-    const wrap = document.createElement('div'); wrap.className = 'opt';
+    const wrap = document.createElement('div');
+    wrap.className = 'opt';
+
     const input = document.createElement('input');
     input.type = isMulti ? 'checkbox' : 'radio';
-    input.name = 'opt'; input.value = L; input.id = `opt-${L}`;
+    input.name = 'opt';
+    input.value = L;
+    input.id = `opt-${L}`;
+
     const lab = document.createElement('label');
     lab.htmlFor = input.id;
     lab.innerHTML = `<span class="k">${L}.</span> <span class="ans">${escapeHTML(text || '')}</span>`;
-    wrap.appendChild(input); wrap.appendChild(lab);
+
+    wrap.appendChild(input);
+    wrap.appendChild(lab);
     form.appendChild(wrap);
   });
 
+  // We don't use the separate Next button anymore
   nextBtn?.classList.add('hidden');
+
+  // Reset action button to Submit (green)
   setActionState('submit');
 }
 
@@ -226,7 +226,7 @@ function recordAnswer(q, userLetters, isCorrect){
   run.answered.set(q.id, entry);
 }
 function pushReinforcement(q, wasCorrect){
-  const chance = wasCorrect ? 0.05 : 0.15;
+  const chance = wasCorrect ? 0.05 : 0.15; // 5% when correct, 15% when incorrect
   if (Math.random() < chance) run.wrongBuffer.push(q);
 }
 function nextIndex(){
@@ -244,18 +244,28 @@ async function startQuiz(){
   startBtn.disabled = true;
 
   const res = await fetch(`/${encodeURIComponent(bank)}.json`, { cache: 'no-store' });
-  if (!res.ok) { alert(`Could not load ${bank}.json`); startBtn.disabled = false; return; }
+  if (!res.ok) {
+    alert(`Could not load ${bank}.json`);
+    startBtn.disabled = false;
+    return;
+  }
   const raw = await res.json();
   allQuestions = normalizeQuestions(raw);
 
-  run = { bank, order: sampleQuestions(allQuestions, qty), i: 0,
-          answered: new Map(), uniqueSeen: new Set(), wrongBuffer: [] };
+  run = {
+    bank,
+    order: sampleQuestions(allQuestions, qty),
+    i: 0,
+    answered: new Map(),
+    uniqueSeen: new Set(),
+    wrongBuffer: [],
+  };
 
   launcher.classList.add('hidden');
   summary.classList.add('hidden');
   quiz.classList.remove('hidden');
 
-  // SHOW counters & reset only once quiz starts
+  // Show counters & reset now that the quiz is active
   countersBox.classList.remove('hidden');
   resetAll.classList.remove('hidden');
 
@@ -271,7 +281,7 @@ function endRun(){
   quiz.classList.add('hidden');
   summary.classList.remove('hidden');
 
-  // HIDE counters again when the quiz is not open
+  // Hide counters again when the quiz is not active
   countersBox.classList.add('hidden');
 
   const uniq = [...run.answered.values()];
@@ -324,7 +334,9 @@ submitBtn.addEventListener('click', () => {
     return;
   }
 
-  const q = currentQuestion(); if (!q) return;
+  const q = currentQuestion();
+  if (!q) return;
+
   const userLetters = getUserLetters();
   const correctLetters = (q.correctLetters || []).slice().sort();
   const isCorrect = JSON.stringify(userLetters) === JSON.stringify(correctLetters);
@@ -337,14 +349,17 @@ submitBtn.addEventListener('click', () => {
   rationaleBox.textContent = q.rationale || '';
   rationaleBox.classList.remove('hidden');
 
+  // Lock inputs after submit
   form.querySelectorAll('input').forEach(i => i.disabled = true);
+
+  // Switch button to "Next" (blue)
   setActionState('next');
 
   scrollToBottomSmooth();
   updateCounters();
 });
 
-// Reset
+// Reset (visible only during quiz)
 resetAll.addEventListener('click', () => { localStorage.clear(); location.reload(); });
 
 // Summary “Start Another Run”
@@ -359,17 +374,30 @@ document.addEventListener('keydown', (e) => {
   const key = e.key || '';
   const upper = key.toUpperCase();
 
+  // Enter submits or goes Next
   if (key === 'Enter') {
     e.preventDefault();
-    if (!submitBtn.disabled || submitBtn.dataset.mode === 'next') submitBtn.click();
+    if (!submitBtn.disabled || submitBtn.dataset.mode === 'next') {
+      submitBtn.click();
+    }
     return;
   }
 
+  // A–Z toggles the corresponding option (only before submit)
   if (/^[A-Z]$/.test(upper) && submitBtn.dataset.mode === 'submit') {
     const input = document.getElementById(`opt-${upper}`);
     if (!input || input.disabled) return;
+
     e.preventDefault();
-    input.checked = !input.checked;
+
+    if (input.type === 'radio') {
+      // Toggle behavior for single-select radios
+      input.checked = !input.checked;
+    } else {
+      // Checkbox: toggle
+      input.checked = !input.checked;
+    }
+
     onSelectionChanged();
   }
 });
