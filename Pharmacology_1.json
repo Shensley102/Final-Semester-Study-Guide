@@ -622,13 +622,13 @@
       "options": [
         "Warm the solution prior to administration to improve comfort.",
         "Always dilute furosemide in 50 mL of D5W for IV administration.",
-        "Infuse slowly, no faster than 20 mg per minute, to prevent ototoxicity.",
+        "Push slowly, no faster than 20 mg per minute, to prevent ototoxicity.",
         "Ensure the patient is lying flat during the infusion."
       ],
       "correct": [
         "C"
       ],
-      "rationale": "IV furosemide must be given slowly (generally 20 mg/min or slower) to prevent ototoxicity (hearing damage, tinnitus). There’s no requirement to warm the solution. Patient positioning is not critical for the infusion (though if BP is low they might lie down). Furosemide can be given undiluted IV push; diluting in 50 mL is not a standard requirement (it’s often given as IV push or in a smaller volume).",
+      "rationale": "IV furosemide must be given slowly as an IVP (generally 20 mg/min or slower) to prevent ototoxicity (hearing damage, tinnitus). There’s no requirement to warm the solution. Patient positioning is not critical for the infusion (though if BP is low they might lie down). Furosemide can be given undiluted IV push; diluting in 50 mL is not a standard requirement (it’s often given as IV push or in a smaller volume).",
       "type": "single_select"
     },
     {
