@@ -198,7 +198,7 @@
     },
     {
       "id": "Pharm2_Q7",
-      "stem": "A patient taking amlodipine (Norvas",
+      "stem": "1.	A patient taking amlodipine (Norvasc) for hypertension reports new ankle swelling. Which explanation should the nurse provide?",
       "options": [
         "This drug can cause fluid retention and swelling; we will notify your provider.",
         "This indicates your heart failure is worsening, and the drug is not effective.”c. “You must be consuming too much salt; try a low-sodium diet.",
@@ -208,7 +208,7 @@
       "correct": [
         "A"
       ],
-      "rationale": "Dihydropyridine calcium channel blockers like amlodipine cause vasodilation and can lead to peripheral edema (ankle swelling) as a common side effect[12][13]. It does not necessarily mean heart failure is worsening, and it is not a sign of a blood clot in this context. The provider may adjust the dose or add a diuretic. Sodium intake can contribute to edema, but medication effect is the likely cause here.",
+      "rationale": "Dihydropyridine calcium channel blockers like amlodipine cause vasodilation and can lead to peripheral edema (ankle swelling) as a common side effect. It does not necessarily mean heart failure is worsening, and it is not a sign of a blood clot in this context. The provider may adjust the dose or add a diuretic. Sodium intake can contribute to edema, but medication effect is the likely cause here.",
       "type": "single_select"
     },
     {
@@ -408,7 +408,7 @@
     },
     {
       "id": "Pharm2_Q21",
-      "stem": "Adenosine (Adenocar",
+      "stem": "12.	Adenosine (Adenocard) is ordered for a patient with supraventricular tachycardia (SVT). How should the nurse administer this medication?",
       "options": [
         "Give it as a rapid IV push followed by a normal saline flush.",
         "Infuse it slowly over 10 minutes to prevent flushing.",
@@ -418,27 +418,27 @@
       "correct": [
         "A"
       ],
-      "rationale": "Adenosine has an extremely short half-life (seconds) and must be given as a rapid IV bolus followed by a quick saline flush, usually via a line close to the heart[30][22]. This ensures it reaches the heart quickly to terminate SVT. Slow infusion or IM administration would not be effective. It is not given as a 30-minute infusion for SVT.",
+      "rationale": "Adenosine has an extremely short half-life (seconds) and must be given as a rapid IV bolus followed by a quick saline flush, usually via a line close to the heart. This ensures it reaches the heart quickly to terminate SVT. Slow infusion or IM administration would not be effective. It is not given as a 30-minute infusion for SVT.",
       "type": "single_select"
     },
     {
       "id": "Pharm2_Q22",
-      "stem": "A patient receives adenosine (Adenocar",
+      "stem": "13.	A patient receives adenosine (Adenocard) IV for paroxysmal SVT. The patient’s cardiac monitor shows a brief period of asystole after the injection, then normal sinus rhythm. What should the nurse do next?",
       "options": [
         "Continue to monitor – a brief asystole is expected after adenosine.",
         "Begin CPR immediately.",
-        "Prepare for immediate defibrillation.d. Give the second dose of adenosine.",
-        "IV for paroxysmal SVT. The patient’s cardiac monitor shows a brief period of asystole after the injection, then normal sinus rhythm. What should the nurse do next?"
+        "Prepare for immediate defibrillation.",
+        "Give the second dose of adenosine."
       ],
       "correct": [
         "A"
       ],
-      "rationale": "After rapid IV adenosine, a brief period of asystole or very slow rhythm is common, as the drug transiently blocks AV conduction[30]. This often followed by conversion to normal rhythm, as in this case. The nurse should monitor the patient; no CPR or defibrillation is needed if the patient remains stable and normal rhythm resumes. A second dose is only given if the first dose did not resolve the SVT.",
+      "rationale": "After rapid IV adenosine, a brief period of asystole or very slow rhythm is common, as the drug transiently blocks AV conduction. This often followed by conversion to normal rhythm, as in this case. The nurse should monitor the patient; no CPR or defibrillation is needed if the patient remains stable and normal rhythm resumes. A second dose is only given if the first dose did not resolve the SVT.",
       "type": "single_select"
     },
     {
       "id": "Pharm2_Q23",
-      "stem": "During care of a patient with symptomatic bradycardia (heart rate 38 and dizziness), atropine (Atropen) is ordere",
+      "stem": "14.	During care of a patient with symptomatic bradycardia (heart rate 38 and dizziness), atropine (Atropen) is ordered. Which assessment finding indicates the atropine is achieving its intended effect?",
       "options": [
         "The patient’s heart rate increases to 72 beats per minute.",
         "The patient’s pupil size constricts to 2 mm.",
@@ -498,13 +498,12 @@
     },
     {
       "id": "Pharm2_Q27",
-      "stem": "A norepinephrine (Levophe",
+      "stem": "18.	A norepinephrine (Levophed) infusion is running for a patient in shock. The nurse notices the IV site is cool, pale, and swollen, and the patient is complaining of pain at the site. What is the nurse’s first action?",
       "options": [
         "Stop the infusion and disconnect it.",
         "Increase the IV flow rate to flush the site.",
-        "Inject phentolamine (Regitine) around the site as ordered.d. Apply a warm compress to the site.",
-        "infusion is running for a patient in shock. The nurse notices the IV site is cool, pale, and swollen, and the patient is complaining of pain at the site. What is the nurse’s first action?",
-        "around the site as ordered.d. Apply a warm compress to the site."
+        "Inject phentolamine (Regitine) around the site as ordered.",
+        "Apply a warm compress to the site."
       ],
       "correct": [
         "A"
@@ -1414,7 +1413,7 @@
     },
     {
       "id": "Pharm2_Q88",
-      "stem": "Which statement by a patient on levothyroxine (Synthroi",
+      "stem": "15.	Which statement by a patient on levothyroxine (Synthroid) indicates a need for further teaching?",
       "options": [
         "I know I will likely need to take this medication for the rest of my life.",
         "I will report chest pain or a rapid heartbeat to my doctor right away.",
@@ -1424,7 +1423,7 @@
       "correct": [
         "C"
       ],
-      "rationale": "Hypothyroidism is typically a chronic condition; levothyroxine replacement is usually lifelong[7][47]. Even if thyroid levels normalize, it’s because of the medication. Stopping it would cause levels to drop again. The patient should indeed report signs of overtreatment like chest pain or tachycardia (possible hyperthyroid symptoms from excessive dose). Also, consistency in brand is important because different brands or generics may vary slightly in potency; any switch should be monitored with lab tests. So option c indicates misunderstanding.",
+      "rationale": "Hypothyroidism is typically a chronic condition; levothyroxine replacement is usually lifelong. Even if thyroid levels normalize, it’s because of the medication. Stopping it would cause levels to drop again. The patient should indeed report signs of overtreatment like chest pain or tachycardia (possible hyperthyroid symptoms from excessive dose). Also, consistency in brand is important because different brands or generics may vary slightly in potency; any switch should be monitored with lab tests. So option c indicates misunderstanding.",
       "type": "single_select"
     },
     {
@@ -1549,27 +1548,27 @@
     },
     {
       "id": "Pharm2_Q97",
-      "stem": "Rho(",
+      "stem": "Rho(D) immune globulin (RhoGAM) is ordered for a postpartum patient. In which situation is RhoGAM indicated?",
       "options": [
-        "An Rh-negative mother who delivered an Rh-positive baby, with a negative direct Coombs test on the infant",
-        "An Rh-positive mother with an Rh-negative baby",
-        "An Rh-negative mother with an Rh-negative babyd. An Rh-positive mother with an Rh-positive baby",
-        "immune globulin (RhoGAM) is ordered for a postpartum patient. In which situation is RhoGAM indicated?"
+        "An Rh-negative mother who delivered an Rh-positive baby, with a negative direct Coombs test on the infant.",
+        "An Rh-positive mother with an Rh-negative baby.",
+        "An Rh-negative mother with an Rh-negative babyd. ",
+        "An Rh-positive mother with an Rh-positive baby."
       ],
       "correct": [
         "A"
       ],
-      "rationale": "RhoGAM is given to an Rh-negative mother after delivery if the baby is Rh-positive, to prevent the mother from developing antibodies against Rh-positive blood. A negative Coombs test indicates the mother has not yet formed antibodies, so RhoGAM is effective prophylaxis. It is typically given within 72 hours postpartum[58]. It’s not needed if the baby is Rh-negative (no Rh antigen to sensitize the mom). If the mother is Rh-positive, she doesn’t need RhoGAM regardless of baby’s status.",
+      "rationale": "RhoGAM is given to an Rh-negative mother after delivery if the baby is Rh-positive, to prevent the mother from developing antibodies against Rh-positive blood. A negative Coombs test indicates the mother has not yet formed antibodies, so RhoGAM is effective prophylaxis. It is typically given within 72 hours postpartum. It’s not needed if the baby is Rh-negative (no Rh antigen to sensitize the mom). If the mother is Rh-positive, she doesn’t need RhoGAM regardless of baby’s status.",
       "type": "single_select"
     },
     {
       "id": "Pharm2_Q98",
       "stem": "A pregnant patient at 28 weeks’ gestation is Rh-negative. Her antibody screen is negative. What order does the nurse anticipate?",
       "options": [
-        "Administer Rho(",
+        "Administer Rho(D) immune globulin (RhoGAM) now and again after delivery if the infant is Rh-positive.",
         "No RhoGAM is needed until after delivery.",
-        "Start the patient on weekly RhoGAM injections until delivery.d. RhoGAM is only given if the antibody screen is positive.",
-        "immune globulin (RhoGAM) now and again after delivery if the infant is Rh-positive."
+        "Start the patient on weekly RhoGAM injections until delivery.",
+        "RhoGAM is only given if the antibody screen is positive."
       ],
       "correct": [
         "A"
@@ -1684,42 +1683,42 @@
     },
     {
       "id": "Pharm2_Q106",
-      "stem": "A patient received hydromorphone (Dilaudi",
+      "stem": "A patient received hydromorphone (Dilaudid) 2 mg IV for severe pain. Fifteen minutes later, the patient is very drowsy, with a respiratory rate of 8/min and oxygen saturation of 89%. What should the nurse do first?",
       "options": [
         "Gently stimulate the patient and coach deep breaths.",
         "Administer naloxone per protocol.",
-        "Increase the IV fluid rate.d. Place the patient in Trendelenburg position.",
-        "2 mg IV for severe pain. Fifteen minutes later, the patient is very drowsy, with a respiratory rate of 8/min and oxygen saturation of 89%. What should the nurse do first?"
+        "Increase the IV fluid rate.d. ",
+        "Place the patient in Trendelenburg position."
       ],
       "correct": [
         "A"
       ],
-      "rationale": "For a patient with opioid-induced respiratory depression, the initial step is to attempt to arouse them and prompt breathing while preparing for further intervention. If the patient does not improve quickly with stimulation or is difficult to arouse, then naloxone (opioid antagonist) should be given to reverse the opioid effect[88][89]. However, since the question says “very drowsy” (not unresponsive) and RR 8 with sat 89, the nurse can try stimulation first. Naloxone is appropriate if the patient cannot be roused to adequately improve respirations. IV fluids and Trendelenburg won’t help respiratory depression; Trendelenburg is for hypotension.",
+      "rationale": "For a patient with opioid-induced respiratory depression, the initial step is to attempt to arouse them and prompt breathing while preparing for further intervention. If the patient does not improve quickly with stimulation or is difficult to arouse, then naloxone (opioid antagonist) should be given to reverse the opioid effect. However, since the question says “very drowsy” (not unresponsive) and RR 8 with sat 89, the nurse can try stimulation first. Naloxone is appropriate if the patient cannot be roused to adequately improve respirations. IV fluids and Trendelenburg won’t help respiratory depression; Trendelenburg is for hypotension.",
       "type": "single_select"
     },
     {
       "id": "Pharm2_Q107",
-      "stem": "A patient is receiving IV hydromorphone (Dilaudi",
+      "stem": "A patient is receiving IV hydromorphone (Dilaudid) for post-op pain. The new nurse asks how hydromorphone compares to morphine. The best response is:",
       "options": [
         "Hydromorphone is more potent than morphine, so a smaller dose provides equivalent pain relief.",
         "They are exactly the same; only the name is different.",
-        "Hydromorphone lasts much longer, that’s why we use it.”d. “Hydromorphone has no side effects, unlike morphine.",
-        "for post-op pain. The new nurse asks how hydromorphone compares to morphine. The best response is:"
+        "Hydromorphone lasts much longer, that’s why we use it.",
+        "Hydromorphone has no side effects, unlike morphine."
       ],
       "correct": [
         "A"
       ],
-      "rationale": "Hydromorphone is approximately 5-7 times more potent than morphine; thus, lower milligram doses are used to achieve similar analgesia[31][90]. It is not exactly the same (different drug, different potency). Its duration is similar to morphine (maybe slightly shorter for immediate release forms), not much longer. It has similar opioid side effects (respiratory depression, constipation, etc.) as morphine. So highlighting potency (and thus careful dosing) is key.",
+      "rationale": "Hydromorphone is approximately 5-7 times more potent than morphine; thus, lower milligram doses are used to achieve similar analgesia. It is not exactly the same (different drug, different potency). Its duration is similar to morphine (maybe slightly shorter for immediate release forms), not much longer. It has similar opioid side effects (respiratory depression, constipation, etc.) as morphine. So highlighting potency (and thus careful dosing) is key.",
       "type": "single_select"
     },
     {
       "id": "Pharm2_Q108",
-      "stem": "A patient on patient-controlled analgesia (PC",
+      "stem": "A patient on patient-controlled analgesia (PCA) with hydromorphone (Dilaudid) is not getting adequate pain relief. The nurse discovers the patient’s teenage son has been pressing the PCA button to help her “stay comfortable.” What is the appropriate nursing action?",
       "options": [
         "with hydromorphone (Dilaudi",
         "Thank the son for helping and continue to monitor the patient’s pain.",
-        "Disable the PCA pump and switch to PRN nurse-administered boluses.d. Increase the PCA dose to overcome the missed doses when the patient was sleeping.",
-        "is not getting adequate pain relief. The nurse discovers the patient’s teenage son has been pressing the PCA button to help her “stay comfortable.” What is the appropriate nursing action?a. Instruct the son that only the patient should press the button, and explain the risks of oversedation."
+        "Disable the PCA pump and switch to PRN nurse-administered boluses.",
+        "Increase the PCA dose to overcome the missed doses when the patient was sleeping."
       ],
       "correct": [
         "A"
@@ -1759,7 +1758,7 @@
     },
     {
       "id": "Pharm2_Q111",
-      "stem": "A terminal cancer patient has a fentanyl (Duragesi",
+      "stem": "A terminal cancer patient has a fentanyl (Duragesic) transdermal patch for pain. Which comment by the patient indicates a need for more education?",
       "options": [
         "I will avoid using a heating pad over the patch.",
         "I change the patch every three days as directed.”c. “I disposed of the old patch by flushing it down the toilet.",
@@ -1774,7 +1773,7 @@
     },
     {
       "id": "Pharm2_Q112",
-      "stem": "Which patient scenario is most appropriate for a fentanyl (Duragesi",
+      "stem": "Which patient scenario is most appropriate for a fentanyl (Duragesic) transdermal patch for analgesia?",
       "options": [
         "A 50-year-old with chronic cancer pain who has difficulty swallowing pills",
         "A 34-year-old with acute postoperative pain 6 hours after surgeryc. A 19-year-old with intermittent migraine headaches",
@@ -1819,7 +1818,7 @@
     },
     {
       "id": "Pharm2_Q115",
-      "stem": "Succinylcholine (Anectine) is used during rapid sequence intubation for anesthesi",
+      "stem": "Succinylcholine (Anectine) is used during rapid sequence intubation for anesthesia. Shortly after administration, the patient’s jaw and body become rigid, and their temperature rises rapidly. What medication should the nurse prepare to administer?",
       "options": [
         "Shortly after administration, the patient’s jaw and body become rigid, and their temperature rises rapidly. What medication should the nurse prepare to administer?a. Dantrolene (Dantrium) IV",
         "Naloxone (Narcan) IV",
