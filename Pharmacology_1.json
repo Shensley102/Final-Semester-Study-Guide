@@ -198,10 +198,10 @@
     },
     {
       "id": "Pharm2_Q7",
-      "stem": "A patient taking amlodipine (Norvas",
+      "stem": "A patient taking amlodipine (Norvasc) for hypertension reports new ankle swelling. Which explanation should the nurse provide?",
       "options": [
-        "for hypertension reports new ankle swelling. Which explanation should the nurse provide?",
-        "This indicates your heart failure is worsening, and the drug is not effective.”c. “You must be consuming too much salt; try a low-sodium diet.",
+        "You must be consuming too much salt; try a low-sodium diet.",
+        "This indicates your heart failure is worsening, and the drug is not effective.”,
         "This drug can cause fluid retention and swelling; we will notify your provider.",
         "Ankle swelling suggests a blood clot; you’ll need a Doppler study."
       ],
@@ -423,12 +423,12 @@
     },
     {
       "id": "Pharm2_Q22",
-      "stem": "A patient receives adenosine (Adenocar",
+      "stem": "A patient receives adenosine (Adenocard) IV for paroxysmal SVT. The patient’s cardiac monitor shows a brief period of asystole after the injection, then normal sinus rhythm. What should the nurse do next?",
       "options": [
-        "IV for paroxysmal SVT. The patient’s cardiac monitor shows a brief period of asystole after the injection, then normal sinus rhythm. What should the nurse do next?",
+        "Give the second dose of adenosine.",
         "Continue to monitor – a brief asystole is expected after adenosine.",
         "Begin CPR immediately.",
-        "Prepare for immediate defibrillation.d. Give the second dose of adenosine."
+        "Prepare for immediate defibrillation."
       ],
       "correct": [
         "B"
@@ -438,12 +438,12 @@
     },
     {
       "id": "Pharm2_Q23",
-      "stem": "During care of a patient with symptomatic bradycardia (heart rate 38 and dizziness), atropine (Atropen) is ordere",
+      "stem": "During care of a patient with symptomatic bradycardia (heart rate 38 and dizziness), atropine (Atropen) is ordered. Which assessment finding indicates the atropine is achieving its intended effect?",
       "options": [
-        "Which assessment finding indicates the atropine is achieving its intended effect?",
+        "The patient’s chest pain worsens.",
         "The patient’s pupil size constricts to 2 mm.",
         "The patient’s heart rate increases to 72 beats per minute.",
-        "The patient’s blood pressure drops from 130/80 to 100/60.d. The patient’s chest pain worsens."
+        "The patient’s blood pressure drops from 130/80 to 100/60."
       ],
       "correct": [
         "C"
@@ -498,13 +498,12 @@
     },
     {
       "id": "Pharm2_Q27",
-      "stem": "A norepinephrine (Levophe",
+      "stem": "A norepinephrine (Levophed) infusion is running for a patient in shock. The nurse notices the IV site is cool, pale, and swollen, and the patient is complaining of pain at the site. What is the nurse’s first action?",
       "options": [
         "Increase the IV flow rate to flush the site.",
-        "infusion is running for a patient in shock. The nurse notices the IV site is cool, pale, and swollen, and the patient is complaining of pain at the site. What is the nurse’s first action?",
         "Stop the infusion and disconnect it.",
-        "Inject phentolamine (Regitine) around the site as ordered.d. Apply a warm compress to the site.",
-        "around the site as ordered.d. Apply a warm compress to the site."
+        "Inject phentolamine (Regitine) around the site as ordered.",
+        "Apply a warm compress to the site."
       ],
       "correct": [
         "C"
@@ -739,11 +738,11 @@
     },
     {
       "id": "Pharm2_Q43",
-      "stem": "The nurse is teaching a patient about oral ferrous sulfate (Feosol) for iron-deficiency anemi",
+      "stem": "The nurse is teaching a patient about oral ferrous sulfate (Feosol) for iron-deficiency anemia. Which statement by the patient shows good understanding of how to take this medication?",
       "options": [
         "I will take it with my antacid to avoid heartburn.",
         "I should take this with milk to prevent stomach upset.",
-        "Which statement by the patient shows good understanding of how to take this medication?a. “I will take the iron tablet on an empty stomach with orange juice to increase absorption.",
+        “I will take the iron tablet on an empty stomach with orange juice to increase absorption.",
         "I’ll have to avoid eating fruit or meat when I take this medication."
       ],
       "correct": [
@@ -1549,12 +1548,12 @@
     },
     {
       "id": "Pharm2_Q97",
-      "stem": "Rho(",
+      "stem": "Rho(D) immune globulin (RhoGAM) is ordered for a postpartum patient. In which situation is RhoGAM indicated?",
       "options": [
-        "immune globulin (RhoGAM) is ordered for a postpartum patient. In which situation is RhoGAM indicated?",
+        "An Rh-positive mother with an Rh-positive baby",
         "An Rh-negative mother who delivered an Rh-positive baby, with a negative direct Coombs test on the infant",
         "An Rh-positive mother with an Rh-negative baby",
-        "An Rh-negative mother with an Rh-negative babyd. An Rh-positive mother with an Rh-positive baby"
+        "An Rh-negative mother with an Rh-negative baby"
       ],
       "correct": [
         "B"
@@ -1684,12 +1683,12 @@
     },
     {
       "id": "Pharm2_Q106",
-      "stem": "A patient received hydromorphone (Dilaudi",
+      "stem": "A patient received hydromorphone (Dilaudid) 2 mg IV for severe pain. Fifteen minutes later, the patient is very drowsy, with a respiratory rate of 8/min and oxygen saturation of 89%. What should the nurse do first?",
       "options": [
-        "2 mg IV for severe pain. Fifteen minutes later, the patient is very drowsy, with a respiratory rate of 8/min and oxygen saturation of 89%. What should the nurse do first?",
+        "Place the patient in Trendelenburg position.",
         "Administer naloxone per protocol.",
         "Gently stimulate the patient and coach deep breaths.",
-        "Increase the IV fluid rate.d. Place the patient in Trendelenburg position."
+        "Increase the IV fluid rate."
       ],
       "correct": [
         "C"
@@ -1699,12 +1698,12 @@
     },
     {
       "id": "Pharm2_Q107",
-      "stem": "A patient is receiving IV hydromorphone (Dilaudi",
+      "stem": "A patient is receiving IV hydromorphone (Dilaudid) for post-op pain. The new nurse asks how hydromorphone compares to morphine. The best response is:",
       "options": [
         "They are exactly the same; only the name is different.",
-        "for post-op pain. The new nurse asks how hydromorphone compares to morphine. The best response is:",
+        "Hydromorphone has no side effects, unlike morphine.",
         "Hydromorphone is more potent than morphine, so a smaller dose provides equivalent pain relief.",
-        "Hydromorphone lasts much longer, that’s why we use it.”d. “Hydromorphone has no side effects, unlike morphine."
+        "Hydromorphone lasts much longer, that’s why we use it."
       ],
       "correct": [
         "C"
@@ -1714,12 +1713,12 @@
     },
     {
       "id": "Pharm2_Q108",
-      "stem": "A patient on patient-controlled analgesia (PC",
+      "stem": "A patient on patient-controlled analgesia (PCA) with hydromorphone (Dilaudid) is not getting adequate pain relief. The nurse discovers the patient’s teenage son has been pressing the PCA button to help her “stay comfortable.” What is the appropriate nursing action?",
       "options": [
-        "Disable the PCA pump and switch to PRN nurse-administered boluses.d. Increase the PCA dose to overcome the missed doses when the patient was sleeping.",
+        "Disable the PCA pump and switch to PRN nurse-administered boluses.",
         "Thank the son for helping and continue to monitor the patient’s pain.",
-        "with hydromorphone (Dilaudi",
-        "is not getting adequate pain relief. The nurse discovers the patient’s teenage son has been pressing the PCA button to help her “stay comfortable.” What is the appropriate nursing action?a. Instruct the son that only the patient should press the button, and explain the risks of oversedation."
+        "Instruct the son that only the patient should press the button, and explain the risks of oversedation.",
+        "Increase the PCA dose to overcome the missed doses when the patient was sleeping."
       ],
       "correct": [
         "C"
@@ -1759,12 +1758,12 @@
     },
     {
       "id": "Pharm2_Q111",
-      "stem": "A terminal cancer patient has a fentanyl (Duragesi",
+      "stem": "A terminal cancer patient has a fentanyl (Duragesic) transdermal patch for pain. Which comment by the patient indicates a need for more education?",
       "options": [
         "I sometimes cut the patch in half if I feel I need a lower dose.",
-        "transdermal patch for pain. Which comment by the patient indicates a need for more education?",
+        "I disposed of the old patch by flushing it down the toilet.",
         "I will avoid using a heating pad over the patch.",
-        "I change the patch every three days as directed.”c. “I disposed of the old patch by flushing it down the toilet."
+        "I change the patch every three days as directed."
       ],
       "correct": [
         "A"
@@ -1774,15 +1773,15 @@
     },
     {
       "id": "Pharm2_Q112",
-      "stem": "Which patient scenario is most appropriate for a fentanyl (Duragesi",
+      "stem": "Which patient scenario is most appropriate for a fentanyl (Duragesic) transdermal patch for analgesia?",
       "options": [
-        "A 50-year-old with chronic cancer pain who has difficulty swallowing pills",
-        "A 34-year-old with acute postoperative pain 6 hours after surgeryc. A 19-year-old with intermittent migraine headaches",
-        "transdermal patch for analgesia?",
-        "A 70-year-old opioid-naïve patient with sudden severe ankle fracture pain"
+        "A 70-year-old opioid-naïve patient with sudden severe ankle fracture pain",
+        "A 34-year-old with acute postoperative pain 6 hours after surgery",
+        "A 19-year-old with intermittent migraine headaches",
+        "A 50-year-old with chronic cancer pain who has difficulty swallowing pills"
       ],
       "correct": [
-        "A"
+        "D"
       ],
       "rationale": "Fentanyl patches are indicated for chronic, stable opioid requirements (like chronic cancer pain) and in patients who are opioid-tolerant. It provides long-acting pain control but is not suitable for acute or intermittent pain due to its slow onset (it takes ~12-24 hours to reach full effect). For acute post-op or fracture pain in opioid-naïve patients, short-acting opioids are appropriate. A migraine is intermittent acute pain – a patch is not appropriate (they need acute treatment). The 50-year-old with chronic cancer pain is the best fit.",
       "type": "single_select"
@@ -1819,11 +1818,11 @@
     },
     {
       "id": "Pharm2_Q115",
-      "stem": "Succinylcholine (Anectine) is used during rapid sequence intubation for anesthesi",
+      "stem": "41.	Succinylcholine (Anectine) is used during rapid sequence intubation for anesthesia. Shortly after administration, the patient’s jaw and body become rigid, and their temperature rises rapidly. What medication should the nurse prepare to administer?",
       "options": [
         "Epinephrine IV",
         "Neostigmine IV",
-        "Shortly after administration, the patient’s jaw and body become rigid, and their temperature rises rapidly. What medication should the nurse prepare to administer?a. Dantrolene (Dantrium) IV",
+        "Dantrolene (Dantrium) IV",
         "Naloxone (Narcan) IV"
       ],
       "correct": [
