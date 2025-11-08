@@ -1,8 +1,5 @@
 /* -----------------------------------------------------------
-   Final-Semester-Study-Guide - Quiz Frontend
-   - Single action button: Submit (green & wide) ➜ Next (blue)
-   - Show top-right Reset only after quiz starts
-   - Keyboard: A–Z toggle options; Enter submits/next
+   Show counters only during an active quiz.
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -10,6 +7,7 @@ const $ = (id) => document.getElementById(id);
 // Top info
 const runCounter       = $('runCounter');
 const remainingCounter = $('remainingCounter');
+const countersBox      = $('countersBox');  // <— wrapper we’ll show/hide
 
 // Launcher
 const launcher     = $('launcher');
@@ -36,8 +34,8 @@ const firstTryPct      = $('firstTryPct');
 const firstTryCount    = $('firstTryCount');
 const firstTryTotal    = $('firstTryTotal');
 const reviewList       = $('reviewList');
-const restartBtn2      = $('restartBtnSummary'); // Start Another Run
-const resetAll         = $('resetAll');          // top-right Reset (hidden initially)
+const restartBtn2      = $('restartBtnSummary');
+const resetAll         = $('resetAll');          // hidden initially
 
 // ---------- Utilities ----------
 function escapeHTML(s=''){
@@ -256,7 +254,10 @@ async function startQuiz(){
   launcher.classList.add('hidden');
   summary.classList.add('hidden');
   quiz.classList.remove('hidden');
-  resetAll.classList.remove('hidden');     // <-- show Reset once quiz starts
+
+  // SHOW counters & reset only once quiz starts
+  countersBox.classList.remove('hidden');
+  resetAll.classList.remove('hidden');
 
   const q0 = run.order[0];
   run.uniqueSeen.add(q0.id);
@@ -269,7 +270,9 @@ async function startQuiz(){
 function endRun(){
   quiz.classList.add('hidden');
   summary.classList.remove('hidden');
-  // Keep Reset visible on summary page (optional convenience)
+
+  // HIDE counters again when the quiz is not open
+  countersBox.classList.add('hidden');
 
   const uniq = [...run.answered.values()];
   const ftCorrect = uniq.filter(x => x.firstTryCorrect).length;
@@ -341,10 +344,10 @@ submitBtn.addEventListener('click', () => {
   updateCounters();
 });
 
-// Top-right reset (shown only after quiz starts)
+// Reset
 resetAll.addEventListener('click', () => { localStorage.clear(); location.reload(); });
 
-// "Start Another Run" in summary
+// Summary “Start Another Run”
 restartBtn2.addEventListener('click', () => { location.reload(); });
 
 // ---------- Keyboard shortcuts ----------
