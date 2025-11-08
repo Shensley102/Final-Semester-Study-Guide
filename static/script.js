@@ -13,6 +13,11 @@ const runCounter       = $('runCounter');
 const remainingCounter = $('remainingCounter');
 const countersBox      = $('countersBox');
 
+// Page title handling
+const pageTitle    = $('pageTitle');
+const defaultTitle = pageTitle?.textContent || 'Final Semester Study Guide';
+const setHeaderTitle = (t) => { if (pageTitle) pageTitle.textContent = t; };
+
 // Launcher
 const launcher   = $('launcher');
 const moduleSel  = $('moduleSel');
@@ -24,7 +29,7 @@ const quiz         = $('quiz');
 const qText        = $('questionText');
 const form         = $('optionsForm');
 const submitBtn    = $('submitBtn');   // single action button (Submit/Next)
-const nextBtn      = $('nextBtn');     // hidden/unused
+const nextBtn      = $('nextBtn');     // hidden/unused (kept for layout)
 const feedback     = $('feedback');
 const answerLine   = $('answerLine');
 const rationaleBox = $('rationale');
@@ -78,8 +83,8 @@ function isTextEditingTarget(el){
 let allQuestions = [];
 let run = {
   bank: '',
-  order: [],             // current queue of questions to present (may include redeployed duplicates)
-  masterPool: [],        // unique set sampled at start; must all be mastered to finish
+  order: [],             // current queue (may include redeployed duplicates)
+  masterPool: [],        // unique set sampled at start; must all be mastered
   i: 0,                  // index into run.order
   answered: new Map(),   // id -> { firstTryCorrect: bool, correct: bool, userLetters: [] }
   uniqueSeen: new Set(), // ids shown at least once (for the “Question: N” counter)
@@ -95,7 +100,9 @@ async function fetchModules(){
     const res = await fetch(`/modules?_=${Date.now()}`, { cache: 'no-store' });
     if (!res.ok) throw new Error('modules failed');
     const data = await res.json();
-    return Array.isArray(data.modules) ? data.modules : [];
+    const mods = Array.isArray(data.modules) ? data.modules : [];
+    // Safety net: exclude ONLY 'vercel'
+    return mods.filter(m => m.toLowerCase() !== 'vercel');
   } catch {
     // Fallback list if /modules endpoint isn’t available
     return ["Module_1","Module_2","Module_3","Module_4","Pharm_Quiz_HESI",
@@ -280,12 +287,19 @@ async function startQuiz(){
   const lenBtn = lengthBtns.querySelector('.seg-btn.active');
   const qty = lenBtn ? (lenBtn.dataset.len === 'full' ? 'full' : parseInt(lenBtn.dataset.len, 10)) : 'full';
 
+  // NEW: show the selected quiz name while in a quiz
+  setHeaderTitle(bank);
+  document.title = `Final Semester Study Guide — ${bank}`;
+
   startBtn.disabled = true;
 
   const res = await fetch(`/${encodeURIComponent(bank)}.json`, { cache: 'no-store' });
   if (!res.ok) {
     alert(`Could not load ${bank}.json`);
     startBtn.disabled = false;
+    // Restore title on failure
+    setHeaderTitle(defaultTitle);
+    document.title = 'Final Semester Study Guide';
     return;
   }
   const raw = await res.json();
@@ -359,6 +373,10 @@ function endRun(){
     row.appendChild(qEl); row.appendChild(caEl); row.appendChild(rEl);
     reviewList.appendChild(row);
   });
+
+  // If you ever navigate back to launcher without reloading, restore title:
+  setHeaderTitle(defaultTitle);
+  document.title = 'Final Semester Study Guide';
 }
 
 // ---------- Event wiring ----------
