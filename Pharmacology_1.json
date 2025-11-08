@@ -118,7 +118,7 @@
       "correct": [
         "C"
       ],
-      "rationale": "ACE inhibitors like lisinopril often cause a persistent, dry cough in some patients[1][2]. It is benign but bothersome, and providers may change the patient to an angiotensin II receptor blocker (ARB) to alleviate it. It is not an allergic reaction or sign of heart failure. Increasing fluids will not stop an ACE-inhibitor cough.",
+      "rationale": "ACE inhibitors like lisinopril often cause a persistent, dry cough in some patients. It is benign but bothersome, and providers may change the patient to an angiotensin II receptor blocker (ARB) to alleviate it. It is not an allergic reaction or sign of heart failure. Increasing fluids will not stop an ACE-inhibitor cough.",
       "type": "single_select"
     },
     {
@@ -133,7 +133,7 @@
       "correct": [
         "C"
       ],
-      "rationale": "Swelling of the lips and tongue suggests angioedema, a rare but life-threatening reaction to ACE inhibitors[3][4]. The priority is to stop the drug and notify the provider; the patient may need emergency treatment. Diphenhydramine alone is insufficient for angioedema, and salt water will not help. A rash is not the priority compared to airway compromise risk.",
+      "rationale": "Swelling of the lips and tongue suggests angioedema, a rare but life-threatening reaction to ACE inhibitors. The priority is to stop the drug and notify the provider; the patient may need emergency treatment. Diphenhydramine alone is insufficient for angioedema, and salt water will not help. A rash is not the priority compared to airway compromise risk.",
       "type": "single_select"
     },
     {
@@ -148,7 +148,7 @@
       "correct": [
         "A"
       ],
-      "rationale": "ARBs like losartan are often chosen for patients who cannot tolerate the dry cough caused by ACE inhibitors[5][2]. Losartan and lisinopril both lower blood pressure effectively; ARBs are not necessarily faster and still have potential side effects (e.g., hyperkalemia, hypotension). It’s incorrect to say ARBs have no side effects or less BP effect.",
+      "rationale": "ARBs like losartan are often chosen for patients who cannot tolerate the dry cough caused by ACE inhibitors. Losartan and lisinopril both lower blood pressure effectively; ARBs are not necessarily faster and still have potential side effects (e.g., hyperkalemia, hypotension). It’s incorrect to say ARBs have no side effects or less BP effect.",
       "type": "single_select"
     },
     {
@@ -163,7 +163,7 @@
       "correct": [
         "C"
       ],
-      "rationale": "ARBs like losartan are contraindicated in pregnancy due to risk of fetal injury or death[6][7]. A patient planning pregnancy should be transitioned to a safer antihypertensive (e.g., methyldopa or labetalol) before conceiving. Neither losartan nor lisinopril is safe in pregnancy. Folic acid is important for neural tube defect prevention but does not mitigate the drug’s risk.",
+      "rationale": "ARBs like losartan are contraindicated in pregnancy due to risk of fetal injury or death. A patient planning pregnancy should be transitioned to a safer antihypertensive (e.g., methyldopa or labetalol) before conceiving. Neither losartan nor lisinopril is safe in pregnancy. Folic acid is important for neural tube defect prevention but does not mitigate the drug’s risk.",
       "type": "single_select"
     },
     {
@@ -178,7 +178,7 @@
       "correct": [
         "B"
       ],
-      "rationale": "Beta-1 selective blockers like metoprolol slow the heart rate. An apical pulse <60 bpm in an adult is generally a reason to hold the beta-blocker and notify the provider[8][9]. Administering it could worsen bradycardia and hypotension. Adjusting the dose or giving atropine prophylactically is not a standard practice without provider orders.",
+      "rationale": "Beta-1 selective blockers like metoprolol slow the heart rate. An apical pulse <60 bpm in an adult is generally a reason to hold the beta-blocker and notify the provider. Administering it could worsen bradycardia and hypotension. Adjusting the dose or giving atropine prophylactically is not a standard practice without provider orders.",
       "type": "single_select"
     },
     {
@@ -193,7 +193,7 @@
       "correct": [
         "D"
       ],
-      "rationale": "Beta-blockers can mask signs of hypoglycemia (like tachycardia and tremors)[10][11], so diabetics should monitor glucose closely. They also must not be stopped abruptly, as rebound hypertension or angina can occur. Feeling dizzy (a sign of lowered blood pressure) should be reported, but the patient should not discontinue the drug without consulting the provider. Option d reflects incorrect self-management.",
+      "rationale": "Beta-blockers can mask signs of hypoglycemia (like tachycardia and tremors), so diabetics should monitor glucose closely. They also must not be stopped abruptly, as rebound hypertension or angina can occur. Feeling dizzy (a sign of lowered blood pressure) should be reported, but the patient should not discontinue the drug without consulting the provider. Option d reflects incorrect self-management.",
       "type": "single_select"
     },
     {
@@ -208,7 +208,7 @@
       "correct": [
         "A"
       ],
-      "rationale": "Dihydropyridine calcium channel blockers like amlodipine cause vasodilation and can lead to peripheral edema (ankle swelling) as a common side effect[12][13]. It does not necessarily mean heart failure is worsening, and it is not a sign of a blood clot in this context. The provider may adjust the dose or add a diuretic. Sodium intake can contribute to edema, but medication effect is the likely cause here.",
+      "rationale": "Dihydropyridine calcium channel blockers like amlodipine cause vasodilation and can lead to peripheral edema (ankle swelling) as a common side effect. It does not necessarily mean heart failure is worsening, and it is not a sign of a blood clot in this context. The provider may adjust the dose or add a diuretic. Sodium intake can contribute to edema, but medication effect is the likely cause here.",
       "type": "single_select"
     },
     {
@@ -223,7 +223,7 @@
       "correct": [
         "C"
       ],
-      "rationale": "Grapefruit juice can increase serum levels of calcium channel blockers like amlodipine, risking toxicity or enhanced hypotensive effect[14][15]. Patients should avoid it. Potassium levels are not directly affected by amlodipine (that warning is for ACE inhibitors/ARBs). It can be taken with or without food; there’s no strict timing like empty stomach required. Increasing salt is not advised in hypertension.",
+      "rationale": "Grapefruit juice can increase serum levels of calcium channel blockers like amlodipine, risking toxicity or enhanced hypotensive effect. Patients should avoid it. Potassium levels are not directly affected by amlodipine (that warning is for ACE inhibitors/ARBs). It can be taken with or without food; there’s no strict timing like empty stomach required. Increasing salt is not advised in hypertension.",
       "type": "single_select"
     },
     {
@@ -238,7 +238,7 @@
       "correct": [
         "B"
       ],
-      "rationale": "Diltiazem, a non-dihydropyridine calcium channel blocker, is often used to slow ventricular rate in atrial fibrillation[16][17]. A decrease in heart rate indicates effective rate control. We would not expect or desire an increase in blood pressure. Simply converting to sinus tachycardia at 150 bpm is not an improvement. Reporting fewer palpitations is good, but the best objective indicator is the controlled heart rate.",
+      "rationale": "Diltiazem, a non-dihydropyridine calcium channel blocker, is often used to slow ventricular rate in atrial fibrillation[17]. A decrease in heart rate indicates effective rate control. We would not expect or desire an increase in blood pressure. Simply converting to sinus tachycardia at 150 bpm is not an improvement. Reporting fewer palpitations is good, but the best objective indicator is the controlled heart rate.",
       "type": "single_select"
     },
     {
@@ -253,7 +253,7 @@
       "correct": [
         "B"
       ],
-      "rationale": "Diltiazem slows AV node conduction and can cause bradycardia and hypotension[16][18]. Reflex tachycardia is more associated with dihydropyridine CCBs like nifedipine, not typically with diltiazem at therapeutic doses. It does not directly affect urine output or cause hyperactivity.",
+      "rationale": "Diltiazem slows AV node conduction and can cause bradycardia and hypotension[18]. Reflex tachycardia is more associated with dihydropyridine CCBs like nifedipine, not typically with diltiazem at therapeutic doses. It does not directly affect urine output or cause hyperactivity.",
       "type": "single_select"
     },
     {
@@ -659,7 +659,7 @@
       "correct": [
         "B"
       ],
-      "rationale": "Spironolactone is a potassium-sparing diuretic. Patients should not take extra potassium or potassium-based salt substitutes, as this can lead to dangerous hyperkalemia[40][41]. Options a, b, and d are correct: avoiding salt substitutes (which often contain potassium) is appropriate, monitoring for hyperkalemia is necessary[2][40], and spironolactone is often used with loop/thiazide diuretics to counteract potassium loss.",
+      "rationale": "Spironolactone is a potassium-sparing diuretic. Patients should not take extra potassium or potassium-based salt substitutes, as this can lead to dangerous hyperkalemia[40][41]. Options a, b, and d are correct: avoiding salt substitutes (which often contain potassium) is appropriate, monitoring for hyperkalemia is necessary[40], and spironolactone is often used with loop/thiazide diuretics to counteract potassium loss.",
       "type": "single_select"
     },
     {
@@ -674,7 +674,7 @@
       "correct": [
         "B"
       ],
-      "rationale": "Spironolactone is a potassium-sparing diuretic that can cause hyperkalemia[2]. Routine potassium supplementation is usually not given with spironolactone unless there is a documented deficiency. The nurse should double-check this order because it may be inappropriate or an error. Simply administering it without question could harm the patient. Holding spironolactone is not the nurse’s decision unless ordered; the key is to question the combination.",
+      "rationale": "Spironolactone is a potassium-sparing diuretic that can cause hyperkalemia. Routine potassium supplementation is usually not given with spironolactone unless there is a documented deficiency. The nurse should double-check this order because it may be inappropriate or an error. Simply administering it without question could harm the patient. Holding spironolactone is not the nurse’s decision unless ordered; the key is to question the combination.",
       "type": "single_select"
     },
     {
@@ -689,7 +689,7 @@
       "correct": [
         "B"
       ],
-      "rationale": "Thiazide diuretics like hydrochlorothiazide can reduce renal excretion of uric acid, leading to hyperuricemia and potentially precipitating gout attacks[2][42]. They can also cause mild hyperglycemia (not hypo-). Ototoxicity is more associated with loop diuretics (like furosemide) especially with aminoglycosides; thiazides are not known for causing tinnitus.",
+      "rationale": "Thiazide diuretics like hydrochlorothiazide can reduce renal excretion of uric acid, leading to hyperuricemia and potentially precipitating gout attacks[42]. They can also cause mild hyperglycemia (not hypo-). Ototoxicity is more associated with loop diuretics (like furosemide) especially with aminoglycosides; thiazides are not known for causing tinnitus.",
       "type": "single_select"
     },
     {
@@ -734,7 +734,7 @@
       "correct": [
         "A"
       ],
-      "rationale": "Epoetin should be held or discontinued if hemoglobin is >11 g/dL because higher levels are associated with increased risk of thrombotic events (stroke, MI)[7][47]. Iron stores should be adequate (iron supplementation is often needed for it to work, but not to avoid “chills and fever”). There is no egg component in epoetin (that precaution is for some vaccines). Epoetin can be given subcutaneously or IV; subQ is common in CKD patients.",
+      "rationale": "Epoetin should be held or discontinued if hemoglobin is >11 g/dL because higher levels are associated with increased risk of thrombotic events (stroke, MI)[47]. Iron stores should be adequate (iron supplementation is often needed for it to work, but not to avoid “chills and fever”). There is no egg component in epoetin (that precaution is for some vaccines). Epoetin can be given subcutaneously or IV; subQ is common in CKD patients.",
       "type": "single_select"
     },
     {
@@ -1424,7 +1424,7 @@
       "correct": [
         "C"
       ],
-      "rationale": "Hypothyroidism is typically a chronic condition; levothyroxine replacement is usually lifelong[7][47]. Even if thyroid levels normalize, it’s because of the medication. Stopping it would cause levels to drop again. The patient should indeed report signs of overtreatment like chest pain or tachycardia (possible hyperthyroid symptoms from excessive dose). Also, consistency in brand is important because different brands or generics may vary slightly in potency; any switch should be monitored with lab tests. So option c indicates misunderstanding.",
+      "rationale": "Hypothyroidism is typically a chronic condition; levothyroxine replacement is usually lifelong[47]. Even if thyroid levels normalize, it’s because of the medication. Stopping it would cause levels to drop again. The patient should indeed report signs of overtreatment like chest pain or tachycardia (possible hyperthyroid symptoms from excessive dose). Also, consistency in brand is important because different brands or generics may vary slightly in potency; any switch should be monitored with lab tests. So option c indicates misunderstanding.",
       "type": "single_select"
     },
     {
