@@ -12,6 +12,8 @@ const $ = (id) => document.getElementById(id);
 const runCounter       = $('runCounter');
 const remainingCounter = $('remainingCounter');
 const countersBox      = $('countersBox');
+const pageTitle        = $('pageTitle');
+const defaultTitle     = 'Final Semester Study Guide';
 
 // Launcher
 const launcher   = $('launcher');
@@ -95,7 +97,9 @@ async function fetchModules(){
     const res = await fetch(`/modules?_=${Date.now()}`, { cache: 'no-store' });
     if (!res.ok) throw new Error('modules failed');
     const data = await res.json();
-    return Array.isArray(data.modules) ? data.modules : [];
+    const mods = Array.isArray(data.modules) ? data.modules : [];
+    // Safety net: exclude ONLY 'vercel'
+    return mods.filter(m => m.toLowerCase() !== 'vercel');
   } catch {
     // Fallback list if /modules endpoint isn’t available
     return ["Module_1","Module_2","Module_3","Module_4","Pharm_Quiz_HESI",
@@ -134,7 +138,7 @@ function normalizeQuestions(raw){
   for (const q of questions){
     const id   = String(q.id ?? crypto.randomUUID());
     const stem = String(q.stem ?? '');
-    const type = String(q.type ?? 'single_select');
+    the type = String(q.type ?? 'single_select');
     const opts = Array.isArray(q.options) ? q.options.map(String) : [];
     const correctLetters = Array.isArray(q.correct) ? q.correct.map(String) : [];
     const rationale = String(q.rationale ?? '');
@@ -280,6 +284,9 @@ async function startQuiz(){
   const lenBtn = lengthBtns.querySelector('.seg-btn.active');
   const qty = lenBtn ? (lenBtn.dataset.len === 'full' ? 'full' : parseInt(lenBtn.dataset.len, 10)) : 'full';
 
+  // Show the module name as the page title during the quiz
+  if (pageTitle) pageTitle.textContent = bank;
+
   startBtn.disabled = true;
 
   const res = await fetch(`/${encodeURIComponent(bank)}.json`, { cache: 'no-store' });
@@ -359,6 +366,9 @@ function endRun(){
     row.appendChild(qEl); row.appendChild(caEl); row.appendChild(rEl);
     reviewList.appendChild(row);
   });
+
+  // If you ever navigate back to launcher without reloading, restore title:
+  if (pageTitle) pageTitle.textContent = defaultTitle;
 }
 
 // ---------- Event wiring ----------
