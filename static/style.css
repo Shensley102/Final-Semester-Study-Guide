@@ -8,7 +8,8 @@ html { scroll-behavior: smooth; }
   --ink:#0b1320;
   --ink-soft:#4a5568;
   --primary:#2f61f3;      /* blue for Next state */
-  --danger:#d33a2c;       /* red for Reset outline */
+  --danger:#d33a2c;       /* red for errors / Reset outline */
+  --success:#22c55e;      /* green for success */
   --ring:#cdd9ff;
   --border:#e7eaf3;
 
@@ -114,8 +115,16 @@ button{ appearance:none; -webkit-appearance:none; }
 }
 .primary.btn-blue:disabled{ opacity:0.6; cursor:not-allowed; }
 
-.feedback{ margin-top:6px; font-weight:600; }
-.answer-line{ margin-top:4px; color:var(--ink-soft); }
+/* Feedback (bigger + colored) */
+.feedback{
+  margin-top:10px;
+  font-weight:800;
+  font-size:18px;          /* bigger as requested */
+}
+.feedback.ok{ color:var(--success); }   /* “Correct!” -> green */
+.feedback.bad{ color:var(--danger); }   /* “Incorrect” -> red */
+
+.answer-line{ margin-top:6px; color:var(--ink-soft); }
 .rationale{
   margin-top:10px; padding:12px; border-radius:12px; background:#f8fafc; border:1px solid var(--border);
 }
