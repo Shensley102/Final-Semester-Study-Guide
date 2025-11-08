@@ -198,7 +198,7 @@
     },
     {
       "id": "Pharm2_Q7",
-      "stem": "1.	A patient taking amlodipine (Norvasc) for hypertension reports new ankle swelling. Which explanation should the nurse provide?",
+      "stem": "A patient taking amlodipine (Norvasc) for hypertension reports new ankle swelling. Which explanation should the nurse provide?",
       "options": [
         "This drug can cause fluid retention and swelling; we will notify your provider.",
         "This indicates your heart failure is worsening, and the drug is not effective.”c. “You must be consuming too much salt; try a low-sodium diet.",
@@ -412,8 +412,8 @@
       "options": [
         "Give it as a rapid IV push followed by a normal saline flush.",
         "Infuse it slowly over 10 minutes to prevent flushing.",
-        "Administer it intramuscularly in a large muscle.d. Dilute it in 100 mL and infuse over 30 minutes.",
-        "is ordered for a patient with supraventricular tachycardia (SVT). How should the nurse administer this medication?"
+        "Administer it intramuscularly in a large muscle.",
+        "Dilute it in 100 mL and infuse over 30 minutes."
       ],
       "correct": [
         "A"
@@ -423,7 +423,7 @@
     },
     {
       "id": "Pharm2_Q22",
-      "stem": "13.	A patient receives adenosine (Adenocard) IV for paroxysmal SVT. The patient’s cardiac monitor shows a brief period of asystole after the injection, then normal sinus rhythm. What should the nurse do next?",
+      "stem": "A patient receives adenosine (Adenocard) IV for paroxysmal SVT. The patient’s cardiac monitor shows a brief period of asystole after the injection, then normal sinus rhythm. What should the nurse do next?",
       "options": [
         "Continue to monitor – a brief asystole is expected after adenosine.",
         "Begin CPR immediately.",
@@ -438,12 +438,12 @@
     },
     {
       "id": "Pharm2_Q23",
-      "stem": "14.	During care of a patient with symptomatic bradycardia (heart rate 38 and dizziness), atropine (Atropen) is ordered. Which assessment finding indicates the atropine is achieving its intended effect?",
+      "stem": "During care of a patient with symptomatic bradycardia (heart rate 38 and dizziness), atropine (Atropen) is ordered. Which assessment finding indicates the atropine is achieving its intended effect?",
       "options": [
         "The patient’s heart rate increases to 72 beats per minute.",
         "The patient’s pupil size constricts to 2 mm.",
-        "The patient’s blood pressure drops from 130/80 to 100/60.d. The patient’s chest pain worsens.",
-        "Which assessment finding indicates the atropine is achieving its intended effect?"
+        "The patient’s blood pressure drops from 130/80 to 100/60.",
+        "The patient’s chest pain worsens."
       ],
       "correct": [
         "A"
@@ -498,7 +498,7 @@
     },
     {
       "id": "Pharm2_Q27",
-      "stem": "18.	A norepinephrine (Levophed) infusion is running for a patient in shock. The nurse notices the IV site is cool, pale, and swollen, and the patient is complaining of pain at the site. What is the nurse’s first action?",
+      "stem": "A norepinephrine (Levophed) infusion is running for a patient in shock. The nurse notices the IV site is cool, pale, and swollen, and the patient is complaining of pain at the site. What is the nurse’s first action?",
       "options": [
         "Stop the infusion and disconnect it.",
         "Increase the IV flow rate to flush the site.",
