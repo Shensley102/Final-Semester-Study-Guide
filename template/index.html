@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Final Semester Study Guide</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="container">
+
+    <header class="topbar">
+      <h1 id="pageTitle">Final Semester Study Guide</h1>
+
+      <!-- Counters are hidden on the landing page -->
+      <div id="countersBox" class="counters hidden">
+        <span id="runCounter">Question: 0</span>
+        <span id="remainingCounter">Remaining to master: 0</span>
+      </div>
+
+      <!-- Reset appears only after the quiz starts -->
+      <button id="resetAll" class="link hidden" title="Reset everything">Reset</button>
+    </header>
+
+    <!-- Launcher -->
+    <section id="launcher" class="card">
+      <div class="form-row">
+        <label for="moduleSel" class="lbl">Module</label>
+        <select id="moduleSel" class="select" aria-label="Question bank"></select>
+      </div>
+
+      <div class="form-row">
+        <div class="lbl">Length</div>
+        <div id="lengthBtns" class="seg" role="group" aria-label="Length">
+          <button type="button" class="seg-btn active" data-len="10">10</button>
+          <button type="button" class="seg-btn" data-len="25">25</button>
+          <button type="button" class="seg-btn" data-len="50">50</button>
+          <button type="button" class="seg-btn" data-len="100">100</button>
+          <button type="button" class="seg-btn" data-len="full">Full</button>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <button id="startBtn" class="primary">Start Quiz</button>
+      </div>
+
+      <!-- Overview / Hotkeys -->
+      <details id="help" class="help" open>
+        <summary>How it works &amp; hotkeys</summary>
+        <div class="help-body">
+          <ul class="help-list">
+            <li><strong>Start:</strong> Pick a <em>Module</em>, choose a <em>Length</em>, then click <strong>Start Quiz</strong>.</li>
+            <li><strong>Answering:</strong> Click an option or press a letter key
+              <span class="kbd">A</span>–<span class="kbd">Z</span> to toggle the option with that label.</li>
+            <li><strong>De-select:</strong> For single-select questions, pressing the same letter again unselects it.</li>
+            <li><strong>Submit / Next:</strong> Press <span class="kbd">Enter</span> to submit. After submitting, the green
+              <strong>Submit</strong> button turns blue and becomes <strong>Next</strong>. Press <span class="kbd">Enter</span> again to go next.</li>
+            <li><strong>After you submit:</strong> You’ll see <em>Correct/Incorrect</em>, the <em>Correct Answer</em>, and the <em>Rationale</em>.</li>
+            <li><strong>Results:</strong> End of run shows a summary and a review list with answers and rationales.</li>
+            <li><strong>Reset:</strong> A red <strong>Reset</strong> button shows top-right only during an active quiz. It clears progress.</li>
+          </ul>
+        </div>
+      </details>
+      <!-- /Overview -->
+    </section>
+
+    <!-- Quiz -->
+    <section id="quiz" class="card hidden" aria-live="polite">
+      <h2 id="questionText" class="q"></h2>
+      <form id="optionsForm" class="opts" aria-describedby="answerLine"></form>
+
+      <div class="actions">
+        <!-- Single action button: Submit (green) ➜ Next (blue) -->
+        <button type="button" id="submitBtn" class="primary" disabled>Submit</button>
+        <button type="button" id="nextBtn" class="secondary hidden" disabled>Next</button>
+      </div>
+
+      <div id="feedback" class="feedback" aria-live="polite"></div>
+      <div id="answerLine" class="answer-line"></div>
+      <div id="rationale" class="rationale hidden"></div>
+    </section>
+
+    <!-- Summary / Review -->
+    <section id="summary" class="card hidden">
+      <h2>Results</h2>
+
+      <div id="firstTrySummary" class="summary-stats hidden">
+        <div class="stat-row">
+          <div class="stat-label">First-try correct:</div>
+          <div class="stat-value"><span id="firstTryPct">0%</span></div>
+          <div class="stat-small">(<span id="firstTryCount">0</span> of <span id="firstTryTotal">0</span>)</div>
+        </div>
+      </div>
+
+      <details id="review" class="review">
+        <summary>Show results</summary>
+        <div id="reviewList" class="review-list"></div>
+      </details>
+
+      <div class="footer-actions">
+        <button type="button" id="restartBtnSummary" class="primary" data-reset="true">Start Another Run</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
