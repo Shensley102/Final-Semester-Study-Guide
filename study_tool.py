@@ -21,10 +21,15 @@ app = Flask(
 SAFE_JSON_RE = re.compile(r"^(?!\.)[A-Za-z0-9_\-\.]+\.json$")
 
 def list_banks():
-    """Return all *.json files in the repo root that match SAFE_JSON_RE (names without .json)."""
+    """
+    Return all *.json files in the repo root that match SAFE_JSON_RE (names without .json),
+    excluding ONLY vercel.json (case-insensitive).
+    """
     banks = []
     for p in BASE_DIR.glob("*.json"):
         name = p.name
+        if name.lower() == "vercel.json":
+            continue  # exclude only vercel.json
         if SAFE_JSON_RE.fullmatch(name):
             banks.append(name[:-5])  # strip .json
     # Prefer Pharmacology_* first, then alphabetical
