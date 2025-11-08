@@ -78,11 +78,15 @@ function isTextEditingTarget(el){
 let allQuestions = [];
 let run = {
   bank: '',
-  order: [],
-  i: 0,
-  answered: new Map(),  // id -> { firstTryCorrect: bool, correct: bool, userLetters: [] }
-  uniqueSeen: new Set(),
-  wrongBuffer: [],
+  order: [],             // current queue of questions to present (may include redeployed duplicates)
+  masterPool: [],        // unique set sampled at start; must all be mastered to finish
+  i: 0,                  // index into run.order
+  answered: new Map(),   // id -> { firstTryCorrect: bool, correct: bool, userLetters: [] }
+  uniqueSeen: new Set(), // ids shown at least once (for the “Question: N” counter)
+
+  // Thresholded wrong-question redeployments
+  thresholdWrong: 0,     // batch size (15% for 10/25/50, 5% for 100/full)
+  wrongSinceLast: [],    // questions answered wrong since last redeploy
 };
 
 // ---------- Module loading ----------
@@ -120,13 +124,17 @@ async function initModules(){
 // ---------- Parse/normalize ----------
 function normalizeQuestions(raw){
   // Expected schema:
-  // { module: "Name", questions: [ { id, stem, options:[], correct:["A"...], rationale, type:"single_select"|"multi_select" } ] }
+  // { module: "Name",
+  //   questions: [
+  //     { id, stem, options:[], correct:["A"...], rationale, type:"single_select"|"multi_select" }
+  //   ]
+  // }
   const questions = Array.isArray(raw?.questions) ? raw.questions : [];
   const norm = [];
   for (const q of questions){
     const id   = String(q.id ?? crypto.randomUUID());
     const stem = String(q.stem ?? '');
-    const type = String(q.type ?? 'single_select');   // <-- fixed (was "the type")
+    const type = String(q.type ?? 'single_select');
     const opts = Array.isArray(q.options) ? q.options.map(String) : [];
     const correctLetters = Array.isArray(q.correct) ? q.correct.map(String) : [];
     const rationale = String(q.rationale ?? '');
@@ -140,57 +148,33 @@ function normalizeQuestions(raw){
   return norm;
 }
 
-// ---------- Stable shuffling helpers ----------
+// ---------- Deterministic per-question shuffle ----------
 function seededShuffle(arr, seed) {
   const a = arr.slice();
-  // derive a numeric seed from the string
-  let s = 0;
-  for (let i = 0; i < seed.length; i++) {
-    s = (s * 31 + seed.charCodeAt(i)) >>> 0;
-  }
-  for (let i = a.length - 1; i > 0; i--) {
-    // LCG constants (same as used in many RNG implementations)
-    s = (s * 1664525 + 1013904223) >>> 0;
-    const j = s % (i + 1);
-    [a[i], a[j]] = [a[j], a[i]];
-  }
+  let s = 0; for (let i = 0; i < seed.length; i++) s = (s * 31 + seed.charCodeAt(i)) >>> 0;
+  for (let i = a.length - 1; i > 0; i--) { s = (s * 1664525 + 1013904223) >>> 0; const j = s % (i + 1); [a[i], a[j]] = [a[j], a[i]]; }
   return a;
 }
 function shuffleQuestionOptions(q) {
-  // Convert the existing options mapping (A->text, B->text, ...) into an
-  // array of { letter, text } objects so we can shuffle while retaining
-  // knowledge of which original letter each option came from.
   const pairs = Object.entries(q.options).map(([letter, text]) => ({ letter, text }));
-  // Shuffle deterministically based on the question id
-  const shuffled = seededShuffle(pairs, q.id);
-  const newOptions = {};
-  const oldToNew = {};
-  shuffled.forEach((item, idx) => {
-    const newLetter = String.fromCharCode(65 + idx);
-    newOptions[newLetter] = item.text;
-    oldToNew[item.letter] = newLetter;
-  });
-  // Remap the correct letters to their new positions. Any missing mapping
-  // will be filtered out; then we sort the letters to simplify comparison
-  const newCorrectLetters = (q.correctLetters || [])
-    .map((oldL) => oldToNew[oldL])
-    .filter((x) => x)
-    .sort();
+  const shuffled = seededShuffle(pairs, q.id); // stable by id
+  const newOptions = {}; const oldToNew = {};
+  shuffled.forEach((item, idx) => { const L = String.fromCharCode(65 + idx); newOptions[L] = item.text; oldToNew[item.letter] = L; });
+  const newCorrectLetters = (q.correctLetters || []).map(oldL => oldToNew[oldL]).filter(Boolean).sort();
   return { ...q, options: newOptions, correctLetters: newCorrectLetters };
 }
 
 // ---------- Single-action button helpers ----------
 function setActionState(state){
-  // state: 'submit' | 'next'
   if (state === 'submit') {
     submitBtn.dataset.mode = 'submit';
     submitBtn.textContent = 'Submit';
-    submitBtn.classList.remove('btn-blue'); // green by default (.primary)
-    submitBtn.disabled = true;              // enable after a selection
+    submitBtn.classList.remove('btn-blue'); // green by default
+    submitBtn.disabled = true;              // enables after selection
   } else {
     submitBtn.dataset.mode = 'next';
     submitBtn.textContent = 'Next';
-    submitBtn.classList.add('btn-blue');    // turn blue
+    submitBtn.classList.add('btn-blue');    // blue for Next
     submitBtn.disabled = false;
   }
 }
@@ -210,14 +194,13 @@ function renderQuestion(q){
   rationaleBox.textContent = '';
   rationaleBox.classList.add('hidden');
 
-  // reset feedback styling/text
   feedback.textContent = '';
   feedback.classList.remove('ok','bad');
 
   const isMulti = q.type === 'multi_select';
   form.setAttribute('role', isMulti ? 'group' : 'radiogroup');
 
-  // Render stable A,B,C,D... (no shuffling at render time; shuffling is done when the quiz starts)
+  // Render in the already-shuffled A, B, C, D order
   Object.entries(q.options).forEach(([L, text]) => {
     const wrap = document.createElement('div');
     wrap.className = 'opt';
@@ -237,10 +220,7 @@ function renderQuestion(q){
     form.appendChild(wrap);
   });
 
-  // We don't use the separate Next button anymore
   nextBtn?.classList.add('hidden');
-
-  // Reset action button to Submit (green)
   setActionState('submit');
 }
 
@@ -262,7 +242,8 @@ function formatCorrectAnswers(q){
 function updateCounters(){
   const uniqueTotal = run.uniqueSeen.size;
   runCounter.textContent = `Question: ${uniqueTotal}`;
-  const remaining = run.order.filter(q => !run.answered.get(q.id)?.correct).length;
+  // Remaining to master: based on masterPool (unique), not the current queue
+  const remaining = run.masterPool.filter(q => !run.answered.get(q.id)?.correct).length;
   remainingCounter.textContent = `Remaining to master: ${remaining}`;
 }
 function recordAnswer(q, userLetters, isCorrect){
@@ -273,15 +254,25 @@ function recordAnswer(q, userLetters, isCorrect){
   entry.userLetters = userLetters.slice();
   run.answered.set(q.id, entry);
 }
-function pushReinforcement(q, wasCorrect){
-  const chance = wasCorrect ? 0.05 : 0.15; // 5% when correct, 15% when incorrect
-  if (Math.random() < chance) run.wrongBuffer.push(q);
+function getNotMastered(){
+  return run.masterPool.filter(q => !run.answered.get(q.id)?.correct);
 }
 function nextIndex(){
-  if (run.wrongBuffer.length && Math.random() < 0.4) {
-    return { fromBuffer: true, q: run.wrongBuffer.shift() };
+  const nextIdx = run.i + 1;
+  if (nextIdx < run.order.length) {
+    run.i = nextIdx;
+    return { fromBuffer: false, q: run.order[run.i] };
   }
-  return { fromBuffer: false, q: run.order[++run.i] || null };
+  // End of this pass: if any question is not yet mastered, append them and continue
+  const notMastered = getNotMastered();
+  if (notMastered.length > 0) {
+    run.wrongSinceLast = []; // restart wrong counter on new pass
+    run.order.push(...notMastered);
+    run.i = nextIdx;
+    return { fromBuffer: true, q: run.order[run.i] };
+  }
+  // Truly finished only when everything is mastered
+  return { fromBuffer: false, q: null };
 }
 
 async function startQuiz(){
@@ -299,28 +290,31 @@ async function startQuiz(){
   }
   const raw = await res.json();
   allQuestions = normalizeQuestions(raw);
-  // When starting a quiz, shuffle each question's options deterministically
-  // based on its ID. This ensures that every question's answers remain
-  // correctly paired with its stem and rationale while introducing variety
-  // in the option order. We sample the desired number of questions first
-  // then apply the shuffle to each one.
+
+  // Sample and deterministically shuffle options ONCE per question for this run
   const sampled = sampleQuestions(allQuestions, qty);
   const shuffledQuestions = sampled.map((q) => shuffleQuestionOptions(q));
 
   run = {
     bank,
-    order: shuffledQuestions,
+    order: [...shuffledQuestions],
+    masterPool: [...shuffledQuestions],
     i: 0,
     answered: new Map(),
     uniqueSeen: new Set(),
-    wrongBuffer: [],
+    thresholdWrong: 0,
+    wrongSinceLast: [],
   };
+
+  // Thresholds: 15% for 10/25/50; 5% for 100/full
+  const total = run.masterPool.length;
+  const frac = (qty === 'full' || (typeof qty === 'number' && qty >= 100)) ? 0.05 : 0.15;
+  run.thresholdWrong = Math.max(1, Math.ceil(total * frac));
 
   launcher.classList.add('hidden');
   summary.classList.add('hidden');
   quiz.classList.remove('hidden');
 
-  // Show counters & reset now that the quiz is active
   countersBox.classList.remove('hidden');
   resetAll.classList.remove('hidden');
 
@@ -336,7 +330,6 @@ function endRun(){
   quiz.classList.add('hidden');
   summary.classList.remove('hidden');
 
-  // Hide counters again when the quiz is not active
   countersBox.classList.add('hidden');
 
   const uniq = [...run.answered.values()];
@@ -397,9 +390,23 @@ submitBtn.addEventListener('click', () => {
   const isCorrect = JSON.stringify(userLetters) === JSON.stringify(correctLetters);
 
   recordAnswer(q, userLetters, isCorrect);
-  pushReinforcement(q, isCorrect);
 
-  // Set feedback text + color class
+  // Threshold-based wrong question redeployment
+  if (!isCorrect) {
+    run.wrongSinceLast.push(q);
+    if (run.wrongSinceLast.length >= run.thresholdWrong) {
+      const seen = new Set(); const uniqueBatch = [];
+      for (const item of run.wrongSinceLast) {
+        if (!seen.has(item.id)) { seen.add(item.id); uniqueBatch.push(item); }
+      }
+      run.wrongSinceLast = [];
+      if (uniqueBatch.length) {
+        run.order.splice(run.i + 1, 0, ...uniqueBatch);
+      }
+    }
+  }
+
+  // Feedback + reveal
   feedback.textContent = isCorrect ? 'Correct!' : 'Incorrect';
   feedback.classList.remove('ok','bad');
   feedback.classList.add(isCorrect ? 'ok' : 'bad');
@@ -408,10 +415,10 @@ submitBtn.addEventListener('click', () => {
   rationaleBox.textContent = q.rationale || '';
   rationaleBox.classList.remove('hidden');
 
-  // Lock inputs after submit
+  // Lock inputs
   form.querySelectorAll('input').forEach(i => i.disabled = true);
 
-  // Switch button to "Next" (blue)
+  // Switch button to Next
   setActionState('next');
 
   scrollToBottomSmooth();
@@ -442,7 +449,7 @@ document.addEventListener('keydown', (e) => {
     return;
   }
 
-  // A–Z toggles the corresponding option (only before submit)
+  // A–Z toggles the corresponding option (before submit)
   if (/^[A-Z]$/.test(upper) && submitBtn.dataset.mode === 'submit') {
     const input = document.getElementById(`opt-${upper}`);
     if (!input || input.disabled) return;
@@ -450,10 +457,8 @@ document.addEventListener('keydown', (e) => {
     e.preventDefault();
 
     if (input.type === 'radio') {
-      // Toggle behavior for single-select radios
       input.checked = !input.checked;
     } else {
-      // Checkbox: toggle
       input.checked = !input.checked;
     }
 
