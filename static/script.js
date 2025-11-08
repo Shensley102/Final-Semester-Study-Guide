@@ -3,7 +3,7 @@
    - Single action button: Submit (green & wide) ➜ Next (blue)
    - Counters + Reset only visible during an active quiz
    - Keyboard: A–Z toggle options; Enter submits / next
-   - Feedback now bigger & colored (green for correct, red for incorrect)
+   - Feedback bigger & colored (green for correct, red for incorrect)
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -107,10 +107,14 @@ function ensureOption(sel, value, label){
   }
 }
 async function initModules(){
-  moduleSel.innerHTML = '';
-  const mods = await fetchModules();
-  for (const m of mods) ensureOption(moduleSel, m, m);
-  if (mods.length) moduleSel.value = mods[0];
+  try{
+    moduleSel.innerHTML = '';
+    const mods = await fetchModules();
+    for (const m of mods) ensureOption(moduleSel, m, m);
+    if (mods.length) moduleSel.value = mods[0];
+  }catch(e){
+    console.error('Failed to init modules:', e);
+  }
 }
 
 // ---------- Parse/normalize ----------
@@ -122,13 +126,15 @@ function normalizeQuestions(raw){
   for (const q of questions){
     const id   = String(q.id ?? crypto.randomUUID());
     const stem = String(q.stem ?? '');
-    the type = String(q.type ?? 'single_select');
+    const type = String(q.type ?? 'single_select');   // <-- fixed (was "the type")
     const opts = Array.isArray(q.options) ? q.options.map(String) : [];
     const correctLetters = Array.isArray(q.correct) ? q.correct.map(String) : [];
     const rationale = String(q.rationale ?? '');
+
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').slice(0, opts.length);
     const options = {};
     letters.forEach((L, i) => { options[L] = opts[i] ?? ''; });
+
     norm.push({ id, stem, options, correctLetters, rationale, type });
   }
   return norm;
