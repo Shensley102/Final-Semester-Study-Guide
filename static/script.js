@@ -26,7 +26,7 @@ const quiz         = $('quiz');
 const qText        = $('questionText');
 const form         = $('optionsForm');
 const submitBtn    = $('submitBtn');   // single action button (Submit/Next)
-const nextBtn      = $('nextBtn');     // hidden/unused
+const nextBtn      = $('nextBtn');     // hidden/unused (kept for layout)
 const feedback     = $('feedback');
 const answerLine   = $('answerLine');
 const rationaleBox = $('rationale');
@@ -80,8 +80,8 @@ function isTextEditingTarget(el){
 let allQuestions = [];
 let run = {
   bank: '',
-  order: [],             // current queue of questions to present (may include redeployed duplicates)
-  masterPool: [],        // unique set sampled at start; must all be mastered to finish
+  order: [],             // current queue (may include redeployed duplicates)
+  masterPool: [],        // unique set sampled at start; must all be mastered
   i: 0,                  // index into run.order
   answered: new Map(),   // id -> { firstTryCorrect: bool, correct: bool, userLetters: [] }
   uniqueSeen: new Set(), // ids shown at least once (for the “Question: N” counter)
@@ -138,7 +138,7 @@ function normalizeQuestions(raw){
   for (const q of questions){
     const id   = String(q.id ?? crypto.randomUUID());
     const stem = String(q.stem ?? '');
-    the type = String(q.type ?? 'single_select');
+    const type = String(q.type ?? 'single_select');
     const opts = Array.isArray(q.options) ? q.options.map(String) : [];
     const correctLetters = Array.isArray(q.correct) ? q.correct.map(String) : [];
     const rationale = String(q.rationale ?? '');
