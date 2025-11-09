@@ -56,7 +56,9 @@ let scaleWrap = null;
   quiz.appendChild(scaleWrap);
 })();
 
-/* ---------- Fit-to-viewport logic (no scrolling anywhere) ---------- */
+/* ---------- Fit-to-viewport logic (add breathing room) ---------- */
+const FIT_PADDING = 40; // px of visual margin around scaled content
+
 function fitToViewport() {
   if (!quiz || !scaleWrap) return;
 
@@ -66,12 +68,19 @@ function fitToViewport() {
 
   // Measure unscaled content
   scaleWrap.style.transform = 'scale(1)';
-  // Force reflow to get natural size
+  // force reflow
+  // eslint-disable-next-line no-unused-expressions
+  scaleWrap.offsetHeight;
+
   const contentW = scaleWrap.scrollWidth;
   const contentH = scaleWrap.scrollHeight;
 
+  // Reserve a little padding so content never touches edges
+  const innerW = Math.max(0, availW - FIT_PADDING);
+  const innerH = Math.max(0, availH - FIT_PADDING);
+
   // Compute scale to fit both width and height, but never upscale > 1
-  const s = Math.min(1, availW / contentW, availH / contentH);
+  const s = Math.min(1, innerW / contentW, innerH / contentH);
 
   // Apply scale
   scaleWrap.style.transform = `scale(${s})`;
