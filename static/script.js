@@ -1,7 +1,8 @@
 /* ===============================================================
    Final Semester Study Guide - Quiz Frontend
-   No scrolling: the quiz card auto-scales to fit the viewport.
-   Header (title, counters, progress) keeps its original size.
+   - No scrolling
+   - Scale is computed once and locked (so Q/A never move)
+   - Header sizes unchanged; top spacing reduced via CSS
 =============================================================== */
 
 const $ = (id) => document.getElementById(id);
@@ -28,7 +29,7 @@ const lengthBtns = $('lengthBtns');
 const startBtn   = $('startBtn');
 const resumeBtn  = $('resumeBtn');
 
-// Quiz UI
+// Quiz UI roots
 const quiz         = $('quiz');
 const qText        = $('questionText');
 const form         = $('optionsForm');
@@ -39,56 +40,72 @@ const answerLine   = $('answerLine');
 const rationaleBox = $('rationale');
 const actionsEl    = quiz ? quiz.querySelector('.actions') : null;
 
-// ------- Build a scale wrapper so we can fit entire quiz without scroll ------
+// ---------- Build a scale wrapper & feedback area (reserved height) ----------
 let scaleWrap = null;
-(function ensureScaleWrapper(){
-  if (!quiz) return;
-  if (document.getElementById('quizScale')) return;
+let fbArea = null;
 
+(function buildWrappers(){
+  if (!quiz || document.getElementById('quizScale')) return;
+
+  // Outer scale container
   scaleWrap = document.createElement('div');
   scaleWrap.id = 'quizScale';
   scaleWrap.className = 'quiz-scale';
 
-  // Move all quiz content nodes into the scale wrapper
-  const nodes = [qText, form, actionsEl, feedback, answerLine, rationaleBox];
-  nodes.forEach(n => { if (n) scaleWrap.appendChild(n); });
+  // Move question, form, actions into the scale container
+  [qText, form, actionsEl].forEach(n => { if (n) scaleWrap.appendChild(n); });
 
+  // Feedback area with reserved height (set via CSS variable by JS)
+  fbArea = document.createElement('div');
+  fbArea.id = 'fbArea';
+  fbArea.className = 'fb-area';
+  fbArea.appendChild(feedback);
+  fbArea.appendChild(answerLine);
+  fbArea.appendChild(rationaleBox);
+
+  scaleWrap.appendChild(fbArea);
   quiz.appendChild(scaleWrap);
 })();
 
-/* ---------- Fit-to-viewport logic (add breathing room) ---------- */
-const FIT_PADDING = 40; // px of visual margin around scaled content
+/* ---------- Fit-to-viewport (LOCKED) ---------- */
+const FIT_PADDING = 40;   // margin so content never touches edges
+const RESERVE_MIN = 260;  // absolute minimum px for feedback area
+const RESERVE_FRAC = 0.36;// portion of the quiz card height to reserve
 
-function fitToViewport() {
-  if (!quiz || !scaleWrap) return;
+let lockedScale = 1;
+let scaleLocked = false;
 
-  // Available size is the quiz card’s box
-  const availW = quiz.clientWidth;
-  const availH = quiz.clientHeight;
+function computeAndLockScale() {
+  if (!quiz || !scaleWrap || !fbArea) return;
+
+  // Reserve a chunk for feedback/rationale BEFORE measuring
+  const reservePx = Math.max(RESERVE_MIN, Math.round(quiz.clientHeight * RESERVE_FRAC));
+  fbArea.style.setProperty('--reserve-h', reservePx + 'px');
 
   // Measure unscaled content
   scaleWrap.style.transform = 'scale(1)';
-  // force reflow
+  // Force reflow
   // eslint-disable-next-line no-unused-expressions
   scaleWrap.offsetHeight;
 
+  const availW = quiz.clientWidth - FIT_PADDING;
+  const availH = quiz.clientHeight - FIT_PADDING;
   const contentW = scaleWrap.scrollWidth;
   const contentH = scaleWrap.scrollHeight;
 
-  // Reserve a little padding so content never touches edges
-  const innerW = Math.max(0, availW - FIT_PADDING);
-  const innerH = Math.max(0, availH - FIT_PADDING);
-
-  // Compute scale to fit both width and height, but never upscale > 1
-  const s = Math.min(1, innerW / contentW, innerH / contentH);
-
-  // Apply scale
-  scaleWrap.style.transform = `scale(${s})`;
+  lockedScale = Math.min(1, availW / contentW, availH / contentH);
+  scaleWrap.style.transform = `scale(${lockedScale})`;
+  scaleLocked = true;
 }
 
-// Refit on resize / orientation change
-window.addEventListener('resize', fitToViewport);
-window.addEventListener('orientationchange', fitToViewport);
+function refitOnResize() {
+  // Recompute on viewport size changes only
+  scaleLocked = false;
+  computeAndLockScale();
+}
+
+window.addEventListener('resize', refitOnResize);
+window.addEventListener('orientationchange', refitOnResize);
 
 // Summary UI
 const summary         = $('summary');
@@ -127,16 +144,13 @@ function prettifyModuleName(name) {
   };
   if (map[normalized]) return map[normalized];
 
-  // Generic “Pharm Quiz #” patterns
   const m1 = /^(?:Pharm[_\s]+Quiz[_\s]+)(\d+)$/i.exec(normalized.replace(/_/g, ' '));
   if (m1) return `Pharm Quiz ${m1[1]}`;
 
-  // Generic “Learning Questions Module X Y” patterns
   const cleaned = normalized.replace(/_/g, ' ');
   const m2 = /^Learning\s+Questions?\s+Module\s+(\d+)\s+(\d+)$/i.exec(cleaned);
   if (m2) return `Learning Questions Module ${m2[1]} and ${m2[2]}`;
 
-  // Fallback
   return raw.replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
@@ -290,7 +304,8 @@ function showResumeIfAny() {
       run.uniqueSeen.add(q.id);
       renderQuestion(q);
       updateCounters();
-      fitToViewport();
+      // lock scale once when resuming
+      computeAndLockScale();
     }
   };
 }
@@ -348,7 +363,6 @@ function normalizeQuestions(raw) {
     const correctLetters = Array.isArray(q.correct) ? q.correct.map(String) : [];
     const rationale = String(q.rationale ?? '');
 
-    // Map options to letters A, B, C, ...
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').slice(0, opts.length);
     const options = {};
     letters.forEach((L, i) => { options[L] = opts[i] ?? ''; });
@@ -449,7 +463,9 @@ function renderQuestion(q) {
   });
 
   setActionState('submit');
-  fitToViewport();
+
+  // Lock the scale only on the very first render in this session
+  if (!scaleLocked) computeAndLockScale();
 }
 
 /* ----------------------------------------------------------------
@@ -472,7 +488,6 @@ function formatCorrectAnswers(q) {
    Progress bar and counters
 ---------------------------------------------------------------- */
 function updateProgressBar() {
-  if (!progressBar) return;
   const total = run.masterPool.length || 0;
   const mastered = run.masterPool.filter(q => run.answered.get(q.id)?.correct).length;
   const pct = total ? Math.round((mastered / total) * 100) : 0;
@@ -580,7 +595,9 @@ async function startQuiz() {
   run.uniqueSeen.add(q0.id);
   renderQuestion(q0);
   updateCounters();
-  fitToViewport();
+
+  // Lock the scale right after the first render so it never changes on Submit
+  computeAndLockScale();
 
   startBtn.disabled = false;
 }
@@ -612,19 +629,11 @@ function endRun() {
     const ans = run.answered.get(q.id);
     row.className = 'rev-item ' + (ans?.correct ? 'ok' : 'bad');
 
-    const qEl = document.createElement('div');
-    qEl.className = 'rev-q';
-    qEl.textContent = q.stem;
-    const caEl = document.createElement('div');
-    caEl.className = 'rev-ans';
-    caEl.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
-    const rEl = document.createElement('div');
-    rEl.className = 'rev-rationale';
-    rEl.innerHTML = `<strong>Rationale:</strong> ${escapeHTML(q.rationale || '')}`;
+    const qEl = document.createElement('div'); qEl.className = 'rev-q'; qEl.textContent = q.stem;
+    const caEl = document.createElement('div'); caEl.className = 'rev-ans'; caEl.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
+    const rEl = document.createElement('div'); rEl.className = 'rev-rationale'; rEl.innerHTML = `<strong>Rationale:</strong> ${escapeHTML(q.rationale || '')}`;
 
-    row.appendChild(qEl);
-    row.appendChild(caEl);
-    row.appendChild(rEl);
+    row.appendChild(qEl); row.appendChild(caEl); row.appendChild(rEl);
     reviewList.appendChild(row);
   });
 
@@ -655,7 +664,7 @@ submitBtn.addEventListener('click', () => {
     run.uniqueSeen.add(q.id);
     renderQuestion(q);
     updateCounters();
-    fitToViewport();
+    // Do NOT recompute scale here; we keep it locked.
     return;
   }
 
@@ -671,23 +680,17 @@ submitBtn.addEventListener('click', () => {
   if (!isCorrect) {
     run.wrongSinceLast.push(q);
     if (run.wrongSinceLast.length >= run.thresholdWrong) {
-      const seen = new Set();
-      const uniqueBatch = [];
+      const seen = new Set(); const uniqueBatch = [];
       for (const item of run.wrongSinceLast) {
-        if (!seen.has(item.id)) {
-          seen.add(item.id);
-          uniqueBatch.push(item);
-        }
+        if (!seen.has(item.id)) { seen.add(item.id); uniqueBatch.push(item); }
       }
       run.wrongSinceLast = [];
-      if (uniqueBatch.length) {
-        run.order.splice(run.i + 1, 0, ...uniqueBatch);
-      }
+      if (uniqueBatch.length) run.order.splice(run.i + 1, 0, ...uniqueBatch);
     }
   }
 
   feedback.textContent = isCorrect ? 'Correct!' : 'Incorrect';
-  feedback.classList.remove('ok', 'bad');
+  feedback.classList.remove('ok','bad');
   feedback.classList.add(isCorrect ? 'ok' : 'bad');
 
   answerLine.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
@@ -697,8 +700,7 @@ submitBtn.addEventListener('click', () => {
   form.querySelectorAll('input').forEach(i => i.disabled = true);
   setActionState('next');
 
-  // Refit after feedback/rationale is revealed
-  fitToViewport();
+  // Scale stays locked — nothing shifts.
 });
 
 /* Reset and summary */
@@ -716,9 +718,7 @@ document.addEventListener('keydown', (e) => {
 
   if (key === 'Enter') {
     e.preventDefault();
-    if (!submitBtn.disabled || submitBtn.dataset.mode === 'next') {
-      submitBtn.click();
-    }
+    if (!submitBtn.disabled || submitBtn.dataset.mode === 'next') submitBtn.click();
     return;
   }
 
@@ -736,4 +736,4 @@ document.addEventListener('keydown', (e) => {
 ---------------------------------------------------------------- */
 initModules();
 showResumeIfAny();
-fitToViewport(); /* initial fit on load */
+/* No initial compute here; it happens after first render (start/resume) */
