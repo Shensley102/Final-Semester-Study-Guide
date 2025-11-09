@@ -1,0 +1,1687 @@
+{
+  "module": "Pharm_Quiz_1",
+  "generated_at_utc": "2025-11-09T20:17:00.779023Z",
+  "total_questions": 112,
+  "questions": [
+    {
+      "id": "HESI_003",
+      "stem": "After an acetaminophen (Tylenol) overdose, it is most important to assess for pain in which area?",
+      "options": [
+        "Flank",
+        "Right upper abdomen",
+        "Chest",
+        "Head"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Acetaminophen toxicity causes hepatotoxicity; right upper quadrant abdominal pain suggests liver involvement.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q16",
+      "stem": "A patient who takes an oral sulfonylurea medication will begin taking fluconazole. The nurse will expect to monitor which of the following in this patient?",
+      "options": [
+        "Blood urea nitrogen (BUN) and creatinine",
+        "Fluconazole levels",
+        "Glucose",
+        "Electrolytes"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Fluconazole can increase the risk of hypoglycemia when taken with oral sulfonylureas. The patient's blood glucose should be monitored during treatment.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q27",
+      "stem": "A norepinephrine (Levophed) infusion is running for a patient in shock. The nurse notices the IV site is cool, pale, and swollen, and the patient is complaining of pain at the site. What is the nurse’s first action?",
+      "options": [
+        "Increase the IV flow rate to flush the site.",
+        "Stop the infusion and disconnect it.",
+        "Inject phentolamine (Regitine) around the site as ordered.",
+        "Apply a warm compress to the site."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "These signs indicate extravasation of the vasopressor. The priority is to stop the infusion immediately to prevent further tissue damage. After stopping, the nurse would prepare to inject the antidote phentolamine (an alpha blocker) if ordered to mitigate tissue necrosis. Increasing flow would worsen extravasation. Warm compress may help after stopping the drug, but stopping it is the first step.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q8",
+      "stem": "A female patient who is allergic to penicillin will begin taking an antibiotic to treat a lower respiratory tract infection. The patient tells the nurse that she almost always develops a vaginal yeast infection when she takes antibiotics and that she will take fluconazole with the antibiotic being prescribed. Which macrolide order would the nurse question for this patient?",
+      "options": [
+        "Fidaxomicin",
+        "Erythromycin",
+        "Azithromycin",
+        "Clarithromycin"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "When erythromycin is given concurrently with fluconazole, erythromycin blood concentration and the risk of sudden cardiac death increase.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q58",
+      "stem": "Alteplase (Activase) is ordered for a patient with an acute ischemic stroke. Before giving this thrombolytic, which assessment is most critical for the nurse to perform?",
+      "options": [
+        "Check for history of recent surgery or head injury.",
+        "Ensure the patient has been NPO for 8 hours.",
+        "Perform a pulmonary auscultation for emboli.",
+        "Assess the patient’s cholesterol levels."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Thrombolytic therapy with alteplase has strict contraindications. Recent surgery, trauma, or head injury (usually within 2 weeks to 3 months, depending on type) can greatly increase the risk of bleeding. It’s critical to screen for such history before administration. Cholesterol levels are not relevant. Pulmonary auscultation is not specific here (stroke scenario). NPO status isn’t required for alteplase (though swallowing will be assessed for stroke, it’s not about drug safety).",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q82",
+      "stem": "A patient is scheduled for a CT scan with IV contrast tomorrow. The patient takes metformin (Glucophage) for type 2 diabetes. What should the nurse do?",
+      "options": [
+        "Hold the metformin on the day of the test and for 48 hours after contrast administration.",
+        "Increase hydration and continue metformin as usual.",
+        "Switch the patient to insulin for 24 hours before and after the scan.",
+        "Double the metformin dose the day before to protect the kidneys."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "IV contrast dye can impair kidney function, and metformin in the setting of acute kidney injury can accumulate and cause lactic acidosis. Standard practice is to hold metformin on the day of the procedure and for 48 hours after, until renal function is confirmed to be normal. Hydration is important but not the only step. Doubling the dose is wrong. Temporarily using insulin might be necessary if glucose control is an issue, but the key point is holding metformin – not all patients automatically require insulin.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q9",
+      "stem": "A patient has begun taking spironolactone in addition to a thiazide diuretic. With the addition of the spironolactone, the nurse will counsel this patient to do which of the following?",
+      "options": [
+        "Report decreased urine output to the provider.",
+        "Continue taking a potassium supplement daily.",
+        "Recognize that abdominal cramping is a transient side effect.",
+        "Take these medications at bedtime."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Caution must be used when giving potassium-sparing diuretics to patients with poor renal function, so patients should be taught to report a decrease in urine output. Patients taking potassium-sparing diuretics are at risk for hyperkalemia, so they should not take potassium supplements. Abdominal cramping should be reported to the provider. The medications should be taken in the morning for patients who sleep during the night.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q11",
+      "stem": "A patient is brought to the emergency department with severe wheezing, dyspnea, and peripheral edema. The nurse assesses a respiratory rate of 30 breaths per minute, a heart rate of 88 beats per minute, and a blood pressure of 88/54 mm Hg. Which medication does the nurse expect to be given initially?",
+      "options": [
+        "Albuterol",
+        "Diphenhydramine",
+        "Epinephrine",
+        "Dopamine"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "The patient has signs of anaphylactic shock, and the first medication given will be epinephrine because it treats both bronchoconstriction and hypotension. Albuterol may be given later to help with respiratory distress. Diphenhydramine is an antihistamine to treat tissue-induced swelling. Dopamine will be given if hypotension persists.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_035",
+      "stem": "Which antidiarrheal should be used with caution in clients taking high doses of aspirin?",
+      "options": [
+        "Loperamide (Imodium)",
+        "Propantheline (Pro‑Banthine)",
+        "Bismuth subsalicylate (Pepto‑Bismol)",
+        "Diphenoxylate‑atropine (Lomotil)"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Pepto‑Bismol contains a subsalicylate and can increase salicylate toxicity when combined with aspirin.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q117",
+      "stem": "Which statement correctly describes a key difference between succinylcholine (Anectine) and non-depolarizing neuromuscular blockers like vecuronium?",
+      "options": [
+        "Succinylcholine has no serious side effects, whereas vecuronium can cause malignant hyperthermia.",
+        "Succinylcholine’s effects can be reversed by neostigmine, while vecuronium cannot.",
+        "Succinylcholine causes an initial muscle fasciculation (twitch) before paralysis, whereas vecuronium does not.",
+        "Patients on succinylcholine remain fully conscious and pain-sensitive, unlike with vecuronium."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Succinylcholine depolarizes the muscle endplate, causing initial transient muscle fasciculations (twitching) before flaccid paralysis. Non-depolarizing agents like vecuronium simply block receptor without fasciculations. Non-depolarizers can be reversed with cholinesterase inhibitors (neostigmine), whereas succinylcholine’s effect isn’t reversed by neostigmine (it’s actually prolonged by it if given too early). Both types require sedation/analgesia since they cause paralysis without affecting consciousness or pain perception – that’s true for both, not different. Malignant hyperthermia is associated with succinylcholine (and volatile anesthetics), not vecuronium.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q3",
+      "stem": "A patient will be discharged home with albuterol to use for asthma symptoms. What information will the nurse include when teaching this patient about this medication?",
+      "options": [
+        "Overuse of this medication can result in tolerance.",
+        "Failure to respond to the medication indicates a need for a higher dose.",
+        "Palpitations are common with this drug even at normal, therapeutic doses.",
+        "Monitor for hypoglycemia symptoms when using this medication."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Excessive use of bronchodilators can result in tolerance to the medication. Hyperglycemia can occur. Palpitations are common with increased doses but not at therapeutic doses.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q15",
+      "stem": "The nurse is caring for a woman who is in labor and has a blood pressure of 180/98 mm Hg with proteinuria of 400 mg/24 h. The woman is receiving magnesium sulfate. The woman becomes lethargic with slurring of her speech and decreased muscle tone. Her serum magnesium sulfate level is 11 mEq/L. The nurse recognizes which condition in this patient?",
+      "options": [
+        "Magnesium toxicity",
+        "Impending eclampsia",
+        "Abruptio placenta",
+        "Hypertensive crisis"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Patients receiving magnesium sulfate can develop toxicity, evidenced by lethargy, slurred speech, and decreased muscle tone. A level greater than 10 mEq/L indicates toxicity. An elevated blood pressure and proteinuria are expected findings in a patient with pre-eclampsia. Patients with eclampsia will have marked elevation of blood pressure and seizures.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q4",
+      "stem": "A patient with a peptic ulcer has been diagnosed with H. pylori. The provider has ordered lansoprazole, clarithromycin, and metronidazole. The patient asks the nurse why two antibiotics are needed. The nurse will explain that two antibiotics",
+      "options": [
+        "have synergistic effects.",
+        "combat bacterial resistance.",
+        "improve acid suppression.",
+        "allow for less toxic dosing."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "The use of two antibiotics when treating H. pylori peptic ulcer disease helps to combat bacterial resistance because H. pylori develops resistance rapidly. Giving two antibiotics, in this case, is not to reduce the dose or to cause synergistic effects. Antibiotics do not affect acid production.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q16",
+      "stem": "A patient on digoxin (Lanoxin) reports nausea, abdominal pain, and “yellow halos” around lights. The serum digoxin level is 2.5 ng/mL. What is the nurse’s priority action?",
+      "options": [
+        "Administer the ordered digoxin immune Fab (Digibind).",
+        "Encourage the patient to increase potassium intake.",
+        "Have the patient drink a glass of milk to bind the medication.",
+        "No action is needed; this level is therapeutic."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "A digoxin level of 2.5 ng/mL is above the therapeutic range (0.5–2.0 ng/mL)and, coupled with classic toxicity symptoms (GI distress and visual changes), indicates digoxin toxicity. The priority is to administer the antidote (digoxin immune Fab) if ordered and hold further digoxin. Increasing potassium may help if K is low (hypokalemia predisposes to toxicity), but the immediate action is to treat the toxicity. Milk will not counteract digoxin. The nurse should recognize this level as toxic, not therapeutic.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q90",
+      "stem": "What important instruction should the nurse give a female patient of childbearing age who is starting propylthiouracil (PTU) for hyperthyroidism?",
+      "options": [
+        "Notify your provider immediately if you suspect you are pregnant, as PTU is generally preferred in the first trimester.",
+        "Increase your iodine intake while on PTU to help it work.",
+        "This medication will make your birth control pills more effective.",
+        "Do not take this drug if you plan to become pregnant; it’s completely contraindicated."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "PTU is actually the preferred antithyroid medication during the first trimester of pregnancy (because methimazole has teratogenic effects in the first trimester). After the first trimester, patients are usually switched to methimazole due to PTU’s liver toxicity risk. So if the patient becomes pregnant, the provider needs to know to manage therapy appropriately. PTU doesn’t increase birth control effectiveness (no such interaction). It’s not absolutely contraindicated in pregnancy (methimazole is more so in first trimester). Increasing iodine intake (unless directed for specific therapy) is not advised; excess iodine can actually affect thyroid function unpredictably.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q80",
+      "stem": "A patient on a mixed insulin regimen takes 30 units of NPH each morning. He reports getting shaky and sweaty around 3 PM daily. What is the best recommendation by the nurse?",
+      "options": [
+        "Move your NPH insulin to bedtime instead of morning.",
+        "Have an afternoon snack around 2-3 PM to prevent the low blood sugar.",
+        "Skip your morning NPH dose if you plan to be active in the afternoon.",
+        "Increase your lunchtime rapid-acting insulin dose."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "The patient’s NPH is peaking mid-afternoon, causing hypoglycemia. The best solution is to incorporate an afternoon snack to provide extra carbohydrates during the peak action time. Increasing lunchtime rapid insulin would worsen lows. Skipping NPH dose would cause hyperglycemia later. Moving NPH to bedtime could cause nocturnal hypoglycemia (NPH given at night often peaks during sleep). So a planned snack is the simplest preventive strategy.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q55",
+      "stem": "A patient with a drug-eluting coronary stent is on clopidogrel (Plavix). What should the nurse instruct the patient to do regarding this medication before an upcoming elective surgery?",
+      "options": [
+        "Take a double dose the day before surgery, then stop on the day of surgery.",
+        "Continue clopidogrel as scheduled to prevent stent clotting, even on the day of surgery.",
+        "Switch to aspirin only and stop clopidogrel one day prior to surgery.",
+        "Stop taking clopidogrel 5–7 days before surgery, as directed by the surgeon."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Clopidogrel irreversibly inhibits platelets. It is usually held about 5–7 days before elective surgeries to reduce bleeding risk. The surgeon will typically give guidance on when to stop. Continuing through surgery significantly raises bleeding risk. Doubling the dose is incorrect. Switching to aspirin is not a standard practice unless specifically directed, and even aspirin is often stopped ~7 days before certain surgeries.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q48",
+      "stem": "Which food selection indicates a patient on warfarin (Coumadin) needs further dietary teaching?",
+      "options": [
+        "Lean chicken, rice, and carrots for dinner",
+        "A consistent intake of green vegetables each day",
+        "Whole grain cereal with milk in the morning",
+        "Large kale salad and spinach smoothie daily"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Kale and spinach are high in vitamin K. Eating them in large amounts, especially if this is a change from the patient’s normal diet, can antagonize warfarin’s effect and lower the INR. Patients on warfarin don’t have to avoid vitamin K completely, but they must keep their intake consistent. Option b (consistent intake) is correct behavior. Chicken, rice, carrots, or cereal with milk are low in vitamin K and fine. The large daily kale/spinach increase is a red flag for warfarin therapy.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_018",
+      "stem": "Client on levodopa TID now has Rx for sustained‑release carbidopa‑levodopa (Sinemet CR) 25/100 BID. Took levodopa at 0800. Teaching?",
+      "options": [
+        "Take first Sinemet dose as soon as it’s filled today",
+        "Wait until tomorrow to start Sinemet",
+        "Take both drugs for 1 week, then only Sinemet",
+        "Begin Sinemet this evening; take no more plain levodopa"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Switch the next scheduled dose to the combination product and stop plain levodopa to avoid duplication and overdose.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_036",
+      "stem": "An 88‑year‑old on high‑dose aspirin reports tinnitus. What should the nurse do?",
+      "options": [
+        "Refer to audiology",
+        "Reassure as common side effect",
+        "Notify the healthcare provider immediately",
+        "Ask the client to turn off hearing aid"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Tinnitus is an early sign of salicylate toxicity; stop aspirin and notify the provider for evaluation and management.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q57",
+      "stem": "A patient is taking low-dose aspirin and clopidogrel after a cardiac stent placement. The patient reports black, tarry stools. What should the nurse do first?",
+      "options": [
+        "Suggest taking an over-the-counter antacid and observe for changes.",
+        "Have the patient schedule a routine colonoscopy.",
+        "Advise the patient to stop taking the aspirin and notify the provider immediately.",
+        "Reassure the patient that dark stools are a normal effect of these medications."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Black, tarry stools indicate a GI bleed (melena). Dual antiplatelet therapy (aspirin + clopidogrel) greatly increases bleeding risk, including GI bleeding. The patient should be instructed to stop the aspirin (and likely the clopidogrel temporarily) and seek medical evaluation immediately. This is an emergency symptom to address, not normal. Colonoscopy might be needed eventually, but the first step is to hold the drugs and get prompt medical care. Antacids won’t stop a bleeding event.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q30",
+      "stem": "A patient who takes the anticoagulant warfarin will begin taking the anticonvulsant drug carbamazepine. The nurse reviews the drug information for these drugs and learns that carbamazepine is a hepatic enzyme inducer. The nurse anticipates that which of the following may be required?",
+      "options": [
+        "Increase the dose of carbamazepine.",
+        "Increase the dose of warfarin.",
+        "Decrease the dose of carbamazepine.",
+        "Decrease the dose of warfarin."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Carbamazepine is a hepatic enzyme inducer, which can increase drug metabolism. Patients taking both drugs usually need a larger dose of warfarin. Warfarin therapeutic drug monitoring would be indicated to assess the impact of the carbamazepine on his warfarin effectiveness.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q19",
+      "stem": "The nurse provides teaching for a patient who will begin taking phenytoin. Which statement by the patient indicates understanding of the teaching?",
+      "options": [
+        "“Most people develop diabetes while taking this medication.”",
+        "“I should not be alarmed if my urine turns reddish-brown.”",
+        "“If I experience bleeding gums, I should stop taking the medication immediately.”",
+        "“If I develop a rash, I should take diphenhydramine to control the itching.”"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Phenytoin can cause reddish-brown colored urine. Patients should be counseled to report a rash to the provider because it could be a serious adverse reaction. Bleeding gums are common, but patients should never stop taking anticonvulsants abruptly, or they may develop seizures. Changes in blood glucose may occur, but do not necessarily result in diabetes.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q12",
+      "stem": "The nurse is teaching a patient about sublingual nitroglycerin administration. What information will the nurse include when teaching this patient?",
+      "options": [
+        "Call 911 if pain does not improve after three doses.",
+        "Take the first tablet while sitting or lying down.",
+        "A second dose of nitroglycerin should be given regardless of symptom resolution.",
+        "Swallow the tablet with small sips of water."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Because nitroglycerin can cause hypotension, patients should be cautioned to take it while sitting or lying down. If pain is not better or has worsened 5 minutes after the first dose, patients should call 911. A second dose should be administered only if symptoms are not resolved after taking the first dose. The tablets must dissolve under the tongue and should not be swallowed.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q2",
+      "stem": "The nurse is caring for a patient who is receiving diphenhydramine. The nurse notes that the patient has not voided for 12 hours. What action will the nurse take?",
+      "options": [
+        "Request an order for urinary catheterization.",
+        "Encourage the patient to drink more fluids.",
+        "Request an order for an intravenous fluid bolus.",
+        "Evaluate the bladder to check for distension."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Diphenhydramine has anticholinergic effects, including urinary retention. The nurse should assess for bladder distension to determine if this is the case. Encouraging the patient to drink more fluids or giving intravenous fluids may be necessary if the patient has oliguria secondary to dehydration. Urinary catheterization is not indicated until urinary retention has been diagnosed.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_058",
+      "stem": "Doxorubicin IV: client reports pain and edema at the IV site. Most important first action?",
+      "options": [
+        "Assess for erythema",
+        "Administer the antidote",
+        "Apply warm compresses",
+        "Discontinue the IV fluids immediately"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Doxorubicin is a vesicant; pain and swelling indicate extravasation—stop the infusion immediately to prevent tissue necrosis.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q99",
+      "stem": "A patient with breast cancer is taking tamoxifen (Nolvadex). The nurse instructs the patient to report which possible serious adverse effect of tamoxifen?",
+      "options": [
+        "Hot flashes",
+        "Dry skin",
+        "Weight loss",
+        "Abnormal vaginal bleeding"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Tamoxifen, a SERM, can cause endometrial hyperplasia and even endometrial cancer. Postmenopausal vaginal bleeding can be a sign of endometrial cancer and should be reported. Tamoxifen also increases risk of thromboembolism, so leg swelling/pain or sudden shortness of breath (clot signs) should be reported. Hot flashes are a common side effect but not life-threatening. Dry skin and weight loss are not notable issues with tamoxifen (it more often causes slight weight gain if anything).",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q7",
+      "stem": "The nurse is caring for a patient who is receiving intravenous theophylline. The patient complains of headache and nausea. The nurse will contact the provider to",
+      "options": [
+        "Request an order for an analgesic medication.",
+        "Obtain an order for a serum theophylline level.",
+        "Suggest an alternative methylxanthine medication.",
+        "Change the medication to an oral theophylline."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Theophylline has a narrow therapeutic index and a risk for severe symptoms with toxic levels. When patients report symptoms of theophylline adverse effects, a serum drug level should be obtained. Giving an oral theophylline would only compound the problem if the patient has a toxic drug level. Analgesics may be used, but only after toxicity is ruled out. Adding a different methylxanthine will compound the symptoms and will likely result in drug interaction or unwanted synergism.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q12",
+      "stem": "The nurse is teaching a patient who has Parkinson's disease about the side effects of carbidopa-levodopa. Which statement by the patient indicates a need for further teaching?",
+      "options": [
+        "“I should report nightmares and mental disturbances to my provider.”",
+        "“I may feel dizzy at first, but this side effect should improve with time.”",
+        "“I should take the drug with protein to increase absorption.”",
+        "“I may experience nausea, vomiting, and dyskinesia.”"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Taking carbidopa-levodopa with high-protein foods can decrease absorption of the drug, although gastrointestinal distress may decrease when the medication is taken with food. Gastrointestinal side effects are common, and dyskinesias can potentially occur. Orthostatic hypotension occurs early and will resolve over time. Nightmares and mental disturbances should be reported.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q7",
+      "stem": "The nurse is teaching a patient who will begin taking warfarin for atrial fibrillation. Which statement by the patient indicates understanding of the teaching?",
+      "options": [
+        "“I will take cimetidine to prevent gastric irritation and bleeding.”",
+        "“I should take a nonsteroidal anti-inflammatory drug (NSAID) instead of acetaminophen for pain or fever.”",
+        "“I will tell my dentist that I am taking this medication.”",
+        "“I should eat plenty of green, leafy vegetables while taking this drug.”"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Patients taking warfarin should tell their dentists that they are taking the medication because of the increased risk for bleeding. Patients should avoid foods high in vitamin K, which can decrease the effects of warfarin. Patients should not take NSAIDs or cimetidine because they can displace warfarin from protein-binding sites.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q79",
+      "stem": "A diabetic patient is prescribed insulin NPH (Humulin N) 20 units every morning. The patient should be taught to watch for signs of hypoglycemia at what approximate time frame after the morning dose?",
+      "options": [
+        "1 hour after the injection",
+        "Late evening (12 hours after injection)",
+        "Mid-afternoon (about 6-8 hours after injection)",
+        "Within 30 minutes after the injection"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "NPH insulin is intermediate-acting. It typically peaks around 6–8 hours after administration (with a range of roughly 4–12 hours). If given in the morning (~8 AM), mid-afternoon (2–4 PM) is a common time for hypoglycemia. It doesn’t peak as quickly as 30 minutes or 1 hour (those are rapid/short-acting times). 12 hours later (8 PM) might be a tail end effect, but the primary peak risk is mid-afternoon.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q9",
+      "stem": "A patient who has recently had a myocardial infarction (MI) will begin taking clopidogrel to prevent a second MI. Which medication will the nurse expect the provider to order as adjunctive therapy for this patient?",
+      "options": [
+        "Warfarin",
+        "Ticagrelor",
+        "Aspirin",
+        "Enoxaparin sodium"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Aspirin is often used with clopidogrel to inhibit platelet aggregation (dual antiplatelet therapy) to increase the effectiveness of this drug. Enoxaparin is used to prevent venous thrombosis. Ticagrelor is similar to clopidogrel and is not used along with clopidogrel. Warfarin is used to prevent thrombosis.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q9",
+      "stem": "The nurse provides counseling to a patient who reports taking licorice root to treat a stomach ulcer. Which statement by the patient indicates understanding of the teaching?",
+      "options": [
+        "“I may take licorice root with prednisone.”",
+        "“I should avoid licorice root when pregnant.”",
+        "“I may develop hypotension while taking licorice root.”",
+        "“I should try licorice instead of coming back to see the provider.”"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "In large amounts, licorice root has been associated with preterm labor and should be avoided in pregnant women. Licorice root, when taken with corticosteroids, can lead to life-threatening hypokalemia. In large amounts, it can elevate blood pressure. The benefits of licorice in the treatment of any condition have not been proven, and the client should see the provider rather than turn to the herbal medication.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q119",
+      "stem": "Which of the following is true about dantrolene (Dantrium)?",
+      "options": [
+        "It is a narcotic analgesic used for post-operative pain.",
+        "It reverses the effects of non-depolarizing muscle relaxants.",
+        "It treats muscle spasms by central nervous system depression only.",
+        "It is used to treat malignant hyperthermia by reducing muscle contraction."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Dantrolene is a skeletal muscle relaxant that acts on the muscle cells to reduce calcium release, thereby reducing muscle contractions. It is the specific life-saving treatment for malignant hyperthermia. It also can be used for spasticity in conditions like MS (works peripherally on muscle). It doesn’t “reverse” neuromuscular blockers (acetylcholinesterase inhibitors do that for non-depolarizers). It’s not an analgesic. It doesn’t act via CNS depression like baclofen; it acts directly on muscle.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q6",
+      "stem": "A patient who is taking warfarin has an international normalized ratio (INR) of 5.5. The nurse will anticipate giving which of the following?",
+      "options": [
+        "Fresh frozen plasma",
+        "Oral vitamin K",
+        "Intravenous iron",
+        "Protamine sulfate"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Vitamin K antagonizes the effects of warfarin, an oral anticoagulant. Patients with an INR of 5.5 should be given a low dose of oral vitamin K. Too much vitamin K may reduce the effectiveness of warfarin for up to 2 weeks. Fresh frozen plasma and intravenous iron are given for anemia caused by blood loss. Protamine sulfate is given for heparin overdose.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q92",
+      "stem": "A patient on desmopressin (DDAVP) should be monitored for which electrolyte imbalance?",
+      "options": [
+        "Hyponatremia",
+        "Hypomagnesemia",
+        "Hypercalcemia",
+        "Hyperkalemia"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Desmopressin causes water retention by concentrating urine. If water intake is excessive or dose too high, it can lead to dilutional hyponatremia (low sodium), which can cause confusion, headache, or even seizures. It doesn’t typically affect potassium, calcium, or magnesium directly, but hyponatremia is a well-known risk from water intoxication.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q7",
+      "stem": "The nurse is preparing to administer the anticholinergic medication benztropine (Cogentin) to a patient who has Parkinson's disease. The nurse understands that this drug is used primarily for which purpose?",
+      "options": [
+        "To prevent urinary retention",
+        "To suppress tremors and lessen muscle rigidity",
+        "To improve mobility and muscle strength",
+        "To decrease drooling and excessive salivation"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Anticholinergic drugs are used in Parkinson's disease mainly to reduce tremors and muscle rigidity.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q1",
+      "stem": "The nurse is evaluating a patient 2 hours after giving a dose of 30 mg of codeine with acetaminophen for postoperative pain following abdominal surgery. The patient reports a pain level of 7 on a scale of 1 to 10. The patient is not satisfied with their current level of pain relief. The nurse notes a heart rate of 110 beats per minute, a respiratory rate of 28 breaths per minute, and a blood pressure of 180/90 mm Hg. Which action will the nurse take?",
+      "options": [
+        "Contact the provider to ask if a dose of ibuprofen may be given now.",
+        "Ask the provider if the codeine dose can be increased.",
+        "Request an order for oxycodone with acetaminophen.",
+        "Administer the next dose of codeine 1 hour early."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "The patient is showing signs of moderate to severe pain unrelieved by codeine, so the nurse should request a more potent opioid analgesic such as oxycodone. Codeine is effective for mild to moderate pain, so it will not be effective for this patient even if the dose is increased. The medication should not be given more frequently than every 4 hours. Ibuprofen is used for musculoskeletal pain and not postoperative pain.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_033",
+      "stem": "Client on atorvastatin (Lipitor) reports leg muscle pain and weakness after one month. Best response?",
+      "options": [
+        "Increase potassium‑rich foods",
+        "Check electrolytes at next visit",
+        "Make an appointment now; muscle pain can indicate a serious side effect",
+        "Follow a low‑cholesterol diet while on the drug"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Unexplained myopathy with statins can signal rhabdomyolysis; urgent evaluation is required.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q14",
+      "stem": "The nurse assesses an older patient 60 minutes after administering 4 mg of intravenous morphine sulfate (MS) for postoperative pain. The patient's analgesia order is for 2 to 5 mg of MS IV every 2 hours. The nurse notes that the patient is lying very still. The patient's heart rate is 96 beats per minute, respiratory rate is 14 breaths per minute, and blood pressure is 160/90 mm Hg. When asked to rate the level of pain, the patient replies, “Just a 5.” The nurse will perform which action?",
+      "options": [
+        "Request an order for an oral opioid to give now.",
+        "Give 5 mg of MS at the next dose.",
+        "Give 3 mg of MS at the next dose.",
+        "Request an order for acetaminophen to give now."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Older patients often minimize pain when asked, so the nurse should evaluate nonverbal cues to pain, such as elevated heart rate and blood pressure, and the fact that the patient is lying very still. The nurse should increase the dose the next time the pain medication is given.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_054",
+      "stem": "Imdur (isosorbide mononitrate) dose increased from 40 to 60 mg daily; client reports headache before next dose. What should the nurse do?",
+      "options": [
+        "Hold the next Imdur and give acetaminophen",
+        "Give 40 mg and call the provider",
+        "Give 60 mg as ordered and a PRN acetaminophen",
+        "Hold Imdur and acetaminophen until provider notified"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Headache is an expected nitrate effect from vasodilation; treat with acetaminophen and continue therapy to maintain antianginal coverage.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q11",
+      "stem": "The nurse is preparing to give a second dose of trimethoprim–sulfamethoxazole (TMP–SMX) to a patient and notes a petechial rash on the patient's extremities. The nurse will perform which action?",
+      "options": [
+        "Request an order for a blood glucose level.",
+        "Request an order for diphenhydramine (Benadryl).",
+        "Request an order for a BUN and creatinine level.",
+        "Hold the dose and notify the provider."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "A petechial rash can indicate a severe adverse reaction and should be reported before administering the dose.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q8",
+      "stem": "Constipation is common during the postpartum period. Which of the following OTC products can be used to help manage constipation postpartum?",
+      "options": [
+        "Dinoprostone",
+        "Docusate sodium and sennosides",
+        "Promethazine",
+        "Hydrocodone"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Docusate sodium and sennosides are available over the counter and can be used to help with postpartum constipation. Opioid use, such as hydrocodone, can worsen symptoms of constipation. Promethazine is a prescription medication used for nausea. Dinoprostone is used to ripen an unfavorable cervix at or near term in women needing labor induction.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q14",
+      "stem": "The nurse is caring for a woman who is experiencing premature labor. The provider has ordered intravenous terbutaline to be given. The nurse will explain that this medication will have which action?",
+      "options": [
+        "It will enhance fetal lung development.",
+        "It will increase fetal blood supply.",
+        "It will decrease uterine contractions.",
+        "It will lower her blood pressure."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Terbutaline is given to relax the smooth muscle of the uterus and decrease contractions in order to stop premature labor. It does not affect fetal lung development or fetal blood supply and does not lower maternal blood pressure.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_020",
+      "stem": "A client asks if glipizide (Glucotrol) is an oral insulin. Best response?",
+      "options": [
+        "Yes; same actions as intermediate insulin",
+        "Yes; absorbed and metabolized like insulin",
+        "No; it works only when some beta‑cell function is present",
+        "No; but it works for those resistant to injectable insulin"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Glipizide is a sulfonylurea that stimulates pancreatic insulin release; it requires residual beta‑cell function and is not insulin.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_037",
+      "stem": "A client is in anaphylaxis from an insect sting. Which medication should be prepared first?",
+      "options": [
+        "Dopamine",
+        "Ephedrine",
+        "Epinephrine",
+        "Diphenhydramine"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Epinephrine is first‑line in anaphylaxis to reverse airway edema/bronchospasm and support blood pressure.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q15",
+      "stem": "The community health nurse is preparing to administer a medication to a patient in the patient's home. The order reads “amoxicillin as directed BID PO.” The nurse will perform which action?",
+      "options": [
+        "Administer the medication as ordered on the prescription label.",
+        "Contact the provider to confirm the correct dose and instructions for the medication.",
+        "Ask the patient to take the medication as ordered.",
+        "Review the drug information to verify the correct dose."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "The home nurse must have a complete order for giving medications, including the name of the medication, dose, route, and frequency, so the nurse should contact the provider to ascertain the dose. The prescription label may be outdated if the provider has changed the regimen.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q12",
+      "stem": "A patient will begin taking amoxicillin. The nurse should instruct the patient to avoid which foods?",
+      "options": [
+        "Acidic fruits and juices",
+        "Beef and other red meat",
+        "Coffee, tea, and colas",
+        "Green leafy vegetables"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Acidic fruits and juices should be avoided while the client is being treated with amoxicillin. Amoxicillin may be less effective when taken with acidic fruit or juice.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_057",
+      "stem": "Client with HF prescribed spironolactone (Aldactone). Which diet teaching is most important?",
+      "options": [
+        "Do not add salt to foods",
+        "Avoid high‑potassium foods",
+        "Restrict fluids to 1000 mL/day",
+        "Increase milk intake"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Spironolactone is potassium‑sparing; avoid potassium‑rich foods and salt substitutes to prevent hyperkalemia.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q4",
+      "stem": "A patient who is newly diagnosed with type 1 diabetes mellitus asks why insulin must be given by subcutaneous injection instead of by mouth. The nurse will explain that this is because",
+      "options": [
+        "Digestive enzymes in the GI tract break down the drug and prevent absorption.",
+        "Absorption is faster when insulin is given subcutaneously.",
+        "The oral form is less predictable with more adverse effects.",
+        "Absorption is diminished by the first-pass effects in the liver."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Insulin, growth hormones, and other protein-based drugs are destroyed in the GI tract by digestive enzymes and must be given parenterally. Because insulin is destroyed by digestive enzymes, it must be given parenterally and would not make it to the liver for metabolism with a first-pass effect.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q6",
+      "stem": "The nurse is caring for an 80-year-old patient who is taking warfarin (Coumadin). Which action does the nurse understand is important when caring for this patient?",
+      "options": [
+        "Maintaining strict intake and output measures",
+        "Encouraging the patient to rise slowly from a sitting position",
+        "Monitoring blood pressure frequently",
+        "Initiating a fall-risk protocol"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Patients who take anticoagulants have an increased risk of hemorrhage. Older patients have an increased risk of falls that can lead to bleeding complications. Initiating a fall-risk protocol is important. Warfarin does not affect blood pressure and would not cause orthostatic hypotension. Warfarin does not alter urine output.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q77",
+      "stem": "A nurse is preparing to administer insulin glargine (Lantus) and insulin lispro (Humalog) to a diabetic patient. Which action is correct?",
+      "options": [
+        "Use two separate syringes and injection sites because glargine cannot be mixed with other insulins.",
+        "Hold the glargine if the patient’s blood sugar is below 150 mg/dL.",
+        "Mix the insulins and use immediately since glargine enhances lispro’s effect.",
+        "Draw up the lispro and glargine in the same syringe to minimize injections."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Insulin glargine is a long-acting insulin that must not be mixed in the same syringe with any other insulin. It’s given separately. Lispro can be given at mealtime separately. Glargine provides basal coverage and is given regardless of pre-meal glucose (it’s not held for mild lows unless instructed, and certainly not held just because BG is <150 if that’s not an institutional guideline – typically it’s given daily at same dose). The key point: always use separate syringes/sites for glargine.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q4",
+      "stem": "A patient who has received heparin after previous surgeries will be given enoxaparin sodium after knee replacement surgery. The patient asks how this drug is different from heparin. The nurse will explain that the benefit of enoxaparin over heparin is that it",
+      "options": [
+        "decreases the need for laboratory tests.",
+        "has a shorter half-life than heparin.",
+        "increases the risk of hemorrhage.",
+        "may be taken orally instead of subcutaneously."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Enoxaparin is a low-molecular-weight heparin, which produces more stable responses at lower doses, thus reducing the need for frequent lab monitoring. It has a longer half-life than heparin. It decreases the risk of hemorrhage because it is more stable at lower doses. It is given subcutaneously.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_030",
+      "stem": "Which outcome indicates lactulose (Cephulac) is effective in hepatic encephalopathy?",
+      "options": [
+        "Increased urine output",
+        "Two or three soft stools per day",
+        "Watery diarrhea",
+        "Decreased serum bilirubin"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Lactulose reduces blood ammonia by promoting excretion via stool; target is 2–3 soft stools daily (not diarrhea).",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q14",
+      "stem": "A patient who has type 1 diabetes mellitus must take a glucocorticoid medication for osteoarthritis. When teaching this patient, the nurse will explain that there may be a need to",
+      "options": [
+        "Increase the glucocorticoid dose.",
+        "Decrease the glucocorticoid dose.",
+        "Decrease the insulin dose.",
+        "Increase the insulin dose."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Glucocorticoids can cause hyperglycemia, so the insulin dose may need to be increased. Changing the glucocorticoid dose is usually not recommended. Decreasing the insulin dose will only compound the hyperglycemic effects of the glucocorticoid.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_038",
+      "stem": "Client with OA takes naproxen bid and reports no relief after 3 weeks. Best response?",
+      "options": [
+        "The frequency is necessary for effectiveness",
+        "Therapeutic levels in 4–6 weeks",
+        "Another NSAID may be indicated",
+        "Next step is systemic corticosteroids"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Patients respond variably to NSAIDs; switching to a different NSAID is reasonable when one is ineffective. Steroids are not indicated for OA.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q2",
+      "stem": "Prior to administration of interferon alpha, the nurse will administer which medications?",
+      "options": [
+        "Heparin and meperidine",
+        "Narcotic analgesics and loratadine",
+        "Lorazepam and furosemide",
+        "Acetaminophen and diphenhydramine"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Patients receiving these drugs should be premedicated with acetaminophen to reduce chills and fever and with diphenhydramine to reduce histamine effects.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q74",
+      "stem": "A patient with type 1 diabetes is ordered insulin lispro (Humalog) 10 units at breakfast. When should the nurse administer this insulin?",
+      "options": [
+        "Within 15 minutes before the patient begins eating breakfast",
+        "One hour before the meal",
+        "Immediately after the meal",
+        "At bedtime the night before"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Insulin lispro is a rapid-acting insulin. It should be given about 15 minutes before a meal (or even as the patient starts eating) because it has a quick onset (~15 minutes). Giving it an hour before would risk hypoglycemia before the meal. Giving it after the meal could cause post-meal hyperglycemia (ideally it’s pre-meal, though some may give immediately after if intake is uncertain). It is never given the night before for a breakfast dose, as its action is too short.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q1",
+      "stem": "The nurse is preparing to administer the first dose of hydrochlorothiazide 50 mg to a patient who has a blood pressure of 160/95 mm Hg. The nurse notes that the patient had a urine output of 200 mL in the past 12 hours. The nurse will perform which action?",
+      "options": [
+        "Administer the medication as ordered.",
+        "Hold the medication and request an order for serum BUN (blood urea nitrogen) and creatinine.",
+        "Request an order for serum electrolytes and administer the medication.",
+        "Encourage the patient to drink more fluids."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Thiazide diuretics are contraindicated in renal failure. This patient has oliguria and should be evaluated for renal failure prior to administration of the diuretic, especially in the absence of known renal failure for this patient. Drinking more fluids will not increase urine output in patients with renal failure.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q108",
+      "stem": "A patient on patient-controlled analgesia (PCA) with hydromorphone (Dilaudid) is not getting adequate pain relief. The nurse discovers the patient’s teenage son has been pressing the PCA button to help her “stay comfortable.” What is the appropriate nursing action?",
+      "options": [
+        "Disable the PCA pump and switch to PRN nurse-administered boluses.",
+        "Thank the son for helping and continue to monitor the patient’s pain.",
+        "Instruct the son that only the patient should press the button, and explain the risks of oversedation.",
+        "Increase the PCA dose to overcome the missed doses when the patient was sleeping."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Only the patient should press the PCA button (called “patient-controlled” for that reason). Family members should not activate PCA dosing because it can lead to oversedation if the patient doesn’t need the dose (especially if the patient is sleeping). The nurse should explain this safety principle to the son. It is not appropriate to thank him for doing something unsafe. Disabling PCA or switching therapy isn’t necessary if the issue is misuse; rather, re-educate and ensure proper usage. Increasing the dose is dangerous if the problem is that the son was dosing while mom slept, potentially causing sedation.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q11",
+      "stem": "A patient experiences a blood clot in one leg, and the provider has ordered a thrombolytic medication. The patient learns that the medication is expensive and asks the nurse if it is necessary. Which response by the nurse is correct?",
+      "options": [
+        "“You could take aspirin instead of this drug to achieve the same effect.”",
+        "“Your body will break down the clot, so the drug is not necessary.”",
+        "“The drug will decrease the likelihood of permanent tissue damage.”",
+        "“This medication also acts to prevent future blood clots from forming.”"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Thrombolytic medications are given primarily to prevent permanent tissue damage caused by compromised blood flow to the affected area. Thrombolytics do not prevent clots from forming. Aspirin prevents, but does not dissolve, clots. Although the body will break down the clot, the drug is needed to prevent tissue damage due to active ischemia.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q52",
+      "stem": "A patient on heparin therapy develops a significant drop in platelet count. The nurse suspects heparin-induced thrombocytopenia (HIT). What is the priority action?",
+      "options": [
+        "Stop the heparin infusion and notify the provider.",
+        "Switch to low-molecular-weight heparin immediately.",
+        "Administer vitamin K to reverse the heparin.",
+        "Increase the heparin dose to overcome the low platelet count."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "A large drop in platelets (≥50% from baseline) in a patient on heparin suggests HIT, an immune-mediated reaction. The immediate action is to stop all heparin and notify the provider. The provider may order an alternative anticoagulant (like argatroban) and tests for HIT antibodies. Increasing heparin dose is wrong. Vitamin K reverses warfarin, not heparin. Low-molecular-weight heparin (like enoxaparin) is contraindicated in HIT as there’s cross-reactivity.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q5",
+      "stem": "The nurse is caring for a patient who is taking digoxin to treat HF. The patient’s ECG shows a ventricular dysrhythmia. The nurse will notify the provider and will anticipate an order for which medication to treat a digoxin-induced ventricular dysrhythmia.",
+      "options": [
+        "Furosemide",
+        "Digoxin immune Fab",
+        "Potassium",
+        "Phenytoin"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "The antidysrhythmic phenytoin and lidocaine are effective in treating digoxin-induced ventricular dysrhythmias. Digoxin immune Fab is used to treat severe digitalis toxicity, characterized by bradycardia, nausea, and vomiting. Unless a potassium deficit is present, giving potassium could worsen the dysrhythmia.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q2",
+      "stem": "The nurse is preparing to administer epinephrine to a patient who is experiencing an acute bronchospasm. The nurse understands that because epinephrine is a nonselective alpha- and beta-adrenergic agonist, the patient will experience which effects?",
+      "options": [
+        "Decreased blood pressure",
+        "Cardiac and pulmonary effects",
+        "A shorter duration of therapeutic effects",
+        "Anticholinergic effects"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Nonselective sympathomimetic epinephrine is an alpha1, beta1, and beta2 agonist that is given to promote bronchodilation and elevate blood pressure. It does not have anticholinergic effects.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q78",
+      "stem": "A provider accidentally orders mixing insulin glargine (Lantus) with regular insulin in one syringe. The new nurse is unsure about this. What should the supervising nurse advise?",
+      "options": [
+        "Go ahead and mix them quickly; administer within 2 minutes of mixing.",
+        "Clarify with the provider, as glargine should never be mixed with other insulins.",
+        "Draw up regular first, then glargine, and it will be fine.",
+        "Mixing will extend the action of regular insulin, so the order is appropriate."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Insulin glargine should not be mixed with any other insulin in the same syringe. The proper action is to verify and clarify the order, as it’s likely an error or misunderstanding. The other options are incorrect—there is no condition where mixing glargine is recommended, because it alters the drug’s properties and absorption.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q38",
+      "stem": "A physician prescribes potassium chloride 20 mEq daily for a patient already taking spironolactone (Aldactone). What should the nurse do?",
+      "options": [
+        "Clarify the order with the provider because spironolactone can cause potassium retention.",
+        "Hold the spironolactone when giving the potassium supplement.",
+        "Switch the patient to a potassium-sparing diet instead of supplements.",
+        "Administer the potassium as ordered to prevent hypokalemia."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Spironolactone is a potassium-sparing diuretic that can cause hyperkalemia. Routine potassium supplementation is usually not given with spironolactone unless there is a documented deficiency. The nurse should double-check this order because it may be inappropriate or an error. Simply administering it without question could harm the patient. Holding spironolactone is not the nurse’s decision unless ordered; the key is to question the combination.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q17",
+      "stem": "A patient is taking digoxin (Lanoxin) and furosemide (Lasix) for heart failure. This morning the patient’s potassium is 2.9 mEq/L. What is the most appropriate nursing intervention?",
+      "options": [
+        "Administer both medications as scheduled.",
+        "Give the digoxin but reduce the dose of furosemide.",
+        "Hold the digoxin and notify the provider of the low potassium level.",
+        "Offer a potassium-rich snack to the patient and reassess in 4 hours."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Hypokalemia (K <3.5) greatly increases the risk of digoxin toxicity. The nurse should hold digoxin and notify the provider, as electrolyte abnormalities must be corrected. Furosemide, a potassium-wasting diuretic, likely contributed to this low K; the provider may need to adjust therapy or add potassium supplementation. Simply offering a snack or adjusting doses independently is not sufficient or within nursing scope without an order.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q3",
+      "stem": "A patient has been receiving intravenous heparin. When laboratory tests are drawn, the nurse has difficulty stopping bleeding at the puncture site. The patient has bloody stools and is reporting abdominal pain. The nurse notes elevated partial thromboplastin time (PTT) and activated partial thromboplastin time (aPTT). Which action will the nurse perform?",
+      "options": [
+        "Obtain an order for protamine sulfate.",
+        "Ask for an order for oral warfarin (Coumadin).",
+        "Suggest that the patient receive subcutaneous heparin.",
+        "Request an order for vitamin K."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Protamine sulfate is given as an antidote to heparin when a patient's clotting times are elevated. Oral warfarin will not stop the anticoagulant effects of heparin. Vitamin K is used as an antidote for warfarin. Administering heparin by another route is not indicated when there is a need to reverse the effects of heparin.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q62",
+      "stem": "Which statement by a patient using an albuterol (Ventolin) metered-dose inhaler indicates a need for more teaching?",
+      "options": [
+        "I might feel a bit shaky or have a rapid heartbeat after using this inhaler.",
+        "I can use this inhaler as often as needed, even 8-10 times a day, if I’m short of breath.",
+        "I will use this as my rescue inhaler when I have sudden wheezing.",
+        "I should feel some relief within minutes after using this inhaler."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Overuse of albuterol (more than prescribed, typically 2 puffs every 4-6 hours as needed) can lead to side effects and diminished effectiveness. Using it “8-10 times a day” indicates poor control and need for better maintenance therapy; it also raises heart rate and can cause tremors. Options a, b, and d are correct: it’s a rescue inhaler for acute symptoms, works within minutes, and can cause transient tachycardia or tremor. C indicates the patient might be over-relying on albuterol and needs further education or regimen adjustment.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q6",
+      "stem": "The nurse is caring for a patient who is hospitalized for an asthma exacerbation. The patient reports taking diphenhydramine at home at night to help with symptoms of allergic rhinitis and cough. The nurse will contact the patient’s provider to request an order for which medication?",
+      "options": [
+        "Cetirizine",
+        "Diphenhydramine",
+        "Benzonatate",
+        "Dextromethorphan hydrobromide"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Cetirizine is an antihistamine, which is indicated for this patient's symptoms. Diphenhydramine is also an antihistamine, but because of its anticholinergic side effects, it should be used with caution in patients with acute asthma. Benzonatate and dextromethorphan are antitussives and not antihistamines.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q16",
+      "stem": "A patient who is intubated develops sinus bradycardia. Which medication will the nurse anticipate administering to treat this symptom?",
+      "options": [
+        "Metoclopramide (Reglan)",
+        "Bethanechol chloride (Urecholine)",
+        "Atropine sulfate (Atropine)",
+        "Benztropine (Cogentin)"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Atropine is most commonly used to decrease salivation and respiratory secretions preoperatively and to treat sinus bradycardia by increasing the heart rate.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_001",
+      "stem": "Following the administration of sublingual nitroglycerin to a client experiencing an acute anginal attack, which assessment finding indicates that the desired effect has been achieved?",
+      "options": [
+        "Client states chest pain is relieved",
+        "Client's pulse decreases from 120 to 90",
+        "Client's systolic blood pressure decreases from 180 to 90",
+        "Client's SaO2 increases from 92% to 96%"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Nitroglycerin reduces myocardial oxygen demand and ischemia, so relief of chest pain is the primary indicator of effectiveness.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q17",
+      "stem": "A patient who has type 2 diabetes mellitus asks the nurse why the provider has changed their oral antidiabetic agent from tolbutamide (Orinase) to glipizide (Glucotrol). The nurse will explain that glipizide",
+      "options": [
+        "Has fewer gastrointestinal side effects.",
+        "May be taken on an as-needed basis.",
+        "Has a longer duration of action.",
+        "Does not cause hypoglycemia."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Glipizide is a second-generation sulfonylurea. It has a longer duration of action than the first-generation sulfonylurea, tolbutamide. It has many gastrointestinal side effects. It is taken once daily, not as needed. All sulfonylureas can contribute to hypoglycemia.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q7",
+      "stem": "The nurse is administering amiodarone to a patient who is being treated for a ventricular arrhythmia. The patient has received a bolus of 150 mg of amiodarone IV and is now receiving a continuous infusion of 1 mg/min. The nurse notes a heart rate of 60 beats per minute and a blood pressure of 88/54 mm Hg. The nurse will notify the provider and perform which other action?",
+      "options": [
+        "Continue the amiodarone infusion at 1 mg/min.",
+        "Increase the rate of the amiodarone infusion to 1.5 mg/min.",
+        "Stop the infusion of amiodarone.",
+        "Decrease the rate of the amiodarone infusion to 0.5 mg/min."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Amiodarone has significant adverse effects of hypotension and bradycardia. When these occur, the nurse should slow the infusion rate to prevent or treat these effects and contact the physician.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_053",
+      "stem": "Which route provides the greatest first‑pass effect?",
+      "options": [
+        "Oral",
+        "Sublingual",
+        "Intravenous",
+        "Subcutaneous"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Oral drugs enter the portal circulation and undergo hepatic metabolism before reaching systemic circulation; other routes bypass first pass.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q5",
+      "stem": "Which fat-soluble vitamin can increase the risk of bleeding and would warrant close monitoring of prothrombin time in a patient also taking warfarin (Coumadin)?",
+      "options": [
+        "Vitamin E",
+        "Vitamin D",
+        "Vitamin A",
+        "Vitamin K"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Vitamin E may prolong the prothrombin time, so patients taking warfarin should have their PT monitored closely. Vitamin K is used as an antidote in the event of oral anticoagulant overdose.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q50",
+      "stem": "A patient is receiving a continuous IV heparin infusion for a pulmonary embolism. Which lab value does the nurse monitor to evaluate if the heparin therapy is effective and within the therapeutic range?",
+      "options": [
+        "Bleeding time",
+        "INR",
+        "aPTT",
+        "Platelet count"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Unfractionated IV heparin is monitored using the activated partial thromboplastin time (aPTT). The goal is typically an aPTT about 1.5–2.5 times the normal control value. INR is for warfarin monitoring. Platelet count is monitored to detect heparin-induced thrombocytopenia (HIT), but it doesn’t measure anticoagulant effect. Bleeding time is an older test not commonly used for monitoring heparin therapy.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q104",
+      "stem": "The nurse is caring for a post-operative patient on morphine PCA (Patient-Controlled Analgesia). Which assessment finding is most concerning?",
+      "options": [
+        "Respiratory rate of 8 breaths/minute",
+        "Constipation on the second post-op day",
+        "Pinpoint pupils",
+        "The patient falls asleep easily but arouses to name"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "A respiratory rate of 8/min is too low and indicates significant opioid-induced respiratory depression, which is an urgent concern. Pinpoint pupils are an expected effect of opioids (miosis) but not life-threatening by itself. Sedation (falls asleep easily) is an expected side effect as long as the patient can be aroused and respirations are adequate. Constipation is common with opioids and can be managed; it’s not acute. The low respiratory rate is most concerning, possibly requiring intervention like reducing dose or giving naloxone if severe.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q54",
+      "stem": "A post-operative patient is prescribed enoxaparin (Lovenox) 40 mg subQ daily for DVT prophylaxis. The nurse should question the order in which situation?",
+      "options": [
+        "The patient is also on a beta blocker for hypertension.",
+        "The patient has an epidural catheter in place for analgesia.",
+        "The patient is allergic to sulfa drugs.",
+        "The patient is ambulating regularly in the hall."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Enoxaparin (and other LMWH) is contraindicated or used with extreme caution in patients with neuraxial anesthesia (epidural or spinal catheters) due to risk of spinal hematoma, which can cause paralysis. An order for enoxaparin should be clarified or held if an epidural is in place. Sulfa allergy is unrelated to enoxaparin (not a sulfa drug). Ambulating patients may still receive prophylaxis if ordered. Beta blockers have no direct interaction with enoxaparin.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q4",
+      "stem": "A woman with diabetes and hypertension is taking losartan (Cozaar). She tells the nurse she is trying to become pregnant. What should the nurse advise?",
+      "options": [
+        "Continue losartan, but increase folic acid intake while trying to conceive.",
+        "Stop taking losartan and consult the provider immediately about alternative therapy.",
+        "Continue losartan until pregnancy is confirmed, then discontinue it.",
+        "Switch to lisinopril, as it is safer during pregnancy."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "ARBs like losartan are contraindicated in pregnancy due to risk of fetal injury or death. A patient planning pregnancy should be transitioned to a safer antihypertensive (e.g., methyldopa or labetalol) before conceiving. Neither losartan nor lisinopril is safe in pregnancy. Folic acid is important for neural tube defect prevention but does not mitigate the drug’s risk.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q11",
+      "stem": "A patient has been taking spironolactone to treat heart failure. The nurse will monitor for which of the following electrolyte abnormalities?",
+      "options": [
+        "Hypocalcemia",
+        "Hyperkalemia",
+        "Hypoglycemia",
+        "Hypermagnesemia"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Spironolactone is a potassium-sparing diuretic and can induce hyperkalemia.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q16",
+      "stem": "A female patient has a history of heavy menstrual periods and has received treatment in the past for iron deficiency anemia. She would like to take ferrous sulfate prophylactically to avoid future problems. Which of the following is an appropriate patient teaching point to provide to the patient?",
+      "options": [
+        "Iron supplements should never be taken with food.",
+        "Iron supplements have a tendency to cause diarrhea.",
+        "Take the iron with milk to improve absorption.",
+        "Maintain an upright position for 30 minutes after taking the iron."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Patients should be advised to maintain an upright position for 30 minutes after taking oral iron preparations to prevent esophageal corrosion from reflux. Taking iron supplements with milk will decrease iron absorption and should not be recommended. Iron supplements can often contribute to constipation. While taking iron supplements with food will result in suboptimal absorption, patients can take them with food if gastrointestinal irritation prevents them from taking the supplements on an empty stomach.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q96",
+      "stem": "Which of the following is an expected side effect of terbutaline (Brethine) when given to a pregnant woman to stop contractions?",
+      "options": [
+        "Maternal tachycardia and palpitations",
+        "Uterine cramping and increased contractions",
+        "Fetal bradycardia",
+        "Severe hypotension"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Terbutaline often causes maternal tachycardia, palpitations, tremor, and nervousness due to beta-adrenergic stimulation. It relaxes the uterus, so it should decrease contractions (not increase them). It can cause a modest drop in blood pressure, but severe hypotension is not common at tocolytic doses. The fetus might experience some tachycardia as well (due to maternal drug crossing), not usually bradycardia.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q2",
+      "stem": "A patient with suspected myocardial infarction is seen in the emergency department. The nurse is preparing to administer 325 mg of aspirin. The nurse will perform which action?",
+      "options": [
+        "Place the tablet under the patient's tongue.",
+        "Give the tablet with a large glass of water.",
+        "Administer an enteric-coated tablet.",
+        "Ask the patient to chew the tablet."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "To speed the absorption of aspirin, in a cardiac emergency, the patient should chew the tablet when given. An enteric-coated tablet will slow the absorption. Giving the aspirin with a large volume of water or sublingually will slow the absorption rate.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q5",
+      "stem": "The nurse is teaching a patient how to administer insulin. The patient is thin with very little body fat. The nurse will suggest injecting insulin",
+      "options": [
+        "subcutaneously with the needle at a 45- to 60-degree angle.",
+        "in the abdomen only with the needle at a 90-degree angle.",
+        "by pinching up the skin and injecting straight down.",
+        "using the thigh and buttocks areas exclusively."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "In a thin person with little fatty tissue, the needle is inserted at a 45- to 60-degree angle. In other patients, a 45- to 90-degree angle is acceptable. There is no recommendation for preferring one site over another.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_010",
+      "stem": "A client on dopamine infusion has urine output of 20 mL/hr for two hours. Which intervention is appropriate?",
+      "options": [
+        "Stop the dopamine infusion",
+        "Reduce normal saline to KVO",
+        "Replace the urinary catheter",
+        "Notify the healthcare provider"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Urine output <30 mL/hr suggests inadequate renal perfusion; notify the HCP to adjust therapy. Do not stop vasopressors without orders.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q4",
+      "stem": "The nurse is caring for a patient who has a seizure disorder being treated with phenytoin. The nurse notes that the patient has reddened gums that bleed when brushing. The nurse recognizes this finding as",
+      "options": [
+        "Likely due to a drug interaction with aspirin.",
+        "Is a symptom of hepatotoxicity.",
+        "Is a sign of poor self-care.",
+        "An adverse effect of the phenytoin."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Phenytoin commonly causes gingival hyperplasia, which causes overgrowth of reddened gum tissue that bleeds easily. It is not a sign of a drug interaction or a symptom of hepatotoxicity. It does not indicate a lack of self-care.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q17",
+      "stem": "A patient who has recently begun taking lithium calls the clinic to report nausea, vomiting, anorexia, and hand tremor. What will the nurse do next?",
+      "options": [
+        "Contact the provider to obtain an order for a serum lithium level.",
+        "Tell the patient to stop taking the medication immediately.",
+        "Reassure the patient that these symptoms are common and transient.",
+        "Tell the patient that the lithium dose is probably too low."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Early symptoms of lithium toxicity include nausea, vomiting, anorexia, and tremor. The nurse should obtain an order for a lithium level to evaluate this. Patients should be encouraged to report these symptoms if they occur. Patients should never be counseled to stop the medication abruptly.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_011",
+      "stem": "Keflex (cephalexin) is prescribed postoperatively. It is most important to assess for which allergy?",
+      "options": [
+        "Penicillins",
+        "Aminoglycosides",
+        "Macrolides",
+        "Sulfonamides"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Cephalosporins can cross-react with penicillin allergies; screen for penicillin hypersensitivity before administration.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_014",
+      "stem": "Post-op client on meperidine (Demerol) 35 mg/hr IV x4 days becomes restless, irritable, hallucinating. First action?",
+      "options": [
+        "Give PRN oral meperidine",
+        "Give naloxone IV per protocol",
+        "Decrease the IV infusion rate per protocol",
+        "Notify the healthcare provider"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Findings suggest meperidine toxicity; immediately reduce exposure by decreasing the infusion rate while further orders are obtained.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q6",
+      "stem": "The nurse is preparing to administer phenytoin to an 80-year-old patient and notes the following order: IVP phenytoin 50 mg. The nurse will perform which action?",
+      "options": [
+        "Administer through a PICC over 2 minutes.",
+        "Contact the provider to question the route and the dose.",
+        "Dilute the drug in dextrose solution and infuse over 15 to 20 minutes.",
+        "Request an order to administer the drug intramuscularly."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "It is recommended that phenytoin be administered by direct injection into a large vein via a central line or PICC. In older patients, it should be infused at a rate of 25 mcg/min. The dose and the route are appropriate. Phenytoin will precipitate in dextrose solution. Intramuscular injection is very irritating to tissues and is not used.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q15",
+      "stem": "Which statement by a patient who will begin using an insulin pump indicates understanding of this device?",
+      "options": [
+        "“I will still need to monitor my glucose levels.”",
+        "“I will not need to count carbohydrates anymore.”",
+        "“I will leave this on when bathing or swimming.”",
+        "“I will have an increased risk for hypoglycemia.”"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Patients using an insulin pump will still monitor glucose levels and count carbohydrates. The advantage of the pump is that it is programmed to deliver continuous, rapid-acting insulin in varying amounts at different times throughout the day. Changes in food intake can alter the risk for hypoglycemia if the pump is not adjusted accordingly. Most devices must be removed when bathing or swimming.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q2",
+      "stem": "A patient is diagnosed with heart failure (HF), and the prescriber has ordered digoxin. The patient asks what lifestyle changes will help in the management of this condition. The nurse will recommend which changes?",
+      "options": [
+        "Having no more than one alcoholic beverage per day",
+        "Consuming 3 teaspoons or less of salt every day",
+        "Changing from cigarette smoking to pipe smoking",
+        "Vigorous aerobic exercise and weight lifting 2 or 3 times weekly"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Alcohol should either be completely avoided or restricted to no more than one per day. Mild exercise, such as walking, is recommended. All methods of smoking can deprive the heart of oxygen. Salt should be limited to no more than one teaspoon per day.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_065",
+      "stem": "Preparing the 0900 dose of losartan (Cozaar) for HF/HTN. K+ is 5.9 mEq/L. First action?",
+      "options": [
+        "Withhold the losartan dose",
+        "Check apical pulse",
+        "Notify the healthcare provider",
+        "Repeat the serum potassium level"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Hyperkalemia is a known risk with ARBs; hold the dose to prevent worsening K+ and potential dysrhythmias, then notify the provider.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q15",
+      "stem": "A patient asks the nurse why nitroglycerin is given sublingually. The nurse will explain that nitroglycerin is administered by this route for which reason?",
+      "options": [
+        "To prevent hepatotoxicity",
+        "To minimize gastrointestinal upset",
+        "To avoid hypotension",
+        "To increase the rate of absorption"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Nitroglycerin is given sublingually to avoid first-pass metabolism by the liver, which would occur if the drug is swallowed, and to increase the rate of absorption. It does not prevent hypotension. Gastrointestinal upset and hepatotoxicity usually do not occur.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q20",
+      "stem": "Which organ’s function is a priority to monitor periodically in a patient on long-term amiodarone (Cordarone)?",
+      "options": [
+        "Urinary bladder",
+        "Lungs",
+        "Bone marrow",
+        "Pancreas"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Amiodarone has multiple potential toxicities, but the most severe is pulmonary fibrosis (lung toxicity). Pulmonary function or symptoms should be monitored closely. Thyroid and liver function are also often monitored with amiodarone, but among the options given, the lungs are the priority. It does not primarily affect the pancreas, bone marrow, or bladder.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q5",
+      "stem": "The nurse is preparing to care for a Native American patient who has hypertension. The nurse understands which antihypertensive medication would be most effective in this patient?",
+      "options": [
+        "Metoprolol",
+        "Carteolol",
+        "Acebutolol",
+        "Captopril"
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Captopril is an ACE inhibitor. Native American patients have a reduced response to treatment with beta blockers when compared to Caucasians. Acebutolol, carteolol, and metoprolol are all beta blockers.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q5",
+      "stem": "The nurse is caring for a patient who is diagnosed with active tuberculosis. The patient tells the nurse that the provider plans to order a prophylactic antitubercular drug for family members and asks which drug will be ordered. The nurse will expect the provider to order which drug?",
+      "options": [
+        "Streptomycin",
+        "Pyrazinamide",
+        "Isoniazid",
+        "Rifampin"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "INH is the drug of choice for prophylactic treatment of TB.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q6",
+      "stem": "A patient who is receiving cancer chemotherapy has been ordered to receive epoetin alfa 150 units/kg 3 times weekly. The nurse reviews the patient's chart and notes a hemoglobin level of 10.9 g/dL. The nurse will perform which action?",
+      "options": [
+        "Hold the dose and notify the provider.",
+        "Reduce the dose by 25%.",
+        "Request an order for an increased dose.",
+        "Administer the medication as ordered."
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "For patients receiving cancer chemotherapy, ESAs should not be initiated at a hemoglobin level greater than or equal to 11 g/dL. Because the patient has a hemoglobin of 10.9 g/dL, it would be prudent to hold the dose and notify the provider to determine next steps.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q68",
+      "stem": "Which statement by a patient indicates a need for additional teaching about montelukast (Singulair)?",
+      "options": [
+        "I should take it every day even if I’m feeling well.",
+        "I might take it at night since asthma symptoms can be worse then.",
+        "I can stop it on days I have no symptoms, then restart when I have trouble breathing.",
+        "I will not use this during an acute asthma attack."
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Montelukast is a controller medication and should be taken daily for ongoing prevention, not started and stopped based on daily symptoms. It is not effective if used intermittently. Options a, b, c are correct: it’s not for acute attacks (no bronchodilator action), often taken at night, and should be taken consistently every day as prescribed. Option d shows misunderstanding of its preventive role.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q6",
+      "stem": "A patient who takes digoxin to treat HF will begin taking a vasodilator. The patient asks the nurse why this new drug has been ordered. The nurse will explain that the vasodilator is used to",
+      "options": [
+        "increase cardiac output.",
+        "decrease ventricular stretching.",
+        "promote peripheral fluid loss.",
+        "improve renal perfusion."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Vasodilators are given to decrease venous blood return to the heart, resulting in decreased cardiac filling and decreased ventricular stretching, in turn reducing preload, contractility, and oxygen demand of the heart.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q12",
+      "stem": "The nurse is caring for a patient who is taking trimethoprim–sulfamethoxazole (TMP–SMX). The nurse learns that the patient takes an angiotensin-converting enzyme (ACE) inhibitor. To monitor for drug interactions, the nurse will request an order for which laboratory test(s)?",
+      "options": [
+        "BUN and creatinine",
+        "Electrolytes",
+        "Glucose",
+        "A complete blood count"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "TMP–SMX can result in hyperkalemia when taken with an ACE inhibitor. Monitoring of electrolytes and symptoms of hyperkalemia would be indicated.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_059",
+      "stem": "Key nursing intervention for client receiving cytarabine (Ara‑C) chemotherapy?",
+      "options": [
+        "Hydrate with IV fluids before/after",
+        "Assess for peripheral neuropathy",
+        "Inspect oral mucosa for ulcerations",
+        "Monitor urine pH for acidity"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "Antimetabolites affect rapidly dividing cells; stomatitis/mucositis is a common toxicity requiring vigilant oral assessment and care.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_042",
+      "stem": "Naloxone (Narcan) is given in the ER. Which finding indicates effectiveness?",
+      "options": [
+        "Chest pain is relieved",
+        "Respiratory rate is 16/min",
+        "Seizure activity has stopped",
+        "Pupils are constricted bilaterally"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Naloxone reverses opioid‑induced respiratory depression; normalization of respirations indicates therapeutic effect.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q45",
+      "stem": "A patient with atrial fibrillation is on long-term rivaroxaban (Xarelto) therapy. Which statement by the patient indicates they understand their medication?",
+      "options": [
+        "I have an antidote available at home in case I bleed.",
+        "I will avoid all green, leafy vegetables in my diet.",
+        "I should take aspirin daily with rivaroxaban to prevent clots.",
+        "I don’t need regular blood tests for this drug like I did with warfarin."
+      ],
+      "correct": [
+        "D"
+      ],
+      "rationale": "Rivaroxaban (a factor Xa inhibitor) does not require routine INR monitoring, unlike warfarin. There are also no dietary restrictions with respect to vitamin K (so no need to avoid leafy greens, which is a warfarin concern). Patients should not add additional anticoagulants like aspirin unless directed (due to increased bleeding risk). Until recently, there was no specific at-home antidote (andexanet alfa is a reversal agent available in hospital settings), so patients don’t keep an antidote at home; they’re instructed to seek immediate care if serious bleeding occurs.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q3",
+      "stem": "The nurse is teaching a patient about taking hydrochlorothiazide. Which statement by the patient indicates a need for further teaching?",
+      "options": [
+        "“I may need extra sodium and calcium while taking this drug.”",
+        "“I should take care when rising from a bed or chair when I'm starting this medication.”",
+        "“I will take the medication in the morning to minimize certain side effects.”",
+        "“I should eat plenty of fruits and vegetables while taking this medication.”"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Patients do not need extra sodium or calcium while taking thiazide diuretics. Thiazide diuretics can lead to hypokalemia, so patients should be counseled to eat fruits and vegetables that are high in potassium. Patients can develop orthostatic hypotension and should be counseled to rise from sitting or lying down slowly. Taking the medication in the morning helps to prevent nocturia-induced insomnia.",
+      "type": "single_select"
+    },
+    {
+      "id": "HESI_039",
+      "stem": "A Category X drug is prescribed for a young adult female. Most important instruction?",
+      "options": [
+        "Use a reliable form of birth control",
+        "Avoid ultraviolet light",
+        "Refuse this medication if planning pregnancy",
+        "Abstain from intercourse"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Category X drugs are teratogenic; women of childbearing potential must use effective contraception during therapy.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q8",
+      "stem": "A patient reports that they are taking a rapid-acting insulin with meals, but can't remember the name. Which of the following products is a rapid-acting insulin?",
+      "options": [
+        "Insulin lispro (Humalog)",
+        "Insulin degludec (Tresiba)",
+        "Regular insulin (Novolin R)",
+        "Insulin glargine (Lantus)"
+      ],
+      "correct": [
+        "A"
+      ],
+      "rationale": "Insulin lispro (Humalog) is a rapid-acting insulin product. Regular insulin is considered a short-acting insulin. Insulin glargine and insulin degludec are long-acting insulins.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q17",
+      "stem": "The nurse provides teaching for a patient who will begin taking allopurinol. Which statement by the patient indicates understanding of the teaching?",
+      "options": [
+        "“I will increase my protein intake.”",
+        "“I will get yearly eye exams.”",
+        "“I should increase my vitamin C intake.”",
+        "“I will limit fluids to prevent edema.”"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Patients taking allopurinol can have visual changes with prolonged use and should have yearly eye exams. It is not necessary to increase vitamin C. Protein can increase purine intake, which is not recommended. Patients should consume extra fluids.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q16",
+      "stem": "A patient who is unconscious and has a pulse is brought to the emergency department. The patient is wearing a Medic-Alert bracelet indicating type 1 diabetes mellitus. Which of the following would be the most appropriate to administer to the patient at this time?",
+      "options": [
+        "Orange juice",
+        "Insulin",
+        "Glucagon",
+        "Cardiopulmonary resuscitation (CPR)"
+      ],
+      "correct": [
+        "C"
+      ],
+      "rationale": "This patient is most likely hypoglycemic. Glucagon is given if patients are unable to ingest a carbohydrate, such as orange juice. CPR is not indicated. Insulin will compound the hypoglycemia.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm2_Q41",
+      "stem": "A patient with chronic kidney disease is receiving epoetin alfa (Epogen) injections. Which laboratory value is most important for the nurse to review to determine if the medication is effective?",
+      "options": [
+        "Platelet count",
+        "Hemoglobin level",
+        "Potassium level",
+        "White blood cell count"
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Epoetin alfa stimulates red blood cell production to treat anemia. Hemoglobin (and hematocrit) is the key lab to monitor for improvement. The goal is a rise in hemoglobin, but not above about 11 g/dL (to avoid thrombotic events). WBC and platelets are not directly affected by epoetin alfa. Potassium is unrelated to erythropoietin therapy effectiveness.",
+      "type": "single_select"
+    },
+    {
+      "id": "Pharm_Q9",
+      "stem": "A patient who is diagnosed with peptic ulcer disease has been started on a regimen that includes famotidine 40 mg daily at bedtime. The patient calls the clinic 2 days later to report no relief from discomfort. What action will the nurse take?",
+      "options": [
+        "Contact the provider to discuss changing to cimetidine.",
+        "Reassure the patient that it may take 1 to 2 weeks to notice an improvement in symptoms.",
+        "Notify the provider to discuss increasing the dose.",
+        "Suggest that the patient split the medication into twice-daily dosing."
+      ],
+      "correct": [
+        "B"
+      ],
+      "rationale": "Patients taking histamine blockers can expect abdominal pain to decrease after 1 to 2 weeks of drug therapy. Cimetidine is not as potent as ranitidine and interacts with many medications through the cytochrome P450 system. 40 mg at bedtime is the recommended dose.",
+      "type": "single_select"
+    }
+  ]
+}
