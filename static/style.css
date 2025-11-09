@@ -1,5 +1,6 @@
 /* ===== Global ===== */
-html { scroll-behavior: smooth; }
+/* Use default scrolling; we’ll do explicit smooth scroll only when wanted. */
+html { scroll-behavior: auto; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 :root{
@@ -218,6 +219,7 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
   padding-left: 12px;
   margin: 6px 0 8px;
 }
+.answer-line:empty{ border-left:0; padding-left:0; } /* avoid stray line when empty */
 
 .rationale{
   border: 1px dashed var(--border);
