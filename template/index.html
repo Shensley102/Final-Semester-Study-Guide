@@ -13,9 +13,14 @@
 
     <!-- Counters (shown only during an active quiz) -->
     <div id="countersBox" class="hidden counters" aria-live="polite">
-      <div id="runCounter">Question: 0</div>
-      <div id="remainingCounter">Remaining to master: 0</div>
+      <!-- New top row just for the counts + reset -->
+      <div class="count-row">
+        <div id="runCounter">Question: 0</div>
+        <div id="remainingCounter">Remaining to master: 0</div>
+        <button id="resetAll" class="btn danger hidden" aria-label="Reset quiz progress">Reset</button>
+      </div>
 
+      <!-- Progress bar now sits underneath the counts -->
       <div class="pbar-wrap" aria-hidden="false">
         <div id="progressBar" class="pbar" role="progressbar"
              aria-label="Mastery progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
@@ -23,8 +28,6 @@
         </div>
         <div id="progressLabel" class="pbar-label">0% mastered</div>
       </div>
-
-      <button id="resetAll" class="btn danger hidden" aria-label="Reset quiz progress">Reset</button>
     </div>
 
     <!-- Launcher -->
