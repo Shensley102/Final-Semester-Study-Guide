@@ -17,6 +17,10 @@ html { scroll-behavior: smooth; }
 
   --shadow-sm:0 1px 2px rgba(16,24,40,.06);
   --shadow-md:0 4px 10px rgba(16,24,40,.08);
+
+  /* Progress bar segment settings */
+  --tick: 16px;           /* distance between hash marks */
+  --tick-line: 2px;       /* thickness of each mark */
 }
 
 *{ box-sizing:border-box; }
@@ -53,7 +57,6 @@ h1{
 }
 
 /* ===== Counters ===== */
-/* Column so the progress bar sits underneath the counts */
 .counters{
   display:flex;
   flex-direction: column;
@@ -61,8 +64,6 @@ h1{
   gap: 8px;
   margin: 10px 0 14px;
 }
-
-/* Row to hold "Question / Remaining" + Reset on the right */
 .count-row{
   display:flex;
   align-items:center;
@@ -71,7 +72,7 @@ h1{
 }
 #resetAll{ margin-left:auto; }
 
-/* ===== Progress bar ===== */
+/* ===== Progress bar (full width with hash marks) ===== */
 .pbar-wrap{
   display:flex;
   align-items:center;
@@ -80,34 +81,39 @@ h1{
 }
 .pbar{
   position:relative;
-  width: 100%;            /* FULL width of content area */
+  width: 100%;
   height: 20px;
   border-radius:999px;
-  background:#e9edf8;     /* track */
   overflow:hidden;
   border:1px solid var(--border);
   box-shadow: var(--shadow-sm);
+
+  /* Track base + light hash marks visible even at 0% */
+  background-image:
+    linear-gradient(#e9edf8,#e9edf8),
+    repeating-linear-gradient(
+      to right,
+      rgba(0,0,0,.08) 0 var(--tick-line),
+      transparent var(--tick-line) var(--tick)
+    );
+  background-repeat: no-repeat, repeat;
+  background-position: 0 0, 0 0;
 }
 .pbar-fill{
   position: relative;
   height:100%;
   width:0%;
-  background: var(--success);          /* green fill */
+  /* Fill base + same hash pattern, now in green */
+  background-image:
+    linear-gradient(var(--success), var(--success)),
+    repeating-linear-gradient(
+      to right,
+      rgba(255,255,255,.25) 0 var(--tick-line),
+      rgba(255,255,255,0) var(--tick-line) var(--tick)
+    );
+  background-repeat: no-repeat, repeat;
+  background-position: 0 0, 0 0;
   transition: width .25s ease;
-}
-/* Hash-mark overlay inside the filled portion */
-.pbar-fill::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  /* vertical hash marks every 14px, 2px thick, semi-transparent */
-  background-image: repeating-linear-gradient(
-    to right,
-    rgba(255,255,255,.55) 0 2px,
-    transparent 2px 14px
-  );
-  mix-blend-mode: soft-light;          /* subtle look atop the green */
 }
 .pbar-label{
   font-size: 1rem;
@@ -148,7 +154,6 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
   min-width: 120px;
 }
 .btn:hover{ box-shadow: var(--shadow-md); }
-
 .btn.primary{ background: var(--success); color:#fff; }
 .btn.btn-blue{ background: var(--primary); color:#fff; }
 .btn.danger{
