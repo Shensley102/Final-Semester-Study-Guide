@@ -8,13 +8,14 @@
 </head>
 <body>
   <div class="container">
-    <!-- Landing title stays the same; JS swaps during a quiz -->
+    <!-- Landing title; JS updates during quiz and on results -->
     <h1 id="pageTitle">Final Semester Study Guide</h1>
 
     <!-- Counters (shown only during an active quiz) -->
     <div id="countersBox" class="hidden counters" aria-live="polite">
       <div id="runCounter">Question: 0</div>
       <div id="remainingCounter">Remaining to master: 0</div>
+
       <div class="pbar-wrap" aria-hidden="false">
         <div id="progressBar" class="pbar" role="progressbar"
              aria-label="Mastery progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
@@ -22,6 +23,7 @@
         </div>
         <div id="progressLabel" class="pbar-label">0% mastered</div>
       </div>
+
       <button id="resetAll" class="btn danger hidden" aria-label="Reset quiz progress">Reset</button>
     </div>
 
@@ -52,8 +54,7 @@
         <h3>How it works &amp; hotkeys</h3>
         <ul>
           <li><strong>Start:</strong> Pick a <em>Module</em>, choose a <em>Length</em>, then click <strong>Start Quiz</strong>.</li>
-          <li><strong>Answering:</strong> Click an option or press a letter key <kbd>A</kbd>–<kbd>Z</kbd> to toggle the option.</li>
-          <li><strong>De-select:</strong> For single-select questions, pressing the same letter again unselects it.</li>
+          <li><strong>Answering:</strong> Click an option or press <kbd>A</kbd>–<kbd>Z</kbd> to toggle an option.</li>
           <li><strong>Submit / Next:</strong> Press <kbd>Enter</kbd> to submit. Then the green button turns blue and becomes <strong>Next</strong>.</li>
           <li><strong>After you submit:</strong> You’ll see Correct/Incorrect, the Correct Answer, and the Rationale.</li>
           <li><strong>Results:</strong> End of run shows a summary and a review list with answers and rationales.</li>
@@ -74,7 +75,7 @@
 
       <div id="feedback" class="feedback" aria-live="polite"></div>
       <div id="answerLine" class="answer-line" aria-live="polite"></div>
-      <div id="rationale" class="rationale hidden"></div>
+      <div id="rationale" class="rationale hidden" aria-live="polite"></div>
     </section>
 
     <!-- Summary -->
