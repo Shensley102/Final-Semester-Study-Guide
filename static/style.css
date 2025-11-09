@@ -2,7 +2,7 @@
    Final Semester Study Guide — One-Window, No-Scroll Layout
    - Open Sans applied globally
    - No scrolling anywhere on the page
-   - The quiz card auto-scales to fit the viewport with padding
+   - Quiz scale is locked (no size change after Submit)
 ============================================================= */
 
 /* Respect reduced motion */
@@ -49,41 +49,30 @@ button,input,select,textarea{ font:inherit }
 /* Main container uses fixed viewport height (widened) */
 .container{
   height:100vh;
-  max-width:1280px;               /* wider so the quiz isn’t cramped */
+  max-width:1280px;               /* wide so the quiz isn’t cramped */
   margin:0 auto;
   padding:10px 12px;
   display:grid;
   grid-template-rows:auto auto 1fr; /* title, counters, main area */
-  gap:10px;
+  gap:6px;                         /* tighter vertical spacing at the top */
 }
 
-/* --- Header (leave sizes unchanged) --- */
+/* --- Header (sizes unchanged; just tightened margins) --- */
 h1{
-  margin:0;
+  margin:0 0 2px 0;               /* less gap below the title */
   font-weight:800;
   letter-spacing:.3px;
   font-size:clamp(28px, 4.5vw, 44px);
 }
-
-/* Cards */
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  box-shadow:var(--shadow-sm);
-  padding:14px;
+.counters{
+  display:flex; flex-direction:column; align-items:flex-start;
+  gap:2px;                         /* was 8px */
 }
-
-/* Launcher & Summary */
-#launcher.card, #summary.card { overflow:hidden; }
-
-/* Counters */
-.counters{ display:flex; flex-direction:column; align-items:flex-start; gap:8px; }
 .count-row{ display:flex; align-items:center; gap:16px; width:100%; }
 #resetAll{ margin-left:auto; }
 
-/* Progress bar (unchanged) */
-.pbar-wrap{ display:flex; align-items:center; gap:12px; width:100%; }
+/* Progress bar (unchanged in size; less vertical slack) */
+.pbar-wrap{ display:flex; align-items:center; gap:12px; width:100%; margin-top:2px; }
 .pbar{
   position:relative; width:100%; height:20px; border-radius:999px; overflow:hidden;
   border:1px solid var(--border); box-shadow:var(--shadow-sm); background:#e9edf8;
@@ -102,9 +91,17 @@ h1{
 }
 .pbar-label{ font-size:1rem; color:var(--ink-soft); }
 
-/* Fields + labels */
-.field{ margin:10px 0 12px; }
-label{ display:block; font-weight:600; margin-bottom:6px; color:var(--ink-soft); }
+/* Cards */
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-sm);
+  padding:14px;
+}
+
+/* Launcher & Summary */
+#launcher.card, #summary.card { overflow:hidden; }
 
 /* Segmented buttons */
 .seg{ display:flex; gap:10px; flex-wrap:wrap; }
@@ -128,32 +125,35 @@ label{ display:block; font-weight:600; margin-bottom:6px; color:var(--ink-soft);
 .btn.btn-blue{ background:var(--primary); color:#fff; }
 .btn.danger{ background:#fff; color:var(--danger); border-color:var(--danger); }
 
-/* Actions row */
-.actions{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
-
-/* ----- QUIZ Card (centered, no scroll; we scale instead) ----- */
+/* ----- QUIZ Card (locked scale, consistent bottom gap) ----- */
 #quiz.card{
   margin:0;
-  height:100%;          /* occupy the whole 3rd grid row */
-  overflow:hidden;      /* never scroll; JS scales the inner contents */
+  height:100%;                    /* occupy the whole 3rd grid row */
+  overflow:hidden;                /* never scroll; JS scales inner contents */
   display:flex;
-  align-items:center;    /* center vertically */
-  justify-content:center;/* center horizontally */
-  padding:18px;
+  align-items:flex-start;         /* anchor to top */
+  justify-content:center;         /* center horizontally */
+  padding:14px 18px 28px;         /* bottom padding ensures visible gap */
 }
 
-/* The element we scale */
+/* The element we scale (once) */
 .quiz-scale{
-  transform-origin: top center;  /* scale from top + keep centered */
+  transform-origin: top center;
   display:block;
-  width:100%;                    /* use full card width, then scale */
-  max-width:1200px;              /* readable line-length cap */
+  width:100%;
+  max-width:1200px;               /* readable line-length cap */
   will-change: transform;
 }
 
-/* Content typography inside the quiz (slightly smaller for breathing room) */
+/* Feedback area wrapper gets a reserved height (set by JS) */
+.fb-area{
+  min-height:var(--reserve-h, 300px);  /* space held BEFORE submit */
+  display:flex; flex-direction:column; gap:8px;
+}
+
+/* Content typography inside the quiz (slightly compact) */
 .question{
-  font-size:20px;                /* was 22px */
+  font-size:20px;                 /* comfortable size; never changes */
   font-weight:700;
   margin:0 0 10px;
 }
@@ -161,7 +161,7 @@ label{ display:block; font-weight:600; margin-bottom:6px; color:var(--ink-soft);
 .opt{
   display:flex; align-items:center; gap:10px;
   border:1px solid var(--border); background:#fff; border-radius:12px;
-  padding:8px 12px;               /* a touch tighter */
+  padding:8px 12px;
   box-shadow:var(--shadow-sm);
 }
 .opt input[type="radio"], .opt input[type="checkbox"]{ width:18px; height:18px; margin:0; accent-color:var(--primary); }
@@ -169,7 +169,7 @@ label{ display:block; font-weight:600; margin-bottom:6px; color:var(--ink-soft);
 .opt .k{ font-weight:700; color:var(--ink-soft); min-width:20px; }
 .opt .ans{ color:var(--ink); }
 
-.feedback{ margin:6px 0 0; font-weight:800; font-size:18px; } /* slightly smaller */
+.feedback{ margin:6px 0 0; font-weight:800; font-size:18px; } /* steady size */
 .feedback.ok{ color:var(--success); }
 .feedback.bad{ color:var(--danger); }
 
@@ -179,11 +179,10 @@ label{ display:block; font-weight:600; margin-bottom:6px; color:var(--ink-soft);
 .rationale{
   border:1px dashed var(--border); border-radius:12px;
   padding:10px 12px; background:#fafbff; color:var(--ink-soft);
-  font-size:15.5px; line-height:1.4;  /* compact block for large rationales */
-  /* no height limits; it scales with the rest */
+  font-size:15.5px; line-height:1.4;
 }
 
-/* Summary / Review items */
+/* Review items */
 .first-try{ display:flex; gap:10px; align-items:center; margin-bottom:10px; }
 .review-list{ display:grid; gap:10px; }
 .rev-item{
@@ -197,12 +196,6 @@ label{ display:block; font-weight:600; margin-bottom:6px; color:var(--ink-soft);
 
 /* Utility */
 .hidden{ display:none !important; }
-
-/* Help */
-.help{ margin-top:6px; color:var(--ink-soft); }
-.help h3{ margin:6px 0 8px; color:var(--ink); }
-.help ul{ margin:0; padding-inline-start:18px; display:grid; gap:6px; }
-.help li{ line-height:1.45; }
 
 /* Keyboard key styling */
 kbd,.kbd{
