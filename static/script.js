@@ -2,7 +2,8 @@
    Final Semester Study Guide - Quiz Frontend
    - No scrolling except the final overview
    - Scale is computed once and locked (so Q/A never move)
-   - Final overview sorts by most-missed and places "Start New Quiz" on top
+   - Final overview sorts by most-missed, shows a clever label,
+     and places "Start New Quiz" on top
 =============================================================== */
 
 const $ = (id) => document.getElementById(id);
@@ -642,10 +643,24 @@ function endRun() {
     firstTrySummary.classList.add('hidden');
   }
 
-  // Move "Start New Quiz" button to the TOP and rename it
+  // Move "Start New Quiz" button to the TOP and label the sort order
   if (restartBtn2) {
     restartBtn2.textContent = 'Start New Quiz';
     if (summary.firstChild !== restartBtn2) summary.insertBefore(restartBtn2, summary.firstChild);
+  }
+  // Clever label under the button (create once)
+  if (!document.getElementById('sortNote')) {
+    const note = document.createElement('div');
+    note.id = 'sortNote';
+    note.className = 'sorted-note';
+    note.innerHTML = `<span class="icon">🧭</span>
+      <span><strong>Most-Missed First</strong> — we bubble up your toughest questions; the farther you scroll, the fewer misses.</span>`;
+    // insert right after the restart button
+    if (restartBtn2 && restartBtn2.nextSibling) {
+      summary.insertBefore(note, restartBtn2.nextSibling);
+    } else {
+      summary.appendChild(note);
+    }
   }
 
   // Build the review: sort by most missed
@@ -666,8 +681,7 @@ function endRun() {
 
   // Render list (top = most missed)
   scored.forEach(({ q, attempts, wrongs }) => {
-    // Only show items that were seen at least once; you can toggle this
-    if (attempts === 0) return;
+    if (attempts === 0) return; // show only seen questions
 
     const row = document.createElement('div');
     const ans = run.answered.get(q.id);
