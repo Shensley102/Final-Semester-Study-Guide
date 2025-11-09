@@ -5,29 +5,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nursing School Quiz App</title>
 
-  <!-- Open Sans for ALL text -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Open Sans font for all text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="/static/style.css" />
 </head>
 <body>
   <div class="container">
-    <!-- Title (JS updates during quiz and on results) -->
+    <!-- Page heading (also updated via JS during the quiz) -->
     <h1 id="pageTitle">Nursing School Quiz App</h1>
 
-    <!-- Counters (shown only during an active quiz) -->
+    <!-- Counters (hidden until a quiz is running) -->
     <div id="countersBox" class="hidden counters" aria-live="polite">
-      <!-- Counts row -->
       <div class="count-row">
         <div id="runCounter">Question: 0</div>
         <div id="remainingCounter">Remaining to master: 0</div>
         <button id="resetAll" class="btn danger hidden" aria-label="Reset quiz progress">Reset</button>
       </div>
 
-      <!-- Full-width progress bar -->
-      <div class="pbar-wrap" aria-hidden="false">
+      <!-- Progress bar -->
+      <div class="pbar-wrap">
         <div id="progressBar" class="pbar" role="progressbar"
              aria-label="Mastery progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
           <div id="progressFill" class="pbar-fill" style="width:0%"></div>
@@ -36,7 +35,7 @@
       </div>
     </div>
 
-    <!-- Launcher -->
+    <!-- Launcher: pick a module and number of questions -->
     <section id="launcher" class="card">
       <div class="field">
         <label for="moduleSel">Module Choice</label>
@@ -62,17 +61,17 @@
       <div class="help">
         <h3>How it works &amp; hotkeys</h3>
         <ul>
-          <li><strong>Start:</strong> Pick a <em>Module</em>, choose a <em>Length</em>, then click <strong>Start Quiz</strong>.</li>
-          <li><strong>Answering:</strong> Click an option or press <kbd>A</kbd>–<kbd>Z</kbd> to toggle an option.</li>
-          <li><strong>Submit / Next:</strong> Press <kbd>Enter</kbd> to submit. Then the green button turns blue and becomes <strong>Next</strong>.</li>
-          <li><strong>After you submit:</strong> You’ll see Correct/Incorrect, the Correct Answer, and the Rationale.</li>
-          <li><strong>Results:</strong> End of run shows a summary and a review list with answers and rationales.</li>
-          <li><strong>Reset:</strong> A red <strong>Reset</strong> button shows during an active quiz. It clears progress.</li>
+          <li><strong>Start:</strong> Select a module and length, then click <strong>Start Quiz</strong>.</li>
+          <li><strong>Answer:</strong> Click an option or press a letter key to toggle an answer.</li>
+          <li><strong>Submit / Next:</strong> Press <kbd>Enter</kbd> to submit; after grading, click <strong>Next</strong> or press <kbd>Enter</kbd> again.</li>
+          <li><strong>After answering:</strong> See whether you’re correct, the correct answer, and rationale.</li>
+          <li><strong>Results:</strong> End-of-run summary shows your mastery and a review list.</li>
+          <li><strong>Reset:</strong> Use the red <strong>Reset</strong> button during a run to clear progress.</li>
         </ul>
       </div>
     </section>
 
-    <!-- Quiz -->
+    <!-- Quiz section (hidden until a quiz starts) -->
     <section id="quiz" class="card hidden" aria-live="polite">
       <div id="questionText" class="question"></div>
       <form id="optionsForm" class="options"></form>
@@ -87,7 +86,7 @@
       <div id="rationale" class="rationale hidden" aria-live="polite"></div>
     </section>
 
-    <!-- Summary -->
+    <!-- Summary section (hidden until the quiz ends) -->
     <section id="summary" class="card hidden" aria-live="polite">
       <div id="firstTrySummary" class="first-try">
         <strong>First-try mastery:</strong>
