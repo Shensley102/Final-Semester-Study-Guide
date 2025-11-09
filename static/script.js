@@ -1,10 +1,10 @@
 /* ===============================================================
-   Nursing School Quiz App - Quiz Frontend
+   Final Semester Study Guide - Quiz Frontend
 
    This script powers the interactive functionality of the quiz.
    It loads question banks from the server, shuffles questions and
    options deterministically, tracks progress, and updates the UI.
-   All references to the app name reflect “Nursing School Quiz App.”
+   All references to the app name reflect “Final Semester Study Guide.”
 =============================================================== */
 
 const $ = (id) => document.getElementById(id);
@@ -21,7 +21,7 @@ const progressLabel = $('progressLabel');
 
 // Page title handling
 const pageTitle     = $('pageTitle');
-const defaultTitle  = pageTitle?.textContent || 'Nursing School Quiz App';
+const defaultTitle  = pageTitle?.textContent || 'Final Semester Study Guide';
 const setHeaderTitle = (t) => { if (pageTitle) pageTitle.textContent = t; };
 
 // Launcher controls
@@ -236,10 +236,10 @@ function showResumeIfAny() {
     run = s.run;
     setHeaderTitle(run.displayName || run.bank || defaultTitle);
     document.title = run.displayName
-      ? `Nursing School Quiz App — ${run.displayName}`
+      ? `Final Semester Study Guide — ${run.displayName}`
       : run.bank
-        ? `Nursing School Quiz App — ${run.bank}`
-        : 'Nursing School Quiz App';
+        ? `Final Semester Study Guide — ${run.bank}`
+        : 'Final Semester Study Guide';
 
     launcher.classList.add('hidden');
     summary.classList.add('hidden');
@@ -497,7 +497,7 @@ async function startQuiz() {
   const qty = lenBtn.dataset.len === 'full' ? 'full' : parseInt(lenBtn.dataset.len, 10);
 
   setHeaderTitle(displayName);
-  document.title = `Nursing School Quiz App — ${displayName}`;
+  document.title = `Final Semester Study Guide — ${displayName}`;
 
   startBtn.disabled = true;
 
@@ -506,7 +506,7 @@ async function startQuiz() {
     alert(`Could not load ${bank}.json`);
     startBtn.disabled = false;
     setHeaderTitle(defaultTitle);
-    document.title = 'Nursing School Quiz App';
+    document.title = 'Final Semester Study Guide';
     return;
   }
   const raw = await res.json();
@@ -552,7 +552,7 @@ function endRun() {
   countersBox.classList.add('hidden');
 
   setHeaderTitle(run.displayName || run.bank || defaultTitle);
-  document.title = run.displayName || run.bank || 'Nursing School Quiz App';
+  document.title = run.displayName || run.bank || 'Final Semester Study Guide';
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
