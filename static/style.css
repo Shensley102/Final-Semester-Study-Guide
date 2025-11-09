@@ -2,7 +2,7 @@
    Final Semester Study Guide — One-Window, No-Scroll Layout
    - Open Sans applied globally
    - No scrolling anywhere on the page
-   - The quiz card scales itself (via JS) to fit the viewport
+   - The quiz card auto-scales to fit the viewport with padding
 ============================================================= */
 
 /* Respect reduced motion */
@@ -46,11 +46,10 @@ body{
 /* Make all form controls inherit font */
 button,input,select,textarea{ font:inherit }
 
-/* Main container uses fixed viewport height
-   (was 980px max; widened so the quiz box isn’t cramped) */
+/* Main container uses fixed viewport height (widened) */
 .container{
   height:100vh;
-  max-width:1280px;               /* <— widened from 980px */
+  max-width:1280px;               /* wider so the quiz isn’t cramped */
   margin:0 auto;
   padding:10px 12px;
   display:grid;
@@ -58,7 +57,7 @@ button,input,select,textarea{ font:inherit }
   gap:10px;
 }
 
-/* --- Header (leave sizes unchanged as requested) --- */
+/* --- Header (leave sizes unchanged) --- */
 h1{
   margin:0;
   font-weight:800;
@@ -75,7 +74,7 @@ h1{
   padding:14px;
 }
 
-/* Launcher & Summary can show content but we still forbid page scrolling */
+/* Launcher & Summary */
 #launcher.card, #summary.card { overflow:hidden; }
 
 /* Counters */
@@ -132,28 +131,29 @@ label{ display:block; font-weight:600; margin-bottom:6px; color:var(--ink-soft);
 /* Actions row */
 .actions{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
 
-/* ----- QUIZ Card (no internal scrolling; we scale instead) ----- */
+/* ----- QUIZ Card (centered, no scroll; we scale instead) ----- */
 #quiz.card{
   margin:0;
   height:100%;          /* occupy the whole 3rd grid row */
   overflow:hidden;      /* never scroll; JS scales the inner contents */
   display:flex;
-  align-items:flex-start;
-  justify-content:flex-start;
-  padding:14px;
+  align-items:center;    /* center vertically */
+  justify-content:center;/* center horizontally */
+  padding:18px;
 }
 
 /* The element we scale */
 .quiz-scale{
-  transform-origin: top left;
-  display:block;        /* <— was inline-block; ensures full available width */
-  width:100%;           /* <— makes the quiz content use the whole card width */
+  transform-origin: top center;  /* scale from top + keep centered */
+  display:block;
+  width:100%;                    /* use full card width, then scale */
+  max-width:1200px;              /* readable line-length cap */
   will-change: transform;
 }
 
-/* Content typography inside the quiz (will be scaled) */
+/* Content typography inside the quiz (slightly smaller for breathing room) */
 .question{
-  font-size:22px;
+  font-size:20px;                /* was 22px */
   font-weight:700;
   margin:0 0 10px;
 }
@@ -161,14 +161,15 @@ label{ display:block; font-weight:600; margin-bottom:6px; color:var(--ink-soft);
 .opt{
   display:flex; align-items:center; gap:10px;
   border:1px solid var(--border); background:#fff; border-radius:12px;
-  padding:10px 12px; box-shadow:var(--shadow-sm);
+  padding:8px 12px;               /* a touch tighter */
+  box-shadow:var(--shadow-sm);
 }
 .opt input[type="radio"], .opt input[type="checkbox"]{ width:18px; height:18px; margin:0; accent-color:var(--primary); }
-.opt label{ cursor:pointer; display:flex; gap:8px; align-items:center; width:100%; }
+.opt label{ cursor:pointer; display:flex; gap:8px; align-items:center; width:100%; font-size:16px; }
 .opt .k{ font-weight:700; color:var(--ink-soft); min-width:20px; }
 .opt .ans{ color:var(--ink); }
 
-.feedback{ margin:6px 0 0; font-weight:800; font-size:20px; }
+.feedback{ margin:6px 0 0; font-weight:800; font-size:18px; } /* slightly smaller */
 .feedback.ok{ color:var(--success); }
 .feedback.bad{ color:var(--danger); }
 
@@ -178,7 +179,8 @@ label{ display:block; font-weight:600; margin-bottom:6px; color:var(--ink-soft);
 .rationale{
   border:1px dashed var(--border); border-radius:12px;
   padding:10px 12px; background:#fafbff; color:var(--ink-soft);
-  /* no height limits; it will be scaled together with everything else */
+  font-size:15.5px; line-height:1.4;  /* compact block for large rationales */
+  /* no height limits; it scales with the rest */
 }
 
 /* Summary / Review items */
