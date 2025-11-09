@@ -59,9 +59,7 @@ h1{
   gap: 16px;
   margin: 10px 0 14px;
 }
-#resetAll{
-  margin-left:auto;
-}
+#resetAll{ margin-left:auto; }
 
 /* ===== Form controls ===== */
 .field{ margin: 14px 0 18px; }
@@ -100,15 +98,8 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
 }
 .btn:hover{ box-shadow: var(--shadow-md); }
 
-.btn.primary{
-  background: var(--success);
-  color:#fff;
-}
-.btn.btn-blue{
-  background: var(--primary);
-  color:#fff;
-}
-
+.btn.primary{ background: var(--success); color:#fff; }
+.btn.btn-blue{ background: var(--primary); color:#fff; }
 .btn.danger{
   background:#fff; color: var(--danger);
   border-color: var(--danger);
@@ -194,7 +185,7 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
 /* ===== Utilities ===== */
 .hidden{ display:none !important; }
 
-/* ===== Topbar / Help section (from your layout) ===== */
+/* ===== Help section ===== */
 .help{ margin-top: 8px; color: var(--ink-soft); }
 .help h3{ margin:6px 0 10px; color:var(--ink); }
 .help ul{ margin:0; padding-inline-start: 18px; display:grid; gap:6px; }
@@ -213,18 +204,27 @@ button:focus-visible, .select:focus-visible, input:focus-visible{
   outline:3px solid var(--ring); outline-offset:2px;
 }
 
-/* === Quiz selector: 2x bigger + rounded like buttons === */
+/* === Module label inline with picker (Module Choice on the left) === */
+label[for="moduleSel"]{
+  display:inline-block;
+  margin: 0 12px 0 0;
+  vertical-align: middle;
+}
+
+/* === Quiz selector (module picker): 1.5x size + pill radius === */
+/* (Reduced 25% from the previous 2x size) */
 #moduleSel{
   appearance: none;
-  font-size: calc(1em * 2);
+  font-size: calc(1em * 1.5);     /* 1.5x text (was 2x) */
   line-height: 1.2;
-  padding: 0.75rem 1rem;
-  min-height: 3rem;
-  border-radius: 9999px; /* pill shape */
+  padding: 0.5625rem 0.75rem;     /* 75% of 0.75/1.0 rem */
+  min-height: 2.25rem;            /* 75% of 3rem */
+  border-radius: 9999px;          /* pill shape */
   border: 1px solid var(--ring, #cdd9e5);
   background: #fff;
   color: inherit;
   max-width: 100%;
+  vertical-align: middle;         /* align with label */
 }
 
 #moduleSel:focus{
