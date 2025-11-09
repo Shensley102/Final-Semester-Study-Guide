@@ -230,14 +230,14 @@ button:focus-visible, .select:focus-visible, input:focus-visible{
   outline:3px solid var(--ring); outline-offset:2px;
 }
 
-/* === Module label inline with picker (Module Choice on the left) === */
+/* Module label inline with picker */
 label[for="moduleSel"]{
   display:inline-block;
   margin: 0 12px 0 0;
   vertical-align: middle;
 }
 
-/* === Module picker: size unchanged (1.5x), restyled to clean dropdown === */
+/* Module picker styling */
 #moduleSel{
   appearance: none;
   font-size: calc(1em * 1.5);
