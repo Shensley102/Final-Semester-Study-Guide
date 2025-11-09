@@ -1,8 +1,8 @@
 /* ===============================================================
    Final Semester Study Guide - Quiz Frontend
-   - No scrolling
+   - No scrolling except the final overview
    - Scale is computed once and locked (so Q/A never move)
-   - Header sizes unchanged; top spacing reduced via CSS
+   - Final overview sorts by most-missed and places "Start New Quiz" on top
 =============================================================== */
 
 const $ = (id) => document.getElementById(id);
@@ -202,6 +202,7 @@ let run = {
   uniqueSeen: new Set(),
   thresholdWrong: 0,
   wrongSinceLast: [],
+  stats: new Map(),               // <— { id: { attempts, wrongs } }
 };
 
 /* ----------------------------------------------------------------
@@ -227,6 +228,7 @@ function serializeRun() {
     uniqueSeen: Array.from(run.uniqueSeen),
     thresholdWrong: run.thresholdWrong,
     wrongSinceLast: run.wrongSinceLast.map(q => q.id),
+    stats: Array.from(run.stats.entries()),
     title: pageTitle?.textContent || defaultTitle,
   });
 }
@@ -265,6 +267,7 @@ function loadRunState() {
       uniqueSeen: new Set(Array.isArray(data.uniqueSeen) ? data.uniqueSeen : []),
       thresholdWrong: Math.max(1, parseInt(data.thresholdWrong || 1, 10)),
       wrongSinceLast: (data.wrongSinceLast || []).map(idToQ).filter(Boolean),
+      stats: new Map(Array.isArray(data.stats) ? data.stats : []),
     };
     return { run: restored, title: data.title || defaultTitle };
   } catch {
@@ -277,6 +280,19 @@ function clearSavedState() {
   } catch {}
 }
 
+/* ----------------------------------------------------------------
+   Stats helpers
+---------------------------------------------------------------- */
+function bumpStats(qId, isCorrect) {
+  const s = run.stats.get(qId) || { attempts: 0, wrongs: 0 };
+  s.attempts += 1;
+  if (!isCorrect) s.wrongs += 1;
+  run.stats.set(qId, s);
+}
+
+/* ----------------------------------------------------------------
+   Resume control
+---------------------------------------------------------------- */
 function showResumeIfAny() {
   const s = loadRunState();
   if (!s || !s.run?.order?.length) {
@@ -578,6 +594,7 @@ async function startQuiz() {
     uniqueSeen: new Set(),
     thresholdWrong: 0,
     wrongSinceLast: [],
+    stats: new Map(),
   };
 
   const total = run.masterPool.length;
@@ -603,6 +620,7 @@ async function startQuiz() {
 }
 
 function endRun() {
+  // Show summary and allow scrolling (CSS handles overflow:auto on summary)
   quiz.classList.add('hidden');
   summary.classList.remove('hidden');
   countersBox.classList.add('hidden');
@@ -610,6 +628,7 @@ function endRun() {
   setHeaderTitle(run.displayName || run.bank || defaultTitle);
   document.title = run.displayName || run.bank || 'Final Semester Study Guide';
 
+  // First-try metrics
   const uniq = [...run.answered.values()];
   const ftCorrect = uniq.filter(x => x.firstTryCorrect).length;
   const totalUnique = uniq.length;
@@ -623,17 +642,59 @@ function endRun() {
     firstTrySummary.classList.add('hidden');
   }
 
+  // Move "Start New Quiz" button to the TOP and rename it
+  if (restartBtn2) {
+    restartBtn2.textContent = 'Start New Quiz';
+    if (summary.firstChild !== restartBtn2) summary.insertBefore(restartBtn2, summary.firstChild);
+  }
+
+  // Build the review: sort by most missed
   reviewList.innerHTML = '';
-  run.order.forEach(q => {
+
+  // Use the unique question set from masterPool
+  const qById = new Map(run.masterPool.map(q => [q.id, q]));
+  const scored = [];
+  for (const [id, q] of qById.entries()) {
+    const s = run.stats.get(id) || { attempts: 0, wrongs: 0 };
+    scored.push({ q, attempts: s.attempts, wrongs: s.wrongs });
+  }
+
+  // Sort primarily by wrongs (desc), then attempts (desc), then stem (asc)
+  scored.sort((a, b) =>
+    b.wrongs - a.wrongs || b.attempts - a.attempts || String(a.q.stem).localeCompare(String(b.q.stem))
+  );
+
+  // Render list (top = most missed)
+  scored.forEach(({ q, attempts, wrongs }) => {
+    // Only show items that were seen at least once; you can toggle this
+    if (attempts === 0) return;
+
     const row = document.createElement('div');
     const ans = run.answered.get(q.id);
     row.className = 'rev-item ' + (ans?.correct ? 'ok' : 'bad');
 
-    const qEl = document.createElement('div'); qEl.className = 'rev-q'; qEl.textContent = q.stem;
-    const caEl = document.createElement('div'); caEl.className = 'rev-ans'; caEl.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
-    const rEl = document.createElement('div'); rEl.className = 'rev-rationale'; rEl.innerHTML = `<strong>Rationale:</strong> ${escapeHTML(q.rationale || '')}`;
+    const aux = document.createElement('div');
+    aux.className = 'rev-aux';
+    aux.textContent = wrongs > 0
+      ? `Missed ${wrongs} time${wrongs === 1 ? '' : 's'} • ${attempts} attempt${attempts === 1 ? '' : 's'}`
+      : `0 misses • ${attempts} attempt${attempts === 1 ? '' : 's'}`;
 
-    row.appendChild(qEl); row.appendChild(caEl); row.appendChild(rEl);
+    const qEl = document.createElement('div');
+    qEl.className = 'rev-q';
+    qEl.textContent = q.stem;
+
+    const caEl = document.createElement('div');
+    caEl.className = 'rev-ans';
+    caEl.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
+
+    const rEl = document.createElement('div');
+    rEl.className = 'rev-rationale';
+    rEl.innerHTML = `<strong>Rationale:</strong> ${escapeHTML(q.rationale || '')}`;
+
+    row.appendChild(qEl);
+    row.appendChild(aux);
+    row.appendChild(caEl);
+    row.appendChild(rEl);
     reviewList.appendChild(row);
   });
 
@@ -664,7 +725,7 @@ submitBtn.addEventListener('click', () => {
     run.uniqueSeen.add(q.id);
     renderQuestion(q);
     updateCounters();
-    // Do NOT recompute scale here; we keep it locked.
+    // Scale stays locked.
     return;
   }
 
@@ -674,6 +735,9 @@ submitBtn.addEventListener('click', () => {
   const userLetters = getUserLetters();
   const correctLetters = (q.correctLetters || []).slice().sort();
   const isCorrect = JSON.stringify(userLetters) === JSON.stringify(correctLetters);
+
+  // Track attempts/misses
+  bumpStats(q.id, isCorrect);
 
   recordAnswer(q, userLetters, isCorrect);
 
