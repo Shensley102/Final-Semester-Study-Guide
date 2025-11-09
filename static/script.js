@@ -1,13 +1,11 @@
 /* -----------------------------------------------------------
-   Final-Semester-Study-Guide - Quiz Frontend
+   Nursing School Quiz App - Quiz Frontend (Open Sans everywhere)
    - Pretty module titles:
        Pharm_Quiz_1..4                   -> Pharm Quiz 1..4
        Learning_Questions_Module_1_2     -> Learning Questions Module 1 and 2
        Learning_Questions_Module_3_4     -> Learning Questions Module 3 and 4
-       ...also tolerates variants/typos (spaces, underscores, "Moduele", etc.)
    - Single action button: Submit (green) ➜ Next (blue)
    - Full-width hashed progress bar; reduced jitter (snap to quiz top)
-   - Open Sans question font (normal weight, slightly smaller)
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -24,7 +22,7 @@ const progressLabel = $('progressLabel');
 
 // Page title handling
 const pageTitle    = $('pageTitle');
-const defaultTitle = pageTitle?.textContent || 'Final Semester Study Guide';
+const defaultTitle = pageTitle?.textContent || 'Nursing School Quiz App';
 const setHeaderTitle = (t) => { if (pageTitle) pageTitle.textContent = t; };
 
 // Launcher
@@ -54,53 +52,40 @@ const reviewList       = $('reviewList');
 const restartBtn2      = $('restartBtnSummary');
 const resetAll         = $('resetAll');
 
-/* ---------- Pretty names for modules (UPDATED & ROBUST) ---------- */
+/* ---------- Pretty names for modules (robust) ---------- */
 function prettifyModuleName(name) {
   const raw = String(name || '');
 
-  // Normalize common typos/variants before matching
+  // Normalize typos/variants
   const normalized = raw
-    .replace(/moduele/gi, 'module')     // typo tolerance
-    .replace(/question(?!s)/gi, 'Questions') // pluralize if needed
+    .replace(/moduele/gi, 'module')
+    .replace(/question(?!s)/gi, 'Questions')
     .replace(/__/g, '_')
     .trim();
 
-  // Direct map for exact known IDs
   const map = {
-    // Pharm Quiz series
     'Pharm_Quiz_1': 'Pharm Quiz 1',
     'Pharm_Quiz_2': 'Pharm Quiz 2',
     'Pharm_Quiz_3': 'Pharm Quiz 3',
     'Pharm_Quiz_4': 'Pharm Quiz 4',
-
-    // Learning Questions canonical names (and trailing-underscore variants)
-    'Learning_Questions_Module_1_2': 'Learning Questions Module 1 and 2',
+    'Learning_Questions_Module_1_2':  'Learning Questions Module 1 and 2',
     'Learning_Questions_Module_1_2_': 'Learning Questions Module 1 and 2',
-    'Learning_Questions_Module_3_4': 'Learning Questions Module 3 and 4',
+    'Learning_Questions_Module_3_4':  'Learning Questions Module 3 and 4',
     'Learning_Questions_Module_3_4_': 'Learning Questions Module 3 and 4',
-
-    // Common misspellings seen in filenames
-    'Learning_Question_Moduele_1_2': 'Learning Questions Module 1 and 2',
-    'Learning_Question_Moduele_3_4': 'Learning Questions Module 3 and 4',
-    'Learning_Question_Module_1_2':  'Learning Questions Module 1 and 2',
-    'Learning_Question_Module_3_4':  'Learning Questions Module 3 and 4',
+    'Learning_Question_Moduele_1_2':  'Learning Questions Module 1 and 2',
+    'Learning_Question_Moduele_3_4':  'Learning Questions Module 3 and 4',
+    'Learning_Question_Module_1_2':   'Learning Questions Module 1 and 2',
+    'Learning_Question_Module_3_4':   'Learning Questions Module 3 and 4',
   };
   if (map[normalized]) return map[normalized];
 
-  // Pharm Quiz generic pattern (underscores or spaces)
-  {
-    const m = /^(?:Pharm[_\s]+Quiz[_\s]+)(\d+)$/i.exec(normalized.replace(/_/g, ' '));
-    if (m) return `Pharm Quiz ${m[1]}`;
-  }
+  const m1 = /^(?:Pharm[_\s]+Quiz[_\s]+)(\d+)$/i.exec(normalized.replace(/_/g, ' '));
+  if (m1) return `Pharm Quiz ${m1[1]}`;
 
-  // Learning Questions generic pattern, tolerant of underscores/spaces & minor typos
-  {
-    const cleaned = normalized.replace(/_/g, ' ');
-    const m = /^Learning\s+Questions?\s+Module\s+(\d+)\s+(\d+)$/i.exec(cleaned);
-    if (m) return `Learning Questions Module ${m[1]} and ${m[2]}`;
-  }
+  const cleaned = normalized.replace(/_/g, ' ');
+  const m2 = /^Learning\s+Questions?\s+Module\s+(\d+)\s+(\d+)$/i.exec(cleaned);
+  if (m2) return `Learning Questions Module ${m2[1]} and ${m2[2]}`;
 
-  // Fallback: replace underscores with spaces
   return raw.replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
@@ -134,7 +119,6 @@ function scrollToBottomSmooth() {
     });
   });
 }
-/* Snap to quiz card top before rendering next Q to avoid jitter */
 function scrollToQuizTop() {
   if (!quiz) return;
   quiz.scrollIntoView({ behavior: 'auto', block: 'start' });
@@ -148,7 +132,7 @@ function isTextEditingTarget(el){
 let allQuestions = [];
 let run = {
   bank: '',
-  displayName: '',      // human-facing label
+  displayName: '',
   order: [],
   masterPool: [],
   i: 0,
@@ -165,7 +149,7 @@ function serializeRun() {
   if (!run || !run.order?.length) return null;
   return JSON.stringify({
     bank: run.bank,
-    displayName: run.displayName,   // persist pretty name
+    displayName: run.displayName,
     order: run.order.map(q => ({ id:q.id, stem:q.stem, options:q.options, correctLetters:q.correctLetters, rationale:q.rationale, type:q.type })),
     masterPool: run.masterPool.map(q => q.id),
     i: run.i,
@@ -217,8 +201,8 @@ function showResumeIfAny(){
   resumeBtn.onclick = () => {
     run = s.run;
     setHeaderTitle(run.displayName || run.bank || defaultTitle);
-    document.title = run.displayName ? `Final Semester Study Guide — ${run.displayName}` :
-                   (run.bank ? `Final Semester Study Guide — ${run.bank}` : 'Final Semester Study Guide');
+    document.title = run.displayName ? `Nursing School Quiz App — ${run.displayName}` :
+                   (run.bank ? `Nursing School Quiz App — ${run.bank}` : 'Nursing School Quiz App');
 
     launcher.classList.add('hidden');
     summary.classList.add('hidden');
@@ -249,7 +233,6 @@ async function fetchModules(){
             "Learning_Questions_Module_1_2","Learning_Questions_Module_3_4_",
             "Pharmacology_1","Pharmacology_2","Pharmacology_3",
             "Pharm_Quiz_1","Pharm_Quiz_2","Pharm_Quiz_3","Pharm_Quiz_4",
-            // tolerate typo’d names, too
             "Learning_Question_Moduele_1_2","Learning_Question_Moduele_3_4"];
   }
 }
@@ -279,7 +262,7 @@ function normalizeQuestions(raw){
   for (const q of questions){
     const id   = String(q.id ?? (crypto.randomUUID?.() || Math.random().toString(36).slice(2)));
     const stem = String(q.stem ?? '');
-    const type = String(q.type ?? 'single_select');
+    the_type   = String(q.type ?? 'single_select');
     const opts = Array.isArray(q.options) ? q.options.map(String) : [];
     const correctLetters = Array.isArray(q.correct) ? q.correct.map(String) : [];
     const rationale = String(q.rationale ?? '');
@@ -288,7 +271,7 @@ function normalizeQuestions(raw){
     const options = {};
     letters.forEach((L, i) => { options[L] = opts[i] ?? ''; });
 
-    norm.push({ id, stem, options, correctLetters, rationale, type });
+    norm.push({ id, stem, options, correctLetters, rationale, type: the_type });
   }
   return norm;
 }
@@ -437,12 +420,12 @@ async function startQuiz(){
     return;
   }
 
-  const bank = moduleSel.value;                    // raw filename
-  const displayName = prettifyModuleName(bank);    // pretty label to show
+  const bank = moduleSel.value;
+  const displayName = prettifyModuleName(bank);
   const qty  = (lenBtn.dataset.len === 'full' ? 'full' : parseInt(lenBtn.dataset.len, 10));
 
   setHeaderTitle(displayName);
-  document.title = `Final Semester Study Guide — ${displayName}`;
+  document.title = `Nursing School Quiz App — ${displayName}`;
 
   startBtn.disabled = true;
 
@@ -451,7 +434,7 @@ async function startQuiz(){
     alert(`Could not load ${bank}.json`);
     startBtn.disabled = false;
     setHeaderTitle(defaultTitle);
-    document.title = 'Final Semester Study Guide';
+    document.title = 'Nursing School Quiz App';
     return;
   }
   const raw = await res.json();
@@ -462,7 +445,7 @@ async function startQuiz(){
 
   run = {
     bank,
-    displayName,                 // store pretty name
+    displayName,
     order: [...shuffledQuestions],
     masterPool: [...shuffledQuestions],
     i: 0,
@@ -497,7 +480,7 @@ function endRun(){
   countersBox.classList.add('hidden');
 
   setHeaderTitle(run.displayName || run.bank || defaultTitle);
-  document.title = run.displayName || run.bank || 'Final Semester Study Guide';
+  document.title = run.displayName || run.bank || 'Nursing School Quiz App';
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
