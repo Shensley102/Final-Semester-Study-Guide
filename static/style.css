@@ -9,7 +9,7 @@ html { scroll-behavior: smooth; }
   --ink-soft:#4a5568;
   --primary:#2f61f3;      /* blue for Next state */
   --danger:#d33a2c;       /* red for errors / Reset outline */
-  --success:#22c55e;      /* green for success / progress bar fill */
+  --success:#22c55e;      /* green for success / progress bar */
   --ring:#cdd9ff;
   --border:#e7eaf3;
 
@@ -72,7 +72,7 @@ h1{
 }
 #resetAll{ margin-left:auto; }
 
-/* ===== Progress bar (full width with hash marks) ===== */
+/* ===== Progress bar (full width; visible hash marks on track & fill) ===== */
 .pbar-wrap{
   display:flex;
   align-items:center;
@@ -87,34 +87,44 @@ h1{
   overflow:hidden;
   border:1px solid var(--border);
   box-shadow: var(--shadow-sm);
-
-  /* Track base + light hash marks visible even at 0% */
-  background-image:
-    linear-gradient(#e9edf8,#e9edf8),
-    repeating-linear-gradient(
-      to right,
-      rgba(0,0,0,.08) 0 var(--tick-line),
-      transparent var(--tick-line) var(--tick)
-    );
-  background-repeat: no-repeat, repeat;
-  background-position: 0 0, 0 0;
+  background:#e9edf8; /* base track color */
 }
+/* Track hash marks (visible at 0%) */
+.pbar::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(0,0,0,.10) 0 var(--tick-line),
+    transparent var(--tick-line) var(--tick)
+  );
+}
+
 .pbar-fill{
   position: relative;
   height:100%;
   width:0%;
-  /* Fill base + same hash pattern, now in green */
-  background-image:
-    linear-gradient(var(--success), var(--success)),
-    repeating-linear-gradient(
-      to right,
-      rgba(255,255,255,.25) 0 var(--tick-line),
-      rgba(255,255,255,0) var(--tick-line) var(--tick)
-    );
-  background-repeat: no-repeat, repeat;
-  background-position: 0 0, 0 0;
+  background: var(--success);          /* green fill */
   transition: width .25s ease;
+  border-radius: inherit;
 }
+/* Fill hash marks (overlay on green) */
+.pbar-fill::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  pointer-events:none;
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(255,255,255,.35) 0 var(--tick-line),
+    rgba(255,255,255,0) var(--tick-line) var(--tick)
+  );
+}
+
 .pbar-label{
   font-size: 1rem;
   color:var(--ink-soft);
