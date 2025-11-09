@@ -5,6 +5,7 @@
    - Keyboard: A–Z toggle; Enter submits / next
    - Feedback bigger & colored; persistence + resume
    - Results page: title shows module name; auto scroll to top
+   - NEW: snap to quiz top on Next to avoid “jitter”
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -81,6 +82,12 @@ function scrollToBottomSmooth() {
     });
   });
 }
+/* NEW: Snap the viewport to the quiz card’s top before we render the next Q */
+function scrollToQuizTop() {
+  if (!quiz) return;
+  quiz.scrollIntoView({ behavior: 'auto', block: 'start' });
+}
+
 function isTextEditingTarget(el){
   return el &&
     (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT' || el.isContentEditable);
@@ -481,6 +488,9 @@ form.addEventListener('change', onSelectionChanged);
 // Single action button (Submit or Next)
 submitBtn.addEventListener('click', () => {
   if (submitBtn.dataset.mode === 'next') {
+    /* NEW: move viewport before we change content to prevent visible jump */
+    scrollToQuizTop();
+
     const next = nextIndex();
     const q = next.q;
     if (!q) return endRun();
