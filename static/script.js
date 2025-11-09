@@ -1,11 +1,9 @@
 /* -----------------------------------------------------------
    Final-Semester-Study-Guide - Quiz Frontend
+   - Pretty module titles: Pharm_Quiz_1..4 -> Pharm Quiz 1..4
    - Single action button: Submit (green) ➜ Next (blue)
-   - Counters: counts row; full-width progress bar underneath
-   - Keyboard: A–Z toggle; Enter submits / next
-   - Feedback bigger & colored; persistence + resume
-   - Results page: title shows module name; auto scroll to top
-   - NEW: snap to quiz top on Next to avoid “jitter”
+   - Full-width hashed progress bar; reduced jitter (snap to quiz top)
+   - Open Sans question font (normal weight, slightly smaller)
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -52,7 +50,20 @@ const reviewList       = $('reviewList');
 const restartBtn2      = $('restartBtnSummary');
 const resetAll         = $('resetAll');
 
-// ---------- Utilities ----------
+/* ---------- Pretty names for modules ---------- */
+function prettifyModuleName(name) {
+  const map = {
+    'Pharm_Quiz_1': 'Pharm Quiz 1',
+    'Pharm_Quiz_2': 'Pharm Quiz 2',
+    'Pharm_Quiz_3': 'Pharm Quiz 3',
+    'Pharm_Quiz_4': 'Pharm Quiz 4',
+  };
+  if (map[name]) return map[name];
+  // Fallback: replace underscores with spaces
+  return String(name || '').replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
+}
+
+/* ---------- Utilities ---------- */
 function escapeHTML(s=''){
   return String(s)
     .replaceAll('&','&amp;')
@@ -82,38 +93,37 @@ function scrollToBottomSmooth() {
     });
   });
 }
-/* NEW: Snap the viewport to the quiz card’s top before we render the next Q */
 function scrollToQuizTop() {
   if (!quiz) return;
   quiz.scrollIntoView({ behavior: 'auto', block: 'start' });
 }
-
 function isTextEditingTarget(el){
   return el &&
     (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT' || el.isContentEditable);
 }
 
-// ---------- State ----------
+/* ---------- State ---------- */
 let allQuestions = [];
 let run = {
   bank: '',
+  displayName: '',      // NEW: human-facing label
   order: [],
   masterPool: [],
   i: 0,
   answered: new Map(),
   uniqueSeen: new Set(),
-
   thresholdWrong: 0,
   wrongSinceLast: [],
 };
 
-// ---------- Persistence ----------
+/* ---------- Persistence ---------- */
 const STORAGE_KEY = 'quizRunState_v1';
 
 function serializeRun() {
   if (!run || !run.order?.length) return null;
   return JSON.stringify({
     bank: run.bank,
+    displayName: run.displayName,   // persist pretty name
     order: run.order.map(q => ({ id:q.id, stem:q.stem, options:q.options, correctLetters:q.correctLetters, rationale:q.rationale, type:q.type })),
     masterPool: run.masterPool.map(q => q.id),
     i: run.i,
@@ -139,11 +149,11 @@ function loadRunState() {
       qById.set(qq.id, qq);
       return qq;
     });
-
     const idToQ = (id) => qById.get(id) || null;
 
     const restored = {
       bank: String(data.bank||''),
+      displayName: String(data.displayName || prettifyModuleName(data.bank || '')),
       order: restoredOrder,
       masterPool: (data.masterPool||[]).map(idToQ).filter(Boolean),
       i: Math.max(0, parseInt(data.i||0,10)),
@@ -166,8 +176,9 @@ function showResumeIfAny(){
   resumeBtn.classList.remove('hidden');
   resumeBtn.onclick = () => {
     run = s.run;
-    setHeaderTitle(run.bank || defaultTitle);
-    document.title = run.bank ? `Final Semester Study Guide — ${run.bank}` : 'Final Semester Study Guide';
+    setHeaderTitle(run.displayName || run.bank || defaultTitle);
+    document.title = run.displayName ? `Final Semester Study Guide — ${run.displayName}` :
+                   (run.bank ? `Final Semester Study Guide — ${run.bank}` : 'Final Semester Study Guide');
 
     launcher.classList.add('hidden');
     summary.classList.add('hidden');
@@ -184,7 +195,7 @@ function showResumeIfAny(){
   };
 }
 
-// ---------- Module loading ----------
+/* ---------- Module loading ---------- */
 async function fetchModules(){
   try {
     const res = await fetch(`/modules?_=${Date.now()}`, { cache: 'no-store' });
@@ -195,13 +206,15 @@ async function fetchModules(){
   } catch {
     return ["Module_1","Module_2","Module_3","Module_4","Pharm_Quiz_HESI",
             "Learning_Questions_Module_1_2","Learning_Questions_Module_3_4_",
-            "Pharmacology_1","Pharmacology_2","Pharmacology_3"];
+            "Pharmacology_1","Pharmacology_2","Pharmacology_3",
+            "Pharm_Quiz_1","Pharm_Quiz_2","Pharm_Quiz_3","Pharm_Quiz_4"];
   }
 }
 function ensureOption(sel, value, label){
   if (![...sel.options].some(o => o.value === value)){
     const opt = document.createElement('option');
-    opt.value = value; opt.textContent = label ?? value;
+    opt.value = value;
+    opt.textContent = label ?? value;
     sel.appendChild(opt);
   }
 }
@@ -209,14 +222,14 @@ async function initModules(){
   try{
     moduleSel.innerHTML = '';
     const mods = await fetchModules();
-    for (const m of mods) ensureOption(moduleSel, m, m);
+    for (const m of mods) ensureOption(moduleSel, m, prettifyModuleName(m));
     if (mods.length) moduleSel.value = mods[0];
   }catch(e){
     console.error('Failed to init modules:', e);
   }
 }
 
-// ---------- Parse/normalize ----------
+/* ---------- Parse/normalize ---------- */
 function normalizeQuestions(raw){
   const questions = Array.isArray(raw?.questions) ? raw.questions : [];
   const norm = [];
@@ -237,7 +250,7 @@ function normalizeQuestions(raw){
   return norm;
 }
 
-// ---------- Deterministic per-question shuffle ----------
+/* ---------- Deterministic per-question shuffle ---------- */
 function seededShuffle(arr, seed) {
   const a = arr.slice();
   let s = 0; for (let i = 0; i < seed.length; i++) s = (s * 31 + seed.charCodeAt(i)) >>> 0;
@@ -253,7 +266,7 @@ function shuffleQuestionOptions(q) {
   return { ...q, options: newOptions, correctLetters: newCorrectLetters };
 }
 
-// ---------- Single-action button helpers ----------
+/* ---------- Single-action button helpers ---------- */
 function setActionState(state){
   if (state === 'submit') {
     submitBtn.dataset.mode = 'submit';
@@ -274,7 +287,7 @@ function onSelectionChanged(){
   }
 }
 
-// ---------- Rendering ----------
+/* ---------- Rendering ---------- */
 function renderQuestion(q){
   qText.textContent = q.stem;
 
@@ -308,11 +321,10 @@ function renderQuestion(q){
     form.appendChild(wrap);
   });
 
-  nextBtn?.classList.add('hidden');
   setActionState('submit');
 }
 
-// ---------- Current info ----------
+/* ---------- Current info ---------- */
 function currentQuestion(){ return run.order[run.i] || null; }
 function getUserLetters(){
   const isMulti = currentQuestion().type === 'multi_select';
@@ -326,7 +338,7 @@ function formatCorrectAnswers(q){
   return parts.join('<br>');
 }
 
-// ---------- Progress ----------
+/* ---------- Progress ---------- */
 function updateProgressBar(){
   if (!progressBar) return;
   const total = run.masterPool.length || 0;
@@ -337,7 +349,7 @@ function updateProgressBar(){
   if (progressLabel) progressLabel.textContent = `${pct}% mastered`;
 }
 
-// ---------- Flow ----------
+/* ---------- Flow ---------- */
 function updateCounters(){
   const uniqueTotal = run.uniqueSeen.size;
   runCounter.textContent = `Question: ${uniqueTotal}`;
@@ -358,7 +370,7 @@ function getNotMastered(){
   return run.masterPool.filter(q => !run.answered.get(q.id)?.correct);
 }
 function nextIndex(){
-  const nextIdx = run.i + 1;
+  const nextIdx = (run.i ?? 0) + 1;
   if (nextIdx < run.order.length) {
     run.i = nextIdx;
     return { fromBuffer: false, q: run.order[run.i] };
@@ -373,7 +385,7 @@ function nextIndex(){
   return { fromBuffer: false, q: null };
 }
 
-// ---------- Start / End ----------
+/* ---------- Start / End ---------- */
 async function startQuiz(){
   const lenBtn = lengthBtns.querySelector('.seg-btn.active');
   if (!lenBtn) {
@@ -382,11 +394,12 @@ async function startQuiz(){
     return;
   }
 
-  const bank = moduleSel.value;
+  const bank = moduleSel.value;                    // raw filename
+  const displayName = prettifyModuleName(bank);    // pretty label to show
   const qty  = (lenBtn.dataset.len === 'full' ? 'full' : parseInt(lenBtn.dataset.len, 10));
 
-  setHeaderTitle(bank);
-  document.title = `Final Semester Study Guide — ${bank}`;
+  setHeaderTitle(displayName);
+  document.title = `Final Semester Study Guide — ${displayName}`;
 
   startBtn.disabled = true;
 
@@ -406,6 +419,7 @@ async function startQuiz(){
 
   run = {
     bank,
+    displayName,                 // store pretty name
     order: [...shuffledQuestions],
     masterPool: [...shuffledQuestions],
     i: 0,
@@ -439,14 +453,15 @@ function endRun(){
   summary.classList.remove('hidden');
   countersBox.classList.add('hidden');
 
-  setHeaderTitle(run.bank || defaultTitle);
-  document.title = run.bank || 'Final Semester Study Guide';
+  setHeaderTitle(run.displayName || run.bank || defaultTitle);
+  document.title = run.displayName || run.bank || 'Final Semester Study Guide';
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
   const uniq = [...run.answered.values()];
   const ftCorrect = uniq.filter(x => x.firstTryCorrect).length;
   const totalUnique = uniq.length;
+
   if (totalUnique > 0){
     firstTrySummary.classList.remove('hidden');
     firstTryPct.textContent = `${Math.round((ftCorrect / totalUnique) * 100)}%`;
@@ -475,7 +490,7 @@ function endRun(){
   clearSavedState();
 }
 
-// ---------- Event wiring ----------
+/* ---------- Event wiring ---------- */
 lengthBtns.addEventListener('click', (e) => {
   const btn = e.target.closest('.seg-btn'); if (!btn) return;
   lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
@@ -485,12 +500,10 @@ lengthBtns.addEventListener('click', (e) => {
 startBtn.addEventListener('click', startQuiz);
 form.addEventListener('change', onSelectionChanged);
 
-// Single action button (Submit or Next)
+/* Single action button (Submit or Next) */
 submitBtn.addEventListener('click', () => {
   if (submitBtn.dataset.mode === 'next') {
-    /* NEW: move viewport before we change content to prevent visible jump */
     scrollToQuizTop();
-
     const next = nextIndex();
     const q = next.q;
     if (!q) return endRun();
@@ -538,13 +551,13 @@ submitBtn.addEventListener('click', () => {
   updateCounters();
 });
 
-// Reset (visible only during quiz)
+/* Reset (visible only during quiz) */
 resetAll.addEventListener('click', () => { clearSavedState(); location.reload(); });
 
-// Summary “Start Another Run”
+/* Summary “Start Another Run” */
 restartBtn2.addEventListener('click', () => { location.reload(); });
 
-// ---------- Keyboard shortcuts ----------
+/* ---------- Keyboard shortcuts ---------- */
 document.addEventListener('keydown', (e) => {
   if (quiz.classList.contains('hidden')) return;
   if (isTextEditingTarget(e.target)) return;
@@ -570,6 +583,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// ---------- Init ----------
+/* ---------- Init ---------- */
 initModules();
 showResumeIfAny();
