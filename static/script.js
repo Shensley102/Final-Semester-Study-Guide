@@ -4,6 +4,7 @@
    - Counters + Reset only visible during an active quiz
    - Keyboard: A–Z toggle options; Enter submits / next
    - Feedback bigger & colored (green for correct, red for incorrect)
+   - New: lightweight persistence + progress bar + optional resume
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -12,6 +13,11 @@ const $ = (id) => document.getElementById(id);
 const runCounter       = $('runCounter');
 const remainingCounter = $('remainingCounter');
 const countersBox      = $('countersBox');
+
+// Progress bar
+const progressBar   = $('progressBar');
+const progressFill  = $('progressFill');
+const progressLabel = $('progressLabel');
 
 // Page title handling
 const pageTitle    = $('pageTitle');
@@ -23,6 +29,7 @@ const launcher   = $('launcher');
 const moduleSel  = $('moduleSel');
 const lengthBtns = $('lengthBtns');
 const startBtn   = $('startBtn');
+const resumeBtn  = $('resumeBtn');
 
 // Quiz UI
 const quiz         = $('quiz');
@@ -93,6 +100,87 @@ let run = {
   thresholdWrong: 0,     // batch size (15% for 10/25/50, 5% for 100/full)
   wrongSinceLast: [],    // questions answered wrong since last redeploy
 };
+
+// ---------- Persistence ----------
+const STORAGE_KEY = 'quizRunState_v1';
+
+function serializeRun() {
+  if (!run || !run.order?.length) return null;
+  return JSON.stringify({
+    bank: run.bank,
+    order: run.order.map(q => ({ id:q.id, stem:q.stem, options:q.options, correctLetters:q.correctLetters, rationale:q.rationale, type:q.type })),
+    masterPool: run.masterPool.map(q => q.id),
+    i: run.i,
+    answered: Array.from(run.answered.entries()),
+    uniqueSeen: Array.from(run.uniqueSeen),
+    thresholdWrong: run.thresholdWrong,
+    wrongSinceLast: run.wrongSinceLast.map(q => q.id),
+    title: pageTitle?.textContent || defaultTitle,
+  });
+}
+function saveRunState() {
+  try {
+    const s = serializeRun();
+    if (s) localStorage.setItem(STORAGE_KEY, s);
+  } catch {}
+}
+function loadRunState() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    const data = JSON.parse(raw);
+
+    // reconstruct questions
+    const qById = new Map();
+    const restoredOrder = (data.order || []).map(q => {
+      const qq = { id:String(q.id), stem:String(q.stem||''), options:q.options||{}, correctLetters:(q.correctLetters||[]), rationale:String(q.rationale||''), type:String(q.type||'single_select') };
+      qById.set(qq.id, qq);
+      return qq;
+    });
+
+    const idToQ = (id) => qById.get(id) || null;
+
+    const restored = {
+      bank: String(data.bank||''),
+      order: restoredOrder,
+      masterPool: (data.masterPool||[]).map(idToQ).filter(Boolean),
+      i: Math.max(0, parseInt(data.i||0,10)),
+      answered: new Map(Array.isArray(data.answered)?data.answered:[]),
+      uniqueSeen: new Set(Array.isArray(data.uniqueSeen)?data.uniqueSeen:[]),
+      thresholdWrong: Math.max(1, parseInt(data.thresholdWrong||1,10)),
+      wrongSinceLast: (data.wrongSinceLast||[]).map(idToQ).filter(Boolean),
+    };
+    return { run: restored, title: data.title || defaultTitle };
+  } catch { return null; }
+}
+function clearSavedState(){ try { localStorage.removeItem(STORAGE_KEY); } catch {} }
+
+function showResumeIfAny(){
+  const s = loadRunState();
+  if (!s || !s.run?.order?.length) {
+    resumeBtn.classList.add('hidden');
+    return;
+  }
+  resumeBtn.classList.remove('hidden');
+  resumeBtn.onclick = () => {
+    run = s.run;
+    setHeaderTitle(run.bank || defaultTitle);
+    document.title = run.bank ? `Final Semester Study Guide — ${run.bank}` : 'Final Semester Study Guide';
+
+    launcher.classList.add('hidden');
+    summary.classList.add('hidden');
+    quiz.classList.remove('hidden');
+    countersBox.classList.remove('hidden');
+    resetAll.classList.remove('hidden');
+
+    const q = currentQuestion();
+    if (q) {
+      run.uniqueSeen.add(q.id);
+      renderQuestion(q);
+      updateCounters();
+    }
+  };
+}
 
 // ---------- Module loading ----------
 async function fetchModules(){
@@ -245,6 +333,17 @@ function formatCorrectAnswers(q){
   return parts.join('<br>');
 }
 
+// ---------- Progress ----------
+function updateProgressBar(){
+  if (!progressBar) return;
+  const total = run.masterPool.length || 0;
+  const mastered = run.masterPool.filter(q => run.answered.get(q.id)?.correct).length;
+  const pct = total ? Math.round((mastered/total)*100) : 0;
+  progressFill.style.width = `${pct}%`;
+  progressBar.setAttribute('aria-valuenow', String(pct));
+  if (progressLabel) progressLabel.textContent = `${pct}% mastered`;
+}
+
 // ---------- Flow ----------
 function updateCounters(){
   const uniqueTotal = run.uniqueSeen.size;
@@ -252,6 +351,8 @@ function updateCounters(){
   // Remaining to master: based on masterPool (unique), not the current queue
   const remaining = run.masterPool.filter(q => !run.answered.get(q.id)?.correct).length;
   remainingCounter.textContent = `Remaining to master: ${remaining}`;
+  updateProgressBar();
+  saveRunState();
 }
 function recordAnswer(q, userLetters, isCorrect){
   const firstTime = !run.answered.has(q.id);
@@ -287,7 +388,7 @@ async function startQuiz(){
   const lenBtn = lengthBtns.querySelector('.seg-btn.active');
   const qty = lenBtn ? (lenBtn.dataset.len === 'full' ? 'full' : parseInt(lenBtn.dataset.len, 10)) : 'full';
 
-  // NEW: show the selected quiz name while in a quiz
+  // Show the selected quiz name while in a quiz
   setHeaderTitle(bank);
   document.title = `Final Semester Study Guide — ${bank}`;
 
@@ -335,7 +436,7 @@ async function startQuiz(){
   const q0 = run.order[0];
   run.uniqueSeen.add(q0.id);
   renderQuestion(q0);
-  updateCounters();
+  updateCounters(); // also saves state
 
   startBtn.disabled = false;
 }
@@ -374,9 +475,12 @@ function endRun(){
     reviewList.appendChild(row);
   });
 
-  // If you ever navigate back to launcher without reloading, restore title:
+  // Restore title:
   setHeaderTitle(defaultTitle);
   document.title = 'Final Semester Study Guide';
+
+  // Run finished; clear saved state so a fresh run starts next time
+  clearSavedState();
 }
 
 // ---------- Event wiring ----------
@@ -384,6 +488,8 @@ lengthBtns.addEventListener('click', (e) => {
   const btn = e.target.closest('.seg-btn'); if (!btn) return;
   lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  // keep aria-pressed in sync
+  lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.setAttribute('aria-pressed', b.classList.contains('active')?'true':'false'));
 });
 startBtn.addEventListener('click', startQuiz);
 form.addEventListener('change', onSelectionChanged);
@@ -440,11 +546,11 @@ submitBtn.addEventListener('click', () => {
   setActionState('next');
 
   scrollToBottomSmooth();
-  updateCounters();
+  updateCounters(); // also saves state
 });
 
 // Reset (visible only during quiz)
-resetAll.addEventListener('click', () => { localStorage.clear(); location.reload(); });
+resetAll.addEventListener('click', () => { clearSavedState(); location.reload(); });
 
 // Summary “Start Another Run”
 restartBtn2.addEventListener('click', () => { location.reload(); });
@@ -486,3 +592,4 @@ document.addEventListener('keydown', (e) => {
 
 // ---------- Init ----------
 initModules();
+showResumeIfAny();  // offer resume if there’s saved state
