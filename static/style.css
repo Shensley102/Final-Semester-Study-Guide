@@ -9,7 +9,7 @@ html { scroll-behavior: smooth; }
   --ink-soft:#4a5568;
   --primary:#2f61f3;      /* blue for Next state */
   --danger:#d33a2c;       /* red for errors / Reset outline */
-  --success:#22c55e;      /* green for success */
+  --success:#22c55e;      /* green for success / progress bar */
   --ring:#cdd9ff;
   --border:#e7eaf3;
 
@@ -53,7 +53,7 @@ h1{
 }
 
 /* ===== Counters ===== */
-/* Now a column so the progress bar sits underneath the counts */
+/* Column so the progress bar sits underneath the counts */
 .counters{
   display:flex;
   flex-direction: column;
@@ -62,7 +62,7 @@ h1{
   margin: 10px 0 14px;
 }
 
-/* New row to hold "Question / Remaining" + Reset on the right */
+/* Row to hold "Question / Remaining" + Reset on the right */
 .count-row{
   display:flex;
   align-items:center;
@@ -71,7 +71,7 @@ h1{
 }
 #resetAll{ margin-left:auto; }
 
-/* Progress bar (twice as big as before) */
+/* ===== Progress bar (twice as big) ===== */
 .pbar-wrap{
   display:flex;
   align-items:center;
@@ -91,11 +91,12 @@ h1{
 .pbar-fill{
   height:100%;
   width:0%;
-  background: var(--primary);
+  /* CHANGED: progress bar now green */
+  background: var(--success);
   transition: width .25s ease;
 }
 .pbar-label{
-  font-size: 1rem; /* a touch larger to match new size */
+  font-size: 1rem;
   color:var(--ink-soft);
 }
 
