@@ -1,8 +1,8 @@
 /* =============================================================
-   Final Semester Study Guide — Fixed-Viewport Layout
+   Final Semester Study Guide — One-Window, No-Scroll Layout
    - Open Sans applied globally
-   - No page-level scrolling (single-screen UI)
-   - Question+Options scroll internally; controls/feedback fixed visible
+   - No scrolling anywhere on the page
+   - The quiz card scales itself (via JS) to fit the viewport
 ============================================================= */
 
 /* Respect reduced motion */
@@ -29,45 +29,43 @@ html { scroll-behavior: auto; }
   --tick-line:2px;
 }
 
-*{box-sizing:border-box}
+*{ box-sizing:border-box }
 
-/* ----- Single-screen base ----- */
+/* ----- One-screen base ----- */
 html, body { height:100%; }
 body{
   margin:0;
   height:100%;
-  overflow:hidden;                /* no page scroll */
+  overflow:hidden;                /* no page scroll at all */
   background:var(--bg);
   color:var(--ink);
   font:16px/1.45 'Open Sans', -apple-system, BlinkMacSystemFont,
         'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* form controls inherit font */
-button,input,select,textarea{font:inherit}
+/* Make all form controls inherit font */
+button,input,select,textarea{ font:inherit }
 
-/* Main container uses the whole viewport and grid rows:
-   [title] [counters] [main content area]
-*/
+/* Main container uses fixed viewport height */
 .container{
   height:100vh;
   max-width:980px;
   margin:0 auto;
   padding:10px 12px;
   display:grid;
-  grid-template-rows:auto auto 1fr;
+  grid-template-rows:auto auto 1fr; /* title, counters, main area */
   gap:10px;
 }
 
-/* Title */
+/* --- Header (leave sizes unchanged as requested) --- */
 h1{
   margin:0;
   font-weight:800;
   letter-spacing:.3px;
-  font-size:clamp(24px,4vw,36px);
+  font-size:clamp(28px, 4.5vw, 44px);
 }
 
-/* Generic card */
+/* Cards */
 .card{
   background:var(--card);
   border:1px solid var(--border);
@@ -76,32 +74,18 @@ h1{
   padding:14px;
 }
 
-/* Launcher/Summary may have their own internal scroll (not page) */
-#launcher.card,
-#summary.card{
-  overflow:auto;
-  min-height:0;
-}
+/* Launcher & Summary can show content but we still forbid page scrolling */
+#launcher.card, #summary.card { overflow:hidden; }
 
-/* Counters section */
-.counters{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:8px;
-}
-.count-row{
-  display:flex;
-  align-items:center;
-  gap:16px;
-  width:100%;
-}
+/* Counters */
+.counters{ display:flex; flex-direction:column; align-items:flex-start; gap:8px; }
+.count-row{ display:flex; align-items:center; gap:16px; width:100%; }
 #resetAll{ margin-left:auto; }
 
-/* Progress bar */
+/* Progress bar (unchanged) */
 .pbar-wrap{ display:flex; align-items:center; gap:12px; width:100%; }
 .pbar{
-  position:relative; width:100%; height:18px; border-radius:999px; overflow:hidden;
+  position:relative; width:100%; height:20px; border-radius:999px; overflow:hidden;
   border:1px solid var(--border); box-shadow:var(--shadow-sm); background:#e9edf8;
 }
 .pbar::before{
@@ -114,17 +98,15 @@ h1{
 }
 .pbar-fill::after{
   content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
-  background-image:repeating-linear-gradient(to right, rgba(255,255,255,.35) 0 var(--tick-line),rgba(255,255,255,0) var(--tick-line) var(--tick));
+  background-image:repeating-linear-gradient(to right, rgba(255,255,255,.35) 0 var(--tick-line), rgba(255,255,255,0) var(--tick-line) var(--tick));
 }
-.pbar-label{ font-size:.95rem; color:var(--ink-soft); }
+.pbar-label{ font-size:1rem; color:var(--ink-soft); }
 
 /* Fields + labels */
 .field{ margin:10px 0 12px; }
-label{
-  display:block; font-weight:600; margin-bottom:6px; color:var(--ink-soft);
-}
+label{ display:block; font-weight:600; margin-bottom:6px; color:var(--ink-soft); }
 
-/* Segmented buttons for length */
+/* Segmented buttons */
 .seg{ display:flex; gap:10px; flex-wrap:wrap; }
 .seg-btn{
   border:1px solid var(--border); background:#fff; padding:8px 14px; border-radius:9999px;
@@ -149,64 +131,55 @@ label{
 /* Actions row */
 .actions{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
 
-/* ----- QUIZ: fixed-viewport grid ----- */
-/* Rows: [scrollable Q+options] [actions] [feedback] [answer] [rationale] */
+/* ----- QUIZ Card (no internal scrolling; we scale instead) ----- */
 #quiz.card{
-  margin:0;                      /* no extra gap so we can maximize space */
-  display:grid;
-  grid-template-rows:1fr auto auto auto auto;
-  row-gap:10px;
-  height:100%;                   /* fill the main area row in .container */
-  min-height:0;                  /* allow child with overflow in grid */
+  margin:0;
+  height:100%;          /* occupy the whole 3rd grid row */
+  overflow:hidden;      /* never scroll; JS scales the inner contents */
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-start;
+  padding:14px;
 }
 
-/* Scroll area that contains question and options */
-.q-scroll{
-  overflow:auto;                 /* internal scrolling only */
-  min-height:0;
-  padding-right:6px;
+/* The element we scale */
+.quiz-scale{
+  transform-origin: top left;
+  display:inline-block;
+  will-change: transform;
 }
 
-/* Question text */
+/* Content typography inside the quiz (will be scaled) */
 .question{
-  font-size:clamp(18px,2.2vw,22px);
-  font-weight:600;
-  margin:0 0 8px;
+  font-size:22px;
+  font-weight:700;
+  margin:0 0 10px;
 }
-
-/* Options grid */
-.options{ display:grid; gap:10px; margin:0 0 8px; }
+.options{ display:grid; gap:10px; margin:0 0 10px; }
 .opt{
   display:flex; align-items:center; gap:10px;
   border:1px solid var(--border); background:#fff; border-radius:12px;
   padding:10px 12px; box-shadow:var(--shadow-sm);
 }
-.opt input[type="radio"], .opt input[type="checkbox"]{
-  width:18px; height:18px; margin:0; accent-color:var(--primary);
-}
+.opt input[type="radio"], .opt input[type="checkbox"]{ width:18px; height:18px; margin:0; accent-color:var(--primary); }
 .opt label{ cursor:pointer; display:flex; gap:8px; align-items:center; width:100%; }
 .opt .k{ font-weight:700; color:var(--ink-soft); min-width:20px; }
 .opt .ans{ color:var(--ink); }
 
-/* Feedback + answer + rationale are always visible rows at the bottom */
-.feedback{
-  margin:0; font-weight:800; font-size:clamp(16px,2vw,20px);
-}
+.feedback{ margin:6px 0 0; font-weight:800; font-size:20px; }
 .feedback.ok{ color:var(--success); }
 .feedback.bad{ color:var(--danger); }
 
-.answer-line{
-  border-left:4px solid var(--primary); padding-left:10px; margin:0;
-}
+.answer-line{ border-left:4px solid var(--primary); padding-left:10px; margin:6px 0 0; }
 .answer-line:empty{ border-left:0; padding-left:0; }
 
 .rationale{
   border:1px dashed var(--border); border-radius:12px;
   padding:10px 12px; background:#fafbff; color:var(--ink-soft);
-  max-height:120px; overflow:auto;     /* long rationales scroll internally */
+  /* no height limits; it will be scaled together with everything else */
 }
 
-/* Review list (summary) */
+/* Summary / Review items */
 .first-try{ display:flex; gap:10px; align-items:center; margin-bottom:10px; }
 .review-list{ display:grid; gap:10px; }
 .rev-item{
@@ -221,7 +194,7 @@ label{
 /* Utility */
 .hidden{ display:none !important; }
 
-/* Help section */
+/* Help */
 .help{ margin-top:6px; color:var(--ink-soft); }
 .help h3{ margin:6px 0 8px; color:var(--ink); }
 .help ul{ margin:0; padding-inline-start:18px; display:grid; gap:6px; }
@@ -234,16 +207,16 @@ kbd,.kbd{
   border-radius:6px; padding:1px 6px;
 }
 
-/* Focus */
+/* Focus ring */
 button:focus-visible, .select:focus-visible, input:focus-visible{
   outline:3px solid var(--ring); outline-offset:2px;
 }
 
-/* Module select */
+/* Module select (header control; size unchanged) */
 label[for="moduleSel"]{ display:inline-block; margin:0 12px 0 0; vertical-align:middle; }
 #moduleSel{
-  appearance:none; font-size:calc(1em * 1.3); line-height:1.2;
-  padding:.5rem 2.25rem .5rem .75rem; min-height:2.25rem;
+  appearance:none; font-size:calc(1em * 1.5); line-height:1.2;
+  padding:.5625rem 2.5rem .5625rem .75rem; min-height:2.25rem;
   border-radius:10px; border:1px solid #c9d5ee; background:#fff; color:inherit;
   max-width:100%; box-shadow:0 1px 2px rgba(16,24,40,.06);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23121' d='M1.41.59 6 5.17 10.59.59 12 2 6 8 0 2z'/%3E%3C/svg%3E");
