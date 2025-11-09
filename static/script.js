@@ -1,6 +1,10 @@
 /* -----------------------------------------------------------
    Final-Semester-Study-Guide - Quiz Frontend
-   - Pretty module titles: Pharm_Quiz_1..4 -> Pharm Quiz 1..4
+   - Pretty module titles:
+       Pharm_Quiz_1..4                   -> Pharm Quiz 1..4
+       Learning_Questions_Module_1_2     -> Learning Questions Module 1 and 2
+       Learning_Questions_Module_3_4     -> Learning Questions Module 3 and 4
+       ...also tolerates variants/typos (spaces, underscores, "Moduele", etc.)
    - Single action button: Submit (green) ➜ Next (blue)
    - Full-width hashed progress bar; reduced jitter (snap to quiz top)
    - Open Sans question font (normal weight, slightly smaller)
@@ -50,17 +54,54 @@ const reviewList       = $('reviewList');
 const restartBtn2      = $('restartBtnSummary');
 const resetAll         = $('resetAll');
 
-/* ---------- Pretty names for modules ---------- */
+/* ---------- Pretty names for modules (UPDATED & ROBUST) ---------- */
 function prettifyModuleName(name) {
+  const raw = String(name || '');
+
+  // Normalize common typos/variants before matching
+  const normalized = raw
+    .replace(/moduele/gi, 'module')     // typo tolerance
+    .replace(/question(?!s)/gi, 'Questions') // pluralize if needed
+    .replace(/__/g, '_')
+    .trim();
+
+  // Direct map for exact known IDs
   const map = {
+    // Pharm Quiz series
     'Pharm_Quiz_1': 'Pharm Quiz 1',
     'Pharm_Quiz_2': 'Pharm Quiz 2',
     'Pharm_Quiz_3': 'Pharm Quiz 3',
     'Pharm_Quiz_4': 'Pharm Quiz 4',
+
+    // Learning Questions canonical names (and trailing-underscore variants)
+    'Learning_Questions_Module_1_2': 'Learning Questions Module 1 and 2',
+    'Learning_Questions_Module_1_2_': 'Learning Questions Module 1 and 2',
+    'Learning_Questions_Module_3_4': 'Learning Questions Module 3 and 4',
+    'Learning_Questions_Module_3_4_': 'Learning Questions Module 3 and 4',
+
+    // Common misspellings seen in filenames
+    'Learning_Question_Moduele_1_2': 'Learning Questions Module 1 and 2',
+    'Learning_Question_Moduele_3_4': 'Learning Questions Module 3 and 4',
+    'Learning_Question_Module_1_2':  'Learning Questions Module 1 and 2',
+    'Learning_Question_Module_3_4':  'Learning Questions Module 3 and 4',
   };
-  if (map[name]) return map[name];
+  if (map[normalized]) return map[normalized];
+
+  // Pharm Quiz generic pattern (underscores or spaces)
+  {
+    const m = /^(?:Pharm[_\s]+Quiz[_\s]+)(\d+)$/i.exec(normalized.replace(/_/g, ' '));
+    if (m) return `Pharm Quiz ${m[1]}`;
+  }
+
+  // Learning Questions generic pattern, tolerant of underscores/spaces & minor typos
+  {
+    const cleaned = normalized.replace(/_/g, ' ');
+    const m = /^Learning\s+Questions?\s+Module\s+(\d+)\s+(\d+)$/i.exec(cleaned);
+    if (m) return `Learning Questions Module ${m[1]} and ${m[2]}`;
+  }
+
   // Fallback: replace underscores with spaces
-  return String(name || '').replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
+  return raw.replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
 /* ---------- Utilities ---------- */
@@ -93,6 +134,7 @@ function scrollToBottomSmooth() {
     });
   });
 }
+/* Snap to quiz card top before rendering next Q to avoid jitter */
 function scrollToQuizTop() {
   if (!quiz) return;
   quiz.scrollIntoView({ behavior: 'auto', block: 'start' });
@@ -106,7 +148,7 @@ function isTextEditingTarget(el){
 let allQuestions = [];
 let run = {
   bank: '',
-  displayName: '',      // NEW: human-facing label
+  displayName: '',      // human-facing label
   order: [],
   masterPool: [],
   i: 0,
@@ -134,9 +176,7 @@ function serializeRun() {
     title: pageTitle?.textContent || defaultTitle,
   });
 }
-function saveRunState() {
-  try { const s = serializeRun(); if (s) localStorage.setItem(STORAGE_KEY, s); } catch {}
-}
+function saveRunState() { try { const s = serializeRun(); if (s) localStorage.setItem(STORAGE_KEY, s); } catch {} }
 function loadRunState() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -204,10 +244,13 @@ async function fetchModules(){
     const mods = Array.isArray(data.modules) ? data.modules : [];
     return mods.filter(m => m.toLowerCase() !== 'vercel');
   } catch {
+    // Fallback list if /modules fails during local dev
     return ["Module_1","Module_2","Module_3","Module_4","Pharm_Quiz_HESI",
             "Learning_Questions_Module_1_2","Learning_Questions_Module_3_4_",
             "Pharmacology_1","Pharmacology_2","Pharmacology_3",
-            "Pharm_Quiz_1","Pharm_Quiz_2","Pharm_Quiz_3","Pharm_Quiz_4"];
+            "Pharm_Quiz_1","Pharm_Quiz_2","Pharm_Quiz_3","Pharm_Quiz_4",
+            // tolerate typo’d names, too
+            "Learning_Question_Moduele_1_2","Learning_Question_Moduele_3_4"];
   }
 }
 function ensureOption(sel, value, label){
@@ -234,7 +277,7 @@ function normalizeQuestions(raw){
   const questions = Array.isArray(raw?.questions) ? raw.questions : [];
   const norm = [];
   for (const q of questions){
-    const id   = String(q.id ?? crypto.randomUUID());
+    const id   = String(q.id ?? (crypto.randomUUID?.() || Math.random().toString(36).slice(2)));
     const stem = String(q.stem ?? '');
     const type = String(q.type ?? 'single_select');
     const opts = Array.isArray(q.options) ? q.options.map(String) : [];
