@@ -1,31 +1,30 @@
-/* -----------------------------------------------------------
-   Nursing School Quiz App - Quiz Frontend (Open Sans everywhere)
-   - Pretty module titles:
-       Pharm_Quiz_1..4                   -> Pharm Quiz 1..4
-       Learning_Questions_Module_1_2     -> Learning Questions Module 1 and 2
-       Learning_Questions_Module_3_4     -> Learning Questions Module 3 and 4
-   - Single action button: Submit (green) ➜ Next (blue)
-   - Full-width hashed progress bar; reduced jitter (snap to quiz top)
------------------------------------------------------------ */
+/* ===============================================================
+   Nursing School Quiz App - Quiz Frontend
+
+   This script powers the interactive functionality of the quiz.
+   It loads question banks from the server, shuffles questions and
+   options deterministically, tracks progress, and updates the UI.
+   All references to the app name reflect “Nursing School Quiz App.”
+=============================================================== */
 
 const $ = (id) => document.getElementById(id);
 
-// Top info
+// Top-level counters
 const runCounter       = $('runCounter');
 const remainingCounter = $('remainingCounter');
 const countersBox      = $('countersBox');
 
-// Progress bar
+// Progress bar pieces
 const progressBar   = $('progressBar');
 const progressFill  = $('progressFill');
 const progressLabel = $('progressLabel');
 
 // Page title handling
-const pageTitle    = $('pageTitle');
-const defaultTitle = pageTitle?.textContent || 'Nursing School Quiz App';
+const pageTitle     = $('pageTitle');
+const defaultTitle  = pageTitle?.textContent || 'Nursing School Quiz App';
 const setHeaderTitle = (t) => { if (pageTitle) pageTitle.textContent = t; };
 
-// Launcher
+// Launcher controls
 const launcher   = $('launcher');
 const moduleSel  = $('moduleSel');
 const lengthBtns = $('lengthBtns');
@@ -42,21 +41,21 @@ const feedback     = $('feedback');
 const answerLine   = $('answerLine');
 const rationaleBox = $('rationale');
 
-// Summary
-const summary          = $('summary');
-const firstTrySummary  = $('firstTrySummary');
-const firstTryPct      = $('firstTryPct');
-const firstTryCount    = $('firstTryCount');
-const firstTryTotal    = $('firstTryTotal');
-const reviewList       = $('reviewList');
-const restartBtn2      = $('restartBtnSummary');
-const resetAll         = $('resetAll');
+// Summary UI
+const summary         = $('summary');
+const firstTrySummary = $('firstTrySummary');
+const firstTryPct     = $('firstTryPct');
+const firstTryCount   = $('firstTryCount');
+const firstTryTotal   = $('firstTryTotal');
+const reviewList      = $('reviewList');
+const restartBtn2     = $('restartBtnSummary');
+const resetAll        = $('resetAll');
 
-/* ---------- Pretty names for modules (robust) ---------- */
+/* ----------------------------------------------------------------
+   Pretty names for module files (handle typos / formatting)
+---------------------------------------------------------------- */
 function prettifyModuleName(name) {
   const raw = String(name || '');
-
-  // Normalize typos/variants
   const normalized = raw
     .replace(/moduele/gi, 'module')
     .replace(/question(?!s)/gi, 'Questions')
@@ -74,42 +73,51 @@ function prettifyModuleName(name) {
     'Learning_Questions_Module_3_4_': 'Learning Questions Module 3 and 4',
     'Learning_Question_Moduele_1_2':  'Learning Questions Module 1 and 2',
     'Learning_Question_Moduele_3_4':  'Learning Questions Module 3 and 4',
-    'Learning_Question_Module_1_2':   'Learning Questions Module 1 and 2',
-    'Learning_Question_Module_3_4':   'Learning Questions Module 3 and 4',
+    'Learning_Question_Module_1_2':    'Learning Questions Module 1 and 2',
+    'Learning_Question_Module_3_4':    'Learning Questions Module 3 and 4',
   };
   if (map[normalized]) return map[normalized];
 
+  // Generic “Pharm Quiz #” patterns
   const m1 = /^(?:Pharm[_\s]+Quiz[_\s]+)(\d+)$/i.exec(normalized.replace(/_/g, ' '));
   if (m1) return `Pharm Quiz ${m1[1]}`;
 
+  // Generic “Learning Questions Module X Y” patterns
   const cleaned = normalized.replace(/_/g, ' ');
   const m2 = /^Learning\s+Questions?\s+Module\s+(\d+)\s+(\d+)$/i.exec(cleaned);
   if (m2) return `Learning Questions Module ${m2[1]} and ${m2[2]}`;
 
+  // Fallback: just replace underscores with spaces
   return raw.replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
-/* ---------- Utilities ---------- */
-function escapeHTML(s=''){
+/* ----------------------------------------------------------------
+   Utilities
+---------------------------------------------------------------- */
+function escapeHTML(s = '') {
   return String(s)
-    .replaceAll('&','&amp;')
-    .replaceAll('<','&lt;')
-    .replaceAll('>','&gt;')
-    .replaceAll('"','&quot;')
-    .replaceAll("'",'&#39;');
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
 }
 const randomInt = (n) => Math.floor(Math.random() * n);
-function shuffleInPlace(arr){
+function shuffleInPlace(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
-    const j = randomInt(i + 1); [arr[i], arr[j]] = [arr[j], arr[i]];
+    const j = randomInt(i + 1);
+    [arr[i], arr[j]] = [arr[j], arr[i]];
   }
   return arr;
 }
-function sampleQuestions(all, req){
+function sampleQuestions(all, req) {
   const a = all.slice();
   if (req === 'full' || req >= a.length) return shuffleInPlace(a);
-  const k = Math.max(0, req|0);
-  for (let i = 0; i < k; i++) { const j = i + randomInt(a.length - i); [a[i], a[j]] = [a[j], a[i]]; }
+  const k = Math.max(0, req | 0);
+  for (let i = 0; i < k; i++) {
+    const j = i + randomInt(a.length - i);
+    [a[i], a[j]] = [a[j], a[i]];
+  }
   return a.slice(0, k);
 }
 function scrollToBottomSmooth() {
@@ -123,12 +131,14 @@ function scrollToQuizTop() {
   if (!quiz) return;
   quiz.scrollIntoView({ behavior: 'auto', block: 'start' });
 }
-function isTextEditingTarget(el){
+function isTextEditingTarget(el) {
   return el &&
     (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT' || el.isContentEditable);
 }
 
-/* ---------- State ---------- */
+/* ----------------------------------------------------------------
+   State (current run data)
+---------------------------------------------------------------- */
 let allQuestions = [];
 let run = {
   bank: '',
@@ -142,7 +152,9 @@ let run = {
   wrongSinceLast: [],
 };
 
-/* ---------- Persistence ---------- */
+/* ----------------------------------------------------------------
+   Persistence helpers
+---------------------------------------------------------------- */
 const STORAGE_KEY = 'quizRunState_v1';
 
 function serializeRun() {
@@ -150,7 +162,13 @@ function serializeRun() {
   return JSON.stringify({
     bank: run.bank,
     displayName: run.displayName,
-    order: run.order.map(q => ({ id:q.id, stem:q.stem, options:q.options, correctLetters:q.correctLetters, rationale:q.rationale, type:q.type })),
+    order: run.order.map(q => ({
+      id: q.id, stem: q.stem,
+      options: q.options,
+      correctLetters: q.correctLetters,
+      rationale: q.rationale,
+      type: q.type
+    })),
     masterPool: run.masterPool.map(q => q.id),
     i: run.i,
     answered: Array.from(run.answered.entries()),
@@ -160,38 +178,54 @@ function serializeRun() {
     title: pageTitle?.textContent || defaultTitle,
   });
 }
-function saveRunState() { try { const s = serializeRun(); if (s) localStorage.setItem(STORAGE_KEY, s); } catch {} }
+function saveRunState() {
+  try {
+    const s = serializeRun();
+    if (s) localStorage.setItem(STORAGE_KEY, s);
+  } catch {}
+}
 function loadRunState() {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return null;
     const data = JSON.parse(raw);
-
     const qById = new Map();
     const restoredOrder = (data.order || []).map(q => {
-      const qq = { id:String(q.id), stem:String(q.stem||''), options:q.options||{}, correctLetters:(q.correctLetters||[]), rationale:String(q.rationale||''), type:String(q.type||'single_select') };
+      const qq = {
+        id: String(q.id),
+        stem: String(q.stem || ''),
+        options: q.options || {},
+        correctLetters: (q.correctLetters || []),
+        rationale: String(q.rationale || ''),
+        type: String(q.type || 'single_select')
+      };
       qById.set(qq.id, qq);
       return qq;
     });
     const idToQ = (id) => qById.get(id) || null;
-
     const restored = {
-      bank: String(data.bank||''),
+      bank: String(data.bank || ''),
       displayName: String(data.displayName || prettifyModuleName(data.bank || '')),
       order: restoredOrder,
-      masterPool: (data.masterPool||[]).map(idToQ).filter(Boolean),
-      i: Math.max(0, parseInt(data.i||0,10)),
-      answered: new Map(Array.isArray(data.answered)?data.answered:[]),
-      uniqueSeen: new Set(Array.isArray(data.uniqueSeen)?data.uniqueSeen:[]),
-      thresholdWrong: Math.max(1, parseInt(data.thresholdWrong||1,10)),
-      wrongSinceLast: (data.wrongSinceLast||[]).map(idToQ).filter(Boolean),
+      masterPool: (data.masterPool || []).map(idToQ).filter(Boolean),
+      i: Math.max(0, parseInt(data.i || 0, 10)),
+      answered: new Map(Array.isArray(data.answered) ? data.answered : []),
+      uniqueSeen: new Set(Array.isArray(data.uniqueSeen) ? data.uniqueSeen : []),
+      thresholdWrong: Math.max(1, parseInt(data.thresholdWrong || 1, 10)),
+      wrongSinceLast: (data.wrongSinceLast || []).map(idToQ).filter(Boolean),
     };
     return { run: restored, title: data.title || defaultTitle };
-  } catch { return null; }
+  } catch {
+    return null;
+  }
 }
-function clearSavedState(){ try { localStorage.removeItem(STORAGE_KEY); } catch {} }
+function clearSavedState() {
+  try {
+    localStorage.removeItem(STORAGE_KEY);
+  } catch {}
+}
 
-function showResumeIfAny(){
+function showResumeIfAny() {
   const s = loadRunState();
   if (!s || !s.run?.order?.length) {
     resumeBtn.classList.add('hidden');
@@ -201,8 +235,11 @@ function showResumeIfAny(){
   resumeBtn.onclick = () => {
     run = s.run;
     setHeaderTitle(run.displayName || run.bank || defaultTitle);
-    document.title = run.displayName ? `Nursing School Quiz App — ${run.displayName}` :
-                   (run.bank ? `Nursing School Quiz App — ${run.bank}` : 'Nursing School Quiz App');
+    document.title = run.displayName
+      ? `Nursing School Quiz App — ${run.displayName}`
+      : run.bank
+        ? `Nursing School Quiz App — ${run.bank}`
+        : 'Nursing School Quiz App';
 
     launcher.classList.add('hidden');
     summary.classList.add('hidden');
@@ -219,8 +256,10 @@ function showResumeIfAny(){
   };
 }
 
-/* ---------- Module loading ---------- */
-async function fetchModules(){
+/* ----------------------------------------------------------------
+   Module loading
+---------------------------------------------------------------- */
+async function fetchModules() {
   try {
     const res = await fetch(`/modules?_=${Date.now()}`, { cache: 'no-store' });
     if (!res.ok) throw new Error('modules failed');
@@ -228,72 +267,93 @@ async function fetchModules(){
     const mods = Array.isArray(data.modules) ? data.modules : [];
     return mods.filter(m => m.toLowerCase() !== 'vercel');
   } catch {
-    // Fallback list if /modules fails during local dev
-    return ["Module_1","Module_2","Module_3","Module_4","Pharm_Quiz_HESI",
-            "Learning_Questions_Module_1_2","Learning_Questions_Module_3_4_",
-            "Pharmacology_1","Pharmacology_2","Pharmacology_3",
-            "Pharm_Quiz_1","Pharm_Quiz_2","Pharm_Quiz_3","Pharm_Quiz_4",
-            "Learning_Question_Moduele_1_2","Learning_Question_Moduele_3_4"];
+    return [
+      'Module_1','Module_2','Module_3','Module_4','Pharm_Quiz_HESI',
+      'Learning_Questions_Module_1_2','Learning_Questions_Module_3_4_',
+      'Pharmacology_1','Pharmacology_2','Pharmacology_3',
+      'Pharm_Quiz_1','Pharm_Quiz_2','Pharm_Quiz_3','Pharm_Quiz_4',
+      'Learning_Question_Moduele_1_2','Learning_Question_Moduele_3_4'
+    ];
   }
 }
-function ensureOption(sel, value, label){
-  if (![...sel.options].some(o => o.value === value)){
+function ensureOption(sel, value, label) {
+  if (![...sel.options].some(o => o.value === value)) {
     const opt = document.createElement('option');
     opt.value = value;
     opt.textContent = label ?? value;
     sel.appendChild(opt);
   }
 }
-async function initModules(){
-  try{
+async function initModules() {
+  try {
     moduleSel.innerHTML = '';
     const mods = await fetchModules();
     for (const m of mods) ensureOption(moduleSel, m, prettifyModuleName(m));
     if (mods.length) moduleSel.value = mods[0];
-  }catch(e){
+  } catch (e) {
     console.error('Failed to init modules:', e);
   }
 }
 
-/* ---------- Parse/normalize ---------- */
-function normalizeQuestions(raw){
+/* ----------------------------------------------------------------
+   Parse and normalize raw question data from JSON
+---------------------------------------------------------------- */
+function normalizeQuestions(raw) {
   const questions = Array.isArray(raw?.questions) ? raw.questions : [];
   const norm = [];
-  for (const q of questions){
-    const id   = String(q.id ?? (crypto.randomUUID?.() || Math.random().toString(36).slice(2)));
-    const stem = String(q.stem ?? '');
-    the_type   = String(q.type ?? 'single_select');
-    const opts = Array.isArray(q.options) ? q.options.map(String) : [];
+  for (const q of questions) {
+    const id    = String(q.id ?? (crypto.randomUUID?.() || Math.random().toString(36).slice(2)));
+    const stem  = String(q.stem ?? '');
+    const type  = String(q.type ?? 'single_select');
+    const opts  = Array.isArray(q.options) ? q.options.map(String) : [];
     const correctLetters = Array.isArray(q.correct) ? q.correct.map(String) : [];
     const rationale = String(q.rationale ?? '');
 
+    // Map options to letters A, B, C, ...
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').slice(0, opts.length);
     const options = {};
     letters.forEach((L, i) => { options[L] = opts[i] ?? ''; });
 
-    norm.push({ id, stem, options, correctLetters, rationale, type: the_type });
+    norm.push({ id, stem, options, correctLetters, rationale, type });
   }
   return norm;
 }
 
-/* ---------- Deterministic per-question shuffle ---------- */
+/* ----------------------------------------------------------------
+   Deterministic shuffle for questions and options
+---------------------------------------------------------------- */
 function seededShuffle(arr, seed) {
   const a = arr.slice();
-  let s = 0; for (let i = 0; i < seed.length; i++) s = (s * 31 + seed.charCodeAt(i)) >>> 0;
-  for (let i = a.length - 1; i > 0; i--) { s = (s * 1664525 + 1013904223) >>> 0; const j = s % (i + 1); [a[i], a[j]] = [a[j], a[i]]; }
+  let s = 0;
+  for (let i = 0; i < seed.length; i++) s = (s * 31 + seed.charCodeAt(i)) >>> 0;
+  for (let i = a.length - 1; i > 0; i--) {
+    s = (s * 1664525 + 1013904223) >>> 0;
+    const j = s % (i + 1);
+    [a[i], a[j]] = [a[j], a[i]];
+  }
   return a;
 }
 function shuffleQuestionOptions(q) {
   const pairs = Object.entries(q.options).map(([letter, text]) => ({ letter, text }));
   const shuffled = seededShuffle(pairs, q.id);
-  const newOptions = {}; const oldToNew = {};
-  shuffled.forEach((item, idx) => { const L = String.fromCharCode(65 + idx); newOptions[L] = item.text; oldToNew[item.letter] = L; });
-  const newCorrectLetters = (q.correctLetters || []).map(oldL => oldToNew[oldL]).filter(Boolean).sort();
+  const newOptions = {};
+  const oldToNew = {};
+  shuffled.forEach((item, idx) => {
+    const L = String.fromCharCode(65 + idx);
+    newOptions[L] = item.text;
+    oldToNew[item.letter] = L;
+  });
+  const newCorrectLetters = (q.correctLetters || [])
+    .map(oldL => oldToNew[oldL])
+    .filter(Boolean)
+    .sort();
   return { ...q, options: newOptions, correctLetters: newCorrectLetters };
 }
 
-/* ---------- Single-action button helpers ---------- */
-function setActionState(state){
+/* ----------------------------------------------------------------
+   Single-action button helpers (Submit / Next)
+---------------------------------------------------------------- */
+function setActionState(state) {
   if (state === 'submit') {
     submitBtn.dataset.mode = 'submit';
     submitBtn.textContent = 'Submit';
@@ -306,15 +366,17 @@ function setActionState(state){
     submitBtn.disabled = false;
   }
 }
-function onSelectionChanged(){
+function onSelectionChanged() {
   if (submitBtn.dataset.mode === 'submit') {
-    const any = form.querySelector('input:checked');
-    submitBtn.disabled = !any;
+    const anyChecked = form.querySelector('input:checked');
+    submitBtn.disabled = !anyChecked;
   }
 }
 
-/* ---------- Rendering ---------- */
-function renderQuestion(q){
+/* ----------------------------------------------------------------
+   Rendering questions and answers
+---------------------------------------------------------------- */
+function renderQuestion(q) {
   qText.textContent = q.stem;
 
   form.innerHTML = '';
@@ -323,7 +385,7 @@ function renderQuestion(q){
   rationaleBox.classList.add('hidden');
 
   feedback.textContent = '';
-  feedback.classList.remove('ok','bad');
+  feedback.classList.remove('ok', 'bad');
 
   const isMulti = q.type === 'multi_select';
   form.setAttribute('role', isMulti ? 'group' : 'radiogroup');
@@ -350,33 +412,37 @@ function renderQuestion(q){
   setActionState('submit');
 }
 
-/* ---------- Current info ---------- */
-function currentQuestion(){ return run.order[run.i] || null; }
-function getUserLetters(){
+/* ----------------------------------------------------------------
+   Current question helpers
+---------------------------------------------------------------- */
+function currentQuestion() {
+  return run.order[run.i] || null;
+}
+function getUserLetters() {
   const isMulti = currentQuestion().type === 'multi_select';
   const inputs = [...form.querySelectorAll('input')];
   const picked = inputs.filter(i => i.checked).map(i => i.value);
   return isMulti ? picked.sort() : picked.slice(0, 1);
 }
-function formatCorrectAnswers(q){
+function formatCorrectAnswers(q) {
   const letters = q.correctLetters || [];
   const parts = letters.map(L => `${L}. ${escapeHTML(q.options[L] || '')}`);
   return parts.join('<br>');
 }
 
-/* ---------- Progress ---------- */
-function updateProgressBar(){
+/* ----------------------------------------------------------------
+   Progress bar and counters
+---------------------------------------------------------------- */
+function updateProgressBar() {
   if (!progressBar) return;
   const total = run.masterPool.length || 0;
   const mastered = run.masterPool.filter(q => run.answered.get(q.id)?.correct).length;
-  const pct = total ? Math.round((mastered/total)*100) : 0;
+  const pct = total ? Math.round((mastered / total) * 100) : 0;
   progressFill.style.width = `${pct}%`;
   progressBar.setAttribute('aria-valuenow', String(pct));
-  if (progressLabel) progressLabel.textContent = `${pct}% mastered`;
+  progressLabel.textContent = `${pct}% mastered`;
 }
-
-/* ---------- Flow ---------- */
-function updateCounters(){
+function updateCounters() {
   const uniqueTotal = run.uniqueSeen.size;
   runCounter.textContent = `Question: ${uniqueTotal}`;
   const remaining = run.masterPool.filter(q => !run.answered.get(q.id)?.correct).length;
@@ -384,7 +450,11 @@ function updateCounters(){
   updateProgressBar();
   saveRunState();
 }
-function recordAnswer(q, userLetters, isCorrect){
+
+/* ----------------------------------------------------------------
+   Run and navigation helpers
+---------------------------------------------------------------- */
+function recordAnswer(q, userLetters, isCorrect) {
   const firstTime = !run.answered.has(q.id);
   const entry = run.answered.get(q.id) || { firstTryCorrect: null, correct: false, userLetters: [] };
   if (firstTime) entry.firstTryCorrect = !!isCorrect;
@@ -392,10 +462,10 @@ function recordAnswer(q, userLetters, isCorrect){
   entry.userLetters = userLetters.slice();
   run.answered.set(q.id, entry);
 }
-function getNotMastered(){
+function getNotMastered() {
   return run.masterPool.filter(q => !run.answered.get(q.id)?.correct);
 }
-function nextIndex(){
+function nextIndex() {
   const nextIdx = (run.i ?? 0) + 1;
   if (nextIdx < run.order.length) {
     run.i = nextIdx;
@@ -411,8 +481,10 @@ function nextIndex(){
   return { fromBuffer: false, q: null };
 }
 
-/* ---------- Start / End ---------- */
-async function startQuiz(){
+/* ----------------------------------------------------------------
+   Start and end of quiz
+---------------------------------------------------------------- */
+async function startQuiz() {
   const lenBtn = lengthBtns.querySelector('.seg-btn.active');
   if (!lenBtn) {
     alert('Pick Length Of Quiz Before Starting');
@@ -422,7 +494,7 @@ async function startQuiz(){
 
   const bank = moduleSel.value;
   const displayName = prettifyModuleName(bank);
-  const qty  = (lenBtn.dataset.len === 'full' ? 'full' : parseInt(lenBtn.dataset.len, 10));
+  const qty = lenBtn.dataset.len === 'full' ? 'full' : parseInt(lenBtn.dataset.len, 10);
 
   setHeaderTitle(displayName);
   document.title = `Nursing School Quiz App — ${displayName}`;
@@ -441,7 +513,7 @@ async function startQuiz(){
   allQuestions = normalizeQuestions(raw);
 
   const sampled = sampleQuestions(allQuestions, qty);
-  const shuffledQuestions = sampled.map((q) => shuffleQuestionOptions(q));
+  const shuffledQuestions = sampled.map(q => shuffleQuestionOptions(q));
 
   run = {
     bank,
@@ -456,7 +528,7 @@ async function startQuiz(){
   };
 
   const total = run.masterPool.length;
-  const frac = (qty === 'full' || (typeof qty === 'number' && qty >= 100)) ? 0.05 : 0.15;
+  const frac = qty === 'full' || (typeof qty === 'number' && qty >= 100) ? 0.05 : 0.15;
   run.thresholdWrong = Math.max(1, Math.ceil(total * frac));
 
   launcher.classList.add('hidden');
@@ -474,7 +546,7 @@ async function startQuiz(){
   startBtn.disabled = false;
 }
 
-function endRun(){
+function endRun() {
   quiz.classList.add('hidden');
   summary.classList.remove('hidden');
   countersBox.classList.add('hidden');
@@ -488,7 +560,7 @@ function endRun(){
   const ftCorrect = uniq.filter(x => x.firstTryCorrect).length;
   const totalUnique = uniq.length;
 
-  if (totalUnique > 0){
+  if (totalUnique > 0) {
     firstTrySummary.classList.remove('hidden');
     firstTryPct.textContent = `${Math.round((ftCorrect / totalUnique) * 100)}%`;
     firstTryCount.textContent = ftCorrect;
@@ -503,30 +575,39 @@ function endRun(){
     const ans = run.answered.get(q.id);
     row.className = 'rev-item ' + (ans?.correct ? 'ok' : 'bad');
 
-    const qEl = document.createElement('div'); qEl.className = 'rev-q'; qEl.textContent = q.stem;
-    const caEl = document.createElement('div'); caEl.className = 'rev-ans';
+    const qEl = document.createElement('div');
+    qEl.className = 'rev-q';
+    qEl.textContent = q.stem;
+    const caEl = document.createElement('div');
+    caEl.className = 'rev-ans';
     caEl.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
-    const rEl = document.createElement('div'); rEl.className = 'rev-rationale';
+    const rEl = document.createElement('div');
+    rEl.className = 'rev-rationale';
     rEl.innerHTML = `<strong>Rationale:</strong> ${escapeHTML(q.rationale || '')}`;
 
-    row.appendChild(qEl); row.appendChild(caEl); row.appendChild(rEl);
+    row.appendChild(qEl);
+    row.appendChild(caEl);
+    row.appendChild(rEl);
     reviewList.appendChild(row);
   });
 
   clearSavedState();
 }
 
-/* ---------- Event wiring ---------- */
+/* ----------------------------------------------------------------
+   Event wiring
+---------------------------------------------------------------- */
 lengthBtns.addEventListener('click', (e) => {
-  const btn = e.target.closest('.seg-btn'); if (!btn) return;
+  const btn = e.target.closest('.seg-btn');
+  if (!btn) return;
   lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.setAttribute('aria-pressed', b.classList.contains('active')?'true':'false'));
+  lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.setAttribute('aria-pressed', b.classList.contains('active') ? 'true' : 'false'));
 });
 startBtn.addEventListener('click', startQuiz);
 form.addEventListener('change', onSelectionChanged);
 
-/* Single action button (Submit or Next) */
+/* Submit / Next button logic */
 submitBtn.addEventListener('click', () => {
   if (submitBtn.dataset.mode === 'next') {
     scrollToQuizTop();
@@ -551,9 +632,13 @@ submitBtn.addEventListener('click', () => {
   if (!isCorrect) {
     run.wrongSinceLast.push(q);
     if (run.wrongSinceLast.length >= run.thresholdWrong) {
-      const seen = new Set(); const uniqueBatch = [];
+      const seen = new Set();
+      const uniqueBatch = [];
       for (const item of run.wrongSinceLast) {
-        if (!seen.has(item.id)) { seen.add(item.id); uniqueBatch.push(item); }
+        if (!seen.has(item.id)) {
+          seen.add(item.id);
+          uniqueBatch.push(item);
+        }
       }
       run.wrongSinceLast = [];
       if (uniqueBatch.length) {
@@ -563,7 +648,7 @@ submitBtn.addEventListener('click', () => {
   }
 
   feedback.textContent = isCorrect ? 'Correct!' : 'Incorrect';
-  feedback.classList.remove('ok','bad');
+  feedback.classList.remove('ok', 'bad');
   feedback.classList.add(isCorrect ? 'ok' : 'bad');
 
   answerLine.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
@@ -577,13 +662,18 @@ submitBtn.addEventListener('click', () => {
   updateCounters();
 });
 
-/* Reset (visible only during quiz) */
-resetAll.addEventListener('click', () => { clearSavedState(); location.reload(); });
+/* Reset button: clears saved state and reloads */
+resetAll.addEventListener('click', () => {
+  clearSavedState();
+  location.reload();
+});
 
-/* Summary “Start Another Run” */
-restartBtn2.addEventListener('click', () => { location.reload(); });
+/* Summary “Start Another Run” button */
+restartBtn2.addEventListener('click', () => {
+  location.reload();
+});
 
-/* ---------- Keyboard shortcuts ---------- */
+/* Keyboard shortcuts */
 document.addEventListener('keydown', (e) => {
   if (quiz.classList.contains('hidden')) return;
   if (isTextEditingTarget(e.target)) return;
@@ -592,6 +682,7 @@ document.addEventListener('keydown', (e) => {
   const key = e.key || '';
   const upper = key.toUpperCase();
 
+  // Enter triggers submit/next
   if (key === 'Enter') {
     e.preventDefault();
     if (!submitBtn.disabled || submitBtn.dataset.mode === 'next') {
@@ -600,6 +691,7 @@ document.addEventListener('keydown', (e) => {
     return;
   }
 
+  // Letter keys toggle answers
   if (/^[A-Z]$/.test(upper) && submitBtn.dataset.mode === 'submit') {
     const input = document.getElementById(`opt-${upper}`);
     if (!input || input.disabled) return;
@@ -609,6 +701,8 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-/* ---------- Init ---------- */
+/* ----------------------------------------------------------------
+   Initialization
+---------------------------------------------------------------- */
 initModules();
 showResumeIfAny();
