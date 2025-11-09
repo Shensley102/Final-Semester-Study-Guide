@@ -1,6 +1,6 @@
 /* -----------------------------------------------------------
    Final-Semester-Study-Guide - Quiz Frontend
-   - Start requires a Length selection
+   - Start can be clicked anytime; if no Length chosen, show popup
    - Single action button: Submit (green) ➜ Next (blue)
    - Counters + Reset only visible during an active quiz
    - Keyboard: A–Z toggle options; Enter submits / next
@@ -367,19 +367,14 @@ function nextIndex(){
   return { fromBuffer: false, q: null };
 }
 
-// ===== NEW: gate Start by requiring a length selection =====
-function updateStartEnabled(){
-  const hasSelection = !!lengthBtns.querySelector('.seg-btn.active');
-  startBtn.disabled = !hasSelection;
-}
-
 // ---------- Start / End ----------
 async function startQuiz(){
   const lenBtn = lengthBtns.querySelector('.seg-btn.active');
   if (!lenBtn) {
-    // Defensive gate (if someone enables the button via devtools)
-    alert('Please select a Length to start the quiz.');
-    updateStartEnabled();
+    // EXACT message requested:
+    alert('Pick Length Of Quiz Before Starting');
+    // polite nudge: bring Length section into view
+    lengthBtns.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return;
   }
 
@@ -488,10 +483,7 @@ lengthBtns.addEventListener('click', (e) => {
   btn.classList.add('active');
   // keep aria-pressed in sync
   lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.setAttribute('aria-pressed', b.classList.contains('active')?'true':'false'));
-  // NEW: enable Start when a length is chosen
-  updateStartEnabled();
 });
-
 startBtn.addEventListener('click', startQuiz);
 form.addEventListener('change', onSelectionChanged);
 
@@ -586,5 +578,3 @@ document.addEventListener('keydown', (e) => {
 // ---------- Init ----------
 initModules();
 showResumeIfAny();
-// Ensure Start is disabled at load until user picks a length
-updateStartEnabled();
