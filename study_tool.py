@@ -10,8 +10,8 @@ BASE_DIR = Path(__file__).resolve().parent
 app = Flask(
     __name__,
     static_url_path="/static",
-    static_folder=str(BASE_DIR / "static"),     # serve /static/*
-    template_folder=str(BASE_DIR / "template"), # render /template/index.html
+    static_folder=str(BASE_DIR / "static"),       # serve /static/*
+    template_folder=str(BASE_DIR / "templates"),  # render /templates/index.html
 )
 
 # Allow only simple names and .json extension
@@ -58,12 +58,10 @@ def serve_bank(filename: str):
         abort(404)
     return send_from_directory(BASE_DIR, safe_name, mimetype="application/json")
 
-# Silences the automatic browser requests for a site icon (no file required)
+# Silences automatic browser favicon requests (no file required)
 @app.route("/favicon.ico")
 @app.route("/favicon.png")
 def favicon():
-    # If you later add a real icon in /static, you can serve it instead:
-    # return send_from_directory(BASE_DIR / "static", "favicon.ico")
     return ("", 204)
 
 # ---------- Dev entry ----------
