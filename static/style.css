@@ -196,6 +196,19 @@ h1{
 .rev-aux{ color:var(--ink-soft); margin-bottom:6px; } /* shows "Missed X of Y" */
 .rev-ans,.rev-rationale{ color:var(--ink-soft); }
 
+/* ---- Clever final-page label ---- */
+.sorted-note{
+  margin:10px 0 12px;
+  padding:10px 12px;
+  background:#eef2ff;
+  border:1px dashed #c7d2fe;
+  color:var(--ink-soft);
+  border-radius:12px;
+  font-weight:600;
+  display:flex; align-items:center; gap:8px;
+}
+.sorted-note .icon{ font-size:1.1em; }
+
 /* Utility */
 .hidden{ display:none !important; }
 
