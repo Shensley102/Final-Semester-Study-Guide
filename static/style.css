@@ -9,7 +9,7 @@ html { scroll-behavior: smooth; }
   --ink-soft:#4a5568;
   --primary:#2f61f3;      /* blue for Next state */
   --danger:#d33a2c;       /* red for errors / Reset outline */
-  --success:#22c55e;      /* green for success / progress bar */
+  --success:#22c55e;      /* green for success / progress bar fill */
   --ring:#cdd9ff;
   --border:#e7eaf3;
 
@@ -71,7 +71,7 @@ h1{
 }
 #resetAll{ margin-left:auto; }
 
-/* ===== Progress bar (twice as big) ===== */
+/* ===== Progress bar ===== */
 .pbar-wrap{
   display:flex;
   align-items:center;
@@ -80,20 +80,34 @@ h1{
 }
 .pbar{
   position:relative;
-  width: 360px;   /* was 180px */
-  height: 20px;   /* was 10px  */
+  width: 100%;            /* FULL width of content area */
+  height: 20px;
   border-radius:999px;
-  background:#e9edf8;
+  background:#e9edf8;     /* track */
   overflow:hidden;
   border:1px solid var(--border);
   box-shadow: var(--shadow-sm);
 }
 .pbar-fill{
+  position: relative;
   height:100%;
   width:0%;
-  /* CHANGED: progress bar now green */
-  background: var(--success);
+  background: var(--success);          /* green fill */
   transition: width .25s ease;
+}
+/* Hash-mark overlay inside the filled portion */
+.pbar-fill::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  /* vertical hash marks every 14px, 2px thick, semi-transparent */
+  background-image: repeating-linear-gradient(
+    to right,
+    rgba(255,255,255,.55) 0 2px,
+    transparent 2px 14px
+  );
+  mix-blend-mode: soft-light;          /* subtle look atop the green */
 }
 .pbar-label{
   font-size: 1rem;
