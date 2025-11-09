@@ -1,7 +1,7 @@
 /* =============================================================
    Final Semester Study Guide — One-Window, No-Scroll Layout
    - Open Sans applied globally
-   - No scrolling anywhere on the page
+   - No scrolling on pages except the final overview
    - Quiz scale is locked (no size change after Submit)
 ============================================================= */
 
@@ -36,7 +36,7 @@ html, body { height:100%; }
 body{
   margin:0;
   height:100%;
-  overflow:hidden;                /* no page scroll at all */
+  overflow:hidden;                /* no page scroll at all (summary overrides) */
   background:var(--bg);
   color:var(--ink);
   font:16px/1.45 'Open Sans', -apple-system, BlinkMacSystemFont,
@@ -100,8 +100,9 @@ h1{
   padding:14px;
 }
 
-/* Launcher & Summary */
-#launcher.card, #summary.card { overflow:hidden; }
+/* Launcher doesn't scroll; Summary DOES scroll */
+#launcher.card{ overflow:hidden; }
+#summary.card{ overflow:auto; }        /* <— final page can scroll */
 
 /* Segmented buttons */
 .seg{ display:flex; gap:10px; flex-wrap:wrap; }
@@ -192,6 +193,7 @@ h1{
 .rev-item.ok{ border-left:4px solid var(--success); }
 .rev-item.bad{ border-left:4px solid var(--danger); }
 .rev-q{ font-weight:700; margin-bottom:6px; }
+.rev-aux{ color:var(--ink-soft); margin-bottom:6px; } /* shows "Missed X of Y" */
 .rev-ans,.rev-rationale{ color:var(--ink-soft); }
 
 /* Utility */
