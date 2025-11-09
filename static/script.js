@@ -1,11 +1,11 @@
 /* -----------------------------------------------------------
    Final-Semester-Study-Guide - Quiz Frontend
+   - Start requires a Length selection
    - Single action button: Submit (green) ➜ Next (blue)
    - Counters + Reset only visible during an active quiz
    - Keyboard: A–Z toggle options; Enter submits / next
-   - Feedback bigger & colored
-   - Persistence + progress bar + optional resume
-   - RESULTS PAGE: title shows the quiz name taken; auto scroll to top
+   - Feedback bigger & colored; progress bar + resume
+   - Results page: title shows module name; auto scroll to top
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -91,15 +91,14 @@ function isTextEditingTarget(el){
 let allQuestions = [];
 let run = {
   bank: '',
-  order: [],             // current queue (may include redeployed duplicates)
-  masterPool: [],        // unique set sampled at start; must all be mastered
-  i: 0,                  // index into run.order
-  answered: new Map(),   // id -> { firstTryCorrect: bool, correct: bool, userLetters: [] }
-  uniqueSeen: new Set(), // ids shown at least once
+  order: [],
+  masterPool: [],
+  i: 0,
+  answered: new Map(),
+  uniqueSeen: new Set(),
 
-  // Thresholded wrong-question redeployments
-  thresholdWrong: 0,     // batch size (15% for 10/25/50, 5% for 100/full)
-  wrongSinceLast: [],    // wrong since last redeploy
+  thresholdWrong: 0,
+  wrongSinceLast: [],
 };
 
 // ---------- Persistence ----------
@@ -120,10 +119,7 @@ function serializeRun() {
   });
 }
 function saveRunState() {
-  try {
-    const s = serializeRun();
-    if (s) localStorage.setItem(STORAGE_KEY, s);
-  } catch {}
+  try { const s = serializeRun(); if (s) localStorage.setItem(STORAGE_KEY, s); } catch {}
 }
 function loadRunState() {
   try {
@@ -371,10 +367,24 @@ function nextIndex(){
   return { fromBuffer: false, q: null };
 }
 
+// ===== NEW: gate Start by requiring a length selection =====
+function updateStartEnabled(){
+  const hasSelection = !!lengthBtns.querySelector('.seg-btn.active');
+  startBtn.disabled = !hasSelection;
+}
+
+// ---------- Start / End ----------
 async function startQuiz(){
-  const bank = moduleSel.value;
   const lenBtn = lengthBtns.querySelector('.seg-btn.active');
-  const qty = lenBtn ? (lenBtn.dataset.len === 'full' ? 'full' : parseInt(lenBtn.dataset.len, 10)) : 'full';
+  if (!lenBtn) {
+    // Defensive gate (if someone enables the button via devtools)
+    alert('Please select a Length to start the quiz.');
+    updateStartEnabled();
+    return;
+  }
+
+  const bank = moduleSel.value;
+  const qty  = (lenBtn.dataset.len === 'full' ? 'full' : parseInt(lenBtn.dataset.len, 10));
 
   // Show selected quiz/module name during the run
   setHeaderTitle(bank);
@@ -433,7 +443,6 @@ function endRun(){
   countersBox.classList.add('hidden');
 
   // Make the big title match the quiz that was just taken
-  // (H1 will display the module/quiz name; browser title also reflects it)
   setHeaderTitle(run.bank || defaultTitle);
   document.title = run.bank || 'Final Semester Study Guide';
 
@@ -469,7 +478,6 @@ function endRun(){
     reviewList.appendChild(row);
   });
 
-  // Clear saved state (finished run)
   clearSavedState();
 }
 
@@ -478,8 +486,12 @@ lengthBtns.addEventListener('click', (e) => {
   const btn = e.target.closest('.seg-btn'); if (!btn) return;
   lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  // keep aria-pressed in sync
   lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.setAttribute('aria-pressed', b.classList.contains('active')?'true':'false'));
+  // NEW: enable Start when a length is chosen
+  updateStartEnabled();
 });
+
 startBtn.addEventListener('click', startQuiz);
 form.addEventListener('change', onSelectionChanged);
 
@@ -574,3 +586,5 @@ document.addEventListener('keydown', (e) => {
 // ---------- Init ----------
 initModules();
 showResumeIfAny();
+// Ensure Start is disabled at load until user picks a length
+updateStartEnabled();
