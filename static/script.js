@@ -1,10 +1,11 @@
 /* -----------------------------------------------------------
    Final-Semester-Study-Guide - Quiz Frontend
-   - Single action button: Submit (green & wide) ➜ Next (blue)
+   - Single action button: Submit (green) ➜ Next (blue)
    - Counters + Reset only visible during an active quiz
    - Keyboard: A–Z toggle options; Enter submits / next
-   - Feedback bigger & colored (green for correct, red for incorrect)
-   - New: lightweight persistence + progress bar + optional resume
+   - Feedback bigger & colored
+   - Persistence + progress bar + optional resume
+   - RESULTS PAGE: title shows the quiz name taken; auto scroll to top
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -35,8 +36,8 @@ const resumeBtn  = $('resumeBtn');
 const quiz         = $('quiz');
 const qText        = $('questionText');
 const form         = $('optionsForm');
-const submitBtn    = $('submitBtn');   // single action button (Submit/Next)
-const nextBtn      = $('nextBtn');     // hidden/unused (kept for layout)
+const submitBtn    = $('submitBtn');   // single action (Submit/Next)
+const nextBtn      = $('nextBtn');     // hidden/unused, kept for layout
 const feedback     = $('feedback');
 const answerLine   = $('answerLine');
 const rationaleBox = $('rationale');
@@ -49,7 +50,7 @@ const firstTryCount    = $('firstTryCount');
 const firstTryTotal    = $('firstTryTotal');
 const reviewList       = $('reviewList');
 const restartBtn2      = $('restartBtnSummary');
-const resetAll         = $('resetAll'); // hidden until quiz starts
+const resetAll         = $('resetAll');
 
 // ---------- Utilities ----------
 function escapeHTML(s=''){
@@ -94,11 +95,11 @@ let run = {
   masterPool: [],        // unique set sampled at start; must all be mastered
   i: 0,                  // index into run.order
   answered: new Map(),   // id -> { firstTryCorrect: bool, correct: bool, userLetters: [] }
-  uniqueSeen: new Set(), // ids shown at least once (for the “Question: N” counter)
+  uniqueSeen: new Set(), // ids shown at least once
 
   // Thresholded wrong-question redeployments
   thresholdWrong: 0,     // batch size (15% for 10/25/50, 5% for 100/full)
-  wrongSinceLast: [],    // questions answered wrong since last redeploy
+  wrongSinceLast: [],    // wrong since last redeploy
 };
 
 // ---------- Persistence ----------
@@ -130,7 +131,6 @@ function loadRunState() {
     if (!raw) return null;
     const data = JSON.parse(raw);
 
-    // reconstruct questions
     const qById = new Map();
     const restoredOrder = (data.order || []).map(q => {
       const qq = { id:String(q.id), stem:String(q.stem||''), options:q.options||{}, correctLetters:(q.correctLetters||[]), rationale:String(q.rationale||''), type:String(q.type||'single_select') };
@@ -189,10 +189,8 @@ async function fetchModules(){
     if (!res.ok) throw new Error('modules failed');
     const data = await res.json();
     const mods = Array.isArray(data.modules) ? data.modules : [];
-    // Safety net: exclude ONLY 'vercel'
     return mods.filter(m => m.toLowerCase() !== 'vercel');
   } catch {
-    // Fallback list if /modules endpoint isn’t available
     return ["Module_1","Module_2","Module_3","Module_4","Pharm_Quiz_HESI",
             "Learning_Questions_Module_1_2","Learning_Questions_Module_3_4_",
             "Pharmacology_1","Pharmacology_2","Pharmacology_3"];
@@ -218,12 +216,6 @@ async function initModules(){
 
 // ---------- Parse/normalize ----------
 function normalizeQuestions(raw){
-  // Expected schema:
-  // { module: "Name",
-  //   questions: [
-  //     { id, stem, options:[], correct:["A"...], rationale, type:"single_select"|"multi_select" }
-  //   ]
-  // }
   const questions = Array.isArray(raw?.questions) ? raw.questions : [];
   const norm = [];
   for (const q of questions){
@@ -252,7 +244,7 @@ function seededShuffle(arr, seed) {
 }
 function shuffleQuestionOptions(q) {
   const pairs = Object.entries(q.options).map(([letter, text]) => ({ letter, text }));
-  const shuffled = seededShuffle(pairs, q.id); // stable by id
+  const shuffled = seededShuffle(pairs, q.id);
   const newOptions = {}; const oldToNew = {};
   shuffled.forEach((item, idx) => { const L = String.fromCharCode(65 + idx); newOptions[L] = item.text; oldToNew[item.letter] = L; });
   const newCorrectLetters = (q.correctLetters || []).map(oldL => oldToNew[oldL]).filter(Boolean).sort();
@@ -264,12 +256,12 @@ function setActionState(state){
   if (state === 'submit') {
     submitBtn.dataset.mode = 'submit';
     submitBtn.textContent = 'Submit';
-    submitBtn.classList.remove('btn-blue'); // green by default
-    submitBtn.disabled = true;              // enables after selection
+    submitBtn.classList.remove('btn-blue');
+    submitBtn.disabled = true;
   } else {
     submitBtn.dataset.mode = 'next';
     submitBtn.textContent = 'Next';
-    submitBtn.classList.add('btn-blue');    // blue for Next
+    submitBtn.classList.add('btn-blue');
     submitBtn.disabled = false;
   }
 }
@@ -295,7 +287,6 @@ function renderQuestion(q){
   const isMulti = q.type === 'multi_select';
   form.setAttribute('role', isMulti ? 'group' : 'radiogroup');
 
-  // Render in the already-shuffled A, B, C, D order
   Object.entries(q.options).forEach(([L, text]) => {
     const wrap = document.createElement('div');
     wrap.className = 'opt';
@@ -348,7 +339,6 @@ function updateProgressBar(){
 function updateCounters(){
   const uniqueTotal = run.uniqueSeen.size;
   runCounter.textContent = `Question: ${uniqueTotal}`;
-  // Remaining to master: based on masterPool (unique), not the current queue
   const remaining = run.masterPool.filter(q => !run.answered.get(q.id)?.correct).length;
   remainingCounter.textContent = `Remaining to master: ${remaining}`;
   updateProgressBar();
@@ -371,15 +361,13 @@ function nextIndex(){
     run.i = nextIdx;
     return { fromBuffer: false, q: run.order[run.i] };
   }
-  // End of this pass: if any question is not yet mastered, append them and continue
   const notMastered = getNotMastered();
   if (notMastered.length > 0) {
-    run.wrongSinceLast = []; // restart wrong counter on new pass
+    run.wrongSinceLast = [];
     run.order.push(...notMastered);
     run.i = nextIdx;
     return { fromBuffer: true, q: run.order[run.i] };
   }
-  // Truly finished only when everything is mastered
   return { fromBuffer: false, q: null };
 }
 
@@ -388,7 +376,7 @@ async function startQuiz(){
   const lenBtn = lengthBtns.querySelector('.seg-btn.active');
   const qty = lenBtn ? (lenBtn.dataset.len === 'full' ? 'full' : parseInt(lenBtn.dataset.len, 10)) : 'full';
 
-  // Show the selected quiz name while in a quiz
+  // Show selected quiz/module name during the run
   setHeaderTitle(bank);
   document.title = `Final Semester Study Guide — ${bank}`;
 
@@ -398,7 +386,6 @@ async function startQuiz(){
   if (!res.ok) {
     alert(`Could not load ${bank}.json`);
     startBtn.disabled = false;
-    // Restore title on failure
     setHeaderTitle(defaultTitle);
     document.title = 'Final Semester Study Guide';
     return;
@@ -406,7 +393,6 @@ async function startQuiz(){
   const raw = await res.json();
   allQuestions = normalizeQuestions(raw);
 
-  // Sample and deterministically shuffle options ONCE per question for this run
   const sampled = sampleQuestions(allQuestions, qty);
   const shuffledQuestions = sampled.map((q) => shuffleQuestionOptions(q));
 
@@ -421,7 +407,6 @@ async function startQuiz(){
     wrongSinceLast: [],
   };
 
-  // Thresholds: 15% for 10/25/50; 5% for 100/full
   const total = run.masterPool.length;
   const frac = (qty === 'full' || (typeof qty === 'number' && qty >= 100)) ? 0.05 : 0.15;
   run.thresholdWrong = Math.max(1, Math.ceil(total * frac));
@@ -436,17 +421,26 @@ async function startQuiz(){
   const q0 = run.order[0];
   run.uniqueSeen.add(q0.id);
   renderQuestion(q0);
-  updateCounters(); // also saves state
+  updateCounters();
 
   startBtn.disabled = false;
 }
 
 function endRun(){
+  // Show summary
   quiz.classList.add('hidden');
   summary.classList.remove('hidden');
-
   countersBox.classList.add('hidden');
 
+  // Make the big title match the quiz that was just taken
+  // (H1 will display the module/quiz name; browser title also reflects it)
+  setHeaderTitle(run.bank || defaultTitle);
+  document.title = run.bank || 'Final Semester Study Guide';
+
+  // Auto scroll to top so users see the title + mastery stats
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  // Build summary
   const uniq = [...run.answered.values()];
   const ftCorrect = uniq.filter(x => x.firstTryCorrect).length;
   const totalUnique = uniq.length;
@@ -475,11 +469,7 @@ function endRun(){
     reviewList.appendChild(row);
   });
 
-  // Restore title:
-  setHeaderTitle(defaultTitle);
-  document.title = 'Final Semester Study Guide';
-
-  // Run finished; clear saved state so a fresh run starts next time
+  // Clear saved state (finished run)
   clearSavedState();
 }
 
@@ -488,7 +478,6 @@ lengthBtns.addEventListener('click', (e) => {
   const btn = e.target.closest('.seg-btn'); if (!btn) return;
   lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  // keep aria-pressed in sync
   lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.setAttribute('aria-pressed', b.classList.contains('active')?'true':'false'));
 });
 startBtn.addEventListener('click', startQuiz);
@@ -515,7 +504,7 @@ submitBtn.addEventListener('click', () => {
 
   recordAnswer(q, userLetters, isCorrect);
 
-  // Threshold-based wrong question redeployment
+  // Threshold-based redeployment
   if (!isCorrect) {
     run.wrongSinceLast.push(q);
     if (run.wrongSinceLast.length >= run.thresholdWrong) {
@@ -539,14 +528,12 @@ submitBtn.addEventListener('click', () => {
   rationaleBox.textContent = q.rationale || '';
   rationaleBox.classList.remove('hidden');
 
-  // Lock inputs
+  // Lock inputs and switch to Next
   form.querySelectorAll('input').forEach(i => i.disabled = true);
-
-  // Switch button to Next
   setActionState('next');
 
   scrollToBottomSmooth();
-  updateCounters(); // also saves state
+  updateCounters();
 });
 
 // Reset (visible only during quiz)
@@ -579,17 +566,11 @@ document.addEventListener('keydown', (e) => {
     if (!input || input.disabled) return;
 
     e.preventDefault();
-
-    if (input.type === 'radio') {
-      input.checked = !input.checked;
-    } else {
-      input.checked = !input.checked;
-    }
-
+    input.checked = !input.checked;
     onSelectionChanged();
   }
 });
 
 // ---------- Init ----------
 initModules();
-showResumeIfAny();  // offer resume if there’s saved state
+showResumeIfAny();
