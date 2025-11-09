@@ -46,10 +46,11 @@ body{
 /* Make all form controls inherit font */
 button,input,select,textarea{ font:inherit }
 
-/* Main container uses fixed viewport height */
+/* Main container uses fixed viewport height
+   (was 980px max; widened so the quiz box isn’t cramped) */
 .container{
   height:100vh;
-  max-width:980px;
+  max-width:1280px;               /* <— widened from 980px */
   margin:0 auto;
   padding:10px 12px;
   display:grid;
@@ -145,7 +146,8 @@ label{ display:block; font-weight:600; margin-bottom:6px; color:var(--ink-soft);
 /* The element we scale */
 .quiz-scale{
   transform-origin: top left;
-  display:inline-block;
+  display:block;        /* <— was inline-block; ensures full available width */
+  width:100%;           /* <— makes the quiz content use the whole card width */
   will-change: transform;
 }
 
