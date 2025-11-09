@@ -61,14 +61,40 @@ h1{
 }
 #resetAll{ margin-left:auto; }
 
+/* Progress bar */
+.pbar-wrap{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width: 220px;
+}
+.pbar{
+  position:relative;
+  width:180px;
+  height:10px;
+  border-radius:999px;
+  background:#e9edf8;
+  overflow:hidden;
+  border:1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.pbar-fill{
+  height:100%;
+  width:0%;
+  background: var(--primary);
+  transition: width .25s ease;
+}
+.pbar-label{
+  font-size:.9rem;
+  color:var(--ink-soft);
+}
+
 /* ===== Form controls ===== */
 .field{ margin: 14px 0 18px; }
 label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft); }
 
 /* Segmented length buttons */
-.seg{
-  display:flex; gap:12px; flex-wrap:wrap;
-}
+.seg{ display:flex; gap:12px; flex-wrap:wrap; }
 .seg-btn{
   border:1px solid var(--border);
   background:#fff;
@@ -211,55 +237,31 @@ label[for="moduleSel"]{
   vertical-align: middle;
 }
 
-/* === Module picker: size unchanged (1.5x), restyled to clean dropdown ===
-   We (1) remove native UI with appearance, (2) supply a custom arrow,
-   (3) provide a subtle border + shadow, and (4) keep keyboard/focus states.
-   Note: native dropdown menus are OS-rendered and not fully styleable;
-   this styles the control itself consistently. */
-/* Fallback + broad support */
+/* === Module picker: size unchanged (1.5x), restyled to clean dropdown === */
 #moduleSel{
-  /* keep 1.5x size that you set previously */
-  appearance: none; /* allow custom styling */ /* MDN on appearance */ /* :contentReference[oaicite:0]{index=0} */
+  appearance: none;
   font-size: calc(1em * 1.5);
   line-height: 1.2;
-  padding: 0.5625rem 2.5rem 0.5625rem 0.75rem; /* room for arrow on right */
+  padding: 0.5625rem 2.5rem 0.5625rem 0.75rem;
   min-height: 2.25rem;
 
-  border-radius: 10px;                    /* rounded like screenshot (not pill) */
-  border: 1px solid #c9d5ee;              /* soft blue-gray */
+  border-radius: 10px;
+  border: 1px solid #c9d5ee;
   background: #fff;
   color: inherit;
   max-width: 100%;
   vertical-align: middle;
 
-  /* subtle depth like the image */
   box-shadow: 0 1px 2px rgba(16,24,40,.06);
 
-  /* custom SVG arrow (triangle) on the right */
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23121' d='M1.41.59 6 5.17 10.59.59 12 2 6 8 0 2z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   background-size: 12px 8px;
 }
-
-/* Focus outline like the screenshot */
 #moduleSel:focus{
   outline: none;
   border-color: #7aa2ff;
   box-shadow: 0 0 0 3px rgba(47,97,243,.25);
 }
-
-/* Hide old IE arrow (harmless elsewhere) */
 #moduleSel::-ms-expand{ display:none; }
-
-/* Progressive enhancement: use new customizable-select hooks when available */
-#moduleSel, ::picker(select){
-  /* opt-in to customizable select where supported */ /* MDN base-select */
-  appearance: base-select; /* allows styling picker/icon in modern engines */ /* :contentReference[oaicite:1]{index=1} */
-}
-/* Replace the picker icon when ::picker-icon is supported (experimental) */
-#moduleSel::picker-icon{
-  /* MDN: you can set content (e.g., SVG) for the icon */ /* :contentReference[oaicite:2]{index=2} */
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23121' d='M1.41.59 6 5.17 10.59.59 12 2 6 8 0 2z'/%3E%3C/svg%3E");
-  margin-inline-end: 10px;
-}
