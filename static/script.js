@@ -1,6 +1,9 @@
 /* -----------------------------------------------------------
    Final-Semester-Study-Guide - Quiz Frontend
-   - Pretty module titles: Pharm_Quiz_1..4 -> Pharm Quiz 1..4
+   - Pretty module titles:
+       Pharm_Quiz_1..4  -> Pharm Quiz 1..4
+       Learning_Questions_Module_1_2 -> Learning Questions Module 1 and 2
+       Learning_Questions_Module_3_4 -> Learning Questions Module 3 and 4
    - Single action button: Submit (green) ➜ Next (blue)
    - Full-width hashed progress bar; reduced jitter (snap to quiz top)
    - Open Sans question font (normal weight, slightly smaller)
@@ -50,16 +53,27 @@ const reviewList       = $('reviewList');
 const restartBtn2      = $('restartBtnSummary');
 const resetAll         = $('resetAll');
 
-/* ---------- Pretty names for modules ---------- */
+/* ---------- Pretty names for modules (UPDATED) ---------- */
 function prettifyModuleName(name) {
   const map = {
     'Pharm_Quiz_1': 'Pharm Quiz 1',
     'Pharm_Quiz_2': 'Pharm Quiz 2',
     'Pharm_Quiz_3': 'Pharm Quiz 3',
     'Pharm_Quiz_4': 'Pharm Quiz 4',
+
+    // Explicit Learning Questions mappings
+    'Learning_Questions_Module_1_2': 'Learning Questions Module 1 and 2',
+    'Learning_Questions_Module_1_2_': 'Learning Questions Module 1 and 2', // tolerate trailing underscore
+    'Learning_Questions_Module_3_4': 'Learning Questions Module 3 and 4',
+    'Learning_Questions_Module_3_4_': 'Learning Questions Module 3 and 4',
   };
   if (map[name]) return map[name];
-  // Fallback: replace underscores with spaces
+
+  // Generic fallback: "Learning_Questions_Module_X_Y" -> "Learning Questions Module X and Y"
+  const m = /^Learning[_ ]Questions[_ ]Module[_ ](\d+)[_ ](\d+)_?$/i.exec(String(name));
+  if (m) return `Learning Questions Module ${m[1]} and ${m[2]}`;
+
+  // Otherwise, default to replacing underscores with spaces
   return String(name || '').replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
@@ -93,6 +107,8 @@ function scrollToBottomSmooth() {
     });
   });
 }
+/* Snap the viewport to the quiz card’s top before rendering the next Q
+   to avoid visible layout jumps / jitter. */
 function scrollToQuizTop() {
   if (!quiz) return;
   quiz.scrollIntoView({ behavior: 'auto', block: 'start' });
@@ -106,7 +122,7 @@ function isTextEditingTarget(el){
 let allQuestions = [];
 let run = {
   bank: '',
-  displayName: '',      // NEW: human-facing label
+  displayName: '',      // human-facing label
   order: [],
   masterPool: [],
   i: 0,
@@ -236,7 +252,7 @@ function normalizeQuestions(raw){
   for (const q of questions){
     const id   = String(q.id ?? crypto.randomUUID());
     const stem = String(q.stem ?? '');
-    const type = String(q.type ?? 'single_select');
+    the type = String(q.type ?? 'single_select');
     const opts = Array.isArray(q.options) ? q.options.map(String) : [];
     const correctLetters = Array.isArray(q.correct) ? q.correct.map(String) : [];
     const rationale = String(q.rationale ?? '');
