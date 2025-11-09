@@ -1,9 +1,9 @@
 /* -----------------------------------------------------------
    Final-Semester-Study-Guide - Quiz Frontend
    - Single action button: Submit (green) ➜ Next (blue)
-   - Counters: counts on first row; progress bar underneath
-   - Keyboard: A–Z toggle options; Enter submits / next
-   - Feedback bigger & colored; progress bar + resume
+   - Counters: counts row; full-width progress bar underneath
+   - Keyboard: A–Z toggle; Enter submits / next
+   - Feedback bigger & colored; persistence + resume
    - Results page: title shows module name; auto scroll to top
 ----------------------------------------------------------- */
 
@@ -14,7 +14,7 @@ const runCounter       = $('runCounter');
 const remainingCounter = $('remainingCounter');
 const countersBox      = $('countersBox');
 
-// Progress bar (moved under counts; IDs unchanged)
+// Progress bar
 const progressBar   = $('progressBar');
 const progressFill  = $('progressFill');
 const progressLabel = $('progressLabel');
@@ -378,7 +378,6 @@ async function startQuiz(){
   const bank = moduleSel.value;
   const qty  = (lenBtn.dataset.len === 'full' ? 'full' : parseInt(lenBtn.dataset.len, 10));
 
-  // Show selected quiz/module name during the run
   setHeaderTitle(bank);
   document.title = `Final Semester Study Guide — ${bank}`;
 
