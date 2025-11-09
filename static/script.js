@@ -1,8 +1,7 @@
 /* -----------------------------------------------------------
    Final-Semester-Study-Guide - Quiz Frontend
-   - Start can be clicked anytime; if no Length chosen, show popup
    - Single action button: Submit (green) ➜ Next (blue)
-   - Counters + Reset only visible during an active quiz
+   - Counters: counts on first row; progress bar underneath
    - Keyboard: A–Z toggle options; Enter submits / next
    - Feedback bigger & colored; progress bar + resume
    - Results page: title shows module name; auto scroll to top
@@ -15,7 +14,7 @@ const runCounter       = $('runCounter');
 const remainingCounter = $('remainingCounter');
 const countersBox      = $('countersBox');
 
-// Progress bar
+// Progress bar (moved under counts; IDs unchanged)
 const progressBar   = $('progressBar');
 const progressFill  = $('progressFill');
 const progressLabel = $('progressLabel');
@@ -36,8 +35,8 @@ const resumeBtn  = $('resumeBtn');
 const quiz         = $('quiz');
 const qText        = $('questionText');
 const form         = $('optionsForm');
-const submitBtn    = $('submitBtn');   // single action (Submit/Next)
-const nextBtn      = $('nextBtn');     // hidden/unused, kept for layout
+const submitBtn    = $('submitBtn');
+const nextBtn      = $('nextBtn');
 const feedback     = $('feedback');
 const answerLine   = $('answerLine');
 const rationaleBox = $('rationale');
@@ -371,9 +370,7 @@ function nextIndex(){
 async function startQuiz(){
   const lenBtn = lengthBtns.querySelector('.seg-btn.active');
   if (!lenBtn) {
-    // EXACT message requested:
     alert('Pick Length Of Quiz Before Starting');
-    // polite nudge: bring Length section into view
     lengthBtns.scrollIntoView({ behavior: 'smooth', block: 'center' });
     return;
   }
@@ -432,19 +429,15 @@ async function startQuiz(){
 }
 
 function endRun(){
-  // Show summary
   quiz.classList.add('hidden');
   summary.classList.remove('hidden');
   countersBox.classList.add('hidden');
 
-  // Make the big title match the quiz that was just taken
   setHeaderTitle(run.bank || defaultTitle);
   document.title = run.bank || 'Final Semester Study Guide';
 
-  // Auto scroll to top so users see the title + mastery stats
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
-  // Build summary
   const uniq = [...run.answered.values()];
   const ftCorrect = uniq.filter(x => x.firstTryCorrect).length;
   const totalUnique = uniq.length;
@@ -481,7 +474,6 @@ lengthBtns.addEventListener('click', (e) => {
   const btn = e.target.closest('.seg-btn'); if (!btn) return;
   lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  // keep aria-pressed in sync
   lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.setAttribute('aria-pressed', b.classList.contains('active')?'true':'false'));
 });
 startBtn.addEventListener('click', startQuiz);
@@ -508,7 +500,6 @@ submitBtn.addEventListener('click', () => {
 
   recordAnswer(q, userLetters, isCorrect);
 
-  // Threshold-based redeployment
   if (!isCorrect) {
     run.wrongSinceLast.push(q);
     if (run.wrongSinceLast.length >= run.thresholdWrong) {
@@ -523,7 +514,6 @@ submitBtn.addEventListener('click', () => {
     }
   }
 
-  // Feedback + reveal
   feedback.textContent = isCorrect ? 'Correct!' : 'Incorrect';
   feedback.classList.remove('ok','bad');
   feedback.classList.add(isCorrect ? 'ok' : 'bad');
@@ -532,7 +522,6 @@ submitBtn.addEventListener('click', () => {
   rationaleBox.textContent = q.rationale || '';
   rationaleBox.classList.remove('hidden');
 
-  // Lock inputs and switch to Next
   form.querySelectorAll('input').forEach(i => i.disabled = true);
   setActionState('next');
 
@@ -555,7 +544,6 @@ document.addEventListener('keydown', (e) => {
   const key = e.key || '';
   const upper = key.toUpperCase();
 
-  // Enter submits or goes Next
   if (key === 'Enter') {
     e.preventDefault();
     if (!submitBtn.disabled || submitBtn.dataset.mode === 'next') {
@@ -564,11 +552,9 @@ document.addEventListener('keydown', (e) => {
     return;
   }
 
-  // A–Z toggles the corresponding option (before submit)
   if (/^[A-Z]$/.test(upper) && submitBtn.dataset.mode === 'submit') {
     const input = document.getElementById(`opt-${upper}`);
     if (!input || input.disabled) return;
-
     e.preventDefault();
     input.checked = !input.checked;
     onSelectionChanged();
