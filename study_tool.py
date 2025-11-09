@@ -7,8 +7,6 @@ from flask import Flask, render_template, send_from_directory, abort, jsonify
 BASE_DIR = Path(__file__).resolve().parent
 
 # ---------- Flask ----------
-# Configure Flask to look in the correct folders for static assets
-# and HTML templates. Our HTML file lives in the “template” folder.
 app = Flask(
     __name__,
     static_url_path="/static",
@@ -21,8 +19,8 @@ SAFE_JSON_RE = re.compile(r"^(?!\.)[A-Za-z0-9_\-\.]+\.json$")
 
 def list_banks() -> list[str]:
     """
-    Return base names (without extension) of JSON files in the repo root,
-    excluding vercel.json. Modules are sorted with Pharmacology* items first.
+    Return base names (without extension) of JSON files in the repo root, excluding vercel.json.
+    Modules are sorted with Pharmacology* items first.
     """
     items = []
     for p in BASE_DIR.glob("*.json"):
@@ -30,11 +28,9 @@ def list_banks() -> list[str]:
         if name.lower() == "vercel.json":
             continue
         if SAFE_JSON_RE.fullmatch(name):
-            items.append(name[:-5])  # strip .json
+            items.append(name[:-5])
     items.sort(key=lambda n: (0 if n.lower().startswith("pharmacology_") else 1, n.lower()))
     return items
-
-# ---------- Routes ----------
 
 @app.route("/", methods=["GET"])
 def index():
@@ -68,9 +64,8 @@ def serve_bank(filename: str):
 @app.route("/favicon.ico")
 @app.route("/favicon.png")
 def favicon():
-    """Return an empty 204 for favicon requests (no actual file)."""
+    """Return an empty 204 for favicon requests."""
     return ("", 204)
 
-# ---------- Local run ----------
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
