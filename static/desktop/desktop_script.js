@@ -1,9 +1,7 @@
 /* ===============================================================
-   Final Semester Study Guide — Shared Quiz Engine (Desktop)
-   - Open Sans everywhere
-   - No scrolling except the final overview
-   - Final overview sorts by "most missed" and shows a note
-   - "Start New Quiz" button appears at the top of summary
+   Final Semester Study Guide — Shared Quiz Engine (Desktop & Mobile)
+   - Flask decides mobile vs desktop; both pages load this file
+   - Final overview sorts by "most missed" and shows a label
 =============================================================== */
 
 const $ = (id) => document.getElementById(id);
@@ -17,7 +15,7 @@ const progressFill     = $('progressFill');
 const progressLabel    = $('progressLabel');
 
 // Title
-const pageTitle   = $('pageTitle');
+const pageTitle    = $('pageTitle');
 const defaultTitle = pageTitle?.textContent || 'Final Semester Study Guide';
 const setHeaderTitle = (t) => { if (pageTitle) pageTitle.textContent = t; };
 
@@ -33,7 +31,7 @@ const quiz         = $('quiz');
 const qText        = $('questionText');
 const form         = $('optionsForm');
 const submitBtn    = $('submitBtn');
-const nextBtn      = $('nextBtn'); // present but we use single action via submitBtn mostly
+const nextBtn      = $('nextBtn');
 const feedback     = $('feedback');
 const answerLine   = $('answerLine');
 const rationaleBox = $('rationale');
@@ -372,7 +370,6 @@ function endRun() {
   setHeaderTitle(run.displayName || run.bank || defaultTitle);
   document.title = run.displayName || run.bank || 'Final Semester Study Guide';
 
-  // First-try mastery (approx by attempts==1 & correct==true)
   const uniq = [...run.answered.values()];
   const ftCorrect = uniq.filter(x => x.correct).length;
   const totalUnique = uniq.length;
@@ -386,13 +383,13 @@ function endRun() {
     firstTrySummary.classList.add('hidden');
   }
 
-  // Move Start New Quiz to top
+  // Start New Quiz button at the top
   if (restartBtn2) {
     restartBtn2.textContent = 'Start New Quiz';
     if (summary.firstChild !== restartBtn2) summary.insertBefore(restartBtn2, summary.firstChild);
   }
 
-  // Add clever label if not exists
+  // Clever label (only once)
   if (!document.getElementById('sortNote')) {
     const note = document.createElement('div');
     note.id = 'sortNote';
@@ -402,7 +399,7 @@ function endRun() {
     summary.insertBefore(note, restartBtn2.nextSibling);
   }
 
-  // Sort by most missed, then most attempts, then alphabetically
+  // Sort by most missed, then attempts, then alpha
   reviewList.innerHTML = '';
   const qById = new Map(run.masterPool.map(q => [q.id, q]));
   const scored = [];
