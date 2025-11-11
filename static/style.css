@@ -5,7 +5,7 @@
    - Quiz scale is locked (no size change after Submit)
    - Mobile enhancements:
        • Full-width tap targets for options
-       • Submit/Next button becomes full-width on mobile
+       • Submit/Next button RIGHT-ALIGNED on mobile
 ============================================================= */
 
 :root{
@@ -115,7 +115,15 @@ h1{
   box-shadow:0 0 0 3px rgba(47,97,243,.18);
 }
 
-/* Action buttons */
+/* Action buttons container */
+.actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-top:6px;
+}
+
+/* Buttons */
 .btn{
   display:inline-flex; align-items:center; justify-content:center;
   border:1px solid transparent;
@@ -131,14 +139,6 @@ h1{
 .btn.primary{ background:var(--success); color:#fff; }
 .btn.btn-blue{ background:var(--primary); color:#fff; }
 .btn.danger{ background:#fff; color:var(--danger); border-color:var(--danger); }
-
-/* Container for Submit/Next (used by JS to locate buttons) */
-.actions{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin-top:6px;
-}
 
 /* Quiz card */
 #quiz.card{
@@ -287,21 +287,22 @@ input:focus-visible{
    Mobile-specific enhancements
    --------------------------- */
 @media (max-width: 1024px) {
-  /* Each option’s label occupies full width for larger touch targets */
+  /* Larger touch targets: make the whole option label tappable */
   .opt label{
     display:flex;
     width:100%;
     cursor:pointer;
   }
 
-  /* Make the Submit/Next button full-width under the options */
+  /* Keep Submit/Next button RIGHT-ALIGNED on mobile */
   .actions{
-    display:block;          /* stack area */
-    width:100%;
+    display:flex;
+    justify-content:flex-end;
   }
+
+  /* Ensure the button doesn't stretch full width */
   #submitBtn{
-    display:block;
-    width:100%;
-    max-width:none;         /* stretch edge-to-edge within card padding */
+    width:auto;
+    max-width:unset;
   }
 }
