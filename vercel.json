@@ -1,10 +1,7 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "study_tool.py",
-      "use": "@vercel/python"
-    }
+    { "src": "study_tool.py", "use": "@vercel/python" }
   ],
   "routes": [
     {
@@ -18,27 +15,15 @@
       ],
       "dest": "/m"
     },
-    {
-      "src": "/",
-      "dest": "/desktop"
-    },
-    {
-      "src": "/(.*\\.js|.*\\.css|.*\\.json|.*\\.png|.*\\.ico)",
-      "dest": "study_tool.py"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "study_tool.py"
-    }
+    { "src": "/", "dest": "/desktop" },
+    { "src": "/(.*\\.js|.*\\.css|.*\\.json|.*\\.png|.*\\.ico)", "dest": "study_tool.py" },
+    { "src": "/(.*)", "dest": "study_tool.py" }
   ],
   "headers": [
     {
       "source": "/",
       "headers": [
-        {
-          "key": "Vary",
-          "value": "User-Agent"
-        }
+        { "key": "Vary", "value": "User-Agent" }
       ]
     }
   ]
