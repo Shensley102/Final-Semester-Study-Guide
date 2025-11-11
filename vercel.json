@@ -1,0 +1,45 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "study_tool.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "user-agent",
+          "value": "(?i)(iphone|ipod|android(?!.*tablet)|windows phone|mobile)"
+        }
+      ],
+      "dest": "/m"
+    },
+    {
+      "src": "/",
+      "dest": "/desktop"
+    },
+    {
+      "src": "/(.*\\.js|.*\\.css|.*\\.json|.*\\.png|.*\\.ico)",
+      "dest": "study_tool.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "study_tool.py"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/",
+      "headers": [
+        {
+          "key": "Vary",
+          "value": "User-Agent"
+        }
+      ]
+    }
+  ]
+}
