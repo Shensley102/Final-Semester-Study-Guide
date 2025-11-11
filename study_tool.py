@@ -3,56 +3,43 @@ import re
 from pathlib import Path
 from flask import Flask, render_template, send_from_directory, abort, jsonify
 
-# ---------- Paths ----------
+# ----- Paths & Flask Setup -----
 BASE_DIR = Path(__file__).resolve().parent
-
-# ---------- Flask ----------
 app = Flask(
     __name__,
     static_url_path="/static",
     static_folder=str(BASE_DIR / "static"),
-    template_folder=str(BASE_DIR / "template"),
+    template_folder=str(BASE_DIR / "templates"),
 )
 
-# Allow only simple names with .json extension for modules
-SAFE_JSON_RE = re.compile(r"^(?!\.)[A-Za-z0-9_\-\.]+\.json$")
+# Only allow simple names ending in .json
+SAFE_JSON_RE = re.compile(r"^(?!\\.)[A-Za-z0-9_\\-\\.]+\\.json$")
 
-def list_banks() -> list[str]:
-    """
-    Return base names (without extension) of JSON files in the repo root, excluding vercel.json.
-    Modules are sorted with Pharmacology* items first.
-    """
-    items = []
+def list_banks():
+    """Return *.json file basenames (excluding vercel.json) in repo root."""
+    banks = []
     for p in BASE_DIR.glob("*.json"):
         name = p.name
         if name.lower() == "vercel.json":
             continue
         if SAFE_JSON_RE.fullmatch(name):
-            items.append(name[:-5])
-    items.sort(key=lambda n: (0 if n.lower().startswith("pharmacology_") else 1, n.lower()))
-    return items
+            banks.append(name[:-5])
+    banks.sort(key=lambda n: (0 if n.lower().startswith("pharmacology_") else 1, n.lower()))
+    return banks
 
-@app.route("/", methods=["GET"])
-def index():
-    """Render the main quiz page."""
-    return render_template("index.html")
-
-@app.route("/healthz", methods=["GET"])
+# ----- Routes -----
+@app.route("/healthz")
 def healthz():
-    """Simple health check endpoint."""
     return "ok", 200
 
-@app.route("/modules", methods=["GET"])
+# List available modules
+@app.route("/modules")
 def modules():
-    """Return a JSON listing of available modules (question banks)."""
     return jsonify({"modules": list_banks()})
 
-@app.route("/<string:filename>.json", methods=["GET", "HEAD"])
+# Serve JSON banks
+@app.route("/<filename>.json")
 def serve_bank(filename: str):
-    """
-    Serve a JSON bank by its base filename from the repo root.
-    Only allows names matching SAFE_JSON_RE.
-    """
     safe_name = os.path.basename(f"{filename}.json")
     if not SAFE_JSON_RE.fullmatch(safe_name):
         abort(404)
@@ -61,11 +48,28 @@ def serve_bank(filename: str):
         abort(404)
     return send_from_directory(BASE_DIR, safe_name, mimetype="application/json")
 
+# Desktop and mobile shell routes
+@app.route("/desktop")
+def desktop():
+    return render_template("desktop/index.html")
+
+@app.route("/m")
+def mobile():
+    return render_template("mobile/index.html")
+
+# Fallback root: you can direct this to desktop or 404
+@app.route("/")
+def root():
+    # We expect vercel.json to rewrite "/" to /desktop or /m,
+    # but fallback to desktop if called directly.
+    return render_template("desktop/index.html")
+
+# Suppress favicon errors
 @app.route("/favicon.ico")
 @app.route("/favicon.png")
 def favicon():
-    """Return an empty 204 for favicon requests."""
     return ("", 204)
 
+# ----- Run (for local testing) -----
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
