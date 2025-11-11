@@ -1,14 +1,14 @@
-/* Mobile Styles — based on desktop with mobile-friendly tweaks */
+/* Mobile CSS shares desktop base, then adjusts interaction/placement */
 @import url("/static/desktop/desktop_style.css");
 
-/* Mobile-only adjustments */
+/* Mobile-only tweaks */
 @media (max-width: 1024px) {
-  /* Make the whole option row easy to tap */
+  /* Make each option easy to tap */
   .opt label{ display:flex; width:100%; cursor:pointer; }
 
-  /* Submit/Next aligned to the right on mobile */
+  /* Place actions to the right (not full-width) */
   .actions{ display:flex; justify-content:flex-end; }
 
-  /* Keep button natural width, not full-width */
+  /* Natural button width */
   #submitBtn{ width:auto; max-width:unset; }
 }
