@@ -8,17 +8,15 @@
 
 const $ = (id) => document.getElementById(id);
 
-// Top-level counters
+// Counters & progress
 const runCounter       = $('runCounter');
 const remainingCounter = $('remainingCounter');
 const countersBox      = $('countersBox');
-
-// Progress pieces
 const progressBar   = $('progressBar');
 const progressFill  = $('progressFill');
 const progressLabel = $('progressLabel');
 
-// Titles
+// Title management
 const pageTitle     = $('pageTitle');
 const defaultTitle  = pageTitle?.textContent || 'Final Semester Study Guide';
 const setHeaderTitle = (t) => { if (pageTitle) pageTitle.textContent = t; };
@@ -30,7 +28,7 @@ const lengthBtns = $('lengthBtns');
 const startBtn   = $('startBtn');
 const resumeBtn  = $('resumeBtn');
 
-// Quiz UI roots
+// Quiz references
 const quiz         = $('quiz');
 const qText        = $('questionText');
 const form         = $('optionsForm');
@@ -41,22 +39,20 @@ const answerLine   = $('answerLine');
 const rationaleBox = $('rationale');
 const actionsEl    = quiz ? quiz.querySelector('.actions') : null;
 
-// ---------- Build a scale wrapper & feedback area (reserved height) ----------
+// Build scale wrapper & feedback area
 let scaleWrap = null;
 let fbArea = null;
 
 (function buildWrappers(){
   if (!quiz || document.getElementById('quizScale')) return;
 
-  // Outer scale container
   scaleWrap = document.createElement('div');
   scaleWrap.id = 'quizScale';
   scaleWrap.className = 'quiz-scale';
 
-  // Move question, form, actions into the scale container
+  // Move question and form and actions into scaleWrap
   [qText, form, actionsEl].forEach(n => { if (n) scaleWrap.appendChild(n); });
 
-  // Feedback area with reserved height (set via CSS variable by JS)
   fbArea = document.createElement('div');
   fbArea.id = 'fbArea';
   fbArea.className = 'fb-area';
@@ -68,10 +64,10 @@ let fbArea = null;
   quiz.appendChild(scaleWrap);
 })();
 
-/* ---------- Fit-to-viewport (LOCKED) ---------- */
-const FIT_PADDING = 40;   // margin so content never touches edges
-const RESERVE_MIN = 260;  // absolute minimum px for feedback area
-const RESERVE_FRAC = 0.36;// portion of the quiz card height to reserve
+/* Scale logic: lock on first render */
+const FIT_PADDING = 40;
+const RESERVE_MIN = 260;
+const RESERVE_FRAC = 0.36;
 
 let lockedScale = 1;
 let scaleLocked = false;
@@ -79,14 +75,11 @@ let scaleLocked = false;
 function computeAndLockScale() {
   if (!quiz || !scaleWrap || !fbArea) return;
 
-  // Reserve a chunk for feedback/rationale BEFORE measuring
   const reservePx = Math.max(RESERVE_MIN, Math.round(quiz.clientHeight * RESERVE_FRAC));
   fbArea.style.setProperty('--reserve-h', reservePx + 'px');
 
-  // Measure unscaled content
   scaleWrap.style.transform = 'scale(1)';
-  // Force reflow
-  // eslint-disable-next-line no-unused-expressions
+  // force reflow
   scaleWrap.offsetHeight;
 
   const availW = quiz.clientWidth - FIT_PADDING;
@@ -100,7 +93,6 @@ function computeAndLockScale() {
 }
 
 function refitOnResize() {
-  // Recompute on viewport size changes only
   scaleLocked = false;
   computeAndLockScale();
 }
@@ -108,19 +100,17 @@ function refitOnResize() {
 window.addEventListener('resize', refitOnResize);
 window.addEventListener('orientationchange', refitOnResize);
 
-// Summary UI
-const summary         = $('summary');
-const firstTrySummary = $('firstTrySummary');
-const firstTryPct     = $('firstTryPct');
-const firstTryCount   = $('firstTryCount');
-const firstTryTotal   = $('firstTryTotal');
-const reviewList      = $('reviewList');
-const restartBtn2     = $('restartBtnSummary');
-const resetAll        = $('resetAll');
+// Summary references
+const summary          = $('summary');
+const firstTrySummary  = $('firstTrySummary');
+const firstTryPct      = $('firstTryPct');
+const firstTryCount    = $('firstTryCount');
+const firstTryTotal    = $('firstTryTotal');
+const reviewList       = $('reviewList');
+const restartBtn2      = $('restartBtnSummary');
+const resetAll         = $('resetAll');
 
-/* ----------------------------------------------------------------
-   Pretty names for module files (handle typos / formatting)
----------------------------------------------------------------- */
+/* Prettify module names */
 function prettifyModuleName(name) {
   const raw = String(name || '');
   const normalized = raw
@@ -155,16 +145,14 @@ function prettifyModuleName(name) {
   return raw.replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
-/* ----------------------------------------------------------------
-   Utilities
----------------------------------------------------------------- */
+/* General utilities */
 function escapeHTML(s = '') {
   return String(s)
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
-    .replaceAll("'", '&#39;');
+    .replaceAll('&','&amp;')
+    .replaceAll('<','&lt;')
+    .replaceAll('>','&gt;')
+    .replaceAll('"','&quot;')
+    .replaceAll("'",'&#39;');
 }
 const randomInt = (n) => Math.floor(Math.random() * n);
 function shuffleInPlace(arr) {
@@ -177,7 +165,7 @@ function shuffleInPlace(arr) {
 function sampleQuestions(all, req) {
   const a = all.slice();
   if (req === 'full' || req >= a.length) return shuffleInPlace(a);
-  const k = Math.max(0, req | 0);
+  const k = Math.max(0, req|0);
   for (let i = 0; i < k; i++) {
     const j = i + randomInt(a.length - i);
     [a[i], a[j]] = [a[j], a[i]];
@@ -189,9 +177,7 @@ function isTextEditingTarget(el) {
     (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA' || el.tagName === 'SELECT' || el.isContentEditable);
 }
 
-/* ----------------------------------------------------------------
-   State (current run data)
----------------------------------------------------------------- */
+/* State */
 let allQuestions = [];
 let run = {
   bank: '',
@@ -203,12 +189,10 @@ let run = {
   uniqueSeen: new Set(),
   thresholdWrong: 0,
   wrongSinceLast: [],
-  stats: new Map(),               // <— { id: { attempts, wrongs } }
+  stats: new Map(),
 };
 
-/* ----------------------------------------------------------------
-   Persistence helpers
----------------------------------------------------------------- */
+/* Persistence helpers */
 const STORAGE_KEY = 'quizRunState_v1';
 
 function serializeRun() {
@@ -234,10 +218,7 @@ function serializeRun() {
   });
 }
 function saveRunState() {
-  try {
-    const s = serializeRun();
-    if (s) localStorage.setItem(STORAGE_KEY, s);
-  } catch {}
+  try { const s = serializeRun(); if (s) localStorage.setItem(STORAGE_KEY, s); } catch {}
 }
 function loadRunState() {
   try {
@@ -248,7 +229,7 @@ function loadRunState() {
     const restoredOrder = (data.order || []).map(q => {
       const qq = {
         id: String(q.id),
-        stem: String(q.stem || ''),
+        stem: String(q.stem||''),
         options: q.options || {},
         correctLetters: (q.correctLetters || []),
         rationale: String(q.rationale || ''),
@@ -258,32 +239,30 @@ function loadRunState() {
       return qq;
     });
     const idToQ = (id) => qById.get(id) || null;
-    const restored = {
-      bank: String(data.bank || ''),
-      displayName: String(data.displayName || prettifyModuleName(data.bank || '')),
-      order: restoredOrder,
-      masterPool: (data.masterPool || []).map(idToQ).filter(Boolean),
-      i: Math.max(0, parseInt(data.i || 0, 10)),
-      answered: new Map(Array.isArray(data.answered) ? data.answered : []),
-      uniqueSeen: new Set(Array.isArray(data.uniqueSeen) ? data.uniqueSeen : []),
-      thresholdWrong: Math.max(1, parseInt(data.thresholdWrong || 1, 10)),
-      wrongSinceLast: (data.wrongSinceLast || []).map(idToQ).filter(Boolean),
-      stats: new Map(Array.isArray(data.stats) ? data.stats : []),
+    return {
+      run: {
+        bank: String(data.bank || ''),
+        displayName: String(data.displayName || prettifyModuleName(data.bank || '')),
+        order: restoredOrder,
+        masterPool: (data.masterPool || []).map(idToQ).filter(Boolean),
+        i: Math.max(0, parseInt(data.i||0,10)),
+        answered: new Map(Array.isArray(data.answered) ? data.answered : []),
+        uniqueSeen: new Set(Array.isArray(data.uniqueSeen) ? data.uniqueSeen : []),
+        thresholdWrong: Math.max(1, parseInt(data.thresholdWrong||1,10)),
+        wrongSinceLast: (data.wrongSinceLast || []).map(idToQ).filter(Boolean),
+        stats: new Map(Array.isArray(data.stats) ? data.stats : []),
+      },
+      title: data.title || defaultTitle,
     };
-    return { run: restored, title: data.title || defaultTitle };
   } catch {
     return null;
   }
 }
 function clearSavedState() {
-  try {
-    localStorage.removeItem(STORAGE_KEY);
-  } catch {}
+  try { localStorage.removeItem(STORAGE_KEY); } catch {}
 }
 
-/* ----------------------------------------------------------------
-   Stats helpers
----------------------------------------------------------------- */
+/* Stats helpers */
 function bumpStats(qId, isCorrect) {
   const s = run.stats.get(qId) || { attempts: 0, wrongs: 0 };
   s.attempts += 1;
@@ -291,9 +270,7 @@ function bumpStats(qId, isCorrect) {
   run.stats.set(qId, s);
 }
 
-/* ----------------------------------------------------------------
-   Resume control
----------------------------------------------------------------- */
+/* Resume logic */
 function showResumeIfAny() {
   const s = loadRunState();
   if (!s || !s.run?.order?.length) {
@@ -321,30 +298,25 @@ function showResumeIfAny() {
       run.uniqueSeen.add(q.id);
       renderQuestion(q);
       updateCounters();
-      // lock scale once when resuming
       computeAndLockScale();
     }
   };
 }
 
-/* ----------------------------------------------------------------
-   Module loading
----------------------------------------------------------------- */
+/* Module loading */
 async function fetchModules() {
   try {
-    const res = await fetch(`/modules?_=${Date.now()}`, { cache: 'no-store' });
+    const res = await fetch(`/modules?_=${Date.now()}`, { cache:'no-store' });
     if (!res.ok) throw new Error('modules failed');
     const data = await res.json();
     const mods = Array.isArray(data.modules) ? data.modules : [];
     return mods.filter(m => m.toLowerCase() !== 'vercel');
   } catch {
-    return [
-      'Module_1','Module_2','Module_3','Module_4','Pharm_Quiz_HESI',
-      'Learning_Questions_Module_1_2','Learning_Questions_Module_3_4_',
-      'Pharmacology_1','Pharmacology_2','Pharmacology_3',
-      'Pharm_Quiz_1','Pharm_Quiz_2','Pharm_Quiz_3','Pharm_Quiz_4',
-      'Learning_Question_Moduele_1_2','Learning_Question_Moduele_3_4'
-    ];
+    return ["Module_1","Module_2","Module_3","Module_4","Pharm_Quiz_HESI",
+            "Learning_Questions_Module_1_2","Learning_Questions_Module_3_4_",
+            "Pharmacology_1","Pharmacology_2","Pharmacology_3",
+            "Pharm_Quiz_1","Pharm_Quiz_2","Pharm_Quiz_3","Pharm_Quiz_4",
+            "Learning_Question_Moduele_1_2","Learning_Question_Moduele_3_4"];
   }
 }
 function ensureOption(sel, value, label) {
@@ -366,13 +338,11 @@ async function initModules() {
   }
 }
 
-/* ----------------------------------------------------------------
-   Parse and normalize raw question data from JSON
----------------------------------------------------------------- */
+/* Normalize questions */
 function normalizeQuestions(raw) {
   const questions = Array.isArray(raw?.questions) ? raw.questions : [];
   const norm = [];
-  for (const q of questions) {
+  for (const q of questions){
     const id    = String(q.id ?? (crypto.randomUUID?.() || Math.random().toString(36).slice(2)));
     const stem  = String(q.stem ?? '');
     const type  = String(q.type ?? 'single_select');
@@ -389,9 +359,7 @@ function normalizeQuestions(raw) {
   return norm;
 }
 
-/* ----------------------------------------------------------------
-   Deterministic shuffle for questions and options
----------------------------------------------------------------- */
+/* Deterministic shuffle */
 function seededShuffle(arr, seed) {
   const a = arr.slice();
   let s = 0;
@@ -420,9 +388,7 @@ function shuffleQuestionOptions(q) {
   return { ...q, options: newOptions, correctLetters: newCorrectLetters };
 }
 
-/* ----------------------------------------------------------------
-   Single-action button helpers (Submit / Next)
----------------------------------------------------------------- */
+/* Single-action button helpers */
 function setActionState(state) {
   if (state === 'submit') {
     submitBtn.dataset.mode = 'submit';
@@ -443,9 +409,7 @@ function onSelectionChanged() {
   }
 }
 
-/* ----------------------------------------------------------------
-   Rendering questions and answers
----------------------------------------------------------------- */
+/* Rendering */
 function renderQuestion(q) {
   qText.textContent = q.stem;
 
@@ -481,14 +445,11 @@ function renderQuestion(q) {
 
   setActionState('submit');
 
-  // Lock the scale only on the very first render in this session
   if (!scaleLocked) computeAndLockScale();
 }
 
-/* ----------------------------------------------------------------
-   Current question helpers
----------------------------------------------------------------- */
-function currentQuestion() { return run.order[run.i] || null; }
+/* Current question helpers */
+function currentQuestion(){ return run.order[run.i] || null; }
 function getUserLetters() {
   const isMulti = currentQuestion().type === 'multi_select';
   const inputs = [...form.querySelectorAll('input')];
@@ -497,17 +458,14 @@ function getUserLetters() {
 }
 function formatCorrectAnswers(q) {
   const letters = q.correctLetters || [];
-  const parts = letters.map(L => `${L}. ${escapeHTML(q.options[L] || '')}`);
-  return parts.join('<br>');
+  return letters.map(L => `${L}. ${escapeHTML(q.options[L] || '')}`).join('<br>');
 }
 
-/* ----------------------------------------------------------------
-   Progress bar and counters
----------------------------------------------------------------- */
+/* Progress & counters */
 function updateProgressBar() {
   const total = run.masterPool.length || 0;
   const mastered = run.masterPool.filter(q => run.answered.get(q.id)?.correct).length;
-  const pct = total ? Math.round((mastered / total) * 100) : 0;
+  const pct = total ? Math.round((mastered/total)*100) : 0;
   progressFill.style.width = `${pct}%`;
   progressBar.setAttribute('aria-valuenow', String(pct));
   progressLabel.textContent = `${pct}% mastered`;
@@ -521,9 +479,7 @@ function updateCounters() {
   saveRunState();
 }
 
-/* ----------------------------------------------------------------
-   Run and navigation helpers
----------------------------------------------------------------- */
+/* Run navigation helpers */
 function recordAnswer(q, userLetters, isCorrect) {
   const firstTime = !run.answered.has(q.id);
   const entry = run.answered.get(q.id) || { firstTryCorrect: null, correct: false, userLetters: [] };
@@ -551,14 +507,12 @@ function nextIndex() {
   return { fromBuffer: false, q: null };
 }
 
-/* ----------------------------------------------------------------
-   Start and end of quiz
----------------------------------------------------------------- */
+/* Start & End */
 async function startQuiz() {
   const lenBtn = lengthBtns.querySelector('.seg-btn.active');
   if (!lenBtn) {
     alert('Pick Length Of Quiz Before Starting');
-    lengthBtns.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    lengthBtns.scrollIntoView({ behavior:'smooth', block:'center' });
     return;
   }
 
@@ -571,7 +525,7 @@ async function startQuiz() {
 
   startBtn.disabled = true;
 
-  const res = await fetch(`/${encodeURIComponent(bank)}.json`, { cache: 'no-store' });
+  const res = await fetch(`/${encodeURIComponent(bank)}.json`, { cache:'no-store' });
   if (!res.ok) {
     alert(`Could not load ${bank}.json`);
     startBtn.disabled = false;
@@ -614,14 +568,11 @@ async function startQuiz() {
   renderQuestion(q0);
   updateCounters();
 
-  // Lock the scale right after the first render so it never changes on Submit
   computeAndLockScale();
-
   startBtn.disabled = false;
 }
 
 function endRun() {
-  // Show summary and allow scrolling (CSS handles overflow:auto on summary)
   quiz.classList.add('hidden');
   summary.classList.remove('hidden');
   countersBox.classList.add('hidden');
@@ -629,60 +580,49 @@ function endRun() {
   setHeaderTitle(run.displayName || run.bank || defaultTitle);
   document.title = run.displayName || run.bank || 'Final Semester Study Guide';
 
-  // First-try metrics
   const uniq = [...run.answered.values()];
   const ftCorrect = uniq.filter(x => x.firstTryCorrect).length;
   const totalUnique = uniq.length;
 
   if (totalUnique > 0) {
     firstTrySummary.classList.remove('hidden');
-    firstTryPct.textContent = `${Math.round((ftCorrect / totalUnique) * 100)}%`;
+    firstTryPct.textContent = `${Math.round((ftCorrect/totalUnique)*100)}%`;
     firstTryCount.textContent = ftCorrect;
     firstTryTotal.textContent = totalUnique;
   } else {
     firstTrySummary.classList.add('hidden');
   }
 
-  // Move "Start New Quiz" button to the TOP and label the sort order
+  // Place Start New Quiz button at top
   if (restartBtn2) {
     restartBtn2.textContent = 'Start New Quiz';
     if (summary.firstChild !== restartBtn2) summary.insertBefore(restartBtn2, summary.firstChild);
   }
-  // Clever label under the button (create once)
+  // Add clever label if not exists
   if (!document.getElementById('sortNote')) {
     const note = document.createElement('div');
     note.id = 'sortNote';
     note.className = 'sorted-note';
     note.innerHTML = `<span class="icon">🧭</span>
       <span><strong>Most-Missed First</strong> — we bubble up your toughest questions; the farther you scroll, the fewer misses.</span>`;
-    // insert right after the restart button
-    if (restartBtn2 && restartBtn2.nextSibling) {
-      summary.insertBefore(note, restartBtn2.nextSibling);
-    } else {
-      summary.appendChild(note);
-    }
+    summary.insertBefore(note, restartBtn2.nextSibling);
   }
 
-  // Build the review: sort by most missed
+  // Build review list sorted by wrongs/attempts
   reviewList.innerHTML = '';
-
-  // Use the unique question set from masterPool
   const qById = new Map(run.masterPool.map(q => [q.id, q]));
   const scored = [];
   for (const [id, q] of qById.entries()) {
     const s = run.stats.get(id) || { attempts: 0, wrongs: 0 };
     scored.push({ q, attempts: s.attempts, wrongs: s.wrongs });
   }
-
-  // Sort primarily by wrongs (desc), then attempts (desc), then stem (asc)
   scored.sort((a, b) =>
-    b.wrongs - a.wrongs || b.attempts - a.attempts || String(a.q.stem).localeCompare(String(b.q.stem))
+    b.wrongs - a.wrongs ||
+    b.attempts - a.attempts ||
+    String(a.q.stem).localeCompare(String(b.q.stem))
   );
-
-  // Render list (top = most missed)
   scored.forEach(({ q, attempts, wrongs }) => {
-    if (attempts === 0) return; // show only seen questions
-
+    if (attempts === 0) return;
     const row = document.createElement('div');
     const ans = run.answered.get(q.id);
     row.className = 'rev-item ' + (ans?.correct ? 'ok' : 'bad');
@@ -693,16 +633,10 @@ function endRun() {
       ? `Missed ${wrongs} time${wrongs === 1 ? '' : 's'} • ${attempts} attempt${attempts === 1 ? '' : 's'}`
       : `0 misses • ${attempts} attempt${attempts === 1 ? '' : 's'}`;
 
-    const qEl = document.createElement('div');
-    qEl.className = 'rev-q';
-    qEl.textContent = q.stem;
-
-    const caEl = document.createElement('div');
-    caEl.className = 'rev-ans';
+    const qEl = document.createElement('div'); qEl.className = 'rev-q'; qEl.textContent = q.stem;
+    const caEl = document.createElement('div'); caEl.className = 'rev-ans';
     caEl.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
-
-    const rEl = document.createElement('div');
-    rEl.className = 'rev-rationale';
+    const rEl = document.createElement('div'); rEl.className = 'rev-rationale';
     rEl.innerHTML = `<strong>Rationale:</strong> ${escapeHTML(q.rationale || '')}`;
 
     row.appendChild(qEl);
@@ -715,9 +649,7 @@ function endRun() {
   clearSavedState();
 }
 
-/* ----------------------------------------------------------------
-   Event wiring
----------------------------------------------------------------- */
+/* Event handlers */
 lengthBtns.addEventListener('click', (e) => {
   const btn = e.target.closest('.seg-btn');
   if (!btn) return;
@@ -730,7 +662,7 @@ lengthBtns.addEventListener('click', (e) => {
 startBtn.addEventListener('click', startQuiz);
 form.addEventListener('change', onSelectionChanged);
 
-/* Submit / Next button logic */
+/* Submit / Next */
 submitBtn.addEventListener('click', () => {
   if (submitBtn.dataset.mode === 'next') {
     const next = nextIndex();
@@ -739,7 +671,6 @@ submitBtn.addEventListener('click', () => {
     run.uniqueSeen.add(q.id);
     renderQuestion(q);
     updateCounters();
-    // Scale stays locked.
     return;
   }
 
@@ -750,9 +681,7 @@ submitBtn.addEventListener('click', () => {
   const correctLetters = (q.correctLetters || []).slice().sort();
   const isCorrect = JSON.stringify(userLetters) === JSON.stringify(correctLetters);
 
-  // Track attempts/misses
   bumpStats(q.id, isCorrect);
-
   recordAnswer(q, userLetters, isCorrect);
 
   if (!isCorrect) {
@@ -777,15 +706,11 @@ submitBtn.addEventListener('click', () => {
 
   form.querySelectorAll('input').forEach(i => i.disabled = true);
   setActionState('next');
-
-  // Scale stays locked — nothing shifts.
 });
 
-/* Reset and summary */
 resetAll.addEventListener('click', () => { clearSavedState(); location.reload(); });
 restartBtn2.addEventListener('click', () => { location.reload(); });
 
-/* Keyboard shortcuts */
 document.addEventListener('keydown', (e) => {
   if (quiz.classList.contains('hidden')) return;
   if (isTextEditingTarget(e.target)) return;
@@ -809,9 +734,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-/* ----------------------------------------------------------------
-   Initialization
----------------------------------------------------------------- */
+/* Initialization */
 initModules();
 showResumeIfAny();
-/* No initial compute here; it happens after first render (start/resume) */
+/* The scale is computed after first render (start/resume), not at load */
