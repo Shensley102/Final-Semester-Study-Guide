@@ -1,4 +1,4 @@
-/* Desktop Styles — Open Sans everywhere */
+/* Desktop Styles — Open Sans everywhere (fixed quiz column layout) */
 :root{
   --bg:#f7f8fc; --card:#fff; --ink:#0b1320; --ink-soft:#4a5568;
   --primary:#2f61f3; --danger:#d33a2c; --success:#22c55e;
@@ -80,10 +80,10 @@ h1{
 .btn.btn-blue{ background:var(--primary); color:#fff; }
 .btn.danger{ background:#fff; color:var(--danger); border-color:var(--danger); }
 
-/* Quiz body */
+/* Quiz body — FIXED: vertical stack, not side-by-side */
 #quiz.card{
-  margin:0; height:100%; overflow:hidden;
-  display:flex; align-items:flex-start; justify-content:center;
+  margin:0; height:100%; overflow:auto;
+  display:flex; flex-direction:column; align-items:stretch; justify-content:flex-start;
   padding:14px 18px 28px;
 }
 
@@ -129,6 +129,11 @@ h1{
   margin:10px 0 12px; padding:10px 12px; background:#eef2ff; border:1px dashed #c7d2fe;
   color:var(--ink-soft); border-radius:12px; font-weight:600; display:flex; align-items:center; gap:8px;
 }
+
+/* How-to (landing) */
+#howTo .howto-title{ margin:0 0 8px 0; font-size:18px; font-weight:800; }
+#howTo .howto-list{ margin:0; padding-left:18px; color:var(--ink-soft); }
+#howTo .howto-list li{ margin:6px 0; }
 
 /* Utilities */
 .hidden{ display:none !important; }
