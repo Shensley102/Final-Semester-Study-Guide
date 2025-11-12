@@ -1,7 +1,8 @@
 /* ===============================================================
    Final Semester Study Guide — Shared Quiz Engine (Desktop & Mobile)
-   - Flask decides mobile vs desktop; both pages load this file
-   - Final overview sorts by "most missed" and shows a label
+   - Restores vertical quiz layout and “How it works” on landing
+   - Adds keyboard hotkeys (A–Z to pick, Enter to submit/next)
+   - Final overview sorts by “most missed” with a label
 =============================================================== */
 
 const $ = (id) => document.getElementById(id);
@@ -266,6 +267,10 @@ async function startQuiz() {
   const displayName = prettifyModuleName(bank);
   const qty = lenBtn.dataset.len === 'full' ? 'full' : parseInt(lenBtn.dataset.len, 10);
 
+  // hide “how to” once we begin
+  const howTo = document.getElementById('howTo');
+  if (howTo) howTo.classList.add('hidden');
+
   setHeaderTitle(displayName);
   document.title = `Final Semester Study Guide — ${displayName}`;
 
@@ -455,6 +460,38 @@ lengthBtns?.addEventListener('click', (e) => {
 startBtn?.addEventListener('click', startQuiz);
 resetAll?.addEventListener('click', () => { clearSavedState(); location.reload(); });
 restartBtn2?.addEventListener('click', () => { location.reload(); });
+
+// Keyboard hotkeys: A–Z to toggle, Enter to submit/next
+window.addEventListener('keydown', (e) => {
+  if (quiz.classList.contains('hidden')) return;
+
+  // Ignore if focus is in a control (no text inputs by default, but keep safe)
+  const tag = (document.activeElement?.tagName || '').toLowerCase();
+  if (['input', 'select', 'textarea', 'button'].includes(tag)) return;
+
+  // Enter for submit/next
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    if (!submitBtn.disabled) submitBtn.click();
+    return;
+  }
+
+  // Letter keys map to options
+  const key = e.key.toUpperCase();
+  if (key.length === 1 && key >= 'A' && key <= 'Z') {
+    const input = document.getElementById(`opt-${key}`);
+    if (input && !input.disabled) {
+      // Toggle for multi, select for single
+      if (input.type === 'checkbox') {
+        input.checked = !input.checked;
+      } else {
+        // radio
+        input.checked = true;
+      }
+      input.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+  }
+});
 
 // Initialize module list
 (async function init() {
