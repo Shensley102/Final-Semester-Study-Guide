@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Final Semester Study Guide — Desktop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Final Semester Study Guide – Desktop</title>
 
   <!-- Open Sans everywhere -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/static/desktop/desktop_style.css" />
 </head>
@@ -16,81 +16,80 @@
   <div class="container">
     <h1 id="pageTitle">Final Semester Study Guide</h1>
 
-    <!-- counters/progress -->
-    <div id="countersBox" class="counters hidden" aria-live="polite">
-      <div class="count-row">
-        <div id="runCounter">Question: 0</div>
-        <div id="remainingCounter">Remaining to master: 0</div>
-        <button id="resetAll" class="btn danger hidden" type="button">Reset</button>
-      </div>
-      <div class="pbar-wrap">
-        <div id="progressBar" class="pbar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-          <div id="progressFill" class="pbar-fill"></div>
-        </div>
-        <div id="progressLabel" class="pbar-label">0% mastered</div>
-      </div>
-    </div>
-
     <!-- Launcher -->
-    <section id="launcher" class="card">
-      <div class="field">
-        <label for="moduleSel">Module Choice</label>
-        <select id="moduleSel" aria-label="Module Choice"></select>
-      </div>
+    <section id="launcher" class="panel">
+      <div class="launcher-grid">
+        <label for="moduleSelect" class="label">Module Choice</label>
+        <select id="moduleSelect" class="select"></select>
 
-      <div class="field">
-        <label id="lengthLegend">Length</label>
-        <div id="lengthBtns" class="seg" role="group" aria-label="Quiz length">
-          <button type="button" class="seg-btn" data-len="10">10</button>
-          <button type="button" class="seg-btn" data-len="25">25</button>
-          <button type="button" class="seg-btn" data-len="50">50</button>
-          <button type="button" class="seg-btn" data-len="100">100</button>
-          <button type="button" class="seg-btn" data-len="full">Full</button>
+        <div class="length-wrap">
+          <span class="label">Length</span>
+          <div class="lengths" id="lengthGroup">
+            <button class="pill active" data-len="10">10</button>
+            <button class="pill" data-len="25">25</button>
+            <button class="pill" data-len="50">50</button>
+            <button class="pill" data-len="100">100</button>
+            <button class="pill" data-len="full">Full</button>
+          </div>
         </div>
+
+        <button id="startBtn" class="btn success">Start Quiz</button>
       </div>
 
-      <div class="actions">
-        <button id="startBtn" class="btn primary" type="button">Start Quiz</button>
-        <button id="resumeBtn" class="btn hidden" type="button">Resume</button>
+      <div class="howto">
+        <h2>How it works & hotkeys</h2>
+        <ul>
+          <li><b>Start:</b> Pick a <i>Module</i>, choose a <i>Length</i>, then click <b>Start Quiz</b>.</li>
+          <li><b>Answer:</b> Click an option or use letter keys (A–Z).</li>
+          <li><b>Submit / Next:</b> Press <kbd>Enter</kbd> or click the green/blue button.</li>
+          <li><b>After submit:</b> You’ll see Correct/Incorrect, the Correct Answer, and the Rationale.</li>
+          <li><b>Until-mastery:</b> Missed questions come back until you’ve answered every one correctly.</li>
+          <li><b>Results:</b> The end page lists your most-missed items first.</li>
+        </ul>
       </div>
-    </section>
-
-    <!-- How it works -->
-    <section id="howTo" class="card">
-      <h2 class="howto-title">How it works & hotkeys</h2>
-      <ul class="howto-list">
-        <li><strong>Start:</strong> Pick a <em>Module</em>, choose a <em>Length</em>, then click <strong>Start Quiz</strong>.</li>
-        <li><strong>Answer:</strong> Click an option or use letter keys (A–Z).</li>
-        <li><strong>Submit / Next:</strong> Press <kbd>Enter</kbd> or click the green/blue button.</li>
-        <li><strong>After submit:</strong> You’ll see Correct/Incorrect, the Correct Answer, and the Rationale.</li>
-        <li><strong>Until-mastery:</strong> Missed questions will come back until you’ve answered every one correctly.</li>
-        <li><strong>Results:</strong> The end page lists your most-missed items first.</li>
-      </ul>
     </section>
 
     <!-- Quiz -->
-    <section id="quiz" class="card hidden" aria-live="polite">
-      <div id="questionText" class="question"></div>
-      <form id="optionsForm" class="options"></form>
-
-      <div class="actions">
-        <button id="submitBtn" class="btn primary" type="button" disabled>Submit</button>
-        <button id="nextBtn" class="btn btn-blue hidden" type="button">Next</button>
+    <section id="quiz" class="panel hidden">
+      <div class="toolbar">
+        <div>Question: <span id="runCounter">1</span></div>
+        <div>Remaining to master: <span id="remainingCounter">0</span></div>
+        <button id="resetAll" class="btn outline danger">Reset</button>
       </div>
 
-      <div id="feedback" class="feedback"></div>
-      <div id="answerLine" class="answer-line"></div>
-      <div id="rationale" class="rationale hidden"></div>
+      <div id="progressBar" class="pbar">
+        <div id="progressFill" class="pbar-fill"></div>
+      </div>
+
+      <div class="card" id="qaCard">
+        <h2 id="questionText" class="question"></h2>
+
+        <ul class="choices" id="choicesList"></ul>
+
+        <div class="actions">
+          <button id="submitBtn" class="btn primary">Submit</button>
+        </div>
+
+        <div id="feedback" class="feedback hidden">
+          <div id="resultBadge" class="badge"></div>
+          <p class="correct-line"><b>Correct Answer:</b> <span id="correctAnswerLabel"></span></p>
+          <div id="rationaleBox" class="rationale"></div>
+        </div>
+      </div>
     </section>
 
-    <!-- Summary -->
-    <section id="summary" class="card hidden">
-      <button id="restartBtnSummary" class="btn primary hidden" type="button">Start New Quiz</button>
-
-      <div id="firstTrySummary" class="first-try">
-        <strong>First-try mastery:</strong>
-        <span id="firstTryPct">0%</span>
-        (<span id="firstTryCount">0</span> / <span id="firstTryTotal">0</span>)
+    <!-- Results -->
+    <section id="results" class="panel hidden">
+      <div class="results-head">
+        <button id="newQuizBtn" class="btn success">Start New Quiz</button>
+        <h2 id="resultsTitle">Module</h2>
+        <div class="first-try">
+          <b>First-try mastery:</b> <span id="firstTryPct">0%</span> <span id="firstTryCounts"></span>
+        </div>
+        <div class="subhead">
+          <span class="spark">✨</span>
+          <b>Most-Missed First</b> — we bubble up your toughest questions; the farther you scroll, the fewer misses.
+        </div>
       </div>
 
       <div id="reviewList" class="review-list"></div>
