@@ -1,14 +1,8 @@
-/* Mobile CSS shares desktop base, then adjusts interaction/placement */
 @import url("/static/desktop/desktop_style.css");
 
-/* Mobile-only tweaks */
+/* Mobile-only overrides */
 @media (max-width: 1024px) {
-  /* Make each option easy to tap */
   .opt label{ display:flex; width:100%; cursor:pointer; }
-
-  /* Place actions to the right (not full-width) */
   .actions{ display:flex; justify-content:flex-end; }
-
-  /* Natural button width */
   #submitBtn{ width:auto; max-width:unset; }
 }
