@@ -1,101 +1,129 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Final Semester Study Guide – Desktop</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Final Semester Study Guide</title>
 
-  <!-- Open Sans everywhere -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Open Sans everywhere -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="/static/desktop/desktop_style.css" />
-</head>
-<body>
-  <div class="container">
-    <h1 id="pageTitle">Final Semester Study Guide</h1>
+    <link rel="stylesheet" href="/static/desktop/desktop_style.css" />
+  </head>
 
-    <!-- Launcher -->
-    <section id="launcher" class="panel">
-      <div class="launcher-grid">
-        <label for="moduleSelect" class="label">Module Choice</label>
-        <select id="moduleSelect" class="select"></select>
+  <body>
+    <div class="container">
+      <header class="top">
+        <h1 id="pageTitle">Final Semester Study Guide</h1>
 
-        <div class="length-wrap">
-          <span class="label">Length</span>
-          <div class="lengths" id="lengthGroup">
-            <button class="pill active" data-len="10">10</button>
-            <button class="pill" data-len="25">25</button>
-            <button class="pill" data-len="50">50</button>
-            <button class="pill" data-len="100">100</button>
-            <button class="pill" data-len="full">Full</button>
+        <!-- Counters -->
+        <div id="metricRow" class="metrics" hidden>
+          <div class="metric">
+            <span class="k">Question:</span> <span id="runCounter">1</span>
+          </div>
+          <div class="metric">
+            <span class="k">Remaining to master:</span>
+            <span id="remainingCounter">10</span>
+          </div>
+
+          <button id="resetAll" class="btn btn-danger" type="button">Reset</button>
+        </div>
+
+        <!-- Progress -->
+        <div id="pbarWrap" class="pbar-wrap" hidden>
+          <div id="progressBar" class="pbar">
+            <div id="progressFill" class="pbar-fill"></div>
+          </div>
+          <div class="pbar-label">
+            <div id="masteredPct">0%</div>
+            <div class="muted">mastered</div>
           </div>
         </div>
+      </header>
 
-        <button id="startBtn" class="btn success">Start Quiz</button>
-      </div>
+      <!-- Launcher (start page) -->
+      <section id="launcher">
+        <div class="launcher-card">
+          <div class="row">
+            <label for="moduleSel" class="lbl">Module Choice</label>
+            <select id="moduleSel" class="select"></select>
+          </div>
 
-      <div class="howto">
-        <h2>How it works & hotkeys</h2>
-        <ul>
-          <li><b>Start:</b> Pick a <i>Module</i>, choose a <i>Length</i>, then click <b>Start Quiz</b>.</li>
-          <li><b>Answer:</b> Click an option or use letter keys (A–Z).</li>
-          <li><b>Submit / Next:</b> Press <kbd>Enter</kbd> or click the green/blue button.</li>
-          <li><b>After submit:</b> You’ll see Correct/Incorrect, the Correct Answer, and the Rationale.</li>
-          <li><b>Until-mastery:</b> Missed questions come back until you’ve answered every one correctly.</li>
-          <li><b>Results:</b> The end page lists your most-missed items first.</li>
-        </ul>
-      </div>
-    </section>
+          <div class="row">
+            <div class="lbl">Length</div>
+            <div class="lengths" id="lengthBtns">
+              <button class="chip active" data-len="10">10</button>
+              <button class="chip" data-len="25">25</button>
+              <button class="chip" data-len="50">50</button>
+              <button class="chip" data-len="100">100</button>
+              <button class="chip" data-len="full">Full</button>
+            </div>
+          </div>
 
-    <!-- Quiz -->
-    <section id="quiz" class="panel hidden">
-      <div class="toolbar">
-        <div>Question: <span id="runCounter">1</span></div>
-        <div>Remaining to master: <span id="remainingCounter">0</span></div>
-        <button id="resetAll" class="btn outline danger">Reset</button>
-      </div>
-
-      <div id="progressBar" class="pbar">
-        <div id="progressFill" class="pbar-fill"></div>
-      </div>
-
-      <div class="card" id="qaCard">
-        <h2 id="questionText" class="question"></h2>
-
-        <ul class="choices" id="choicesList"></ul>
-
-        <div class="actions">
-          <button id="submitBtn" class="btn primary">Submit</button>
+          <button id="startBtn" class="btn btn-primary" type="button">
+            Start Quiz
+          </button>
         </div>
 
-        <div id="feedback" class="feedback hidden">
-          <div id="resultBadge" class="badge"></div>
-          <p class="correct-line"><b>Correct Answer:</b> <span id="correctAnswerLabel"></span></p>
-          <div id="rationaleBox" class="rationale"></div>
+        <div class="howto">
+          <h2>How it works & hotkeys</h2>
+          <ul>
+            <li><b>Start:</b> Pick a <i>Module</i>, choose a <i>Length</i>, then click <b>Start Quiz</b>.</li>
+            <li><b>Answer:</b> Click an option or use letter keys (A–Z).</li>
+            <li><b>Submit / Next:</b> Press <b>Enter</b> or click the green/blue button.</li>
+            <li><b>After submit:</b> You’ll see Correct/Incorrect, the Correct Answer, and the Rationale.</li>
+            <li><b>Until-mastery:</b> Missed questions come back until you’ve answered every one correctly.</li>
+            <li><b>Results:</b> The end page lists your most-missed items first.</li>
+          </ul>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Results -->
-    <section id="results" class="panel hidden">
-      <div class="results-head">
-        <button id="newQuizBtn" class="btn success">Start New Quiz</button>
-        <h2 id="resultsTitle">Module</h2>
-        <div class="first-try">
-          <b>First-try mastery:</b> <span id="firstTryPct">0%</span> <span id="firstTryCounts"></span>
+      <!-- Quiz -->
+      <section id="quiz" hidden>
+        <div class="qa-card">
+          <h2 id="question" class="q"></h2>
+
+          <form id="options" class="options" role="group" aria-label="answer choices"></form>
+
+          <div class="actions">
+            <button id="submitBtn" class="btn btn-primary" type="button">Submit</button>
+          </div>
+
+          <div id="feedback" class="feedback" hidden>
+            <div id="resultFlag" class="flag"></div>
+            <div class="explain">
+              <div class="ca"><b>Correct Answer:</b> <span id="correctAnswer"></span></div>
+              <div id="rationale" class="rat"></div>
+            </div>
+          </div>
         </div>
-        <div class="subhead">
-          <span class="spark">✨</span>
-          <b>Most-Missed First</b> — we bubble up your toughest questions; the farther you scroll, the fewer misses.
+      </section>
+
+      <!-- Results -->
+      <section id="results" hidden>
+        <div class="results-card">
+          <div class="results-top">
+            <h2 id="resultsTitle">Module</h2>
+            <button id="restartBtn" class="btn btn-primary" type="button">
+              Start New Quiz
+            </button>
+          </div>
+
+          <div id="firstTry" class="firsttry"></div>
+
+          <div class="mostMissed">
+            <div class="mm-h"><span class="tag">Most-Missed First</span> — we bubble up your toughest questions; the farther you scroll, the fewer misses.</div>
+            <div id="missList" class="miss-list"></div>
+          </div>
         </div>
-      </div>
+      </section>
+    </div>
 
-      <div id="reviewList" class="review-list"></div>
-    </section>
-  </div>
-
-  <script src="/static/desktop/desktop_script.js" defer></script>
-</body>
+    <script src="/static/desktop/desktop_script.js" defer></script>
+  </body>
 </html>
