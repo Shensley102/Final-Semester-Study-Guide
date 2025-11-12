@@ -49,7 +49,8 @@ const resetAll = $('resetAll');
 /* ---------- Tiny Utils ---------- */
 const escapeHTML = (s='') =>
   String(s).replaceAll('&','&amp;').replaceAll('<','&lt;')
-           .replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#39;');
+           .replaceAll('>','&gt;').replaceAll('"','&quot;')
+           .replaceAll("'",'&#39;');
 
 const shuffle = (arr) => {
   const a = arr.slice();
@@ -62,7 +63,7 @@ const shuffle = (arr) => {
 
 const percent = (num, den) => den ? Math.round((num/den)*100) : 0;
 
-/* ---------- Title prettifier (same as before) ---------- */
+/* ---------- Title prettifier ---------- */
 function prettyTitle(raw) {
   if (!raw) return '';
   const base = raw.replace(/\.(json)$/i,'').replace(/_/g,' ').trim();
@@ -79,50 +80,53 @@ function prettyTitle(raw) {
   const mm = /^module\s+(\d+)$/i.exec(base);
   if (mm) return `Module ${mm[1]}`;
 
-  // Fallback
   return base.replace(/\s+/g,' ').replace(/\b\w/g,(m)=>m.toUpperCase());
 }
 
 /* ---------- Data/API ---------- */
-/* Your Flask app exposes a modules list and serves json files from repo root.
-   - GET /modules           -> ["Module_1.json", ...]
-   - GET /<name>.json       -> that quiz bank
-*/
 async function fetchJSON(url) {
   const r = await fetch(url, { cache: 'no-store' });
   if (!r.ok) throw new Error(`HTTP ${r.status} for ${url}`);
   return r.json();
 }
 
+/* SAFER LOADER: populates dropdown or shows a friendly fallback */
 async function loadModules() {
-  const list = await fetchJSON('/modules');
-  moduleSel.innerHTML = list.map(name =>
-    `<option value="${name}">${escapeHTML(prettyTitle(name))}</option>`
-  ).join('');
+  // show a placeholder while loading
+  moduleSel.innerHTML = `<option disabled selected>Loading…</option>`;
+  try {
+    const list = await fetchJSON('/modules');
+    if (!Array.isArray(list) || list.length === 0) {
+      throw new Error('Empty module list');
+    }
+    moduleSel.innerHTML = list.map(name =>
+      `<option value="${name}">${escapeHTML(prettyTitle(name))}</option>`
+    ).join('');
+  } catch (err) {
+    console.error('Failed to load /modules', err);
+    moduleSel.innerHTML =
+      `<option value="" disabled selected>Unable to load modules</option>`;
+  }
 }
 
 async function loadBank(name) {
-  // banks are at repo root via Flask route returning send_from_directory(BASE_DIR, safe_name)
   return fetchJSON(`/${encodeURIComponent(name)}`);
 }
 
 /* ---------- State ---------- */
-let bank = [];                 // full bank (objects)
-let runSet = [];               // N unique objects we are using this run
-let queue = [];                // primary queue
-let recycle = [];              // missed items to revisit
-let mastered = new Set();      // ids mastered at least once
-let firstTryCorrect = new Set(); // ids answered correctly on first attempt
-let attempts = new Map();      // id -> number of attempts
+let bank = [];
+let runSet = [];
+let queue = [];
+let recycle = [];
+let mastered = new Set();
+let firstTryCorrect = new Set();
+let attempts = new Map();
 
-let current = null;            // current item object
-let runNumber = 0;             // how many questions have been served this run (in order shown)
-let selectedLength = '10';     // "10" | "25" | "50" | "100" | "full"
+let current = null;
+let runNumber = 0;
+let selectedLength = '10';
 
-/* We derive a stable id per item so we can track mastery across reshuffles.
-   Use a hash that combines stem + options. */
 function itemId(it) {
-  // tolerate different field names
   const stem = (it.question || it.stem || '').trim();
   const opts = (it.options || it.choices || []).join('|');
   let h = 2166136261 >>> 0;
@@ -171,7 +175,7 @@ function renderItem(it) {
 
   questionText.innerHTML = escapeHTML(q);
   optionsForm.innerHTML = opts.map((txt, idx) => {
-    const letter = String.fromCharCode(65 + idx); // A, B, C...
+    const letter = String.fromCharCode(65 + idx);
     const id = `opt_${idx}`;
     const multi = isMultiCorrect(it);
     return `
@@ -191,14 +195,12 @@ function renderItem(it) {
   rationaleEl.classList.add('hidden');
   rationaleEl.innerHTML = '';
 
-  // enable submit when a choice exists
   optionsForm.onchange = () => {
     const any = optionsForm.querySelector('input:checked');
     submitBtn.disabled = !any;
   };
 }
 
-/* Some banks store answers as letters, some as 0-based indexes, some as array */
 function normalizeCorrect(it) {
   const raw = it.correct ?? it.answer ?? it.answers ?? it.correct_index ?? it.correct_indices;
   if (Array.isArray(raw)) return raw.map(x => (typeof x === 'string' ? letterToIdx(x) : Number(x)));
@@ -229,13 +231,9 @@ function arraysEqual(a,b) {
 
 /* ---------- Flow ---------- */
 function nextQuestion() {
-  if (!current) {
-    // first question of run
-    setCounters();
-  }
+  if (!current) setCounters();
 
   if (queue.length === 0) {
-    // If we still have unmastered items, cycle the recycle bin
     if (mastered.size < runSet.length && recycle.length) {
       queue = shuffle(recycle);
       recycle = [];
@@ -243,7 +241,6 @@ function nextQuestion() {
   }
 
   if (queue.length === 0) {
-    // Completely finished (everything mastered)
     return showSummary();
   }
 
@@ -264,7 +261,6 @@ function showSummary() {
   firstTryCount.textContent = first;
   firstTryPct.textContent = `${percent(first, total)}%`;
 
-  // Build review list sorted by most missed (misses desc, then attempts desc)
   const misses = [...attempts.entries()].map(([id, n]) => {
     const itm = runSet.find(x => itemId(x) === id) || bank.find(x => itemId(x) === id);
     return { id, attempts: n, missed: Math.max(n - 1, 0), item: itm };
@@ -288,7 +284,6 @@ function showSummary() {
       </div>`;
   }).join('');
 
-  // Make the top "Start New Quiz" visible
   restartBtnTop?.classList.remove('hidden');
 }
 
@@ -305,7 +300,6 @@ function gradeCurrent() {
 
   const correct = arraysEqual(sel, corr);
 
-  // Prepare UI bits
   const letters = corr.map(i => String.fromCharCode(65+i)).join(', ');
   answerLine.innerHTML = `<strong>${correct ? 'Correct' : 'Correct Answer'}:</strong> ${letters}`;
   feedback.textContent = correct ? 'Correct!' : 'Incorrect';
@@ -320,16 +314,13 @@ function gradeCurrent() {
     rationaleEl.innerHTML = '';
   }
 
-  // Update mastery queues
   if (correct) {
     if (prevAttempts === 0) firstTryCorrect.add(id);
-    mastered.add(id);
+    if (!mastered.has(id)) mastered.add(id);
   } else {
-    // Missed: ensure it comes back later (avoid immediate repeat — it returns after we drain the current queue)
     if (!mastered.has(id)) recycle.push(current);
   }
 
-  // Buttons
   submitBtn.classList.add('hidden');
   nextBtn.classList.remove('hidden');
   submitBtn.disabled = true;
@@ -371,16 +362,15 @@ lengthBtns?.addEventListener('click', (e) => {
 
 startBtn?.addEventListener('click', async () => {
   chosenModuleName = moduleSel.value;
+  if (!chosenModuleName) return;
   bank = await loadBank(chosenModuleName);
   runSet = sampleRunSet(bank, selectedLength);
   resetRunDerivedState();
 
-  // UI
   launcher.classList.add('hidden');
   quiz.classList.remove('hidden');
   countersBox.classList.remove('hidden');
 
-  // Title tweak
   const pageTitle = $('pageTitle');
   if (pageTitle) pageTitle.textContent = prettyTitle(chosenModuleName);
 
@@ -392,6 +382,6 @@ startBtn?.addEventListener('click', async () => {
   try {
     await loadModules();
   } catch (e) {
-    console.error('Failed to load modules', e);
+    console.error('Failed to init', e);
   }
 })();
