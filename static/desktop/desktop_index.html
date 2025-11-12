@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Final Semester Study Guide — Desktop</title>
+
+  <!-- Open Sans everywhere -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/static/desktop/desktop_style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 id="pageTitle">Final Semester Study Guide</h1>
+
+    <!-- counters/progress -->
+    <div id="countersBox" class="counters hidden" aria-live="polite">
+      <div class="count-row">
+        <div id="runCounter">Question: 0</div>
+        <div id="remainingCounter">Remaining to master: 0</div>
+        <button id="resetAll" class="btn danger hidden">Reset</button>
+      </div>
+      <div class="pbar-wrap">
+        <div id="progressBar" class="pbar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div id="progressFill" class="pbar-fill"></div>
+        </div>
+        <div id="progressLabel" class="pbar-label">0% mastered</div>
+      </div>
+    </div>
+
+    <!-- Launcher -->
+    <section id="launcher" class="card">
+      <div class="field">
+        <label for="moduleSel">Module Choice</label>
+        <select id="moduleSel"></select>
+      </div>
+
+      <div class="field">
+        <label id="lengthLegend">Length</label>
+        <div id="lengthBtns" class="seg" role="group" aria-label="Quiz length">
+          <button type="button" class="seg-btn" data-len="10">10</button>
+          <button type="button" class="seg-btn" data-len="25">25</button>
+          <button type="button" class="seg-btn" data-len="50">50</button>
+          <button type="button" class="seg-btn" data-len="100">100</button>
+          <button type="button" class="seg-btn" data-len="full">Full</button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="startBtn" class="btn primary">Start Quiz</button>
+        <button id="resumeBtn" class="btn hidden">Resume</button>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="howTo" class="card">
+      <h2 class="howto-title">How it works & hotkeys</h2>
+      <ul class="howto-list">
+        <li><strong>Start:</strong> Pick a <em>Module</em>, choose a <em>Length</em>, then click <strong>Start Quiz</strong>.</li>
+        <li><strong>Answer:</strong> Click an option or use letter keys (A–Z).</li>
+        <li><strong>Submit / Next:</strong> Press <kbd>Enter</kbd> or click the green/blue button.</li>
+        <li><strong>After submit:</strong> You’ll see Correct/Incorrect, the Correct Answer, and the Rationale.</li>
+        <li><strong>Until-mastery:</strong> Missed questions will come back until you’ve answered every one correctly.</li>
+        <li><strong>Results:</strong> The end page lists your most-missed items first.</li>
+      </ul>
+    </section>
+
+    <!-- Quiz -->
+    <section id="quiz" class="card hidden" aria-live="polite">
+      <div id="questionText" class="question"></div>
+      <form id="optionsForm" class="options"></form>
+
+      <div class="actions">
+        <button id="submitBtn" class="btn primary" disabled>Submit</button>
+        <button id="nextBtn" class="btn btn-blue hidden">Next</button>
+      </div>
+
+      <div id="feedback" class="feedback"></div>
+      <div id="answerLine" class="answer-line"></div>
+      <div id="rationale" class="rationale hidden"></div>
+    </section>
+
+    <!-- Summary -->
+    <section id="summary" class="card hidden">
+      <button id="restartBtnSummary" class="btn primary hidden">Start New Quiz</button>
+
+      <div id="firstTrySummary" class="first-try">
+        <strong>First-try mastery:</strong>
+        <span id="firstTryPct">0%</span>
+        (<span id="firstTryCount">0</span> / <span id="firstTryTotal">0</span>)
+      </div>
+
+      <div id="reviewList" class="review-list"></div>
+    </section>
+  </div>
+
+  <script src="/static/desktop/desktop_script.js" defer></script>
+</body>
+</html>
