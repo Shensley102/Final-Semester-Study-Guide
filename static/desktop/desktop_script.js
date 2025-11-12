@@ -1,11 +1,6 @@
 /* ===============================================================
    Final Semester Study Guide — Shared Quiz Engine (Desktop & Mobile)
-   UNTIL-MASTERY RUN:
-   - User selects a module and a length (or Full).
-   - We sample that many unique items => runSet.
-   - We show items until *every* item in runSet is answered correctly
-     at least once. Missed items are recycled back into the queue.
-   - First-try mastery still tracked for the end summary.
+   UNTIL-MASTERY RUN (recycle on miss; finish when all mastered)
 =============================================================== */
 
 const $ = (id) => document.getElementById(id);
@@ -82,7 +77,10 @@ async function loadModules() {
     moduleSel.innerHTML = list.map(name =>
       `<option value="${name}">${escapeHTML(prettyTitle(name))}</option>`
     ).join('');
-  } catch {
+    // Ensure something is definitely selected (prevents empty value edge-cases)
+    moduleSel.selectedIndex = 0;
+  } catch (err) {
+    console.error(err);
     moduleSel.innerHTML = `<option value="" disabled selected>Unable to load modules</option>`;
   }
 }
@@ -290,27 +288,77 @@ function gradeCurrent() {
 
   if (correct) {
     if (prevAttempts === 0) firstTryCorrect.add(id);
-    // mastered implicitly tracked via counts; no need to store id if desired
-    // but we can keep an implicit mastery: once answered correct, we won't add to recycle
+    mastered.add(id);
   } else {
-    // return later unless already mastered
-    queue.length || recycle.push(current);
+    // ✅ Always recycle a miss (bug fix)
+    recycle.push(current);
   }
 
   submitBtn.classList.add('hidden');
   nextBtn.classList.remove('hidden');
   submitBtn.disabled = true;
 
-  // Mark mastery: only if answered correctly at least once.
-  // Count mastery using attempts map + review sort rather than a separate set.
-  // (Progress bar uses runSet/mastered.size; we can approximate mastered by counting
-  // items that have a 'correct at least once' flag if you choose to track it.)
-  // To keep the bar accurate, track mastered explicitly:
-  if (correct) mastered.add(id);
   setCounters();
 }
 
 /* ---------- Wiring ---------- */
+function bindLengthButtons() {
+  lengthBtns?.querySelectorAll('.seg-btn').forEach((b, i) => {
+    if (i === 0) b.classList.add('active'); // default select "10"
+    b.setAttribute('aria-pressed', b.classList.contains('active') ? 'true' : 'false');
+  });
+
+  lengthBtns?.addEventListener('click', (e) => {
+    const btn = e.target.closest('.seg-btn');
+    if (!btn) return;
+    selectedLength = btn.dataset.len || '10';
+    lengthBtns.querySelectorAll('.seg-btn').forEach(b => {
+      const on = b === btn;
+      b.classList.toggle('active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  });
+}
+
+function bindStart() {
+  const handler = async () => {
+    try {
+      const chosenModuleName = moduleSel?.value || '';
+      if (!chosenModuleName) {
+        alert('Please choose a module.');
+        return;
+      }
+      bank = await loadBank(chosenModuleName);
+      if (!Array.isArray(bank) || bank.length === 0) {
+        alert('This module appears empty.');
+        return;
+      }
+      runSet = sampleRunSet(bank, selectedLength);
+      resetRunDerivedState();
+
+      launcher.classList.add('hidden');
+      document.getElementById('howTo')?.classList.add('hidden');
+      quiz.classList.remove('hidden');
+      countersBox.classList.remove('hidden');
+
+      const pageTitle = $('pageTitle');
+      if (pageTitle) pageTitle.textContent = prettyTitle(chosenModuleName);
+
+      nextQuestion();
+    } catch (err) {
+      console.error(err);
+      alert('Unable to start quiz. See console for details.');
+    }
+  };
+
+  // Bind both now and on DOMContentLoaded for robustness
+  startBtn?.addEventListener('click', handler);
+  document.addEventListener('DOMContentLoaded', () => {
+    startBtn?.removeEventListener('click', handler);
+    startBtn?.addEventListener('click', handler);
+  });
+}
+
 submitBtn?.addEventListener('click', (e) => {
   e.preventDefault();
   gradeCurrent();
@@ -323,36 +371,9 @@ nextBtn?.addEventListener('click', (e) => {
 });
 resetAll?.addEventListener('click', () => location.reload());
 
-let chosenModuleName = null;
-let selected = '10';
-lengthBtns?.addEventListener('click', (e) => {
-  const btn = e.target.closest('.seg-btn');
-  if (!btn) return;
-  selected = btn.dataset.len || '10';
-  lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.classList.toggle('active', b === btn));
-  lengthBtns.querySelectorAll('.seg-btn').forEach(b =>
-    b.setAttribute('aria-pressed', b.classList.contains('active') ? 'true' : 'false'));
-});
-
-startBtn?.addEventListener('click', async () => {
-  chosenModuleName = moduleSel.value;
-  if (!chosenModuleName) return;
-  bank = await loadBank(chosenModuleName);
-  runSet = sampleRunSet(bank, selected);
-  resetRunDerivedState();
-
-  launcher.classList.add('hidden');
-  document.getElementById('howTo')?.classList.add('hidden');
-  quiz.classList.remove('hidden');
-  countersBox.classList.remove('hidden');
-
-  const pageTitle = $('pageTitle');
-  if (pageTitle) pageTitle.textContent = prettyTitle(chosenModuleName);
-
-  nextQuestion();
-});
-
 /* Init */
 (async function init() {
-  try { await loadModules(); } catch {}
+  bindLengthButtons();
+  await loadModules(); // ensures a selectedIndex is set
+  bindStart();
 })();
