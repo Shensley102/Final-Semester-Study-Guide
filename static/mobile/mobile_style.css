@@ -1,8 +1,51 @@
+/* Bring in the shared desktop styles first */
 @import url("/static/desktop/desktop_style.css");
 
-/* Mobile-only overrides */
-@media (max-width: 1024px) {
-  .opt label{ display:flex; width:100%; cursor:pointer; }
-  .actions{ display:flex; justify-content:flex-end; }
-  #submitBtn{ width:auto; max-width:unset; }
+/* -------------------------
+   Mobile-only overrides
+   ------------------------- */
+:root { --container-max: 760px; }          /* keep things readable on tablets */
+html, body { font-family: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+
+.container { padding: 16px; margin: 0 auto; max-width: var(--container-max); }
+
+/* Tighter header spacing on mobile while keeping same sizes */
+#pageTitle { margin-bottom: 8px; }
+.counters .pbar-wrap { margin-top: 6px; }
+
+/* Question & options stack in a single column */
+.question { margin-bottom: 12px; }
+
+/* Each option card fills width and is an easy tap target */
+.options { display: grid; grid-template-columns: 1fr; gap: 10px; }
+.opt { padding: 12px 14px; min-height: 56px; border-radius: 12px; }
+.opt input { position: absolute; opacity: 0; pointer-events: none; }  /* allow full-card taps */
+.opt label {
+  display: flex; align-items: center; gap: 10px;
+  width: 100%; cursor: pointer; line-height: 1.35;
 }
+
+/* Action buttons: full-width on mobile */
+.actions-mobile { margin-top: 8px; display: grid; gap: 10px; }
+.btn-wide { width: 100%; }
+
+/* Feedback & rationale read well on phones */
+.feedback { margin-top: 8px; }
+.rationale { margin-top: 10px; }
+
+/* How-it-works section */
+.how { margin-top: 12px; }
+.how summary { font-weight: 700; cursor: pointer; }
+.how-list { margin: 8px 0 0 18px; display: grid; gap: 6px; }
+
+/* Summary page tweaks */
+#restartBtnSummary { margin-bottom: 10px; }
+.review-banner {
+  font-weight: 700; margin: 8px 0 6px; padding: 6px 10px;
+  background: #eef6ff; border: 1px solid #d7e8ff; border-radius: 10px;
+}
+.review-list { display: grid; gap: 10px; }
+.review-list .card { padding: 12px; }
+
+/* Make the Reset button more reachable */
+#resetAll.btn { margin-left: auto; }
