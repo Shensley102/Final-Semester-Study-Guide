@@ -1,14 +1,6 @@
-/* ===============================================================
-   Final Semester Study Guide — Mobile bootstrap
-   Uses the SHARED engine (desktop_script.js) which now implements
-   UNTIL-MASTERY runs. This file only adds mobile UX glue.
-=============================================================== */
-
-// Import the shared engine (contains the until-mastery logic)
+/* Mobile bootstrap: import shared engine & add tap-friendly behavior */
 import "/static/desktop/desktop_script.js";
 
-/* Mobile glue: make the whole option card tappable and keep
-   the button states in sync without changing shared logic. */
 document.addEventListener("DOMContentLoaded", () => {
   document.documentElement.classList.add("is-mobile");
 
@@ -17,10 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("click", (e) => {
       const card = e.target.closest(".opt");
       if (!card) return;
-
       const input = card.querySelector("input");
       if (!input) return;
-
       if (input.type === "radio") {
         if (!input.checked) {
           input.checked = true;
@@ -33,15 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Ensure the top "Start New Quiz" button becomes visible on summary
   const restartTop = document.getElementById("restartBtnSummary");
   const summary = document.getElementById("summary");
   if (restartTop && summary) {
-    const observer = new MutationObserver(() => {
-      if (!summary.classList.contains("hidden")) {
-        restartTop.classList.remove("hidden");
-      }
+    const obs = new MutationObserver(() => {
+      if (!summary.classList.contains("hidden")) restartTop.classList.remove("hidden");
     });
-    observer.observe(summary, { attributes: true, attributeFilter: ["class"] });
+    obs.observe(summary, { attributes: true, attributeFilter: ["class"] });
   }
 });
