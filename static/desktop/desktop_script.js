@@ -1,5 +1,5 @@
 /* ===============================================================
-   Final Semester Study Guide — Shared Quiz Engine (Desktop & Mobile)
+   Final Semester Study Guide — Shared Quiz Engine (Desktop)
    UNTIL-MASTERY RUN (recycle on miss; finish when all mastered)
 =============================================================== */
 
@@ -77,16 +77,118 @@ async function loadModules() {
     moduleSel.innerHTML = list.map(name =>
       `<option value="${name}">${escapeHTML(prettyTitle(name))}</option>`
     ).join('');
-    // Ensure something is definitely selected (prevents empty value edge-cases)
-    moduleSel.selectedIndex = 0;
+    moduleSel.selectedIndex = 0; // important for reliable value
   } catch (err) {
     console.error(err);
     moduleSel.innerHTML = `<option value="" disabled selected>Unable to load modules</option>`;
   }
 }
 
+/* ---------- Coercion & Normalization ---------- */
+/* Accepts many JSON shapes and returns an array of normalized items:
+   { question, options:[...], rationale?, correct? / answer? / correct_index? / correct_indices? / key? / correct_letter? / CorrectAnswer? }
+*/
+function coerceArrayOfQuestions(data) {
+  if (!data) return [];
+
+  if (Array.isArray(data)) return data;
+
+  const tryArrayOnKeys = (obj) => {
+    const keys = Object.keys(obj || {});
+    for (const k of keys) {
+      const v = obj[k];
+      if (Array.isArray(v) && v.length && typeof v[0] === 'object') return v;
+    }
+    return null;
+  };
+
+  // common wrappers: questions, items, data, bank, list, qs
+  const wrappers = ['questions', 'items', 'data', 'bank', 'list', 'qs', 'question_bank', 'questionBank'];
+  for (const w of wrappers) {
+    const v = data[w];
+    if (Array.isArray(v) && v.length && typeof v[0] === 'object') return v;
+  }
+
+  // look for any array-of-objects in values
+  const arr = tryArrayOnKeys(data);
+  if (arr) return arr;
+
+  // dictionary of question objects => values
+  const values = Object.values(data);
+  const objValues = values.filter(v => v && typeof v === 'object' && !Array.isArray(v));
+  if (objValues.length && (objValues[0].question || objValues[0].stem || objValues[0].prompt || objValues[0].A)) {
+    return objValues;
+  }
+
+  return [];
+}
+
+function normalizeItem(r = {}) {
+  // get question text
+  const q = r.question ?? r.stem ?? r.prompt ?? r.q ?? '';
+
+  // get options/choices
+  let options = r.options ?? r.choices ?? r.answers ?? r.options_array ?? null;
+  if (!Array.isArray(options)) {
+    const letters = ['A','B','C','D','E','F','G','H'];
+    const fromLetters = letters.map(L => r[L]).filter(v => v != null);
+    if (fromLetters.length >= 2) options = fromLetters;
+  }
+  if (!Array.isArray(options)) options = [];
+
+  // rationale/explanation
+  const rationale = r.rationale ?? r.explanation ?? r.reason ?? r.rationale_text ?? '';
+
+  // carry any of the many correct forms through; grading will normalize
+  const normalized = { question: q, options, rationale };
+  if ('correct' in r) normalized.correct = r.correct;
+  else if ('answer' in r) normalized.answer = r.answer;
+  else if ('answers' in r && Array.isArray(r.answers) && typeof r.answers[0] !== 'string') normalized.correct_indices = r.answers;
+  else if ('correct_index' in r) normalized.correct_index = r.correct_index;
+  else if ('correct_indices' in r) normalized.correct_indices = r.correct_indices;
+  else if ('correct_letter' in r) normalized.answer = r.correct_letter;
+  else if ('key' in r) normalized.answer = r.key;
+  else if ('CorrectAnswer' in r) normalized.answer = r.CorrectAnswer;
+
+  return normalized;
+}
+
 async function loadBank(name) {
-  return fetchJSON(`/${encodeURIComponent(name)}`);
+  const raw = await fetchJSON(`/${encodeURIComponent(name)}`);
+  const coerced = coerceArrayOfQuestions(raw);
+  // map/clean; drop unusable records
+  const cleaned = coerced.map(normalizeItem)
+    .filter(it => (it.question || '').trim().length > 0 && Array.isArray(it.options) && it.options.length >= 2);
+  return cleaned;
+}
+
+/* ---------- Normalization helpers used by grading ---------- */
+function letterToIdx(s) {
+  const m = /^[A-Za-z]$/.exec(String(s).trim());
+  if (m) return m[0].toUpperCase().charCodeAt(0) - 65;
+  // sometimes "A.", "B)" etc
+  const m2 = /^([A-Za-z])[\.\)]$/.exec(String(s).trim());
+  if (m2) return m2[1].toUpperCase().charCodeAt(0) - 65;
+  const n = Number(s);
+  return Number.isFinite(n) ? n : NaN;
+}
+
+function normalizeCorrect(it) {
+  const raw = it.correct ?? it.answer ?? it.answers ?? it.correct_index ?? it.correct_indices ?? it.key ?? it.correct_letter ?? it.CorrectAnswer;
+  if (Array.isArray(raw)) {
+    return raw.map(v => (typeof v === 'string' ? letterToIdx(v) : Number(v))).filter(n => Number.isFinite(n)).sort((a,b)=>a-b);
+  }
+  if (raw != null) {
+    if (typeof raw === 'string') return [letterToIdx(raw)].filter(n => Number.isFinite(n));
+    return [Number(raw)].filter(n => Number.isFinite(n));
+  }
+  // fallback: look for single 'Correct' field with letter
+  if ('Correct' in it) return [letterToIdx(it.Correct)].filter(n => Number.isFinite(n));
+  return []; // if impossible, will fail validation and be skipped later
+}
+
+function isMultiCorrect(it) {
+  return normalizeCorrect(it).length > 1;
 }
 
 /* ---------- State ---------- */
@@ -103,8 +205,8 @@ let runNumber = 0;
 let selectedLength = '10';
 
 function itemId(it) {
-  const stem = (it.question || it.stem || '').trim();
-  const opts = (it.options || it.choices || []).join('|');
+  const stem = (it.question || '').trim();
+  const opts = (it.options || []).join('|');
   let h = 2166136261 >>> 0;
   const s = stem + '::' + opts;
   for (let i=0;i<s.length;i++){
@@ -115,7 +217,12 @@ function itemId(it) {
 
 /* ---------- Selection ---------- */
 function sampleRunSet(fullBank, len) {
-  const pool = fullBank.slice();
+  // validate items: must have valid correct array inside options bounds
+  const valid = fullBank.filter(it => {
+    const corr = normalizeCorrect(it);
+    return corr.length > 0 && corr.every(n => Number.isFinite(n) && n >= 0 && n < it.options.length);
+  });
+  const pool = valid.length ? valid : [];
   const count = (len === 'full') ? pool.length : Math.min(pool.length, Number(len));
   return shuffle(pool).slice(0, count);
 }
@@ -146,8 +253,8 @@ function setCounters() {
 }
 
 function renderItem(it) {
-  const q = (it.question || it.stem || '').trim();
-  const opts = (it.options || it.choices || []).map(String);
+  const q = (it.question || '').trim();
+  const opts = (it.options || []).map(String);
 
   questionText.innerHTML = escapeHTML(q);
   optionsForm.innerHTML = opts.map((txt, idx) => {
@@ -177,38 +284,18 @@ function renderItem(it) {
   };
 }
 
-function normalizeCorrect(it) {
-  const raw = it.correct ?? it.answer ?? it.answers ?? it.correct_index ?? it.correct_indices;
-  if (Array.isArray(raw)) return raw.map(x => (typeof x === 'string' ? letterToIdx(x) : Number(x)));
-  if (typeof raw === 'string') return [letterToIdx(raw)];
-  return [Number(raw)];
-}
-
-function letterToIdx(s) {
-  const m = /^[A-Za-z]$/.exec(String(s).trim());
-  if (m) return m[0].toUpperCase().charCodeAt(0) - 65;
-  return Number(s);
-}
-
-function isMultiCorrect(it) {
-  const c = normalizeCorrect(it);
-  return c.length > 1;
-}
-
-function getUserSelection() {
-  return [...optionsForm.querySelectorAll('input:checked')].map(i => Number(i.value)).sort((a,b)=>a-b);
-}
-
+/* ---------- Flow ---------- */
 function arraysEqual(a,b) {
   if (a.length !== b.length) return false;
   for (let i=0;i<a.length;i++) if (a[i] !== b[i]) return false;
   return true;
 }
 
-/* ---------- Flow ---------- */
-function nextQuestion() {
-  if (!current) setCounters();
+function getUserSelection() {
+  return [...optionsForm.querySelectorAll('input:checked')].map(i => Number(i.value)).sort((a,b)=>a-b);
+}
 
+function nextQuestion() {
   if (queue.length === 0) {
     if (mastered.size < runSet.length && recycle.length) {
       queue = shuffle(recycle);
@@ -243,10 +330,10 @@ function showSummary() {
   scored.sort((a,b) => (b.missed - a.missed) || (b.attempts - a.attempts));
 
   review.innerHTML = scored.map(({ item, attempts, missed }) => {
-    const q = escapeHTML((item.question || item.stem || '').trim());
+    const q = escapeHTML((item?.question || '').trim());
     const corr = normalizeCorrect(item);
     const letters = corr.map(i => String.fromCharCode(65+i)).join(', ');
-    const rationale = escapeHTML(item.rationale || item.explanation || '');
+    const rationale = escapeHTML(item?.rationale || '');
     return `
       <div class="card rev-item ${missed>0?'bad':'ok'}">
         <div class="rev-q">${q}</div>
@@ -277,7 +364,7 @@ function gradeCurrent() {
   feedback.textContent = correct ? 'Correct!' : 'Incorrect';
   feedback.className = `feedback ${correct ? 'ok' : 'bad'}`;
 
-  const rationale = escapeHTML(current.rationale || current.explanation || '');
+  const rationale = escapeHTML(current.rationale || '');
   if (rationale) {
     rationaleEl.classList.remove('hidden');
     rationaleEl.innerHTML = rationale;
@@ -290,8 +377,7 @@ function gradeCurrent() {
     if (prevAttempts === 0) firstTryCorrect.add(id);
     mastered.add(id);
   } else {
-    // ✅ Always recycle a miss (bug fix)
-    recycle.push(current);
+    recycle.push(current); // always recycle misses (bug fix)
   }
 
   submitBtn.classList.add('hidden');
@@ -304,7 +390,7 @@ function gradeCurrent() {
 /* ---------- Wiring ---------- */
 function bindLengthButtons() {
   lengthBtns?.querySelectorAll('.seg-btn').forEach((b, i) => {
-    if (i === 0) b.classList.add('active'); // default select "10"
+    if (i === 0) b.classList.add('active'); // default "10"
     b.setAttribute('aria-pressed', b.classList.contains('active') ? 'true' : 'false');
   });
 
@@ -328,12 +414,17 @@ function bindStart() {
         alert('Please choose a module.');
         return;
       }
-      bank = await loadBank(chosenModuleName);
+      const loaded = await loadBank(chosenModuleName);
+      bank = loaded;
       if (!Array.isArray(bank) || bank.length === 0) {
         alert('This module appears empty.');
         return;
       }
       runSet = sampleRunSet(bank, selectedLength);
+      if (!runSet.length) {
+        alert('No valid questions were found in this module.');
+        return;
+      }
       resetRunDerivedState();
 
       launcher.classList.add('hidden');
@@ -351,7 +442,6 @@ function bindStart() {
     }
   };
 
-  // Bind both now and on DOMContentLoaded for robustness
   startBtn?.addEventListener('click', handler);
   document.addEventListener('DOMContentLoaded', () => {
     startBtn?.removeEventListener('click', handler);
