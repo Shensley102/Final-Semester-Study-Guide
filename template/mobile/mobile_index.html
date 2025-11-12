@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
 
-  <!-- Base (desktop) styles + mobile overrides -->
+  <!-- Mobile styles (desktop base is imported inside) -->
   <link rel="stylesheet" href="/static/mobile/mobile_style.css" />
 </head>
 <body>
@@ -50,7 +50,7 @@
         </div>
       </div>
 
-      <!-- How it works (restored) -->
+      <!-- How it works -->
       <details class="how">
         <summary>How it works & tips</summary>
         <ul class="how-list">
@@ -73,10 +73,10 @@
     <section id="quiz" class="card hidden" aria-live="polite">
       <div id="questionText" class="question"></div>
 
-      <!-- options: each .opt contains an input + label; whole card is tappable on mobile -->
+      <!-- options -->
       <form id="optionsForm" class="options"></form>
 
-      <!-- full-width action button on mobile -->
+      <!-- full-width action buttons on mobile -->
       <div class="actions actions-mobile">
         <button id="submitBtn" class="btn primary btn-wide" disabled>Submit</button>
         <button id="nextBtn" class="btn btn-blue btn-wide hidden">Next</button>
@@ -89,7 +89,6 @@
 
     <!-- summary -->
     <section id="summary" class="card hidden">
-      <!-- Top start-new button (requested placement) -->
       <button id="restartBtnSummary" class="btn primary btn-wide hidden">Start New Quiz</button>
 
       <div id="firstTrySummary" class="first-try">
@@ -98,14 +97,12 @@
         (<span id="firstTryCount">0</span> / <span id="firstTryTotal">0</span>)
       </div>
 
-      <!-- Clever label for sorted review -->
       <div id="reviewBanner" class="review-banner">🧠 Smart Review: Most-missed → least</div>
-
       <div id="reviewList" class="review-list"></div>
     </section>
   </div>
 
-  <!-- Reuse the shared engine + add tiny mobile glue -->
-  <script src="/static/mobile/mobile_script.js" defer></script>
+  <!-- IMPORTANT: module script so we can import the shared engine -->
+  <script type="module" src="/static/mobile/mobile_script.js"></script>
 </body>
 </html>
