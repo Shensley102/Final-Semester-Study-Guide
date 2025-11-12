@@ -1,8 +1,10 @@
 /* ===============================================================
    Final Semester Study Guide — Mobile bootstrap
-   - Reuse the shared desktop engine
-   - Add small mobile-only enhancements
+   Uses the SHARED engine (desktop_script.js) which now implements
+   UNTIL-MASTERY runs. This file only adds mobile UX glue.
 =============================================================== */
+
+// Import the shared engine (contains the until-mastery logic)
 import "/static/desktop/desktop_script.js";
 
 /* Mobile glue: make the whole option card tappable and keep
@@ -31,12 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Ensure the restart button on the summary is prominent and ready
+  // Ensure the top "Start New Quiz" button becomes visible on summary
   const restartTop = document.getElementById("restartBtnSummary");
-  if (restartTop) {
-    // The shared engine already wires up #restartBtnSummary.
-    // If it was hidden initially, just ensure it gets unhidden when summary shows.
-    const summary = document.getElementById("summary");
+  const summary = document.getElementById("summary");
+  if (restartTop && summary) {
     const observer = new MutationObserver(() => {
       if (!summary.classList.contains("hidden")) {
         restartTop.classList.remove("hidden");
