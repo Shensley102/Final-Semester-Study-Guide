@@ -1,469 +1,331 @@
-/* ===============================================================
-   Final Semester Study Guide — Shared Quiz Engine (Desktop)
-   UNTIL-MASTERY RUN (recycle on miss; finish when all mastered)
-=============================================================== */
+/* Desktop quiz engine (Open Sans, until-mastery loop) */
 
-const $ = (id) => document.getElementById(id);
+(() => {
+  // ---- DOM ----
+  const launcher = document.getElementById('launcher');
+  const quiz = document.getElementById('quiz');
+  const results = document.getElementById('results');
 
-// Header & progress
-const runCounter       = $('runCounter');
-const remainingCounter = $('remainingCounter');
-const countersBox      = $('countersBox');
-const progressBar      = $('progressBar');
-const progressFill     = $('progressFill');
-const progressLabel    = $('progressLabel');
+  const moduleSelect = document.getElementById('moduleSelect');
+  const lengthGroup = document.getElementById('lengthGroup');
+  const startBtn = document.getElementById('startBtn');
 
-// Launcher
-const launcher   = $('launcher');
-const moduleSel  = $('moduleSel');
-const lengthBtns = $('lengthBtns');
-const startBtn   = $('startBtn');
+  const runCounter = document.getElementById('runCounter');
+  const remainingCounter = document.getElementById('remainingCounter');
+  const progressBarFill = document.getElementById('progressFill');
+  const resetAll = document.getElementById('resetAll');
 
-// Quiz UI
-const quiz         = $('quiz');
-const questionText = $('questionText');
-const optionsForm  = $('optionsForm');
-const submitBtn    = $('submitBtn');
-const nextBtn      = $('nextBtn');
-const feedback     = $('feedback');
-const answerLine   = $('answerLine');
-const rationaleEl  = $('rationale');
+  const questionText = document.getElementById('questionText');
+  const choicesList = document.getElementById('choicesList');
+  const submitBtn = document.getElementById('submitBtn');
 
-// Summary UI
-const summary         = $('summary');
-const firstTryPct     = $('firstTryPct');
-const firstTryCount   = $('firstTryCount');
-const firstTryTotal   = $('firstTryTotal');
-const restartBtnTop   = $('restartBtnSummary');
+  const feedback = document.getElementById('feedback');
+  const resultBadge = document.getElementById('resultBadge');
+  const correctAnswerLabel = document.getElementById('correctAnswerLabel');
+  const rationaleBox = document.getElementById('rationaleBox');
 
-// Reset
-const resetAll = $('resetAll');
+  const newQuizBtn = document.getElementById('newQuizBtn');
+  const resultsTitle = document.getElementById('resultsTitle');
+  const firstTryPct = document.getElementById('firstTryPct');
+  const firstTryCounts = document.getElementById('firstTryCounts');
+  const reviewList = document.getElementById('reviewList');
 
-/* ---------- Utils ---------- */
-const escapeHTML = (s='') =>
-  String(s).replaceAll('&','&amp;').replaceAll('<','&lt;')
-           .replaceAll('>','&gt;').replaceAll('"','&quot;')
-           .replaceAll("'",'&#39;');
+  // ---- Modules list (value = json file) ----
+  const MODULES = [
+    ['Module 1', 'Module_1.json'],
+    ['Module 2', 'Module_2.json'],
+    ['Module 3', 'Module_3.json'],
+    ['Module 4', 'Module_4.json'],
+    ['Learning Questions Module 1 & 2', 'Learning_Questions_Module_1_2.json'],
+    ['Learning Questions Module 3 and 4', 'Learning_Questions_Module_3_4.json'],
+    ['Pharm Quiz 1', 'Pharm_Quiz_1.json'],
+    ['Pharm Quiz 2', 'Pharm_Quiz_2.json']
+  ];
 
-const shuffle = (arr) => {
-  const a = arr.slice();
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random()*(i+1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-};
+  // ---- State ----
+  let selectedLen = 10;                  // number or 'full'
+  let bank = [];                         // full question bank
+  let order = [];                        // array of indices (until-mastery queue)
+  let pos = 0;                           // pointer into order (CRITICAL: start at 0; only ++ after "Next")
+  let mastered = new Set();              // index => mastered
+  let misses = new Map();                // index => miss count
+  let firstTryRight = 0;                 // first-try corrects
+  let firstTryTotal = 0;                 // first-try attempts (unique questions)
 
-const percent = (num, den) => den ? Math.round((num/den)*100) : 0;
+  let mode = 'submit';                   // 'submit' or 'next'
 
-function prettyTitle(raw) {
-  if (!raw) return '';
-  const base = raw.replace(/\.(json)$/i,'').replace(/_/g,' ').trim();
-  return base.replace(/\s+/g,' ').replace(/\b\w/g,(m)=>m.toUpperCase());
-}
+  // ---- Helpers ----
+  const $ = (sel, root=document) => root.querySelector(sel);
+  const byId = (id) => document.getElementById(id);
 
-/* ---------- Data/API ---------- */
-async function fetchJSON(url) {
-  const r = await fetch(url, { cache: 'no-store' });
-  if (!r.ok) throw new Error(`HTTP ${r.status} for ${url}`);
-  return r.json();
-}
+  function hide(el){ el.classList.add('hidden'); }
+  function show(el){ el.classList.remove('hidden'); }
 
-async function loadModules() {
-  moduleSel.innerHTML = `<option disabled selected>Loading…</option>`;
-  try {
-    const list = await fetchJSON('/modules');
-    if (!Array.isArray(list) || list.length === 0) throw new Error('Empty module list');
-    moduleSel.innerHTML = list.map(name =>
-      `<option value="${name}">${escapeHTML(prettyTitle(name))}</option>`
-    ).join('');
-    moduleSel.selectedIndex = 0; // important for reliable value
-  } catch (err) {
-    console.error(err);
-    moduleSel.innerHTML = `<option value="" disabled selected>Unable to load modules</option>`;
-  }
-}
-
-/* ---------- Coercion & Normalization ---------- */
-/* Accepts many JSON shapes and returns an array of normalized items:
-   { question, options:[...], rationale?, correct? / answer? / correct_index? / correct_indices? / key? / correct_letter? / CorrectAnswer? }
-*/
-function coerceArrayOfQuestions(data) {
-  if (!data) return [];
-
-  if (Array.isArray(data)) return data;
-
-  const tryArrayOnKeys = (obj) => {
-    const keys = Object.keys(obj || {});
-    for (const k of keys) {
-      const v = obj[k];
-      if (Array.isArray(v) && v.length && typeof v[0] === 'object') return v;
-    }
-    return null;
-  };
-
-  // common wrappers: questions, items, data, bank, list, qs
-  const wrappers = ['questions', 'items', 'data', 'bank', 'list', 'qs', 'question_bank', 'questionBank'];
-  for (const w of wrappers) {
-    const v = data[w];
-    if (Array.isArray(v) && v.length && typeof v[0] === 'object') return v;
+  function setActiveLen(targetBtn) {
+    [...lengthGroup.querySelectorAll('.pill')].forEach(b => b.classList.remove('active'));
+    targetBtn.classList.add('active');
+    const v = targetBtn.dataset.len;
+    selectedLen = (v === 'full') ? 'full' : parseInt(v, 10);
   }
 
-  // look for any array-of-objects in values
-  const arr = tryArrayOnKeys(data);
-  if (arr) return arr;
+  function showLauncher() {
+    // reset everything and go to launcher
+    hide(quiz);
+    hide(results);
+    show(launcher);
 
-  // dictionary of question objects => values
-  const values = Object.values(data);
-  const objValues = values.filter(v => v && typeof v === 'object' && !Array.isArray(v));
-  if (objValues.length && (objValues[0].question || objValues[0].stem || objValues[0].prompt || objValues[0].A)) {
-    return objValues;
+    // Reset core state
+    bank = [];
+    order = [];
+    pos = 0;
+    mastered.clear();
+    misses.clear();
+    firstTryRight = 0;
+    firstTryTotal = 0;
+
+    // UI reset
+    runCounter.textContent = '1';
+    remainingCounter.textContent = '0';
+    progressBarFill.style.width = '0%';
+    feedback.classList.add('hidden');
+    submitBtn.textContent = 'Submit';
+    mode = 'submit';
   }
 
-  return [];
-}
+  function normalizeItem(raw, idx) {
+    // Expect structure:
+    // {
+    //   "question": "...",
+    //   "options": ["A...", "B...", "C...", "D..."],
+    //   "answer": "A" | "B" | "C" | "D",
+    //   "rationale": "..."
+    // }
+    // Be resilient to minor name differences.
+    const q = raw.question || raw.Question || raw.prompt || '';
+    const opts = raw.options || raw.choices || [raw.A, raw.B, raw.C, raw.D].filter(Boolean);
+    const ans = (raw.answer || raw.correct || '').toString().trim().toUpperCase();
+    const rat = raw.rationale || raw.explanation || raw.reason || '';
 
-function normalizeItem(r = {}) {
-  // get question text
-  const q = r.question ?? r.stem ?? r.prompt ?? r.q ?? '';
-
-  // get options/choices
-  let options = r.options ?? r.choices ?? r.answers ?? r.options_array ?? null;
-  if (!Array.isArray(options)) {
-    const letters = ['A','B','C','D','E','F','G','H'];
-    const fromLetters = letters.map(L => r[L]).filter(v => v != null);
-    if (fromLetters.length >= 2) options = fromLetters;
+    return {
+      id: idx,
+      question: q,
+      options: opts,
+      answer: ans,   // letter A-D
+      rationale: rat
+    };
   }
-  if (!Array.isArray(options)) options = [];
 
-  // rationale/explanation
-  const rationale = r.rationale ?? r.explanation ?? r.reason ?? r.rationale_text ?? '';
+  function renderChoices(item) {
+    choicesList.innerHTML = '';
+    const letters = ['A','B','C','D'];
+    item.options.forEach((text, i) => {
+      const id = `opt_${letters[i]}`;
+      const li = document.createElement('li');
+      li.className = 'choice';
 
-  // carry any of the many correct forms through; grading will normalize
-  const normalized = { question: q, options, rationale };
-  if ('correct' in r) normalized.correct = r.correct;
-  else if ('answer' in r) normalized.answer = r.answer;
-  else if ('answers' in r && Array.isArray(r.answers) && typeof r.answers[0] !== 'string') normalized.correct_indices = r.answers;
-  else if ('correct_index' in r) normalized.correct_index = r.correct_index;
-  else if ('correct_indices' in r) normalized.correct_indices = r.correct_indices;
-  else if ('correct_letter' in r) normalized.answer = r.correct_letter;
-  else if ('key' in r) normalized.answer = r.key;
-  else if ('CorrectAnswer' in r) normalized.answer = r.CorrectAnswer;
-
-  return normalized;
-}
-
-async function loadBank(name) {
-  const raw = await fetchJSON(`/${encodeURIComponent(name)}`);
-  const coerced = coerceArrayOfQuestions(raw);
-  // map/clean; drop unusable records
-  const cleaned = coerced.map(normalizeItem)
-    .filter(it => (it.question || '').trim().length > 0 && Array.isArray(it.options) && it.options.length >= 2);
-  return cleaned;
-}
-
-/* ---------- Normalization helpers used by grading ---------- */
-function letterToIdx(s) {
-  const m = /^[A-Za-z]$/.exec(String(s).trim());
-  if (m) return m[0].toUpperCase().charCodeAt(0) - 65;
-  // sometimes "A.", "B)" etc
-  const m2 = /^([A-Za-z])[\.\)]$/.exec(String(s).trim());
-  if (m2) return m2[1].toUpperCase().charCodeAt(0) - 65;
-  const n = Number(s);
-  return Number.isFinite(n) ? n : NaN;
-}
-
-function normalizeCorrect(it) {
-  const raw = it.correct ?? it.answer ?? it.answers ?? it.correct_index ?? it.correct_indices ?? it.key ?? it.correct_letter ?? it.CorrectAnswer;
-  if (Array.isArray(raw)) {
-    return raw.map(v => (typeof v === 'string' ? letterToIdx(v) : Number(v))).filter(n => Number.isFinite(n)).sort((a,b)=>a-b);
-  }
-  if (raw != null) {
-    if (typeof raw === 'string') return [letterToIdx(raw)].filter(n => Number.isFinite(n));
-    return [Number(raw)].filter(n => Number.isFinite(n));
-  }
-  // fallback: look for single 'Correct' field with letter
-  if ('Correct' in it) return [letterToIdx(it.Correct)].filter(n => Number.isFinite(n));
-  return []; // if impossible, will fail validation and be skipped later
-}
-
-function isMultiCorrect(it) {
-  return normalizeCorrect(it).length > 1;
-}
-
-/* ---------- State ---------- */
-let bank = [];
-let runSet = [];
-let queue = [];
-let recycle = [];
-let mastered = new Set();
-let firstTryCorrect = new Set();
-let attempts = new Map();
-
-let current = null;
-let runNumber = 0;
-let selectedLength = '10';
-
-function itemId(it) {
-  const stem = (it.question || '').trim();
-  const opts = (it.options || []).join('|');
-  let h = 2166136261 >>> 0;
-  const s = stem + '::' + opts;
-  for (let i=0;i<s.length;i++){
-    h ^= s.charCodeAt(i); h += (h<<1) + (h<<4) + (h<<7) + (h<<8) + (h<<24);
-  }
-  return (h >>> 0).toString(36);
-}
-
-/* ---------- Selection ---------- */
-function sampleRunSet(fullBank, len) {
-  // validate items: must have valid correct array inside options bounds
-  const valid = fullBank.filter(it => {
-    const corr = normalizeCorrect(it);
-    return corr.length > 0 && corr.every(n => Number.isFinite(n) && n >= 0 && n < it.options.length);
-  });
-  const pool = valid.length ? valid : [];
-  const count = (len === 'full') ? pool.length : Math.min(pool.length, Number(len));
-  return shuffle(pool).slice(0, count);
-}
-
-function resetRunDerivedState() {
-  queue = shuffle(runSet.slice());
-  recycle = [];
-  mastered = new Set();
-  firstTryCorrect = new Set();
-  attempts = new Map();
-  current = null;
-  runNumber = 0;
-}
-
-/* ---------- Render ---------- */
-function setCounters() {
-  const masteredCount = mastered.size;
-  const total = runSet.length;
-  const remain = Math.max(total - masteredCount, 0);
-
-  runCounter.textContent = `Question: ${runNumber + (current ? 1 : 0)}`;
-  remainingCounter.textContent = `Remaining to master: ${remain}`;
-
-  const pct = percent(masteredCount, total);
-  progressFill.style.width = `${pct}%`;
-  progressBar.setAttribute('aria-valuenow', pct);
-  progressLabel.textContent = `${pct}% mastered`;
-}
-
-function renderItem(it) {
-  const q = (it.question || '').trim();
-  const opts = (it.options || []).map(String);
-
-  questionText.innerHTML = escapeHTML(q);
-  optionsForm.innerHTML = opts.map((txt, idx) => {
-    const letter = String.fromCharCode(65 + idx);
-    const id = `opt_${idx}`;
-    const multi = isMultiCorrect(it);
-    return `
-      <div class="opt">
-        <input id="${id}" name="opt" type="${multi ? 'checkbox':'radio'}" value="${idx}" />
-        <label for="${id}">
-          <span class="k">${letter}.</span>
-          <span class="ans">${escapeHTML(txt)}</span>
+      li.innerHTML = `
+        <label class="opt">
+          <input type="radio" name="choice" id="${id}" value="${letters[i]}">
+          <span class="letter">${letters[i]}.</span>
+          <span class="txt">${text}</span>
         </label>
-      </div>`;
-  }).join('');
-
-  submitBtn.disabled = true;
-  nextBtn.classList.add('hidden');
-  feedback.textContent = '';
-  answerLine.textContent = '';
-  rationaleEl.classList.add('hidden');
-  rationaleEl.innerHTML = '';
-
-  optionsForm.onchange = () => {
-    const any = optionsForm.querySelector('input:checked');
-    submitBtn.disabled = !any;
-  };
-}
-
-/* ---------- Flow ---------- */
-function arraysEqual(a,b) {
-  if (a.length !== b.length) return false;
-  for (let i=0;i<a.length;i++) if (a[i] !== b[i]) return false;
-  return true;
-}
-
-function getUserSelection() {
-  return [...optionsForm.querySelectorAll('input:checked')].map(i => Number(i.value)).sort((a,b)=>a-b);
-}
-
-function nextQuestion() {
-  if (queue.length === 0) {
-    if (mastered.size < runSet.length && recycle.length) {
-      queue = shuffle(recycle);
-      recycle = [];
-    }
-  }
-  if (queue.length === 0) return showSummary();
-
-  current = queue.shift();
-  runNumber++;
-  renderItem(current);
-  setCounters();
-}
-
-function showSummary() {
-  quiz.classList.add('hidden');
-  summary.classList.remove('hidden');
-  countersBox.classList.add('hidden');
-
-  const total = runSet.length;
-  const first = firstTryCorrect.size;
-  firstTryTotal.textContent = total;
-  firstTryCount.textContent = first;
-  firstTryPct.textContent = `${percent(first, total)}%`;
-
-  const review = $('reviewList');
-  const scored = [...attempts.entries()].map(([id, n]) => {
-    const itm = runSet.find(x => itemId(x) === id) || bank.find(x => itemId(x) === id);
-    const missed = Math.max(n - 1, 0);
-    return { item: itm, attempts: n, missed };
-  });
-  scored.sort((a,b) => (b.missed - a.missed) || (b.attempts - a.attempts));
-
-  review.innerHTML = scored.map(({ item, attempts, missed }) => {
-    const q = escapeHTML((item?.question || '').trim());
-    const corr = normalizeCorrect(item);
-    const letters = corr.map(i => String.fromCharCode(65+i)).join(', ');
-    const rationale = escapeHTML(item?.rationale || '');
-    return `
-      <div class="card rev-item ${missed>0?'bad':'ok'}">
-        <div class="rev-q">${q}</div>
-        <div class="rev-aux">Missed ${missed} time${missed===1?'':'s'} • ${attempts} attempt${attempts===1?'':'s'}</div>
-        <div class="rev-ans"><strong>Correct Answer:</strong> ${letters}</div>
-        ${rationale ? `<div class="rev-rationale"><strong>Rationale:</strong> ${rationale}</div>` : ''}
-      </div>`;
-  }).join('');
-
-  restartBtnTop?.classList.remove('hidden');
-}
-
-/* ---------- Grading ---------- */
-function gradeCurrent() {
-  if (!current) return;
-
-  const id = itemId(current);
-  const sel = getUserSelection();
-  const corr = normalizeCorrect(current).slice().sort((a,b)=>a-b);
-
-  const prevAttempts = attempts.get(id) || 0;
-  attempts.set(id, prevAttempts + 1);
-
-  const correct = arraysEqual(sel, corr);
-  const letters = corr.map(i => String.fromCharCode(65+i)).join(', ');
-
-  answerLine.innerHTML = `<strong>${correct ? 'Correct' : 'Correct Answer'}:</strong> ${letters}`;
-  feedback.textContent = correct ? 'Correct!' : 'Incorrect';
-  feedback.className = `feedback ${correct ? 'ok' : 'bad'}`;
-
-  const rationale = escapeHTML(current.rationale || '');
-  if (rationale) {
-    rationaleEl.classList.remove('hidden');
-    rationaleEl.innerHTML = rationale;
-  } else {
-    rationaleEl.classList.add('hidden');
-    rationaleEl.innerHTML = '';
-  }
-
-  if (correct) {
-    if (prevAttempts === 0) firstTryCorrect.add(id);
-    mastered.add(id);
-  } else {
-    recycle.push(current); // always recycle misses (bug fix)
-  }
-
-  submitBtn.classList.add('hidden');
-  nextBtn.classList.remove('hidden');
-  submitBtn.disabled = true;
-
-  setCounters();
-}
-
-/* ---------- Wiring ---------- */
-function bindLengthButtons() {
-  lengthBtns?.querySelectorAll('.seg-btn').forEach((b, i) => {
-    if (i === 0) b.classList.add('active'); // default "10"
-    b.setAttribute('aria-pressed', b.classList.contains('active') ? 'true' : 'false');
-  });
-
-  lengthBtns?.addEventListener('click', (e) => {
-    const btn = e.target.closest('.seg-btn');
-    if (!btn) return;
-    selectedLength = btn.dataset.len || '10';
-    lengthBtns.querySelectorAll('.seg-btn').forEach(b => {
-      const on = b === btn;
-      b.classList.toggle('active', on);
-      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      `;
+      choicesList.appendChild(li);
     });
-  });
-}
+  }
 
-function bindStart() {
-  const handler = async () => {
-    try {
-      const chosenModuleName = moduleSel?.value || '';
-      if (!chosenModuleName) {
-        alert('Please choose a module.');
-        return;
-      }
-      const loaded = await loadBank(chosenModuleName);
-      bank = loaded;
-      if (!Array.isArray(bank) || bank.length === 0) {
-        alert('This module appears empty.');
-        return;
-      }
-      runSet = sampleRunSet(bank, selectedLength);
-      if (!runSet.length) {
-        alert('No valid questions were found in this module.');
-        return;
-      }
-      resetRunDerivedState();
+  function updateCounters() {
+    // pos is zero-based; display as 1-based
+    runCounter.textContent = String(pos + 1);
+    const targetUnique = firstTryTotal || (selectedLen === 'full' ? bank.length : selectedLen);
+    const remaining = Math.max(targetUnique - mastered.size, 0);
+    remainingCounter.textContent = String(remaining);
 
-      launcher.classList.add('hidden');
-      document.getElementById('howTo')?.classList.add('hidden');
-      quiz.classList.remove('hidden');
-      countersBox.classList.remove('hidden');
+    const progress = Math.min((mastered.size / targetUnique) * 100, 100);
+    progressBarFill.style.width = `${progress}%`;
+  }
 
-      const pageTitle = $('pageTitle');
-      if (pageTitle) pageTitle.textContent = prettyTitle(chosenModuleName);
-
-      nextQuestion();
-    } catch (err) {
-      console.error(err);
-      alert('Unable to start quiz. See console for details.');
+  function renderQuestion() {
+    const idx = order[pos];
+    const item = bank[idx];
+    if (!item) {
+      // Finished – show results
+      return showResults();
     }
-  };
 
-  startBtn?.addEventListener('click', handler);
-  document.addEventListener('DOMContentLoaded', () => {
-    startBtn?.removeEventListener('click', handler);
-    startBtn?.addEventListener('click', handler);
+    questionText.textContent = item.question;
+    renderChoices(item);
+
+    feedback.classList.add('hidden');
+    resultBadge.className = 'badge';
+    resultBadge.textContent = '';
+    correctAnswerLabel.textContent = '';
+    rationaleBox.textContent = '';
+
+    submitBtn.textContent = 'Submit';
+    mode = 'submit';
+
+    updateCounters();
+  }
+
+  function selectedLetter() {
+    const el = choicesList.querySelector('input[name="choice"]:checked');
+    return el ? el.value : null;
+  }
+
+  function onSubmit() {
+    const idx = order[pos];
+    const item = bank[idx];
+    const choice = selectedLetter();
+    if (!choice) return;
+
+    // first-try accounting
+    if (!misses.has(idx) && !mastered.has(idx)) {
+      firstTryTotal += 1;
+      if (choice === item.answer) firstTryRight += 1;
+    }
+
+    // mark feedback
+    const correct = (choice === item.answer);
+    feedback.classList.remove('hidden');
+    resultBadge.className = `badge ${correct ? 'ok' : 'err'}`;
+    resultBadge.textContent = correct ? 'Correct' : 'Incorrect';
+    correctAnswerLabel.textContent = `${item.answer}. ${item.options['ABCD'.indexOf(item.answer)] || ''}`;
+    rationaleBox.textContent = item.rationale || '';
+
+    if (correct) {
+      mastered.add(idx);
+    } else {
+      misses.set(idx, (misses.get(idx) || 0) + 1);
+      // push this index to the end so it comes back later
+      order.push(idx);
+    }
+
+    submitBtn.textContent = 'Next';
+    mode = 'next';
+    updateCounters();
+  }
+
+  function onNext() {
+    // Only advance pointer here (this was the bug that made it start at Q2)
+    pos += 1;
+
+    if (pos >= order.length) {
+      return showResults();
+    }
+    renderQuestion();
+  }
+
+  function showResults() {
+    hide(quiz);
+    show(results);
+
+    // Header info
+    const prettyName = moduleSelect.options[moduleSelect.selectedIndex]?.text || 'Module';
+    resultsTitle.textContent = prettyName;
+
+    // First-try % and counts
+    const pct = firstTryTotal ? Math.round((firstTryRight / firstTryTotal) * 100) : 0;
+    firstTryPct.textContent = `${pct}%`;
+    firstTryCounts.textContent = ` ( ${firstTryRight} / ${firstTryTotal} )`;
+
+    // Sort questions by miss count (desc), then id
+    const missPairs = [...misses.entries()].sort((a,b) => (b[1] - a[1]) || (a[0] - b[0]));
+
+    reviewList.innerHTML = '';
+    missPairs.forEach(([idx, count]) => {
+      const it = bank[idx];
+      const block = document.createElement('div');
+      block.className = 'review-block';
+      block.innerHTML = `
+        <div class="review-head">
+          <div class="chip">Missed ${count} time${count>1?'s':''}</div>
+        </div>
+        <div class="review-q">${it.question}</div>
+        <div class="review-a"><b>Correct Answer:</b> ${it.answer}. ${it.options['ABCD'.indexOf(it.answer)] || ''}</div>
+        <div class="review-rat">${it.rationale || ''}</div>
+      `;
+      reviewList.appendChild(block);
+    });
+  }
+
+  async function loadModule(jsonFile) {
+    const res = await fetch(`/${jsonFile}`, { cache: 'no-store' });
+    if (!res.ok) throw new Error(`Failed to fetch ${jsonFile}`);
+    const data = await res.json();
+
+    // Normalize
+    bank = (Array.isArray(data) ? data : (data.questions || [])).map((q, i) => normalizeItem(q, i));
+  }
+
+  function pickOrder() {
+    const allIdx = bank.map((_, i) => i);
+    let pick;
+    if (selectedLen === 'full' || selectedLen >= bank.length) {
+      pick = allIdx.slice();
+    } else {
+      // random unique
+      pick = [];
+      const used = new Set();
+      while (pick.length < selectedLen && used.size < bank.length) {
+        const r = Math.floor(Math.random() * bank.length);
+        if (!used.has(r)) { used.add(r); pick.push(r); }
+      }
+    }
+    return pick;
+  }
+
+  async function startQuiz() {
+    const opt = moduleSelect.value;
+    if (!opt) { alert('Please pick a module.'); return; }
+
+    await loadModule(opt);
+    if (!bank.length) { alert('This module appears empty.'); return; }
+
+    // RESET STATE
+    order = pickOrder();
+    pos = 0;                            // <-- start at 0 (fix)
+    mastered.clear();
+    misses.clear();
+    firstTryRight = 0;
+    firstTryTotal = 0;
+
+    // UI
+    hide(launcher);
+    show(quiz);
+    hide(results);
+
+    renderQuestion();
+  }
+
+  // ---- wiring ----
+  // Populate module select
+  moduleSelect.innerHTML = MODULES.map(([label, file]) => `<option value="${file}">${label}</option>`).join('');
+
+  // Length pills
+  lengthGroup.addEventListener('click', (e) => {
+    const btn = e.target.closest('.pill');
+    if (!btn) return;
+    setActiveLen(btn);
   });
-}
 
-submitBtn?.addEventListener('click', (e) => {
-  e.preventDefault();
-  gradeCurrent();
-});
-nextBtn?.addEventListener('click', (e) => {
-  e.preventDefault();
-  submitBtn.classList.remove('hidden');
-  nextBtn.classList.add('hidden');
-  nextQuestion();
-});
-resetAll?.addEventListener('click', () => location.reload());
+  // Start, reset, submit/next, new quiz
+  startBtn.addEventListener('click', startQuiz);
+  resetAll.addEventListener('click', showLauncher);
 
-/* Init */
-(async function init() {
-  bindLengthButtons();
-  await loadModules(); // ensures a selectedIndex is set
-  bindStart();
+  submitBtn.addEventListener('click', () => (mode === 'submit' ? onSubmit() : onNext()));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      (mode === 'submit' ? onSubmit() : onNext());
+    }
+  });
+
+  newQuizBtn.addEventListener('click', showLauncher);
+
+  // default active length
+  setActiveLen(lengthGroup.querySelector('.pill.active') || lengthGroup.querySelector('.pill'));
+
+  // show launcher initially
+  showLauncher();
 })();
