@@ -8,7 +8,6 @@
    - First-try mastery still tracked for the end summary.
 =============================================================== */
 
-/* ---------- Helpers/DOM ---------- */
 const $ = (id) => document.getElementById(id);
 
 // Header & progress
@@ -24,7 +23,6 @@ const launcher   = $('launcher');
 const moduleSel  = $('moduleSel');
 const lengthBtns = $('lengthBtns');
 const startBtn   = $('startBtn');
-const resumeBtn  = $('resumeBtn');
 
 // Quiz UI
 const quiz         = $('quiz');
@@ -43,10 +41,10 @@ const firstTryCount   = $('firstTryCount');
 const firstTryTotal   = $('firstTryTotal');
 const restartBtnTop   = $('restartBtnSummary');
 
-// Reset button
+// Reset
 const resetAll = $('resetAll');
 
-/* ---------- Tiny Utils ---------- */
+/* ---------- Utils ---------- */
 const escapeHTML = (s='') =>
   String(s).replaceAll('&','&amp;').replaceAll('<','&lt;')
            .replaceAll('>','&gt;').replaceAll('"','&quot;')
@@ -63,23 +61,9 @@ const shuffle = (arr) => {
 
 const percent = (num, den) => den ? Math.round((num/den)*100) : 0;
 
-/* ---------- Title prettifier ---------- */
 function prettyTitle(raw) {
   if (!raw) return '';
   const base = raw.replace(/\.(json)$/i,'').replace(/_/g,' ').trim();
-
-  // Pharm Quiz N
-  const mq = /^(?:pharm)\s+quiz\s+(\d+)$/i.exec(base);
-  if (mq) return `Pharm Quiz ${mq[1]}`;
-
-  // Learning Questions Module X and Y
-  const lq = /^learning\s+questions\s+module\s+(\d+)\s+(\d+)$/i.exec(base);
-  if (lq) return `Learning Questions Module ${lq[1]} and ${lq[2]}`;
-
-  // Module N
-  const mm = /^module\s+(\d+)$/i.exec(base);
-  if (mm) return `Module ${mm[1]}`;
-
   return base.replace(/\s+/g,' ').replace(/\b\w/g,(m)=>m.toUpperCase());
 }
 
@@ -90,22 +74,16 @@ async function fetchJSON(url) {
   return r.json();
 }
 
-/* SAFER LOADER: populates dropdown or shows a friendly fallback */
 async function loadModules() {
-  // show a placeholder while loading
   moduleSel.innerHTML = `<option disabled selected>Loading…</option>`;
   try {
     const list = await fetchJSON('/modules');
-    if (!Array.isArray(list) || list.length === 0) {
-      throw new Error('Empty module list');
-    }
+    if (!Array.isArray(list) || list.length === 0) throw new Error('Empty module list');
     moduleSel.innerHTML = list.map(name =>
       `<option value="${name}">${escapeHTML(prettyTitle(name))}</option>`
     ).join('');
-  } catch (err) {
-    console.error('Failed to load /modules', err);
-    moduleSel.innerHTML =
-      `<option value="" disabled selected>Unable to load modules</option>`;
+  } catch {
+    moduleSel.innerHTML = `<option value="" disabled selected>Unable to load modules</option>`;
   }
 }
 
@@ -137,7 +115,7 @@ function itemId(it) {
   return (h >>> 0).toString(36);
 }
 
-/* ---------- Quiz selection ---------- */
+/* ---------- Selection ---------- */
 function sampleRunSet(fullBank, len) {
   const pool = fullBank.slice();
   const count = (len === 'full') ? pool.length : Math.min(pool.length, Number(len));
@@ -182,8 +160,8 @@ function renderItem(it) {
       <div class="opt">
         <input id="${id}" name="opt" type="${multi ? 'checkbox':'radio'}" value="${idx}" />
         <label for="${id}">
-          <span class="opt-letter">${letter}.</span>
-          <span class="opt-text">${escapeHTML(txt)}</span>
+          <span class="k">${letter}.</span>
+          <span class="ans">${escapeHTML(txt)}</span>
         </label>
       </div>`;
   }).join('');
@@ -239,10 +217,7 @@ function nextQuestion() {
       recycle = [];
     }
   }
-
-  if (queue.length === 0) {
-    return showSummary();
-  }
+  if (queue.length === 0) return showSummary();
 
   current = queue.shift();
   runNumber++;
@@ -261,26 +236,25 @@ function showSummary() {
   firstTryCount.textContent = first;
   firstTryPct.textContent = `${percent(first, total)}%`;
 
-  const misses = [...attempts.entries()].map(([id, n]) => {
-    const itm = runSet.find(x => itemId(x) === id) || bank.find(x => itemId(x) === id);
-    return { id, attempts: n, missed: Math.max(n - 1, 0), item: itm };
-  });
-  misses.sort((a,b) => (b.missed - a.missed) || (b.attempts - a.attempts));
-
   const review = $('reviewList');
-  review.innerHTML = misses.map(m => {
-    const it = m.item;
-    const q = escapeHTML((it.question || it.stem || '').trim());
-    const corr = normalizeCorrect(it);
-    const letters = corr.map(i => String.fromCharCode(65+i)).join(', ');
-    const rationale = escapeHTML(it.rationale || it.explanation || '');
+  const scored = [...attempts.entries()].map(([id, n]) => {
+    const itm = runSet.find(x => itemId(x) === id) || bank.find(x => itemId(x) === id);
+    const missed = Math.max(n - 1, 0);
+    return { item: itm, attempts: n, missed };
+  });
+  scored.sort((a,b) => (b.missed - a.missed) || (b.attempts - a.attempts));
 
+  review.innerHTML = scored.map(({ item, attempts, missed }) => {
+    const q = escapeHTML((item.question || item.stem || '').trim());
+    const corr = normalizeCorrect(item);
+    const letters = corr.map(i => String.fromCharCode(65+i)).join(', ');
+    const rationale = escapeHTML(item.rationale || item.explanation || '');
     return `
-      <div class="card review">
-        <div class="review-q">${q}</div>
-        <div class="muted">Missed ${m.missed} time${m.missed===1?'':'s'} • ${m.attempts} attempt${m.attempts===1?'':'s'}</div>
-        <div class="answer-line"><strong>Correct Answer:</strong> ${letters}</div>
-        ${rationale ? `<div class="rationale">${rationale}</div>` : ''}
+      <div class="card rev-item ${missed>0?'bad':'ok'}">
+        <div class="rev-q">${q}</div>
+        <div class="rev-aux">Missed ${missed} time${missed===1?'':'s'} • ${attempts} attempt${attempts===1?'':'s'}</div>
+        <div class="rev-ans"><strong>Correct Answer:</strong> ${letters}</div>
+        ${rationale ? `<div class="rev-rationale"><strong>Rationale:</strong> ${rationale}</div>` : ''}
       </div>`;
   }).join('');
 
@@ -299,8 +273,8 @@ function gradeCurrent() {
   attempts.set(id, prevAttempts + 1);
 
   const correct = arraysEqual(sel, corr);
-
   const letters = corr.map(i => String.fromCharCode(65+i)).join(', ');
+
   answerLine.innerHTML = `<strong>${correct ? 'Correct' : 'Correct Answer'}:</strong> ${letters}`;
   feedback.textContent = correct ? 'Correct!' : 'Incorrect';
   feedback.className = `feedback ${correct ? 'ok' : 'bad'}`;
@@ -316,14 +290,24 @@ function gradeCurrent() {
 
   if (correct) {
     if (prevAttempts === 0) firstTryCorrect.add(id);
-    if (!mastered.has(id)) mastered.add(id);
+    // mastered implicitly tracked via counts; no need to store id if desired
+    // but we can keep an implicit mastery: once answered correct, we won't add to recycle
   } else {
-    if (!mastered.has(id)) recycle.push(current);
+    // return later unless already mastered
+    queue.length || recycle.push(current);
   }
 
   submitBtn.classList.add('hidden');
   nextBtn.classList.remove('hidden');
   submitBtn.disabled = true;
+
+  // Mark mastery: only if answered correctly at least once.
+  // Count mastery using attempts map + review sort rather than a separate set.
+  // (Progress bar uses runSet/mastered.size; we can approximate mastered by counting
+  // items that have a 'correct at least once' flag if you choose to track it.)
+  // To keep the bar accurate, track mastered explicitly:
+  if (correct) mastered.add(id);
+  setCounters();
 }
 
 /* ---------- Wiring ---------- */
@@ -331,30 +315,20 @@ submitBtn?.addEventListener('click', (e) => {
   e.preventDefault();
   gradeCurrent();
 });
-
 nextBtn?.addEventListener('click', (e) => {
   e.preventDefault();
   submitBtn.classList.remove('hidden');
   nextBtn.classList.add('hidden');
   nextQuestion();
 });
+resetAll?.addEventListener('click', () => location.reload());
 
-resetAll?.addEventListener('click', () => {
-  localStorage.removeItem('fssg_state');
-  location.reload();
-});
-
-restartBtnTop?.addEventListener('click', () => {
-  location.reload();
-});
-
-/* ---------- Launch ---------- */
 let chosenModuleName = null;
-
+let selected = '10';
 lengthBtns?.addEventListener('click', (e) => {
   const btn = e.target.closest('.seg-btn');
   if (!btn) return;
-  selectedLength = btn.dataset.len || '10';
+  selected = btn.dataset.len || '10';
   lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.classList.toggle('active', b === btn));
   lengthBtns.querySelectorAll('.seg-btn').forEach(b =>
     b.setAttribute('aria-pressed', b.classList.contains('active') ? 'true' : 'false'));
@@ -364,10 +338,11 @@ startBtn?.addEventListener('click', async () => {
   chosenModuleName = moduleSel.value;
   if (!chosenModuleName) return;
   bank = await loadBank(chosenModuleName);
-  runSet = sampleRunSet(bank, selectedLength);
+  runSet = sampleRunSet(bank, selected);
   resetRunDerivedState();
 
   launcher.classList.add('hidden');
+  document.getElementById('howTo')?.classList.add('hidden');
   quiz.classList.remove('hidden');
   countersBox.classList.remove('hidden');
 
@@ -377,11 +352,7 @@ startBtn?.addEventListener('click', async () => {
   nextQuestion();
 });
 
-/* ---------- Init ---------- */
+/* Init */
 (async function init() {
-  try {
-    await loadModules();
-  } catch (e) {
-    console.error('Failed to init', e);
-  }
+  try { await loadModules(); } catch {}
 })();
