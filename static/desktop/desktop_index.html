@@ -21,7 +21,7 @@
       <div class="count-row">
         <div id="runCounter">Question: 0</div>
         <div id="remainingCounter">Remaining to master: 0</div>
-        <button id="resetAll" class="btn danger hidden">Reset</button>
+        <button id="resetAll" class="btn danger hidden" type="button">Reset</button>
       </div>
       <div class="pbar-wrap">
         <div id="progressBar" class="pbar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
@@ -35,7 +35,7 @@
     <section id="launcher" class="card">
       <div class="field">
         <label for="moduleSel">Module Choice</label>
-        <select id="moduleSel"></select>
+        <select id="moduleSel" aria-label="Module Choice"></select>
       </div>
 
       <div class="field">
@@ -50,8 +50,8 @@
       </div>
 
       <div class="actions">
-        <button id="startBtn" class="btn primary">Start Quiz</button>
-        <button id="resumeBtn" class="btn hidden">Resume</button>
+        <button id="startBtn" class="btn primary" type="button">Start Quiz</button>
+        <button id="resumeBtn" class="btn hidden" type="button">Resume</button>
       </div>
     </section>
 
@@ -74,8 +74,8 @@
       <form id="optionsForm" class="options"></form>
 
       <div class="actions">
-        <button id="submitBtn" class="btn primary" disabled>Submit</button>
-        <button id="nextBtn" class="btn btn-blue hidden">Next</button>
+        <button id="submitBtn" class="btn primary" type="button" disabled>Submit</button>
+        <button id="nextBtn" class="btn btn-blue hidden" type="button">Next</button>
       </div>
 
       <div id="feedback" class="feedback"></div>
@@ -85,7 +85,7 @@
 
     <!-- Summary -->
     <section id="summary" class="card hidden">
-      <button id="restartBtnSummary" class="btn primary hidden">Start New Quiz</button>
+      <button id="restartBtnSummary" class="btn primary hidden" type="button">Start New Quiz</button>
 
       <div id="firstTrySummary" class="first-try">
         <strong>First-try mastery:</strong>
