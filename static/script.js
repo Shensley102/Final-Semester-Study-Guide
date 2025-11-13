@@ -11,6 +11,8 @@
    - Auto-detect "Select all that apply" and use checkboxes
    - Mouse click and keyboard toggle selection/deselection
    - Summary sorted by most-wrong questions first
+   - Quiz continues until all questions are correct
+   - Shows wrong count in review
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -449,13 +451,22 @@ function nextIndex(){
     run.i = nextIdx;
     return { fromBuffer: false, q: run.order[run.i] };
   }
-  const notMastered = getNotMastered();
-  if (notMastered.length > 0) {
-    run.wrongSinceLast = [];
-    run.order.push(...notMastered);
-    run.i = nextIdx;
-    return { fromBuffer: true, q: run.order[run.i] };
+  
+  // Check if all questions in masterPool are answered correctly
+  const allCorrect = run.masterPool.every(q => run.answered.get(q.id)?.correct);
+  
+  if (!allCorrect) {
+    // Get all questions that are not yet correct
+    const notMastered = getNotMastered();
+    if (notMastered.length > 0) {
+      run.wrongSinceLast = [];
+      run.order.push(...notMastered);
+      run.i = nextIdx;
+      return { fromBuffer: true, q: run.order[run.i] };
+    }
   }
+  
+  // All questions are correct, end the quiz
   return { fromBuffer: false, q: null };
 }
 
@@ -582,12 +593,22 @@ function endRun(){
     row.className = 'rev-item ' + (ans?.correct ? 'ok' : 'bad');
 
     const qEl = document.createElement('div'); qEl.className = 'rev-q'; qEl.textContent = q.stem;
+    
+    // Add wrong count line
+    const wrongCountEl = document.createElement('div'); 
+    wrongCountEl.className = 'rev-wrong-count';
+    const wrongCount = Math.max(0, questionWrongCount[q.id] - 1); // Subtract 1 because the correct attempt is also in the count
+    wrongCountEl.innerHTML = `<strong>Times marked wrong:</strong> ${wrongCount}`;
+    
     const caEl = document.createElement('div'); caEl.className = 'rev-ans';
     caEl.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
     const rEl = document.createElement('div'); rEl.className = 'rev-rationale';
     rEl.innerHTML = `<strong>Rationale:</strong> ${escapeHTML(q.rationale || '')}`;
 
-    row.appendChild(qEl); row.appendChild(caEl); row.appendChild(rEl);
+    row.appendChild(qEl); 
+    row.appendChild(wrongCountEl);
+    row.appendChild(caEl); 
+    row.appendChild(rEl);
     reviewList.appendChild(row);
   });
 
