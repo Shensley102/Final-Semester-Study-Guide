@@ -1,71 +1,66 @@
-from __future__ import annotations
-import os
-import re
-from pathlib import Path
-from typing import List
-from flask import Flask, jsonify, send_from_directory, abort, request
+# Flask app for Vercel: serves desktop at '/', mobile at '/mobile',
+# and provides a '/modules' API to list & fetch JSON banks.
+import os, json, glob
+from flask import Flask, send_from_directory, send_file, jsonify, abort, request, Response
 
-BASE_DIR = Path(__file__).resolve().parent
-app = Flask(__name__, static_url_path="/static", static_folder="static")
+app = Flask(__name__, static_folder="static", static_url_path="/static")
 
-# Directories where quiz-bank JSON files may live
-SEARCH_DIRS: List[Path] = [BASE_DIR, BASE_DIR / "template", BASE_DIR / "templates"]
+REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
+DATA_GLOBS = ["Module_*.json", "Learning_*.json", "Pharm_*.json", "*_Quiz_*.json"]
 
-SAFE_RE = re.compile(r"^(?!\.)[A-Za-z0-9_\-\.]+\.json$")
+def find_all_data_files():
+    files = []
+    for pattern in DATA_GLOBS:
+        files.extend(glob.glob(os.path.join(REPO_ROOT, pattern)))
+    # Deduplicate & sort
+    files = sorted({os.path.basename(p) for p in files})
+    return files
 
-def list_json_banks() -> list[str]:
-    """Return a deduped, sorted list of *.json files from SEARCH_DIRS."""
-    found = []
-    for d in SEARCH_DIRS:
-        if d.exists():
-            found.extend(p.name for p in d.glob("*.json"))
-    deduped = list(dict((name.lower(), name) for name in found).values())
-    return sorted(deduped, key=str.lower)
+@app.after_request
+def add_headers(resp):
+    resp.headers["Cache-Control"] = "no-store"
+    resp.headers["Access-Control-Allow-Origin"] = "*"
+    resp.headers["Access-Control-Allow-Headers"] = "Content-Type"
+    return resp
 
-def serve_json_file(filename: str):
-    """Serve filename.json from any SEARCH_DIRS if present."""
+@app.get("/")
+def home():
+    # Serve desktop by default
+    return send_file(os.path.join(REPO_ROOT, "static", "desktop", "desktop_index.html"))
+
+@app.get("/mobile")
+def mobile_home():
+    return send_file(os.path.join(REPO_ROOT, "static", "mobile", "mobile_index.html"))
+
+@app.get("/modules")
+def list_modules():
+    files = find_all_data_files()
+    # Make a friendlier label
+    def label(fn):
+        name = os.path.splitext(fn)[0]
+        return name.replace("_", " ")
+    return jsonify([{"file": f, "label": label(f)} for f in files])
+
+@app.get("/modules/<path:filename>")
+def serve_module(filename):
+    # Only allow expected files
     safe = os.path.basename(filename)
-    if not SAFE_RE.fullmatch(safe):
+    if safe not in find_all_data_files():
         abort(404)
-    for d in SEARCH_DIRS:
-        if (d / safe).exists():
-            return send_from_directory(d, safe, mimetype="application/json", conditional=True)
-    abort(404)
+    return send_from_directory(REPO_ROOT, safe, mimetype="application/json")
 
-def is_mobile(ua: str) -> bool:
-    """Detect mobile UAs (simple heuristic)."""
-    if not ua:
-        return False
-    ua = ua.lower()
-    return bool(re.search(r"iphone|ipod|windows phone|mobile|android(?!.*tablet)", ua))
-
-@app.route("/")
-def root():
-    """Serve the appropriate index page based on device type."""
-    ua = request.headers.get("User-Agent", "") or ""
-    if is_mobile(ua):
-        return send_from_directory(os.path.join(app.static_folder, "mobile"), "mobile_index.html")
-    else:
-        return send_from_directory(os.path.join(app.static_folder, "desktop"), "desktop_index.html")
-
-@app.route("/modules")
-def modules():
-    """Return the list of available quiz-bank JSON filenames."""
-    try:
-        return jsonify(list_json_banks())
-    except Exception:
-        return jsonify([])
-
-@app.route("/<path:filename>")
-def json_bank(filename: str):
-    """Serve /name.json only (no subpaths)."""
-    if "/" in filename or not filename.lower().endswith(".json"):
+# Compatibility: allow /Something.json direct fetches
+@app.get("/<path:filename>.json")
+def serve_json_direct(filename):
+    safe = os.path.basename(filename + ".json")
+    if safe not in find_all_data_files():
         abort(404)
-    return serve_json_file(filename)
+    return send_from_directory(REPO_ROOT, safe, mimetype="application/json")
 
-@app.route("/favicon.ico")
-def favicon():
-    return ("", 204)
+# Health check
+@app.get("/api/ok")
+def ok():
+    return {"ok": True}
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8000)
+    app.run(debug=True)
