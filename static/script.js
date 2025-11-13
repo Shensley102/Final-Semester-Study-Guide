@@ -10,7 +10,7 @@
    - Open Sans question font (normal weight, slightly smaller)
    - Auto-detect "Select all that apply" and use checkboxes
    - Mouse click and keyboard toggle selection/deselection
-   - Summary sorted by incorrect answers first
+   - Summary sorted by most-wrong questions first
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -547,7 +547,13 @@ function endRun(){
 
   reviewList.innerHTML = '';
   
-  // Sort questions: incorrect ones first, then correct ones
+  // Count how many times each question appears in run.order (indicates wrong attempts)
+  const questionWrongCount = {};
+  run.order.forEach(q => {
+    questionWrongCount[q.id] = (questionWrongCount[q.id] || 0) + 1;
+  });
+  
+  // Sort questions: incorrect ones first (by number of wrong attempts), then correct ones
   const sortedQuestions = [...run.order].sort((a, b) => {
     const ansA = run.answered.get(a.id);
     const ansB = run.answered.get(b.id);
@@ -557,10 +563,20 @@ function endRun(){
       return ansA?.correct ? 1 : -1;
     }
     
-    return 0;
+    // Both incorrect or both correct: sort by number of wrong attempts (higher count first)
+    const countA = questionWrongCount[a.id] || 1;
+    const countB = questionWrongCount[b.id] || 1;
+    return countB - countA;
   });
   
+  // Track which questions we've already displayed
+  const displayedIds = new Set();
+  
   sortedQuestions.forEach(q => {
+    // Only display each unique question once
+    if (displayedIds.has(q.id)) return;
+    displayedIds.add(q.id);
+    
     const row = document.createElement('div');
     const ans = run.answered.get(q.id);
     row.className = 'rev-item ' + (ans?.correct ? 'ok' : 'bad');
