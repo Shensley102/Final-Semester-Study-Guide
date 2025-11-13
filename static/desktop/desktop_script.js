@@ -150,7 +150,8 @@
   function clearKeyboardShortcuts(){
     window.onkeydown = null;
   }
-function renderQuestion(qObj){
+
+  function renderQuestion(qObj){
     const { text, choices, multi } = qObj;
     quizHeader.classList.remove('hidden');
     updateHeader();
@@ -270,7 +271,17 @@ function renderQuestion(qObj){
     try {
       // Load the bank
       const url = `/modules/${encodeURIComponent(file)}`;
-      bank = await fetchJSON(url);
+      let data = await fetchJSON(url);
+      
+      // Handle both nested and flat JSON structures
+      if (data && data.questions && Array.isArray(data.questions)) {
+        bank = data.questions;
+      } else if (Array.isArray(data)) {
+        bank = data;
+      } else {
+        bank = [];
+      }
+      
       if(!Array.isArray(bank) || bank.length===0){
         alert('This module appears empty.');
         startLauncher();
