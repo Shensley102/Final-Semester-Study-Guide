@@ -187,6 +187,13 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
   background-color: #f9fdf6;
 }
 
+/* Highlight entire box when input is checked */
+.opt:has(input:checked){
+  border-color: var(--success);
+  background-color: #f0fde8;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
+}
+
 /* Modern custom checkbox and radio styling */
 .opt input[type="radio"],
 .opt input[type="checkbox"]{
