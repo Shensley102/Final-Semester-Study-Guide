@@ -239,10 +239,22 @@ function showResumeIfAny(){
 function normalizeQuestions(data){
   const arr = Array.isArray(data) ? data : (data?.questions || []);
   return arr.map(q => {
+    // Handle options: convert array to object with letter keys, or use existing object
+    let optionsObj = {};
+    if (Array.isArray(q.options)) {
+      // Convert array to object: ["A text", "B text", ...] -> { "A": "A text", "B": "B text", ... }
+      q.options.forEach((text, idx) => {
+        optionsObj[String.fromCharCode(65 + idx)] = String(text || '');
+      });
+    } else if (q.options && typeof q.options === 'object') {
+      // Already an object, make a copy
+      optionsObj = { ...q.options };
+    }
+
     const newQ = {
       id: String(q.id || Math.random()),
       stem: String(q.question || q.stem || ''),
-      options: (q.options && typeof q.options === 'object') ? { ...q.options } : {},
+      options: optionsObj,
       correctLetters: Array.isArray(q.correctLetters) ? q.correctLetters.slice() : (q.correctAnswer ? [q.correctAnswer] : []),
       rationale: String(q.rationale || ''),
       type: (q.type === 'multiple_select') ? 'multiple_select' : 'single_select',
