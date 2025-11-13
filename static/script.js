@@ -8,6 +8,7 @@
    - Single action button: Submit (green) ➜ Next (blue)
    - Full-width hashed progress bar; reduced jitter (snap to quiz top)
    - Open Sans question font (normal weight, slightly smaller)
+   - Auto-detect "Select all that apply" and use checkboxes
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -262,13 +263,17 @@ function normalizeQuestions(data){
       correctLetters = [q.correctAnswer];
     }
 
+    // Detect "Select all that apply" in the stem and auto-set to multiple_select
+    const stemText = String(q.question || q.stem || '');
+    const isSelectAll = /select all that apply/i.test(stemText);
+
     const newQ = {
       id: String(q.id || Math.random()),
-      stem: String(q.question || q.stem || ''),
+      stem: stemText,
       options: optionsObj,
       correctLetters: correctLetters.length > 0 ? correctLetters : ['A'],
       rationale: String(q.rationale || ''),
-      type: (q.type === 'multiple_select') ? 'multiple_select' : 'single_select',
+      type: (isSelectAll || q.type === 'multiple_select') ? 'multiple_select' : 'single_select',
     };
     return newQ;
   });
