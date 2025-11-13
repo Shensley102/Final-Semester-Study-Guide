@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Final Semester Study Guide</title>
+
+  <!-- Open Sans for question text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Title (JS updates during quiz and on results) -->
+    <h1 id="pageTitle">Final Semester Study Guide</h1>
+
+    <!-- Counters (shown only during an active quiz) -->
+    <div id="countersBox" class="hidden counters" aria-live="polite">
+      <!-- Counts row -->
+      <div class="count-row">
+        <div id="runCounter">Question: 0</div>
+        <div id="remainingCounter">Remaining to master: 0</div>
+        <button id="resetAll" class="btn danger hidden" aria-label="Reset quiz progress">Reset</button>
+      </div>
+
+      <!-- Full-width progress bar -->
+      <div class="pbar-wrap" aria-hidden="false">
+        <div id="progressBar" class="pbar" role="progressbar"
+             aria-label="Mastery progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+          <div id="progressFill" class="pbar-fill" style="width:0%"></div>
+        </div>
+        <div id="progressLabel" class="pbar-label">0% mastered</div>
+      </div>
+    </div>
+
+    <!-- Launcher -->
+    <section id="launcher" class="card">
+      <div class="field">
+        <label for="moduleSel">Module Choice</label>
+        <select id="moduleSel" aria-label="Module Choice"></select>
+      </div>
+
+      <div class="field" aria-labelledby="lengthLegend">
+        <label id="lengthLegend">Length</label>
+        <div id="lengthBtns" class="seg" role="group" aria-label="Length options">
+          <button type="button" class="seg-btn" data-len="10" aria-pressed="false">10</button>
+          <button type="button" class="seg-btn" data-len="25" aria-pressed="false">25</button>
+          <button type="button" class="seg-btn" data-len="50" aria-pressed="false">50</button>
+          <button type="button" class="seg-btn" data-len="100" aria-pressed="false">100</button>
+          <button type="button" class="seg-btn" data-len="full" aria-pressed="false">Full</button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="startBtn" class="btn primary">Start Quiz</button>
+        <button id="resumeBtn" class="btn hidden" aria-label="Resume last run">Resume last run</button>
+      </div>
+
+      <div class="help">
+        <h3>How it works &amp; hotkeys</h3>
+        <ul>
+          <li><strong>Start:</strong> Pick a <em>Module</em>, choose a <em>Length</em>, then click <strong>Start Quiz</strong>.</li>
+          <li><strong>Answering:</strong> Click an option or press <kbd>A</kbd>–<kbd>Z</kbd> to toggle an option.</li>
+          <li><strong>Submit / Next:</strong> Press <kbd>Enter</kbd> to submit. Then the green button turns blue and becomes <strong>Next</strong>.</li>
+          <li><strong>After you submit:</strong> You'll see Correct/Incorrect, the Correct Answer, and the Rationale.</li>
+          <li><strong>Results:</strong> End of run shows a summary and a review list with answers and rationales.</li>
+          <li><strong>Reset:</strong> A red <strong>Reset</strong> button shows during an active quiz. It clears progress.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section id="quiz" class="card hidden" aria-live="polite">
+      <div id="questionText" class="question"></div>
+      <form id="optionsForm" class="options"></form>
+
+      <div class="actions">
+        <button id="submitBtn" class="btn primary" disabled aria-label="Submit answer">Submit</button>
+        <button id="nextBtn" class="btn btn-blue hidden" aria-label="Next question">Next</button>
+      </div>
+
+      <div id="feedback" class="feedback" aria-live="polite"></div>
+      <div id="answerLine" class="answer-line" aria-live="polite"></div>
+      <div id="rationale" class="rationale hidden" aria-live="polite"></div>
+    </section>
+
+    <!-- Summary -->
+    <section id="summary" class="card hidden" aria-live="polite">
+      <div id="firstTrySummary" class="first-try">
+        <strong>First-try mastery:</strong>
+        <span id="firstTryPct">0%</span>
+        (<span id="firstTryCount">0</span> / <span id="firstTryTotal">0</span>)
+      </div>
+
+      <div id="reviewList" class="review-list"></div>
+
+      <div class="actions">
+        <button id="restartBtnSummary" class="btn primary">Start Another Run</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="/static/script.js" defer></script>
+</body>
+</html>
