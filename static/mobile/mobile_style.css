@@ -1,84 +1,93 @@
-/* Mobile styles (keybits only shown; keep your existing rules)
-   — global font switch to sans-serif and header progress harmony */
-
 :root{
-  --bg: #f7f9fd;
-  --panel: #ffffff;
-  --ink: #0c1320;
-  --muted: #4b5563;
-  --accent: #12b76a;
-  --bar-bg: #e6ecf5;
-  --danger: #ef4444;
-  --ring: rgba(17, 133, 255, .25);
+  --bg:#f7f8fb;
+  --card:#ffffff;
+  --ink:#0f172a;
+  --muted:#475569;
+  --ok:#16a34a;
+  --error:#dc2626;
+  --brand:#2563eb;
+  --ring: rgba(37, 99, 235, .25);
+  --border:#e5e7eb;
 }
-
-html, body, button, input, select, textarea {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Noto Sans",
-               "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji",
-               "Segoe UI Symbol", sans-serif !important;
-}
-
+*{box-sizing:border-box} 
+html,body{height:100%}
 body{
-  margin: 0;
-  background: var(--bg);
-  color: var(--ink);
+  margin:0;
+  font-family:'Open Sans', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background:var(--bg);
+  color:var(--ink)
 }
-
-.hidden{ display: none !important; }
-
-/* If you also show a header on mobile, align with desktop look */
+.container{
+  max-width:960px;
+  margin:16px auto;
+  padding:0 max(12px, env(safe-area-inset-left)) 0 max(12px, env(safe-area-inset-right));
+}
 .quiz-header{
-  padding: 8px 16px 12px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:12px;
+  margin-bottom:12px;
+  box-shadow:0 6px 20px rgba(0,0,0,.04)
 }
-.quiz-header .title-row{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
+.hidden{display:none}
+.row{display:flex;align-items:center;gap:12px}
+.row.title-row{justify-content:space-between;margin-bottom:6px}
+.row.meta-row{margin-bottom:8px}
+#pageTitle{font-size:28px;margin:0}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:12px;
+  padding:10px 14px;
+  border:1px solid var(--border);
+  background:#fff;
+  font-weight:700;
+  cursor:pointer;
 }
-#pageTitle{
-  margin: 0;
-  font-size: 32px;
-  font-weight: 800;
+.reset-btn{color:#ef4444;border-color:#fecaca;background:#fff5f5}
+.progress{flex:1;height:16px;background:#e9eef7;border-radius:12px;overflow:hidden}
+.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#22c55e,#16a34a)}
+.progress-label{min-width:96px;text-align:right;color:var(--muted)}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:14px;
+  box-shadow:0 6px 18px rgba(0,0,0,.05)
 }
-.reset-btn{
-  background: transparent;
-  color: var(--danger);
-  border: 2px solid var(--danger);
-  border-radius: 12px;
-  padding: 8px 14px;
-  font-size: 16px;
+.question{font-size:20px;font-weight:700;margin:4px 0 10px}
+.choices{display:grid;gap:10px;margin:12px 0}
+.choice{
+  display:grid;
+  grid-template-columns:22px auto 1fr;
+  align-items:center;
+  gap:10px;
+  padding:12px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:#fff;
+  cursor:pointer;
 }
-.meta-row{
-  margin-top: 6px;
-  color: var(--muted);
-  font-size: 15px;
+.choice input{width:20px;height:20px}
+.choice .label{font-weight:700}
+.primary{
+  background:#22c55e;
+  border-color:#22c55e;
+  color:#fff;
+  width:100%;
+  padding:14px
 }
-.progress-row{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 8px;
-  padding-right: 2px;
+.feedback{margin-top:10px;font-weight:700}
+.feedback.ok{color:var(--ok)}
+.feedback.err{color:var(--error)}
+.answer-block{
+  margin-top:8px;
+  border-left:4px solid #60a5fa;
+  padding:10px;
+  background:#f1f5ff;
+  border-radius:8px
 }
-.progress{
-  flex: 1 1 auto;
-  height: 18px;
-  background: var(--bar-bg);
-  border-radius: 999px;
-  overflow: hidden;
-}
-.progress-fill{
-  height: 100%;
-  width: 0%;
-  background: var(--accent);
-  border-radius: 999px;
-  transition: width .25s ease;
-}
-.progress-label{
-  min-width: 84px;
-  text-align: right;
-  color: var(--muted);
-  font-weight: 600;
-  font-size: 14px;
-}
+.meta{color:var(--muted);font-size:14px;margin-bottom:8px}
