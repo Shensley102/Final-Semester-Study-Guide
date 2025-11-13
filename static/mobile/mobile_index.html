@@ -1,123 +1,41 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Final Semester Study Guide</title>
-
-    <!-- Open Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="/static/mobile/mobile_style.css" />
-  </head>
-
-  <body>
-    <div class="container">
-      <header class="top">
-        <h1 id="pageTitle">Final Semester Study Guide</h1>
-      </header>
-
-      <!-- Launcher -->
-      <section id="launcher">
-        <div class="launcher-card">
-          <label for="moduleSel" class="lbl">Module Choice</label>
-          <select id="moduleSel" class="select"></select>
-
-          <div class="row">
-            <div class="lbl">Length</div>
-            <div class="lengths" id="lengthBtns">
-              <button class="chip active" data-len="10">10</button>
-              <button class="chip" data-len="25">25</button>
-              <button class="chip" data-len="50">50</button>
-              <button class="chip" data-len="100">100</button>
-              <button class="chip" data-len="full">Full</button>
-            </div>
-          </div>
-
-          <button id="startBtn" class="btn btn-primary" type="button">Start Quiz</button>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>Final Semester Study Guide — Mobile</title>
+  <link rel="stylesheet" href="/static/mobile/mobile_style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header id="quizHeader" class="quiz-header hidden" aria-live="polite">
+      <div class="row title-row">
+        <h1 id="pageTitle">Module</h1>
+        <button id="resetAll" class="btn reset-btn" type="button" aria-label="Reset quiz">Reset</button>
+      </div>
+      <div class="row meta-row">
+        <div class="counts">
+          <span>Question: <span id="runCounter">1</span></span>
+          <span class="sep"></span>
+          <span>Remaining to master: <span id="remainingCounter">0</span></span>
         </div>
-
-        <div class="howto">
-          <h2>How it works</h2>
-          <ul>
-            <li><b>Start:</b> Pick a module, choose a length, tap <b>Start Quiz</b>.</li>
-            <li><b>Answer:</b> Tap an option; you can also use A–D with a keyboard.</li>
-            <li><b>Submit / Next:</b> Tap the green/blue button.</li>
-            <li><b>Until-mastery:</b> Missed questions return until you answer them correctly.</li>
-          </ul>
+      </div>
+      <div class="row progress-row">
+        <div id="progressBar" class="progress">
+          <div id="progressFill" class="progress-fill" style="width:0%"></div>
         </div>
-      </section>
-
-      <!-- Quiz -->
-      <section id="quiz" hidden>
-        <!-- Counters & progress moved inside the quiz section -->
-        <div id="metricRow" class="metrics" hidden>
-          <div class="metric">
-            <span class="k">Question:</span> <span id="runCounter">1</span>
-          </div>
-          <div class="metric">
-            <span class="k">Remaining to master:</span>
-            <span id="remainingCounter">10</span>
-          </div>
-
-          <button id="resetAll" class="btn btn-danger" type="button">Reset</button>
+        <div class="progress-label">
+          <span id="progressPct">0%</span>&nbsp;mastered
         </div>
+      </div>
+    </header>
 
-        <div id="pbarWrap" class="pbar-wrap" hidden>
-          <div id="progressBar" class="pbar">
-            <div id="progressFill" class="pbar-fill"></div>
-          </div>
-          <div class="pbar-label">
-            <div id="masteredPct">0%</div>
-            <div class="muted">mastered</div>
-          </div>
-        </div>
+    <main id="appRoot" class="app-root"></main>
+  </div>
 
-        <div class="qa-card">
-          <h2 id="question" class="q"></h2>
-
-          <form id="options" class="options" role="group" aria-label="answer choices"></form>
-
-          <div class="actions">
-            <!-- on mobile we make this button full width via CSS -->
-            <button id="submitBtn" class="btn btn-primary btn-full" type="button">Submit</button>
-          </div>
-
-          <div id="feedback" class="feedback" hidden>
-            <div id="resultFlag" class="flag"></div>
-            <div class="explain">
-              <div class="ca"><b>Correct Answer:</b> <span id="correctAnswer"></span></div>
-              <div id="rationale" class="rat"></div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Results -->
-      <section id="results" hidden>
-        <div class="results-card">
-          <div class="results-top">
-            <h2 id="resultsTitle">Module</h2>
-            <button id="restartBtn" class="btn btn-primary btn-full" type="button">
-              Start New Quiz
-            </button>
-          </div>
-
-          <div id="firstTry" class="firsttry"></div>
-
-          <div class="mostMissed">
-            <div class="mm-h"><span class="tag">Most-Missed First</span> — toughest items first.</div>
-            <div id="missList" class="miss-list"></div>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <script src="/static/mobile/mobile_script.js" defer></script>
-  </body>
+  <script src="/static/mobile/mobile_script.js" defer></script>
+</body>
 </html>
