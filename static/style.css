@@ -307,6 +307,12 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
 .rev-item.ok{ border-left: 4px solid var(--success); }
 .rev-item.bad{ border-left: 4px solid var(--danger); }
 .rev-q{ font-weight:700; margin-bottom:6px; }
+.rev-wrong-count{ 
+  color:var(--ink-soft); 
+  font-size: 0.95rem;
+  margin: 4px 0 8px;
+  font-weight: 500;
+}
 .rev-ans, .rev-rationale{ color:var(--ink-soft); }
 
 /* ===== Utilities ===== */
