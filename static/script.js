@@ -10,6 +10,7 @@
    - Open Sans question font (normal weight, slightly smaller)
    - Auto-detect "Select all that apply" and use checkboxes
    - Mouse click and keyboard toggle selection/deselection
+   - Summary sorted by incorrect answers first
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -545,7 +546,21 @@ function endRun(){
   }
 
   reviewList.innerHTML = '';
-  run.order.forEach(q => {
+  
+  // Sort questions: incorrect ones first, then correct ones
+  const sortedQuestions = [...run.order].sort((a, b) => {
+    const ansA = run.answered.get(a.id);
+    const ansB = run.answered.get(b.id);
+    
+    // If one is correct and one is incorrect, incorrect comes first
+    if (ansA?.correct !== ansB?.correct) {
+      return ansA?.correct ? 1 : -1;
+    }
+    
+    return 0;
+  });
+  
+  sortedQuestions.forEach(q => {
     const row = document.createElement('div');
     const ans = run.answered.get(q.id);
     row.className = 'rev-item ' + (ans?.correct ? 'ok' : 'bad');
