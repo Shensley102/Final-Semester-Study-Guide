@@ -20,30 +20,6 @@
     <div class="container">
       <header class="top">
         <h1 id="pageTitle">Final Semester Study Guide</h1>
-
-        <!-- Counters -->
-        <div id="metricRow" class="metrics" hidden>
-          <div class="metric">
-            <span class="k">Question:</span> <span id="runCounter">1</span>
-          </div>
-          <div class="metric">
-            <span class="k">Remaining to master:</span>
-            <span id="remainingCounter">10</span>
-          </div>
-
-          <button id="resetAll" class="btn btn-danger" type="button">Reset</button>
-        </div>
-
-        <!-- Progress -->
-        <div id="pbarWrap" class="pbar-wrap" hidden>
-          <div id="progressBar" class="pbar">
-            <div id="progressFill" class="pbar-fill"></div>
-          </div>
-          <div class="pbar-label">
-            <div id="masteredPct">0%</div>
-            <div class="muted">mastered</div>
-          </div>
-        </div>
       </header>
 
       <!-- Launcher (start page) -->
@@ -85,6 +61,30 @@
 
       <!-- Quiz -->
       <section id="quiz" hidden>
+        <!-- Counters (moved into quiz so they never show on the landing page) -->
+        <div id="metricRow" class="metrics" hidden>
+          <div class="metric">
+            <span class="k">Question:</span> <span id="runCounter">1</span>
+          </div>
+          <div class="metric">
+            <span class="k">Remaining to master:</span>
+            <span id="remainingCounter">10</span>
+          </div>
+
+          <button id="resetAll" class="btn btn-danger" type="button">Reset</button>
+        </div>
+
+        <!-- Progress (also only visible during quiz) -->
+        <div id="pbarWrap" class="pbar-wrap" hidden>
+          <div id="progressBar" class="pbar">
+            <div id="progressFill" class="pbar-fill"></div>
+          </div>
+          <div class="pbar-label">
+            <div id="masteredPct">0%</div>
+            <div class="muted">mastered</div>
+          </div>
+        </div>
+
         <div class="qa-card">
           <h2 id="question" class="q"></h2>
 
