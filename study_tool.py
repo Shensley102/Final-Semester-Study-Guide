@@ -1,11 +1,12 @@
 # Flask app for Vercel: serves desktop at '/', mobile at '/mobile',
 # and provides a '/modules' API to list & fetch JSON banks.
 import os, json, glob
-from flask import Flask, send_from_directory, send_file, jsonify, abort, request, Response
+from flask import Flask, send_from_directory, send_file, jsonify, abort
 
-app = Flask(__name__, static_folder="static", static_url_path="/static")
+app = Flask(__name__)
 
 REPO_ROOT = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(REPO_ROOT, "static")
 DATA_GLOBS = ["Module_*.json", "Learning_*.json", "Pharm_*.json", "*_Quiz_*.json"]
 
 def find_all_data_files():
@@ -23,16 +24,21 @@ def add_headers(resp):
     resp.headers["Access-Control-Allow-Headers"] = "Content-Type"
     return resp
 
-@app.get("/")
+@app.route("/")
 def home():
     # Serve desktop by default
-    return send_file(os.path.join(REPO_ROOT, "static", "desktop", "desktop_index.html"))
+    return send_file(os.path.join(STATIC_ROOT, "desktop", "desktop_index.html"))
 
-@app.get("/mobile")
+@app.route("/mobile")
 def mobile_home():
-    return send_file(os.path.join(REPO_ROOT, "static", "mobile", "mobile_index.html"))
+    return send_file(os.path.join(STATIC_ROOT, "mobile", "mobile_index.html"))
 
-@app.get("/modules")
+@app.route("/static/<path:path>")
+def serve_static(path):
+    # Explicitly handle static file serving
+    return send_from_directory(STATIC_ROOT, path)
+
+@app.route("/modules")
 def list_modules():
     files = find_all_data_files()
     # Make a friendlier label
@@ -41,7 +47,7 @@ def list_modules():
         return name.replace("_", " ")
     return jsonify([{"file": f, "label": label(f)} for f in files])
 
-@app.get("/modules/<path:filename>")
+@app.route("/modules/<path:filename>")
 def serve_module(filename):
     # Only allow expected files
     safe = os.path.basename(filename)
@@ -50,7 +56,7 @@ def serve_module(filename):
     return send_from_directory(REPO_ROOT, safe, mimetype="application/json")
 
 # Compatibility: allow /Something.json direct fetches
-@app.get("/<path:filename>.json")
+@app.route("/<path:filename>.json")
 def serve_json_direct(filename):
     safe = os.path.basename(filename + ".json")
     if safe not in find_all_data_files():
@@ -58,7 +64,7 @@ def serve_json_direct(filename):
     return send_from_directory(REPO_ROOT, safe, mimetype="application/json")
 
 # Health check
-@app.get("/api/ok")
+@app.route("/api/ok")
 def ok():
     return {"ok": True}
 
