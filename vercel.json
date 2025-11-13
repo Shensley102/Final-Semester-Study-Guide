@@ -1,12 +1,53 @@
 {
   "version": 2,
-  "builds": [{ "src": "study_tool.py", "use": "@vercel/python" }],
+  "builds": [
+    { "src": "study_tool.py", "use": "@vercel/python" }
+  ],
   "routes": [
-    { "src": "/static/(.*)", "dest": "/static/$1" },
-    { "src": "/mobile", "dest": "/study_tool.py" },
-    { "src": "/modules(.*)", "dest": "/study_tool.py" },
-    { "src": "/(.*)\\.json", "dest": "/study_tool.py" },
-    { "src": "/api/(.*)", "dest": "/study_tool.py" },
-    { "src": "/(.*)", "dest": "/study_tool.py" }
+    {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
+      "src": "/mobile",
+      "dest": "/study_tool.py"
+    },
+    {
+      "src": "/modules(.*)",
+      "dest": "/study_tool.py"
+    },
+    {
+      "src": "/(.*)\\.json",
+      "dest": "/study_tool.py"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/study_tool.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/study_tool.py"
+    }
   ]
 }
+```
+
+**Check Your Directory Structure:**
+
+Make absolutely sure your GitHub repository has this EXACT structure:
+```
+Final-Semester-Study-Guide/
+├── study_tool.py
+├── vercel.json
+├── requirements.txt
+├── .gitattributes
+├── Module_Sample.json
+└── static/
+    ├── desktop/
+    │   ├── desktop_index.html
+    │   ├── desktop_style.css
+    │   └── desktop_script.js
+    └── mobile/
+        ├── mobile_index.html
+        ├── mobile_style.css
+        └── mobile_script.js
