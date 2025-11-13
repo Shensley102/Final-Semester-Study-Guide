@@ -210,3 +210,69 @@
           <article class="card" style="margin:10px 0">
             <div class="question">${escapeHtml(q.text)}</div>
             ${q.rationale?`<div class="answer-block"><b>Rat
+            function renderResults(){
+    const misses = [...seen].filter(i=>!mastered.has(i)).map(i=>normalize(bank[i]));
+    appRoot.innerHTML = html`
+      <section class="card">
+        <h2 style="margin:0 0 8px 0">Most-Missed First</h2>
+        <div class="meta">We bubble up your toughest questions; the farther you scroll, the fewer misses.</div>
+        <div style="height:8px"></div>
+        ${misses.map(q=>`
+          <article class="card" style="margin:10px 0">
+            <div class="question">${escapeHtml(q.text)}</div>
+            ${q.rationale?`<div class="answer-block"><b>Rationale:</b> ${escapeHtml(q.rationale)}</div>`:''}
+          </article>
+        `).join('')}
+        <button class="btn primary" id="newQuiz" style="margin-top:12px">Start New Quiz</button>
+      </section>
+    `;
+    document.getElementById('newQuiz').addEventListener('click', startLauncher);
+  }
+
+  async function startQuiz(file){
+    try {
+      const url = `/modules/${encodeURIComponent(file)}`;
+      bank = await fetchJSON(url);
+      if(!Array.isArray(bank) || bank.length===0){
+        alert('This module appears empty.');
+        startLauncher();
+        return;
+      }
+      pageTitle.textContent = labelFromFile(file);
+      mastered = new Set(); seen = new Set(); run = 0;
+      let indices = [...Array(bank.length).keys()];
+      for(let i=indices.length-1;i>0;i--){
+        const j = Math.floor(Math.random()*(i+1));
+        [indices[i],indices[j]]=[indices[j],indices[i]];
+      }
+      if(targetLen>0) indices = indices.slice(0, Math.min(targetLen, bank.length));
+      queue = indices.slice();
+      next();
+    } catch(e) {
+      console.error(e);
+      alert('Failed to load module: ' + e.message);
+      startLauncher();
+    }
+  }
+
+  async function startLauncher(){
+    const modules = await loadModules();
+    if(modules.length === 0) {
+      appRoot.innerHTML = html`
+        <section class="card">
+          <h2 style="margin:0 0 8px 0">No Modules Found</h2>
+          <p class="meta">No quiz modules were found. Please add JSON files to your repository following these patterns:</p>
+          <ul class="meta">
+            <li>Module_*.json</li>
+            <li>Learning_*.json</li>
+            <li>Pharm_*.json</li>
+            <li>*_Quiz_*.json</li>
+          </ul>
+        </section>
+      `;
+      return;
+    }
+    renderLauncher(modules);
+  }
+  startLauncher();
+})();
