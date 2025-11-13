@@ -150,3 +150,175 @@
   function clearKeyboardShortcuts(){
     window.onkeydown = null;
   }
+function renderQuestion(qObj){
+    const { text, choices, multi } = qObj;
+    quizHeader.classList.remove('hidden');
+    updateHeader();
+    const type = multi ? 'checkbox' : 'radio';
+
+    appRoot.innerHTML = html`
+      <section class="card">
+        <div class="question">${escapeHtml(text)}</div>
+        <div class="choices" role="group" aria-label="choices">
+          ${choices.map((c,i)=>`
+            <label class="choice" data-k="${escapeHtml(c.key)}">
+              <input name="opt" type="${type}" value="${escapeHtml(c.key)}" />
+              <span class="label">${escapeHtml(c.key)}.</span>
+              <span class="text">${escapeHtml(c.text)}</span>
+            </label>
+          `).join('')}
+        </div>
+        <div class="actions">
+          <button id="submitBtn" class="btn primary">Submit</button>
+        </div>
+        <div id="feedback"></div>
+      </section>
+    `;
+
+    // Click the whole row on desktop - prevent default to avoid double-toggle
+    appRoot.querySelectorAll('.choice').forEach(row=>{
+      row.addEventListener('click', (e)=>{
+        e.preventDefault();
+        const input = row.querySelector('input');
+        input.checked = !input.checked;
+      });
+    });
+
+    // keyboard shortcuts
+    window.onkeydown = (e) => {
+      const k = e.key.toUpperCase();
+      const row = [...appRoot.querySelectorAll('.choice')].find(r=>r.dataset.k===k);
+      if(row){ 
+        e.preventDefault();
+        row.click(); 
+      }
+      if(e.key === 'Enter'){
+        e.preventDefault();
+        appRoot.querySelector('#submitBtn')?.click();
+      }
+    }
+
+    appRoot.querySelector('#submitBtn').addEventListener('click', ()=>{
+      const selected = [...appRoot.querySelectorAll('input[name="opt"]:checked')].map(i=>i.value.toUpperCase());
+      grade(selected);
+    });
+  }
+
+  function grade(selected){
+    const fb = appRoot.querySelector('#feedback');
+    const corr = [...currentQuestionObj.correct];
+    const isCorrect = selected.length===corr.length && selected.every(x=>currentQuestionObj.correct.has(x));
+    const correctText = corr.join(', ');
+    if(isCorrect){
+      mastered.add(currentIdx);
+      fb.innerHTML = `<div class="feedback ok">Correct!</div>`;
+    }else{
+      fb.innerHTML = `<div class="feedback err">Incorrect</div>`;
+      // push back for repetition
+      queue.push(currentIdx);
+    }
+    // Rationale
+    if(currentQuestionObj.rationale){
+      const text = escapeHtml(currentQuestionObj.rationale);
+      const ca = correctText ? `<div><b>Correct Answer:</b> ${escapeHtml(correctText)}</div>` : '';
+      fb.innerHTML += `<div class="answer-block">${ca}<div><b>Rationale:</b> ${text}</div></div>`;
+    }
+    // Next button
+    const btn = appRoot.querySelector('#submitBtn');
+    btn.textContent = 'Next';
+    btn.onclick = next;
+  }
+
+  function next(){
+    // Pop until find a not-mastered or run end
+    while(queue.length && mastered.has(queue[0])) queue.shift();
+    if(queue.length === 0){
+      // finished
+      renderResults();
+      return;
+    }
+    run += 1;
+    currentIdx = queue.shift();
+    seen.add(currentIdx);
+    currentQuestionObj = normalize(bank[currentIdx]);
+    renderQuestion(currentQuestionObj);
+  }
+
+  function renderResults(){
+    clearKeyboardShortcuts();
+    const misses = [...seen].filter(i=>!mastered.has(i)).map(i=>normalize(bank[i]));
+    appRoot.innerHTML = html`
+      <section class="card">
+        <h2 style="margin:0 0 8px 0">Most-Missed First</h2>
+        <div class="meta">We bubble up your toughest questions; the farther you scroll, the fewer misses.</div>
+        <div style="height:8px"></div>
+        ${misses.map(q=>`
+          <article class="card" style="margin:10px 0">
+            <div class="question">${escapeHtml(q.text)}</div>
+            ${q.rationale?`<div class="answer-block"><b>Rationale:</b> ${escapeHtml(q.rationale)}</div>`:''}
+          </article>
+        `).join('')}
+        <div style="margin-top:12px">
+          <button class="btn primary" id="newQuiz">Start New Quiz</button>
+        </div>
+      </section>
+    `;
+    document.getElementById('newQuiz').addEventListener('click', startLauncher);
+  }
+
+  async function startQuiz(file){
+    try {
+      // Load the bank
+      const url = `/modules/${encodeURIComponent(file)}`;
+      bank = await fetchJSON(url);
+      if(!Array.isArray(bank) || bank.length===0){
+        alert('This module appears empty.');
+        startLauncher();
+        return;
+      }
+      pageTitle.textContent = labelFromFile(file);
+      mastered = new Set();
+      seen = new Set();
+      run = 0;
+      // Build initial queue (sample)
+      const N = bank.length;
+      let indices = [...Array(N).keys()];
+      // shuffle
+      for (let i = N-1; i>0; i--){
+        const j = Math.floor(Math.random()*(i+1));
+        [indices[i],indices[j]]=[indices[j],indices[i]];
+      }
+      if(targetLen>0) indices = indices.slice(0, Math.min(targetLen, N));
+      queue = indices.slice();
+      // Ensure until-mastery (we keep queue dynamic)
+      next();
+    } catch(e) {
+      console.error(e);
+      alert('Failed to load module: ' + e.message);
+      startLauncher();
+    }
+  }
+
+  async function startLauncher(){
+    const modules = await loadModules();
+    if(modules.length === 0) {
+      appRoot.innerHTML = html`
+        <section class="card">
+          <h2 style="margin:0 0 8px 0">No Modules Found</h2>
+          <p class="meta">No quiz modules were found. Please add JSON files to your repository following these patterns:</p>
+          <ul class="meta">
+            <li>Module_*.json</li>
+            <li>Learning_*.json</li>
+            <li>Pharm_*.json</li>
+            <li>*_Quiz_*.json</li>
+          </ul>
+        </section>
+      `;
+      return;
+    }
+    renderLauncher(modules);
+  }
+
+  // init
+  startLauncher();
+})();
