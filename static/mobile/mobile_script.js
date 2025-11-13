@@ -132,7 +132,8 @@
     progressFill.style.width = pct + '%';
     progressPct.textContent = pct + '%';
   }
-   function renderQuestion(qObj){
+
+  function renderQuestion(qObj){
     const { text, choices, multi } = qObj;
     quizHeader.classList.remove('hidden');
     updateHeader();
@@ -209,17 +210,6 @@
         ${misses.map(q=>`
           <article class="card" style="margin:10px 0">
             <div class="question">${escapeHtml(q.text)}</div>
-            ${q.rationale?`<div class="answer-block"><b>Rat
-            function renderResults(){
-    const misses = [...seen].filter(i=>!mastered.has(i)).map(i=>normalize(bank[i]));
-    appRoot.innerHTML = html`
-      <section class="card">
-        <h2 style="margin:0 0 8px 0">Most-Missed First</h2>
-        <div class="meta">We bubble up your toughest questions; the farther you scroll, the fewer misses.</div>
-        <div style="height:8px"></div>
-        ${misses.map(q=>`
-          <article class="card" style="margin:10px 0">
-            <div class="question">${escapeHtml(q.text)}</div>
             ${q.rationale?`<div class="answer-block"><b>Rationale:</b> ${escapeHtml(q.rationale)}</div>`:''}
           </article>
         `).join('')}
@@ -232,7 +222,17 @@
   async function startQuiz(file){
     try {
       const url = `/modules/${encodeURIComponent(file)}`;
-      bank = await fetchJSON(url);
+      let data = await fetchJSON(url);
+      
+      // Handle both nested and flat JSON structures
+      if (data && data.questions && Array.isArray(data.questions)) {
+        bank = data.questions;
+      } else if (Array.isArray(data)) {
+        bank = data;
+      } else {
+        bank = [];
+      }
+      
       if(!Array.isArray(bank) || bank.length===0){
         alert('This module appears empty.');
         startLauncher();
