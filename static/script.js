@@ -251,15 +251,25 @@ function normalizeQuestions(data){
       optionsObj = { ...q.options };
     }
 
+    // Check for correct answer in multiple possible field names
+    let correctLetters = [];
+    if (Array.isArray(q.correctLetters)) {
+      correctLetters = q.correctLetters.slice();
+    } else if (Array.isArray(q.correct)) {
+      // Check for "correct" field (used in your JSON files)
+      correctLetters = q.correct.slice();
+    } else if (q.correctAnswer) {
+      correctLetters = [q.correctAnswer];
+    }
+
     const newQ = {
       id: String(q.id || Math.random()),
       stem: String(q.question || q.stem || ''),
       options: optionsObj,
-      correctLetters: Array.isArray(q.correctLetters) ? q.correctLetters.slice() : (q.correctAnswer ? [q.correctAnswer] : []),
+      correctLetters: correctLetters.length > 0 ? correctLetters : ['A'],
       rationale: String(q.rationale || ''),
       type: (q.type === 'multiple_select') ? 'multiple_select' : 'single_select',
     };
-    if (newQ.correctLetters.length === 0) newQ.correctLetters = ['A'];
     return newQ;
   });
 }
