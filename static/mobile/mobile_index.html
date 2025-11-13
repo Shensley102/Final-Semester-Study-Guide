@@ -1,67 +1,123 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Final Semester Study Guide – Mobile</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Final Semester Study Guide</title>
 
-  <!-- Open Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="/static/mobile/mobile_style.css" />
-</head>
-<body>
-  <div class="container">
-    <h1 class="title">Final Semester Study Guide</h1>
+    <link rel="stylesheet" href="/static/mobile/mobile_style.css" />
+  </head>
 
-    <section id="m-launcher" class="panel">
-      <label for="m-module" class="label">Module Choice</label>
-      <select id="m-module" class="select"></select>
+  <body>
+    <div class="container">
+      <header class="top">
+        <h1 id="pageTitle">Final Semester Study Guide</h1>
+      </header>
 
-      <div class="lengths" id="m-lengths">
-        <button class="pill active" data-len="10">10</button>
-        <button class="pill" data-len="25">25</button>
-        <button class="pill" data-len="50">50</button>
-        <button class="pill" data-len="100">100</button>
-        <button class="pill" data-len="full">Full</button>
-      </div>
+      <!-- Launcher -->
+      <section id="launcher">
+        <div class="launcher-card">
+          <label for="moduleSel" class="lbl">Module Choice</label>
+          <select id="moduleSel" class="select"></select>
 
-      <button id="m-start" class="btn success">Start Quiz</button>
-    </section>
+          <div class="row">
+            <div class="lbl">Length</div>
+            <div class="lengths" id="lengthBtns">
+              <button class="chip active" data-len="10">10</button>
+              <button class="chip" data-len="25">25</button>
+              <button class="chip" data-len="50">50</button>
+              <button class="chip" data-len="100">100</button>
+              <button class="chip" data-len="full">Full</button>
+            </div>
+          </div>
 
-    <section id="m-quiz" class="panel hidden">
-      <div class="topline">
-        <span>Q: <b id="m-run">1</b></span>
-        <span>Remaining: <b id="m-rem">0</b></span>
-        <button id="m-reset" class="btn outline danger">Reset</button>
-      </div>
-
-      <div class="pbar"><div id="m-fill" class="pbar-fill"></div></div>
-
-      <div class="card">
-        <h2 id="m-q" class="q"></h2>
-        <ul id="m-choices" class="choices"></ul>
-        <!-- Full-width action on mobile -->
-        <button id="m-action" class="btn primary block">Submit</button>
-
-        <div id="m-feed" class="feedback hidden">
-          <div id="m-badge" class="badge"></div>
-          <p class="correct-line"><b>Correct Answer:</b> <span id="m-ans"></span></p>
-          <div id="m-rat" class="rationale"></div>
+          <button id="startBtn" class="btn btn-primary" type="button">Start Quiz</button>
         </div>
-      </div>
-    </section>
 
-    <section id="m-results" class="panel hidden">
-      <button id="m-new" class="btn success block">Start New Quiz</button>
-      <div class="first-try"><b>First-try mastery:</b> <span id="m-first">0%</span> <span id="m-firstc"></span></div>
-      <div class="subhead"><b>Most-Missed First</b> — toughest items bubble to the top.</div>
-      <div id="m-review"></div>
-    </section>
-  </div>
+        <div class="howto">
+          <h2>How it works</h2>
+          <ul>
+            <li><b>Start:</b> Pick a module, choose a length, tap <b>Start Quiz</b>.</li>
+            <li><b>Answer:</b> Tap an option; you can also use A–D with a keyboard.</li>
+            <li><b>Submit / Next:</b> Tap the green/blue button.</li>
+            <li><b>Until-mastery:</b> Missed questions return until you answer them correctly.</li>
+          </ul>
+        </div>
+      </section>
 
-  <script src="/static/mobile/mobile_script.js" defer></script>
-</body>
+      <!-- Quiz -->
+      <section id="quiz" hidden>
+        <!-- Counters & progress moved inside the quiz section -->
+        <div id="metricRow" class="metrics" hidden>
+          <div class="metric">
+            <span class="k">Question:</span> <span id="runCounter">1</span>
+          </div>
+          <div class="metric">
+            <span class="k">Remaining to master:</span>
+            <span id="remainingCounter">10</span>
+          </div>
+
+          <button id="resetAll" class="btn btn-danger" type="button">Reset</button>
+        </div>
+
+        <div id="pbarWrap" class="pbar-wrap" hidden>
+          <div id="progressBar" class="pbar">
+            <div id="progressFill" class="pbar-fill"></div>
+          </div>
+          <div class="pbar-label">
+            <div id="masteredPct">0%</div>
+            <div class="muted">mastered</div>
+          </div>
+        </div>
+
+        <div class="qa-card">
+          <h2 id="question" class="q"></h2>
+
+          <form id="options" class="options" role="group" aria-label="answer choices"></form>
+
+          <div class="actions">
+            <!-- on mobile we make this button full width via CSS -->
+            <button id="submitBtn" class="btn btn-primary btn-full" type="button">Submit</button>
+          </div>
+
+          <div id="feedback" class="feedback" hidden>
+            <div id="resultFlag" class="flag"></div>
+            <div class="explain">
+              <div class="ca"><b>Correct Answer:</b> <span id="correctAnswer"></span></div>
+              <div id="rationale" class="rat"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section id="results" hidden>
+        <div class="results-card">
+          <div class="results-top">
+            <h2 id="resultsTitle">Module</h2>
+            <button id="restartBtn" class="btn btn-primary btn-full" type="button">
+              Start New Quiz
+            </button>
+          </div>
+
+          <div id="firstTry" class="firsttry"></div>
+
+          <div class="mostMissed">
+            <div class="mm-h"><span class="tag">Most-Missed First</span> — toughest items first.</div>
+            <div id="missList" class="miss-list"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="/static/mobile/mobile_script.js" defer></script>
+  </body>
 </html>
