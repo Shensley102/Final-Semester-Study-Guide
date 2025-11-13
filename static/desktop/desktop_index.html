@@ -1,46 +1,43 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Final Semester Study Guide — Desktop</title>
-
-  <!-- Styles -->
-  <link rel="stylesheet" href="/static/desktop/desktop_style.css" />
-</head>
-<body>
-  <div class="container">
-
-    <!-- QUIZ HEADER (hidden on launcher, shown during quiz) -->
-    <header id="quizHeader" class="quiz-header hidden" aria-live="polite">
-      <div class="row title-row">
-        <h1 id="pageTitle">Module</h1>
-        <button id="resetAll" class="btn reset-btn" type="button" aria-label="Reset quiz">Reset</button>
-      </div>
-
-      <div class="row meta-row">
-        <div class="counts">
-          <span>Question: <span id="runCounter">1</span></span>
-          <span class="sep"></span>
-          <span>Remaining to master: <span id="remainingCounter">0</span></span>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Final Semester Study Guide — Desktop</title>
+    <link rel="stylesheet" href="/static/desktop/desktop_style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- QUIZ HEADER (hidden on launcher, shown during quiz) -->
+      <header id="quizHeader" class="quiz-header hidden" aria-live="polite">
+        <div class="row title-row">
+          <h1 id="pageTitle">Module</h1>
+          <button id="resetAll" class="btn reset-btn" type="button" aria-label="Reset quiz">Reset</button>
         </div>
-      </div>
 
-      <div class="row progress-row">
-        <div id="progressBar" class="progress">
-          <div id="progressFill" class="progress-fill" style="width:0%"></div>
+        <div class="row meta-row">
+          <div class="counts">
+            <span>Question: <span id="runCounter">1</span></span>
+            <span class="sep"></span>
+            <span>Remaining to master: <span id="remainingCounter">0</span></span>
+          </div>
         </div>
-        <div class="progress-label">
-          <span id="progressPct">0%</span>&nbsp;mastered
+
+        <div class="row progress-row">
+          <div id="progressBar" class="progress">
+            <div id="progressFill" class="progress-fill" style="width:0%"></div>
+          </div>
+          <div class="progress-label">
+            <span id="progressPct">0%</span>&nbsp;mastered
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
 
-    <!-- App surface (launcher, question card, results get injected here by JS) -->
-    <main id="appRoot" class="app-root"></main>
-  </div>
+      <!-- App surface (launcher, question card, results get injected here by JS) -->
+      <main id="appRoot" class="app-root"></main>
+    </div>
 
-  <!-- Script -->
-  <script src="/static/desktop/desktop_script.js" defer></script>
-</body>
+    <!-- Script (robust init; see desktop_script.js) -->
+    <script src="/static/desktop/desktop_script.js" defer></script>
+  </body>
 </html>
