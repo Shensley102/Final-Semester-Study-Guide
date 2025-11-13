@@ -9,6 +9,7 @@
    - Full-width hashed progress bar; reduced jitter (snap to quiz top)
    - Open Sans question font (normal weight, slightly smaller)
    - Auto-detect "Select all that apply" and use checkboxes
+   - Mouse click and keyboard toggle selection/deselection
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -359,6 +360,16 @@ function renderQuestion(q){
     optDiv.appendChild(inp);
     optDiv.appendChild(lbl);
     form.appendChild(optDiv);
+
+    // Add click handler to toggle on mouse click (select and deselect)
+    optDiv.addEventListener('click', (e) => {
+      // Don't double-toggle if clicking the label
+      if (e.target === lbl || e.target === keySpan || e.target === answerSpan) {
+        e.preventDefault();
+        inp.checked = !inp.checked;
+        onSelectionChanged();
+      }
+    });
   });
 
   setActionState('submit');
