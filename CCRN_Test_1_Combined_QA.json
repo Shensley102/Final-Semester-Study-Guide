@@ -1,0 +1,2252 @@
+[
+  {
+    "id": "CCRN_Test_1_Q1",
+    "stem": "What is the most important diagnostic test to confirm the diagnosis when a patient with suspected NSTEMI has chest pain and difficulty breathing?",
+    "options": [
+      "Electrocardiogram (ECG)",
+      "Echocardiography",
+      "Cardiac catheterization",
+      "Magnetic resonance imaging (MRI)"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "An ECG is crucial to confirm the diagnosis as it can reveal characteristic changes such as ST-segment depression or T-wave inversions. These changes may indicate myocardial ischemia.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q2",
+    "stem": "A patient with chest pain and ST-segment elevation on the EKG arrives at the emergency department. The nurse should prioritize the following actions:",
+    "options": [
+      "Administer aspirin and nitroglycerin.",
+      "Call the cardiac catheterization lab.",
+      "Perform a thorough physical assessment.",
+      "Obtain a troponin level and arterial blood gas."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The nurse’s priority action should be to call the cardiac catheterization lab. This action is crucial for timely intervention in ST-elevation myocardial infarction (STEMI) to restore blood flow and prevent further myocardial damage.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q3",
+    "stem": "In the emergency department, a patient arrives complaining of chest pain that occurs unpredictably, even at rest. Which diagnostic test is most appropriate to confirm the diagnosis of unstable angina?",
+    "options": [
+      "Stress test",
+      "Electrocardiogram (ECG)",
+      "Coronary angiography",
+      "Echocardiogram"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Coronary angiography is the gold standard for diagnosing unstable angina and allows direct visualization of coronary artery blockages. This standard guides treatment decisions for revascularization procedures.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q4",
+    "stem": "In the emergency department, a patient arrives with sudden onset severe leg pain, pallor, and absent pedal pulses. Which of the following assessment findings is characteristic of acute arterial occlusion?",
+    "options": [
+      "Elevated limb temperature",
+      "Increased capillary refill time",
+      "Diminished sensation",
+      "Weak or absent peripheral pulses"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Weak or absent peripheral pulses are a hallmark sign of acute arterial occlusion, indicating interrupted blood flow to the affected limb, necessitating prompt intervention to prevent tissue damage or loss.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q5",
+    "stem": "A patient with a history of carotid artery stenosis presents with sudden-onset weakness and difficulty speaking. Vital signs reveal a blood pressure of 180/90 mmHg and a heart rate of 110 bpm. What is the nurse's priority action?",
+    "options": [
+      "Administer aspirin and call the provider.",
+      "Assess the patient's airway, breathing, and circulation.",
+      "Place the patient in a supine position and elevate the legs.",
+      "Perform a neurological assessment and document findings."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Assessing the patient's airway, breathing, and circulation is crucial to identify any signs of impending stroke and initiate appropriate interventions promptly, aligning with the ABCDE approach in critical care.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q6",
+    "stem": "Which preoperative test is essential for evaluating the extent of artery blockage before an endarterectomy?",
+    "options": [
+      "Complete blood count (CBC)",
+      "Electrocardiogram (ECG)",
+      "Angiography",
+      "Urinalysis"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Angiography is crucial for visualizing the arteries and determining the severity of blockage, guiding the decision-making process for performing an endarterectomy.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q7",
+    "stem": "What is the primary purpose of femoral-popliteal bypass surgery in patients with severe peripheral arterial disease (PAD) or critical limb ischemia?",
+    "options": [
+      "To remove plaque buildup from the femoral artery",
+      "To restore blood flow to the lower leg",
+      "To relieve pain and swelling from PAD",
+      "To prevent gangrene and infection"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Femoral popliteal bypass surgery creates a new route for blood flow to the lower leg, aiming to restore adequate circulation and prevent complications such as tissue necrosis and limb loss.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q8",
+    "stem": "A patient with a history of heart failure presents with acute dyspnea, crackles on lung auscultation, and frothy pink sputum. What is the nurse's initial action?",
+    "options": [
+      "Administer oxygen therapy at 2 L/min via nasal cannula",
+      "Initiate continuous positive airway pressure (CPAP)",
+      "Elevate the head of the bed to Fowler's position",
+      "Prepare for rapid sequence intubation (RSI)"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Acute dyspnea, crackles, and frothy pink sputum suggest acute pulmonary edema. Initiating CPAP can help improve oxygenation and alleviate symptoms by reducing pulmonary congestion.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q9",
+    "stem": "During the assessment of a patient with a thoracic aortic aneurysm, the nurse notes unequal blood pressure readings between the arms. Which action should the nurse take first?",
+    "options": [
+      "Reassess the blood pressure in both arms using different cuffs.",
+      "Document the findings and continue with the assessment.",
+      "Elevate the head of the bed and recheck the blood pressure.",
+      "Notify the healthcare provider and prepare for immediate intervention."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Unequal blood pressure readings between arms may indicate aortic dissection. The nurse's priority is to notify the healthcare provider immediately and prepare for further assessment and intervention to prevent potential complications associated with aortic dissection.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q10",
+    "stem": "A 60-year-old patient with a history of hypertension presents to the emergency department complaining of sudden-onset severe chest pain radiating to the back. Blood pressure in the right arm measures 180/100 mm Hg, while in the left arm, it's 140/80 mm Hg. What diagnostic test should the nurse anticipate to confirm suspected aortic dissection?",
+    "options": [
+      "Chest X-ray for initial evaluation",
+      "Immediate administration of analgesics",
+      "Rapid initiation of anticoagulant therapy",
+      "Prompt preparation for CT angiography (CTA)"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "CT angiography (CTA) is the preferred initial imaging modality for diagnosing aortic dissection due to its high sensitivity and specificity, allowing for prompt diagnosis and management.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q11",
+    "stem": "A 65-year-old patient presents to the emergency department with sudden, severe chest pain radiating to the back. The pain is described as tearing. On examination, there is a notable difference in blood pressure between the arms. What should be the nurse's immediate action based on these findings?",
+    "options": [
+      "Administering nitroglycerin for pain relief",
+      "Initiating fluid resuscitation with crystalloids",
+      "Notifying the healthcare provider immediately",
+      "Preparing the patient for immediate surgery"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Given the clinical presentation suggestive of aortic dissection, immediate notification of the healthcare provider is crucial to expedite diagnostic evaluation and initiate appropriate management.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q12",
+    "stem": "In the immediate postoperative period following CABG surgery, the nurse assesses the patient's cardiac rhythm and notes atrial fibrillation with rapid ventricular response. The priority intervention is to:",
+    "options": [
+      "Administer amiodarone (Cordarone).",
+      "Prepare for synchronized cardioversion.",
+      "Increase the rate of the intravenous infusion.",
+      "Administer a bolus of intravenous calcium."
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Atrial fibrillation with rapid ventricular response post-CABG may require pharmacological intervention like amiodarone to control heart rate and rhythm.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q13",
+    "stem": "A patient undergoes heart valve surgery and is being monitored postoperatively. Four hours after surgery, the nurse assesses the patient and notes a heart rate of 110 bpm, blood pressure of 90/60 mmHg, and urine output of 20 mL/hr. The nurse's immediate action should be to:",
+    "options": [
+      "Administer a bolus of IV fluids.",
+      "Notify the healthcare provider.",
+      "Document the findings and continue to monitor.",
+      "Assess for signs of bleeding at the surgical site."
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The patient's vital signs indicate hypotension and decreased urine output, suggesting hypovolemia. Administering a bolus of IV fluids can help improve perfusion and address fluid volume deficit.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q14",
+    "stem": "A patient presents with sudden-onset chest pain that radiates to the back, along with dyspnea and tachycardia. On examination, the patient has distended neck veins and muffled heart sounds. The nurse should suspect:",
+    "options": [
+      "Aortic dissection.",
+      "Myocardial infarction.",
+      "Pulmonary embolism.",
+      "Pericardial effusion."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The patient's presentation of sudden-onset chest pain radiating to the back, along with dyspnea, tachycardia, distended neck veins, and muffled heart sounds, is consistent with the classic signs of cardiac tamponade, which occurs due to fluid accumulation around the heart (pericardial effusion), leading to impaired cardiac function.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q15",
+    "stem": "A patient involved in a motor vehicle accident presents with anterior chest trauma and sudden onset dyspnea. Upon examination, there are muffled heart sounds and distended neck veins. The nurse's priority action should be to:",
+    "options": [
+      "Perform an immediate pericardiocentesis.",
+      "Obtain a chest X-ray to assess for pneumothorax.",
+      "Administer analgesia to manage the chest pain.",
+      "Prepare for emergent cardiac ultrasound."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "In the context of blunt cardiac trauma, presenting with dyspnea, muffled heart sounds, and distended neck veins, the priority is to assess for pericardial effusion/tamponade, which can be rapidly evaluated with a cardiac ultrasound.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q16",
+    "stem": "After a cardiac catheterization, the patient's groin puncture site begins bleeding profusely. The nurse's initial action should be to:",
+    "options": [
+      "Apply firm pressure over the site.",
+      "Administer intravenous fluids rapidly.",
+      "Prepare for a blood transfusion.",
+      "Elevate the patient's legs."
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Applying firm pressure over the puncture site is the immediate nursing intervention to control bleeding and prevent further complications such as hematoma formation or hemorrhage.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q17",
+    "stem": "A 58-year-old male patient presents to the emergency room with symptoms of chest pain radiating down his left arm, dyspnea, and profuse sweating. His blood pressure is 80/50 mm Hg, heart rate 110 bpm, and oxygen saturation 90% on room air. The nurse suspects cardiogenic shock due to:",
+    "options": [
+      "Decreased oxygen demand of the heart.",
+      "Increased preload leading to improved cardiac output.",
+      "Inadequate tissue perfusion due to reduced cardiac output.",
+      "Enhanced contractility of the myocardium."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "In cardiogenic shock, inadequate tissue perfusion occurs due to reduced cardiac output, as evidenced by low blood pressure and signs of poor tissue perfusion. This results from the heart's inability to pump enough blood to meet the body's needs, leading to compromised organ function and potentially fatal consequences.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q18",
+    "stem": "A 58-year-old male patient with a history of uncontrolled diabetes presents with fatigue, dyspnea, and lower extremity edema. Upon assessment, the nurse notes bilateral crackles upon auscultation and an enlarged left ventricle on the echocardiogram. The most likely diagnosis for this patient is:",
+    "options": [
+      "Dilated cardiomyopathy.",
+      "Pulmonary embolism.",
+      "Hypertrophic cardiomyopathy.",
+      "Restrictive cardiomyopathy."
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Given the patient's symptoms, bilateral crackles, and echocardiogram findings of an enlarged left ventricle, dilated cardiomyopathy is the most probable diagnosis, indicating impaired heart function leading to fluid retention and symptoms of heart failure.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q19",
+    "stem": "A 35-year-old female presents with chest pain exacerbated by exercise and relieved by rest. The echocardiogram shows asymmetric septal hypertrophy. Which condition is MOST LIKELY causing her symptoms?",
+    "options": [
+      "Hypertrophic obstructive cardiomyopathy (HOCM)",
+      "Dilated cardiomyopathy",
+      "Restrictive cardiomyopathy",
+      "Arrhythmogenic right ventricular cardiomyopathy"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Hypertrophic obstructive cardiomyopathy (HOCM) is characterized by asymmetric septal hypertrophy and is often exacerbated by exercise due to increased outflow tract obstruction.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q20",
+    "stem": "A patient with a history of unexplained dyspnea and fatigue presents with bilateral basilar crackles on lung auscultation. Echocardiography reveals ventricular dilatation and impaired systolic function. The nurse should suspect:",
+    "options": [
+      "Hypertrophic cardiomyopathy",
+      "Restrictive cardiomyopathy",
+      "Arrhythmogenic right ventricular cardiomyopathy",
+      "Dilated cardiomyopathy"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Given the clinical presentation of dyspnea, fatigue, basilar crackles, and echocardiographic findings of ventricular dilatation with impaired systolic function, the most likely diagnosis is dilated cardiomyopathy, characterized by ventricular dilatation and systolic dysfunction.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q21",
+    "stem": "A 65-year-old male presents with dyspnea on exertion, peripheral edema, and fatigue. An echocardiogram reveals biatrial enlargement and preserved ejection fraction. Which diagnostic test would confirm the suspicion of restrictive cardiomyopathy?",
+    "options": [
+      "Cardiac catheterization",
+      "Endomyocardial biopsy",
+      "Coronary angiography",
+      "Exercise stress test"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Endomyocardial biopsy is the gold standard for diagnosing restrictive cardiomyopathy, allowing histological confirmation of myocardial infiltration or fibrosis, differentiating it from other cardiomyopathies.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q22",
+    "stem": "A 60-year-old male presents to the emergency department with palpitations and dizziness. His ECG shows irregular QRS complexes with no discernible P waves, and the rhythm is irregularly irregular. Which type of arrhythmia is most likely present?",
+    "options": [
+      "Sinus bradycardia",
+      "Atrial fibrillation",
+      "Ventricular tachycardia",
+      "First-degree heart block"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Atrial fibrillation is characterized by irregularly irregular QRS complexes with no discernible P waves on ECG, commonly presenting with palpitations and dizziness.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q23",
+    "stem": "A 65-year-old male with a history of heart failure presents with worsening dyspnea and bilateral crackles on lung auscultation. His BNP level is significantly elevated. Which diagnostic test should the nurse anticipate being ordered next?",
+    "options": [
+      "Chest X-ray",
+      "Echocardiogram",
+      "Cardiac catheterization",
+      "Pulmonary function tests"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Echocardiogram is the preferred diagnostic test to assess cardiac function and structural abnormalities in patients with heart failure, especially when accompanied by clinical signs like dyspnea and elevated BNP levels.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q24",
+    "stem": "A 55-year-old patient with a history of hypertension presents to the emergency department with severe headache, blurred vision, and epistaxis. Vital signs show BP 220/120 mmHg. What initial intervention should the nurse prioritize?",
+    "options": [
+      "Administering sublingual nitroglycerin",
+      "Initiating IV labetalol infusion",
+      "Administering oral captopril",
+      "Applying ice packs to the forehead"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Hypertensive crisis requires rapid reduction of blood pressure to prevent end-organ damage. IV labetalol is a preferred agent for controlled and titratable blood pressure lowering in this setting.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q25",
+    "stem": "A 45-year-old patient presents with syncope. ECG reveals a prolonged QT interval. What medication should the nurse be cautious in administering due to the risk of further prolonging the QT interval?",
+    "options": [
+      "Metoprolol",
+      "Amiodarone",
+      "Nitroglycerin",
+      "Furosemide"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Amiodarone is known to prolong the QT interval and should be used cautiously in patients with pre-existing QT prolongation to avoid torsades de pointes and sudden cardiac death.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q26",
+    "stem": "After being admitted with respiratory distress, a patient suddenly experiences chest pain, dyspnea, and tachycardia, and the nurse identifies an increased intensity of the pulmonary S2 sound upon auscultation. The nurse should suspect:",
+    "options": [
+      "Aspiration pneumonia.",
+      "Spontaneous pneumothorax.",
+      "Pleural effusion.",
+      "Pulmonary embolus."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Pulmonary embolus is indicated by signs such as sudden onset of chest pain, dyspnea, tachycardia, and increased intensity of the pulmonary S2 sound. Immediate assessment and intervention are required to prevent further complications.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q27",
+    "stem": "A patient admitted with severe sepsis suddenly develops dyspnea, tachypnea, and diffuse crackles on lung auscultation. ABG analysis on 4L/min oxygen via nasal cannula shows: pH 7.48 pCO2 30 mm Hg, and pO2 55 mm Hg Chest X-ray indicates bilateral opacities. What condition should the nurse suspect?",
+    "options": [
+      "Acute respiratory distress syndrome (ARDS)",
+      "Pneumothorax",
+      "Pulmonary embolism",
+      "Pneumonia"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Bilateral opacities on chest X-ray, the clinical presentation, and ABG findings are consistent with acute respiratory distress syndrome (ARDS). Severe hypoxemia, diffuse bilateral lung infiltrates, and respiratory distress characterize it.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q28",
+    "stem": "The arterial blood gas analysis of a patient admitted with shortness of breath and hypoxemia, diagnosed with acute respiratory failure, shows: pH 7.30 pCO2 55 mm Hg pO2 50 mm Hg. The nurse anticipates which intervention is a priority?",
+    "options": [
+      "Administering bronchodilators",
+      "Initiating non-invasive positive pressure ventilation",
+      "Increasing the oxygen flow rate",
+      "Administering IV corticosteroids"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "In patients with acute respiratory failure, non-invasive positive pressure ventilation helps improve oxygenation and ventilation by providing ventilator support without needing endotracheal intubation. Thus, it reduces the work of breathing and improves gas exchange.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q29",
+    "stem": "Which intervention should the nurse anticipate as the next step in management when a patient admitted with hospital-acquired pneumonia (HAP) experiences worsening respiratory distress despite antibiotic therapy?",
+    "options": [
+      "Administering intravenous corticosteroids to reduce inflammation.",
+      "Initiating non-invasive positive pressure ventilation (NPPV) to support ventilation.",
+      "Arranging for emergent intubation and mechanical ventilation.",
+      "Administering inhaled bronchodilators to improve airway patency."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Intubation and mechanical ventilation may be necessary to maintain adequate oxygenation and ventilation in severe cases of hospital-acquired pneumonia, especially with worsening respiratory distress.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q30",
+    "stem": "A 78-year-old patient with a history of dysphagia and recent aspiration episodes presents to the emergency department with confusion, fever, and productive cough with purulent sputum. What is the most appropriate initial nursing intervention?",
+    "options": [
+      "Initiate droplet precautions to prevent the spread of infection.",
+      "Perform chest physiotherapy to promote airway clearance.",
+      "Administer intravenous fluids to maintain hydration status.",
+      "Assess the patient's oxygenation and respiratory status."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "It is crucial to assess the patient's oxygenation and respiratory status to identify any acute respiratory compromise and initiate appropriate interventions promptly.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q31",
+    "stem": "Which pathophysiological process is primarily responsible for the development of ARDS in a patient admitted with pneumonia who develops acute respiratory distress syndrome (ARDS)?",
+    "options": [
+      "Pulmonary embolism",
+      "Sepsis-induced systemic inflammation",
+      "Aspiration of gastric contents",
+      "Pulmonary fibrosis"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "ARDS commonly occurs secondary to sepsis-induced systemic inflammation, which leads to increased pulmonary vascular permeability and alveolar damage.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q32",
+    "stem": "During mealtime, a patient with a history of dysphagia presents with sudden onset dyspnea and coughing. The nurse should suspect:",
+    "options": [
+      "Silent aspiration",
+      "Acute respiratory distress syndrome",
+      "Pulmonary embolism",
+      "Gastroesophageal reflux disease"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "In a patient with dysphagia, sudden onset dyspnea and coughing during mealtime suggest silent aspiration. This occurs when liquids or foods enter the airway without causing noticeable symptoms, thereby increasing the risk of aspiration pneumonia.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q33",
+    "stem": "A patient with Parkinson's disease experiences frequent episodes of coughing and choking while eating. The nurse identifies the need for:",
+    "options": [
+      "Swallowing exercises",
+      "Bronchoscopy",
+      "Mechanical ventilation",
+      "Parenteral nutrition"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "In a patient with Parkinson's disease, frequent episodes of coughing and choking while eating indicate the need for swallowing exercises to improve coordination and reduce the risk of aspiration.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q34",
+    "stem": "What should be the nurse's priority intervention when a patient with a history of chronic obstructive pulmonary disease (COPD) presents to the emergency department with heightened dyspnea, productive cough, fever, and bilateral coarse crackles upon auscultation?",
+    "options": [
+      "Administering a bronchodilator and corticosteroid nebulization",
+      "Initiating noninvasive positive pressure ventilation (NIPPV)",
+      "Ordering a chest x-ray and sputum culture",
+      "Administering intravenous antibiotics and oxygen therapy"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "To improve oxygenation and treat the underlying disease, suspected exacerbation of COPD with acute respiratory infection warrants prompt antibiotic therapy and supplemental oxygen.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q35",
+    "stem": "The nurse observes tremors, tachycardia, and agitation in a patient admitted with asthma exacerbation receiving frequent albuterol nebulizations. Which intervention should the nurse implement first?",
+    "options": [
+      "Administering a beta-blocker",
+      "Reducing the frequency of nebulizations",
+      "Administering a corticosteroid",
+      "Assessing for hypokalemia"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Signs indicate potential albuterol toxicity, and reducing the frequency of nebulizations may help alleviate adverse effects.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q36",
+    "stem": "A patient with severe asthma presents to the emergency department with increased dyspnea, chest tightness, and audible wheezing. Vital signs include: a respiratory rate of 28 breaths/min heart rate 110 bpm oxygen saturation 89% on room air A peak expiratory flow rate (PEFR) of 50% of predicted. The nurse should anticipate which of the following interventions is a priority?",
+    "options": [
+      "Administering magnesium sulfate intravenously.",
+      "Initiating continuous positive airway pressure (CPAP).",
+      "Administering a short-acting beta-agonist (SABA) nebulizer treatment.",
+      "Placing the patient in a supine position with legs elevated."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The priority intervention to relieve bronchospasm and improve airflow in acute asthma exacerbation rapidly is administering a short-acting beta-agonist (SABA) nebulizer treatment.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q37",
+    "stem": "In the intensive care unit, a patient fails multiple attempts to wean from mechanical ventilation despite the optimization of medical therapy. Arterial blood gas analysis shows: pH 7.48 PaCO2 50 mmHg PaO2 68 mmHg HCO3 32 mEq/L. The nurse should suspect:",
+    "options": [
+      "Respiratory muscle weakness.",
+      "Pulmonary embolism.",
+      "Pneumothorax.",
+      "Exacerbation of chronic obstructive pulmonary disease (COPD)."
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Respiratory muscle weakness, suggested by persistent hypercapnia and a failure to wean from mechanical ventilation, may result from critical illness neuropathy or myopathy.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q38",
+    "stem": "During attempts to wean from mechanical ventilation, a patient with a history of chronic obstructive pulmonary disease (COPD) is unable to tolerate spontaneous breathing trials. The nurse identifies the primary reason for this difficulty as:",
+    "options": [
+      "Increased airway resistance.",
+      "Decreased lung compliance.",
+      "Inadequate respiratory drive.",
+      "Impaired gas exchange."
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Increased airway resistance due to bronchoconstriction and mucus plugging in COPD patients can impede the ability to contribute to failure to wean from mechanical ventilation and tolerate spontaneous breathing trials.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q39",
+    "stem": "A sudden onset of dyspnea, tachypnea, and reduced breath sounds on the affected side is observed in a patient with a history of chronic obstructive pulmonary disease (COPD). The nurse suspects:",
+    "options": [
+      "Pneumothorax",
+      "Pleural effusion",
+      "Hemothorax",
+      "Empyema"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "In patients with underlying lung diseases like COPD, sudden-onset dyspnea, tachypnea, and diminished breath sounds are classic signs of pneumothorax.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q40",
+    "stem": "A patient with a recent history of thoracentesis develops fever, chest pain, and purulent pleural fluid drainage. The nurse suspects:",
+    "options": [
+      "Pneumothorax",
+      "Pleural effusion",
+      "Hemothorax",
+      "Empyema"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Fever, chest pain, and purulent pleural fluid drainage indicate empyema. It is a complication of pleural procedures like thoracentesis.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q41",
+    "stem": "A 58-year-old male with a history of smoking presents with progressive dyspnea and dry cough. A high-resolution CT scan shows bilateral reticular opacities with honeycombing, and pulmonary function tests reveal restrictive ventilatory defects. The MOST LIKELY diagnosis is:",
+    "options": [
+      "Chronic obstructive pulmonary disease (COPD).",
+      "Idiopathic pulmonary fibrosis (IPF).",
+      "Bronchiectasis.",
+      "Sarcoidosis."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Idiopathic pulmonary fibrosis (IPF) typically presents with characteristic findings of reticular opacities with honeycombing on high-resolution CT scans, along with progressive dyspnea, dry cough, and restrictive ventilatory defects on pulmonary function tests.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q42",
+    "stem": "HRCT of a 65-year-old female who presents with exertional dyspnea, non-productive cough, and bibasilar crackles on lung auscultation shows subpleural, basal-predominant reticular opacities with traction bronchiectasis. The MOST APPROPRIATE initial management for suspected pulmonary fibrosis is:",
+    "options": [
+      "High-dose corticosteroids.",
+      "Lung transplantation referral.",
+      "Supplemental oxygen therapy.",
+      "Pirfenidone or nintedanib therapy."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Pirfenidone and nintedanib are considered first-line treatments for IPF. They are FDAapproved for idiopathic pulmonary fibrosis (IPF) and aim to slow disease progression by reducing fibrosis.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q43",
+    "stem": "Which diagnostic test would be most helpful in confirming the diagnosis for a patient with pulmonary arterial hypertension (PAH) who is admitted with dyspnea and fatigue?",
+    "options": [
+      "Chest radiograph",
+      "Echocardiogram",
+      "Pulmonary function tests",
+      "12-lead electrocardiogram"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "An echocardiogram aids in diagnosing PAH. It is valuable in assessing pulmonary artery pressures and proper ventricular function.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q44",
+    "stem": "During a severe asthma exacerbation, a patient's arterial blood gas reveals: pH 7.25 pCO2 60 mm Hg HCO3 24 mEq/L What acid-base imbalance is the patient experiencing?",
+    "options": [
+      "Respiratory acidosis",
+      "Metabolic acidosis",
+      "Respiratory alkalosis",
+      "Metabolic alkalosis"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The decreased pH and increased pCO2 indicate respiratory acidosis. It is common in severe asthma exacerbations due to impaired gas exchange.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q45",
+    "stem": "The nurse noticed paradoxical chest movement and decreased breath sounds on the left side during the assessment of a patient presented with a history of blunt chest trauma following a motor vehicle accident. The patient's oxygen saturation is 88% on room air. Which of the following interventions should the nurse prioritize?",
+    "options": [
+      "Administering nebulized bronchodilators",
+      "Initiating positive pressure ventilation",
+      "Performing a chest X-ray",
+      "Applying a chest tube on the affected side"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Applying a chest tube can help stabilize the chest wall and improve ventilation. Paradoxical chest movement and decreased breath sounds suggest a flail chest. It possibly leads to respiratory compromise.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q46",
+    "stem": "A patient presents after a fall from a height with acute dyspnea and chest pain. Which conditions should the nurse suspect, when the physical examination reveals reduced breath sounds on the left side and crepitus upon palpation of the chest wall?",
+    "options": [
+      "Pulmonary embolism",
+      "Pneumothorax",
+      "Rib fracture",
+      "Pleural effusion"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When the physical examination reveals reduced breath sounds on the left side and crepitus upon palpation of the chest wall, the nurse should suspect on pneumothorax.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q47",
+    "stem": "In the emergency department, a patient with suspected thoracic trauma is admitted with respiratory distress. Which conditions should the nurse suspect when upon assessment, the nurse notes decreased breath sounds on the left side and tracheal deviation to the right?",
+    "options": [
+      "Tension pneumothorax",
+      "Pulmonary contusion",
+      "Flail chest",
+      "Rib fracture"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Tracheal deviation and decreased breath sounds suggest tension pneumothorax. To relieve pressure on the affected lung and prevent cardiovascular collapse, a life-threatening condition requiring immediate intervention.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q48",
+    "stem": "A patient admitted for severe trauma after receiving a blood transfusion suddenly develops dyspnea, hypoxemia, and bilateral pulmonary infiltrates shortly. The nurse should suspect:",
+    "options": [
+      "Pulmonary embolism",
+      "Septic shock",
+      "Transfusion-related acute lung injury (TRALI)",
+      "Acute respiratory distress syndrome (ARDS)"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "After a blood transfusion, sudden onset of dyspnea and hypoxemia with bilateral pulmonary infiltrates is indicative of TRALI a severe complication characterized by noncardiogenic pulmonary edema.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q49",
+    "stem": "Which intervention should the nurse prioritize, when a patient admitted with a suspected acute adrenal crisis presents with refractory hypotension despite volume resuscitation?",
+    "options": [
+      "Administering a loop diuretic to manage fluid overload.",
+      "Initiating an insulin tolerance test to confirm adrenal insufficiency.",
+      "Rapidly replacing intravascular fluid volume with normal saline.",
+      "Commencing oral corticosteroid therapy to stabilize blood pressure."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "In managing an acute adrenal crisis to address hypovolemia and correct refractory hypotension, stabilizing the patient's condition, rapid replacement of intravascular fluid volume with normal saline is crucial. This intervention aims to restore adequate tissue perfusion and prevent further deterioration.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q50",
+    "stem": "Due to a lack of response to normal levels of antidiuretic hormone (ADH), which type of diabetes insipidus (DI) is caused?",
+    "options": [
+      "Central DI",
+      "Nephrogenic DI",
+      "Gestational DI",
+      "Dipsogenic DI"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Nephrogenic DI results from the kidneys' inability to respond to normal amounts of ADH. It leads to excessive urine output despite adequate ADH production.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q51",
+    "stem": "What is the primary etiology of type 1A diabetes mellitus?",
+    "options": [
+      "Insulin resistance",
+      "β-cell dysfunction",
+      "Genetic predisposition and autoimmune attack",
+      "Obesity-related factors"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The primary cause of type 1A diabetes mellitus is genetic predisposition and autoimmune attack on pancreatic β cells, leading to their destruction and subsequent insulin deficiency.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q52",
+    "stem": "What is the primary metabolic abnormality seen in diabetic ketoacidosis (DKA)?",
+    "options": [
+      "Hypernatremia",
+      "Metabolic alkalosis",
+      "Metabolic acidosis",
+      "Respiratory acidosis"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Diabetic ketoacidosis (DKA) is characterized by metabolic acidosis due to the accumulation of ketoacids, resulting from the breakdown of fatty acids in response to insulin deficiency.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q53",
+    "stem": "In type 2 diabetes mellitus, what is the primary mechanism underlying hyperglycemia?",
+    "options": [
+      "Insulin resistance and decreased insulin production",
+      "Destruction of insulin-producing beta cells",
+      "Excessive glucose intake",
+      "Impaired glucose uptake by cells"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Type 2 diabetes mellitus is characterized by insulin resistance, where cells become less responsive to insulin, coupled with a gradual decline in insulin production over time.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q54",
+    "stem": "The patient presents with altered mental status, extreme thirst, and polyuria, who has a history of type 2 diabetes. Vital signs reveal hypotension, tachycardia, and profound dehydration. Laboratory findings show blood glucose >600 mg/dL and serum osmolality >320 mOsm/kg. The nurse anticipates the need for which initial intervention, based on these findings?",
+    "options": [
+      "Administering insulin intravenously and isotonic fluids rapidly",
+      "Initiating continuous renal replacement therapy (CRRT)",
+      "Performing a lumbar puncture to assess cerebrospinal fluid (CSF) glucose",
+      "Administering bicarbonate to correct metabolic acidosis"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The nurse administers insulin intravenously and isotonic fluids rapidly to correct hyperglycemia and dehydration. Severe hyperglycemia, dehydration, and altered mental status suggest a hyperosmolar hyperglycemic state (HHS).",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q55",
+    "stem": "A patient is admitted to the critical care unit with newly diagnosed hyperthyroidism. The family insists on staying overnight, contrary to hospital policy. The nurse's most appropriate action is to:",
+    "options": [
+      "strictly adhere to the visiting policy.",
+      "permit the family to stay in the room.",
+      "arrange accommodations in a nearby motel.",
+      "allow a limited number of family members to stay and assess the patient's response."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The nurse should allow a limited number of family members to stay and assess the patient's response. It balances support with patient care and ensures adherence to unit policies.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q56",
+    "stem": "A patient admitted to the critical care unit exhibits altered mental status, diaphoresis, and tremors. If the fingerstick blood glucose reveals a level of 45 mg/dL, the initial action of the nurse should be to:",
+    "options": [
+      "Administer intravenous glucose bolus.",
+      "Obtain a serum insulin level.",
+      "Administer subcutaneous glucagon.",
+      "Assess for signs of infection."
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The nurse should administer glucose bolus to rapidly raise blood glucose levels and prevent further neurological deterioration. Prompt treatment of hypoglycemia with intravenous glucose is essential.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q57",
+    "stem": "A 55-year-old female patient has presented over the past few months with fatigue, cold intolerance, and weight gain. The nurse notes dry skin, a hoarse voice, and a protuberant tongue on physical examination. These findings are most indicative of:",
+    "options": [
+      "Hypoparathyroidism",
+      "Hyperthyroidism",
+      "Cushing's syndrome",
+      "Hypothyroidism"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The classic signs of hypothyroidism, including fatigue, cold intolerance, weight gain, dry skin, hoarse voice, and a protuberant tongue are clinical manifestations.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q58",
+    "stem": "Admitted to the ICU, a patient presents with confusion, weakness, and nausea. Which pharmacological intervention is most appropriate for managing this patient's condition, when laboratory findings reveal hyponatremia (serum sodium < 130 mEq/L) and urine osmolality > 100 mOsmol/kg?",
+    "options": [
+      "Administering loop diuretics and isotonic saline infusion",
+      "Initiating fluid restriction and monitoring for sodium correction",
+      "Commencing vasopressin receptor antagonist therapy",
+      "Increasing water intake and monitoring serum sodium levels"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Vasopressin receptor antagonists, such as tolvaptan, can increase free water excretion, which helps in correcting hyponatremia associated with SIADH.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q59",
+    "stem": "Which intervention is the priority in the management of a patient admitted with severe anemia, presenting symptoms such as fatigue, shortness of breath during physical activity, and pale skin, along with laboratory results showing low hemoglobin levels and decreased reticulocyte count?",
+    "options": [
+      "Administering IV furosemide to decrease fluid overload.",
+      "Initiating aggressive fluid replacement therapy.",
+      "Transfusing packed red blood cells to increase oxygen-carrying capacity.",
+      "Administering high-dose corticosteroids to stimulate erythropoiesis."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "To increase the oxygen-carrying capacity and alleviate symptoms of anemia like fatigue and dyspnea on exertion, transfusing packed red blood cells is the priority.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q60",
+    "stem": "With a history of chronic liver disease, a 68-year-old patient presents with a sudden onset of bleeding from multiple sites. What should the nurse suspect when laboratory results indicate prolonged PT/INR, decreased platelet count, and elevated fibrin degradation products?",
+    "options": [
+      "Thrombotic thrombocytopenic purpura (TTP).",
+      "Immune thrombocytopenic purpura (ITP).",
+      "Disseminated intravascular coagulation (DIC).",
+      "Heparin-induced thrombocytopenia (HIT)."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The clinical presentation with bleeding, prolonged PT/INR, decreased platelet count, and elevated fibrin degradation products suggests DIC, a condition characterized by both clotting and bleeding.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q61",
+    "stem": "What primary immunodeficiency disorder is most likely indicated, when a patient presents with recurrent, severe infections since infancy, along with absent T lymphocytes and immunoglobulins?",
+    "options": [
+      "Wiskott-Aldrich syndrome",
+      "X-linked severe combined immunodeficiency (SCID)",
+      "Ataxia-telangiectasia",
+      "Hyper-IgM syndrome"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "X-linked severe combined immunodeficiency (SCID) is considered if a patient presents with recurrent, severe infections since infancy, along with absent T lymphocytes and immunoglobulins.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q62",
+    "stem": "Which intervention should the nurse prioritize in the plan of care, when a patient with leukemia is admitted to the intensive care unit (ICU) with leukopenia?",
+    "options": [
+      "Initiating contact precautions to prevent infection transmission.",
+      "Administering erythropoietin to stimulate white blood cell production.",
+      "Increasing the frequency of chemotherapy to target malignant invasion.",
+      "Monitoring platelet count for signs of thrombocytopenia."
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Leukopenic patients are at increased risk of infection. The nurse should initiate contact precautions to prevent infection transmission, which prevents pathogen transmission.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q63",
+    "stem": "After starting chemotherapy, a patient with acute myeloid leukemia (AML) presents with nausea, vomiting, and oliguria. Laboratory results reveal hyperuricemia, hyperkalemia, and hyperphosphatemia. The nurse's priority action is to:",
+    "options": [
+      "Initiate allopurinol therapy.",
+      "Monitor serum electrolytes closely.",
+      "Administer aggressive hydration.",
+      "Prepare for hemodialysis."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The nurse should administer aggressive hydration to prevent tumor lysis syndrome (TLS) by promoting the excretion of metabolic byproducts. To prevent renal failure and electrolyte imbalances associated with TLS, it is considered helpful.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q64",
+    "stem": "A patient suddenly develops petechiae and ecchymoses after being admitted with septic shock. Laboratory findings reveal a platelet count of 30,000/mm³. The nurse recognizes this condition as indicative of:",
+    "options": [
+      "Hemolytic-uremic syndrome",
+      "Disseminated intravascular coagulation (DIC)",
+      "Heparin-induced thrombocytopenia (HIT)",
+      "Thrombotic thrombocytopenic purpura (TTP)"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Thrombocytopenia coupled with bleeding manifestations like petechiae and ecchymoses suggests DIC, a condition characterized by widespread activation of coagulation leading to both thrombosis and hemorrhage.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q65",
+    "stem": "A patient suddenly develops fever, back pain, and hypotension after receiving a blood transfusion. The nurse's initial action should be to:",
+    "options": [
+      "Stop the transfusion and notify the blood bank.",
+      "Administer antipyretics and assess vital signs.",
+      "Continue the transfusion and monitor closely.",
+      "Obtain a urine sample for analysis."
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The nurse should stop the transfusion and notify the blood bank as these symptoms suggest an acute hemolytic transfusion reaction.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q66",
+    "stem": "The nurse assesses the patient who underwent exploratory laparotomy for severe abdominal trauma. The patient develops progressively increasing abdominal distension and oliguria, with the nurse noting a tense, firm abdomen with absent bowel sounds. Vital signs show a blood pressure of: 90/60 mm Hg heart rate of 120 bpm respiratory rate of 24 breaths/min As a priority, which of the following interventions should the nurse anticipate?",
+    "options": [
+      "Administering a loop diuretic to improve urine output.",
+      "Initiating broad-spectrum antibiotics to prevent infection.",
+      "Performing an immediate abdominal decompression procedure.",
+      "Increasing intravenous fluid administration to maintain perfusion."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The nurse should perform an immediate abdominal decompression procedure as it is necessary in the presence of signs indicating abdominal compartment syndrome (ACS), such as a tense abdomen, oliguria, and hypotension.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q67",
+    "stem": "A patient after a motor vehicle collision with suspected blunt abdominal trauma arrives at the emergency department. Which diagnostic test is most appropriate to confirm intra-abdominal bleeding when the assessment reveals hypotension, tachycardia, and diffuse abdominal tenderness?",
+    "options": [
+      "Chest radiograph",
+      "CT scan of the abdomen",
+      "Electrocardiogram (ECG)",
+      "Urinalysis"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A CT scan is most appropriate to confirm intra-abdominal bleeding which aids in the prompt diagnosis and management of blunt abdominal trauma.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q68",
+    "stem": "How should the nurse recognize these symptoms as indicative, when a patient presents with bright red hematemesis and melena?",
+    "options": [
+      "Upper gastrointestinal hemorrhage",
+      "Lower gastrointestinal hemorrhage",
+      "Stress-related mucosal disease",
+      "Esophagogastric varices"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Bright red hematemesis and melena suggest upper gastrointestinal bleeding, typically seen in conditions like peptic ulcer disease.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q69",
+    "stem": "A patient admitted with severe abdominal pain, disproportionate to examination findings and poorly responsive to analgesia, is suspected to have:",
+    "options": [
+      "Acute cholecystitis.",
+      "Mesenteric ischemia.",
+      "Pancreatitis.",
+      "Gastroenteritis."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The classic features of acute mesenteric ischemia are severe abdominal pain, disproportionate examination findings, and poor responsiveness to analgesia.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q70",
+    "stem": "How should the nurse assess the patient's signs and symptoms, when the patient undergoes a Whipple procedure for pancreatic cancer and presents with persistent nausea and vomiting on postoperative day 3?",
+    "options": [
+      "paralytic ileus.",
+      "wound infection.",
+      "diabetic ketoacidosis.",
+      "acute pancreatitis."
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "After undergoing the Whipple procedure, persistent nausea and vomiting could indicate paralytic ileus. A common complication due to manipulation of the gastrointestinal tract during surgery, leading to temporary bowel paralysis.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q71",
+    "stem": "A patient with severe abdominal pain, distension, and altered mental status presents with a history of chronic alcohol abuse to the emergency department. Physical examination reveals asterixis, ascites, and spider angiomas. Laboratory results show elevated transaminases and serum bilirubin. The most likely diagnosis for this patient is:",
+    "options": [
+      "Acute pancreatitis.",
+      "Fulminant hepatitis.",
+      "Alcoholic liver disease.",
+      "Acute cholecystitis."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Alcoholic liver disease is strongly suggested by the patient's history of chronic alcohol abuse, along with physical exam findings such as asterixis, ascites, spider angiomas, and elevated serum bilirubin and transaminases.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q72",
+    "stem": "A patient with chronic diarrhea, abdominal pain, and unintentional weight loss is admitted for severe Crohn's disease. Laboratory tests reveal decreased serum albumin and iron levels. The patient's condition is most indicative of:",
+    "options": [
+      "Malnutrition due to reduced dietary intake.",
+      "Malabsorption syndrome from intestinal dysfunction.",
+      "Anemia secondary to chronic inflammation.",
+      "Gastrointestinal malignancy."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Malabsorption syndrome from intestinal dysfunction is suggested by the presence of chronic diarrhea, abdominal pain, and weight loss in the context of Crohn's disease. This leads to nutrient deficiencies and low serum albumin and iron levels.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q73",
+    "stem": "A patient with severe epigastric pain radiating to the back, nausea, and vomiting presents with a history of chronic alcohol abuse to the emergency department. Indications from the laboratory findings include elevated serum amylase and lipase levels. Abdominal ultrasound reveals interstitial edema. The nurse suspects:",
+    "options": [
+      "Acute cholecystitis.",
+      "Pancreatic pseudocyst.",
+      "Severe acute pancreatitis.",
+      "Biliary colic."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Elevated pancreatic enzymes, interstitial edema on imaging, and systemic complications manifest as severe acute pancreatitis.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q74",
+    "stem": "With complaints of bilateral flank pain, dysuria, and fever, a 65-year-old male with a history of heart failure presents to the emergency department. Urinalysis shows pyuria and bacteriuria. The nurse suspects that the patient may be experiencing AKI secondary to:",
+    "options": [
+      "Prerenal factors.",
+      "Postrenal obstruction.",
+      "Glomerulonephritis.",
+      "Acute tubular necrosis."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "A urinary tract infection likely causing postrenal AKI, due to obstruction or glomerulonephritis affecting renal function, is suggested by the clinical presentation of flank pain, dysuria, fever, and pyuria.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q75",
+    "stem": "What is a characteristic feature when a patient with chronic kidney disease (CKD) is in stage 3 according to the glomerular filtration rate (GFR) staging system?",
+    "options": [
+      "Hypertension is typically absent.",
+      "Laboratory values remain within normal limits.",
+      "Kidney damage is present regardless of GFR.",
+      "Patients usually exhibit significant renal function decline."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The presence of kidney damage regardless of the level of GFR characterizes stage 3 of chronic kidney disease (CKD). At this stage, hypertension and other abnormalities in laboratory values are often observed.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q76",
+    "stem": "What complication should the nurse suspect if a 65-year-old female patient with a urinary catheter develops a high fever, hypotension, and altered mental status?",
+    "options": [
+      "Chronic kidney disease",
+      "Urethral stricture",
+      "Urosepsis",
+      "Renal cell carcinoma"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Systemic signs of infection such as fever and altered mental status indicate the presence of urosepsis, a complication caused by the presence of a urinary catheter.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q77",
+    "stem": "A patient with severe dehydration presents with weakness, fatigue, and dry mucous membranes, and laboratory results show a serum sodium level of 152 mEq/L. The nurse should recognize this electrolyte imbalance as:",
+    "options": [
+      "Hypokalemia.",
+      "Hyperkalemia.",
+      "Hyponatremia.",
+      "Hypernatremia."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The presence of symptoms such as weakness, fatigue, and dry mucous membranes in hypernatremia is indicated by elevated serum sodium levels, resulting from water deficit relative to sodium concentration.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q78",
+    "stem": "Which condition should the nurse suspect when a 55-year-old male patient presents with redness, warmth, and tenderness on his lower leg and the nurse notes localized erythema with diffuse borders and palpable warmth?",
+    "options": [
+      "Venous dermatitis",
+      "Contact allergic dermatitis",
+      "Cellulitis",
+      "Erythrasma"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Cellulitis, an infection of the dermis and subcutaneous tissue commonly caused by bacteria such as S. aureus and Streptococcus pyogenes, is characterized by localized erythema with diffuse borders, tenderness, warmth, and edema.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q79",
+    "stem": "What is the priority action for the nurse after observing diminished pulses and paresthesia in a patient with a tibial shaft fracture experiencing severe pain, swelling, and tense muscles in the affected leg?",
+    "options": [
+      "Administer pain medication and elevate the affected leg.",
+      "Perform a thorough neurovascular assessment of the affected extremity.",
+      "Apply ice packs to the affected leg to reduce swelling.",
+      "Initiate physical therapy for range of motion exercises in the affected leg."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When assessing signs of acute compartment syndrome, including diminished pulses and paresthesia, it is crucial to perform a thorough neurovascular assessment. Recognizing and intervening early is essential in preventing complications associated with compartment syndrome.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q80",
+    "stem": "A patient presents to the emergency department with a suspected femur fracture following a fall. The nurse notices swelling and tenderness in the affected leg. The priority intervention for the nurse is to:",
+    "options": [
+      "Apply ice to the affected area and elevate the leg.",
+      "Administer analgesics for pain relief.",
+      "Perform a neurovascular assessment.",
+      "Immobilize the leg with a splint or traction."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "To prevent further injury and alleviate pain while awaiting definitive treatment, immobilization is crucial in suspected femur fractures.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q81",
+    "stem": "A steppage gait, associated with conditions like peroneal nerve injury or muscle atrophy, is characterized by dragging toes and shuffling steps. The nurse suspects the patient is experiencing:",
+    "options": [
+      "Antalgic gait",
+      "Propulsive gait",
+      "Spastic gait",
+      "Steppage gait"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "A steppage gait, associated with conditions like peroneal nerve injury or muscle atrophy, is characterized by dragging toes and shuffling steps.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q82",
+    "stem": "Which diagnostic test is most appropriate for confirming osteomyelitis when suspected by the nurse in a patient with diabetes presenting severe bone pain, localized to the lower extremities, and exhibiting redness, swelling, and warmth in the affected area?",
+    "options": [
+      "Blood culture",
+      "X-ray",
+      "Bone scan",
+      "MRI"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q83",
+    "stem": "What action should the nurse prioritize when suspecting rhabdomyolysis in a patient who presents to the emergency department with severe muscle pain, weakness, and dark urine following an intense workout session at the gym?",
+    "options": [
+      "Administer intravenous fluids and monitor kidney function.",
+      "Order a muscle biopsy to confirm the diagnosis.",
+      "Initiate physical therapy to strengthen muscles.",
+      "Administer pain medication and recommend rest."
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Intravenous fluids flush out toxic muscle breakdown products and maintain adequate hydration when promptly administered in rhabdomyolysis to prevent kidney damage.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q84",
+    "stem": "Following a motor vehicle accident, a patient with a suspected acute spinal cord injury is brought to the emergency department, experiencing difficulty breathing and weakened muscle movement in the chest area. The nurse should prioritize:",
+    "options": [
+      "Administering oxygen and preparing for intubation.",
+      "Placing the patient in a lateral position to facilitate breathing.",
+      "Performing a focused assessment of the patient's abdominal reflexes.",
+      "Administering intravenous corticosteroids to reduce spinal cord swelling."
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Immediate intervention, such as administering oxygen and preparing to intubate, is necessary to maintain adequate ventilation due to potential respiratory impairment, as indicated by difficulty breathing and weakened chest muscles.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q85",
+    "stem": "Which factor is not considered when determining eligibility for apnea testing in a patient being evaluated for brain death due to severe traumatic brain injury?",
+    "options": [
+      "Evidence of an etiology of coma",
+      "Core temperature >36°C",
+      "Systolic blood pressure >100 mm Hg",
+      "Availability of ventilatory support"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Evaluating evidence of an etiology of coma, core temperature, and systolic blood pressure are essential criteria before proceeding with apnea testing, as the availability of ventilator support is not a factor considered in determining the eligibility for apnea testing.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q86",
+    "stem": "After sustaining a traumatic brain injury (TBI), a patient displays agitation, restlessness, and aggression towards healthcare providers, and then admitted to the neurological intensive care unit (NICU). The patient's behavior fluctuates throughout the day, alternating between hyperactivity and lethargy. These symptoms are MOST indicative of:",
+    "options": [
+      "Post-traumatic stress disorder (PTSD).",
+      "Mixed delirium.",
+      "Neuroleptic malignant syndrome (NMS).",
+      "Substance-induced psychosis."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Mixed delirium, characterized by fluctuations between hyperactive and hypoactive states, is suggested by the patient's alternating symptoms of hyperactivity and lethargy. Delirium is common in patients with TBI, necessitating close monitoring and management, particularly during the acute phase.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q87",
+    "stem": "Due to recent onset confusion, a 78-year-old patient is experiencing difficulty completing daily tasks and wandering behavior. The nurse should prioritize:",
+    "options": [
+      "Assessing for signs of dehydration and providing fluid replacement.",
+      "Initiating antipsychotic medication to manage agitation.",
+      "Requesting a psychiatric consultation for mood stabilization.",
+      "Conducting a thorough neurological assessment and obtaining a detailed history."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Identifying potential causes of cognitive decline, such as dementia, necessitates a comprehensive neurological assessment and history, given the patient's symptoms.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q88",
+    "stem": "Which intervention should the nurse prioritize when a patient admitted with altered mental status and a history of cirrhosis presents with confusion and tremors?",
+    "options": [
+      "Administering antipyretics and monitoring vital signs closely.",
+      "Initiating enteral feeding to maintain nutritional status.",
+      "Monitoring blood glucose levels and administering insulin as needed.",
+      "Assessing for signs of hepatic encephalopathy and initiating lactulose therapy."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Priority intervention involves assessing for hepatic encephalopathy and initiating lactulose therapy to reduce ammonia levels in a patient with cirrhosis and altered mental status.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q89",
+    "stem": "When a patient admitted with intracranial hemorrhage (ICH) develops sudden severe headache, vomiting, and altered level of consciousness, alongside increased blood pressure and decreased heart rate in vital signs, the nurse's initial action should be to:",
+    "options": [
+      "Administer morphine sulfate and assess pain relief.",
+      "Elevate the head of the bed and provide oxygen therapy.",
+      "Administer antihypertensive medication to lower blood pressure.",
+      "Notify the healthcare provider and prepare for emergent intervention."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The nurse must promptly notify the healthcare provider for a patient with intracranial hemorrhage (ICH) experiencing sudden severe headache, vomiting, altered consciousness, and vital sign changes to prevent worsening intracranial pressure and potential herniation.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q90",
+    "stem": "The nurse notes unequal pupil size, sluggish response to light, and increasing drowsiness during assessment of a patient with traumatic brain injury (TBI). What does this indicate?",
+    "options": [
+      "Hypoglycemia.",
+      "Brainstem herniation.",
+      "Postictal state.",
+      "Cerebral salt wasting syndrome."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Brainstem herniation in Traumatic brain injury (TBI) is indicated by unequal pupil size, a sluggish response to light, and increasing drowsiness. Urgent intervention is necessary to prevent further neurological damage.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q91",
+    "stem": "A patient presents with sudden onset severe headache, neck stiffness, and vomiting following a fall from a ladder. Which radiographic feature is most indicative of a traumatic etiology, a CT scan reveals subarachnoid hemorrhage (SAH)?",
+    "options": [
+      "Blood pooling around the Circle of Willis",
+      "Small amount of blood in the cerebral sulci",
+      "Hyperdense triangle in the interpeduncular fossa",
+      "Extensive blood in the occipital horns of lateral ventricles"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Small blood in the cerebral sulci is most indicative of a traumatic etiology. This finding is often adjacent to cerebral contusions, reflecting the underlying trauma.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q92",
+    "stem": "A patient admitted with severe traumatic brain injury (TBI) begins to exhibit signs of increased intracranial pressure (ICP). This includes headache, vomiting, and blurred vision. Which action should the nurse prioritize?",
+    "options": [
+      "Administering a bolus of 3% hypertonic saline",
+      "Obtaining an immediate lumbar puncture",
+      "Initiating therapeutic hypothermia at 32-35°C",
+      "Monitoring the patient's neurological status closely"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "In detecting changes indicative of increased ICP, monitoring the patient's neurological status closely is crucial. Monitoring allows for prompt intervention, which can prevent further neurological deterioration.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q93",
+    "stem": "Which intervention should the nurse prioritize in the plan of care, when a patient diagnosed with Guillain-Barré syndrome (GBS) presents with ascending paralysis and difficulty breathing?",
+    "options": [
+      "Administering corticosteroids to reduce inflammation.",
+      "Initiating intravenous immunoglobulin (IVIG) therapy.",
+      "Placing the patient on a mechanical ventilator immediately.",
+      "Ordering a lumbar puncture to confirm the diagnosis."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Ascending paralysis can lead to respiratory compromise in Guillain-Barre syndrome (GBS). To support breathing and prevent respiratory failure, immediate initiation of mechanical ventilation is crucial.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q94",
+    "stem": "Due to respiratory distress, a patient with muscular dystrophy is admitted to the critical care unit. Which intervention should the nurse prioritize?",
+    "options": [
+      "Administering a dose of neostigmine (Prostigmin)",
+      "Initiating continuous positive airway pressure (CPAP) therapy",
+      "Administering intravenous immunoglobulin (IVIG)",
+      "Placing the patient in a prone position"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "By providing continuous positive pressure to keep the airways open and support lung function, initiating CPAP therapy helps improve ventilation and oxygenation in patients with muscular dystrophy experiencing respiratory distress.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q95",
+    "stem": "In the critical care unit, a patient diagnosed with status epilepticus is receiving treatment with intravenous antiepileptic medications. The patient continues to experience ongoing seizure activity, despite initial interventions. What should the nurse anticipate as the next step in management?",
+    "options": [
+      "Performing endotracheal intubation",
+      "Administering a bolus dose of phenytoin (Dilantin)",
+      "Initiating therapeutic hypothermia",
+      "Consulting with a neurosurgeon for surgical intervention"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "To protect the airway and facilitate mechanical ventilation, endotracheal intubation is often necessary for patients with status epilepticus. This ensures adequate oxygenation and ventilation while managing ongoing seizures.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q96",
+    "stem": "A patient presents with progressively severe headaches, nausea, and vomiting. papilloedema is noted on examination. On these findings, which intervention should the nurse prioritize based?",
+    "options": [
+      "Performing an immediate lumbar puncture",
+      "Administering intravenous antiepileptic medication",
+      "Initiating continuous EEG monitoring",
+      "Using the ophthalmoscope to assess for papilloedema"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Papilloedema indicates increased intracranial pressure which requires urgent evaluation. To identify signs of elevated intracranial pressure and guide further management, using the ophthalmoscope to assess for papilloedema is crucial.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q97",
+    "stem": "A patient presents to the emergency department with a sudden onset of severe headache and vomiting. The patient has a history of chronic hypertension. The patient is found to have a Glasgow Coma Scale (GCS) score of 10 and signs of elevated intracranial pressure on assessment. Which intervention should the nurse prioritize?",
+    "options": [
+      "Administering antiemetics and arranging for a head CT scan",
+      "Administering antihypertensive medications to lower blood pressure",
+      "Initiating thrombolytic therapy to dissolve potential blood clots",
+      "Placing the patient in a high Fowler's position and monitoring neurologic status"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Administering antiemetics can alleviate nausea and vomiting. This helps in the diagnosis and management of hemorrhagic stroke and facilitates accurate neurological assessment and preparation for imaging studies.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q98",
+    "stem": "A patient is admitted to the hospital. The patient has a suspected embolic stroke and exhibits sudden difficulty speaking and understanding words, along with numbness on one side of the face. The nurse's immediate action should be to:",
+    "options": [
+      "Assess vital signs and administer oxygen.",
+      "Administer clot-busting medications intravenously.",
+      "Perform a CT scan to assess for brain damage.",
+      "Activate the stroke team and initiate FAST assessment."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q99",
+    "stem": "A patient presents with sudden onset of a droopy face, slurred speech, and weakness in one arm. Within an hour, these all symptoms are resolved. The nurse should suspect the patient experienced:",
+    "options": [
+      "A transient ischemic attack (TIA)",
+      "Acute delirium",
+      "Alcohol withdrawal",
+      "Ruptured papillary muscle"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When a patient presents with a droopy face, slurred speech, and weakness in one arm that resolve within an hour, the nurse suspected the patient experienced a transient ischemic attack (TIA).",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q100",
+    "stem": "A patient admitted with diabetic ketoacidosis (DKA) presents with the following arterial blood gas (ABG) results: pH 7.25, pCO2 30 mm Hg, HCO3 15 mEq/L, and pO2 98 mm Hg. For managing this patient's acid-base imbalance, which intervention is appropriate?",
+    "options": [
+      "Administering sodium bicarbonate",
+      "Initiating insulin therapy",
+      "Increasing respiratory rate with a ventilator",
+      "Infusing normal saline rapidly"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "By promoting cellular uptake of glucose and inhibiting ketone body formation, insulin therapy helps correct acidosis in DKA.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q101",
+    "stem": "A bariatric surgery patient develops symptoms of dumping syndrome, including palpitations and diaphoresis, shortly after meals. To manage these symptoms effectively, which dietary modifications should the nurse recommend?",
+    "options": [
+      "Increasing protein intake with meals",
+      "Consuming meals high in simple carbohydrates",
+      "Eating smaller, more frequent meals",
+      "Avoiding fluids with meals"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The nurse should recommend eating smaller, more frequent meals to manage these symptoms effectively. This dietary change can help prevent rapid gastric emptying and subsequent dumping syndrome symptoms.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q102",
+    "stem": "A patient presents with hypertension, elevated serum creatinine, and hyperkalemia. The patient has a history of renal transplant. As part of the treatment plan, which medication should the nurse anticipate administering?",
+    "options": [
+      "Furosemide (Lasix)",
+      "Amlodipine (Norvasc)",
+      "Lisinopril (Zestril)",
+      "Spironolactone (Aldactone)"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "To manage hypertension and fluid retention in patients with renal dysfunction, spironolactone is a potassium-sparing diuretic commonly used.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q103",
+    "stem": "Despite aggressive medical management, a patient admitted to the critical care unit with end-stage heart failure is deteriorating rapidly. The healthcare team discusses the option of transitioning to comfort-focused care. The nurse's role in this transition includes:",
+    "options": [
+      "Advocating for continued aggressive interventions.",
+      "Explaining the benefits of comfort-focused care to the patient.",
+      "Administering high-dose diuretics to manage symptoms.",
+      "Assisting the family in understanding and accepting the care plan."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The nurse plays a crucial role in assisting the family in understanding and accepting the care plan, providing support, and facilitating a dignified end-of-life experience, as the patient transitions to comfort-focused care.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q104",
+    "stem": "A 56-year-old patient is admitted with severe burns. The patient requires a urinary catheter for fluid resuscitation. To prevent catheter-associated urinary tract infection (CAUTI), what is the most appropriate nursing action?",
+    "options": [
+      "Ensure the catheter remains in place for more than 3 days.",
+      "Rotate the catheter insertion site daily.",
+      "Perform daily evaluation of catheter necessity and remove it promptly when no longer needed.",
+      "Administer prophylactic antibiotics through the catheter every 6 hours."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "To prevent CAUTI, regular assessment of catheter necessity and prompt removal, when no longer needed, is essential.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q105",
+    "stem": "A pediatric burn patient has a central venous catheter placed for fluid resuscitation. What nursing intervention is recommended to reduce the risk of central line-associated bloodstream infection (CLABSI)?",
+    "options": [
+      "Change the central venous catheter dressing weekly.",
+      "Use chlorhexidine solution for cleansing the insertion site.",
+      "Administer systemic antibiotics through the catheter daily.",
+      "Coat the catheter inside and outside with minocycline and rifampin."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "In pediatric burn patients, coating the catheter with minocycline and rifampin has been shown to reduce CLABSI risk.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q106",
+    "stem": "During a postoperative assessment of a critically ill adult patient, the nurse notes the presence of a central venous catheter (CVC) for monitoring and medication administration. To minimize the risk of central line-associated bloodstream infection (CLABSI), which nursing intervention should be prioritized?",
+    "options": [
+      "Implementing a weekly change of the central venous catheter dressing.",
+      "Utilizing chlorhexidine solution for cleansing the insertion site.",
+      "Initiating systemic antibiotic administration through the catheter daily.",
+      "Coating the catheter inside and outside with minocycline and rifampin."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Proper cleansing of the insertion site with chlorhexidine solution has been demonstrated to significantly reduce the risk of CLABSI. This intervention is recommended to maintain an aseptic technique and minimize microbial colonization at the catheter insertion site, ultimately decreasing the likelihood of bloodstream infections.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q107",
+    "stem": "Which action should the nurse take first, when a patient receiving dopamine infusion for hypotension develops tachycardia and dysrhythmias?",
+    "options": [
+      "Notify the healthcare provider immediately",
+      "Increase the rate of the dopamine infusion",
+      "Administer a bolus of normal saline",
+      "Assess the patient's lung sounds and oxygen saturation"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The nurse should first notify the healthcare provider immediately when the patient receiving dopamine infusion for hypotension develops tachycardia and dysrhythmias.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q108",
+    "stem": "A patient with reported avian influenza outbreaks presents to the emergency department with fever, cough, and myalgia. The patient has a recent history of travel to an area. The nurse suspects avian influenza based on the patient's history. What precautions should the nurse take immediately?",
+    "options": [
+      "Isolation precautions and notifying the infection control department.",
+      "Administering antipyretics and assessing respiratory status.",
+      "Obtaining a throat swab for influenza rapid testing.",
+      "Contacting the local health department for further instructions."
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "To prevent potential transmission of avian influenza to healthcare staff and other patients, prompt isolation precautions are crucial.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q109",
+    "stem": "Which diagnostic test is most appropriate for confirming avian influenza infection, when a patient presents with symptoms consistent with avian influenza?",
+    "options": [
+      "Complete blood count to assess for leukocytosis.",
+      "Influenza A/H5 real-time reverse transcription–polymerase chain reaction (RT-PCR) assay.",
+      "Viral culture from nasopharyngeal swab.",
+      "Chest radiograph to assess for pneumonia."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "For identifying the avian influenza virus, the influenza A/H5 real-time RT-PCR assay is the gold standard.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q110",
+    "stem": "In the ICU, a patient is diagnosed with septic shock secondary to a bloodstream infection with MRSA. To prevent the transmission of MRSA to other patients, what precautionary measures should the nursing staff prioritize?",
+    "options": [
+      "Administering broad-spectrum antibiotics prophylactically",
+      "Implementing contact precautions and promoting strict hand hygiene",
+      "Increasing the frequency of room cleaning with standard disinfectants",
+      "Encouraging family members to wear personal protective equipment"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "To prevent the transmission of MRSA, implementing contact precautions, including strict hand hygiene, is crucial, especially in critical care settings where patients are vulnerable to infections.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q111",
+    "stem": "At 34 weeks gestation, a pregnant patient presents with sudden-onset severe hypertension (BP 170/110 mm Hg), proteinuria, and epigastric pain. The nurse should prioritize assessment for signs of:",
+    "options": [
+      "HELLP syndrome.",
+      "amniotic fluid embolism.",
+      "placental abruption.",
+      "eclampsia."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Sudden-onset hypertension, proteinuria, and epigastric pain are classic signs of eclampsia that indicate the need for prompt assessment and intervention to prevent seizures and maternal complications.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q112",
+    "stem": "A patient experiencing acute pancreatitis develops oliguria and elevated serum amylase levels. The nurse anticipates the need for interventions to address:",
+    "options": [
+      "Hepatic encephalopathy",
+      "Acute tubular necrosis",
+      "Disseminated intravascular coagulation",
+      "Cardiogenic shock"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Due to systemic inflammatory responses and renal hypoperfusion, acute pancreatitis can lead to acute tubular necrosis (ATN), necessitating renal support and careful fluid management.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q113",
+    "stem": "A 45-year-old male patient who was involved in a motor vehicle accident presents with multiple blunt trauma injuries, including rib fractures and bilateral pulmonary contusions. During the assessment, the nurse noted paradoxical chest movement and decreased breath sounds on the left side. The priority nursing intervention is to:",
+    "options": [
+      "Administer supplemental oxygen and obtain a chest x-ray.",
+      "Initiate positive pressure ventilation with a bag-valve-mask device.",
+      "Perform endotracheal intubation to secure the airway.",
+      "Prepare for emergent chest tube insertion on the affected side."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Paradoxical chest movement and decreased breath sounds may suggest a pneumothorax or hemothorax. In such cases, emergent chest tube insertion is necessary to re-expand the lung and alleviate pressure.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q114",
+    "stem": "Which of the following agents is preferred for first-line treatment if a patient with septic shock receives vasopressor therapy to maintain adequate mean arterial pressure (MAP)?",
+    "options": [
+      "Norepinephrine",
+      "Dopamine",
+      "Epinephrine",
+      "Phenylephrine"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q115",
+    "stem": "When a patient with anaphylactic shock exhibits hypotension and tachycardia, which medication is the first-line treatment for this condition?",
+    "options": [
+      "Diphenhydramine (Benadryl).",
+      "Dobutamine (Dobutrex).",
+      "Epinephrine.",
+      "Corticosteroids."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Epinephrine is the first-line treatment for anaphylactic shock. It exerts bronchodilatory and vasoconstrictive effects to counteract the allergic response.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q116",
+    "stem": "After eating a sandwich, a patient admitted with a history of severe peanut allergy suddenly developed generalized erythema, urticaria, and dyspnea. The nurse's immediate action should be to:",
+    "options": [
+      "Administer epinephrine intramuscularly.",
+      "Assess for stridor and respiratory distress.",
+      "Obtain a detailed dietary history.",
+      "Prepare for emergent intubation."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "These symptoms indicate anaphylaxis, which requires rapid assessment for airway compromise and respiratory distress.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q117",
+    "stem": "A patient is admitted to the critical care unit following a traumatic brain injury. He experiences fragmented sleep patterns and daytime drowsiness. To promote restorative sleep, which intervention should the nurse prioritize?",
+    "options": [
+      "Administering a sedative at bedtime",
+      "Providing frequent neurologic assessments",
+      "Dimming lights and reducing environmental noise",
+      "Encouraging family members to visit during daytime hours"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "In patients with traumatic brain injuries, dimming lights and reducing environmental noise are essential strategies to minimize sensory overload and promote restorative sleep.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q118",
+    "stem": "In the critical care unit, a postoperative patient exhibits signs of sleep disturbance, reporting difficulty falling asleep and frequent awakenings during the night. What intervention should the nurse implement to address the patient's sleep disruption in this situation?",
+    "options": [
+      "Administering a benzodiazepine before bedtime",
+      "Encouraging daytime napping to compensate for lost sleep",
+      "Providing relaxation techniques such as deep breathing exercises",
+      "Offering a stimulating activity before bedtime to induce fatigue"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Providing relaxation techniques like deep breathing exercises can help alleviate sleep disruption by promoting relaxation. These techniques can also reduce anxiety, thus facilitating improved sleep quality.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q119",
+    "stem": "After a prolonged stay for respiratory failure, a 45-year-old patient is extubated and transferred out of the ICU. The patient complains of persistent nightmares, anxiety, and depression two weeks later. The nurse identifies these symptoms as indicative of:",
+    "options": [
+      "ICU delirium",
+      "Acute stress disorder",
+      "Post-intensive care syndrome (PICS)",
+      "Psychotic disorder"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Following critical illness, Post-intensive care syndrome (PICS) includes psychological symptoms like anxiety, depression, and PTSD.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q120",
+    "stem": "A 45-year-old male with a history of alcohol abuse presents to the emergency department unconscious. Vital signs reveal a blood pressure of 90/60 mmHg, heart rate of 110 bpm, and respiratory rate of 8 breaths/min. Which intervention should be the priority when the nurse suspects alcohol poisoning?",
+    "options": [
+      "Administer naloxone (Narcan) intravenously.",
+      "Perform gastric lavage to remove ingested alcohol.",
+      "Maintain the patient's airway and initiate ventilation support.",
+      "Monitor serum electrolytes and initiate fluid resuscitation."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "In alcohol poisoning, the priority is maintaining the airway, breathing, and circulation. Ventilation support is crucial due to respiratory depression.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q121",
+    "stem": "Due to religious beliefs, a patient is refusing a prescribed treatment. The nurse's initial action should be to:",
+    "options": [
+      "respect the patient's autonomy and withhold the treatment.",
+      "educate the patient about the importance of the treatment.",
+      "consult with the healthcare team to explore alternative options.",
+      "inform the patient that refusal of treatment violates hospital policy."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Consulting with the healthcare team ensures a comprehensive approach to addressing the patient's refusal while respecting their beliefs.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q122",
+    "stem": "In the hospital lobby, a nurse overhears a colleague sharing confidential patient information with a visitor.. The nurse should:",
+    "options": [
+      "intervene immediately and remind the colleague of patient confidentiality.",
+      "report the incident to the unit manager or supervisor.",
+      "ignore the situation to avoid conflict among staff members.",
+      "confront the visitor and ask them to leave the premises."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The nurse should report the incident to the unit manager or supervisor. This action ensures that appropriate action is taken to address the breach of patient confidentiality.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q123",
+    "stem": "During morning rounds, the medical team proposes a treatment plan that the nurse believes may be harmful to the patient. The nurse's next step should be to:",
+    "options": [
+      "voice concerns to the charge nurse privately.",
+      "follow the medical team's orders without question.",
+      "inform the patient's family of the potential risks.",
+      "request a multidisciplinary team meeting to discuss the plan."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Requesting a multidisciplinary team meeting enables a collaborative discussion. This discussion aims to address concerns and ensure the best course of action for the patient.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q124",
+    "stem": "A patient's family member asks the nurse about the prognosis. He also requests that the information not be shared with the patient. The nurse should:",
+    "options": [
+      "honor the family member's request and withhold the prognosis from the patient.",
+      "inform the family member that the patient has the right to know about their condition.",
+      "provide the family member with the prognosis and encourage them to discuss it with the patient.",
+      "seek guidance from the healthcare team on how to handle the situation."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The nurse should inform the family member that the patient has the right to know about his condition. This strategy promotes patient autonomy and ensures transparency in healthcare decisionmaking.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q125",
+    "stem": "A nurse observes another healthcare provider administering medication incorrectly to a patient. The nurse should:",
+    "options": [
+      "correct the provider immediately to prevent harm to the patient.",
+      "document the incident and report it to the appropriate authority.",
+      "confront the provider publicly to ensure accountability.",
+      "ignore the situation to avoid conflict in the clinical setting."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The nurse should document the incident and report it to the appropriate authority. This action ensures patient safety and addresses the medication error appropriately.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q126",
+    "stem": "A patient's family member is feeling distressed and worries about the patient's prognosis. The nurse's initial response should be to:",
+    "options": [
+      "reassure the family member that everything will be fine.",
+      "provide the family member with detailed medical information.",
+      "listen actively and empathetically to the family member's concerns.",
+      "direct the family member to consult with the attending physician."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Addressing the emotional needs of family members requires active listening and empathy, fostering trust and therapeutic communication.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q127",
+    "stem": "In the critical care unit, a patient is experiencing significant pain despite receiving prescribed analgesics. Due to possible opioid tolerance, the nurse suspects inadequate pain relief. The nurse's next action should be to:",
+    "options": [
+      "administer a higher dose of the current analgesic.",
+      "consult with the physician regarding alternative pain management strategies.",
+      "suggest non-pharmacological pain relief measures to the patient.",
+      "document the patient's pain assessment and continue with the current plan."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Working collaboratively with the physician ensures comprehensive pain management strategies. This approach leads to effective care for the patient's pain management needs.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q128",
+    "stem": "The healthcare team discusses the care plan for a critically ill patient during morning rounds. The nurse observes a disagreement between team members regarding the ventilator settings. The nurse's priority action is to:",
+    "options": [
+      "defer to the respiratory therapist's recommendations.",
+      "express concerns and seek clarification from the team.",
+      "implement the ventilator settings as previously ordered.",
+      "inform the charge nurse about the disagreement."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Advocating for clarity and expressing concerns ensures safe and effective patient care. This also fosters open communication among team members.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q129",
+    "stem": "Due to fear of invasive procedures, a patient in the critical unit expresses distress. To provide holistic care, the nurse should:",
+    "options": [
+      "minimize discussions about the procedures to reduce anxiety.",
+      "explain the necessity and steps of each procedure to the patient.",
+      "reassure the patient that procedures are routine and pose no risk.",
+      "encourage the patient to avoid thinking about the procedures."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Providing patients with detailed information about procedures can promote their understanding and autonomy, which in turn reduces anxiety and enhances trust in the care provided.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q130",
+    "stem": "A patient's family member has asked to be involved in the patient's care activities. The nurse’s response should prioritize:",
+    "options": [
+      "politely declining the request due to policy restrictions.",
+      "encouraging family involvement in appropriate care tasks.",
+      "redirecting the family member's focus away from caregiving.",
+      "seeking approval from the physician before allowing family participation."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The nurse should encourage family involvement in appropriate care tasks. This step fosters a collaborative approach to patient care, promoting positive outcomes and family satisfaction.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q131",
+    "stem": "What is the most appropriate action for the nurse when providing care to a patient from a different cultural background?",
+    "options": [
+      "Apply care based on the nurse's own cultural beliefs.",
+      "Consult colleagues with similar cultural backgrounds for advice.",
+      "Incorporate the patient's cultural values and beliefs into the care plan.",
+      "Avoid addressing cultural differences to prevent misunderstandings."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Incorporating the patient's cultural values and beliefs into the care plan promotes culturally congruent care and demonstrates sensitivity, enhancing patient outcomes.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q132",
+    "stem": "In facilitating learning for adult patients with diverse backgrounds and experiences, the nurse should prioritize:",
+    "options": [
+      "Using complex medical terminology to ensure accuracy.",
+      "Tailoring explanations to individual patient needs and comprehension levels.",
+      "Providing standardized educational materials for consistency.",
+      "Avoiding patient involvement in decision-making processes."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q133",
+    "stem": "During a multidisciplinary bedside round, a disagreement arises between the nurse and the respiratory therapist regarding ventilator settings for a patient. The MOST appropriate action for the nurse is to:",
+    "options": [
+      "Yield to the respiratory therapist's expertise and adjust the ventilator settings accordingly.",
+      "Consult the attending physician immediately for guidance on the ventilator settings.",
+      "Advocate for the nurse's perspective and escalate the disagreement to the team leader.",
+      "Collaborate with the respiratory therapist to discuss the rationale behind each perspective."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Collaborating with the respiratory therapist facilitates mutual understanding and consensusbuilding for optimal patient care.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q134",
+    "stem": "A new protocol for pain management in critically ill patients is introduced in the unit. The nurse's role in implementing this protocol involves:",
+    "options": [
+      "Collaborating with the interdisciplinary team to tailor the protocol to individual patient needs.",
+      "Educating other healthcare providers about the protocol.",
+      "Documenting patient responses to pain management interventions.",
+      "Following the protocol strictly without deviation"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The nurse collaborates with the interdisciplinary team to tailor the protocol to individual patient needs. This collaboration ensures personalized pain management strategies aligned with patient needs and preferences.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q135",
+    "stem": "A patient's family expresses concerns about end-of-life care decisions during rounds. The nurse's primary responsibility in this situation is to:",
+    "options": [
+      "Reassure the family that the medical team has the patient's best interests in mind.",
+      "Encourage the family to focus on positive aspects of the patient's care.",
+      "Collaborate with the healthcare team to address the family's concerns and explore available options.",
+      "Initiate a family conference to discuss the patient's prognosis and preferences"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The nurse's primary responsibility is collaborating with the healthcare team to address the family's concerns and explore available options. This collaborative approach allows for comprehensive discussions and shared decision-making regarding end-of-life care, respecting patient and family preferences.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q136",
+    "stem": "In managing a critically ill patient, a nurse utilizes systems thinking primarily to:",
+    "options": [
+      "Focus solely on individual patient care needs.",
+      "Consider the patient's environment and system resources.",
+      "Delegate tasks to other healthcare professionals.",
+      "Exclude the patient's family from care decisions."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Systems thinking involves considering environmental and system resources for patient care, emphasizing the interconnectedness of issues in critical care settings.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q137",
+    "stem": "When addressing a clinical challenge in critical care, a nurse practicing clinical inquiry would:",
+    "options": [
+      "Exclude patient preferences from care planning.",
+      "Utilize research and evidence-based practices to inform decision-making.",
+      "Rely solely on personal intuition for solutions.",
+      "Ignore interdisciplinary collaboration in care planning."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Clinical inquiry in critical care involves utilizing research and evidence-based practices to inform decision-making, ensuring comprehensive and informed approaches to addressing clinical challenges.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q138",
+    "stem": "When caring for a patient of a different religious faith, how can a nurse demonstrate sensitivity to diversity?",
+    "options": [
+      "Disregard religious practices to maintain neutrality.",
+      "Encourage the patient to forgo religious rituals during hospitalization.",
+      "Respect and accommodate the patient's religious practices.",
+      "Discourage the patient from expressing religious beliefs."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Respecting and accommodating the patient's religious practices respects their beliefs, fosters a trusting nurse-patient relationship, and promotes culturally sensitive care.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q139",
+    "stem": "Which action by the nurse best addresses potential barriers to healthcare access when caring for a patient of diverse socioeconomic status?",
+    "options": [
+      "Assume all patients have equal access to resources.",
+      "Provide care without considering financial constraints.",
+      "Advocate for resources and support services as needed.",
+      "Disregard socioeconomic factors in care planning."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Advocating for resources and support services acknowledges and addresses potential socioeconomic barriers to healthcare, ensuring equitable access to care.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q140",
+    "stem": "In teaching self-care strategies to adult patients, the nurse should prioritize:",
+    "options": [
+      "Demonstrating tasks without allowing patient participation.",
+      "Providing written instructions only.",
+      "Encouraging patients to take an active role in their care.",
+      "Assuming patients are incapable of managing their care."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The nurse should prioritize encouraging patients to take an active role in their care. This approach promotes independence and empowerment, increasing confidence and competence in managing their health.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q141",
+    "stem": "During interdisciplinary rounds in the critical care unit, the nurse notes discrepancies in the medication reconciliation process. The BEST action for the nurse to take is to:",
+    "options": [
+      "Notify the pharmacist immediately for medication verification.",
+      "Update the patient's electronic health record to reflect the correct medication list.",
+      "Inform the attending physician during the next rounds for medication adjustment.",
+      "Collaborate with the interdisciplinary team to resolve the medication discrepancy."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Collaborating with the interdisciplinary team ensures comprehensive assessment and resolution of medication discrepancies, promoting patient safety.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q142",
+    "stem": "When assessing adult patients' readiness to learn, the nurse should consider:",
+    "options": [
+      "Assuming all patients have the same level of readiness.",
+      "Ignoring patients' concerns or preferences.",
+      "Engaging in open communication and active listening.",
+      "Limiting information to prevent overwhelming the patient."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The nurse should consider engaging in open communication and active listening. This approach allows the nurse to assess patients' readiness to learn, address their concerns, and tailor education to their needs and preferences.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q143",
+    "stem": "Which practice is best consistent with the principle of cultural sensitivity when a nurse encounters a patient with limited English proficiency?",
+    "options": [
+      "Utilize complex medical terminology to ensure accuracy.",
+      "Rely solely on non-verbal communication.",
+      "Use an interpreter to facilitate communication.",
+      "Ignore potential language barriers and proceed with care."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The best practice consistent with the principle of cultural sensitivity is to use an interpreter to facilitate communication. This demonstrates respect for the patient's language needs and promotes effective communication, which is essential for quality care.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q144",
+    "stem": "When encountering resource shortages in the critical care unit, a nurse practicing systems thinking would likely:",
+    "options": [
+      "Ignore the shortages and continue with current practices.",
+      "Seek alternative resources and develop strategies.",
+      "Limit patient care options to conserve resources.",
+      "Prioritize care for patients with no resource needs."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "In anticipating resource shortages, nurses use systems thinking to seek alternative resources and develop strategies to maintain high-quality patient care.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q145",
+    "stem": "A nurse demonstrates strategic thinking in critical care by:",
+    "options": [
+      "Ignoring future trends and developments in healthcare.",
+      "Adhering strictly to existing service delivery models.",
+      "Proactively planning for service delivery based on anticipated issues.",
+      "Focusing solely on short-term patient care goals."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "In critical care, strategic thinking entails proactive planning for service delivery based on anticipated issues and trends in healthcare.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q146",
+    "stem": "In a critical care setting, a nurse practicing systems thinking would prioritize the following:",
+    "options": [
+      "Focusing solely on individual patient care.",
+      "Recognizing the interconnectedness of issues in service delivery.",
+      "Ignoring the impact of environmental factors on patient care.",
+      "Disregarding the need for long-term planning."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "In critical care service delivery, nurses practicing systems thinking prioritize recognizing the interconnectedness of issues.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q147",
+    "stem": "When encountering a clinical challenge in the ICU, a nurse utilizes clinical inquiry primarily to:",
+    "options": [
+      "Rely on personal experience for solutions.",
+      "Seek evidence-based practices for guidance.",
+      "Delegate decision-making to other healthcare professionals.",
+      "Ignore clinical literature and research findings."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When encountering a clinical challenge in the ICU, a nurse utilizes clinical inquiry primarily to seek evidence-based practices for guidance. This involves prioritizing the use of research findings and best practices to inform clinical decision-making and ensure optimal patient care in critical care settings.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q148",
+    "stem": "In a critical care setting, a nurse demonstrates clinical inquiry by:",
+    "options": [
+      "Making decisions based solely on intuition.",
+      "Utilizing research and best practices to inform patient care.",
+      "Ignoring clinical evidence and research findings.",
+      "Excluding patient preferences from care planning."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "In a critical care setting, a nurse demonstrates clinical inquiry by utilizing research and best practices to inform patient care decisions, ensuring a foundation of evidence-based care delivery.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q149",
+    "stem": "A nurse utilizing clinical inquiry in critical care settings would prioritize the following:",
+    "options": [
+      "Ignoring research findings and evidence-based practices.",
+      "Relying solely on personal experience for decision-making.",
+      "Utilizing research and best practices to guide patient care.",
+      "Excluding interdisciplinary collaboration in care planning."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Nurses prioritizing clinical inquiry in critical care settings emphasize using research findings and evidence-based practices to guide patient care decisions, promoting high-quality and effective care delivery.",
+    "type": "single_select"
+  },
+  {
+    "id": "CCRN_Test_1_Q150",
+    "stem": "When educating adult patients about their treatment plan, the nurse should emphasize:",
+    "options": [
+      "Prescribing specific actions without considering patient preferences.",
+      "Encouraging passive acceptance of medical recommendations.",
+      "Collaborative decision-making and respecting patient autonomy.",
+      "Providing minimal information to avoid overwhelming the patient."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The nurse should emphasize collaborative decision-making and respect patient autonomy. This approach empowers patients to actively participate in their care, leading to better adherence to treatment plans and improved health outcomes.",
+    "type": "single_select"
+  }
+]
