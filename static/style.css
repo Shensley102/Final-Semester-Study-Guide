@@ -329,14 +329,29 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
 .rev-item.bad{ border-left: 4px solid var(--danger); }
 .rev-q{ font-weight:700; margin-bottom:6px; }
 .rev-wrong-count{ 
-  color:var(--ink); 
-  font-size: 0.95rem;
-  margin: 4px 0 8px;
-  font-weight: 600;
-  border: 2px solid var(--danger);
-  padding: 6px 10px;
-  border-radius: 6px;
+  color:#fff;
+  font-size: 1rem;
+  margin: 8px 0;
+  font-weight: 700;
+  border: 2px solid #333;
+  padding: 10px 14px;
+  border-radius: 8px;
   display: inline-block;
+  min-width: 200px;
+  text-align: center;
+  background-color: #22c55e;
+}
+.rev-wrong-count.yellow{
+  background-color: #eab308;
+  border-color: #ca8a04;
+}
+.rev-wrong-count.orange{
+  background-color: #f97316;
+  border-color: #ea580c;
+}
+.rev-wrong-count.red{
+  background-color: #ef4444;
+  border-color: #dc2626;
 }
 .rev-ans, .rev-rationale{ color:var(--ink-soft); }
 
