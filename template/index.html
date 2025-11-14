@@ -14,8 +14,11 @@
 </head>
 <body>
   <div class="container">
-    <!-- Title (JS updates during quiz and on results) -->
-    <h1 id="pageTitle">Final Semester Study Guide</h1>
+    <!-- Title with Start Another Run button -->
+    <div class="title-bar">
+      <h1 id="pageTitle">Final Semester Study Guide</h1>
+      <button id="restartBtnSummary" class="btn primary hidden">Start Another Run</button>
+    </div>
 
     <!-- Counters (shown only during an active quiz) -->
     <div id="countersBox" class="hidden counters" aria-live="polite">
@@ -89,10 +92,6 @@
 
     <!-- Summary -->
     <section id="summary" class="card hidden" aria-live="polite">
-      <div class="actions" style="margin-bottom: 20px;">
-        <button id="restartBtnSummary" class="btn primary">Start Another Run</button>
-      </div>
-
       <div id="firstTrySummary" class="first-try">
         <strong>First-try mastery:</strong>
         <span id="firstTryPct">0%</span>
