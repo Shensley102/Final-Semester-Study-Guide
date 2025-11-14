@@ -22,6 +22,7 @@
    - Full-width submit button for mobile
    - Total questions answered counter
    - Color-coded wrong attempts (green/yellow/orange/red)
+   - Question counter runs continuously beyond selected number
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -176,7 +177,7 @@ let run = {
   uniqueSeen: new Set(),
   thresholdWrong: 0,
   wrongSinceLast: [],
-  totalQuestionsAnswered: 0,  // Track total questions presented
+  totalQuestionsAnswered: 0,  // Track total questions presented (including repeats)
 };
 
 /* ---------- Persistence ---------- */
@@ -462,11 +463,10 @@ function formatCorrectAnswers(q){
 
 /* ---------- Counters / Progress Bar ---------- */
 function updateCounters(){
-  const questionNum = [...run.uniqueSeen].length;
   const remaining = getNotMastered().length;
   const total = run.masterPool.length;
 
-  runCounter.textContent = `Question: ${questionNum}`;
+  runCounter.textContent = `Question: ${run.totalQuestionsAnswered}`;
   remainingCounter.textContent = `Remaining to master: ${remaining}`;
 
   const masteredCount = total - remaining;
@@ -557,7 +557,7 @@ async function startQuiz(){
     uniqueSeen: new Set(),
     thresholdWrong: 0,
     wrongSinceLast: [],
-    totalQuestionsAnswered: 0,
+    totalQuestionsAnswered: 1,
   };
 
   const total = run.masterPool.length;
@@ -573,7 +573,6 @@ async function startQuiz(){
 
   const q0 = run.order[0];
   run.uniqueSeen.add(q0.id);
-  run.totalQuestionsAnswered = 1;
   renderQuestion(q0);
   updateCounters();
 
