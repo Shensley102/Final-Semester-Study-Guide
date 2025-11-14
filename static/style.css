@@ -167,6 +167,12 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
 .btn.btn-blue{ background: var(--primary); color:#fff; }
 .btn.danger{ background:#fff; color: var(--danger); border-color: var(--danger); }
 
+/* Full-width submit button */
+#submitBtn{
+  width: 100%;
+  min-width: unset;
+}
+
 /* Actions rows */
 .actions{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
 
