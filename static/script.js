@@ -636,7 +636,7 @@ form.addEventListener('change', onSelectionChanged);
 
 /* Single action button (Submit or Next) */
 submitBtn.addEventListener('click', () => {
-  if (submitBtn.data-mode === 'next') {
+  if (submitBtn.dataset.mode === 'next') {
     scrollToQuizTop();
     const next = nextIndex();
     const q = next.q;
