@@ -17,6 +17,7 @@
    - Shows wrong count in review
    - Supports CCRN test files
    - Start Another Run button on same line as title
+   - Smart hover behavior for answer options
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -308,6 +309,23 @@ function shuffleQuestionOptions(q){
   };
 }
 
+/* ---------- Update hover classes based on selection state ---------- */
+function updateHoverClasses(){
+  const hasSelection = getUserLetters().length > 0;
+  const isMultiSelect = form.querySelector('input[type="checkbox"]') !== null;
+  
+  if (hasSelection && !isMultiSelect) {
+    form.classList.add('has-selection');
+    form.classList.remove('is-multi-select');
+  } else if (isMultiSelect) {
+    form.classList.add('is-multi-select');
+    form.classList.remove('has-selection');
+  } else {
+    form.classList.remove('has-selection');
+    form.classList.remove('is-multi-select');
+  }
+}
+
 /* ---------- Populate modules (dropdown) ---------- */
 async function initModules(){
   try {
@@ -386,6 +404,7 @@ function renderQuestion(q){
   });
 
   setActionState('submit');
+  updateHoverClasses();
 }
 
 function currentQuestion() {
@@ -400,6 +419,7 @@ function getUserLetters(){
 function onSelectionChanged(){
   const hasSelection = getUserLetters().length > 0;
   submitBtn.disabled = !hasSelection;
+  updateHoverClasses();
 }
 
 function setActionState(mode){
