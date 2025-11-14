@@ -14,11 +14,13 @@
    - Mouse click and keyboard toggle selection/deselection
    - Summary sorted by most-wrong questions first
    - Quiz continues until all questions are correct
-   - Shows wrong count in review
+   - Shows wrong count in review with red box
    - Supports CCRN test files
    - Start Another Run button on same line as title
    - Smart hover behavior for answer options
    - Enter key works with both mouse and keyboard selections
+   - Full-width submit button for mobile
+   - Total questions answered counter
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -173,6 +175,7 @@ let run = {
   uniqueSeen: new Set(),
   thresholdWrong: 0,
   wrongSinceLast: [],
+  totalQuestionsAnswered: 0,  // Track total questions presented
 };
 
 /* ---------- Persistence ---------- */
@@ -190,6 +193,7 @@ function serializeRun() {
     uniqueSeen: Array.from(run.uniqueSeen),
     thresholdWrong: run.thresholdWrong,
     wrongSinceLast: run.wrongSinceLast.map(q => q.id),
+    totalQuestionsAnswered: run.totalQuestionsAnswered,
     title: pageTitle?.textContent || defaultTitle,
   });
 }
@@ -218,6 +222,7 @@ function loadRunState() {
       uniqueSeen: new Set(Array.isArray(data.uniqueSeen)?data.uniqueSeen:[]),
       thresholdWrong: Math.max(1, parseInt(data.thresholdWrong||1,10)),
       wrongSinceLast: (data.wrongSinceLast||[]).map(idToQ).filter(Boolean),
+      totalQuestionsAnswered: Math.max(0, parseInt(data.totalQuestionsAnswered||0,10)),
     };
     return { run: restored, title: data.title || defaultTitle };
   } catch { return null; }
@@ -543,6 +548,7 @@ async function startQuiz(){
     uniqueSeen: new Set(),
     thresholdWrong: 0,
     wrongSinceLast: [],
+    totalQuestionsAnswered: 0,
   };
 
   const total = run.masterPool.length;
@@ -558,6 +564,7 @@ async function startQuiz(){
 
   const q0 = run.order[0];
   run.uniqueSeen.add(q0.id);
+  run.totalQuestionsAnswered = 1;
   renderQuestion(q0);
   updateCounters();
 
@@ -583,9 +590,23 @@ function endRun(){
 
   if (totalUnique > 0){
     firstTrySummary.classList.remove('hidden');
-    firstTryPct.textContent = `${Math.round((ftCorrect / totalUnique) * 100)}%`;
-    firstTryCount.textContent = ftCorrect;
-    firstTryTotal.textContent = totalUnique;
+    const summaryHTML = `
+      <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center;">
+        <div>
+          <strong>First-try mastery:</strong>
+          <span id="firstTryPct">0%</span>
+          (<span id="firstTryCount">0</span> / <span id="firstTryTotal">0</span>)
+        </div>
+        <div>
+          <strong>Total Questions Answered:</strong>
+          <span>${run.totalQuestionsAnswered}</span>
+        </div>
+      </div>
+    `;
+    firstTrySummary.innerHTML = summaryHTML;
+    firstTrySummary.querySelector('#firstTryPct').textContent = `${Math.round((ftCorrect / totalUnique) * 100)}%`;
+    firstTrySummary.querySelector('#firstTryCount').textContent = ftCorrect;
+    firstTrySummary.querySelector('#firstTryTotal').textContent = totalUnique;
   } else {
     firstTrySummary.classList.add('hidden');
   }
@@ -669,6 +690,7 @@ function handleSubmitClick() {
     const q = next.q;
     if (!q) return endRun();
     run.uniqueSeen.add(q.id);
+    run.totalQuestionsAnswered++;
     renderQuestion(q);
     updateCounters();
     return;
