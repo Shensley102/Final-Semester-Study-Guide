@@ -16,6 +16,7 @@
    - Quiz continues until all questions are correct
    - Shows wrong count in review
    - Supports CCRN test files
+   - Start Another Run button on same line as title
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -549,6 +550,9 @@ function endRun(){
 
   setHeaderTitle(run.displayName || run.bank || defaultTitle);
   document.title = run.displayName || run.bank || 'Final Semester Study Guide';
+
+  // Show the restart button
+  restartBtn2.classList.remove('hidden');
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
