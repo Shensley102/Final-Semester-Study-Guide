@@ -14,13 +14,14 @@
    - Mouse click and keyboard toggle selection/deselection
    - Summary sorted by most-wrong questions first
    - Quiz continues until all questions are correct
-   - Shows wrong count in review with red box
+   - Shows wrong count in review with color coding
    - Supports CCRN test files
    - Start Another Run button on same line as title
    - Smart hover behavior for answer options
    - Enter key works with both mouse and keyboard selections
    - Full-width submit button for mobile
    - Total questions answered counter
+   - Color-coded wrong attempts (green/yellow/orange/red)
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -332,6 +333,14 @@ function updateHoverClasses(){
   }
 }
 
+/* ---------- Get color class for wrong count ---------- */
+function getColorClass(wrongCount, maxWrong) {
+  if (wrongCount === 0) return ''; // green (default)
+  if (wrongCount <= maxWrong * 0.33) return 'yellow';
+  if (wrongCount <= maxWrong * 0.66) return 'orange';
+  return 'red';
+}
+
 /* ---------- Populate modules (dropdown) ---------- */
 async function initModules(){
   try {
@@ -619,6 +628,9 @@ function endRun(){
     questionWrongCount[q.id] = (questionWrongCount[q.id] || 0) + 1;
   });
   
+  // Find max wrong count for color calculation
+  const maxWrong = Math.max(...Object.values(questionWrongCount));
+  
   // Sort questions: incorrect ones first (by number of wrong attempts), then correct ones
   const sortedQuestions = [...run.order].sort((a, b) => {
     const ansA = run.answered.get(a.id);
@@ -649,11 +661,17 @@ function endRun(){
 
     const qEl = document.createElement('div'); qEl.className = 'rev-q'; qEl.textContent = q.stem;
     
-    // Add wrong count line
+    // Add wrong count line with color coding
     const wrongCountEl = document.createElement('div'); 
     wrongCountEl.className = 'rev-wrong-count';
     const wrongCount = Math.max(0, questionWrongCount[q.id] - 1); // Subtract 1 because the correct attempt is also in the count
-    wrongCountEl.innerHTML = `<strong>Times marked wrong:</strong> ${wrongCount}`;
+    wrongCountEl.textContent = `Times marked wrong: ${wrongCount}`;
+    
+    // Add color class based on wrong count
+    const colorClass = getColorClass(wrongCount, maxWrong);
+    if (colorClass) {
+      wrongCountEl.classList.add(colorClass);
+    }
     
     const caEl = document.createElement('div'); caEl.className = 'rev-ans';
     caEl.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
