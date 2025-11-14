@@ -192,7 +192,10 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
   transition: border-color .15s ease, background-color .15s ease, box-shadow .15s ease;
   cursor: pointer;
 }
-.opt:hover{
+
+/* Hover only when no option is selected or in multi-select mode */
+.options:not(.has-selection) .opt:hover,
+.options.is-multi-select .opt:hover {
   border-color: var(--success);
   background-color: #f9fdf6;
 }
@@ -226,8 +229,10 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
 }
 
 /* Hover state for checkbox/radio */
-.opt input[type="radio"]:hover,
-.opt input[type="checkbox"]:hover {
+.options:not(.has-selection) .opt input[type="radio"]:hover,
+.options:not(.has-selection) .opt input[type="checkbox"]:hover,
+.options.is-multi-select .opt input[type="radio"]:hover,
+.options.is-multi-select .opt input[type="checkbox"]:hover {
   border-color: var(--success);
   box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
 }
