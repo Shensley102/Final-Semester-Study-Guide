@@ -18,6 +18,7 @@
    - Supports CCRN test files
    - Start Another Run button on same line as title
    - Smart hover behavior for answer options
+   - Enter key works with both mouse and keyboard selections
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -659,7 +660,9 @@ startBtn.addEventListener('click', startQuiz);
 form.addEventListener('change', onSelectionChanged);
 
 /* Single action button (Submit or Next) */
-submitBtn.addEventListener('click', () => {
+submitBtn.addEventListener('click', handleSubmitClick);
+
+function handleSubmitClick() {
   if (submitBtn.dataset.mode === 'next') {
     scrollToQuizTop();
     const next = nextIndex();
@@ -707,7 +710,7 @@ submitBtn.addEventListener('click', () => {
 
   scrollToBottomSmooth();
   updateCounters();
-});
+}
 
 /* Reset (visible only during quiz) */
 resetAll.addEventListener('click', () => { clearSavedState(); location.reload(); });
@@ -726,7 +729,7 @@ document.addEventListener('keydown', (e) => {
 
   if (key === 'Enter') {
     e.preventDefault();
-    if (!submitBtn.disabled || submitBtn.dataset.mode === 'next') {
+    if (!submitBtn.disabled) {
       submitBtn.click();
     }
     return;
