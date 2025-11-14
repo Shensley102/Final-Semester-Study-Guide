@@ -4,6 +4,8 @@
        Pharm_Quiz_1..4                   -> Pharm Quiz 1..4
        Learning_Questions_Module_1_2     -> Learning Questions Module 1 and 2
        Learning_Questions_Module_3_4     -> Learning Questions Module 3 and 4
+       CCRN_Test_1_Combined_QA           -> CCRN Test 1
+       CCRN_Test_2_Combined_QA           -> CCRN Test 2
        ...also tolerates variants/typos (spaces, underscores, "Moduele", etc.)
    - Single action button: Submit (green) ➜ Next (blue)
    - Full-width hashed progress bar; reduced jitter (snap to quiz top)
@@ -13,6 +15,7 @@
    - Summary sorted by most-wrong questions first
    - Quiz continues until all questions are correct
    - Shows wrong count in review
+   - Supports CCRN test files
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -103,6 +106,12 @@ function prettifyModuleName(name) {
     const cleaned = normalized.replace(/_/g, ' ');
     const m = /^Learning\s+Questions?\s+Module\s+(\d+)\s+(\d+)$/i.exec(cleaned);
     if (m) return `Learning Questions Module ${m[1]} and ${m[2]}`;
+  }
+
+  // CCRN Test pattern (e.g., CCRN_Test_1_Combined_QA -> CCRN Test 1)
+  {
+    const m = /^CCRN[_\s]+Test[_\s]+(\d+)/i.exec(normalized.replace(/_/g, ' '));
+    if (m) return `CCRN Test ${m[1]}`;
   }
 
   // Fallback: replace underscores with spaces
@@ -627,7 +636,7 @@ form.addEventListener('change', onSelectionChanged);
 
 /* Single action button (Submit or Next) */
 submitBtn.addEventListener('click', () => {
-  if (submitBtn.dataset.mode === 'next') {
+  if (submitBtn.data-mode === 'next') {
     scrollToQuizTop();
     const next = nextIndex();
     const q = next.q;
