@@ -24,7 +24,7 @@
 
 ---
 
-## 6. **requirements.txt** (root)
+## **requirements.txt** (root)
 ```
 Flask==3.0.0
 werkzeug==3.0.1
@@ -36,22 +36,6 @@ gunicorn==21.2.0
 
 ---
 
-## 7. **.gitattributes** (root)
+## **.gitattributes** (root)
 ```
 * text=auto
-```
-
----
-
-## Directory Structure
-```
-Final-Semester-Study-Guide/
-├── study_tool.py              (Flask backend - uses 'template' folder)
-├── requirements.txt           (Python dependencies)
-├── vercel.json               (Vercel configuration)
-├── .gitattributes            (Git configuration)
-├── static/
-│   ├── script.js             (Frontend JavaScript)
-│   └── style.css             (Frontend CSS)
-└── template/
-    └── index.html            (Main HTML)
