@@ -55,6 +55,18 @@ h1{
   font-size: clamp(28px, 4.5vw, 44px);
 }
 
+h2{
+  margin: 0;
+  font-weight: 700;
+  font-size: clamp(20px, 3vw, 28px);
+}
+
+h3{
+  margin: 0 0 12px 0;
+  font-weight: 700;
+  font-size: 18px;
+}
+
 /* ===== Cards ===== */
 .card{
   background: var(--card);
@@ -316,8 +328,8 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
 }
 
 /* ===== Summary ===== */
-.first-try{ display:flex; gap:20px; align-items:center; margin-bottom:12px; flex-wrap:wrap; }
-.review-list{ display:grid; gap:12px; }
+.first-try{ display:flex; gap:20px; align-items:center; margin-bottom:12px; flex-wrap:wrap; margin-top:16px; }
+.review-list{ display:grid; gap:12px; margin-top:16px; }
 .rev-item{
   border: 1px solid var(--border);
   border-radius: 12px;
