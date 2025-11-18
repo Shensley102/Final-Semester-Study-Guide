@@ -1,6 +1,7 @@
-from flask import Flask, render_template, jsonify, send_from_directory
+from flask import Flask, render_template, jsonify, send_from_directory, request
 import os
 import json
+from urllib.parse import unquote
 
 app = Flask(__name__, static_folder='static', template_folder='template')
 
@@ -49,14 +50,6 @@ STUDY_CATEGORIES = {
     }
 }
 
-# Create a normalized lookup dictionary for category matching
-CATEGORY_LOOKUP = {key.lower().replace(' ', ''): key for key in STUDY_CATEGORIES.keys()}
-
-
-def normalize_category_name(name):
-    """Normalize category name for consistent lookup"""
-    return name.lower().replace(' ', '').strip()
-
 
 def get_available_modules():
     """Scan for all .json files in the modules directory"""
@@ -72,6 +65,20 @@ def get_available_modules():
     return modules
 
 
+def find_category(category_name):
+    """Find category by exact match (case-insensitive)"""
+    # First try exact match
+    if category_name in STUDY_CATEGORIES:
+        return category_name
+    
+    # Then try case-insensitive match
+    for key in STUDY_CATEGORIES.keys():
+        if key.lower() == category_name.lower():
+            return key
+    
+    return None
+
+
 # Routes
 @app.route('/')
 def home():
@@ -82,9 +89,11 @@ def home():
 @app.route('/category/<path:category>')
 def category_page(category):
     """CATEGORY PAGE - Shows all quizzes in a category"""
-    # Normalize the incoming category name for lookup
-    normalized = normalize_category_name(category)
-    actual_category = CATEGORY_LOOKUP.get(normalized)
+    # Decode URL-encoded category name
+    decoded_category = unquote(category)
+    
+    # Find the actual category name
+    actual_category = find_category(decoded_category)
     
     if not actual_category:
         return jsonify({'error': 'Category not found'}), 404
@@ -108,9 +117,11 @@ def get_categories():
 @app.route('/api/category/<path:category>/modules')
 def get_category_modules(category):
     """Return only modules for a specific category"""
-    # Normalize the incoming category name for lookup
-    normalized = normalize_category_name(category)
-    actual_category = CATEGORY_LOOKUP.get(normalized)
+    # Decode URL-encoded category name
+    decoded_category = unquote(category)
+    
+    # Find the actual category name
+    actual_category = find_category(decoded_category)
     
     if not actual_category:
         return jsonify({'error': 'Category not found'}), 404
