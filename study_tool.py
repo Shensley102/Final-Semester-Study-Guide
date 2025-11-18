@@ -4,18 +4,58 @@ import json
 
 app = Flask(__name__, static_folder='static', template_folder='template')
 
-# Get the directory where this file is located
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODULES_DIR = BASE_DIR
 
+# Study categories and their modules
+STUDY_CATEGORIES = {
+    'Patient Care Management': {
+        'display_name': 'Patient Care Management',
+        'icon': '👥',
+        'modules': [
+            'Module_1',
+            'Module_2',
+            'Module_3',
+            'Module_4',
+            'Learning_Questions_Module_1_2',
+            'Learning_Questions_Module_3_4'
+        ]
+    },
+    'HESI': {
+        'display_name': 'HESI',
+        'icon': '📋',
+        'modules': [
+            'Hesi_Management'
+        ]
+    },
+    'Nursing Certifications': {
+        'display_name': 'Nursing Certifications',
+        'icon': '🏆',
+        'modules': [
+            'CCRN_Test_1_Combined_QA',
+            'CCRN_Test_2_Combined_QA',
+            'CCRN_Test_3_Combined_QA'
+        ]
+    },
+    'Pharmacology': {
+        'display_name': 'Pharmacology',
+        'icon': '💊',
+        'modules': [
+            'Pharm_Quiz_1',
+            'Pharm_Quiz_2',
+            'Pharm_Quiz_3',
+            'Pharm_Quiz_4'
+        ]
+    }
+}
+
 
 def get_available_modules():
-    """Scan for all .json files in the modules directory (excluding node_modules, venv, etc.)"""
+    """Scan for all .json files in the modules directory"""
     modules = []
     try:
         for filename in os.listdir(MODULES_DIR):
             if filename.endswith('.json') and filename not in ['vercel.json']:
-                # Remove .json extension for the module name
                 module_name = filename[:-5]
                 modules.append(module_name)
         modules.sort()
@@ -24,10 +64,33 @@ def get_available_modules():
     return modules
 
 
+# Routes
 @app.route('/')
-def index():
-    """Serve the main HTML page"""
-    return render_template('index.html')
+def home():
+    """HOME PAGE - Nurse Success Study Hub"""
+    return render_template('home.html')
+
+
+@app.route('/category/<category>')
+def category_page(category):
+    """CATEGORY PAGE - Shows all quizzes in a category"""
+    if category not in STUDY_CATEGORIES:
+        return render_template('404.html'), 404
+    
+    category_data = STUDY_CATEGORIES[category]
+    return render_template('category.html', category=category, category_data=category_data)
+
+
+@app.route('/quiz/<module_name>')
+def quiz_page(module_name):
+    """QUIZ PAGE - The actual quiz application"""
+    return render_template('quiz.html')
+
+
+@app.route('/api/categories')
+def get_categories():
+    """API endpoint returning all categories"""
+    return jsonify(STUDY_CATEGORIES), 200
 
 
 @app.route('/modules', methods=['GET'])
