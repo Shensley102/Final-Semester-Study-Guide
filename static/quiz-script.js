@@ -213,7 +213,6 @@ function showResumeIfAny(){
   const s = loadRunState();
   const resumeContainer = document.getElementById('resumeContainer');
   
-  // Only show resume if saved state exists AND it was a full bank quiz
   if (!s || !s.run?.order?.length || !s.run?.isFullBank) {
     resumeContainer.classList.add('hidden');
     return;
@@ -221,7 +220,6 @@ function showResumeIfAny(){
   
   resumeContainer.classList.remove('hidden');
   
-  // Calculate remaining questions
   const remainingQuestions = getNotMasteredFromRun(s.run);
   const remainingCountEl = document.getElementById('remainingQuestionsCount');
   remainingCountEl.textContent = `${remainingQuestions} questions remaining`;
@@ -327,16 +325,13 @@ function getColorClass(wrongCount, maxWrong) {
 /* ---------- Populate modules (Category-specific) ---------- */
 async function initModules(){
   try {
-    // Get category from URL query parameter
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get('category');
     
-    let endpoint = '/modules'; // Default: all modules
+    let endpoint = '/modules';
     
-    // If category is specified, get only that category's modules
     if (category) {
       endpoint = `/api/category/${encodeURIComponent(category)}/modules`;
-      // Store category for reference
       document.getElementById('categoryContext').textContent = category;
     }
     
@@ -377,14 +372,12 @@ function setupCategoryDisplay() {
   if (category) {
     const icon = categoryIcons[category] || '📚';
     
-    // Update header on launcher page
     const headerRight = document.getElementById('categoryHeader');
     if (headerRight) {
       document.getElementById('categoryIcon').textContent = icon;
       document.getElementById('categoryTitle').textContent = category;
     }
     
-    // Update header on summary page
     const headerSummary = document.getElementById('categoryHeaderSummary');
     if (headerSummary) {
       document.getElementById('categoryIconSummary').textContent = icon;
@@ -555,7 +548,6 @@ async function startQuiz(){
 
   startBtn.disabled = true;
 
-  // Properly encode the bank name - don't double encode
   const jsonUrl = `/${bank}.json`;
   
   const res = await fetch(jsonUrl, { cache: 'no-store' });
@@ -688,4 +680,127 @@ function endRun(){
       wrongCountEl.classList.add(colorClass);
     }
     
-    const caEl = document.createElement('div'); caEl.c
+    const caEl = document.createElement('div'); caEl.className = 'rev-ans';
+    caEl.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
+    const rEl = document.createElement('div'); rEl.className = 'rev-rationale';
+    rEl.innerHTML = `<strong>Rationale:</strong> ${escapeHTML(q.rationale || '')}`;
+
+    row.appendChild(qEl); 
+    row.appendChild(wrongCountEl);
+    row.appendChild(caEl); 
+    row.appendChild(rEl);
+    reviewList.appendChild(row);
+  });
+
+  clearSavedState();
+}
+
+/* ---------- Event wiring ---------- */
+lengthBtns.addEventListener('click', (e) => {
+  const btn = e.target.closest('.seg-btn'); if (!btn) return;
+  lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.setAttribute('aria-pressed', b.classList.contains('active')?'true':'false'));
+});
+startBtn.addEventListener('click', startQuiz);
+form.addEventListener('change', onSelectionChanged);
+
+submitBtn.addEventListener('click', handleSubmitClick);
+
+function handleSubmitClick() {
+  if (submitBtn.dataset.mode === 'next') {
+    scrollToQuizTop();
+    const next = nextIndex();
+    const q = next.q;
+    if (!q) return endRun();
+    run.uniqueSeen.add(q.id);
+    run.totalQuestionsAnswered++;
+    renderQuestion(q);
+    updateCounters();
+    return;
+  }
+
+  const q = currentQuestion();
+  if (!q) return;
+
+  const userLetters = getUserLetters();
+  const correctLetters = (q.correctLetters || []).slice().sort();
+  const isCorrect = JSON.stringify(userLetters) === JSON.stringify(correctLetters);
+
+  recordAnswer(q, userLetters, isCorrect);
+
+  if (!isCorrect) {
+    run.wrongSinceLast.push(q);
+    if (run.wrongSinceLast.length >= run.thresholdWrong) {
+      const seen = new Set(); const uniqueBatch = [];
+      for (const item of run.wrongSinceLast) {
+        if (!seen.has(item.id)) { seen.add(item); uniqueBatch.push(item); }
+      }
+      run.wrongSinceLast = [];
+      if (uniqueBatch.length) {
+        run.order.splice(run.i + 1, 0, ...uniqueBatch);
+      }
+    }
+  }
+
+  feedback.textContent = isCorrect ? 'Correct!' : 'Incorrect';
+  feedback.classList.remove('ok','bad');
+  feedback.classList.add(isCorrect ? 'ok' : 'bad');
+
+  answerLine.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
+  rationaleBox.textContent = q.rationale || '';
+  rationaleBox.classList.remove('hidden');
+
+  form.querySelectorAll('input').forEach(i => i.disabled = true);
+  setActionState('next');
+
+  scrollToBottomSmooth();
+  updateCounters();
+}
+
+resetAll.addEventListener('click', () => { clearSavedState(); location.reload(); });
+
+restartBtn2.addEventListener('click', () => { location.reload(); });
+
+/* ---------- Keyboard shortcuts ---------- */
+document.addEventListener('keydown', (e) => {
+  if (quiz.classList.contains('hidden')) return;
+  if (isTextEditingTarget(e.target)) return;
+  if (e.altKey || e.ctrlKey || e.metaKey) return;
+
+  const key = e.key || '';
+  const upper = key.toUpperCase();
+
+  if (key === 'Enter') {
+    e.preventDefault();
+    if (!submitBtn.disabled) {
+      submitBtn.click();
+    }
+    return;
+  }
+
+  if (/^[A-Z]$/.test(upper) && submitBtn.dataset.mode === 'submit') {
+    const input = document.getElementById(`opt-${upper}`);
+    if (!input || input.disabled) return;
+    e.preventDefault();
+    input.checked = !input.checked;
+    onSelectionChanged();
+  }
+});
+
+/* ---------- Progress bar update ---------- */
+function updateProgressBar() {
+  const remaining = getNotMastered().length;
+  const total = run.masterPool.length;
+  const masteredCount = total - remaining;
+  const percentage = total ? Math.floor((masteredCount / total) * 100) : 0;
+
+  progressFill.style.width = `${percentage}%`;
+  progressLabel.textContent = `${percentage}% mastered`;
+  progressBar.setAttribute('aria-valuenow', percentage);
+}
+
+/* ---------- Init ---------- */
+setupCategoryDisplay();
+initModules();
+showResumeIfAny();
