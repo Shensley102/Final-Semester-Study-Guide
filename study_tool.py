@@ -74,10 +74,10 @@ def home():
 @app.route('/category/<category>')
 def category_page(category):
     """CATEGORY PAGE - Shows all quizzes in a category"""
-    if category not in STUDY_CATEGORIES:
-        return render_template('404.html'), 404
+    category_data = STUDY_CATEGORIES.get(category)
+    if not category_data:
+        return jsonify({'error': 'Category not found'}), 404
     
-    category_data = STUDY_CATEGORIES[category]
     return render_template('category.html', category=category, category_data=category_data)
 
 
@@ -135,12 +135,6 @@ def get_module(module_name):
         return jsonify({'error': f'Invalid JSON in module: {str(e)}'}), 500
     except Exception as e:
         return jsonify({'error': str(e)}), 500
-
-
-@app.route('/static/<path:filename>', methods=['GET'])
-def serve_static(filename):
-    """Serve static files (CSS, JS)"""
-    return send_from_directory('static', filename)
 
 
 @app.errorhandler(404)
