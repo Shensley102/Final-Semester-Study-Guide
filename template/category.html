@@ -68,6 +68,16 @@
       'Hesi_Management': 'HESI Management'
     };
 
+    // Module grouping - defines how to group modules by prefix
+    const moduleGroupings = {
+      'Nursing Certifications': {
+        'CCRN': ['CCRN_Test_1_Combined_QA', 'CCRN_Test_2_Combined_QA', 'CCRN_Test_3_Combined_QA']
+      },
+      'Pharmacology': {
+        'Pharm Quizzes': ['Pharm_Quiz_1', 'Pharm_Quiz_2', 'Pharm_Quiz_3', 'Pharm_Quiz_4']
+      }
+    };
+
     function prettifyName(name) {
       return prettyNameMap[name] || name.replace(/_/g, ' ');
     }
@@ -90,14 +100,31 @@
         document.title = `${categoryName} - Nurse Success Study Hub`;
 
         const container = document.getElementById('modulesContainer');
-        container.innerHTML = category.modules.map(moduleName => `
-          <a href="/quiz/${encodeURIComponent(moduleName)}?category=${encodeURIComponent(categoryName)}" class="module-card">
-            <div class="module-content">
-              <h3>${prettifyName(moduleName)}</h3>
-              <p class="module-action">Start Quiz →</p>
-            </div>
-          </a>
-        `).join('');
+        
+        // Check if this category has groupings
+        const groupings = moduleGroupings[categoryName];
+        
+        if (groupings) {
+          // Use grouped display
+          container.innerHTML = Object.entries(groupings).map(([groupName, modules]) => `
+            <a href="/quiz?category=${encodeURIComponent(categoryName)}&subcategory=${encodeURIComponent(groupName)}" class="module-card">
+              <div class="module-content">
+                <h3>${groupName}</h3>
+                <p class="module-action">Start Quiz →</p>
+              </div>
+            </a>
+          `).join('');
+        } else {
+          // Use individual module display (for categories without groupings)
+          container.innerHTML = category.modules.map(moduleName => `
+            <a href="/quiz/${encodeURIComponent(moduleName)}?category=${encodeURIComponent(categoryName)}" class="module-card">
+              <div class="module-content">
+                <h3>${prettifyName(moduleName)}</h3>
+                <p class="module-action">Start Quiz →</p>
+              </div>
+            </a>
+          `).join('');
+        }
       } catch (error) {
         console.error('Error loading category:', error);
         document.getElementById('modulesContainer').innerHTML = `
