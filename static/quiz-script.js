@@ -6,6 +6,7 @@
    - Progress tracking and mastery system
    - Detailed performance review
    - LocalStorage persistence for resuming quizzes
+   - Resume only works with Full Module Question Bank
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -147,6 +148,7 @@ let run = {
   thresholdWrong: 0,
   wrongSinceLast: [],
   totalQuestionsAnswered: 0,
+  isFullBank: false,
 };
 
 /* ---------- Persistence ---------- */
@@ -165,6 +167,7 @@ function serializeRun() {
     thresholdWrong: run.thresholdWrong,
     wrongSinceLast: run.wrongSinceLast.map(q => q.id),
     totalQuestionsAnswered: run.totalQuestionsAnswered,
+    isFullBank: run.isFullBank,
     title: pageTitle?.textContent || defaultTitle,
   });
 }
@@ -194,6 +197,7 @@ function loadRunState() {
       thresholdWrong: Math.max(1, parseInt(data.thresholdWrong||1,10)),
       wrongSinceLast: (data.wrongSinceLast||[]).map(idToQ).filter(Boolean),
       totalQuestionsAnswered: Math.max(0, parseInt(data.totalQuestionsAnswered||0,10)),
+      isFullBank: Boolean(data.isFullBank),
     };
     return { run: restored, title: data.title || defaultTitle };
   } catch { return null; }
@@ -202,7 +206,8 @@ function clearSavedState(){ try { localStorage.removeItem(STORAGE_KEY); } catch 
 
 function showResumeIfAny(){
   const s = loadRunState();
-  if (!s || !s.run?.order?.length) {
+  // Only show resume if saved state exists AND it was a full bank quiz
+  if (!s || !s.run?.order?.length || !s.run?.isFullBank) {
     resumeBtn.classList.add('hidden');
     return;
   }
@@ -529,6 +534,7 @@ async function startQuiz(){
   const bank = moduleSel.value;
   const displayName = prettifyModuleName(bank);
   const qty  = (lenBtn.dataset.len === 'full' ? 'full' : parseInt(lenBtn.dataset.len, 10));
+  const isFullBank = (qty === 'full');
 
   setHeaderTitle(displayName);
   document.title = `${displayName} - Nurse Success Study Hub`;
@@ -563,6 +569,7 @@ async function startQuiz(){
     thresholdWrong: 0,
     wrongSinceLast: [],
     totalQuestionsAnswered: 1,
+    isFullBank: isFullBank,
   };
 
   const total = run.masterPool.length;
