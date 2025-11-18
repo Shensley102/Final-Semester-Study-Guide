@@ -91,7 +91,7 @@
 
         const container = document.getElementById('modulesContainer');
         container.innerHTML = category.modules.map(moduleName => `
-          <a href="/quiz/${encodeURIComponent(moduleName)}" class="module-card">
+          <a href="/quiz/${encodeURIComponent(moduleName)}?category=${encodeURIComponent(categoryName)}" class="module-card">
             <div class="module-content">
               <h3>${prettifyName(moduleName)}</h3>
               <p class="module-action">Start Quiz →</p>
