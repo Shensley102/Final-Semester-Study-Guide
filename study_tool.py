@@ -18,8 +18,8 @@ STUDY_CATEGORIES = {
             'Module_2',
             'Module_3',
             'Module_4',
-            'Learning_Questions_Module_1_2_',
-            'Learning_Questions_Module_3_4_'
+            'Learning_Questions_Module_1_2',
+            'Learning_Questions_Module_3_4'
         ]
     },
     'HESI': {
