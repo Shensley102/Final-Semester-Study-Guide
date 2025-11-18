@@ -398,3 +398,52 @@ label[for="moduleSel"]{ display:inline-block; margin: 0 12px 0 0; vertical-align
   outline: none; border-color: #7aa2ff; box-shadow: 0 0 0 3px rgba(47,97,243,.25);
 }
 #moduleSel::-ms-expand{ display:none; }
+
+/* ===== Category Header on Right (Quiz Page) ===== */
+.category-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.category-icon-large {
+  font-size: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+  min-height: 80px;
+}
+
+.category-header-right h1,
+.category-header-right h2 {
+  margin: 0;
+  font-size: clamp(28px, 3vw, 44px);
+  min-width: 200px;
+}
+
+/* Responsive - stack on mobile */
+@media (max-width: 768px) {
+  .title-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .category-header-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .category-icon-large {
+    font-size: 48px;
+    min-width: 60px;
+    min-height: 60px;
+  }
+
+  .category-header-right h1,
+  .category-header-right h2 {
+    font-size: 28px;
+    min-width: auto;
+  }
+}
