@@ -7,6 +7,7 @@
    - Detailed performance review
    - LocalStorage persistence for resuming quizzes
    - Resume only works with Full Module Question Bank
+   - Shows remaining questions count on resume button
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -204,14 +205,27 @@ function loadRunState() {
 }
 function clearSavedState(){ try { localStorage.removeItem(STORAGE_KEY); } catch {} }
 
+function getNotMasteredFromRun(runData) {
+  return runData.masterPool.filter(q => !runData.answered.get(q.id)?.correct).length;
+}
+
 function showResumeIfAny(){
   const s = loadRunState();
+  const resumeContainer = document.getElementById('resumeContainer');
+  
   // Only show resume if saved state exists AND it was a full bank quiz
   if (!s || !s.run?.order?.length || !s.run?.isFullBank) {
-    resumeBtn.classList.add('hidden');
+    resumeContainer.classList.add('hidden');
     return;
   }
-  resumeBtn.classList.remove('hidden');
+  
+  resumeContainer.classList.remove('hidden');
+  
+  // Calculate remaining questions
+  const remainingQuestions = getNotMasteredFromRun(s.run);
+  const remainingCountEl = document.getElementById('remainingQuestionsCount');
+  remainingCountEl.textContent = `${remainingQuestions} questions remaining`;
+  
   resumeBtn.onclick = () => {
     run = s.run;
     setHeaderTitle(run.displayName || run.bank || defaultTitle);
@@ -674,127 +688,4 @@ function endRun(){
       wrongCountEl.classList.add(colorClass);
     }
     
-    const caEl = document.createElement('div'); caEl.className = 'rev-ans';
-    caEl.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
-    const rEl = document.createElement('div'); rEl.className = 'rev-rationale';
-    rEl.innerHTML = `<strong>Rationale:</strong> ${escapeHTML(q.rationale || '')}`;
-
-    row.appendChild(qEl); 
-    row.appendChild(wrongCountEl);
-    row.appendChild(caEl); 
-    row.appendChild(rEl);
-    reviewList.appendChild(row);
-  });
-
-  clearSavedState();
-}
-
-/* ---------- Event wiring ---------- */
-lengthBtns.addEventListener('click', (e) => {
-  const btn = e.target.closest('.seg-btn'); if (!btn) return;
-  lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.setAttribute('aria-pressed', b.classList.contains('active')?'true':'false'));
-});
-startBtn.addEventListener('click', startQuiz);
-form.addEventListener('change', onSelectionChanged);
-
-submitBtn.addEventListener('click', handleSubmitClick);
-
-function handleSubmitClick() {
-  if (submitBtn.dataset.mode === 'next') {
-    scrollToQuizTop();
-    const next = nextIndex();
-    const q = next.q;
-    if (!q) return endRun();
-    run.uniqueSeen.add(q.id);
-    run.totalQuestionsAnswered++;
-    renderQuestion(q);
-    updateCounters();
-    return;
-  }
-
-  const q = currentQuestion();
-  if (!q) return;
-
-  const userLetters = getUserLetters();
-  const correctLetters = (q.correctLetters || []).slice().sort();
-  const isCorrect = JSON.stringify(userLetters) === JSON.stringify(correctLetters);
-
-  recordAnswer(q, userLetters, isCorrect);
-
-  if (!isCorrect) {
-    run.wrongSinceLast.push(q);
-    if (run.wrongSinceLast.length >= run.thresholdWrong) {
-      const seen = new Set(); const uniqueBatch = [];
-      for (const item of run.wrongSinceLast) {
-        if (!seen.has(item.id)) { seen.add(item); uniqueBatch.push(item); }
-      }
-      run.wrongSinceLast = [];
-      if (uniqueBatch.length) {
-        run.order.splice(run.i + 1, 0, ...uniqueBatch);
-      }
-    }
-  }
-
-  feedback.textContent = isCorrect ? 'Correct!' : 'Incorrect';
-  feedback.classList.remove('ok','bad');
-  feedback.classList.add(isCorrect ? 'ok' : 'bad');
-
-  answerLine.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
-  rationaleBox.textContent = q.rationale || '';
-  rationaleBox.classList.remove('hidden');
-
-  form.querySelectorAll('input').forEach(i => i.disabled = true);
-  setActionState('next');
-
-  scrollToBottomSmooth();
-  updateCounters();
-}
-
-resetAll.addEventListener('click', () => { clearSavedState(); location.reload(); });
-
-restartBtn2.addEventListener('click', () => { location.reload(); });
-
-/* ---------- Keyboard shortcuts ---------- */
-document.addEventListener('keydown', (e) => {
-  if (quiz.classList.contains('hidden')) return;
-  if (isTextEditingTarget(e.target)) return;
-  if (e.altKey || e.ctrlKey || e.metaKey) return;
-
-  const key = e.key || '';
-  const upper = key.toUpperCase();
-
-  if (key === 'Enter') {
-    e.preventDefault();
-    if (!submitBtn.disabled) {
-      submitBtn.click();
-    }
-    return;
-  }
-
-  if (/^[A-Z]$/.test(upper) && submitBtn.dataset.mode === 'submit') {
-    const input = document.getElementById(`opt-${upper}`);
-    if (!input || input.disabled) return;
-    e.preventDefault();
-    input.checked = !input.checked;
-    onSelectionChanged();
-  }
-});
-
-/* ---------- Progress bar update ---------- */
-function updateProgressBar() {
-  const remaining = getNotMastered().length;
-  const total = run.masterPool.length;
-  const masteredCount = total - remaining;
-  const percentage = total ? Math.floor((masteredCount / total) * 100) : 0;
-
-  progressFill.style.width = `${percentage}%`;
-  progressLabel.textContent = `${percentage}% mastered`;
-  progressBar.setAttribute('aria-valuenow', percentage);
-}
-
-/* ---------- Init ---------- */
-setupCategoryDisplay();
-initModules();
-showResumeIfAny();
+    const caEl = document.createElement('div'); caEl.c
