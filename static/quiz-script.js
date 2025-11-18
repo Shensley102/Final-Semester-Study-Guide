@@ -8,6 +8,7 @@
    - LocalStorage persistence for resuming quizzes
    - Resume only works with Full Module Question Bank
    - Shows remaining questions count on resume button
+   - Subcategory filtering for grouped modules
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -327,6 +328,7 @@ async function initModules(){
   try {
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get('category');
+    const subcategory = urlParams.get('subcategory');
     
     let endpoint = '/modules';
     
@@ -338,7 +340,24 @@ async function initModules(){
     const res = await fetch(endpoint, { cache: 'no-store' });
     if (!res.ok) throw new Error('Failed to load modules');
     const json = await res.json();
-    const modules = Array.isArray(json.modules) ? json.modules : [];
+    let modules = Array.isArray(json.modules) ? json.modules : [];
+
+    // Filter modules by subcategory if provided
+    if (subcategory) {
+      const moduleGroupings = {
+        'Nursing Certifications': {
+          'CCRN': ['CCRN_Test_1_Combined_QA', 'CCRN_Test_2_Combined_QA', 'CCRN_Test_3_Combined_QA']
+        },
+        'Pharmacology': {
+          'Pharm Quizzes': ['Pharm_Quiz_1', 'Pharm_Quiz_2', 'Pharm_Quiz_3', 'Pharm_Quiz_4']
+        }
+      };
+      
+      if (moduleGroupings[category] && moduleGroupings[category][subcategory]) {
+        const allowedModules = moduleGroupings[category][subcategory];
+        modules = modules.filter(m => allowedModules.includes(m));
+      }
+    }
 
     moduleSel.innerHTML = '';
     if (!modules.length) {
