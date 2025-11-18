@@ -49,6 +49,14 @@ STUDY_CATEGORIES = {
     }
 }
 
+# Create a normalized lookup dictionary for category matching
+CATEGORY_LOOKUP = {key.lower().replace(' ', ''): key for key in STUDY_CATEGORIES.keys()}
+
+
+def normalize_category_name(name):
+    """Normalize category name for consistent lookup"""
+    return name.lower().replace(' ', '').strip()
+
 
 def get_available_modules():
     """Scan for all .json files in the modules directory"""
@@ -71,14 +79,18 @@ def home():
     return render_template('home.html')
 
 
-@app.route('/category/<category>')
+@app.route('/category/<path:category>')
 def category_page(category):
     """CATEGORY PAGE - Shows all quizzes in a category"""
-    category_data = STUDY_CATEGORIES.get(category)
-    if not category_data:
+    # Normalize the incoming category name for lookup
+    normalized = normalize_category_name(category)
+    actual_category = CATEGORY_LOOKUP.get(normalized)
+    
+    if not actual_category:
         return jsonify({'error': 'Category not found'}), 404
     
-    return render_template('category.html', category=category, category_data=category_data)
+    category_data = STUDY_CATEGORIES[actual_category]
+    return render_template('category.html', category=actual_category, category_data=category_data)
 
 
 @app.route('/quiz/<module_name>')
@@ -93,15 +105,19 @@ def get_categories():
     return jsonify(STUDY_CATEGORIES), 200
 
 
-@app.route('/api/category/<category>/modules')
+@app.route('/api/category/<path:category>/modules')
 def get_category_modules(category):
     """Return only modules for a specific category"""
-    if category not in STUDY_CATEGORIES:
+    # Normalize the incoming category name for lookup
+    normalized = normalize_category_name(category)
+    actual_category = CATEGORY_LOOKUP.get(normalized)
+    
+    if not actual_category:
         return jsonify({'error': 'Category not found'}), 404
     
-    category_data = STUDY_CATEGORIES[category]
+    category_data = STUDY_CATEGORIES[actual_category]
     modules = category_data.get('modules', [])
-    return jsonify({'modules': modules, 'category': category}), 200
+    return jsonify({'modules': modules, 'category': actual_category}), 200
 
 
 @app.route('/modules', methods=['GET'])
