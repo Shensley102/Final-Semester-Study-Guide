@@ -7,9 +7,9 @@ html { scroll-behavior: auto; }
   --card:#fff;
   --ink:#0b1320;
   --ink-soft:#4a5568;
-  --primary:#2f61f3;      /* blue for Next state */
-  --danger:#d33a2c;       /* red for errors / Reset outline */
-  --success:#22c55e;      /* green for success / progress bar */
+  --primary:#2f61f3;
+  --danger:#d33a2c;
+  --success:#22c55e;
   --ring:#cdd9ff;
   --border:#e7eaf3;
 
@@ -17,7 +17,6 @@ html { scroll-behavior: auto; }
   --shadow-sm:0 1px 2px rgba(16,24,40,.06);
   --shadow-md:0 4px 10px rgba(16,24,40,.08);
 
-  /* Progress bar segment settings */
   --tick: 16px;
   --tick-line: 2px;
 }
@@ -103,9 +102,8 @@ h3{
   overflow:hidden;
   border:1px solid var(--border);
   box-shadow: var(--shadow-sm);
-  background:#e9edf8; /* base track color */
+  background:#e9edf8;
 }
-/* Track hash marks (visible at 0%) */
 .pbar::before{
   content:"";
   position:absolute;
@@ -126,7 +124,6 @@ h3{
   transition: width .25s ease;
   border-radius: inherit;
 }
-/* Fill hash marks (overlay on green) */
 .pbar-fill::after{
   content:"";
   position:absolute;
@@ -189,7 +186,6 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
 .actions{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
 
 /* ===== Question / Options ===== */
-/* Open Sans, slightly smaller, normal weight */
 .question{
   font-family: 'Open Sans', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
   font-size: clamp(18px, 2.4vw, 26px);
@@ -211,21 +207,18 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
   cursor: pointer;
 }
 
-/* Hover only when no option is selected or in multi-select mode */
 .options:not(.has-selection) .opt:hover,
 .options.is-multi-select .opt:hover {
   border-color: var(--success);
   background-color: #f9fdf6;
 }
 
-/* Highlight entire box when input is checked */
 .opt:has(input:checked){
   border-color: var(--success);
   background-color: #f0fde8;
   box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
 }
 
-/* Modern custom checkbox and radio styling */
 .opt input[type="radio"],
 .opt input[type="checkbox"]{
   appearance: none;
@@ -246,7 +239,6 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
   accent-color: var(--primary);
 }
 
-/* Hover state for checkbox/radio */
 .options:not(.has-selection) .opt input[type="radio"]:hover,
 .options:not(.has-selection) .opt input[type="checkbox"]:hover,
 .options.is-multi-select .opt input[type="radio"]:hover,
@@ -255,7 +247,6 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
   box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
 }
 
-/* Checked state for checkbox/radio */
 .opt input[type="radio"]:checked,
 .opt input[type="checkbox"]:checked {
   background-color: var(--success);
@@ -263,7 +254,6 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
   box-shadow: inset 0 0 0 2px #fff;
 }
 
-/* Checked checkmark appearance */
 .opt input[type="checkbox"]:checked::after {
   content: '✓';
   color: #fff;
@@ -275,7 +265,6 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
   justify-content: center;
 }
 
-/* Radio button checked state */
 .opt input[type="radio"]:checked::after {
   content: '';
   position: absolute;
@@ -285,7 +274,6 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
   border-radius: 50%;
 }
 
-/* Disabled state */
 .opt input:disabled {
   opacity: 0.6;
   cursor: not-allowed;
@@ -375,10 +363,6 @@ label{ display:block; font-weight:600; margin-bottom:8px; color:var(--ink-soft);
 .help h3{ margin:6px 0 10px; color: var(--ink); }
 .help ul{ margin:0; padding-inline-start: 18px; display:grid; gap:6px; }
 .help li{ line-height:1.45; }
-kbd, .kbd{
-  font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  font-size:.9em; background:#fff; border:1px solid var(--border); border-radius:6px; padding:1px 6px;
-}
 
 /* Focus ring */
 button:focus-visible, .select:focus-visible, input:focus-visible{
