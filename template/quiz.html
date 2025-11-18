@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nurse Success Study Hub - Interactive Quiz Application">
+  <title>Quiz - Nurse Success Study Hub</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Vercel Analytics -->
+  <script defer src="https://cdn.vercel-analytics.com/v1/web.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Title bar -->
+    <div class="title-bar">
+      <a href="/" class="back-link">← Nurse Success Study Hub</a>
+      <h1 id="pageTitle">Quiz</h1>
+      <button id="resumeBtn" class="btn btn-blue hidden">Resume Last Quiz</button>
+    </div>
+
+    <!-- Launcher / Module Selector -->
+    <div id="launcher" class="card">
+      <div class="field">
+        <label for="moduleSel">Select a Study Module:</label>
+        <select id="moduleSel" required></select>
+      </div>
+
+      <div class="field">
+        <label>How many questions?</label>
+        <div class="seg" id="lengthBtns">
+          <button type="button" class="seg-btn" data-len="10">10 Questions</button>
+          <button type="button" class="seg-btn" data-len="25">25 Questions</button>
+          <button type="button" class="seg-btn" data-len="50">50 Questions</button>
+          <button type="button" class="seg-btn" data-len="100">100 Questions</button>
+          <button type="button" class="seg-btn" data-len="full">Full Module Question Bank</button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button id="startBtn" class="btn primary">Start Quiz</button>
+      </div>
+
+      <!-- How it Works Section -->
+      <div class="help">
+        <h3>How This Quiz Works</h3>
+        <ul>
+          <li><strong>Keyboard Shortcuts:</strong> Press letter keys (A, B, C, D, etc.) to select/deselect answers, or press Enter to submit your answer.</li>
+          <li><strong>Master Each Question:</strong> The quiz continues until you answer every question correctly on first try or after additional attempts.</li>
+          <li><strong>Repeat Incorrect Answers:</strong> Questions you answer incorrectly will appear again later in the quiz for you to master.</li>
+          <li><strong>Track Your Progress:</strong> The progress bar shows what percentage of questions you've mastered (answered correctly).</li>
+          <li><strong>First-Try Accuracy:</strong> At the end, you'll see your first-try mastery percentage and total questions answered.</li>
+          <li><strong>Review Your Performance:</strong> After completing the quiz, you'll see a detailed review of all questions with your answers and rationales.</li>
+          <li><strong>Color-Coded Results:</strong> Questions are marked by difficulty (green = mastered, yellow/orange/red = more attempts needed).</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Counters (visible during quiz) -->
+    <div id="countersBox" class="card hidden">
+      <div class="counters">
+        <div class="count-row">
+          <span id="runCounter">Question: 0</span>
+          <span id="remainingCounter">Remaining to master: 0</span>
+          <button id="resetAll" class="btn danger hidden">Reset & Start Over</button>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="pbar-wrap">
+        <div class="pbar" id="progressBar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div class="pbar-fill" id="progressFill"></div>
+        </div>
+        <span class="pbar-label" id="progressLabel">0% mastered</span>
+      </div>
+    </div>
+
+    <!-- Quiz Card -->
+    <div id="quiz" class="card hidden">
+      <div class="question" id="questionText"></div>
+
+      <form id="optionsForm" class="options"></form>
+
+      <div id="feedback" class="feedback"></div>
+      <div id="answerLine" class="answer-line"></div>
+      <div id="rationale" class="rationale hidden"></div>
+
+      <div class="actions">
+        <button id="submitBtn" class="btn primary" data-mode="submit" disabled>Submit</button>
+      </div>
+    </div>
+
+    <!-- Summary Card -->
+    <div id="summary" class="card hidden">
+      <!-- Title bar with Start Another Run button -->
+      <div class="title-bar">
+        <a href="/" class="back-link">← Nurse Success Study Hub</a>
+        <h2 style="margin: 0;">Quiz Summary</h2>
+        <button id="restartBtnSummary" class="btn primary hidden">Start Another Run</button>
+      </div>
+
+      <div id="firstTrySummary" class="first-try hidden"></div>
+
+      <h3>Review</h3>
+      <div id="reviewList" class="review-list"></div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript -->
+  <script src="/static/quiz-script.js"></script>
+</body>
+</html>
