@@ -1,6 +1,7 @@
 /* -----------------------------------------------------------
    Nurse Success Study Hub - Quiz Application
    - Complete quiz functionality with module selection
+   - Category-specific module filtering
    - Keyboard shortcuts support
    - Progress tracking and mastery system
    - Detailed performance review
@@ -304,10 +305,23 @@ function getColorClass(wrongCount, maxWrong) {
   return 'red';
 }
 
-/* ---------- Populate modules ---------- */
+/* ---------- Populate modules (Category-specific) ---------- */
 async function initModules(){
   try {
-    const res = await fetch('/modules', { cache: 'no-store' });
+    // Get category from URL query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const category = urlParams.get('category');
+    
+    let endpoint = '/modules'; // Default: all modules
+    
+    // If category is specified, get only that category's modules
+    if (category) {
+      endpoint = `/api/category/${encodeURIComponent(category)}/modules`;
+      // Store category for reference
+      document.getElementById('categoryContext').textContent = category;
+    }
+    
+    const res = await fetch(endpoint, { cache: 'no-store' });
     if (!res.ok) throw new Error('Failed to load modules');
     const json = await res.json();
     const modules = Array.isArray(json.modules) ? json.modules : [];
