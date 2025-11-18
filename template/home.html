@@ -56,6 +56,9 @@
       'Pharmacology': '💊'
     };
 
+    // Categories that skip the middle category page and go straight to quiz
+    const skipCategoryPage = ['Patient Care Management', 'HESI'];
+
     async function loadCategories() {
       try {
         const res = await fetch('/api/categories');
@@ -69,11 +72,26 @@
           const color = categoryColors[key] || '#2f61f3';
           const moduleCount = data.modules.length;
           
+          // Determine the link based on whether we skip the category page
+          let href;
+          if (skipCategoryPage.includes(key)) {
+            // For HESI: go to the single module directly
+            if (key === 'HESI') {
+              href = `/quiz/Hesi_Management?category=${encodeURIComponent(key)}`;
+            }
+            // For Patient Care Management: go to quiz with category (module dropdown will show)
+            else if (key === 'Patient Care Management') {
+              href = `/quiz?category=${encodeURIComponent(key)}`;
+            }
+          } else {
+            // For other categories: go to category page first
+            href = `/category/${encodeURIComponent(key)}`;
+          }
+          
           return `
-            <a href="/category/${encodeURIComponent(key)}" class="category-card" style="--accent-color: ${color}">
+            <a href="${href}" class="category-card" style="--accent-color: ${color}">
               <div class="category-icon">${icon}</div>
               <h2>${key}</h2>
-              <p class="module-count">${moduleCount} ${moduleCount === 1 ? 'Module' : 'Modules'}</p>
               <div class="card-arrow">→</div>
             </a>
           `;
