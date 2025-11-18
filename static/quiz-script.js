@@ -535,7 +535,10 @@ async function startQuiz(){
 
   startBtn.disabled = true;
 
-  const res = await fetch(`/${encodeURIComponent(bank)}.json`, { cache: 'no-store' });
+  // Properly encode the bank name - don't double encode
+  const jsonUrl = `/${bank}.json`;
+  
+  const res = await fetch(jsonUrl, { cache: 'no-store' });
   if (!res.ok) {
     alert(`Could not load ${bank}.json`);
     startBtn.disabled = false;
