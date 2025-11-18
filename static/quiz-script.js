@@ -343,6 +343,37 @@ async function initModules(){
   }
 }
 
+/* ---------- Category Display Setup ---------- */
+function setupCategoryDisplay() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const category = urlParams.get('category');
+  
+  const categoryIcons = {
+    'Patient Care Management': '👥',
+    'HESI': '📋',
+    'Nursing Certifications': '🏆',
+    'Pharmacology': '💊'
+  };
+
+  if (category) {
+    const icon = categoryIcons[category] || '📚';
+    
+    // Update header on launcher page
+    const headerRight = document.getElementById('categoryHeader');
+    if (headerRight) {
+      document.getElementById('categoryIcon').textContent = icon;
+      document.getElementById('categoryTitle').textContent = category;
+    }
+    
+    // Update header on summary page
+    const headerSummary = document.getElementById('categoryHeaderSummary');
+    if (headerSummary) {
+      document.getElementById('categoryIconSummary').textContent = icon;
+      document.getElementById('summaryTitle').textContent = category;
+    }
+  }
+}
+
 /* ---------- Render Question ---------- */
 function renderQuestion(q){
   qText.textContent = q.stem;
@@ -754,5 +785,6 @@ function updateProgressBar() {
 }
 
 /* ---------- Init ---------- */
+setupCategoryDisplay();
 initModules();
 showResumeIfAny();
