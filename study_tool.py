@@ -52,17 +52,11 @@ STUDY_CATEGORIES = {
 
 
 def get_available_modules():
-    """Scan for all .json files in the modules directory"""
-    modules = []
-    try:
-        for filename in os.listdir(MODULES_DIR):
-            if filename.endswith('.json') and filename not in ['vercel.json']:
-                module_name = filename[:-5]
-                modules.append(module_name)
-        modules.sort()
-    except Exception as e:
-        print(f"Error scanning modules: {e}")
-    return modules
+    """Return all modules from all categories"""
+    all_modules = []
+    for category_data in STUDY_CATEGORIES.values():
+        all_modules.extend(category_data.get('modules', []))
+    return sorted(list(set(all_modules)))
 
 
 def find_category(category_name):
