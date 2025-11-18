@@ -93,6 +93,17 @@ def get_categories():
     return jsonify(STUDY_CATEGORIES), 200
 
 
+@app.route('/api/category/<category>/modules')
+def get_category_modules(category):
+    """Return only modules for a specific category"""
+    if category not in STUDY_CATEGORIES:
+        return jsonify({'error': 'Category not found'}), 404
+    
+    category_data = STUDY_CATEGORIES[category]
+    modules = category_data.get('modules', [])
+    return jsonify({'modules': modules, 'category': category}), 200
+
+
 @app.route('/modules', methods=['GET'])
 def modules_list():
     """Return list of available modules as JSON"""
