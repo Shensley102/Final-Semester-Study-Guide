@@ -96,9 +96,15 @@ def category_page(category):
     return render_template('category.html', category=actual_category, category_data=category_data)
 
 
+@app.route('/quiz')
+def quiz_page_no_module():
+    """QUIZ PAGE - Quiz without a specific module (category-based with dropdown)"""
+    return render_template('quiz.html')
+
+
 @app.route('/quiz/<module_name>')
 def quiz_page(module_name):
-    """QUIZ PAGE - The actual quiz application"""
+    """QUIZ PAGE - The actual quiz application with specific module"""
     return render_template('quiz.html')
 
 
