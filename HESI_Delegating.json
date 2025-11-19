@@ -1,0 +1,1378 @@
+[
+  {
+    "id": "Delegating_Q1",
+    "stem": "A home care nurse is assigned to visit a prenatal client with a diagnosis of hyperemesis gravidarum (HEG). During physical assessment of the client, the nurse should first take which action?",
+    "options": [
+      "Encourage the client to verbalize her feelings about the diagnosis",
+      "Review the results of the hemoglobin and hematocrit determinations",
+      "Weigh the client",
+      "Assess the client's intake and output"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "HEG is persistent, uncontrolled vomiting that begins before the 20th week of pregnancy. It can have serious consequences, including loss of 5% of pregnancy weight, dehydration, acidic urine imbalance, and electrolyte imbalance. Physical assessment begins with determining the client's intake and output, because these data provide information regarding hydration and the nutritional status of the client. The client's weight is obtained and the baseline value compared with previous and subsequent values. Additionally, the nurse assesses the oral mucosa and skin integrity; accurately checks oral and determines if membrane is a component of the plan of care but is not the first intervention during physical assessment. Encouraging the client to verbalize feelings about the diagnosis is a component of the plan of care but is not the first intervention during physical assessment.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q2",
+    "stem": "A nurse is monitoring a client with preeclampsia who is receiving intravenous magnesium sulfate to prevent seizures. The nurse notes that the client's respiratory rate is 10 breaths/min. On the basis of this finding, the nurse takes which action first?",
+    "options": [
+      "Checks the most recent serum magnesium sulfate level",
+      "Discontinues the magnesium sulfate",
+      "Contacts the health care provider",
+      "Takes the client's vital signs"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A respiratory rate slower than 12 breaths/min is a sign of magnesium toxicity. Other signs include the absence of deep tendon reflexes, altered sensorium, hypotension, and a serum magnesium level above the therapeutic range of 5 to 8 mg/dL (2.05 to 3.29 mmol/L). In this situation, the nurse would first discontinue the magnesium sulfate. The nurse would then take the client's vital signs and contact the health care provider. The most recent serum magnesium level may be checked; however, a current serum level would provide more useful data.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q3",
+    "stem": "A client who has just undergone abdominal surgery calls the nurse and states, \"I feel as if I just split open.\" The nurse checks the abdominal incision and finds wound evisceration. The nurse immediately takes which action?",
+    "options": [
+      "Applies sterile dressing moistened with sterile saline",
+      "Notifies the operating room",
+      "Documents the findings",
+      "Contacts the health care provider"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Wound evisceration is the total separation of a surgical incision or wound with extrusion of internal organs or tissues through the incision. If wound evisceration occurs, the nurse immediately calls for help and applies the wound with a sterile dressing moistened with sterile saline, which will keep the organs or tissues moist until the incision can be repaired. The nurse then takes the client's vital signs and documents the occurrence. Since this is a surgical emergency, the operating room needs to be notified, but this would not be done until directed to do so by the surgeon.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q4",
+    "stem": "A client is receiving an intravenous (IV) infusion of 1000 mL of normal saline solution at a rate of 125 mL/hr. The client suddenly complains of shortness of breath, and the nurse notes the presence of dependent edema and puffiness around the client's eyes. The nurse suspects circulatory overload and immediately takes which action?",
+    "options": [
+      "Administers a diuretic",
+      "Places the client in a supine position",
+      "Slows the IV rate",
+      "Contacts the health care provider"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Signs of circulatory overload include shortness of breath, cough, increased blood pressure, and puffiness in the eyes, and later dependent edema. If the client's neck veins may be engorged, and the nurse may hear moist breath sounds on auscultation of the lungs. If circulatory overload occurs, the nurse must slow the IV rate to keep the vein open and notify the health care provider. The client would be placed in an upright position. The nurse would monitor the client's vital signs and administer oxygen as prescribed.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q5",
+    "stem": "A nurse is performing closed suctioning through a tracheostomy for a ventilator-dependent client. During the procedure, the alarm on the cardiac monitor sounds and the nurse notes severe bradycardia. The nurse stops suctioning the client and immediately takes which action?",
+    "options": [
+      "Increases the degree of PEEP the client is receiving",
+      "Contacts the respiratory therapist",
+      "Rechecks all ventilator connections",
+      "Oxygenates the client manually with 100% oxygen"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Suctioning is associated with several complications, including hypoxia, tissue (mucosal) trauma, infection, vagal stimulation, and bronchospasm. Vagal stimulation may result in severe bradycardia, hypotension, heart block, ventricular tachycardia, or asystole. If vagal stimulation occurs, the nurse must discontinue the suctioning immediately and oxygenate the client manually with 100% oxygen. Contacting the respiratory therapist will delay the required and immediate intervention. Although regular checks of the ventilator connections are an important part of the standard of care for a client undergoing mechanical ventilation, doing so will not alleviate the client's problem in this situation. An increase in PEEP is not the intervention at this time.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q6",
+    "stem": "Inner maxillary fixation (IMF) is performed on a client who sustained a mandibular fracture in a motor vehicle crash. During an assessment, the client begins to vomit. The nurse suctions the client but is unsuccessful, and the client exhibits signs of hypoxia. The nurse immediately performs which action?",
+    "options": [
+      "Places the client in a supine position",
+      "Administers an antiemetic",
+      "Contacts the anesthesiologist",
+      "Cuts the mouth wires"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "IMF is a common means of securing a mandibular fracture. The bones are realigned and then held in place by wires to the teeth in the upper and lower jaws. This occurs if the client has a wired jaw or she vomits because of the impossibility of opening the jaws to allow ejection of the emesis. If vomiting occurs, the nurse immediately turns the client to the side and subsequent attempts to clear the airway by suctioning. If suctioning is not effective, the wire cutters are cut. Wire cutters are kept with the client at all times in readiness for this emergency. Antiemetics may be prescribed in the immediate postoperative period for nausea and subsequent vomiting; however, this is not the immediate action if the client is vomiting. Placing the client in a supine position increases the risk of aspiration. The client would be in an upright position and turned to the side. There is no helpful reason to contact the anesthesiologist.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q8",
+    "stem": "A nurse is preparing to care for a child being admitted to the hospital with infectious gastroenteritis. The priority nursing intervention is to take which action?",
+    "options": [
+      "Starting an intravenous (IV) line as prescribed",
+      "Administering prescribed antimicrobials",
+      "Instructing the parents in home care measures to prevent infection",
+      "Obtaining a stool sample for culture"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Infectious gastroenteritis is caused by a variety of communicable viruses, bacteria, and parasites capable of invading the GI tract. The primary problem with infectious gastroenteritis is fluid and electrolyte imbalance. The priority therapy in a child with infectious gastroenteritis is the replacement of water and correction of fluid and base and electrolyte disturbances with the use of IV fluids or electrolyte-replacement preparations. A stool culture and antimicrobial drugs may be prescribed, but these are not the priority on admission of the child to the hospital.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q9",
+    "stem": "A client is brought to the emergency department after a motor vehicle crash in which the client sustained a blunt chest injury when his chest struck the steering wheel. The client is complaining of sharp pain on inspiration and dyspnea. The nurse notes the absence of breath sounds on the affected side. The nurse would immediately take which action?",
+    "options": [
+      "Prepare a thoracentesis tray and chest drainage equipment",
+      "Place the client in a semi-Fowler position",
+      "Obtain a chest x-ray",
+      "Notify the health care provider"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The client is exhibiting signs of a closed pneumothorax. If a closed chest injury is suspected, the nurse immediately places the client in a semi-Fowler position. Because this is a medical emergency, the nurse then notifies the health care provider. A chest x-ray, computed tomography, or ultrasonography may be used to detect a pneumothorax and is performed. Because treatment involves thoracentesis and placement of a chest drainage system, the nurse then prepares a thoracentesis tray and chest drainage equipment.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q11",
+    "stem": "A client is complaining of chest pain, and the nurse notes that the client's skin is cool and clammy. The client is receiving oxygen at a rate of 2 L/min, and the pulse oximetry reading is 84%. Which action should the nurse take first?",
+    "options": [
+      "Taking the client's vital signs",
+      "Increasing the oxygen to 3 L/min",
+      "Administering nitroglycerin",
+      "Obtaining an arterial blood gas (ABG) specimen"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Pulse oximetry identifies hemoglobin saturation. A pulse oximetry reading can alert the nurse to desaturation before clinical signs occur. Ideal pulse oximetry values range from 90% to 100%. A range of 85% to 89% is acceptable because disease process may be occurring. When the value is below 85%, the body's tissues have a difficult time becoming oxygenated. Therefore the nurse would increase the oxygen to 3 L/min before taking further action. Although taking the chest pain, taking the client's vital signs and obtaining an ABG specimen will provide additional data, but in this situation an intervention is needed first.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q14",
+    "stem": "A registered nurse (RN) must determine how best to assign an RN and a licensed practical nurse (LPN) to provide care to a group of clients. Which is the appropriate assignment?",
+    "options": [
+      "Assigning the RN to care for a woman with newly diagnosed metastatic carcinoma who has two school-aged children",
+      "Assigning the RN to care for a woman, hospitalized for chest pain, who is being discharged home today with no medications",
+      "Assigning the LPN to care for a client who has undergone craniotomy and was transferred from the intensive care unit (ICU) this morning",
+      "Assigning the LPN to provide initial discharge teaching about cardiac medications to a client who has undergone a coronary artery bypass graft"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "For an accurate determination of what may or may not be delegated to a co-worker, several factors must be considered. The nurse carefully examines the client's needs each client requires, immediately and potentially in the future; the competencies possessed by the co-workers; and all legal parameters pertinent to the practice of co-workers. The woman with newly diagnosed metastatic carcinoma who has two school-aged children is likely to be in need of the skills and knowledge that are in the realm of the RN. The woman with chest pain is ready for discharge. The correct option and an appropriate assignment. The client who was transferred from the ICU this morning after undergoing a craniotomy is not stable. Increased intracranial pressure is present and therefore requires frequent neurological assessments. This, in addition to the fact that the client was transferred from the ICU this morning, makes this an inappropriate assignment for an LPN. The LPN should not provide initial discharge teaching on cardiac medications. The LPN may reinforce the teaching of the RN regarding the chest pain, but an LPN is available. The RN would be best used to care for the clients with more critical or complicated needs. Therefore this option is incorrect.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q15",
+    "stem": "A nurse is monitoring a postoperative client on an hourly basis. The nurse notes that the client's urine output for the past hour is 20 mL. On the basis of this finding, the nurse should first take which action?",
+    "options": [
+      "Increase the rate of the IV infusion",
+      "Call the health care provider",
+      "Check the client's overall intake and output record",
+      "Administer a 250-mL bolus of normal saline solution (0.9%)"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Clients are at risk for hypovolemia after surgery, and often the first sign of hypovolemia is decreasing urine output. However, the nurse needs additional data to make an accurate interpretation. The rate of the IV infusion and administration of a 250-mL bolus of normal saline (0.9%) would not be implemented without a prescription from the health care provider. The health care provider is called once the nurse has gathered all necessary assessment data, including the overall fluid status, and vital signs.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q16",
+    "stem": "A nurse on the day shift (7 a.m.–3 p.m.) is assigned to care for four clients. In planning care, which client does the nurse assess first?",
+    "options": [
+      "A client with emphysema who is receiving oxygen at a rate of 2 L/min",
+      "A client requiring a daily dressing change on an amputation stump",
+      "A client who has undergone angioplasty and is preparing to be discharged at 10 a.m.",
+      "A client scheduled for a barium enema at 9 a.m."
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Airway is always the priority, so the nurse would first attend to the client who has emphysema and is receiving oxygen. The client scheduled to have a barium enema today, the client requiring the daily dressing change on an amputation stump, and a client who has undergone angioplasty and is preparing for discharge are all lower priorities.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q17",
+    "stem": "A registered nurse is in charge of the emergency department on the night shift when a client is brought for treatment after being sexually assaulted. The nurse has never cared for anyone after a sexual assault. To determine the interventions that the client may require, the nurse would first take which action?",
+    "options": [
+      "Check unit policy regarding the protocol for care to clients who have been sexually assaulted",
+      "Call the nursing supervisor",
+      "Call the nurse in charge of the day shift",
+      "Call the police department"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A policy is a designated plan or course of action to be taken in a specific situation. Written copies of key policy may be placed in a policy manual that is kept in a specific location in the department or may be available online in the institution's computer network. Specific unit policies are also written for the emergency department. The policy about the care of a client who has been sexually assaulted will identify which authorities (e.g., the police) should be notified and the appropriate treatment methods for the client. After checking the policy, the nurse notifies the nurse in charge of the day shift. If additional information was needed after a review of the policy or protocol, the nurse could contact the nursing supervisor. The nurse would not arbitrarily call the police department.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q36",
+    "stem": "A client who has sustained a severe burn injury is brought to the emergency department (ED). Which action does the ED nurse implement immediately?",
+    "options": [
+      "Cleansing the burn wounds",
+      "Administering 100% oxygen by way of face mask",
+      "Covering the client with a warm blanket",
+      "Administering tetanus prophylaxis"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When a victim who sustains a burn injury arrives at the ED, breathing is assessed and a patent airway established immediately. The client is also immediately given 100% oxygen by face mask to prevent tissue hypoxia, which may occur as a result of the high carboxyhemoglobin level involved in a burn. If the victim has experienced inhalation injury, intubation may be necessary. Once oxygen has been started, fluid resuscitation is implemented. Body temperature is maintained and the client is covered with sterile linens or a blanket, and the burn wound is delayed until all life-saving measures have been initiated. Tetanus prophylaxis may be necessary, but this is not a priority intervention.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q37",
+    "stem": "A registered nurse (RN) on the day shift has been assigned to care for four clients. Once the nurse has made initial rounds and checked all of the assigned clients, which client will the RN care for first?",
+    "options": [
+      "A client who is scheduled for occupational therapy at 10 a.m.",
+      "A client with metastatic carcinoma whose next dose of pain medication is due at 10 a.m.",
+      "A client scheduled for an ultrasound at 10 a.m. who is on nothing-by-mouth (NPO) status",
+      "A client who is scheduled for surgery at 10 a.m."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The RN would care for the client who is scheduled for surgery at 10 a.m. first. Several issues, including client preparation (physical and emotional) and health care provider prescriptions, must be addressed before the surgery, and this preparation must begin before the surgery. Additionally, the operating often makes late changes in the schedule, depending on room and health care provider availability, and may request the client earlier. Therefore it is best to prepare for this client is prepared. After the nurse cares for the client who is scheduled for surgery, the nurse should next see the client who is scheduled to receive pain medication, then the client scheduled for an ultrasound and the client scheduled for occupational therapy do not have priority needs.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q38",
+    "stem": "A nurse is assigned to care for four clients. Which client would the nurse would assess first during initial rounds?",
+    "options": [
+      "A client who is in Buck's traction",
+      "A client with a diagnosis of cirrhosis",
+      "A client with chronic renal failure",
+      "A client with pneumonia"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Airway is always a high priority, and the nurse would assess the client with pneumonia first. Clients in Buck's traction and those with chronic renal failure or cirrhosis have intermediate needs.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q39",
+    "stem": "A nurse is changing a client's central intravenous (IV) catheter dressing. During the procedure, the unit secretary calls the nurse over the handheld radio and says that a health care provider has telephoned and is asking to speak to the nurse. The nurse should take which action?",
+    "options": [
+      "Ask the unit secretary to place the health care provider on a telephone hold until the dressing change is complete",
+      "Place a sterile towel over the client's catheter site and answer the call",
+      "Have the unit secretary transfer the call to the nurse's handheld radio",
+      "Ask the unit secretary to inform the health care provider that the call will be returned after the dressing change has been completed"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Because the dressing change is a sterile procedure and a risk for infection exists, it is appropriate to ask the unit secretary to telephone number, allowing the health care provider so that the call may be returned. It is not appropriate to ask a health care provider to wait while a procedure is completed. Placing a sterile towel over the catheter site and answering the call on the radio is a potential HIPAA violation, because the health care provider may wish to speak to the nurse regarding another client, and the client with whom the nurse is working would hear the conversation.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q40",
+    "stem": "A man calls a nurse in the emergency department (ED) and tells the nurse that his wife \"just got a bloody nose.\" The man then asks the nurse what to do to stop the bleeding. The nurse tells the man immediately to take which action?",
+    "options": [
+      "Bring his wife to the ED",
+      "Place the spouse in a sitting position, leaning forward with the head tipped downward",
+      "Place a cotton ball or tampon in the nostril that is bleeding",
+      "Place a cool compress on the back of the woman's neck"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Initial care of the client with epistaxis consists of having the client sit up and lean forward with the head tipped downward to prevent the swallowing or aspiration of blood. The fingers are used to compress the soft tissues of the nose against the septum. Ice or a cold compress should be maintained for at least 5 minutes. Ice or a cold compress is applied to the nose, not the back of the neck. A cotton ball or tampon is not used. If the self-care measures do not work, ice may help stop with these interventions. In the hospital, if bleeding does not stop with direct pressure, a cotton ball soaked in a topical vasoconstrictor is placed in the nose and pressure is applied.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q41",
+    "stem": "The nurse is observing a new nurse employee care for a client who has just arrived in the nursing unit after internal maxillary fixation (IMF) surgery. The nurse realizes the new nurse employee understands the priority of care if the new nurse demonstrates which action immediately?",
+    "options": [
+      "Positions the client on one side with the head slightly elevated",
+      "Administers an antiemetic to prevent vomiting",
+      "Places suction equipment and wire cutters at the bedside",
+      "Connects the nasogastric (NG) tube to low intermittent suction"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Immediately after IMF surgery, the client is positioned on one side with the head slightly elevated. The nurse then connects the NG tube to low intermittent suction to remove fluids and gas from the stomach to help prevent aspiration. Antiemetic medications are administered to prevent vomiting, but this is not the immediate action. Wire cutters and suction equipment should already have been placed at the bedside.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q42",
+    "stem": "A nurse assessing a peripheral intravenous (IV) site notes blanching, coolness, and edema at the site. What should the nurse do first?",
+    "options": [
+      "Remove the IV catheter",
+      "Apply a warm compress to the site",
+      "Check for blood return from the IV site",
+      "Measure the area of infiltration"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Blanching, coolness, and edema of the IV site are all classic signs of infiltration. Because infiltration may lead to damage to the surrounding tissues, the nurse must first remove the IV catheter to prevent any further damage. The nurse should not depend solely on blood return for assurance that the catheter is in the vein, because a blood return may be present even if the cannula is only partially in the vein. Warm compresses may be applied to the infiltrated area only after the IV catheter is removed and only if there is not damaging to the surrounding tissues. The area of infiltration should be measured after the IV has been removed so that further tissue damage may be assessed and monitored.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q44",
+    "stem": "A nurse is preparing to care for a client who is undergoing cardioversion. Once the procedure is complete, the nurse ensures that the client has a patent airway and administers oxygen to the client, then takes which action?",
+    "options": [
+      "Administers antidysrhythmic medication",
+      "Checks the client's chest for paddle burns",
+      "Checks the client's vital signs",
+      "Provides emotional support to the client"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Nursing responsibilities after cardioversion include maintenance of a patent airway, administration of oxygen, assessment of vital signs and level of consciousness, and detection of dysrhythmias. All of the options are correct nursing interventions; however, assessing the client's vital signs is the priority.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q45",
+    "stem": "A mother brings her child to the emergency department because an insect has flown into the child's ear and the child is complaining of a buzzing sound. The nurse uses a flashlight in an attempt to coax the insect out of the ear, but this intervention is unsuccessful. Which action should the nurse take next?",
+    "options": [
+      "Placing cotton in the ear to stop the buzzing sensation",
+      "Irrigating the ear with sterile water",
+      "Placing diluted alcohol in the ear",
+      "Using an otoscope and ear forceps to remove the insect"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "An insect that makes its way into an ear can often be coaxed out with the use of a flashlight or a humming noise. If this is unsuccessful, the insect must be killed before it is removed. Mineral oil or diluted alcohol is instilled into the ear to suffocate the insect, which is then removed with ear forceps. The use of sterile water is avoided, because its use may cause swelling of foreign objects within the ear. Placing cotton in the ear to stop the buzzing and using an otoscope and ear forceps to remove the insect are both incorrect.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q46",
+    "stem": "An emergency department nurse is conducting an assessment of a client who has sustained a circumferential burn to the right arm. What should the nurse assess first?",
+    "options": [
+      "Temperature",
+      "Heart rate",
+      "Blood pressure (BP)",
+      "Radial pulse"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The client who sustains circumferential burns to an extremity is at risk for altered peripheral circulation. The priority assessment is to check for the presence of the peripheral pulse to ensure that circulation is adequate. Although the temperature, heart rate, and BP would also be assessed, checking the radial pulse is the priority assessment in the presence of a peripheral pulse.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q47",
+    "stem": "A nurse is caring for a client who is receiving intermittent feedings by way of a nasogastric tube. Before feeding the client, the nurse checks tube placement and determines correct placement, then takes which action?",
+    "options": [
+      "Checks the residual volume",
+      "Warms the feeding to 100°F (37.8°C)",
+      "Raises the head of the client's bed 15 degrees",
+      "Irrigates the nasogastric tube with tap water"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Before starting the feeding, the nurse checks the placement of the nasogastric tube by aspirating gastric contents and measuring the pH. The residual volume is checked, and the feeding is held if the residual volume is more than 100 to 150 mL (depending on agency policy and procedures) to help prevent aspiration. In another intervention designed to help prevent aspiration while a tube feeding is being administered, the nurse places the client in an upright sitting position or elevates the head of the bed at least 30 degrees. Formulas are administered at room temperature. The nasogastric tube may be irrigated just once a feeding is complete. The residual volume is checked first.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q48",
+    "stem": "A health care provider places an intestinal tube in a client. After insertion, the nurse immediately takes which action?",
+    "options": [
+      "Initiates a tube feeding",
+      "Positions the client on the right side",
+      "Documents the insertion and the client's tolerance of the procedure",
+      "Secures the tube to the client's face with tape"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The intestinal tube is a nasoenteric tube that is used to decompress the intestine and correct a bowel obstruction. Insertion of the tube is a physician's or an APRN's responsibility. The tube, which has a weighted tungsten tip, is advanced either by gravity or manually. Advancement of the tube into the intestine is monitored by an x-ray examination of the tube as it travels with the use of x-rays. The tube is not secured to the client's face until the desired location is reached. After insertion, the client is positioned on the right side for 2 hours, then in the supine position and then in the left lateral position, allowing the natural peristaltic tract. The nurse documents the insertion and the client's tolerance of the procedure in the client's record, but this is not the immediate action.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q50",
+    "stem": "A nurse is monitoring a client in the active stage of labor who is receiving oxytocin. The nurse checks the fetal monitor and sees this: [Image shows fetal heart rate monitoring strips with late decelerations] The nurse immediately places an oxygen cannula on the mother and then takes which action?",
+    "options": [
+      "Transports the client to the delivery room",
+      "Stops the oxytocin infusion",
+      "Places the mother in a supine position",
+      "Documents the findings"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The mother is experiencing late decelerations and the oxytocin infusion should be stopped. Late decelerations are a result of uteroplacental insufficiency that occurs because of decreased blood flow and oxygen transfer to the fetus through the intervillous space during uterine contractions. Continuing the oxytocin would cause further hypoxemia, because the medication stimulates uterine contractions and leads to increased and longer uterine contractions. Although late decelerations or conditions that precipitate late decelerations are associated with hypoxemia, maternal oxygen administration is necessary. Although the client will eventually need to be prepared for delivery, stopping the oxytocin does require immediate birth of the baby, so transporting the client to the delivery room is not the first action. Documentation is important, but oxygen administration and stopping the oxytocin infusion in this situation. The supine position is avoided because of the risk of uteroplacental insufficiency.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q51",
+    "stem": "A client is brought to the labor unit, and, as the nurse is attaching the fetal heart monitor, the client's membranes rupture spontaneously. The nurse immediately assesses the fetal heart rate, then takes which action?",
+    "options": [
+      "Checks the character of the amniotic fluid",
+      "Documents the spontaneous rupture of the client's membranes",
+      "Checks the client's temperature",
+      "Prepares the client for immediate delivery"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When the membranes rupture in the birth setting, the nurse immediately checks the fetal heart rate to detect changes associated with prolapse or compression of the umbilical cord. Next, the nurse assesses the color, amount, and odor of the amniotic fluid, because this information documents the findings. There is no information in this question to indicate that preparing the client for delivery is necessary. Checking the client's temperature is not the immediate action.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q10",
+    "stem": "A registered nurse (RN) is planning the client assignments for the day. To which nurse does the RN appropriately assign care of a woman undergoing brachytherapy with a sealed radiation source for cervical cancer?",
+    "options": [
+      "A nurse who is also assigned to provide care to another client undergoing brachytherapy",
+      "A male nurse who has never worked with a client undergoing brachytherapy",
+      "A nurse who has worked with clients undergoing brachytherapy in the past",
+      "A pregnant nurse who has special expertise in oncology"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Brachytherapy involves the use of radioactive isotopes in solid form or within body fluids. Because the radiation source is within the client, the client emits radiation for some time and may be a hazard to others. A pregnant nurse should not be assigned to care for clients undergoing brachytherapy. The time any nurse is exposed to such radiation sources should be limited to 30 minutes of direct care per 8-hour shift, so a nurse should not be assigned to care for more than one client undergoing brachytherapy. It is most appropriate to assign a nurse who is familiar with caring for the client undergoing brachytherapy rather than to assign a nurse who is not.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q12",
+    "stem": "An emergency department (ED) nurse receives a telephone call and is informed that several victims from a train accident will be brought to the ED. The nurse who received the telephone call must take which action first?",
+    "options": [
+      "Empty all available rooms in the ED",
+      "Call the intensive care unit (ICU) and asks for nurses to assist with the victims",
+      "Ensure that the triage rooms are stocked with additional dressing supplies",
+      "Activate the agency disaster plan"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "In an external disaster, many people may be brought to an ED for treatment. Calling the ICU and asking the nurses to assist with the victims, making room for the arriving victims, and ensuring that the triage rooms are stocked with additional supplies are appropriate measures of preparing for the casualties, but activation of the disaster plan must be the initial action. Ideally the nurse would notify the nursing supervisor, who would then activate the plan, but this is not an option.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q13",
+    "stem": "A home health nurse is assigned to three client visits today. One client requires twice-daily insulin injections for an abdominal wound. Another client was discharged from the hospital yesterday after cardiac catheterization and will require an admission assessment and assistance with the scheduling of medications. The last client has diabetes mellitus and requires a fasting blood specimen for serum glucose testing to be drawn. The nurse will schedule the assignment by visiting the clients in which order?",
+    "options": [
+      "The client requiring admission first, the client with diabetes mellitus second, and the client needing wound irrigation last",
+      "The client with diabetes mellitus first, the client with the wound irrigation second, and the client requiring admission last",
+      "The client with diabetes mellitus first, the client requiring admission second, and the client needing wound irrigation last",
+      "The client needing wound irrigation first, the client with diabetes mellitus second, and the client requiring admission last"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The client with diabetes mellitus must remain on nothing-by-mouth (NPO) status until the blood specimen is drawn and so should be seen first. Because the client requiring wound irrigations will need to be visited twice, that client should be seen next. The client requiring admission would be visited later and should make the second visit to the client requiring wound irrigation.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q18",
+    "stem": "A client with a spinal cord injury suddenly experiences a severe headache and nasal stuffiness. The client is also diaphoretic, hypertensive, and bradycardic. The nurse determines that the client is experiencing autonomic dysreflexia and immediately takes which action?",
+    "options": [
+      "Notifies the health care provider",
+      "Checks the bladder and catheterizes the client",
+      "Raises the head of the bed to a high Fowler position",
+      "Performs a rectal examination to check for a fecal impaction"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Autonomic dysreflexia is an emergency that occurs in people who have sustained spinal injuries as a result of exaggerated autonomic responses to stimuli that are innocuous in normal individuals. It occurs after the spinal shock phase resolves. A noxious stimulus triggers this response, including a distended bladder (the most common cause); distension or contraction of the visceral organs, especially the bowel (from constipation or impaction); or stimulation of the skin. When autonomic dysreflexia occurs, the client is immediately placed in a high Fowler position to aid in the prevention of hypertension that could cause stroke, seizure, or death from the rapid increase in blood pressure. The health care provider is then notified. Finally the nurse performs a rapid assessment to identify and alleviate the cause. The client's bladder is emptied immediately with the use of a urinary catheter, the rectum is checked for the presence of a fecal mass, and the skin is examined for areas of pressure, irritation, or other compromise.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q20",
+    "stem": "A nurse notes that the site of a client's peripheral intravenous (IV) catheter is red and inflamed and feels hard on palpation. On the basis of this assessment, the nurse should first take which action?",
+    "options": [
+      "Notify the health care provider",
+      "Remove the IV catheter",
+      "Slow the rate of infusion",
+      "Place warm compresses on the IV site"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Phlebitis at an IV site may be signaled by client discomfort at the site, as well as by redness, warmth, hardness along the path of the vein, puffiness over the insertion site, and a red line up the arm. If phlebitis occurs, the IV catheter should be removed and a new IV catheter inserted at a different site. Recognizing that slowing the infusion will not alleviate this condition will help you eliminate this option. The health care provider would be notified if phlebitis occurred, but this is not the first action for the nurse. Warm compresses may help alleviate some of the client's symptoms will help you eliminate this option. The health care provider would be removed first.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q21",
+    "stem": "A nurse assesses a client at the beginning of the shift and notes an intravenous (IV) infusion is running at 100 mL/hr and that 800 mL of fluid remains in the IV bag. Thirty minutes later, the client calls the nurse and complains of shortness of breath. The nurse sees that 400 mL of IV solution remains in the IV bag. The nurse immediately takes which action?",
+    "options": [
+      "Stops the rate of the IV infusion",
+      "Notifies the health care provider",
+      "Administers oxygen",
+      "Elevates the head of the bed"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The client is most likely experiencing circulatory overload. The nurse may identify the condition by noting that the IV bag has emptied much faster than it should have in 30 minutes. The action on the part of the nurse is to stop the rate of the IV infusion but ensure that IV patency is maintained so that IV access is available if needed. The IV infusion should not be stopped completely because follow up rapid sequence: The nurse raises the client to an upright position to aid the client's breathing, notifies the health care provider, monitors the client's vital signs, prepares for administering oxygen as prescribed.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q27",
+    "stem": "A nurse notes that a client who is attached to a cardiac monitor has suddenly began exhibiting the following rhythm. [Image shows atrial fibrillation rhythm strip] After contacting the health care provider, which intervention does the nurse prepare the client for?",
+    "options": [
+      "Insertion of a permanent pacemaker",
+      "Transesophageal echocardiography (TEE)",
+      "Administration of adenosine",
+      "Administration of heparin sodium"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The client's ECG shows the onset of atrial fibrillation with a rapid ventricular response rate. The initial treatment goal with atrial fibrillation usually centers on slowing the heart rate and the ventricular rate and controlling the cardiac rhythm. Cardioversion may be necessary to convert the atrial impulses, and the medication usually prescribed is adenosine Other medications used to control this cardiac emergency would include those that will control the heart rate and prevent the atrial fibrillation, thrombi may form in the stagnant blood in the atria and become emboli, which may lodge in the pulmonary or peripheral blood vessels or in the brain. Therefore, an intravenous line is started and heparin sodium may be prescribed, this is not the initial treatment. Anticoagulation therapy may be indicated for atrial fibrillation that persists for more than 48 hours to prevent the presence of atrial thrombi. A permanent pacemaker may play a role in the management of atrial fibrillation but would not be the initial intervention.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q28",
+    "stem": "A client who experienced ventricular fibrillation has undergone defibrillation three times, without success. The nurse would next take which action?",
+    "options": [
+      "Perform defibrillation one last time",
+      "Assess the client's level of consciousness",
+      "Continue cardiopulmonary resuscitation (CPR)",
+      "Increase the intravenous (IV) flow rate"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "After defibrillation, the nurse immediately assesses the client's cardiac rhythm and pulse. These assessments will provide the information needed to determine whether the defibrillation was successful, with conversion back to a perfusion rhythm. If defibrillation is performed at a higher energy level. Defibrillation may be applied three times, if needed, for persistent ventricular fibrillation or pulseless ventricular fibrillation. CPR must continue if the three defibrillations are unsuccessful. Assessing the client's level of consciousness is not the priority of defibrillation is unsuccessful. Increasing the IV flow rate is not done without a prescription to do so.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q43",
+    "stem": "A nurse monitoring a client who has just undergone cardiac catheterization notes the presence of a hematoma at the catheter insertion site. The nurse immediately takes which action?",
+    "options": [
+      "Applies a pressure dressing to the insertion site",
+      "Assesses the client's blood pressure and radial pulse",
+      "Checks the peripheral pulse in the affected extremity",
+      "Places ice on the insertion site"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "If a hematoma forms at the site of catheter insertion, the nurse must immediately check the peripheral pulses in the affected extremity to determine whether the hematoma is immediately so interventions may be initiated promptly. Placing ice on the catheter insertion site and applying a warm compress to the site are both inappropriate. Although the nurse must assess the client's blood pressure and pulse, this is not the immediate priority.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q7",
+    "stem": "A client is admitted to the emergency department with a complaint of severe crushing chest pain that radiates down both arms. The client is dyspneic, and the nurse notes pallor immediately places a cannula on the client to deliver oxygen at 4 L/min and inserts an intravenous (IV) catheter. The health care provider orders an immediate troponin determination, a chest x-ray, a 12-lead electrocardiogram (ECG), and morphine sulfate 2 mg IV. What will the nurse do first?",
+    "options": [
+      "Draw blood for the troponin determination",
+      "Call radiology to set up the chest x-ray",
+      "Administer the IV morphine sulfate",
+      "Obtain a 12-lead ECG"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Pain control is a priority, because the chest pain indicates cardiac ischemia. Pain also stimulates the autonomic nervous system and increases preload, resulting in increased myocardial workload and further cardiac damage. Therefore in this situation, the nurse will first attend and administer morphine sulfate. Once the morphine sulfate has been administered, the nurse can obtain the 12-lead ECG to assist with the diagnosis and interpretation of potential location of myocardial ischemia. Although an evaluation of the client's troponin level may be of use in the choice of therapy, this is an assessment, and the situation requires action. Although the chest x-ray might show cardiac enlargement, having the chest x-ray would not influence immediate treatment, so is not the priority.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q52",
+    "stem": "A client who has sustained an open pneumothorax as a result of a gunshot wound is brought to the emergency department (ED) with an occlusive dressing, placed by a paramedic, over the wound. The ED nurse assesses the client and notes extreme respiratory distress and distended jugular neck veins. On the basis of these assessment findings, the nurse would first take which action?",
+    "options": [
+      "Contact the health care provider",
+      "Check the client's pulse oximetry readings",
+      "Remove the occlusive dressing",
+      "Assess the client's blood pressure"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Placement of a dressing over a sucking chest wound could convert an open pneumothorax to a closed tension pneumothorax, resulting in a sudden deterioration in respiratory status, mediastinal shift, twisting of the great vessels, and circulatory compromise. If this occurs, the nurse must remove the dressing to allow air to escape. Checking the client's blood pressure and pulse oximetry readings and contacting the health care provider would all be implemented, but none is the first action to be taken.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q53",
+    "stem": "A client who sustained serious rib fractures in a motor vehicle accident is exhibiting signs of flail chest. With which immediate treatment measure does the nurse prepare to assist?",
+    "options": [
+      "Inserting a chest tube",
+      "Splinting the ribs with a rib strap",
+      "Endotracheal intubation with mechanical ventilation",
+      "Administering an opioid analgesic for pain"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Treatment for flail chest involves nasal or endotracheal intubation and mechanical ventilation with positive end-expiratory pressure (PEEP). Administering an opioid analgesic for pain, splinting the ribs with a rib strap, and inserting a chest tube are not interventions for the treatment of flail chest.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q61",
+    "stem": "A nurse on the surgical nursing unit is assessing a postoperative client who is experiencing tachycardia and tachypnea. The client's blood pressure is 88/60 mm Hg and the pulse rate is 100 beats/min. The client is receiving oxygen at 2 L/min by way of nasal cannula, and the pulse oximetry reading is 92%. Once it has been determined that the airway is patent, what should the nurse do next?",
+    "options": [
+      "Prepare a blood transfusion administration set with normal saline",
+      "Obtain a sample of arterial blood for blood gas results",
+      "Notify the surgeon",
+      "Check the client's dressing for bleeding"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The client is exhibiting signs of shock and requires emergency intervention. When shock is suspected, the nurse immediately takes action to ensure a patent airway and administers oxygen. In this case, the client is already receiving oxygen and the nurse has determined that the airway is patent. The nurse should next assess the client for bleeding. If excessive bleeding is noted, apply direct pressure. The surgeon would then be notified. The surgeon may request arterial blood gas sampling, but this is not the immediate priority. The surgeon may prescribe an intravenous transfusion or a blood transfusion; however, preparing a transfusion administration set at this time is not indicated.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q62",
+    "stem": "A nurse is assigned to care for a client in the fourth stage of labor. What does the nurse plan to do first?",
+    "options": [
+      "Assess the uterine fundus",
+      "Allow the father and grandparents to visit and hold the newborn",
+      "Provide oral fluids",
+      "Place an ice pack on the perineal area"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The fourth stage of labor is the stage of physical recovery for the mother and infant. It lasts from the delivery of the placenta through the first 1 to 4 hours after birth. One potential complication after delivery is hemorrhage, so monitoring for hemorrhage is a priority in the care where the placenta is attached. Therefore the nurse should first assess the client's uterine fundus to ensure that it is firm. The nurse must also check lochial flow, assesses the episiotomy site, places ice on the perineal area to promote comfort, and provides the mother with oral fluids. Once physiological needs have been met, the nurse may allow visitors to see the mother and newborn.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q69",
+    "stem": "A client undergoing mechanical ventilation pulls out the endotracheal tube. The nurse would immediately takes which action?",
+    "options": [
+      "Suction the client",
+      "Call a x-ray to obtain a chest x-ray",
+      "Prepare for re-intubation",
+      "Call a code"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "If unexpected extubation occurs, the nurse must first assess the client for airway patency, spontaneous breathing, and vital signs. The nurse would remain with the client, call for assistance, and prepare for re-intubation. There is no information in this question to indicate that a code needs to be called or that the client needs to be suctioned. A chest x-ray might be performed after re-intubation but would not be the immediate action the nurse would take.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q70",
+    "stem": "A nurse is monitoring a client with an oral endotracheal tube inserted that is attached to mechanical ventilation. The nurse assesses the client and notes that the client has unequal breath sounds. On the basis of this assessment finding, the nurse would first take which action?",
+    "options": [
+      "Suction the endotracheal tube",
+      "Check the depth marking at the client's lips",
+      "Apply humidified oxygen to the client",
+      "Contact the health care provider"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "If it is determined that breath sounds in the client with an endotracheal tube attached to mechanical ventilation are unequal, the nurse would first check the depth marking at the client's lips to evaluate the endotracheal tube for proper depth. If the tube is at a deeper depth than it should be, repositioning of the tube will be necessary. The nurse would then notify the health care provider and prepare to reposition the tube as needed. If the tube is displaced, suctioning the client would not remedy the problem. Humidified oxygen should already be in place for a client receiving mechanical ventilation.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q74",
+    "stem": "A nurse performing nasopharyngeal suctioning and suddenly notes the presence of bloody secretions in the catheter. The nurse would immediately take which action?",
+    "options": [
+      "Suction more vigorously to remove the blood",
+      "Encourage the client to cough out the bloody secretions",
+      "Check the degree of suction pressure being applied",
+      "Contact the health care provider"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Bloody secretions are an unexpected outcome of suctioning. If they are noted, the nurse first assesses the client and then checks the degree of suction pressure being applied. The degree of suction pressure used to draw secretions from the respiratory tract should be limited to the minimum needed to remove the sections without trauma. Intermittent suction and catheter rotation are being performed during suctioning. Continuing with the suctioning or suctioning too vigorously will cause increased trauma and therefore increased bleeding. Suctioning is normally performed in clients who are unable to expectorate secretions. Therefore it is unlikely that the client would be able to cough out the bloody secretions. The health care provider may need to be notified, but this is not the first action.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q78",
+    "stem": "A nurse who is caring for a client with a tracheostomy tube notes heavy bleeding from the stoma and sees that the tracheostomy tube pulsates with the client's heartbeat. Suspecting that a trachea–innominate artery fistula has developed, the nurse immediately removes the tracheostomy tube. Which is the next nursing action?",
+    "options": [
+      "Applying direct pressure to the innominate artery at the stoma site",
+      "Inserting a smaller tracheostomy tube",
+      "Initiating an intravenous (IV) line",
+      "Transporting the client to surgery"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "With a trachea–innominate artery fistula, malpositioning occurs when the tube's distal tip pushes against the lateral wall of the tracheostomy. Continued pressure from the tracheostomy tube to the artery leads to erosion of the innominate artery. This situation is a life-threatening complication. The tracheostomy tube is immediately removed. Direct pressure is then applied to the innominate artery at the stoma site with a finger. The client is then taken to the surgical repair. An IV line will need to be initiated, but this is not the immediate action. The nurse would not insert a smaller tracheostomy tube.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q79",
+    "stem": "A nurse is caring for a client who had a tracheostomy tube inserted 24 hours ago. The client begins to cough vigorously, accidentally decannulating (dislodging) the tube. The nurse immediately takes which action?",
+    "options": [
+      "Calls respiratory therapy",
+      "Replaces the tracheostomy tube",
+      "Ventilates the client with the use of a manual resuscitation bag and face mask",
+      "Calls the health care provider"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Tube dislodgement in the 72 hours after surgery is a medical emergency because the tracheostomy tract has not matured and tissue planes will not be well defined. Attempted replacement of a tube may result in cannulation of subcutaneous tissue planes instead of the trachea itself. Therefore the nurse should not attempt to replace the tube. Instead, the nurse should ventilate the client with the use of a manual resuscitation bag and face mask while another nurse calls the resuscitation team for help.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q81",
+    "stem": "The mother of a 6-year-old calls a nurse who lives in the neighborhood and reports that her child has accidentally splashed rubbing alcohol into her eyes. The nurse tells the mother immediately to take which action?",
+    "options": [
+      "Have the child wipe the eyes with a wet towel",
+      "Darken the room",
+      "Hold the child's head with the eyes open under running lukewarm tap water for 20 minutes",
+      "Have the child rest with the eyes closed"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "In the event of a chemical injury, the eyes should be copiously irrigated with tap water for 20 minutes. The child's head is held with the eyes under running lukewarm tap water, and the upper eyelids are everted to flush the eyes thoroughly. The child is then taken to the emergency department. After treatment at the emergency department, the child should rest with the eyes closed and covered with a sterile bandage or clean cloth. The child is instructed to avoid rubbing, as pain and burning.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q82",
+    "stem": " A nurse notes that a client who has just been given a diagnosis of acquired immunodeficiency syndrome (AIDS) appears anxious and is reluctant to ask questions. Which initial action by the nurse is the best way to deal with the observation?",
+    "options": [
+      "Allowing the client time to be alone",
+      "Asking the client direct questions regarding feelings about having the disease",
+      "Identifying common fears and questions expressed by other clients with the same diagnosis",
+      "Asking a family member to be present when caring for the client"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Identifying common fears and questions expressed by other clients often encourages the client to ask questions that he or she has thought of but not verbalized. The nurse should plan to spend time with the client, not leave the client alone. Discussing with family members will not reduce the client's anxiety and may be tried after the nurse has talked to the client. However, communication with the client is needed to determine the source of the anxiety. Asking the client direct questions is initially a nontherapeutic communication technique. The client may not be able to verbalize or discuss the concerns at this time.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q83",
+    "stem": " A client who is receiving a blood transfusion suddenly experiences chills, a high fever, vomiting, and diarrhea and complains of abdominal cramping. The nurse, noting that the client's blood pressure has dropped significantly, suspects that the client is experiencing a bacterial sepsis reaction to the transfusion. The nurse immediately stops the blood transfusion, hangs an intravenous (IV) bag of normal saline solution to be infused at a keep-vein-open rate, and contacts the health care provider, who prescribes several interventions. Which prescription will the nurse implement first?",
+    "options": [
+      "Contacting the blood bank",
+      "Obtaining blood for cultures",
+      "Administering the prescribed IV corticosteroid",
+      "Administering the prescribed IV broad-spectrum antibiotic"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "If bacterial sepsis from a blood transfusion is suspected, the transfusion is stopped and IV access is maintained by infusing normal saline pending further health care provider orders. The nurse would continue to monitor the client's vital signs. Samples for blood culture and Gram staining must be obtained before the administration of medications, particularly the antibiotic. The blood bank is notified, but this is not the first action.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q85",
+    "stem": " A child with a diagnosis of pertussis (whooping cough) is being admitted to the pediatric unit. Which health care provider's prescriptions does the nurse implement first?",
+    "options": [
+      "Administering pertussis immune globulin",
+      "Administering the prescribed antibiotic",
+      "Encouraging the intake of oral fluids",
+      "Obtaining a pulse oximetry reading"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The child is attached to a pulse oximeter, which provides ongoing information regarding the child's oxygen level, as a means of determining whether oxygen intake is sufficient. The child is also immediately attached to a cardiac monitor for early identification of apnea and bradycardia. The nurse would then conduct an assessment, including taking the child's temperature and weight and asking the parents about the child. Although administering the prescribed antibiotic, encouraging the intake of oral fluids, and administering pertussis immune globulin are all appropriate interventions, these are not the priority among the options provided.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q19",
+    "stem": " A client calls the nurse at the emergency department (ED), says that he thinks that he came in contact with poison ivy while working in his yard, and asks the nurse for advice. The nurse tells the client immediately to take which action?",
+    "options": [
+      "Take a shower",
+      "Soak in a warm oatmeal bath",
+      "Apply hydrocortisone cream to the areas that may have been in contact with the poison ivy",
+      "Come to the ED"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "If contact with poison ivy is suspected, symptoms may be averted by immediately rinsing the skin for 15 minutes with running water to remove the sap before it can be absorbed by the skin. It is not necessary for the client to be seen immediately in the ED. Oatmeal baths are useful in soothing dry or itchy skin. The nurse would not advise the client to apply hydrocortisone cream. Medications should be recommended by the health care provider, and this intervention would probably not be recommended unless a pruritic poison ivy rash actually developed.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q22",
+    "stem": " A client complains of pain at the site of an intravenous (IV) catheter. On assessment, the nurse notes that the site appears bruised and concludes that the client has a hematoma. The nurse performs which action first?",
+    "options": [
+      "Removes the IV catheter",
+      "Notifies the health care provider",
+      "Applies pressure to the site",
+      "Applies ice to the IV site"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A hematoma at an IV site is a result of leakage of blood into surrounding tissue. It may occur when the back of the vein is pierced during insertion of the catheter. It results in a discolored area of skin that is swollen at the IV site and swelling, bluish discoloration, and pain at the site. The nurse would first remove the IV catheter, then apply pressure. If the hematoma is recent, ice may prevent further seepage into the surrounding tissues. If it did not occur recently, warm, moist compresses will speed reabsorption of the fluid. The nurse should notify the health care provider but this is not the initial action.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q23",
+    "stem": " A nurse is caring for a client with a central venous catheter. The client suddenly complains of chest pain and dyspnea. During assessment of the client, the nurse notes hypotension, tachycardia, and a loud churning sound over the pericardium on auscultation. The nurse suspects an air embolism and immediately takes which action?",
+    "options": [
+      "Connects a syringe to the line and aspirates as much fluid as possible",
+      "Places the client in a high Fowler position",
+      "Clamps the central line catheter",
+      "Obtains an electrocardiogram"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "An air embolism occurs when air enters the central venous system. Signs and symptoms include chest pain, dyspnea, hypotension, tachycardia, and a loud churning sound over the pericardium on auscultation. Air may be introduced into the central venous system during tubing changes or from loose connections of the tubing and catheter. The nurse immediately clamps the catheter, places the client in a lateral Trendelenburg position on the left side to trap the air in the right atrium, and contacts the health care provider. The health care provider may order an electrocardiogram, chest x-ray, and arterial blood gas determinations. Placing the client in a high Fowler position and connecting a syringe to the line to aspirate as much fluid as possible are both incorrect.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q24",
+    "stem": " A nurse responds to a disaster call in which a building collapsed and several victims were seriously injured. Which victim will the nurse attend to first?",
+    "options": [
+      "A victim with massive head trauma who is in cardiopulmonary arrest",
+      "A victim with a closed fracture of the leg",
+      "A victim with a sprained ankle and a minor laceration on the head",
+      "A victim with an amputated arm"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "A triage system identifies and categorizes victims so that those with the most critical but treatable conditions are treated first. In a disaster, red denotes the highest priority I, yellow is priority II, green is priority III, and black is priority 0. Priority I includes life-threatening problems that require immediate attention, such as upper airway problems, hemorrhagic shock, or severe respiratory distress. Priority II includes victims immediate attention, such as upper airway problems. Hemorrhagic shock chemicals in the eyes, arm or leg amputation, and shock. Priority II includes victims in need of treatment who can wait 45 to 60 minutes, for example, a victim with a simple fracture. Priority III is assigned to victims who can wait for treatment, such as people who have sustained sprains or minor lacerations. Priority 0 denotes a victim who is dying or dead, who has sustained massive head trauma, or who is in cardiopulmonary arrest.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q25",
+    "stem": " A mother rushes into the emergency department with her child and tells the nurse that the child has drunk bleach from a bottle that the mother was using to clean bathrooms. The nurse notes that child is alert but sees areas of irritation around his mouth. Which intervention does the nurse immediately begin preparing for?",
+    "options": [
+      "Administration of syrup of ipecac to induce vomiting",
+      "Insertion of a nasogastric tube",
+      "Administration of an agent to neutralize the corrosive substance",
+      "Dilution of the corrosive substance with water or milk"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Household bleach is a corrosive agent. Treatment includes diluting the corrosive agent with water or milk (120 mL). Inducing vomiting is contraindicated because emesis and vomiting will damage the mucosa. Neutralization is not performed in this type of poisoning because it causes a chemical reaction, which produces a thermal burn in addition to a chemical burn. There is no useful purpose for a nasogastric tube in this type of poisoning.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q26",
+    "stem": " A nurse in a postanesthesia care unit (PACU) receives a client who is being transferred from the operating room after abdominal surgery. The PACU nurse ensures that the client has a patent airway and that the respiratory pattern is adequate. Which interventions should the PACU nurse perform next?",
+    "options": [
+      "Checking the client's pulse oximetry readings",
+      "Orienting the client to the surroundings",
+      "Assessing he abdominal dressing for drainage",
+      "Checking the Foley catheter for urine output"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "After a client is transferred from the operating room, the PACU nurse conducts an assessment. The ABCs—airway, breathing, and circulation—are always the first priorities. Because the nurse has ensured that the client has a patent airway (airway) and that the respiratory pattern is adequate (breathing), the nurse would next assess circulatory status. The nurse would accomplish this by assessing the client's pulse, blood pressure, skin color, pulse oximetry, and electrocardiogram status of the client is attached to a monitor), then evaluating wound status and dressings. Urine output and orientation to the surroundings may also be assessed, but these are not the priority actions.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q29",
+    "stem": " A nurse in the ambulatory care unit is caring for a client after cataract extraction. The client suddenly complains of severe pain in the affected eye. The nurse must immediately take which action?",
+    "options": [
+      "Tell the client that this is to be expected after surgery",
+      "Place the client in a supine position",
+      "Notify the surgeon",
+      "Administer the prescribed pain medication"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Severe pain or pain accompanied by nausea is an indicator of increased intraocular pressure and should be reported to the surgeon immediately. The client is not positioned supine because of the risk of bleeding or increased intraocular pressure from swelling. Medication may be prescribed, the client's symptoms indicate a serious complication requiring health care provider notification. Nausea and vomiting, if they occur, often indicate an increase of the iris has been disrupted, causing an acute increase in the intraocular pressure that may require surgical correction to preserve the client's vision.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q30",
+    "stem": " A client arrives at the emergency department after experiencing a traumatic blow to the eye, and a hyphema is diagnosed. The nurse should first take which action?",
+    "options": [
+      "Tell the client that reading and watching television are restricted",
+      "Administer prescribed cycloplegic eye drops",
+      "Ensuret that the client is placed in a semi-Fowler position",
+      "Place a patch and shield on the eye"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Hyphema is the presence of blood in the anterior chamber of the eye. It occurs when force is applied to the head, such as in closed-head injuries. The client is immured, the head end of the bed is elevated to allow gravity to help keep the hyphema away from the optical center in a semi-Fowler position to allow gravity to help keep the hyphema away from the optical center of the cornea. Limited eye movements are permitted for 3 to 5 days to decrease the risk of rebleeding. Cycloplegic eye drops may be prescribed to place the eye at rest, and the eye is not patched. A patch and shield. Watching television and reading are activities that involve eye usually resolves in 5 to 7 days.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q31",
+    "stem": " A client comes to the emergency department after being hit in the eye with a hockey puck. Which action does the nurse, seeing that the client has periorbital ecchymosis, implement immediately?",
+    "options": [
+      "Applying ice to the affected eye",
+      "Applying a warm saline compress to the affected eye",
+      "Placing a pressure dressing on the affected eye",
+      "Irrigating the affected eye with cool water"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Treatment for a contusion, which is ideally begun at the time of injury, includes the application of ice to the site. The client should also undergo a thorough eye examination to rule out the presence of other eye injuries. A pressure dressing is not used for periorbital ecchymosis when treating this type of injury. Irrigation of the eye with cool water may be implemented for injuries that involve a splash of an irritant into the eye.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q32",
+    "stem": " A client arrives in the emergency department complaining of feeling \"something in my eye\" and reports that some dust blew into the eye. The nurse would take which priority action?",
+    "options": [
+      "Apply a patch to the eye",
+      "Examine the eye, using fluorescein",
+      "Assess the client's vision",
+      "Irrigate the eye with sterile normal saline solution"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "If the client complains of the presence of a foreign body in the eye, the nurse would first assess the client's vision. The nurse would assist the health care provider examine the eye with a penlight; if the foreign body is visible, if prescribed, the nurse would then perform gentle ocular irrigation with sterile normal saline to remove any particles. Once the foreign body has been removed, an eye patch may be applied.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q33",
+    "stem": " A client who has been bitten on the right arm by a snake arrives at the emergency department. The nurse immediately takes which action?",
+    "options": [
+      "Applies ice to the site of the bite",
+      "Prepares to administer tetanus prophylaxis",
+      "Places a tourniquet above the site of the bite",
+      "Immobilizes the affected arm at heart level"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Treatment of snakebite is focused on preventing the spread of venom. Rings, watches, and restrictive clothing are removed. The victim is maintained at rest, with the affected extremity at the level of the heart. Ice and tourniquets are not recommended. Tetanus prophylaxis is administered, but this is not the action to be taken first.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q34",
+    "stem": " A client arrives in the emergency department and reports that an acid solution was splashed into his eye. The nurse immediately takes which action?",
+    "options": [
+      "Irrigates the eye with copious amounts of sterile normal saline solution",
+      "Applies litmus paper to the conjunctiva",
+      "Performs visual acuity tests",
+      "Swabs the eye with a corticosteroid ointment"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Emergency care after a chemical injury to the eye includes irrigating the eye immediately with copious amounts of sterile normal saline or ocular irrigation solution. The irrigation should be maintained for at least 15 minutes before the client is further evaluated and treated. Irrigating the eye immediately will preserve eye function. After this emergency treatment, visual acuity is assessed. A litmus paper may be applied to the conjunctiva to determine the pH of the substance that splashed into the eye if the substance is unknown. Further treatment may include topical antibiotics or corticosteroids.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q35",
+    "stem": " A nurse assessing a client with a closed chest tube drainage system notes constant bubbling in the water seal chamber. The nurse assesses the system for air leaks but is unable to locate a visible leak. Based on this finding, the nurse next performs which action?",
+    "options": [
+      "Replaces the drainage system",
+      "Milks the chest tube",
+      "Clamps the chest tube",
+      "Reduces the degree of suction being delivered"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Constant bubbling in the water seal chamber of a closed chest tube drainage system may indicate the presence of an air leak if constant bubbling were noted in this chamber. If an air leak cannot be located, the nurse replaces the drainage system. If continuous bubbling still exists after the water seal chamber continues, the health care provider is notified, because an air leak may be present in the pleural space, which may result in a pneumothorax. Milking and clamping a chest tube are not pneumothorax. Reducing the degree of suction being delivered will not affect the bubbling in the water seal chamber and could be a harmful. Clamping and milking the chest tube are both incorrect. Additionally, a chest tube is not clamped or milked unless specifically prescribed and the procedure is an approved intervention as stated in the agency's policies and procedures.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q54",
+    "stem": " A nurse conducting a postpartum assessment notes that the client's uterus is not firmly contracted. The nurse would first perform which action?",
+    "options": [
+      "Massage the uterine fundus",
+      "Check the client's vital signs",
+      "Contact the health care provider",
+      "Prepare to administer a rapid infusion of dilute oxytocin"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "If the uterus is not firmly contracted, the nurse must first massage the uterine fundus until it is firm. The intervention may be accompanied by the expression of clots from the uterus. If the uterus does not contract, the nurse must contact the health care provider. A rapid intravenous infusion of dilute oxytocin may be prescribed to increase uterine tone and decrease bleeding if uterine massage is not effective. The nurse would check the client's vital signs, but this would not be the first action.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q55",
+    "stem": " The nurse is working with a new nurse employee who is caring for a client who is has just undergone surgery. The client is receiving continuous intravenous (IV) morphine sulfate for pain control. The nurse realizes the new nurse employee understands the priority of postoperative care if the new nurse employee assesses which aspect first?",
+    "options": [
+      "Urine output",
+      "Temperature",
+      "Surgical incision",
+      "Respiration"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Morphine sulfate depresses respiration, so the nurse monitors the client's respiratory status closely and monitors the client's blood pressure because of the risk for orthostatic hypotension. Although the temperature, urine output, and surgical incision are all assessed, respiration is the priority nursing action.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q56",
+    "stem": " A nurse has taught the family member of a client undergoing peritoneal dialysis methods to deal with problems with inflow of the dialysate. The nurse realizes the family member understands the provided instructions if the family member mentions taking which action first if there difficulty with the installation if the dialysate?",
+    "options": [
+      "Milks the peritoneal dialysis tube",
+      "Places the client in a supine low Fowler position",
+      "Asks the client about recent problems with constipation",
+      "Repositions the client"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Constipation is the primary cause of problems with inflow and outflow of peritoneal dialysate. Therefore the nurse would first ask the client about recent problems with constipation. The nurse would next check the dialysis tubing for kinks and change the client's position. Placing the client in a supine position and then exploring other problems with intraabdominal pressure and promotes adequate inflow and outflow of dialysate. Milking of the peritoneal dialysis tube could dislodge a fibrin clot obstructing the tubing.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q57",
+    "stem": " A nurse is caring for a client undergoing peritoneal dialysis. The nurse checks the client and notes that the drainage from the outflow catheter is cloudy. The nurse takes which action?",
+    "options": [
+      "Increases the flow of peritoneal dialysis",
+      "Adds antibiotics to the next several dialysis bags",
+      "Adds heparin sodium to the dialysate solution",
+      "Checks the client's white blood cell (WBC) count"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "When the dialysis drainage becomes cloudy, peritonitis is suspected, and the nurse must first check the client's WBC count. A culture and sensitivity are obtained, and broad-spectrum antibiotics are added to the dialysate solution pending culture and sensitivity results as prescribed. The dialysate solution may also be heparinized (per health care provider prescription) to prevent catheter occlusion. Some dialysate solution may be sent to the laboratory for a cell count, but the nurse would not make this decision. The peritoneal dialysis flow is not recurrent, but the nurse would not make this decision.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q75",
+    "stem": " A ventilator's high-pressure alarm sounds. The nurse rushes to the client's room and assesses the client but is unable to determine the cause of the alarm. The nurse immediately performs which intervention?",
+    "options": [
+      "Inserts an oral airway into the client",
+      "Ventilates the client manually with the use of a resuscitation bag",
+      "Calls the respiratory therapist",
+      "Silences the alarm and continues trying to determine the cause of the alarm"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Mechanical ventilators have alarm systems that warn the nurse of problems with the client or ventilator. Alarm systems must be activated and functional at all times. The nurse must recognize an emergency and intervene promptly so that complications are prevented. If the cause of an alarm cannot be determined, the nurse ventilates the client manually with the use of a resuscitation bag/mask device until it is corrected or the client is transferred to another ventilator. Inserting an oral airway is not an immediate intervention, although one may be inserted in a client who is biting on the endotracheal tube.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q77",
+    "stem": " A client with a fracture of the left arm that has been set in a cast complains of severe, diffuse pain that is unrelieved by pain medication. On further assessment, the nurse notes that the pulse distal to the site of injury has weakened and that the tissue is pale. On the basis of these assessment findings, the nurse first takes which action?",
+    "options": [
+      "Continue to assess the client's pain level",
+      "Contacts the health care provider",
+      "Applies an ice pack",
+      "Checks to see whether it is time for more pain medication"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The client with early acute compartment syndrome typically complains of severe, diffuse pain that is unrelieved by pain medication. The nurse notifies the health care provider immediately. Checking to see whether it is time for more pain medication and continuing to assess the pain level and applying ice are important interventions, but this is not the priority.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q80",
+    "stem": " A nurse has educated a client with type 1 diabetes mellitus on the action to take when experiencing hypoglycemia. The nurse realizes the teaching has been effective if the client verbalizes the need to take which item in the event of a mild hypoglycemic reaction?",
+    "options": [
+      "A full-size candy bar",
+      "6 oz (180 mL) of diet soda",
+      "A graham cracker",
+      "1 tablespoon of honey"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Mild hypoglycemia is immediately treated with 10 to 15 g of carbohydrate. Sources of carbohydrate include 1/2 cup (120 mL) of fruit juice, 1/2 cup (120 mL) of regular (nondiet) soft drink, 8 oz (240 mL) of skim milk, 6 to 10 hard candies, four cubes or 4 teaspoons of sugar, six saltines, three graham crackers, and 1 tablespoon of honey or syrup. Eating a full-size candy bar is not an appropriate treatment for hypoglycemia, because the bar contains an inappropriate amount of carbohydrates. Gelatin may be indicated for a moderate reaction or if the client continues to experience hypoglycemia despite treatment with the initial 10 to 15 g of carbohydrates.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q84",
+    "stem": " A client returns from the operating room after the application of skeletal traction to treat a fractured femur. Which action would the nurse implement first in the care of the client?",
+    "options": [
+      "Checking the client's temperature",
+      "Asking the client about the presence of pain",
+      "Instructing the client in the use of the trapeze",
+      "Assessing the neurovascular status of the affected extremity"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The neurovascular status of the injured extremity must be assessed every 2 hours during the 24 hours following the procedure. Asking the client about pain is appropriate, but pain varies at the individual level and is no priority after the extremity assessment; client alertness is needed to answer questions about sensation. The vital signs are also assessed, but the client's neurovascular status is the priority. Instructing the client in the use of the trapeze is not the priority.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q86",
+    "stem": " A home care nurse is assigned to visit a client who lives alone. The client was recently discharged from the hospital after cardiac catheterization and placement of two stents in the right main coronary artery. The client tells the nurse that she has been experiencing chest pain and has taken 3 sublingual nitroglycerin tablets, with no relief. What immediate action should the nurse take?",
+    "options": [
+      "Drive the client to the emergency department (ED)",
+      "Inform the home healthcare agency of the situation",
+      "Call a family member to come and stay with the client",
+      "Call an ambulance to take the client to the ED"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Chest pain that is unrelieved by rest and nitroglycerin may not be typical anginal pain; instead, it may signal myocardial infarction (MI). Because the risk of sudden cardiac death is greatest in the 24 hours after MI, it is imperative that the client receive immediate care. The nurse would call an ambulance to transport the client to the ED. The nurse would not drive the client to the ED, because it could not exert influence in the event that cardiac arrest occurred. The nurse would not be able to provide adequate care if an emergency were to arise during the drive. Although the nurse should eventually notify both a family member and inform the home healthcare agency of the situation, these are not the immediate interventions.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q87",
+    "stem": " A registered nurse (RN) on the 7 a.m.–3 p.m. shift is planning client assignments for the day. Which clients would be appropriate for the RN to assign to the licensed practical nurse (LPN)? (Select all that apply.)",
+    "options": [
+      "A client being transferred in from the intensive care unit with a deep vein thrombosis and a heparin drip requiring hourly care and dose adjustments",
+      "A client who had a mastectomy 2 days ago",
+      "A client with left-side weakness who will need assistance with personal care",
+      "A client with type 1 diabetes mellitus who has a foot ulcer",
+      "A newly admitted client with chronic obstructive pulmonary disease (COPD)"
+    ],
+    "correct": [
+      "B",
+      "C",
+      "D"
+    ],
+    "rationale": "When a nurse delegates aspects of a client's care to another staff member, the nurse assigning the task is responsible for ensuring that each task is assigned appropriately on the basis of the educational level and competency of the staff member. The client with COPD who was admitted during the night will need close monitoring of the respiratory status. An LPN may not administer most high-risk intravenous medications, including heparin. The client who has had a mastectomy and the client with a foot ulcer will likely require dressing changes, an activity within the scope of practice of the LPN. The client with left-side weakness requiring personal care would also be an appropriate assignment for the LPN.",
+    "type": "multi_select"
+  },
+  {
+    "id": "Delegating_Q88",
+    "stem": " A registered nurse (RN) on the night shift has a licensed practical nurse (LPN) and an assistive personnel (AP) on the team and is planning assignments for the client assessment for the night. Which client does the RN assign to the LPN? (Select all that apply.)",
+    "options": [
+      "A client with a nasogastric tube who underwent bowel resection 2 days ago",
+      "A client with urinary frequency who needs assistance in getting to the bathroom",
+      "A client who is undergoing a 24-hour urine collection",
+      "A client with end-stage renal dialysis in the morning who needs assistance with hygiene",
+      "A client who has been fitted with skeletal traction of the right leg after an open reduction measures"
+    ],
+    "correct": [
+      "A",
+      "E"
+    ],
+    "rationale": "When a nurse delegates aspects of a client's care to another staff member, the nurse assigning the task is responsible for ensuring that each task is appropriately assigned on the basis of the education level and competency level of the staff member. On the RN's assignment, an LPN may perform invasive procedures. A client with a nasogastric tube who underwent bowel resection 2 days ago and a client in skeletal traction following an open reduction would likely be assigned to the LPN, because the LPN is capable of performing the nasogastric tube care, dressing changes, and monitoring for positioning complications and the pin site care identified in the other options—may be assigned to a nursing assistant such as assisting clients with ambulation and hygiene measures and performing noninvasive procedures—the types of tasks identified in the other options.",
+    "type": "multi_select"
+  },
+  {
+    "id": "Delegating_Q89",
+    "stem": " A registered nurse (RN) is planning assignments for six clients on a nursing unit. The RN has an RN, a licensed practical nurse (LPN), and an assistive personnel (AP) on the nursing team. Which clients should the nurse assign to the RN? (Select all that apply.)",
+    "options": [
+      "A client who requires tap water enemas until clear",
+      "A client requiring complete assistance with personal care",
+      "A client with newly diagnosed type 1 diabetes mellitus",
+      "A client with gastrointestinal bleeding and a hemoglobin of 7.3 mg/dL (7.3 g/L)",
+      "A client who has undergone amputation of the right leg amputation and a dressing change F. A client who was admitted during the night after an acute asthma attack"
+    ],
+    "correct": [],
+    "rationale": "",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q90",
+    "stem": " A registered nurse is planning client assignments for the day. Which clients should the nurse assign to the assistive personnel (AP)? (Select all that apply.)",
+    "options": [
+      "A client scheduled for discharge after cardiac catheterization",
+      "A client on strict bed rest who requires range-of-motion exercises every 2 hours",
+      "A client who underwent mastectomy 2 days ago",
+      "A client with diarrhea who requires assistance with hygiene care",
+      "A client scheduled for colonoscopy"
+    ],
+    "correct": [
+      "B",
+      "D"
+    ],
+    "rationale": "The registered nurse is legally responsible for client assignments and must assign tasks on the basis of the guidelines of the nursing practice act and the job description of the health care agency. A client scheduled for colonoscopy has physiological needs and requires nursing assessments, as well as knowledgeable supervision of the procedure by an RN. A client undergoing a mastectomy 2 days earlier will require both physiological and psychosocial care. A client scheduled for discharge after cardiac catheterization will require reinforcement of instructions related to home care and medication management. The nursing assistant may care for the client requiring hygiene care for diarrhea. The AP will carry out exercise instructions, but will require range-of-motion exercises. The nurse would provide instructions to the AP regarding these tasks, but the tasks required for this client are within the role description of an AP.",
+    "type": "multi_select"
+  },
+  {
+    "id": "Delegating_Q91",
+    "stem": " A nurse is providing an orientation to a nurse who will be making assignments to staff and is delegating tasks to the nursing staff. The nurse realizes the education has been successful when the nurse who is delegating task names the activities that are appropriate for the assistive personnel (AP)? (Select all that apply.)",
+    "options": [
+      "Feeding a newly admitted client with dysphagia after a stroke",
+      "Obtaining frequent oral temperatures from a client who is receiving a blood transfusion",
+      "Accompanying a man being discharged home to his transportation at the hospital",
+      "Obtaining a 24-hour dietary recall from a client admitted to the hospital with anorexia nervosa",
+      "Obtaining a clean-catch urine specimen from a client who is complaining of urgency and frequency"
+    ],
+    "correct": [
+      "B",
+      "C",
+      "E"
+    ],
+    "rationale": "The nurse must determine the most appropriate assignments on the basis of the skills of the staff members and the needs of the client. Although obtaining clients will be doing is often within the scope of practice of an AP, a newly admitted client who has had a stroke and is experiencing dysphagia should be cared for by the registered nurse so that an assessment of the client's risk for aspiration may be completed and appropriate recommendations for safe feeding made. Dietary recall is most appropriately conducted by a registered dietitian. A 24-hour dietary recall from a client with anorexia nervosa. This assessment is most appropriately conducted by a registered dietitian or professional with a quantity of appropriate data and skills and the AP may be assigned the remaining three options include no data to indicate that they carry any major risks.",
+    "type": "multi_select"
+  },
+  {
+    "id": "Delegating_Q92",
+    "stem": " A nurse is planning client assignments for the shift. Which clients would the nurse assign to the assistive personnel (AP)? (Select all that apply.)",
+    "options": [
+      "A client who needs to be ambulated with a walker twice a day",
+      "A client on a bowel management program who requires a daily rectal suppository",
+      "A client with diabetes mellitus who requires blood glucose testing every 2 hours",
+      "A client with incontinence who requires a bladder scan after each void",
+      "A client receiving blood transfusions"
+    ],
+    "correct": [
+      "A",
+      "D"
+    ],
+    "rationale": "Assignment of tasks must be implemented on the basis of the job description of the AP, the RN's level of competency and comfort, and the AP. A client who needs ambulation, blood transfusions, one in a bowel-management program who requires a rectal suppository daily, and one with diabetes mellitus who requires blood glucose testing requires the skill of a licensed nurse, because these are invasive procedures. A client receiving blood must be monitored closely for transfusion reactions. A blood transfusion must be administered by a licensed nurse. Blood glucose monitoring needs to be performed by a licensed nurse. A client with incontinence who requires a bladder scan after each void can be accomplished by an AP. Ambulating a client twice a day are the most appropriate assignments for the AP.",
+    "type": "multi_select"
+  },
+  {
+    "id": "Delegating_Q58",
+    "stem": " A nurse in charge of an emergency department (ED) arrives at work at 11 p.m. and is told that four registered nurses scheduled to work will not be reporting to work because they are ill. Every trauma room is busy, and emergency medical services has just called to report that several victims of a fire will be brought to the ED. The nurse in charge immediately takes which action?",
+    "options": [
+      "Calls the nursing supervisor to discuss activation of the disaster plan",
+      "Closes the ED temporarily to incoming clients",
+      "Tells emergency medical services to take the victims to another hospital",
+      "Demands that the nurses from the evening shift stay until all of the victims have been treated"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "External disasters are a fact of life in a community, and victims are often brought to the ED for care. In this situation, the nurse in charge would first contact the nursing supervisor to explain the need for additional staffing and discuss activation of the disaster plan. The nurse in charge should ask, not demand, that nurses from the evening shift stay until all of the victims have been treated. The nurse in charge would not ask emergency medical services to take the victims to another hospital or close the ED temporarily to incoming clients. Such decisions are made by hospital administration.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q59",
+    "stem": " A woman is brought to the emergency department (ED) in a severe state of anxiety after witnessing a child's drowning. The nurse assigned to care for the client would first take which action?",
+    "options": [
+      "Provide the client with a gross motor activity to drain some tension",
+      "Take the client to a quiet room with minimal stimulation",
+      "Teach the client relaxation techniques",
+      "Encourage the client to describe the events of the accident"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "If a client with severe anxiety is left alone, he or she may feel abandoned and become overwhelmed. Placing the client in a quiet room where there is minimal stimulation is a priority intervention, but the nurse must stay with the client. Teaching the client relaxation techniques until her anxiety has decreased. The client should not be asked to describe the events of the accident until her anxiety has decreased. Although providing the client with a gross motor activity to drain some tension may be an appropriate intervention, it is not the first action.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q60",
+    "stem": " A nurse reviews the laboratory values of a client with bipolar disorder who is taking lithium carbonate (Lithobid) and notes that the serum lithium level is 2.0 mEq/L (2.0 mmol/L). On the basis of this laboratory value, the nurse first takes which action?",
+    "options": [
+      "Places the client in the seclusion room",
+      "Administers the prescribed dose of lithium carbonate",
+      "Documents the laboratory report in the client's record",
+      "Calls the health care provider"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "A serum lithium level of 2.0 mEq/L (2.0 mmol/L) indicates toxicity, and the health care provider must be notified. The nurse would assess the client for signs of toxicity, which include coarse hand tremors or the generalized tremors of the entire extremity, mental confusion, irritability, and incoordination. Administering the prescribed dose of lithium carbonate is incorrect, because the lithium level indicates toxicity. Placing the client in the seclusion room is also inappropriate. Although the laboratory report will be documented in the client's record, this is not the priority action.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q63",
+    "stem": " A labor nurse is caring for a client with a known history of sickle cell anemia. Which action does the nurse implement as a priority to help prevent sickle cell crisis?",
+    "options": [
+      "Maintaining strict asepsis when performing procedures",
+      "Administering intravenous (IV) fluids as prescribed",
+      "Administering oxygen only if the client complains of shortness of breath",
+      "Providing continuous fetal monitoring"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Nursing care is focused on preventing sickle cell crisis. Oxygen is administered continuously and not on demand because it is administered to prevent dehydration because hypoxemia, dehydration, exertion, infection, and acidosis all stimulate the sickling effect. Providing support to the client undergoing strict asepsis and IV fluids as prescribed are appropriate interventions during labor but are not specific measures to prevent sickle cell crisis.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q64",
+    "stem": " A nurse is caring for a client who sustained a serious burn injury 24 hours ago. On assessment, the nurse finds that the client's urine output is 0.3 mL/kg/hr, blood pressure is 88/60 mm Hg, and heart rate is 110 beats/min. The nurse would immediately take which action?",
+    "options": [
+      "Notify the health care provider",
+      "Cover the client with a warm blanket",
+      "Increase the intravenous (IV) flow rate",
+      "Make a note to reassess the client in 30 minutes"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The nurse notifies the health care provider immediately if a burned client exhibits decreased urine output or blood pressure or an increased pulse rate. Because these are fluid shifts that occur in burn shock, fluid deficit must be detected early so that hypovolemic shock may be prevented. A nurse does not independently increase a specific prescribed IV rate. Delaying necessary interventions to prevent the development of hypovolemic shock. A warm environment is maintained to prevent loss of heat but this is not the immediate action. Urine output should be maintained between 0.5 and 1.0 mL/kg/hr.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q65",
+    "stem": " A nurse is getting a postoperative client out of bed for the first time since surgery. The nurse raises the head of the bed, and the client complains of dizziness. Which action should the nurse take first?",
+    "options": [
+      "Lowering the head of bed slowly until the dizziness passes",
+      "Checking the client's apical heart rate",
+      "Contacting the health care provider",
+      "Calling for assistance in getting the client out of bed"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Dizziness or a feeling of faintness is not uncommon when a client is positioned upright for the first time after surgery. This is most likely a result of orthostatic hypotension. When this occurs, the nurse relieves the feeling by lowering the head of the bed slowly until the dizziness eases. The nurse then checks the pulse and blood pressure. There is no reason to contact the health care provider at this time. It may be appropriate to obtain assistance in getting the client out of bed, but this is not the first nursing action.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q66",
+    "stem": " A client arrives at the emergency department with an episode of status asthmaticus. The health care provider leaves this set of prescriptions. Which prescription does the nurse implement first?",
+    "options": [
+      "Vital signs q 15 minutes",
+      "Normal Saline intravenously at 100 mL/hour",
+      "Oxygen at 21% via Venti mask",
+      "High Fowler position"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The first nursing action is to place the client in a position that aids respiration — sitting bolt upright or in a high Fowler position. Other nursing actions include monitoring vital signs and administering bronchodilators and oxygen at levels of 2 to 5 L/min or 24% to 32% by way of Venti mask. Insertion of an IV line and ongoing monitoring of respiratory status are also indicated.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q67",
+    "stem": " A nurse teaches a client with urolithiasis about the signs of urinary obstruction and the interventions to be taken if obstruction is suspected. The nurse realizes the teaching has been effective if the client verbalizes taking which action in the event an obstruction is suspected?",
+    "options": [
+      "Perform a self-catheterization",
+      "Call the health care provider",
+      "Check the pH of the urine",
+      "Drink 1500 mL of water"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "If signs of urinary obstruction occur, the client should immediately contact the health care provider. Obstruction is a medical emergency, requiring immediate treatment to preserve kidney function. Telling the client to drink 1500 mL of water is incorrect. Additionally, if an obstruction is present, increasing fluids could cause hydronephrosis. Self-catheterization would not be related to relieving an obstruction. Self-catheterization is inappropriate and may cause injury to the urethra.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q68",
+    "stem": " A nurse enters the room of a client with type 1 diabetes mellitus and finds the client difficult to arouse. The client's skin is warm and flushed and the respiratory rate are increased from the client's baseline. The nurse would take which action first?",
+    "options": [
+      "Give the client 4 oz (120 ml) of orange juice",
+      "Check the client's capillary blood glucose",
+      "Administer a bolus dose of 50% dextrose",
+      "Prepare an intravenous (IV) insulin infusion"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The client's signs and symptoms are consistent with hyperglycemia. The nurse must first obtain a blood glucose reading to verify this interpretation, which would then be reported to the health care provider for subsequent prescriptions. Giving the client 4 oz (120 ml) of orange juice and administering a bolus dose of 50% dextrose would be implemented as needed in the treatment of hypoglycemia. Insulin therapy is guided by blood glucose measurements.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q71",
+    "stem": " The nurse has explained emergency procedures to a new nurse employee. A cardiac monitor alarm sounds, and the nurse notes an erratic rhythm on the screen. The nurse realizes teaching has been effective if the new nurse employee takes which priority action?",
+    "options": [
+      "Assesses the client",
+      "Checks the cardiac electrodes attached to the client",
+      "Calls a code",
+      "Obtains a rhythm strip for evaluation"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "If a monitor alarm sounds, the nurse should first assess the clinical status of the client to see if the problem is an actual dysrhythmia or a malfunction of the monitoring system. If the clinical status of the client is stable, the nurse must next check the cardiac electrodes attached to the client to see if the problem is related to an electrode lead that is experiencing a dysrhythmia. A code is called if the client requires cardiopulmonary resuscitation. On the basis of the information in the question and the options provided, calling a code, checking the cardiac electrodes attached to the client and obtaining a rhythm strip for evaluation are not the immediate actions.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q72",
+    "stem": " A nurse assesses the closed chest tube drainage system of a client who underwent pulmonary wedge resection 12 hours ago. The nurse notes that there has been no chest tube drainage for the past hour. The nurse first takes which action?",
+    "options": [
+      "Strips the chest tube",
+      "Assesses the client's heart rate",
+      "Checks for obstructions or kinks in the chest drainage system",
+      "Checks for an air leak in the system"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "If it is noted that a chest tube is not draining, the nurse first checks for a kink or clot in the chest tube drainage system. The nurse also observes the client for respiratory distress or mediastinal shift, if this is detected. If neither corrective measure results in a drainage, the chest tube is not notified. Stripping the chest tube is a procedure that has been discontinued at many institutions, and the institutional policy concerning this procedure should be checked before a tube is stripped. Assessing the heart rate is not directly related to the lack of chest tube drainage. If the chest tube continues to not drain or if bubbling in the water seal chamber is noted.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q73",
+    "stem": " A nurse has demonstrated a suctioning technique to a nursing student. A nurse and the student are suctioning an adult client undergoing mechanical ventilation through a tracheostomy tube. During the procedure, the nurse notes that the client's oxygen saturation on pulse oximetry has dropped to 89%. The nurse realizes teaching has been effective if the student takes which action?",
+    "options": [
+      "Stop and oxygenate the client with 100% oxygen",
+      "Calls respiratory therapy to check the pulse oximeter",
+      "Increases the suction pressure and continue suctioning",
+      "Obtains a pediatric suction catheter and suction the client"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The nurse should monitor the client's heart rate and pulse oximetry during suctioning to assess the client's tolerance of the procedure. If a drop in heart rate or pulse oximetry occurs or if hypoxemia. If hypoxia occurs during suctioning, the nurse must terminate the suctioning procedure. The client is reoxygenated with the use of 50%-100% oxygen delivery system until baseline parameters are achieved. Adequate catheter size facilitates efficient removal of secretions in adults. The diameter of the catheter should not exceed half the diameter of the artificial airway. There is no indication in the question that these parameters are being exceeded. Additionally, increasing suction pressure could be harmful. It is inappropriate to call respiratory therapy to check the pulse oximeter.",
+    "type": "single_select"
+  },
+  {
+    "id": "Delegating_Q74",
+    "stem": " A nurse is caring for a client with a closed chest tube drainage system. When the client is repositioned, the chest tube is disconnected. The nurse immediately takes which action?",
+    "options": [
+      "Submerges the end of the tube in a bottle of sterile water",
+      "Notifies the health care provider",
+      "Clamps the chest tube as close to the insertion site as possible",
+      "Instructs the client to perform a Valsalva maneuver"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "If the tube becomes disconnected, it is best to immediately submerge the end in a bottle of sterile water or normal saline, creating a water seal. Submerging the end of the chest tube is contraindicated. When the client has a residual air leak or pneumothorax, clamping the chest tube could result in a tension pneumothorax. Although the health care provider may need to be notified, this is not the immediate action. The client does not need to perform a Valsalva maneuver.",
+    "type": "single_select"
+  }
+]

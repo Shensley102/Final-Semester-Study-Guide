@@ -1,0 +1,1616 @@
+[
+  {
+    "id": "Leadership_Q1",
+    "stem": "The nurse calls the surgeon to report that a male client who has transitioned from a PCA to PO analgesic one hour ago is now complaining in a loud voice and asking for the PCA pump. The nurse explains that the client's behavior is disturbing his roommate. The client's BP has increased from 120/72 to 150/98. Which question is best to include in the recommendation component of the SBAR report to the surgeon?",
+    "options": [
+      "Could the behavior be a manifestation of drug seeking?",
+      "Can the client be transferred to a private room?",
+      "Can the PCA be initiated and prescribed for an additional 12 hours?",
+      "Should the client be evaluated by a pain management specialist?"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Using the SBAR communication framework, the recommendation should be action-oriented and address the primary issue - inadequate pain control. The elevated blood pressure (120/72 to 150/98) and verbal complaints suggest uncontrolled pain, not drug-seeking behavior. Requesting reinitiation of the PCA pump directly addresses the client's physiological need for better pain management and is the most appropriate clinical recommendation. Suggesting drug-seeking behavior (A) is judgmental and not evidence-based. Transferring to a private room (B) doesn't address the pain issue. A pain management specialist (D) may be appropriate later, but doesn't address the immediate need.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q2",
+    "stem": "The nurse is assigned to care for four clients. After receiving the change of shift report, which client should the nurse assess first?",
+    "options": [
+      "A client with diabetes and a history of coronary artery disease who is complaining of increased SOB",
+      "A 10-year-old with sickle cell disease who has a PCA pump and is complaining of pain 2-3/10",
+      "A 29-year-old who has had CKD for the past year and had an AV fistula placed yesterday",
+      "An older client with COPD who is experiencing SOB and whose O2 saturation is 88% on RA"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The client with diabetes and coronary artery disease experiencing increased shortness of breath requires immediate assessment, as this could indicate acute myocardial infarction, heart failure exacerbation, or other life-threatening cardiac complications. Clients with diabetes and CAD are at significantly higher risk for silent MIs and cardiovascular emergencies. The child with sickle cell (B) has well-controlled pain (2-3/10). The client with a new AV fistula (C) is stable post-procedure. While the COPD client (D) has a low O2 sat, 88% on room air may be baseline for a COPD patient, whereas new SOB in a cardiac client is an emergency.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q3",
+    "stem": "A HCP notifies the nurse that new prescriptions have been written for a client. Which is the first action the nurse should implement?",
+    "options": [
+      "Collect any needed forms, such as labs and radiology requisitions",
+      "Clarify the prescriptions with the unit clerk to ensure accurate transcription",
+      "Document the time that the provider visited the client in the nurses' notes",
+      "Read all of the new prescriptions for the client written by the provider"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The first priority is to read all new prescriptions to understand the complete plan of care and identify any potential safety concerns, conflicts with existing orders, or urgent interventions needed. The nurse must review orders before taking any action (A, B) or documenting (C). This follows the basic principle of assessment before implementation. Reading orders first allows the nurse to prioritize interventions, identify STAT orders, recognize potential medication errors or contraindications, and plan appropriate nursing actions. Only after fully understanding all orders can the nurse safely proceed with implementation steps.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q4",
+    "stem": "An RN, PN, and UAP are working as a team to provide care for an acutely ill client requiring immediate bedside insertion of a chest tube. Which assignment is the best use of each person's skills?",
+    "options": [
+      "RN inserts the chest tube immediately after the PN cleans the skin at the insertion site",
+      "The UAP listens to breath sounds while the RN witnesses the informed consent",
+      "The PN instructs the family about the need for chest tube insertion while the RN obtains VS",
+      "The UAP obtains an O2 saturation level while the RN reports findings to the healthcare provider"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The UAP obtaining oxygen saturation while the RN reports findings to the healthcare provider represents appropriate delegation based on the scope of practice. UAPs can perform non-invasive monitoring tasks like pulse oximetry. The RN must communicate with the HCP, as this requires professional judgment and critical thinking about the client's condition. Option A is incorrect as RNs do not insert chest tubes (physician procedure). Option B inappropriately assigns assessment (breath sounds) to UAP - this requires nursing judgment. Option C incorrectly assigns teaching (PN) when the RN should obtain VS for an acutely ill client requiring immediate intervention.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q5",
+    "stem": "An older woman with a long history of HTN is transferred from a long-term care unit because of HF. She has a signed and witnessed DNR in her record. What action should the nurse take?",
+    "options": [
+      "Transfer client to palliative care unit for further supportive care",
+      "Consult with hospice case manager regarding plan of care",
+      "Confirm current resuscitation wishes with client and family",
+      "Ask the unit supervisor to meet with the family about the desired care level"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Even though a signed DNR exists, the nurse should confirm current resuscitation wishes with the client and family, as circumstances, disease progression, and patient preferences may have changed since the DNR was originally signed. DNR orders should be regularly reviewed and reaffirmed, especially during transitions of care or changes in clinical status. This respects patient autonomy and ensures the current plan aligns with the patient's wishes. Options A and B are premature without first confirming the patient's current wishes. Option D bypasses direct communication with the patient, who has decision-making capacity and should be consulted first.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q6",
+    "stem": "When caring for an older adult with septic shock, which intervention is most important for the nurse to include in this client's plan of care?",
+    "options": [
+      "Maintain strict I&O",
+      "Assess warmth of extremities",
+      "Keep HOB elevated 45 degrees",
+      "Monitor blood glucose level"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Assessing warmth of extremities is most important in septic shock because it evaluates peripheral perfusion and tissue oxygenation, which are critical indicators of circulatory status and shock progression. Cool extremities indicate vasoconstriction and poor perfusion, signaling worsening shock. In septic shock, early (warm) shock can progress to late (cold) shock with peripheral vasoconstriction. While I&O monitoring (A) is important for fluid management, perfusion assessment is more critical. HOB elevation (C) is not specifically indicated for septic shock. Blood glucose monitoring (D) is important but secondary to perfusion assessment in managing shock.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q7",
+    "stem": "A client is admitted with exacerbation of COPD and reports that it is difficult to eat due to SOB. Which tasks should the nurse delegate to UAP? (Select all that apply.)",
+    "options": [
+      "Assist the client with eating small, frequent, calorie meals",
+      "Offer high-calorie foods such as milk and ice cream",
+      "Consult with a registered dietician about recommended nutritional needs",
+      "Maintain a clean and pleasant environment during meals",
+      "Set up the food and drink containers within easy reach"
+    ],
+    "correct": [
+      "A",
+      "B",
+      "D",
+      "E"
+    ],
+    "rationale": "UAPs can assist with activities of daily living, including feeding assistance (A), offering appropriate foods (B), maintaining the environment (D), and meal setup (E). These are standard care tasks within the UAP scope that don't require nursing judgment. However, consulting with the dietician (C) requires assessment and professional judgment about nutritional needs, which is an RN responsibility. The RN must evaluate the client's nutritional status, dyspnea level, and specific dietary requirements before collaborating with dietary services. UAPs can implement the feeding plan, but cannot assess needs or consult with other healthcare professionals.",
+    "type": "multi_select"
+  },
+  {
+    "id": "Leadership_Q8",
+    "stem": "The nurse watches the UAP bring soap, washcloths, a towel, and a basin into the room of a male client who had a suprapubic catheter inserted earlier that day. Which action should the nurse implement?",
+    "options": [
+      "Remind UAP to provide warmth and privacy when washing and drying the area around the catheter",
+      "Encourage UAP to offer the client the opportunity to perform his own catheter care independently",
+      "Tell the UAP that the nurse will perform the client's catheter care while the UAP assists with his personal care",
+      "Advise the UAP that the client's dressing will need to be removed before cleaning around his catheter"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Suprapubic catheter care on the day of insertion requires nursing assessment and skilled care due to the fresh surgical site and potential complications such as bleeding, infection, or dislodgement. The nurse must perform this care to assess the insertion site, evaluate healing, check for complications, and provide appropriate sterile technique if needed. UAPs can assist with general personal hygiene, but cannot perform care involving fresh surgical sites or invasive devices requiring assessment. This intervention appropriately maintains patient safety while still utilizing the UAP for their scope of practice (personal care assistance).",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q9",
+    "stem": "The nurse observes a PN placing a client on the right side with the left leg bent in prep for a lumbar puncture. Which action should the RN take?",
+    "options": [
+      "Demonstrate to the PN how to position the client more effectively for the procedure",
+      "Arrange for a UAP to assist PN during procedure",
+      "Assume care of the client and reassign the PN",
+      "Acknowledge the PN has positioned the client correctly"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The PN has not positioned the client correctly for a lumbar puncture. The proper position is lateral recumbent (side-lying) with knees drawn up to the chest and head tucked forward to maximize the space between vertebrae. The described position (right side with left leg bent) does not adequately open the intervertebral spaces. The RN should teach the PN proper positioning techniques through demonstration, which provides education and ensures patient safety. This is more constructive than reassigning the PN (C) and addresses the immediate learning need. The position is not correct (D). A UAP cannot assist with sterile procedures (B).",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q10",
+    "stem": "The charge nurse observes a newly employed nurse begin to administer liquid meds via the client's gastrostomy feeding tube system via the bag hanging above the delivery pump. What action should the charge nurse take?",
+    "options": [
+      "Advise the nurse to lower the bag to eye level",
+      "Confirm the nurse checked solution compatibility",
+      "Instruct the nurse to flush the bag with sterile saline",
+      "Direct the nurse to stop medication administration"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Medications should NEVER be administered via the feeding bag/pump system. Liquid medications must be administered separately through the gastrostomy tube using a syringe, not through the feeding solution bag. Mixing medications with tube feeding can cause drug-nutrient interactions, medication degradation, tube clogging, and inaccurate dosing. The charge nurse must immediately stop this incorrect practice. After stopping, the nurse should be educated on proper medication administration technique: stop the feeding, flush the tube with water, administer each medication separately via syringe with water flushes between medications, then resume feeding. This is a patient safety issue requiring immediate intervention.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q11",
+    "stem": "The nurse assigns a UAP to apply sequential compression devices to a client. Which instruction should the nurse include when assigning this task?",
+    "options": [
+      "Report changes in color in the client's feet or legs",
+      "Check pedal pulse prior to application",
+      "Elevate legs onto a pillow if the client reports discomfort",
+      "Compression should start at the toes and move upward"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The UAP should be instructed to report changes in the color of the feet or legs, as this indicates potential circulation problems and requires nursing assessment. UAPs can observe and report abnormal findings to the nurse. Checking pedal pulses (B) requires assessment skills beyond the UAP scope. Elevating legs (C) requires nursing judgment about appropriateness. Option D describes incorrect application - sequential compression devices are designed to inflate from the ankle upward, not from the toes. The key delegation principle is that UAPs can observe and report, but the nurse must assess and make clinical decisions based on those observations.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q12",
+    "stem": "The nurse hears a new UAP who is working in a long-term care facility calling adult residents \"honey\" and \"dearie.\" Which is the best action the nurse should take?",
+    "options": [
+      "Role model correct approach for addressing residents",
+      "Call a staff meeting to encourage more professional behaviors",
+      "Ask the facility supervisor to rebuke the UAP",
+      "Meet with the UAP to discuss respectful client care strategies"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Meeting privately with the UAP to discuss respectful client care strategies is the most appropriate and professional approach. This allows for direct, constructive feedback in a non-threatening manner and provides education about elderspeak and age-appropriate communication. Using terms like 'honey' and 'dearie' can be patronizing and diminish dignity. A private conversation respects the UAP, addresses the behavior professionally, and provides an opportunity for education and behavior change. Role modeling alone (A) may not address the issue directly. A staff meeting (B) unnecessarily embarrasses the UAP publicly. Involving the supervisor (C) escalates prematurely before attempting direct communication.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q13",
+    "stem": "A nationally known management consultant, whose fee is very high, is scheduled to speak at a day-long hospital education conference. The head nurse wants the information presented at the meeting to be disseminated among the staff. Which plan will be most useful in achieving this goal?",
+    "options": [
+      "Schedule educational leave for the staff so that all can attend the program",
+      "Ask two staff members to attend and report what they learned to the unit staff",
+      "Encourage the education department to schedule the program at a time convenient to all staff",
+      "Ask that the program be offered at three different times so that all shifts can attend"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Asking two staff members to attend and report back is the most cost-effective and practical solution. This train-the-trainer model allows information dissemination without the expense of multiple staff attending or multiple program offerings. The attendees can summarize key points, distribute handouts, and answer questions for colleagues. Scheduling all staff (A) would be extremely expensive and leave the unit understaffed. Option C is unrealistic as it's difficult to find times convenient for all shifts. Offering the program three times (D) would triple the already high consultant fee, making it cost-prohibitive. Option B balances cost-effectiveness with information sharing.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q14",
+    "stem": "Four clients are scheduled to receive IV infusions, but there are only three pumps available. Which prescribed infusion can most safely be administered without a pump?",
+    "options": [
+      "Regular insulin in NS prescribed for ketoacidosis",
+      "Heparin in NS prescribed for DVT",
+      "Magnesium in NS prescribed for hypomagnesemia",
+      "Ceftriaxone in 5% dextrose in Water prescribed for pneumonia"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Ceftriaxone (an antibiotic) can be safely administered without a pump as it can be given via gravity drip over 30-60 minutes. Antibiotics generally have wider therapeutic ranges and less critical timing requirements. However, insulin (A), heparin (B), and magnesium (C) are high-alert medications requiring precise dosing and controlled infusion rates. Insulin must be given via pump to prevent hypoglycemia from too-rapid infusion. Heparin requires pump control to maintain therapeutic anticoagulation and prevent bleeding. Magnesium given too rapidly can cause cardiac arrhythmias, respiratory depression, and cardiac arrest. These three medications require pump precision for patient safety.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q15",
+    "stem": "It is most important to assign which client to an RN rather than a PN?",
+    "options": [
+      "One hour after receiving hydromorphone prescribed for pain q4h PRN, reports severe pain",
+      "Two hours after receiving morphine for acute pain, the patient's vital signs are BP 112/60, pulse 88, and RR 14",
+      "The fentanyl transdermal patch for a client with chronic cancer pain needs to be replaced",
+      "After ambulating, a post op client grimaces and reports pain 9/10"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The postoperative client with 9/10 pain after ambulation requires RN assessment, as this could indicate complications such as dehiscence, internal bleeding, or other surgical complications requiring immediate intervention. The RN must use critical thinking to determine if this is expected postoperative pain or a sign of complications. Option A shows inadequate pain control but is more routine. Option B shows stable vital signs within normal limits. Option C is a routine task of replacing a patch. Option D requires complex assessment, critical thinking about potential complications, and possibly urgent interventions - all within RN scope, not PN scope.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q16",
+    "stem": "The nurse supervisor sends a UAP to a medical unit to replace an absent UAP. When delegating the task of obtaining client blood glucose levels, which is important for the nurse to implement?",
+    "options": [
+      "Provide UAP with instructions about how to calibrate the glucometer",
+      "Ask the UAP to document the results in the EHR",
+      "Ask the UAP to describe the normal BL levels for fingerstick analysis",
+      "Observe the UAP obtain a fingerstick glucose level using the glucometer"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "When delegating to a UAP from another unit, the nurse must validate competency by directly observing the UAP perform the skill. This ensures the UAP can safely and correctly use the specific glucometer and technique used on this unit. Equipment and procedures may vary between units. Direct observation confirms competency before the UAP works independently. While calibration instructions (A) and documentation (B) are important, observing performance is most critical for patient safety. Asking about normal values (C) doesn't validate actual skill performance. The principle is: when delegating to new or unfamiliar personnel, validate competency through observation before allowing independent practice.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q17",
+    "stem": "Contact precautions are being implemented for a client with cellulitis of the right foot. The nurse observes the UAP eating candy given to her by the client's family in the client's room. What action should the nurse take?",
+    "options": [
+      "Add an update on the isolation protocols to the staff meeting agenda",
+      "Send a saliva specimen from the UAP to the lab for testing",
+      "Report the possibility of cross-contamination to infection control",
+      "Tell the UAP not to ingest anything while in the contact isolation room"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The nurse should immediately and directly address the infection control violation by instructing the UAP not to eat or drink in the isolation room. Contact precautions require that items not leave the room, and consuming food in the room creates contamination risk and violates infection control protocol. Direct, immediate correction is most appropriate for an active safety violation. This provides immediate education and stops the unsafe practice. A staff meeting (A) addresses the issue too slowly. Lab testing (B) is unnecessary. Reporting to infection control (C) should occur after direct intervention. The priority is stopping the unsafe practice immediately, then following up with education.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q18",
+    "stem": "A 5-year-old boy with mumps is being transferred to the pediatric unit. Which nursing intervention is most important for the nurse to implement?",
+    "options": [
+      "Instruct the child's parents about the need for transmission precautions",
+      "Place an isolation cart outside the room to initiate droplet precautions",
+      "Schedule play time with the OT",
+      "Assign the child a room near the nurses' station"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Initiating droplet precautions immediately is the priority to prevent transmission of mumps to other patients and staff. Mumps is highly contagious and spreads via respiratory droplets. Setting up isolation equipment and signage outside the room ensures proper precautions are in place before the child arrives. While parent education (A) is important, physical infection control measures take priority. Play therapy (C) and room location (D) are secondary to preventing disease transmission. The principle is: infection control measures must be established immediately for communicable diseases to protect others. Isolation precautions take precedence over education, comfort, and convenience when dealing with infectious patients.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q19",
+    "stem": "The nurse is observing the staff provide care to a client with AIDS who was admitted yesterday with pneumocystis pneumonia. Which staff scenario requires intervention by the nurse?",
+    "options": [
+      "Housekeeper using a bleach solution to remove spilled blood",
+      "Lab tech wearing gloves while performing venipuncture",
+      "PN performing handwashing when leaving the room",
+      "UAP wearing a mask to take patients' blood pressure"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The UAP wearing a mask to take blood pressure requires intervention because standard precautions (not airborne/droplet precautions) are appropriate for routine care of patients with AIDS and pneumocystis pneumonia. A mask is not needed for taking vital signs unless the patient is coughing or has respiratory symptoms requiring droplet precautions. Unnecessary precautions can stigmatize patients and waste resources. Options A, B, and C demonstrate appropriate infection control: bleach for blood cleanup, gloves for venipuncture (standard precautions), and handwashing when leaving the room. The nurse must correct unnecessary barrier use while ensuring appropriate precautions are maintained.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q20",
+    "stem": "The nurse who is working on a post-surgical ICU receives a report regarding the assigned clients for the upcoming shift. Which client should she assess first?",
+    "options": [
+      "An older adult, 2 days post op mastectomy, has 50 mL serosanguinous fluid in the JP drain",
+      "A teenager who had a gunshot wound repair yesterday and has a quarter-sized dark drainage on the dressing",
+      "A young adult who had an abdominoperineal resection 3 days ago and is currently complaining of chills",
+      "An adult who has a collapsed lung related to a fall from a ladder 8 hours ago and now has 100 mL chest tube drainage"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The client with a collapsed lung (pneumothorax) 8 hours ago, now showing 100 mL chest tube drainage, requires immediate assessment. This amount of drainage in this timeframe could indicate hemothorax, ongoing bleeding, or re-expansion complications. Combined with the recent traumatic injury and potential for hemorrhage, this situation is most critical. Option A shows expected serosanguinous drainage post-mastectomy. Option B has minimal dressing drainage, which may be normal for day 1 post-op. Option C, with chills 3 days post-op, suggests possible infection but is less immediately life-threatening than a potential hemorrhage. Pneumothorax with significant drainage in an acute trauma patient requires immediate assessment for hemodynamic stability.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q21",
+    "stem": "The charge nurse observes that a client with an NG tube applied to low intermittent suction is drinking a glass of water immediately after the UAP left the room. Which action should the nurse take?",
+    "options": [
+      "Discuss the incident with the UAP at the end of the day",
+      "Remind the client of the potential for electrolyte imbalance",
+      "Remove the glass of water and speak to the UAP",
+      "Write an incident report and notify HCP"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The nurse should immediately remove the water and address the issue with the UAP because clients with NG tubes on suction are typically NPO (nothing by mouth). Oral intake will be suctioned out, defeating the purpose of gastric decompression and causing electrolyte loss. The UAP should not have provided water without checking with the nurse. Immediate action prevents further complications. Waiting until the end of the shift (A) delays necessary education. Reminding the client (B) addresses the wrong party - the UAP made the error. An incident report (D) is unnecessary if the situation is corrected immediately and the UAP receives appropriate education. Direct, immediate feedback is most effective for correcting practice errors.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q22",
+    "stem": "An experienced PN and a UAP are working together to assist neurologically compromised clients at mealtime. Which task is best for the PN to perform?",
+    "options": [
+      "Feed a quadriplegic client who has difficulty chewing and swallowing",
+      "Assist a client with an ataxic gait transfer to a wheelchair before the meal",
+      "Measure the allowed fluid amounts for a client on strict fluid resuscitation",
+      "Explain the food choices on the meal tray to a confused client"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "The PN should feed the client with dysphagia (difficulty swallowing) because this requires skilled assessment and intervention to prevent aspiration. PNs have training to recognize signs of aspiration and can respond appropriately if choking occurs. Dysphagia is a complex issue requiring clinical judgment about food consistency, positioning, and aspiration risk. Transfers (B), fluid measurement (C), and explaining food (D) can be performed by UAPs as they require less clinical judgment. The key principle: tasks requiring assessment of high-risk conditions (like aspiration risk) should be assigned to licensed personnel (PN) rather than UAPs. Feeding clients with swallowing difficulties is within the PN scope and requires their skill level.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q23",
+    "stem": "A client with severe bilateral crush injuries to the lower extremities is informed by the HCP that amputation is the only option for the client to live. The client requests no life-saving measures to be taken. The HCP refuses to write the DNR order. Which action should the nurse take?",
+    "options": [
+      "Remind the HCP that the client has the right to refuse treatment",
+      "Consult with the hospital's risk management department",
+      "Initiate a review of the situation by the hospital's ethics committee",
+      "Document the conflict in the medical record and notify the nursing supervisor"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Initiating an ethics committee review is most appropriate when there is a conflict between the patient's wishes and the physician's treatment decisions. The ethics committee provides an objective forum to discuss the ethical implications, patient autonomy rights, and appropriate care. This situation involves conflict over end-of-life care and the patient's right to refuse treatment versus the physician's duty to preserve life. While reminding the HCP of patient rights (A) is appropriate, the physician has already refused, requiring escalation. Risk management (B) is for legal/liability issues, not ethical conflicts. Documentation (D) is important, but doesn't resolve the conflict. Ethics committees specifically exist to address these moral dilemmas and facilitate resolution.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q24",
+    "stem": "One hour after the nurse administers an analgesic, the UAP reports the client refuses to turn in bed because of continued pain. Which action should the nurse take?",
+    "options": [
+      "Instruct the UAP to allow the client to remain in the current position",
+      "Ask the UAP to encourage the client to turn despite the pain",
+      "Assess the client's current pain level and response to the analgesic",
+      "Administer an additional dose of pain medication immediately"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The nurse must personally assess the client's pain level and response to the analgesic because pain is a subjective experience requiring nursing assessment and clinical judgment. The medication should have provided relief within one hour, so continued pain needs evaluation. The nurse must determine if pain is inadequately controlled, if the medication is ineffective, or if there's a complication causing pain. Allowing the client to remain in position (A) risks skin breakdown and complications. Having UAP encourage turning (B) doesn't address inadequate pain control. Administering more medication (D) without assessment could lead to overdose or mask complications. Assessment always precedes intervention in nursing practice.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q25",
+    "stem": "Which older client should the charge nurse assign to the most experienced nurse?",
+    "options": [
+      "A 72-year-old client with type 1 diabetes who is newly diagnosed and scheduled for discharge today",
+      "A 75-year-old client with well-controlled type 2 diabetes admitted for routine cataract surgery",
+      "An 80-year-old client with type 2 diabetes admitted for cellulitis, receiving IV antibiotics",
+      "A 68-year-old client with a gestational diabetes history is admitted for gallbladder surgery"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "A newly diagnosed type 1 diabetic being discharged requires the most experienced nurse because this involves complex teaching about insulin administration, blood glucose monitoring, hypoglycemia/hyperglycemia recognition, diet management, and lifestyle changes. New diagnoses with same-day discharge require expert-level assessment, teaching, and discharge planning skills to ensure patient safety and competency for self-care. The experienced nurse can best handle the complexity of diabetes education, assess learning needs, and ensure understanding. Options B, C, and D involve more routine care situations. The combination of new diagnosis, complex teaching needs, and immediate discharge makes this assignment require the highest skill level.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q26",
+    "stem": "Aspirin 81 mg at 0900 daily is prescribed for an older client. At 0800 the client asks for something for low back pain, but does not have a PRN order for analgesics prescribed. Which action is best for the nurse to take?",
+    "options": [
+      "Administer the scheduled aspirin early to address the pain",
+      "Obtain a prescription for a PRN analgesic",
+      "Apply a heating pad to the client's lower back",
+      "Wait until 0900 and give the aspirin as scheduled"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Obtaining a PRN analgesic order is the best action because 81 mg aspirin is a cardiac dose, not an analgesic dose for pain relief. This low dose is used for antiplatelet effects in cardiovascular disease prevention, not for pain management. The client needs appropriate pain medication. Giving aspirin early (A) won't adequately address pain with this dose. Applying heat (C) may help but doesn't address the lack of pain medication orders. Waiting until 0900 (D) leaves the client in pain and the cardiac dose won't help. The nurse must recognize that 81 mg aspirin is insufficient for pain relief and advocate for appropriate pain management by obtaining proper orders.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q27",
+    "stem": "When making assignments for the day, which information provided during the change of shift report is most important for the charge nurse to consider?",
+    "options": [
+      "An elderly female client who refuses to be cared for by a male nurse",
+      "A client who needs extensive wound care requiring two nurses",
+      "A client scheduled for multiple diagnostic tests throughout the day",
+      "A client with complex medication administration requirements"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Respecting cultural preferences and personal boundaries regarding gender of caregivers is most important because it affects patient dignity, comfort, and willingness to accept care. Honoring this request promotes therapeutic relationship and patient cooperation. Some clients have cultural, religious, or trauma-related reasons for preferring same-gender caregivers. Ignoring this preference could compromise care quality and patient trust. Options B, C, and D describe clinical tasks that can be managed through scheduling and teamwork but don't involve fundamental patient rights and dignity issues. The charge nurse must make assignments that respect patient autonomy and preferences while maintaining quality care.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q28",
+    "stem": "An older male client who lives alone has a history of HF and is admitted to the hospital after passing out while walking to the mailbox. The nurse notes multiple bruises in various stages of healing. He is being treated with a cardiac glycoside, diuretic, and restricted sodium diet. Which intervention is most important for the nurse to include in the client's plan of care?",
+    "options": [
+      "Assess for signs of elder abuse or neglect",
+      "Monitor daily weights and fluid balance",
+      "Continuous EKG monitoring",
+      "Evaluate home safety hazards"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Continuous EKG monitoring is most important because the client is on a cardiac glycoside (likely digoxin), has heart failure, and experienced syncope. Syncope in HF patients on cardiac medications suggests potential cardiac arrhythmias, which are life-threatening. Continuous monitoring can detect dangerous rhythms like bradycardia, heart blocks, or ventricular arrhythmias associated with digoxin toxicity or HF exacerbation. While assessing for abuse (A), monitoring weight (B), and evaluating home safety (D) are all important, the immediate priority is preventing sudden cardiac death from arrhythmias. The syncopal episode indicates unstable cardiac status requiring continuous observation of the heart rhythm.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q29",
+    "stem": "The RN is gathering supplies to assist the HCP with thoracentesis at the bedside when the ED nurse calls in a report on a client with unstable angina. A PN and a UAP are able to assist the RN. How should the RN assign the necessary tasks?",
+    "options": [
+      "RN assists with thoracentesis, while PN receives report, and UAP prepares the room",
+      "Assign PN to assist with the thoracentesis while the nurse obtains the report and the UAP prepares the room for the new client",
+      "UAP assists with thoracentesis while the RN receives the report and the PN prepares the room",
+      "PN receives report while RN assists with thoracentesis, and UAP prepares room"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The PN should assist with the thoracentesis (a sterile procedure within PN scope), while the RN receives report on the unstable angina patient (requiring RN assessment and critical thinking), and the UAP prepares the room (within UAP scope). This assignment matches skill levels appropriately: PNs can assist with sterile procedures, RNs must receive report on unstable patients requiring complex assessment, and UAPs can perform environmental preparation. Option A prevents the RN from receiving a report on an unstable patient. Option C inappropriately assigns a sterile procedure to a UAP. Option D prevents the RN from assessing the critical patient. Proper delegation matches task complexity to provider skill level.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q30",
+    "stem": "To facilitate the success of a new fall prevention program, which action should the nurse manager implement?",
+    "options": [
+      "Involve the staff in developing interventions for the program",
+      "Post fall prevention statistics in the staff break room",
+      "Mandate attendance at fall prevention training sessions",
+      "Implement progressive discipline for fall-related incidents"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Involving staff in developing interventions promotes buy-in, ownership, and success of the program. Staff who participate in program development are more invested in implementation and more likely to follow protocols. They can provide valuable front-line insights about practical barriers and realistic solutions. This participative approach to change management is evidence-based for successful program implementation. Posting statistics (B) creates awareness but not engagement. Mandatory training (C) may create resistance. Progressive discipline (D) creates a punitive culture rather than a safety culture. The most effective change occurs when those implementing the change help design it, leading to sustainable practice improvements.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q31",
+    "stem": "The charge nurse in an emergency center is planning client care assignments for the staff. Which action may be safely delegated to the PN?",
+    "options": [
+      "Perform initial triage assessment for incoming patients",
+      "Remove the peripheral IV catheter",
+      "Initiate IV access for a patient requiring fluids",
+      "Develop the nursing care plan for admitted patients"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Removing a peripheral IV catheter is within the PN scope of practice and can be safely delegated. This is a straightforward procedure with clear steps and minimal risk. Initial triage (A) requires complex assessment and prioritization skills that are RN responsibilities in emergency settings. Initiating IV access (C) may be within PN scope depending on state practice acts, but in emergency situations with potentially unstable patients, RNs should perform this. Developing care plans (D) requires comprehensive assessment and critical thinking beyond the PN scope. The principle is to delegate stable, predictable tasks to PNs while retaining assessment, planning, and unstable patient care for RNs.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q32",
+    "stem": "The nurse is inserting an indwelling catheter for a client experiencing urinary retention when a code blue is called for another client on the unit who has become unresponsive. Which action should the nurse take?",
+    "options": [
+      "Stop the procedure immediately and respond to the code blue",
+      "Ask a colleague to respond to the code while finishing the procedure",
+      "Finish the procedure",
+      "Remove the partially inserted catheter and respond to the code"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The nurse should finish the sterile catheter insertion before responding to the code because: 1) stopping mid-procedure creates risk of infection, trauma, and contamination; 2) the catheter is partially inserted and must be completed or properly removed; 3) other staff will respond to the code; 4) urinary retention can be an emergency requiring prompt relief. Once a sterile procedure is started, it must be completed to maintain sterility and patient safety. Stopping mid-procedure (A) or removing a partially inserted catheter (D) without completing the process properly creates unnecessary complications. While codes are urgent, they require team response, and this nurse has committed to a sterile procedure that cannot be safely abandoned mid-process.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q33",
+    "stem": "The nurse manager conducts regular audits of patient care medication records and notices that the amount of narcotic pain medication administered on the evening shift in the post-surgical unit is inconsistent. Which action should the manager take next?",
+    "options": [
+      "Report suspicions of drug diversion to the state board of nursing",
+      "Conduct a closer examination of the staff nurse's distribution of pain medication from the evening shift",
+      "Implement random drug testing for all evening shift nurses",
+      "Install surveillance cameras near the medication dispensing system"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Conducting a closer examination of evening shift narcotic distribution patterns is the appropriate next step in investigating potential drug diversion. The manager needs more data before making accusations or implementing punitive measures. This involves reviewing: discrepancies between amounts ordered and administered, patterns of waste, documentation inconsistencies, and patient-reported pain levels versus documented medication administration. This fact-finding approach protects innocent staff while identifying actual problems. Reporting to the board (A) is premature without evidence. Random drug testing (C) and surveillance (D) may come later if the investigation reveals diversion, but data analysis comes first. Systematic investigation prevents false accusations while ensuring patient safety.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q34",
+    "stem": "The nurse is caring for a group of clients with the help of an experienced unlicensed assistive personnel UAP. Several specimens need to be collected and sent to the lab. Which specimen collection can the nurse delegate to the UAP? (Select all that apply.)",
+    "options": [
+      "Urine from an indwelling catheter",
+      "Fecal drainage sample",
+      "Sputum culture requiring deep cough",
+      "Blood culture from the central line",
+      "Wound drainage for culture and sensitivity"
+    ],
+    "correct": [
+      "A",
+      "B"
+    ],
+    "rationale": "UAPs can collect urine from indwelling catheters (A) and fecal drainage samples (B) as these are routine specimen collections not requiring sterile technique or clinical assessment. Sputum collection (C) may require teaching and assessment of an adequate specimen (RN task). Blood cultures from central lines (D) require sterile technique and central line access (RN responsibility). Wound cultures (E) require sterile technique, assessment of wound condition, and proper collection method to avoid contamination (RN responsibility). The principle: UAPs can collect specimens that are routine, non-invasive, don't require sterile technique, and don't involve assessment or patient teaching. Licensed nurses perform specimen collection requiring sterility, assessment, or the use of invasive lines.",
+    "type": "multi_select"
+  },
+  {
+    "id": "Leadership_Q35",
+    "stem": "The nurse manager observes that the staff nurse has used wrist restraints to help secure an elderly female to her wheelchair. What is the priority action by the nurse manager?",
+    "options": [
+      "Review the facility's restraint policy with the staff nurse",
+      "Check if there is a physician's order for the restraints",
+      "Advise the nurse to remove the restraints from the client's wrists",
+      "Document the use of restraints in the client's medical record"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The immediate priority is removing the restraints to protect the client's rights and safety. Restraints should only be used as a last resort with proper authorization, and inappropriate restraint use is a form of false imprisonment. Once removed, the nurse manager should assess why restraints were applied and address the staff nurse's knowledge deficit. Reviewing policy (A) and checking orders (B) are important but secondary to immediately protecting the patient. Documentation (D) comes after ensuring patient safety. The principle: when witnessing unsafe practice, the priority is stopping the unsafe practice immediately to protect the patient, then follow up with education and policy review. Patient safety takes precedence over education or documentation.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q36",
+    "stem": "The nurse calls the surgeon about a male client who is having abdominal pain after a bowel resection. He received hydromorphone 2 hours ago and is not requesting additional pain medication. VS include temp 97.8, HR 112 bpm, RR 24, BP 98/62, which is lower than an hour ago. The client has a history of chronic atrial fibrillation and takes clopidogrel, which was discontinued the day before surgery. The nurse recommends that the surgeon see the client immediately for evaluation. What information makes the report complete?",
+    "options": [
+      "The client's previous surgical history and outcomes",
+      "The abdomen is rigid, tender to the touch, and distended",
+      "The client's dietary intake over the past 24 hours",
+      "The last time the client had a bowel movement"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Reporting that the abdomen is rigid, tender, and distended completes the SBAR report by providing the critical assessment finding that indicates a potential surgical emergency (possible internal bleeding, anastomotic leak, or peritonitis). Combined with tachycardia, tachypnea, and dropping blood pressure, these signs suggest serious post-operative complications requiring immediate surgical evaluation. The rigid, distended abdomen with tenderness indicates peritoneal irritation. Previous surgical history (A), dietary intake (C), and bowel movements (D) are not immediately relevant to this acute situation. The SBAR framework requires objective assessment findings that justify the recommendation for immediate evaluation.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q37",
+    "stem": "The nurse manager is preparing the curricula for a class of charge nurses. A staffing formula based on which data ensures quality care and is most cost-effective?",
+    "options": [
+      "Number of available nurses on each shift",
+      "Historical staffing patterns from the previous year",
+      "Skills of staff and client acuity",
+      "Patient satisfaction scores and complaint data"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Skills of staff and client acuity are the most important factors for quality, cost-effective staffing because they match care needs with provider competencies. High-acuity patients require more experienced nurses, while stable patients can be cared for by less experienced staff or LPNs/UAPs under RN supervision. This approach optimizes resource utilization by preventing overstaffing (costly) or understaffing (unsafe). Available nurses (A) indicate supply but not need. Historical patterns (B) don't account for current patient needs. Satisfaction scores (D) are outcomes, not predictors of staffing needs. Evidence-based staffing models match nurse expertise and skill mix to patient acuity levels for optimal outcomes and resource use.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q38",
+    "stem": "The nurse is reviewing the lab results on 4 clients on the medical unit. In addition to standard precautions, the client with which finding should also be placed on airborne precautions?",
+    "options": [
+      "Positive blood culture for MRSA bacteremia",
+      "Sputum culture confirms MRSA",
+      "Urine culture shows E. coli infection.",
+      "Wound culture reveals Pseudomonas aeruginosa"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "MRSA in sputum requires airborne precautions (though technically droplet precautions per CDC) because it involves the respiratory tract and can be transmitted through respiratory droplets. When MRSA colonizes or infects the respiratory system, there is potential for transmission during coughing or breathing. MRSA in blood (A) requires standard precautions only. E. coli in urine (C) and Pseudomonas in wounds (D) require standard precautions plus contact precautions, not airborne. The key principle: respiratory sources of infection require enhanced precautions beyond standard precautions. While there is debate about MRSA being droplet versus airborne, in practice, many facilities use higher-level precautions for respiratory MRSA.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q39",
+    "stem": "Because of budget cutbacks, a policy was established which mandates that when the census is low, nurses will be sent home. For the third time in two weeks, a nurse who has been employed at the hospital for three months is sent home immediately after arriving at work. The nurse is obviously upset and begins to cry when told to go home. Which action should the charge nurse take?",
+    "options": [
+      "Explain that seniority determines who is sent home during low census",
+      "Offer to let the nurse stay and send a more senior nurse home instead",
+      "Take the nurse to a private place and listen to the nurse's concerns",
+      "Suggest the nurse speak with human resources about the policy"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Taking the nurse to a private place to listen to concerns demonstrates emotional intelligence, compassion, and effective leadership. The nurse deserves privacy when upset and an opportunity to express feelings. This approach allows the charge nurse to: 1) provide emotional support, 2) explain the policy and selection process, 3) explore solutions like rotating who gets sent home, and 4) maintain the nurse's dignity. While explaining seniority (A) may be factually correct, it lacks compassion for an upset employee. Switching assignments (B) isn't the charge nurse's decision and affects another nurse. Deferring to HR (D) avoids leadership responsibility. Effective leaders acknowledge emotions and provide support while explaining difficult decisions.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q40",
+    "stem": "The charge nurse on a surgical unit is assessing the morning lab work on four clients. Which client's lab finding should be reported to the HCP immediately?",
+    "options": [
+      "A post-operative client with hemoglobin of 10.2 g/dL on post-op day 2",
+      "An elderly client in end-stage renal disease who has a creatinine level of 2.4 mg/dL and a BUN of 84",
+      "A diabetic client with a fasting blood glucose of 145 mg/dL",
+      "A client on warfarin with an INR of 2.8"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The client with end-stage renal disease (ESRD) with a BUN of 84 requires immediate notification because this markedly elevated BUN indicates severe uremia and potential for life-threatening complications, including altered mental status, pericarditis, seizures, and metabolic acidosis. While an elevated creatinine (2.4) is expected in ESRD, a BUN of 84 is critically high. Post-op hemoglobin of 10.2 (A) is low but not critical. The glucose level of 145 (mg/dL) is mildly elevated but not emergent. INR of 2.8 (D) is the therapeutic range for most indications (2.0-3.0). The principle: report critical values that indicate an immediate threat to life or risk for serious complications. BUN >80 indicates severe uremia requiring urgent intervention.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q41",
+    "stem": "The charge nurse notices that a respiratory therapist who has been cross-trained to work as a phlebotomist and UAP seems to be avoiding HIV positive clients. What action should the nurse take?",
+    "options": [
+      "Report the respiratory therapist to employee health services",
+      "Assign the therapist only to HIV negative clients",
+      "Provide the employee with feedback about the observed behavior",
+      "Document the behavior and report to human resources"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Providing direct feedback about observed behavior is the most appropriate first step. This allows the charge nurse to: 1) address potential discrimination, 2) assess the employee's knowledge about HIV transmission, 3) provide education about universal precautions, and 4) clarify expectations for non-discriminatory patient care. The behavior may stem from fear or lack of knowledge rather than intentional discrimination. Direct feedback gives the employee the opportunity to explain and correct behavior. Reporting to employee health (A) or HR (D) is premature before direct intervention. Accommodating the avoidance (B) enables discrimination and violates patients' rights. Effective leadership addresses performance issues directly before escalating to formal reporting.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q42",
+    "stem": "A home health aide caring for a homebound hospice client calls to inform the nurse that the client has reported feeling constipated.",
+    "options": [
+      "Instruct the aide to administer a prescribed stool softener",
+      "Assist the client to drink warm prune juice",
+      "Tell the aide to wait and notify the nurse on the next home visit",
+      "Have the aide administer a Fleet enema immediately"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Assisting the client to drink warm prune juice is within the home health aide's scope and is a safe, non-invasive first-line intervention for constipation. Prune juice stimulates bowel movements naturally. Home health aides cannot administer medications (A) - this requires a nursing license. Waiting until the next visit (C) allows the client to remain uncomfortable unnecessarily. Fleet enema (D) requires nursing assessment and administration. The principle: home health aides can assist with nutrition/hydration and activities of daily living, but cannot administer medications or perform invasive procedures. The nurse can recommend dietary interventions that the aide can implement safely within their scope.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q43",
+    "stem": "The charge nurse assigns an experienced PN to care for a client who needs a complex dressing change. The female PN, who seems anxious with difficult assignments, tells the charge nurse that she does not feel competent to perform the procedure. Which is the best way for the charge nurse to handle this situation?",
+    "options": [
+      "Reassign the client to another nurse immediately",
+      "Tell the PN that assistance is available if needed, but she will be responsible for the patient's care",
+      "Demonstrate the procedure for the PN before she attempts it",
+      "Schedule the PN for additional wound care training"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Telling the PN that assistance is available while maintaining her responsibility for the patient balances support with professional expectations. This approach: 1) acknowledges her concern, 2) provides a safety net of available help, 3) encourages skill development, 4) maintains professional accountability, and 5) prevents learned helplessness. Immediately reassigning (A) undermines confidence and doesn't address skill development. While demonstration (C) may help, the PN is experienced and should be capable with support. Training (D) addresses long-term needs but not the immediate situation. The goal is supporting professional growth while ensuring patient safety. Offering backup assistance encourages nurses to stretch their skills while knowing help is available.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q44",
+    "stem": "After reviewing the morning lab findings for four clients, which client should the nurse follow up with first?",
+    "options": [
+      "A client with pneumonia whose white blood cell count is 14,000/mm³",
+      "The BNP assay for a client with SOB after a MI increases to 1000 pg/mL",
+      "A client with diabetes whose hemoglobin A1C is 8.2%",
+      "A client with chronic kidney disease whose creatinine is 2.1 mg/dL"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "BNP (B-type Natriuretic Peptide) of 1000 pg/mL in a client with shortness of breath after MI indicates acute heart failure and requires immediate intervention. BNP >900 pg/mL suggests severe heart failure with potential for cardiogenic shock or pulmonary edema. This client needs immediate assessment, possible diuretic therapy, oxygen, and close monitoring. WBC of 14,000 (A) is elevated but expected with pneumonia. HgbA1C of 8.2% (C) indicates poor glucose control over 3 months, but it isn't acute. Creatinine of 2.1 (D) is elevated but expected in CKD. The principle: acute cardiac decompensation takes priority over chronic conditions or expected findings.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q45",
+    "stem": "The practical nurse (PN) reports to the charge nurse that the transparent dressing covering a single-lumen central venous catheter inserted in the subclavian vein of a client has come loose, and the insertion site is inflamed. Which action should the charge nurse implement?",
+    "options": [
+      "Instruct the PN to remove the central line immediately",
+      "Have the PN apply a new transparent dressing over the existing one",
+      "Confirm the findings of the PN while securing the transparent dressing and notify the healthcare provider",
+      "Tell the PN to document the findings and continue monitoring"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The charge nurse should validate the PN's assessment, secure the dressing to prevent infection and maintain line integrity, and notify the healthcare provider about the inflammation. Central line infections are serious complications requiring prompt medical evaluation and possible line removal. The RN must verify findings because assessment and decision-making about central lines require RN-level judgment. PNs cannot independently remove central lines (A). Applying dressing over existing dressing (B) is an incorrect technique. Only documenting (D) delays necessary intervention for potential infection. The principle: RNs verify significant findings reported by PNs, then take appropriate action, including securing equipment and notifying providers about complications.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q46",
+    "stem": "In planning care for a group of clients, which task should the nurse delegate to the UAP?",
+    "options": [
+      "Taking vital signs on a stable post-operative client",
+      "Assessing pedal pulses on a client with diabetes",
+      "Reinforce teaching provided by the nurse about using the call bell",
+      "Evaluating a client's understanding of discharge instructions"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Reinforcing teaching (not initial teaching) about simple procedures like using a call bell can be delegated to UAPs. 'Reinforcing' means reminding or repeating information already taught by the nurse. Taking vital signs (A) on stable patients is also appropriate for UAPs, but option C is more specific to delegation principles. Assessing pedal pulses (B) requires nursing judgment about quality and presence. Evaluating understanding (D) requires assessment beyond the UAP scope. The principle: UAPs can reinforce simple instructions previously taught by the nurse, but cannot provide initial teaching, assess learning, or make clinical judgments. The nurse must do initial teaching and evaluation, while UAPs can remind patients of previously taught information.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q47",
+    "stem": "The nurse notes the toes of a client's casted leg are cold and turning blue. The HCP is notified by phone three times, but four hours after the first notification, the HCP has not come to see the client, who is now complaining of severe pain. Which action is most important for the nurse to take?",
+    "options": [
+      "Document the multiple attempts to contact the HCP and continue monitoring",
+      "Cut the cast to relieve pressure immediately",
+      "Have the nursing supervisor report the situation immediately to the medical chief of staff",
+      "Apply warm blankets to the affected extremity"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Escalating through the chain of command to the medical chief of staff is most important because the client shows signs of compartment syndrome (cold, blue toes, severe pain) - a medical emergency requiring immediate intervention to prevent permanent damage or loss of limb. After multiple failed attempts to reach the HCP, the nurse must activate the chain of command. The nursing supervisor notifying the chief of staff ensures rapid medical intervention. Documentation alone (A) doesn't address the emergency. Nurses don't cut casts without orders (B). Warm blankets (D) are contraindicated and waste time. When a provider fails to respond to an emergency, the nurse has a duty to escalate through proper channels to protect the patient.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q48",
+    "stem": "To help prevent litigation by a dissatisfied client, which objective is most important to include in the orientation classes for staff nurses? New nursing staff members will",
+    "options": [
+      "Learn proper documentation techniques for legal protection",
+      "Understand the hospital's malpractice insurance coverage",
+      "Discuss how to handle complaints from clients and/or their families",
+      "Review common causes of nursing malpractice lawsuits"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Teaching nurses how to handle client and family complaints prevents litigation because most lawsuits stem from poor communication, not technical errors. Effective complaint management includes: active listening, empathy, prompt response, and resolution. Studies show that patients sue when they feel ignored, dismissed, or treated disrespectfully. Teaching complaint resolution skills prevents dissatisfaction from escalating to litigation. Documentation (A) is important but reactive. Understanding insurance (B) doesn't prevent suits. Reviewing malpractice causes (D) creates awareness but doesn't teach prevention skills. The principle: preventing lawsuits requires excellent communication and relationship skills. Most patients don't sue providers they trust and who communicate effectively, even when outcomes are poor.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q49",
+    "stem": "In assigning client care to an RN and a PN, it is most important to assign which client to the RN? The client who:",
+    "options": [
+      "Needs routine wound dressing changes twice daily",
+      "Requires frequent vital sign monitoring post-operatively",
+      "Is exhibiting signs of Addison's crisis after corticosteroids were discontinued",
+      "Has stable diabetes requiring insulin administration four times daily"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The client in Addisonian crisis requires RN-level care because this is a life-threatening emergency requiring continuous assessment, critical thinking, and rapid intervention. Addisonian crisis causes severe hypotension, hyperkalemia, hypoglycemia, and potential cardiovascular collapse. The RN must assess response to IV hydrocortisone, monitor for cardiac arrhythmias, manage fluid resuscitation, and recognize deterioration. Routine wound care (A), vital signs monitoring (B), and stable diabetes management (D) can be safely delegated to PNs under RN supervision. The principle: assign unstable, complex, or potentially life-threatening situations to RNs who have education and licensure to handle critical situations requiring advanced assessment and intervention.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q50",
+    "stem": "Which staff assignment, made by the primary nurse, requires the most immediate follow-up action by the charge nurse on a medical unit?",
+    "options": [
+      "A PN is assigned to administer oral medications to stable clients",
+      "A UAP is assigned to transport a stable client to radiology",
+      "An unlicensed assistive personnel (UAP) is assigned to check a client for fecal impaction",
+      "A PN is assigned to change a simple wound dressing"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "A UAP checking for fecal impaction requires immediate follow-up because this involves digital rectal examination, which is beyond the UAP's scope and requires nursing assessment skills. Digital rectal examination can cause vagal stimulation leading to bradycardia, requires assessment for contraindications (recent rectal surgery, neutropenia), and needs clinical judgment. PNs administering oral medications (A) and changing simple dressings (D) are within their scope. UAPs transporting stable patients (B) is appropriate. The principle: UAPs cannot perform invasive procedures or assessments. The charge nurse must immediately reassign this task to licensed personnel to prevent unsafe practice and patient harm.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q51",
+    "stem": "A client with life-threatening injuries from a gunshot wound to the abdomen is mechanically ventilated and sedated. The client has a large family present who are asking multiple and repetitive questions. Which intervention should the nurse implement first?",
+    "options": [
+      "Provide written information about the ICU visiting policies",
+      "Ask the family to identify a specific spokesperson",
+      "Schedule a family conference with the healthcare team",
+      "Limit the number of family members allowed in the room"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Asking the family to identify a spokesperson is the priority because it streamlines communication, reduces repetition, prevents information discrepancies, and allows the nurse to provide care while keeping the family informed. One spokesperson can then relay information to other family members, reducing interruptions and ensuring consistent messaging. This approach respects the family while managing their understandable anxiety efficiently. Written policies (A) don't address immediate communication needs. Family conferences (C) are important but take time to arrange. Limiting visitors (D) may be necessary later, but it doesn't address the communication issue. Effective crisis communication requires a designated point person.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q52",
+    "stem": "A group of nurse-managers is asked to engage in a needs assessment for a piece of equipment that will be expensed to the organization's budget. Which question is most important to consider when analyzing the cost-benefit for this piece of equipment?",
+    "options": [
+      "What is the warranty period and maintenance cost",
+      "How many departments can use this equipment",
+      "Which vendor offers the best price for this equipment",
+      "What is the expected lifespan of the equipment"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Determining how many departments can use the equipment is most important for cost-benefit analysis because shared equipment maximizes return on investment and justifies the capital expense. If multiple departments use the equipment, the cost is distributed across more patient care, improving cost-effectiveness. This directly impacts the cost-benefit ratio and justifies the purchase. Warranty/maintenance (A), vendor pricing (C), and lifespan (D) are important considerations but secondary to determining utilization across the organization. The principle: in capital equipment decisions, utilization rate across multiple departments is the primary driver of cost-effectiveness. Shared resources provide better value than single-department equipment.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q53",
+    "stem": "A fire is reported in the kitchen on the first floor of a three-floor community hospital, and the operator notifies the charge nurse on the third floor to start evacuation procedures. Which intervention should the charge nurse implement?",
+    "options": [
+      "Close all fire doors on the unit to contain smoke",
+      "Instruct nursing staff to evacuate ambulatory clients to the nearest fire exits",
+      "Move all clients to rooms farthest from the stairs",
+      "Wait for the fire department's arrival before beginning the evacuation"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Instructing staff to evacuate ambulatory clients first follows the RACE protocol (Rescue, Alarm, Contain, Extinguish/Evacuate). Ambulatory clients can move quickly without assistance, clearing the unit faster and allowing staff to focus on non-ambulatory patients. With fire on a lower floor, smoke rises, making the upper floors increasingly dangerous. Closing fire doors (A) is part of containment, but evacuation takes priority with fire below. Moving to the farthest rooms (C) traps patients on an upper floor above the fire. Waiting for the fire department (D) wastes critical time. The principle: in fire emergencies on upper floors with fire below, immediate evacuation of able patients is a priority, starting with the most mobile patients.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q54",
+    "stem": "An older female client who was recently widowed has become increasingly confused and disoriented. Her family tells the healthcare provider's office nurse that it is imperative for their mother to be admitted to the hospital for medical evaluation. The client is a member of a managed health plan. Which information is best for the nurse to provide to the family?",
+    "options": [
+      "The managed care plan requires pre-authorization for all hospital admissions",
+      "Confusion after loss is normal, and hospitalization may worsen her orientation",
+      "The client is grieving normally in response to her husband's death, and hospitalization is not necessary",
+      "Schedule an appointment for outpatient evaluation with her primary care provider"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Scheduling an outpatient evaluation with the PCP is most appropriate because: 1) confusion needs medical evaluation to rule out treatable causes (UTI, medication side effects, dehydration, metabolic issues), 2) outpatient evaluation is less disruptive and more cost-effective, 3) it addresses family concerns appropriately, 4) hospitalization can worsen confusion in elderly (hospital-acquired delirium). While grief (C) may contribute, increasing confusion warrants assessment. Explaining pre-auth (A) doesn't address clinical concerns. Option B may be correct, but it doesn't provide a solution. Outpatient evaluation balances the need for medical assessment with avoiding hospitalization-related risks. The nurse advocates for an appropriate level of care.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q55",
+    "stem": "The charge nurse, along with one nurse, two practical nurses (PN), a unit secretary, and two unlicensed assistive personnel (UAP), is caring for 24 clients on a medical-surgical unit. Which task is best for the charge nurse to assign to the nurse?",
+    "options": [
+      "Administering oral medications to stable clients",
+      "Performing routine wound dressing changes",
+      "The insertion of a Foley catheter for a client diagnosed with septicemia",
+      "Taking vital signs on post-operative clients"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Inserting a Foley catheter for a septic patient requires RN-level assessment and skill because: 1) sepsis patients are unstable, requiring continuous assessment, 2) sterile technique is critical in immunocompromised patients, 3) RNs can assess for catheter complications, and 4) sepsis requires complex decision-making about fluid status and urinary output monitoring. Oral medications for stable patients (A), routine wound care (B), and taking vital signs (D) can be delegated to PNs or UAPs, depending on patient stability. The principle: assign unstable or complex patients requiring continuous assessment and critical thinking to RNs. Septic patients are by definition unstable and require RN-level care and monitoring.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q56",
+    "stem": "After having coronary artery bypass surgery, a client develops a deep venous thrombosis in the left leg. Which nurse should be responsible for coordinating the progression of the client's care?",
+    "options": [
+      "The staff RN assigned to the client",
+      "The cardiovascular surgeon",
+      "Risk management nurse",
+      "Nurse case manager"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The nurse case manager is responsible for coordinating care progression because case managers specialize in managing complex patients across multiple conditions and care settings. This client has two serious conditions (post-CABG and DVT) requiring coordination between surgery, cardiology, vascular services, physical therapy, anticoagulation management, and discharge planning. Case managers ensure smooth transitions, coordinate multidisciplinary care, prevent readmissions, and optimize resources. The staff RN (A) provides direct care but doesn't coordinate across services. The surgeon (B) manages surgical issues but not overall care coordination. Risk management (C) addresses liability issues, not care coordination. Complex patients with multiple conditions benefit from case manager expertise in care coordination.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q57",
+    "stem": "A client is transferred to the surgical unit following a strangulated inguinal hernia repair. The post-anesthesia care unit nurse reports the total intake and output that occurred during surgery, the sedation reversal agent, and two episodes of emesis post-extubation. Which additional information should the nurse provide to complete this report?",
+    "options": [
+      "The client's preoperative vital signs and anxiety level",
+      "Peripheral pulses present with a full range of motion of both legs",
+      "The type and amount of IV fluids remaining in the bag",
+      "The client's pain rating immediately after surgery"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Reporting peripheral pulses and full ROM of both legs completes the report because strangulated hernias can compromise blood flow, and the surgery involves the inguinal area near major vessels. Postoperative neurovascular assessment (peripheral pulses, movement, sensation) is critical for detecting circulatory complications. This assessment data is essential for the receiving nurse to establish a baseline and monitor for complications. Preoperative information (A) is less relevant to immediate postop care. Remaining IV fluids (C) are visible/easily checked. Pain rating (D) is important, but neurovascular assessment takes priority after vascular-risk surgery. The complete report includes assessment data critical for detecting postoperative complications specific to the surgical procedure.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q58",
+    "stem": "When assessing a client who is returned to the unit following a left nephrectomy, the nurse notes a small amount of bloody drainage at the drain site. Which intervention is most important for the nurse to include in this client's plan of care?",
+    "options": [
+      "Change the dressing around the drain every shift",
+      "Monitor urinary output hourly",
+      "Measure and document drain output every 4 hours",
+      "Assess vital signs every 2 hours"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Monitoring urinary output hourly is most important after nephrectomy because the remaining kidney must compensate for the removed kidney. Hourly urine output indicates the remaining kidney is functioning adequately (should be >30 mL/hr or 0.5 mL/kg/hr). Decreased output suggests complications like acute kidney injury, hypovolemia, or damage to the remaining kidney. Small bloody drainage at the surgical drain is expected. While changing dressings (A), measuring drain output (C), and assessing vitals (D) are all important, verifying adequate function of the remaining kidney is the priority. The principle: after nephrectomy, the priority is ensuring the remaining kidney provides adequate renal function to sustain life.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q59",
+    "stem": "The nurse assigns the collection of a sputum specimen to an unlicensed assistive personnel (UAP). Before delegating this task to the UAP, which action is most important for the nurse to implement?",
+    "options": [
+      "Verify the UAP has collected sputum specimens before",
+      "Provide written instructions for the sputum collection procedure",
+      "Review the institutional policy for delegation with the nursing supervisor",
+      "Determine if sputum specimen collection is within the UAP's scope at this facility"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Determining if sputum collection is within the UAP scope at this specific facility is most important because the scope of practice for UAPs varies by institution, state, and facility policy. Some facilities allow UAPs to collect sputum after training, others don't. The nurse must know institutional policy before delegating to avoid unauthorized practice and ensure patient safety. Verifying experience (A) comes after confirming it's within scope. Written instructions (B) are helpful, but don't address whether the task can be delegated. Checking with the supervisor (C) is unnecessary if the nurse knows the facility policy. The principle: before delegating, the nurse must verify that the task is within the delegate's authorized scope at that specific institution.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q60",
+    "stem": "A nurse is performing telephone triage at the clinic office. Which client has the most acute problem and should be scheduled for the first available appointment?",
+    "options": [
+      "A 35-year-old reporting fatigue and joint pain for 3 weeks",
+      "A 50-year-old with controlled diabetes calling for a routine medication refill",
+      "A 42-year-old male who hurt his back while lifting yesterday. Today, he has non-radiating, low back pain rated at 10 on a scale of 1 to 10",
+      "A 28-year-old with a rash and mild itching for 2 days"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The 42-year-old with severe (10/10) acute back pain from lifting requires the most immediate evaluation because severe pain after injury could indicate serious conditions like vertebral fracture, disk herniation, or muscle strain requiring intervention. Pain rated 10/10 indicates severe distress requiring urgent evaluation and pain management. The acute onset (yesterday) and severity make this most urgent. Fatigue and joint pain for 3 weeks (A) are chronic. Medication refills (B) are routine. A 2-day rash (D) is not urgent. The principle: acute severe pain, especially after trauma, requires prompt evaluation to rule out serious injury and provide pain relief. Acute symptoms take priority over chronic or routine issues.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q61",
+    "stem": "The nurse is planning care for a client who is experiencing acute pain. Which intervention can be implemented by the unlicensed assistive personnel (UAP) in providing personal care for this client?",
+    "options": [
+      "Administration of oral pain medications",
+      "Assessment of pain location and quality",
+      "Distraction",
+      "Evaluation of pain relief after medication"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Distraction is a non-pharmacological pain management technique that UAPs can implement, such as providing conversation, TV, music, or activities that divert attention from pain. This is within UAP scope as it doesn't require assessment, clinical judgment, or medication administration. UAPs cannot administer medications (A) - this requires a nursing license. Pain assessment (B) requires nursing knowledge to evaluate location, quality, intensity, and characteristics. Evaluating pain relief (D) requires nursing judgment about medication effectiveness. The principle: UAPs can implement comfort measures and non-pharmacological interventions that don't require clinical assessment or judgment. Licensed nurses retain responsibility for medication administration and all assessment/evaluation activities.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q62",
+    "stem": "The charge nurse needs to determine if an additional nurse should be called to help the staff unit for the next shift. Which information is most important for the charge nurse to consider when making this decision?",
+    "options": [
+      "The number of admissions expected during the shift",
+      "The experience level of nurses scheduled to work",
+      "The acuity level of the clients on the unit",
+      "The number of nurses who called in sick recently"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Client acuity is the most important factor in staffing decisions because high-acuity patients require more nursing time, expertise, and interventions. Acuity-based staffing ensures patient safety and quality care. Even with adequate numbers, if patients are critically ill or require complex care, additional staff may be needed. Expected admissions (A) are important but secondary to current acuity. Experience level (B) affects assignments, but acuity determines overall need. Previous sick calls (D) are irrelevant to current shift needs. The principle: patient acuity drives staffing decisions more than any other factor. Matching nursing resources to patient care needs ensures safety and prevents nurse burnout and patient complications from inadequate staffing.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q63",
+    "stem": "The fire alarm goes off while the charge nurse is receiving the shift report. Which action should the charge nurse implement first?",
+    "options": [
+      "Continue receiving reports while monitoring for further instructions",
+      "Immediately evacuate all patients from the unit",
+      "Tell the staff to keep all clients and visitors in the client rooms with the doors closed",
+      "Send a staff member to investigate the source of the alarm"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Keeping clients and visitors in rooms with doors closed is the first action following RACE protocol: Rescue anyone in immediate danger, Alarm (already activated), Contain (close doors to compartmentalize smoke/fire), Extinguish/Evacuate. Closing doors contains smoke and fire, protecting patients while awaiting further information about the fire's location and severity. Continuing report (A) ignores the potential emergency. Evacuating (B) may be premature and chaotic without knowing the fire location. Investigating (D) wastes time - the fire alarm system will notify authorities. The principle: in fire emergencies, immediate containment through closing doors protects patients and gives time for an organized response. Doors create fire-resistant barriers, buying critical time for safe evacuation if needed.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q64",
+    "stem": "It is most important for the charge nurse to schedule a multi-disciplinary team meeting to discuss which client?",
+    "options": [
+      "A young adult with depression admitted after a suicide attempt",
+      "An elderly client admitted through the emergency department with a broken hip whose blood glucose is 400 mg/dL (22 mmol/L SI)",
+      "A middle-aged client with stable chronic heart failure is being discharged",
+      "A teenager admitted with appendicitis is now recovering post-surgery"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The elderly client with a hip fracture and glucose of 400 requires multidisciplinary meeting because this case involves multiple complex issues: 1) orthopedic injury requiring surgery, 2) uncontrolled diabetes (possibly newly diagnosed) requiring endocrine consultation, 3) elderly patient with high fall risk, 4) likely prolonged recovery requiring physical therapy, case management, and possibly rehabilitation placement. This complexity requires coordination between orthopedics, endocrinology, physical therapy, occupational therapy, nutrition, pharmacy, and case management. The suicide attempt (A) needs psych consultation but less multidisciplinary coordination. Stable CHF discharge (C) and recovering appendicitis (D) are more straightforward. Complex patients with multiple co-morbidities benefit most from team collaboration.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q65",
+    "stem": "The healthcare provider prescribes an oral medication to be given daily for 3 days. However, the medication was also given on the fourth day. Which intervention is most important for the charge nurse to implement?",
+    "options": [
+      "Complete an incident report about the medication error",
+      "Review the medication transcription with the nurse",
+      "Notify the pharmacy about the discrepancy",
+      "Assess the client for adverse effects from the extra dose"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Reviewing medication transcription with the nurse is most important because it addresses the root cause of the error - likely a transcription or communication issue about duration. This provides immediate education, prevents future errors, and identifies system issues (was the order clear? Was it properly discontinued?). While incident reports (A) are necessary, education prevents recurrence. Pharmacy notification (C) is part of incident reporting. Assessing for adverse effects (D) is important, but most single extra doses don't cause harm, making prevention of future errors the priority. The principle: after medication errors, the priority is understanding why it happened and educating to prevent recurrence. Punitive approaches are less effective than identifying system and knowledge failures.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q66",
+    "stem": "After receiving the morning report on an acute care unit, which client should the nurse assess first?",
+    "options": [
+      "A client with COPD whose oxygen saturation is 91% on 2L nasal cannula",
+      "A client sitting close to the nurse's station who has been restrained for the past six hours",
+      "A client with heart failure who gained 3 pounds since yesterday",
+      "A client scheduled for surgery in 2 hours is requesting pre-op teaching"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The restrained client requires immediate assessment because restraints must be checked at least every 2 hours (most facilities require hourly checks). Six hours without documented assessment violates restraint protocols and poses serious risks: circulation impairment, skin breakdown, psychological trauma, and aspiration. The nurse must immediately assess circulation, skin integrity, toileting needs, nutrition, and remove restraints if possible. COPD patient with O2 saturation 91% (A) is near baseline. Weight gain in HF (C) needs assessment, but it isn't immediately dangerous. Pre-op teaching (D) can wait. The principle: restraints require frequent monitoring per regulatory standards. Prolonged restraint without assessment is a serious safety violation requiring immediate intervention.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q67",
+    "stem": "A client with leukemia is hospitalized for weakness, fatigue, and anemia. The client is restless and tachycardic. Which intervention is most important for the nurse to include in the plan of care?",
+    "options": [
+      "Encourage frequent rest periods between activities",
+      "Administer prescribed iron supplements",
+      "Maintain protective isolation",
+      "Monitor oxygen saturation continuously"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Maintaining protective (neutropenic) precautions is most important for leukemia patients because they have severely compromised immune function due to both disease and treatment. Leukemia causes bone marrow failure, reducing white blood cell production, making infection the leading cause of death. Protective isolation prevents exposure to pathogens. While rest periods (A) help with fatigue, infection prevention is life-saving. Iron supplements (B) don't treat anemia from bone marrow failure. Oxygen monitoring (D) is important but secondary to preventing potentially fatal infections. The principle: for immunocompromised patients, infection prevention takes priority because infections can rapidly become life-threatening sepsis. Protective precautions are essential for patient survival.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q68",
+    "stem": "The nurse caring for a client with bacterial meningitis is preparing report for the oncoming nurse. It is most important to include which assessment finding in the report?",
+    "options": [
+      "Temperature of 101.5°F (38.6°C)",
+      "Complaint of photophobia and headache",
+      "Increasing pulse pressure",
+      "Positive Kernig's and Brudzinski's signs"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Increasing pulse pressure (widening gap between systolic and diastolic BP) is most critical to report because it indicates rising intracranial pressure (ICP), a life-threatening complication of bacterial meningitis. Widening pulse pressure, along with bradycardia and irregular respirations (Cushing's triad), signals brain herniation risk requiring immediate intervention. Temperature (A), photophobia/headache (B), and positive meningeal signs (D) are expected with meningitis. New or worsening neurological signs indicating increased ICP require immediate medical intervention to prevent permanent brain damage or death. The principle: in neurological conditions, signs of increased ICP are emergency findings requiring immediate notification and intervention to prevent herniation and death.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q69",
+    "stem": "The practical nurse reports that a client with a deep vein thrombosis (DVT) was mistakenly given heparin in addition to the prescribed warfarin. Which priority action should the nurse take?",
+    "options": [
+      "Complete an incident report immediately",
+      "Monitor for signs of bleeding",
+      "Hold the next dose of warfarin",
+      "Notify the healthcare provider immediately"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Monitoring for signs of bleeding is the priority because giving both heparin and warfarin together significantly increases bleeding risk (both are anticoagulants). The nurse must assess for: bleeding gums, bruising, petechiae, blood in urine/stool, decreased blood pressure, and increased heart rate (indicating internal bleeding). While notifying the provider (D) is important and should be done promptly, immediate patient assessment takes priority. Completing an incident report (A) comes after ensuring patient safety. Holding warfarin (C) requires a provider order. The principle: when medication errors occur, the priority is assessing the patient for adverse effects before documentation or notification. Patient safety assessment comes before administrative tasks.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q70",
+    "stem": "During an evening shift on a medical unit, the only nurse on the unit is busy with an unstable client. The unit clerk, who is also both a certified medication aide and an unlicensed assistive personnel (UAP), reports to the nurse that a healthcare provider is on the telephone and wishes to prescribe a PRN dose of an oral over-the-counter laxative for a client who is constipated. What instruction should the nurse provide the unit clerk?",
+    "options": [
+      "Accept the telephone order and have the provider sign it later",
+      "Tell the healthcare provider the nurse will return the phone call as soon as possible",
+      "Ask the provider to speak with the charge nurse instead",
+      "Have the unit clerk write down the order for nurse verification"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Telling the provider the nurse will call back is most appropriate because only licensed nurses can take telephone orders, even for over-the-counter medications. The unit clerk, despite being a certified medication aide, cannot accept telephone orders - this requires a nursing license and judgment to clarify, question, and ensure order appropriateness. The nurse is occupied with an unstable patient requiring immediate attention. The provider can wait briefly for a callback about a non-urgent laxative. Unit clerks cannot accept orders (A or D). There may not be a charge nurse (C). The principle: telephone orders require licensed nurse verification and cannot be accepted by unlicensed personnel, regardless of their other certifications.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q71",
+    "stem": "The nursing staff expresses concern about the new policy that increases the nurse-to-patient ratio by 25% on all shifts. Which action is best for the nurse-manager to take?",
+    "options": [
+      "Schedule a mandatory staff meeting to explain the policy",
+      "Disseminate factual information to all nursing staff to avoid misinformation and rumors",
+      "Ignore the concerns, as the decision has already been made",
+      "Ask staff to submit written concerns to the administration"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Disseminating factual information prevents misinformation and rumors while acknowledging staff concerns. This approach provides transparency, explains the rationale, addresses questions, and may reduce anxiety. Rumors in the absence of facts create more resistance and anxiety than truth. The manager should share: reasons for change, expected timeline, support systems being implemented, and an opportunity for feedback. Mandatory meetings (A) may feel punitive. Ignoring concerns (C) damages morale and trust. Written submissions (D) are less effective than dialogue. The principle: during organizational change, transparent communication with facts reduces resistance and anxiety. Managers who openly address concerns maintain trust and help staff adapt to necessary changes.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q72",
+    "stem": "After receiving the morning shift report, which client should the nurse assess first?",
+    "options": [
+      "A 45-year-old admitted with cellulitis receiving IV antibiotics",
+      "A 73-year-old diagnosed with chronic obstructive pulmonary disease who has a pulse oximeter reading of 84%",
+      "A 58-year-old with diabetes whose blood glucose is 180 mg/dL",
+      "A 62-year-old postoperative client with pain rated 7/10"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The 73-year-old COPD patient with oxygen saturation of 84% requires immediate assessment because, while some COPD patients tolerate lower oxygen levels, 84% is significantly low even for COPD and risks tissue hypoxia, especially to vital organs. The nurse must assess respiratory status, determine if this is baseline, evaluate for acute exacerbation, and intervene if needed (oxygen adjustment, medication, positioning). Cellulitis treatment (A) is ongoing. Blood glucose of 180 (mg/dL) is elevated but not critical. Pain 7/10 (D) needs attention, but hypoxia takes priority. The principle: oxygenation (airway, breathing) always takes priority in assessment. Even in chronic conditions, critically low oxygen saturations require immediate evaluation.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q73",
+    "stem": "A male client is admitted with difficulty breathing related to a diagnosis of metastatic lung cancer. He tells the nurse that he does not want to be \"hooked up to any machines.\" His vital signs are heart rate 120 beats/minute, blood pressure 98/50 mmHg, respiratory rate 30 breaths/minute, and oxygen saturation rate is 88%. Which action should the nurse take?",
+    "options": [
+      "Place the client on mechanical ventilation despite his wishes",
+      "Apply oxygen via nasal cannula to improve saturation",
+      "Give analgesic medications PRN",
+      "Document the client's wishes and provide no interventions"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Giving analgesics PRN respects the patient's wishes for no machines while providing comfort care. Dyspnea in end-stage cancer causes anxiety and distress; opioids reduce respiratory distress and air hunger without requiring mechanical support. The patient has refused invasive measures ('no machines'), likely expressing desire for comfort care rather than life-prolonging treatment. Mechanical ventilation (A) violates expressed wishes. While oxygen (B) isn't a 'machine' like ventilators, the patient's statement suggests a desire for minimal intervention. Providing no care (D) is inappropriate - comfort care is always appropriate. The principle: respect patient autonomy regarding life-sustaining treatment while providing aggressive symptom management and comfort care.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q74",
+    "stem": "An older adult woman with end-stage heart disease is alert and oriented and states that she does not want any heroic measures taken in the event she stops breathing. The client's children tell the nurse that they accept their mother's wishes and do not want to watch her suffer. Which action should the nurse take first?",
+    "options": [
+      "Document the conversation in the medical record",
+      "Obtain a do-not-resuscitate prescription",
+      "Schedule a family meeting with palliative care",
+      "Provide information about hospice services"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Obtaining a DNR order is the priority because it formalizes the patient's wishes into a medical order that all healthcare providers must follow. Without a formal DNR order, the patient would receive CPR despite her expressed wishes. The patient has capacity, has clearly stated wishes, and has family support. The nurse should facilitate getting this documented as a medical order immediately. Documentation (A) is important, but the order is essential. Palliative care consult (C) and hospice information (D) are appropriate next steps, but don't protect the patient from unwanted resuscitation. The principle: the patient's wishes about resuscitation must be converted into formal medical orders to be honored during emergencies when the patient cannot speak for themselves.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q75",
+    "stem": "A graduate nurse reports to the charge nurse that a postoperative client's blood pressure is 80/40 mmHg. Which question is most important for the charge nurse to ask?",
+    "options": [
+      "\"What was the previous blood pressure reading?\"",
+      "\"Is the client feeling dizzy?\"",
+      "\"Did you check the blood pressure manually?\"",
+      "\"When was the last dose of pain medication given?\""
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Asking if the client feels dizzy assesses for symptoms of hypotension and perfusion to the brain. Dizziness, along with low BP, indicates inadequate cerebral perfusion requiring immediate intervention. This question assesses the current patient status and guides immediate actions. Previous BP (A) provides context but doesn't assess the current patient condition. Manual verification (C) is a good practice, but the immediate concern is patient status. Pain medication timing (D) is relevant to the cause, but patient assessment comes first. The principle: when vital signs are abnormal, immediately assess the patient for associated symptoms and physiological impact. Patient symptoms guide the urgency of intervention more than numbers alone.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q76",
+    "stem": "The nurse is working at a diabetic clinic with a practical nurse (PN). Which nurse care is best to assign to the PN?",
+    "options": [
+      "Develop an initial teaching plan for the newly diagnosed diabetic",
+      "Describe the meaning of the Hgb A1C result of 9.9%",
+      "Perform initial admission assessment for new diabetic patient",
+      "Evaluate the patient's ability to self-inject insulin"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Describing the meaning of HgbA1C results (9.9% indicates poor glucose control over the past 3 months) is within PN scope as it involves reinforcing information about a specific test result. PNs can provide factual information and reinforce teaching. However, developing initial teaching plans (A) requires RN assessment and planning. Initial assessments (C) must be done by RNs. Evaluation of learning and skill performance (D) requires RN-level judgment. The principle: PNs can reinforce teaching and provide factual information, but RNs must perform initial assessments, develop teaching plans, and evaluate learning outcomes. The PN can explain established information; the RN handles assessment, planning, and evaluation.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q77",
+    "stem": "The wound care nurse is applying sterile fly larvae to the dead tissue of a client's large wound when a code blue is called for another client on the unit who is not spontaneously breathing. Which action should the nurse take?",
+    "options": [
+      "Stop the procedure immediately and respond to the code",
+      "Ask another nurse to respond to the code",
+      "Finish the procedure",
+      "Have UAP complete the procedure"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The nurse should finish the sterile maggot debridement procedure because: 1) it's a sterile procedure that cannot be safely interrupted mid-application, 2) other nurses will respond to the code (codes require team response, not every nurse), 3) stopping leaves the wound compromised and larvae partially applied, and 4) the procedure is nearly complete. Codes require multiple responders, but don't need every nurse on the unit. This is similar to completing a sterile catheter insertion - sterile procedures must be completed or properly terminated. UAPs cannot complete sterile procedures (D). The principle: when involved in sterile procedures, complete them unless you're the only available code responder. Patient safety requires completing sterile procedures properly.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q78",
+    "stem": "A charge nurse agrees to cover another nurse's assignment during a lunch break. Based on the status report by the nurse who is leaving for lunch, which client should be checked first by the charge nurse? The client",
+    "options": [
+      "With stable angina, resting comfortably with no chest pain",
+      "Post-cardiac catheterization 4 hours ago with stable vital signs",
+      "With a pneumothorax secondary to a gunshot, with a current pulse oximeter reading of 90%",
+      "With COPD receiving nebulizer treatment with oxygen saturation of 92%"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The client with traumatic pneumothorax and a pulse ox of 90% requires immediate assessment because: 1) traumatic pneumothorax can worsen rapidly, 2) 90% oxygen saturation is low and suggests inadequate oxygenation, 3) gunshot wounds may have multiple injuries, 4) the chest tube may be malfunctioning or tension pneumothorax developing. This is an unstable trauma patient with respiratory compromise. Stable angina with no pain (A) is stable. Post-cath 4 hours ago (B) is past the critical period. COPD patient getting treatment (D) with 92% sat is improving. The principle: unstable trauma patients with respiratory compromise take priority. Pneumothorax can rapidly become tension pneumothorax, which is life-threatening.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q79",
+    "stem": "During a 24-hour chart review of a client in acute renal failure, the nurse notices that a prescription, written 12 hours ago for every 6 hours serum potassium levels, was not transcribed by the previous shift. Which is the best immediate action for the nurse to take?",
+    "options": [
+      "Notify the nursing supervisor about the missed prescription",
+      "Order the lab work as prescribed and follow procedures for completing an incident report",
+      "Wait until the provider rounds to clarify the order",
+      "Document the error in the chart only"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Ordering the lab work immediately and completing an incident report is the correct action because: 1) acute renal failure causes dangerous hyperkalemia requiring close monitoring, 2) 12 hours without potassium monitoring in acute renal failure is unsafe, 3) the nurse must implement the valid order immediately, and 4) incident reporting captures the error for system improvement. Hyperkalemia can cause fatal arrhythmias. Notifying supervisor (A) doesn't address the immediate need for labs. Waiting for rounds (C) delays critical information. Documentation only (D) doesn't implement the needed monitoring. The principle: when discovering missed orders for critical monitoring, implement them immediately to ensure patient safety, then complete incident reporting.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q80",
+    "stem": "An unlicensed assistive personnel (UAP) is stuck in the palm of the hand by a needle that is found in the bed linen of a client diagnosed with Hepatitis B. Which action should the charge nurse instruct the UAP to do first?",
+    "options": [
+      "Report to employee health immediately",
+      "Wash hands with soap and water",
+      "Apply pressure to stop any bleeding",
+      "Complete an incident report"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Washing hands with soap and water is the immediate first aid for needlestick injuries because it removes potentially infectious blood and reduces viral load at the exposure site. This should be done for several minutes with thorough scrubbing. After washing, the UAP should report to employee health (A) for further treatment (Hepatitis B immune globulin if not vaccinated, vaccine booster if needed, testing protocol). Applying pressure (C) may trap contaminants. Incident reports (D) come after immediate first aid and medical evaluation. The principle: for needlesticks and exposures, immediate decontamination is the first response, followed by medical evaluation and reporting. Quick action can reduce transmission risk.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q81",
+    "stem": "An older adult woman with Cushing's syndrome is scheduled for cataract surgery in the day surgery unit. Nursing assessment reveals a rounded face and pitting edema in the lower extremities. Which intervention should the nurse implement?",
+    "options": [
+      "Apply compression stockings to prevent deep vein thrombosis",
+      "Initiate intake and output measurement",
+      "Elevate the head of the bed to reduce facial swelling",
+      "Request an endocrinology consultation before surgery"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Initiating intake and output measurement is most important because Cushing's syndrome causes fluid retention and electrolyte imbalances (hypernatremia, hypokalemia) due to excess cortisol. Monitoring I&O helps assess fluid status and kidney function, critical for perioperative management. Cushing's patients have impaired wound healing, increased infection risk, and potential for adrenal crisis. Accurate fluid balance monitoring guides perioperative fluid management. Compression stockings (A) may help, but I&O is the priority. HOB elevation (C) won't significantly reduce facial swelling (moon facies). Endocrine consult (D) is likely already involved. The principle: in patients with endocrine disorders affecting fluid balance, monitoring I&O is essential for perioperative safety and preventing complications.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q82",
+    "stem": "Several nurses are elected by their peers to serve on a negotiating committee to recommend new healthcare benefits. After the new benefits plan is developed and approved, which action is most important for the nurses working on this committee to implement?",
+    "options": [
+      "Distribute written summaries of the new benefits to all staff",
+      "Be available to all shifts to discuss the changes in healthcare benefits",
+      "Schedule mandatory education sessions about the benefits",
+      "Post information about benefits on the unit bulletin boards"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Being available to all shifts for discussion is most important because it provides personal interaction, allows questions, clarifies misunderstandings, and demonstrates the committee's commitment to supporting staff. Face-to-face communication is most effective for explaining complex benefits information and addressing individual concerns. Staff are more likely to utilize benefits they fully understand. Written summaries (A) and bulletin boards (D) are one-way communication. Mandatory sessions (C) may create resistance. The principle: when implementing change affecting employee benefits, personal availability for questions and discussion creates buy-in and ensures staff understand how to utilize benefits. Committee members serve as resources, making change successful.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q83",
+    "stem": "The nurse is caring for an older adult who was admitted with a urinary tract infection and is now exhibiting signs of severe inflammatory response syndrome (SIRS). Which collaborative care goals should the nurse include in the plan of care? (Select all that apply)",
+    "options": [
+      "Reduce white blood cell count",
+      "Body temperature within normal limits",
+      "Negative urine culture",
+      "Maintain blood pressure above 90/60",
+      "Achieve a pain rating of less than 3/10"
+    ],
+    "correct": [
+      "A",
+      "B",
+      "C"
+    ],
+    "rationale": "Goals for SIRS include: reducing WBC count (A) as elevated WBCs indicate ongoing inflammation/infection; normalizing body temperature (B) as fever/hypothermia are SIRS criteria; achieving negative urine culture (C) as this indicates source infection is resolved. Blood pressure maintenance (D), while important, is not a primary goal for SIRS (more relevant for septic shock). Pain control (E) is always important but not specific to SIRS. SIRS is defined by ≥2 of: temperature >38°C or <36°C, heart rate >90, respiratory rate >20, WBC >12,000 or <4,000. Treatment goals address these parameters by treating the underlying infection and controlling inflammation.",
+    "type": "multi_select"
+  },
+  {
+    "id": "Leadership_Q84",
+    "stem": "When making assignments on a psychiatric unit, it is most essential for the charge nurse to assign a nurse to a client with:",
+    "options": [
+      "Schizophrenia who is hearing voices but not responding to them",
+      "Bipolar disorder in a manic phase with pressured speech",
+      "Depression, who was admitted during the night and denies any suicide ideations",
+      "Anxiety disorder requesting as-needed medication"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The newly admitted depressed patient denying suicidal ideation requires priority nursing assignment because: 1) new admissions need thorough assessment, 2) denial of suicidal ideation doesn't mean no risk - patients may lie or become suicidal after admission, 3) depression is a major risk factor for suicide, 4) the nurse must establish therapeutic relationship and complete suicide risk assessment. Patients often deny suicidal thoughts initially. The schizophrenia patient (A) is stable if not responding to hallucinations. Manic patient (B) needs monitoring, but is less immediately dangerous. Anxiety patient (C) has identified a coping strategy. The principle: in psychiatric nursing, newly admitted depressed patients require priority assessment for suicide risk regardless of stated denials, as suicide risk assessment is never complete based solely on patient statements.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q85",
+    "stem": "The nurse is assigned to care for clients on a medical unit. Based on the notes taken during shift report, which client situation warrants the nurse's immediate attention?",
+    "options": [
+      "A client with pneumonia requesting an extra blanket",
+      "A 10-year-old child who is receiving chemotherapy, and the infusion pump is beeping",
+      "An adult with diabetes reporting a blood sugar of 140 mg/dL",
+      "An elderly client waiting for discharge instructions"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The child receiving chemotherapy with a beeping pump requires immediate attention because: 1) chemotherapy infusions must run at precise rates - interruptions can affect dosing, 2) beeping may indicate occlusion, air in line, or empty bag, 3) chemotherapy is hazardous and requires immediate intervention if problems occur, 4) children receiving chemotherapy are immunocompromised and any interruption in treatment needs assessment. Requesting a blanket (A) can wait. Blood glucose 140 (C) is mildly elevated but not emergent. Discharge instructions (D) can be scheduled. The principle: chemotherapy infusions require immediate response to pump alarms because precise dosing is critical for efficacy and safety. Any interruption in chemotherapy infusion requires immediate nursing assessment and intervention.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q86",
+    "stem": "In planning care on the nursing unit, which task is best to assign to the nurse (RN), rather than a practical nurse (PN)?",
+    "options": [
+      "Change a sterile dressing on a post-operative wound",
+      "Administer oral medications to stable clients",
+      "Teach a client with diabetes to inject insulin",
+      "Take vital signs on clients preparing for discharge"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Teaching a client with diabetes to inject insulin should be assigned to the RN because initial patient teaching requires RN-level assessment, planning, and evaluation skills. The RN must: assess learning needs and readiness, develop an individualized teaching plan, teach the skill, evaluate understanding and technique, and revise teaching as needed. This is complex patient education requiring RN judgment. Sterile dressing changes (A), oral medication administration (B), and vital signs (D) can be performed by PNs within their scope. The principle: initial patient teaching, especially for complex self-care skills like insulin injection, requires RN-level assessment and teaching expertise. PNs can reinforce teaching after the RN has done initial instruction.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q87",
+    "stem": "A male client who fell at home and experienced a brief loss of consciousness becomes increasingly confused after admission to the medical unit. The family presents the client's signed power of attorney and a home medication list. When reporting to the healthcare provider using SBAR (Situation, Background, Assessment, Recommendation) communication, which information should the nurse provide first?",
+    "options": [
+      "Home medication list and power of attorney information",
+      "Increasing confusion of the client",
+      "History of fall with brief loss of consciousness",
+      "Request for a CT scan of the head"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "In SBAR communication, the Situation (current clinical issue) comes first. The increasing confusion is the current situation requiring immediate attention, as it may indicate intracranial bleeding, worsening head injury, or other neurological emergency. This grabs the provider's attention about the urgency. Background information, including fall history (C) and medications (A), comes second. Assessment findings support the situation. Recommendation for CT scan (D) comes last. The principle: SBAR format requires starting with the most concerning current situation/symptom, then providing background context, assessment data, and finally recommendations. This format ensures providers understand urgency and have data to make decisions.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q88",
+    "stem": "When the nurse manager is calculating the number of full-time equivalents (FTEs) that are needed to staff a unit of an acute care hospital, which factor is most important in determining this calculation?",
+    "options": [
+      "The physical layout of the nursing unit",
+      "The clients' acuity level",
+      "The number of physicians rounding on the unit",
+      "The availability of support services"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Client acuity is the most important factor in FTE calculation because high-acuity patients require more nursing hours per patient day. Acuity-based staffing systems match nursing resources to patient care needs, ensuring safe staffing levels. High-acuity units (ICU) need more FTEs than low-acuity units (medical-surgical) for the same number of beds. Physical layout (A) affects efficiency but not FTE numbers. The number of physicians (C) doesn't drive nursing FTE needs. Support services (D) supplement but don't determine core nursing FTE requirements. The principle: patient acuity drives nursing workload and, therefore, staffing needs. Staffing models must account for how much nursing time and expertise each patient requires based on complexity and care needs.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q89",
+    "stem": "In reviewing the admission records of a 16-year-old male client with acute glomerulonephritis, the nurse notes that the healthcare provider has given no instructions regarding measurement of intake. Which intervention should the nurse implement?",
+    "options": [
+      "Call the healthcare provider to request orders for intake measurement",
+      "Start measuring intake and notify the provider on rounds",
+      "Ask the client what he knows about the healthcare provider's plan for how much he can have to drink",
+      "Wait for the provider to write specific orders"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Asking the client what he knows about fluid restrictions helps clarify if instructions were given verbally that weren't documented, respects patient involvement, and may reveal teaching needs. Acute glomerulonephritis typically requires fluid restriction due to decreased kidney function and risk of fluid overload. The provider may have discussed this with the patient/family without writing formal orders. This question clarifies the situation before calling the provider. If the patient is unclear, then the nurse should call for orders (A). Simply starting I&O (B) without restrictions may not address fluid management needs. Waiting (D) is inappropriate when fluid management is critical in renal disease. The principle: assess what the patient knows before assuming orders are missing - providers sometimes give verbal instructions that aren't documented.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q90",
+    "stem": "Which situation on an acute care inpatient surgical nursing unit requires intervention by the nurse-manager?",
+    "options": [
+      "A staff RN delegates wound care to a licensed practical nurse",
+      "A unit clerk receives a verbal telephone prescription from an attending healthcare provider",
+      "A UAP assists a stable patient with ambulation",
+      "A practical nurse administers oral pain medication to a post-op patient"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A unit clerk receiving a telephone prescription requires immediate intervention because unit clerks cannot take medical orders - only licensed nurses can accept verbal/telephone orders. This is a serious breach of the scope of practice and patient safety. The clerk lacks the education to clarify orders, question inappropriate prescriptions, or ensure accurate transcription. Delegation to LPN (A), UAP ambulation assistance (C), and PN medication administration (D) is all appropriate within the scope of practice. The principle: only licensed nurses can receive verbal or telephone orders from providers because it requires nursing judgment to clarify, question, and ensure order safety. Unit clerks can transcribe written orders but cannot accept new orders.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q91",
+    "stem": "The nurse is caring for a client with the sexually transmitted infection (STI) syphilis. The client reports having sex with someone who had many partners. Which response should the nurse provide?",
+    "options": [
+      "Report the partners to the health department for contact tracing",
+      "Inform that the follow-up may end after the treatment is finished",
+      "Remain non-judgmental and assure the client of confidentiality",
+      "Advise the client to abstain from all sexual activity"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Remaining non-judgmental and assuring confidentiality is most important because it maintains trust, encourages honest disclosure, and promotes continued care. Patients with STIs may feel shame and fear judgment, leading them to avoid care if they feel judged. Confidentiality assurance (within legal reporting requirements) promotes open communication about partners and risk behaviors. While health department reporting (A) is required, this shouldn't be the nurse's first response. Follow-up after treatment (B) is incorrect - syphilis requires follow-up testing. Abstinence advice (D) may be appropriate, but creating a safe, non-judgmental environment is the priority for ongoing care and partner notification. The principle: therapeutic relationships require non-judgmental acceptance and confidentiality to promote patient honesty and continued care.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q92",
+    "stem": "An adult woman with metastatic pancreatic cancer has requested that no heroic measures be implemented to save her life. Instructions from the healthcare provider have been received to transfer the client to a palliative care room. What action is the most important for the nurse to take?",
+    "options": [
+      "Pack the client's belongings for the transfer",
+      "Give a detailed report to the accepting nurse",
+      "Explain palliative care philosophy to the family",
+      "Update the care plan to reflect palliative goals"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Giving a detailed report to the accepting palliative care nurse is most important for continuity of care, patient safety, and appropriate symptom management. The report should include: patient's goals of care, DNR status, current symptoms and interventions, effective pain management strategies, family dynamics, and spiritual/emotional needs. This comprehensive handoff ensures the palliative care team can immediately provide appropriate comfort-focused care without gaps. Packing belongings (A) can be done by others. Family education (C) is important, but the palliative care team will provide this. Care plan updates (D) will happen, but safe handoff communication is the priority. The principle: transfers of care require comprehensive communication to ensure continuity, especially for patients with complex needs requiring specialized symptom management.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q93",
+    "stem": "After receiving a change of shift report for clients on a medical-surgical unit, which activity should the nurse delegate to the practical nurse (PN)?",
+    "options": [
+      "Initiate teaching for client care after discharge",
+      "Validate prescribed intravenous flow rates",
+      "Begin initial sterile wound care for surgical clients",
+      "Evaluate and update plans of care for clients"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Validating IV flow rates is within PN scope as it involves checking that infusions are running at prescribed rates and identifying if adjustments are needed. This is standard monitoring that PNs can perform. Initial teaching (A) requires RN-level assessment and teaching skills. Beginning initial sterile wound care (C) requires initial assessment by an RN (subsequent wound care can be delegated). Evaluating and updating care plans (D) is the RN's responsibility, requiring assessment and planning. The principle: PNs can implement established plans and monitor treatments, but RNs must perform initial assessments, initial teaching, care planning, and evaluation. Monitoring established treatments like IV rates is appropriate for PN delegation.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q94",
+    "stem": "A male client who recently learned that he has Huntington's disease tells the nurse that he does not want his daughter to know about the disease because she may someday want to have a child of her own. Which intervention should the nurse implement?",
+    "options": [
+      "Respect the client's wishes and maintain confidentiality",
+      "Explain that his daughter has a right to know of potential health problems",
+      "Notify the health department about the genetic condition",
+      "Encourage the client to seek genetic counseling for the family"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Explaining that the daughter has a right to know about potential health problems is most appropriate because Huntington's disease is an autosomal dominant genetic disorder with a 50% transmission risk to offspring. The daughter has a right to this information for her own health management and reproductive decisions. While respecting client confidentiality is important (A), when genetic information affects family members' health decisions, there may be an ethical duty to warn. This isn't a reportable condition to health departments (C). Genetic counseling (D) is excellent, but first address why the daughter should know. The principle: genetic information that directly impacts family members' health decisions creates ethical tension between confidentiality and the duty to warn at-risk relatives.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q95",
+    "stem": "The nurse is caring for clients on an orthopedic unit. Which client has the greatest risk for developing osteomyelitis?",
+    "options": [
+      "A young adult with a closed tibia fracture in a cast",
+      "An adolescent client with an external fixation device applied to a fracture following a collision",
+      "An older adult with osteoporosis who is bedfast following a compression fracture of the vertebrae",
+      "A middle-aged client who had knee replacement surgery 5 days ago"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The adolescent with external fixation has the highest osteomyelitis risk because external fixators penetrate the skin and bone, creating a direct pathway for bacteria. Pins through skin provide entry for organisms to reach bone. Additionally, trauma (collision) may have introduced contamination. External fixators require meticulous pin site care to prevent infection. Closed fracture in a cast (A) has intact skin. A bedridden osteoporosis patient (C) has an infection risk from immobility but no direct bone access. Knee replacement patient (D) is past the highest risk period (first 48-72 hours). The principle: osteomyelitis risk is highest when there's direct communication between the external environment and bone, as with external fixation devices, open fractures, or surgical hardware.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q96",
+    "stem": "A client with tachycardia and hypotension presents to the emergency department (ED) reporting severe vomiting and diarrhea for three days. Which action is most important for the nurse to implement?",
+    "options": [
+      "Obtain stool specimen for culture and sensitivity",
+      "Initiate IV access and begin fluid resuscitation",
+      "Administer antiemetic medication",
+      "Monitor for impending signs of shock"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Initiating IV access and beginning fluid resuscitation is the priority because the client shows signs of hypovolemic shock (tachycardia, hypotension) from fluid loss. Three days of vomiting and diarrhea cause severe dehydration requiring immediate fluid replacement to maintain perfusion and prevent circulatory collapse. Stool cultures (A) are important but not urgent. Antiemetics (C) help symptoms but don't address life-threatening hypovolemia. The client is already showing signs of shock (D) - intervention is needed now. The principle: when patients present with signs of shock, immediate intervention to restore circulating volume takes priority over diagnostic testing or symptom management. Untreated hypovolemic shock leads to organ failure and death.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q97",
+    "stem": "While eating breakfast, a client admitted with syncope and a 2-month history of vertigo complains of dizziness. Using the standard communication tool SBAR (Situation, Background, Assessment, Recommendation), which statement is best for the nurse to provide to the healthcare provider about the client's background?",
+    "options": [
+      "The client has been experiencing dizziness for the past 2 months",
+      "The client's significant history includes atrial fibrillation and hypoglycemia",
+      "The client reports feeling dizzy while eating breakfast this morning",
+      "The client's blood pressure is currently 110/70 mmHg with a heart rate of 88"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "In the SBAR format, the Background includes relevant medical history that provides context for the current situation. Atrial fibrillation and hypoglycemia are significant conditions that could cause syncope and vertigo, making them critical background information. A-fib can cause embolic stroke or decreased cardiac output. Hypoglycemia causes dizziness and syncope. The 2-month history (A) is relevant, but specific conditions (atrial fibrillation, hypoglycemia) provide more actionable information. Current symptoms (C) belong in Situation. Current vital signs (D) belong in Assessment. The principle: SBAR Background should include pertinent medical history and conditions that help the provider understand context and potential causes of the current situation.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q98",
+    "stem": "The practical nurse (PN) is visiting a client who has stage four colon cancer and is receiving palliative home care. The client refuses to eat and sleeps most of the day. Which intervention should the nurse ask the PN to ensure the family is providing the client?",
+    "options": [
+      "Encourage high-protein supplements every 2 hours",
+      "Keep the client in a high Fowler's position",
+      "Provide small, frequent meals when the client is awake",
+      "Maintain in high Fowler's position"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Maintaining a high Fowler's position (head of bed elevated 60-90 degrees) is important for end-stage cancer patients because it facilitates breathing (many have decreased respiratory capacity), reduces the risk of aspiration (especially important if swallowing is impaired), and promotes comfort. End-stage cancer patients often have dyspnea, and upright positioning maximizes lung expansion. The client's refusal to eat and excessive sleeping indicate end-stage disease where comfort is priority over nutrition. Forcing protein supplements (A) is inappropriate in palliative care - honor the patient's wishes. Small, frequent meals (C) are good if the patient wants to eat, but positioning is more critical for immediate comfort and safety. Positioning prevents aspiration and promotes breathing.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q99",
+    "stem": "A male practical nurse (PN) is reluctant to use new blood glucose monitoring equipment despite having attended the mandatory in-service about the equipment. Which action is best for the charge nurse to take?",
+    "options": [
+      "Reassign the PN to clients who don't require glucose monitoring",
+      "Report the PN's reluctance to the nurse manager",
+      "Provide additional one-on-one training for the PN",
+      "Observe the PN while he uses the new equipment"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Observing the PN use the new equipment is best because it: 1) assesses actual competency versus perceived lack of competency, 2) identifies specific concerns or skill gaps, 3) provides immediate feedback and support, 4) validates competency once performed correctly, and 5) may reveal that the reluctance is anxiety rather than inability. Direct observation identifies whether the issue is a lack of skill, fear of new technology, or resistance to change. Reassigning (A) doesn't address the problem. Reporting to the manager (B) escalates prematurely. Additional training (C) may be needed, but observation should come first to assess the actual issue. The principle: when staff express reluctance with new skills, direct observation allows assessment of actual versus perceived competency and guides appropriate intervention.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q100",
+    "stem": "The charge nurse in an emergency center is planning client care assignments for the staff. Which action may be safely delegated to the practical nurse (PN)?",
+    "options": [
+      "Perform initial triage assessment on arriving patients",
+      "Initiate IV access on a trauma patient",
+      "Provide discharge teaching for a patient going home",
+      "Reinforce client teaching for discharge to home"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Reinforcing discharge teaching can be safely delegated to PNs because it involves repeating and clarifying information already taught by the RN. PNs can reinforce instructions, answer clarification questions, and ensure patient understanding of previously taught material. Initial triage (A) requires RN-level assessment and prioritization skills critical in emergency settings. Initiating IV access (B) on trauma patients should be done by RNs due to patient instability and the need for rapid assessment. Initial discharge teaching (C) requires RN-level assessment of learning needs and development of teaching plans. The principle: PNs can reinforce teaching after RNs complete initial teaching and assessment. The RN maintains responsibility for initial teaching, assessment, and evaluation, while PNs can support by reinforcing information.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q101",
+    "stem": "An adult woman who had gastric bypass surgery two weeks ago is admitted because she is exhibiting signs of anastomotic leakage. Her vital signs are temperature 100°F (37.8°C), blood pressure 98/50 mmHg, heart rate 135 beats/minute, and respiratory rate 24 breaths/minute. Which intervention is most important for the nurse to include in this client's plan of care? Monitor abdominal girth and assess for increasing distention every 4 hours Replace fluids intravenously based on intake and output Administer prophylactic antibiotics as prescribed to prevent sepsis Keep client NPO and prepare for potential surgical intervention",
+    "options": [
+      "Monitor abdominal girth and assess for increasing distention every 4 hours",
+      "Replace fluids intravenously based on intake and output",
+      "Administer prophylactic antibiotics as prescribed to prevent sepsis",
+      "Keep client NPO and prepare for potential surgical intervention"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The client's vital signs indicate hypovolemic shock (low BP 98/50, tachycardia 135, tachypnea 24, low-grade fever). Anastomotic leakage causes fluid loss into the peritoneal cavity and third-spacing, leading to intravascular volume depletion. Using the ABC priority framework and physiological needs, maintaining circulatory volume is the immediate priority to prevent cardiovascular collapse. The tachycardia and hypotension indicate the body's compensatory mechanisms are already activated. Fluid resuscitation must be initiated immediately based on hemodynamic status and intake/output monitoring.",
+    "type": "single_select"
+  },
+  {
+    "id": "Leadership_Q102",
+    "stem": "The unlicensed assistive personnel (UAP) reports to the nurse that a male client with fluid volume overload will not allow the UAP to obtain his daily weight. Which action should the nurse implement? Instruct UAP to weigh the client using a bed scale Direct UAP to delay weighing the client until later Document that the client refused daily weights Ask the client why he does not want to be weighed",
+    "options": [
+      "Instruct UAP to weigh the client using a bed scale",
+      "Direct UAP to delay weighing the client until later",
+      "Document that the client refused daily weights",
+      "Ask the client why he does not want to be weighed"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "The nurse must assess the situation before taking action. The client may have concerns about privacy, discomfort, cultural issues, or a misunderstanding about the importance of daily weights. Using therapeutic communication, the nurse should explore the client's concerns and provide education about why daily weights are essential for monitoring fluid volume status. This assessment allows the nurse to address barriers and potentially gain client cooperation. After understanding the reason, the nurse can implement appropriate interventions such as ensuring privacy, explaining the medical necessity, or addressing specific concerns.",
+    "type": "single_select"
+  },
+  {
+    "id": "Additional_Q104",
+    "stem": "The nurse is reviewing the records of clients with diabetes in a long-term care facility. The nurse notes that the pre-prandial blood glucose values obtained during routine glucometer checks in the past 2 days are consistently 50 to 60 mg/dL higher than those recorded in the previous 2 weeks. What action should the nurse take first?",
+    "options": [
+      "Review the clients' medication administration records for insulin dosage changes",
+      "Assess the clients' dietary intake patterns over the past 2 days",
+      "Contact the healthcare provider about the elevated glucose trends",
+      "Evaluate calibration of glucometers in use per manufacturer guidelines"
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "When multiple clients show the same pattern of abnormal results over the same time period, equipment malfunction is the most likely cause rather than a physiological change in multiple patients simultaneously. Quality control and equipment validation should be assessed first. Glucometers require regular calibration and control testing to ensure accuracy. If all clients using the same glucometer(s) show consistent elevation, this strongly suggests calibration error. Checking equipment prevents inappropriate insulin administration based on falsely elevated readings, which could cause hypoglycemia. This follows the principle of ensuring data accuracy before making clinical decisions.",
+    "type": "single_select"
+  },
+  {
+    "id": "Additional_Q105",
+    "stem": "A new female employee reports to the charge nurse that she has developed a rash on her hands and arms. What action is most important for the nurse to take?",
+    "options": [
+      "Document the employee's complaint in the incident report system",
+      "Ask the employee if she is allergic to latex",
+      "Refer the employee-to-employee health services for evaluation",
+      "Recommend the employee wash her hands with hypoallergenic soap"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Latex allergy is a serious occupational hazard for healthcare workers with repeated glove exposure. Symptoms can range from contact dermatitis (rash) to life-threatening anaphylaxis. Early identification is critical for employee safety and the prevention of progression to Type I hypersensitivity reactions. Healthcare environments contain numerous latex products beyond gloves (catheters, blood pressure cuffs, stethoscopes). If latex allergy is confirmed, immediate workplace modifications are needed, including latex-free gloves and avoiding latex-containing products. This assessment must occur first to determine if emergency precautions are needed. The question focuses on \"most important,\" which prioritizes immediate safety assessment over documentation or referral.",
+    "type": "single_select"
+  },
+  {
+    "id": "Additional_Q106",
+    "stem": "Two clients in the intensive care unit are assigned to an oncoming nurse at shift change. One client has pneumonia and is being mechanically ventilated, and the other had a thoracotomy yesterday and is currently complaining of incisional discomfort. Which action should the nurse take first?",
+    "options": [
+      "Assess the level of consciousness and vital signs for both clients",
+      "Administer PRN pain medication to the client with incisional discomfort",
+      "Review plan of care priorities and medications due for both clients",
+      "Complete a head-to-toe physical assessment for the client with pneumonia"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "When assuming care of critically ill clients, the nurse must first establish baseline status and identify any immediate threats to life. Assessing the level of consciousness and vital signs for both clients follows the ABC priority framework and provides a rapid evaluation of oxygenation, circulation, and neurological status. The mechanically ventilated client with pneumonia is at high risk for respiratory complications, ventilator issues, or hemodynamic instability. The post-thoracotomy client could have respiratory compromise, bleeding, or other complications. Quick vital signs and neurological checks (less than 5 minutes for both) identify which client requires immediate intervention and help the nurse prioritize subsequent care. This is the foundation of safe patient care during transitions.",
+    "type": "single_select"
+  },
+  {
+    "id": "Additional_Q107",
+    "stem": "The nurse is caring for a group of clients on a surgical unit. Which action should the nurse implement first?",
+    "options": [
+      "Review laboratory results for a client scheduled for surgery later today",
+      "Determine if the client scheduled for surgery is prepared to go to the operating room",
+      "Administer routine morning medications to postoperative clients",
+      "Complete discharge teaching for a client being released this afternoon"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When a client is scheduled for surgery, ensuring the client is properly prepared and ready for the operating room is the priority because delays can affect the entire surgical schedule, impact patient safety, and waste valuable OR resources. The nurse must verify that preoperative checklist items are completed, including: informed consent signed, NPO status maintained, preoperative medications administered, identification band in place, surgical site marked, vital signs stable, lab results available, and any specific preoperative orders completed. If the client is not ready when the OR calls, it creates a cascade of delays affecting multiple patients and staff. This time-sensitive task takes precedence over routine care that has flexible timing.",
+    "type": "single_select"
+  },
+  {
+    "id": "Additional_Q108",
+    "stem": "An experienced, female practical nurse (PN) is hired to work on the surgical unit of a tertiary hospital. The first day she is working on the unit, the PN tells the charge nurse that she has excellent wound care skills. It is a busy day, and a postoperative client needs to have a sterile dressing change. Which action is best for the charge nurse to take?",
+    "options": [
+      "Watch the PN perform sterile wound care to validate her skill level",
+      "Tell the PN that past experience does not indicate the ability to perform skills",
+      "Ask the PN to change the sterile dressing while the nurse is busy",
+      "Review the PN's skill checklist to assess for wound care competency"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Direct observation of skill performance is the gold standard for validating clinical competency, especially during orientation. Even though the PN reports experience, the charge nurse has a legal and ethical responsibility to ensure patient safety by confirming the PN can perform sterile technique correctly in this specific facility. Different facilities may have varying procedures, equipment, and standards. Observing the PN allows the charge nurse to: verify sterile technique, assess wound assessment skills, evaluate documentation practices, provide immediate feedback, identify any gaps requiring additional training, and ensure the PN meets facility standards. This protects both the patient and the facility from potential complications due to improper technique. Competency validation is a standard expectation during orientation, regardless of previous experience.",
+    "type": "single_select"
+  }
+]
