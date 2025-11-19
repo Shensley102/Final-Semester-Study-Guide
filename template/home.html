@@ -57,7 +57,7 @@
     };
 
     // Categories that skip the middle category page and go straight to quiz
-    const skipCategoryPage = ['Patient Care Management', 'HESI'];
+    const skipCategoryPage = ['Patient Care Management'];
 
     async function loadCategories() {
       try {
@@ -75,14 +75,8 @@
           // Determine the link based on whether we skip the category page
           let href;
           if (skipCategoryPage.includes(key)) {
-            // For HESI: go to the single module directly
-            if (key === 'HESI') {
-              href = `/quiz/Hesi_Management?category=${encodeURIComponent(key)}`;
-            }
             // For Patient Care Management: go to quiz with category (module dropdown will show)
-            else if (key === 'Patient Care Management') {
-              href = `/quiz?category=${encodeURIComponent(key)}`;
-            }
+            href = `/quiz?category=${encodeURIComponent(key)}`;
           } else {
             // For other categories: go to category page first
             href = `/category/${encodeURIComponent(key)}`;
