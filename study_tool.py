@@ -26,6 +26,8 @@ STUDY_CATEGORIES = {
         'display_name': 'HESI',
         'icon': '📋',
         'modules': [
+            'HESI_Delegating',
+            'HESI_Leadership',
             'Hesi_Management'
         ]
     },
