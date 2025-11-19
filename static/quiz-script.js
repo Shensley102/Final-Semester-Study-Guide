@@ -77,6 +77,8 @@ function prettifyModuleName(name) {
     'CCRN_Test_1_Combined_QA': 'CCRN Test 1',
     'CCRN_Test_2_Combined_QA': 'CCRN Test 2',
     'CCRN_Test_3_Combined_QA': 'CCRN Test 3',
+    'HESI_Delegating': 'HESI Delegating',
+    'HESI_Leadership': 'HESI Leadership',
     'Hesi_Management': 'HESI Management',
   };
   if (map[normalized]) return map[normalized];
