@@ -62,6 +62,7 @@
           <li><strong>First-Try Accuracy:</strong> At the end, you'll see your first-try mastery percentage and total questions answered.</li>
           <li><strong>Review Your Performance:</strong> After completing the quiz, you'll see a detailed review of all questions with your answers and rationales.</li>
           <li><strong>Color-Coded Results:</strong> Questions are marked by difficulty (green = mastered, yellow/orange/red = more attempts needed).</li>
+          <li><strong>Retry Missed Questions:</strong> After completing a quiz, you can retry only the questions you missed on first attempt for focused review.</li>
         </ul>
       </div>
     </div>
@@ -109,7 +110,12 @@
           <div id="categoryIconSummary" class="category-icon-large"></div>
           <h2 id="summaryTitle" style="margin: 0;">Quiz Summary</h2>
         </div>
-        <button id="restartBtnSummary" class="btn primary hidden">Start Another Run</button>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <button id="retryMissedBtn" class="btn btn-blue hidden">
+            Retry <span id="missedCount">0</span> Missed Questions
+          </button>
+          <button id="restartBtnSummary" class="btn primary hidden">Start Another Run</button>
+        </div>
       </div>
 
       <div id="firstTrySummary" class="first-try hidden"></div>
