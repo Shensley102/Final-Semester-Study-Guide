@@ -224,6 +224,8 @@ function showResumeIfAny(){
   const s = loadRunState();
   const resumeContainer = document.getElementById('resumeContainer');
   
+  if (!resumeContainer) return;
+  
   if (!s || !s.run?.order?.length || !s.run?.isFullBank || s.run?.isRetry) {
     resumeContainer.classList.add('hidden');
     return;
@@ -233,27 +235,31 @@ function showResumeIfAny(){
   
   const remainingQuestions = getNotMasteredFromRun(s.run);
   const remainingCountEl = document.getElementById('remainingQuestionsCount');
-  remainingCountEl.textContent = `${remainingQuestions} questions remaining`;
+  if (remainingCountEl) {
+    remainingCountEl.textContent = `${remainingQuestions} questions remaining`;
+  }
   
-  resumeBtn.onclick = () => {
-    run = s.run;
-    setHeaderTitle(run.displayName || run.bank || defaultTitle);
-    document.title = run.displayName ? `${run.displayName} - Nurse Success Study Hub` :
-                   (run.bank ? `${run.bank} - Nurse Success Study Hub` : 'Quiz - Nurse Success Study Hub');
+  if (resumeBtn) {
+    resumeBtn.onclick = () => {
+      run = s.run;
+      setHeaderTitle(run.displayName || run.bank || defaultTitle);
+      document.title = run.displayName ? `${run.displayName} - Nurse Success Study Hub` :
+                     (run.bank ? `${run.bank} - Nurse Success Study Hub` : 'Quiz - Nurse Success Study Hub');
 
-    launcher.classList.add('hidden');
-    summary.classList.add('hidden');
-    quiz.classList.remove('hidden');
-    countersBox.classList.remove('hidden');
-    resetAll.classList.remove('hidden');
+      if (launcher) launcher.classList.add('hidden');
+      if (summary) summary.classList.add('hidden');
+      if (quiz) quiz.classList.remove('hidden');
+      if (countersBox) countersBox.classList.remove('hidden');
+      if (resetAll) resetAll.classList.remove('hidden');
 
-    const q = currentQuestion();
-    if (q) {
-      run.uniqueSeen.add(q.id);
-      renderQuestion(q);
-      updateCounters();
-    }
-  };
+      const q = currentQuestion();
+      if (q) {
+        run.uniqueSeen.add(q.id);
+        renderQuestion(q);
+        updateCounters();
+      }
+    };
+  }
 }
 
 /* ---------- Normalize & shuffle ---------- */
@@ -310,6 +316,7 @@ function shuffleQuestionOptions(q){
 
 /* ---------- Update hover classes ---------- */
 function updateHoverClasses(){
+  if (!form) return;
   const hasSelection = getUserLetters().length > 0;
   const isMultiSelect = form.querySelector('input[type="checkbox"]') !== null;
   
@@ -335,6 +342,8 @@ function getColorClass(wrongCount, maxWrong) {
 
 /* ---------- Populate modules (Category-specific) ---------- */
 async function initModules(){
+  if (!moduleSel) return;
+  
   try {
     const urlParams = new URLSearchParams(window.location.search);
     const category = urlParams.get('category');
@@ -344,7 +353,10 @@ async function initModules(){
     
     if (category) {
       endpoint = `/api/category/${encodeURIComponent(category)}/modules`;
-      document.getElementById('categoryContext').textContent = category;
+      const categoryContext = document.getElementById('categoryContext');
+      if (categoryContext) {
+        categoryContext.textContent = category;
+      }
     }
     
     const res = await fetch(endpoint, { cache: 'no-store' });
@@ -381,8 +393,11 @@ async function initModules(){
       opt.textContent = prettifyModuleName(mod);
       moduleSel.appendChild(opt);
     });
-  } catch {
-    moduleSel.innerHTML = '<option value="">Error loading modules</option>';
+  } catch (err) {
+    console.error('Error loading modules:', err);
+    if (moduleSel) {
+      moduleSel.innerHTML = '<option value="">Error loading modules</option>';
+    }
   }
 }
 
@@ -403,27 +418,37 @@ function setupCategoryDisplay() {
     
     const headerRight = document.getElementById('categoryHeader');
     if (headerRight) {
-      document.getElementById('categoryIcon').textContent = icon;
-      document.getElementById('categoryTitle').textContent = category;
+      const categoryIcon = document.getElementById('categoryIcon');
+      const categoryTitle = document.getElementById('categoryTitle');
+      if (categoryIcon) categoryIcon.textContent = icon;
+      if (categoryTitle) categoryTitle.textContent = category;
     }
     
     const headerSummary = document.getElementById('categoryHeaderSummary');
     if (headerSummary) {
-      document.getElementById('categoryIconSummary').textContent = icon;
-      document.getElementById('summaryTitle').textContent = category;
+      const categoryIconSummary = document.getElementById('categoryIconSummary');
+      const summaryTitle = document.getElementById('summaryTitle');
+      if (categoryIconSummary) categoryIconSummary.textContent = icon;
+      if (summaryTitle) summaryTitle.textContent = category;
     }
   }
 }
 
 /* ---------- Render Question ---------- */
 function renderQuestion(q){
+  if (!qText || !form) return;
+  
   qText.textContent = q.stem;
   form.innerHTML = '';
-  feedback.textContent = '';
-  feedback.className = 'feedback';
-  answerLine.textContent = '';
-  rationaleBox.textContent = '';
-  rationaleBox.classList.add('hidden');
+  if (feedback) {
+    feedback.textContent = '';
+    feedback.className = 'feedback';
+  }
+  if (answerLine) answerLine.textContent = '';
+  if (rationaleBox) {
+    rationaleBox.textContent = '';
+    rationaleBox.classList.add('hidden');
+  }
 
   const isMulti = (q.type === 'multiple_select');
   const letters = Object.keys(q.options).sort();
@@ -474,17 +499,20 @@ function currentQuestion() {
 }
 
 function getUserLetters(){
+  if (!form) return [];
   const checked = [...form.querySelectorAll('input:checked')];
   return checked.map(inp => inp.value).sort();
 }
 
 function onSelectionChanged(){
+  if (!submitBtn) return;
   const hasSelection = getUserLetters().length > 0;
   submitBtn.disabled = !hasSelection;
   updateHoverClasses();
 }
 
 function setActionState(mode){
+  if (!submitBtn) return;
   submitBtn.dataset.mode = mode;
 
   if (mode === 'submit') {
@@ -512,15 +540,15 @@ function updateCounters(){
   const remaining = getNotMastered().length;
   const total = run.masterPool.length;
 
-  runCounter.textContent = `Question: ${run.totalQuestionsAnswered}`;
-  remainingCounter.textContent = `Remaining to master: ${remaining}`;
+  if (runCounter) runCounter.textContent = `Question: ${run.totalQuestionsAnswered}`;
+  if (remainingCounter) remainingCounter.textContent = `Remaining to master: ${remaining}`;
 
   const masteredCount = total - remaining;
   const percentage = total ? Math.floor((masteredCount / total) * 100) : 0;
 
-  progressFill.style.width = `${percentage}%`;
-  progressLabel.textContent = `${percentage}% mastered`;
-  progressBar.setAttribute('aria-valuenow', percentage);
+  if (progressFill) progressFill.style.width = `${percentage}%`;
+  if (progressLabel) progressLabel.textContent = `${percentage}% mastered`;
+  if (progressBar) progressBar.setAttribute('aria-valuenow', percentage);
 
   updateProgressBar();
   saveRunState();
@@ -560,6 +588,8 @@ function nextIndex(){
 
 /* ---------- Start / End ---------- */
 async function startQuiz(){
+  if (!lengthBtns || !moduleSel || !startBtn) return;
+  
   const lenBtn = lengthBtns.querySelector('.seg-btn.active');
   if (!lenBtn) {
     alert('Pick Length Of Quiz Before Starting');
@@ -579,52 +609,58 @@ async function startQuiz(){
 
   const jsonUrl = `/${bank}.json`;
   
-  const res = await fetch(jsonUrl, { cache: 'no-store' });
-  if (!res.ok) {
-    alert(`Could not load ${bank}.json`);
+  try {
+    const res = await fetch(jsonUrl, { cache: 'no-store' });
+    if (!res.ok) {
+      alert(`Could not load ${bank}.json`);
+      startBtn.disabled = false;
+      setHeaderTitle(defaultTitle);
+      document.title = 'Quiz - Nurse Success Study Hub';
+      return;
+    }
+    const raw = await res.json();
+    allQuestions = normalizeQuestions(raw);
+
+    const sampled = sampleQuestions(allQuestions, qty);
+    const shuffledQuestions = sampled.map((q) => shuffleQuestionOptions(q));
+
+    run = {
+      bank,
+      displayName,
+      order: [...shuffledQuestions],
+      masterPool: [...shuffledQuestions],
+      i: 0,
+      answered: new Map(),
+      uniqueSeen: new Set(),
+      thresholdWrong: 0,
+      wrongSinceLast: [],
+      totalQuestionsAnswered: 1,
+      isFullBank: isFullBank,
+      isRetry: false,
+    };
+
+    const total = run.masterPool.length;
+    const frac = (qty === 'full' || (typeof qty === 'number' && qty >= 100)) ? 0.05 : 0.15;
+    run.thresholdWrong = Math.max(1, Math.ceil(total * frac));
+
+    if (launcher) launcher.classList.add('hidden');
+    if (summary) summary.classList.add('hidden');
+    if (quiz) quiz.classList.remove('hidden');
+
+    if (countersBox) countersBox.classList.remove('hidden');
+    if (resetAll) resetAll.classList.remove('hidden');
+
+    const q0 = run.order[0];
+    run.uniqueSeen.add(q0.id);
+    renderQuestion(q0);
+    updateCounters();
+
     startBtn.disabled = false;
-    setHeaderTitle(defaultTitle);
-    document.title = 'Quiz - Nurse Success Study Hub';
-    return;
+  } catch (err) {
+    console.error('Error starting quiz:', err);
+    alert('Error loading quiz. Please try again.');
+    if (startBtn) startBtn.disabled = false;
   }
-  const raw = await res.json();
-  allQuestions = normalizeQuestions(raw);
-
-  const sampled = sampleQuestions(allQuestions, qty);
-  const shuffledQuestions = sampled.map((q) => shuffleQuestionOptions(q));
-
-  run = {
-    bank,
-    displayName,
-    order: [...shuffledQuestions],
-    masterPool: [...shuffledQuestions],
-    i: 0,
-    answered: new Map(),
-    uniqueSeen: new Set(),
-    thresholdWrong: 0,
-    wrongSinceLast: [],
-    totalQuestionsAnswered: 1,
-    isFullBank: isFullBank,
-    isRetry: false,
-  };
-
-  const total = run.masterPool.length;
-  const frac = (qty === 'full' || (typeof qty === 'number' && qty >= 100)) ? 0.05 : 0.15;
-  run.thresholdWrong = Math.max(1, Math.ceil(total * frac));
-
-  launcher.classList.add('hidden');
-  summary.classList.add('hidden');
-  quiz.classList.remove('hidden');
-
-  countersBox.classList.remove('hidden');
-  resetAll.classList.remove('hidden');
-
-  const q0 = run.order[0];
-  run.uniqueSeen.add(q0.id);
-  renderQuestion(q0);
-  updateCounters();
-
-  startBtn.disabled = false;
 }
 
 async function startRetryQuiz(missedQuestions) {
@@ -658,12 +694,12 @@ async function startRetryQuiz(missedQuestions) {
   const total = run.masterPool.length;
   run.thresholdWrong = Math.max(1, Math.ceil(total * 0.15));
 
-  launcher.classList.add('hidden');
-  summary.classList.add('hidden');
-  quiz.classList.remove('hidden');
+  if (launcher) launcher.classList.add('hidden');
+  if (summary) summary.classList.add('hidden');
+  if (quiz) quiz.classList.remove('hidden');
 
-  countersBox.classList.remove('hidden');
-  resetAll.classList.remove('hidden');
+  if (countersBox) countersBox.classList.remove('hidden');
+  if (resetAll) resetAll.classList.remove('hidden');
 
   const q0 = run.order[0];
   run.uniqueSeen.add(q0.id);
@@ -672,14 +708,14 @@ async function startRetryQuiz(missedQuestions) {
 }
 
 function endRun(){
-  quiz.classList.add('hidden');
-  summary.classList.remove('hidden');
-  countersBox.classList.add('hidden');
+  if (quiz) quiz.classList.add('hidden');
+  if (summary) summary.classList.remove('hidden');
+  if (countersBox) countersBox.classList.add('hidden');
 
   setHeaderTitle(run.displayName || run.bank || defaultTitle);
   document.title = run.displayName || run.bank || 'Quiz - Nurse Success Study Hub';
 
-  restartBtn2.classList.remove('hidden');
+  if (restartBtn2) restartBtn2.classList.remove('hidden');
 
   window.scrollTo({ top: 0, behavior: 'smooth' });
 
@@ -694,111 +730,132 @@ function endRun(){
   });
 
   // Show or hide retry button based on whether there are missed questions
-  if (lastQuizMissedQuestions.length > 0 && !run.isRetry) {
-    retryMissedBtn.classList.remove('hidden');
-    const missedCount = document.getElementById('missedCount');
-    if (missedCount) {
-      missedCount.textContent = lastQuizMissedQuestions.length;
+  if (retryMissedBtn) {
+    if (lastQuizMissedQuestions.length > 0 && !run.isRetry) {
+      retryMissedBtn.classList.remove('hidden');
+      const missedCount = document.getElementById('missedCount');
+      if (missedCount) {
+        missedCount.textContent = ` ${lastQuizMissedQuestions.length} `;
+      }
+    } else {
+      retryMissedBtn.classList.add('hidden');
     }
-  } else {
-    retryMissedBtn.classList.add('hidden');
   }
 
-  if (totalUnique > 0){
-    firstTrySummary.classList.remove('hidden');
-    const summaryHTML = `
-      <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center;">
-        <div>
-          <strong>First-try mastery:</strong>
-          <span id="firstTryPct">0%</span>
-          (<span id="firstTryCount">0</span> / <span id="firstTryTotal">0</span>)
+  if (firstTrySummary) {
+    if (totalUnique > 0){
+      firstTrySummary.classList.remove('hidden');
+      const summaryHTML = `
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center;">
+          <div>
+            <strong>First-try mastery:</strong>
+            <span id="firstTryPct">0%</span>
+            (<span id="firstTryCount">0</span> / <span id="firstTryTotal">0</span>)
+          </div>
+          <div>
+            <strong>Total Questions Answered:</strong>
+            <span>${run.totalQuestionsAnswered}</span>
+          </div>
         </div>
-        <div>
-          <strong>Total Questions Answered:</strong>
-          <span>${run.totalQuestionsAnswered}</span>
-        </div>
-      </div>
-    `;
-    firstTrySummary.innerHTML = summaryHTML;
-    firstTrySummary.querySelector('#firstTryPct').textContent = `${Math.round((ftCorrect / totalUnique) * 100)}%`;
-    firstTrySummary.querySelector('#firstTryCount').textContent = ftCorrect;
-    firstTrySummary.querySelector('#firstTryTotal').textContent = totalUnique;
-  } else {
-    firstTrySummary.classList.add('hidden');
+      `;
+      firstTrySummary.innerHTML = summaryHTML;
+      const firstTryPct = document.getElementById('firstTryPct');
+      const firstTryCount = document.getElementById('firstTryCount');
+      const firstTryTotal = document.getElementById('firstTryTotal');
+      if (firstTryPct) firstTryPct.textContent = `${Math.round((ftCorrect / totalUnique) * 100)}%`;
+      if (firstTryCount) firstTryCount.textContent = ftCorrect;
+      if (firstTryTotal) firstTryTotal.textContent = totalUnique;
+    } else {
+      firstTrySummary.classList.add('hidden');
+    }
   }
 
-  reviewList.innerHTML = '';
-  
-  const questionWrongCount = {};
-  run.order.forEach(q => {
-    questionWrongCount[q.id] = (questionWrongCount[q.id] || 0) + 1;
-  });
-  
-  const maxWrong = Math.max(...Object.values(questionWrongCount));
-  
-  const sortedQuestions = [...run.order].sort((a, b) => {
-    const ansA = run.answered.get(a.id);
-    const ansB = run.answered.get(b.id);
+  if (reviewList) {
+    reviewList.innerHTML = '';
     
-    if (ansA?.correct !== ansB?.correct) {
-      return ansA?.correct ? 1 : -1;
-    }
+    const questionWrongCount = {};
+    run.order.forEach(q => {
+      questionWrongCount[q.id] = (questionWrongCount[q.id] || 0) + 1;
+    });
     
-    const countA = questionWrongCount[a.id] || 1;
-    const countB = questionWrongCount[b.id] || 1;
-    return countB - countA;
-  });
-  
-  const displayedIds = new Set();
-  
-  sortedQuestions.forEach(q => {
-    if (displayedIds.has(q.id)) return;
-    displayedIds.add(q.id);
+    const maxWrong = Math.max(...Object.values(questionWrongCount));
     
-    const row = document.createElement('div');
-    const ans = run.answered.get(q.id);
-    row.className = 'rev-item ' + (ans?.correct ? 'ok' : 'bad');
+    const sortedQuestions = [...run.order].sort((a, b) => {
+      const ansA = run.answered.get(a.id);
+      const ansB = run.answered.get(b.id);
+      
+      if (ansA?.correct !== ansB?.correct) {
+        return ansA?.correct ? 1 : -1;
+      }
+      
+      const countA = questionWrongCount[a.id] || 1;
+      const countB = questionWrongCount[b.id] || 1;
+      return countB - countA;
+    });
+    
+    const displayedIds = new Set();
+    
+    sortedQuestions.forEach(q => {
+      if (displayedIds.has(q.id)) return;
+      displayedIds.add(q.id);
+      
+      const row = document.createElement('div');
+      const ans = run.answered.get(q.id);
+      row.className = 'rev-item ' + (ans?.correct ? 'ok' : 'bad');
 
-    const qEl = document.createElement('div'); qEl.className = 'rev-q'; qEl.textContent = q.stem;
-    
-    const wrongCountEl = document.createElement('div'); 
-    wrongCountEl.className = 'rev-wrong-count';
-    const wrongCount = Math.max(0, questionWrongCount[q.id] - 1);
-    wrongCountEl.textContent = `Times marked wrong: ${wrongCount}`;
-    
-    const colorClass = getColorClass(wrongCount, maxWrong);
-    if (colorClass) {
-      wrongCountEl.classList.add(colorClass);
-    }
-    
-    const caEl = document.createElement('div'); caEl.className = 'rev-ans';
-    caEl.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
-    const rEl = document.createElement('div'); rEl.className = 'rev-rationale';
-    rEl.innerHTML = `<strong>Rationale:</strong> ${escapeHTML(q.rationale || '')}`;
+      const qEl = document.createElement('div'); qEl.className = 'rev-q'; qEl.textContent = q.stem;
+      
+      const wrongCountEl = document.createElement('div'); 
+      wrongCountEl.className = 'rev-wrong-count';
+      const wrongCount = Math.max(0, questionWrongCount[q.id] - 1);
+      wrongCountEl.textContent = `Times marked wrong: ${wrongCount}`;
+      
+      const colorClass = getColorClass(wrongCount, maxWrong);
+      if (colorClass) {
+        wrongCountEl.classList.add(colorClass);
+      }
+      
+      const caEl = document.createElement('div'); caEl.className = 'rev-ans';
+      caEl.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
+      const rEl = document.createElement('div'); rEl.className = 'rev-rationale';
+      rEl.innerHTML = `<strong>Rationale:</strong> ${escapeHTML(q.rationale || '')}`;
 
-    row.appendChild(qEl); 
-    row.appendChild(wrongCountEl);
-    row.appendChild(caEl); 
-    row.appendChild(rEl);
-    reviewList.appendChild(row);
-  });
+      row.appendChild(qEl); 
+      row.appendChild(wrongCountEl);
+      row.appendChild(caEl); 
+      row.appendChild(rEl);
+      reviewList.appendChild(row);
+    });
+  }
 
   clearSavedState();
 }
 
 /* ---------- Event wiring ---------- */
-lengthBtns.addEventListener('click', (e) => {
-  const btn = e.target.closest('.seg-btn'); if (!btn) return;
-  lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.setAttribute('aria-pressed', b.classList.contains('active')?'true':'false'));
-});
-startBtn.addEventListener('click', startQuiz);
-form.addEventListener('change', onSelectionChanged);
+if (lengthBtns) {
+  lengthBtns.addEventListener('click', (e) => {
+    const btn = e.target.closest('.seg-btn'); if (!btn) return;
+    lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    lengthBtns.querySelectorAll('.seg-btn').forEach(b => b.setAttribute('aria-pressed', b.classList.contains('active')?'true':'false'));
+  });
+}
 
-submitBtn.addEventListener('click', handleSubmitClick);
+if (startBtn) {
+  startBtn.addEventListener('click', startQuiz);
+}
+
+if (form) {
+  form.addEventListener('change', onSelectionChanged);
+}
+
+if (submitBtn) {
+  submitBtn.addEventListener('click', handleSubmitClick);
+}
 
 function handleSubmitClick() {
+  if (!submitBtn) return;
+  
   if (submitBtn.dataset.mode === 'next') {
     scrollToQuizTop();
     const next = nextIndex();
@@ -834,32 +891,48 @@ function handleSubmitClick() {
     }
   }
 
-  feedback.textContent = isCorrect ? 'Correct!' : 'Incorrect';
-  feedback.classList.remove('ok','bad');
-  feedback.classList.add(isCorrect ? 'ok' : 'bad');
+  if (feedback) {
+    feedback.textContent = isCorrect ? 'Correct!' : 'Incorrect';
+    feedback.classList.remove('ok','bad');
+    feedback.classList.add(isCorrect ? 'ok' : 'bad');
+  }
 
-  answerLine.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
-  rationaleBox.textContent = q.rationale || '';
-  rationaleBox.classList.remove('hidden');
+  if (answerLine) {
+    answerLine.innerHTML = `<strong>Correct Answer:</strong><br>${formatCorrectAnswers(q)}`;
+  }
+  
+  if (rationaleBox) {
+    rationaleBox.textContent = q.rationale || '';
+    rationaleBox.classList.remove('hidden');
+  }
 
-  form.querySelectorAll('input').forEach(i => i.disabled = true);
+  if (form) {
+    form.querySelectorAll('input').forEach(i => i.disabled = true);
+  }
+  
   setActionState('next');
 
   scrollToBottomSmooth();
   updateCounters();
 }
 
-resetAll.addEventListener('click', () => { clearSavedState(); location.reload(); });
+if (resetAll) {
+  resetAll.addEventListener('click', () => { clearSavedState(); location.reload(); });
+}
 
-restartBtn2.addEventListener('click', () => { location.reload(); });
+if (restartBtn2) {
+  restartBtn2.addEventListener('click', () => { location.reload(); });
+}
 
-retryMissedBtn.addEventListener('click', () => {
-  startRetryQuiz(lastQuizMissedQuestions);
-});
+if (retryMissedBtn) {
+  retryMissedBtn.addEventListener('click', () => {
+    startRetryQuiz(lastQuizMissedQuestions);
+  });
+}
 
 /* ---------- Keyboard shortcuts ---------- */
 document.addEventListener('keydown', (e) => {
-  if (quiz.classList.contains('hidden')) return;
+  if (!quiz || quiz.classList.contains('hidden')) return;
   if (isTextEditingTarget(e.target)) return;
   if (e.altKey || e.ctrlKey || e.metaKey) return;
 
@@ -868,13 +941,13 @@ document.addEventListener('keydown', (e) => {
 
   if (key === 'Enter') {
     e.preventDefault();
-    if (!submitBtn.disabled) {
+    if (submitBtn && !submitBtn.disabled) {
       submitBtn.click();
     }
     return;
   }
 
-  if (/^[A-Z]$/.test(upper) && submitBtn.dataset.mode === 'submit') {
+  if (/^[A-Z]$/.test(upper) && submitBtn && submitBtn.dataset.mode === 'submit') {
     const input = document.getElementById(`opt-${upper}`);
     if (!input || input.disabled) return;
     e.preventDefault();
@@ -890,9 +963,9 @@ function updateProgressBar() {
   const masteredCount = total - remaining;
   const percentage = total ? Math.floor((masteredCount / total) * 100) : 0;
 
-  progressFill.style.width = `${percentage}%`;
-  progressLabel.textContent = `${percentage}% mastered`;
-  progressBar.setAttribute('aria-valuenow', percentage);
+  if (progressFill) progressFill.style.width = `${percentage}%`;
+  if (progressLabel) progressLabel.textContent = `${percentage}% mastered`;
+  if (progressBar) progressBar.setAttribute('aria-valuenow', percentage);
 }
 
 /* ---------- Init ---------- */
