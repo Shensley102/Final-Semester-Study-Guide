@@ -108,10 +108,11 @@
   display: block;
 }
 
-/* Custom image icon for Nursing Certifications */
-.category-icon-image {
-  width: 80px;
-  height: 80px;
+/* Image icons (like Nursing Certifications) should match emoji sizing */
+.category-icon img,
+img.category-icon {
+  width: 60px;
+  height: 60px;
   margin-bottom: 16px;
   display: block;
   object-fit: contain;
@@ -192,9 +193,10 @@
     font-size: 48px;
   }
 
-  .category-icon-image {
-    width: 60px;
-    height: 60px;
+  .category-icon img,
+  img.category-icon {
+    width: 48px;
+    height: 48px;
   }
 }
 
@@ -212,9 +214,10 @@
     margin-bottom: 12px;
   }
 
-  .category-icon-image {
-    width: 50px;
-    height: 50px;
+  .category-icon img,
+  img.category-icon {
+    width: 40px;
+    height: 40px;
   }
 
   .category-card h2 {
