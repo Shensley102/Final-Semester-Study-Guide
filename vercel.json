@@ -11,5 +11,8 @@
       "src": "/(.*)",
       "dest": "study_tool.py"
     }
-  ]
+  ],
+  "env": {
+    "FLASK_APP": "study_tool.py"
+  }
 }
