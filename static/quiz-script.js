@@ -9,6 +9,7 @@
    - Resume only works with Full Module Question Bank
    - Shows remaining questions count on resume button
    - Subcategory filtering for grouped modules
+   - Retry missed questions feature
 ----------------------------------------------------------- */
 
 const $ = (id) => document.getElementById(id);
@@ -50,6 +51,7 @@ const firstTrySummary  = $('firstTrySummary');
 const reviewList       = $('reviewList');
 const restartBtn2      = $('restartBtnSummary');
 const resetAll         = $('resetAll');
+const retryMissedBtn   = $('retryMissedBtn');
 
 /* ---------- Pretty names for modules ---------- */
 function prettifyModuleName(name) {
@@ -153,7 +155,11 @@ let run = {
   wrongSinceLast: [],
   totalQuestionsAnswered: 0,
   isFullBank: false,
+  isRetry: false,
 };
+
+// Store missed questions from last completed quiz
+let lastQuizMissedQuestions = [];
 
 /* ---------- Persistence ---------- */
 const STORAGE_KEY = 'quizRunState_v1';
@@ -172,6 +178,7 @@ function serializeRun() {
     wrongSinceLast: run.wrongSinceLast.map(q => q.id),
     totalQuestionsAnswered: run.totalQuestionsAnswered,
     isFullBank: run.isFullBank,
+    isRetry: run.isRetry,
     title: pageTitle?.textContent || defaultTitle,
   });
 }
@@ -202,6 +209,7 @@ function loadRunState() {
       wrongSinceLast: (data.wrongSinceLast||[]).map(idToQ).filter(Boolean),
       totalQuestionsAnswered: Math.max(0, parseInt(data.totalQuestionsAnswered||0,10)),
       isFullBank: Boolean(data.isFullBank),
+      isRetry: Boolean(data.isRetry),
     };
     return { run: restored, title: data.title || defaultTitle };
   } catch { return null; }
@@ -216,7 +224,7 @@ function showResumeIfAny(){
   const s = loadRunState();
   const resumeContainer = document.getElementById('resumeContainer');
   
-  if (!s || !s.run?.order?.length || !s.run?.isFullBank) {
+  if (!s || !s.run?.order?.length || !s.run?.isFullBank || s.run?.isRetry) {
     resumeContainer.classList.add('hidden');
     return;
   }
@@ -597,6 +605,7 @@ async function startQuiz(){
     wrongSinceLast: [],
     totalQuestionsAnswered: 1,
     isFullBank: isFullBank,
+    isRetry: false,
   };
 
   const total = run.masterPool.length;
@@ -618,6 +627,50 @@ async function startQuiz(){
   startBtn.disabled = false;
 }
 
+async function startRetryQuiz(missedQuestions) {
+  if (!missedQuestions || missedQuestions.length === 0) {
+    alert('No missed questions to retry');
+    return;
+  }
+
+  const displayName = `${run.displayName} - Retry Missed Questions`;
+  setHeaderTitle(displayName);
+  document.title = `${displayName} - Nurse Success Study Hub`;
+
+  // Shuffle the missed questions and their options
+  const shuffledQuestions = missedQuestions.map((q) => shuffleQuestionOptions(q));
+
+  run = {
+    bank: run.bank,
+    displayName: displayName,
+    order: [...shuffledQuestions],
+    masterPool: [...shuffledQuestions],
+    i: 0,
+    answered: new Map(),
+    uniqueSeen: new Set(),
+    thresholdWrong: 0,
+    wrongSinceLast: [],
+    totalQuestionsAnswered: 1,
+    isFullBank: false,
+    isRetry: true,
+  };
+
+  const total = run.masterPool.length;
+  run.thresholdWrong = Math.max(1, Math.ceil(total * 0.15));
+
+  launcher.classList.add('hidden');
+  summary.classList.add('hidden');
+  quiz.classList.remove('hidden');
+
+  countersBox.classList.remove('hidden');
+  resetAll.classList.remove('hidden');
+
+  const q0 = run.order[0];
+  run.uniqueSeen.add(q0.id);
+  renderQuestion(q0);
+  updateCounters();
+}
+
 function endRun(){
   quiz.classList.add('hidden');
   summary.classList.remove('hidden');
@@ -633,6 +686,23 @@ function endRun(){
   const uniq = [...run.answered.values()];
   const ftCorrect = uniq.filter(x => x.firstTryCorrect).length;
   const totalUnique = uniq.length;
+
+  // Collect missed questions (where firstTryCorrect is false)
+  lastQuizMissedQuestions = run.masterPool.filter(q => {
+    const ans = run.answered.get(q.id);
+    return ans && ans.firstTryCorrect === false;
+  });
+
+  // Show or hide retry button based on whether there are missed questions
+  if (lastQuizMissedQuestions.length > 0 && !run.isRetry) {
+    retryMissedBtn.classList.remove('hidden');
+    const missedCount = document.getElementById('missedCount');
+    if (missedCount) {
+      missedCount.textContent = lastQuizMissedQuestions.length;
+    }
+  } else {
+    retryMissedBtn.classList.add('hidden');
+  }
 
   if (totalUnique > 0){
     firstTrySummary.classList.remove('hidden');
@@ -782,6 +852,10 @@ function handleSubmitClick() {
 resetAll.addEventListener('click', () => { clearSavedState(); location.reload(); });
 
 restartBtn2.addEventListener('click', () => { location.reload(); });
+
+retryMissedBtn.addEventListener('click', () => {
+  startRetryQuiz(lastQuizMissedQuestions);
+});
 
 /* ---------- Keyboard shortcuts ---------- */
 document.addEventListener('keydown', (e) => {
