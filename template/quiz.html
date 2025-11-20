@@ -103,19 +103,12 @@
 
     <!-- Summary Card -->
     <div id="summary" class="card hidden">
-      <!-- Title bar with Start Another Run button -->
-      <div class="title-bar">
-        <a href="/" class="back-link">← Nurse Success Study Hub</a>
-        <div id="categoryHeaderSummary" class="category-header-right">
-          <div id="categoryIconSummary" class="category-icon-large"></div>
-          <h2 id="summaryTitle" style="margin: 0;">Quiz Summary</h2>
-        </div>
-        <div style="display: flex; gap: 12px; align-items: center;">
-          <button id="retryMissedBtn" class="btn btn-blue hidden">
-            Retry <span id="missedCount">0</span> Missed Questions
-          </button>
-          <button id="restartBtnSummary" class="btn primary hidden">Start Another Run</button>
-        </div>
+      <!-- Buttons Row -->
+      <div style="display: flex; gap: 12px; align-items: center; justify-content: flex-end; margin-bottom: 20px;">
+        <button id="retryMissedBtn" class="btn btn-blue hidden">
+          Retry <span id="missedCount">0</span> Missed Questions
+        </button>
+        <button id="restartBtnSummary" class="btn primary hidden">Start Another Run</button>
       </div>
 
       <div id="firstTrySummary" class="first-try hidden"></div>
