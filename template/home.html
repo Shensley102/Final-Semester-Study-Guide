@@ -52,7 +52,7 @@
     const categoryIcons = {
       'Patient Care Management': '👥',
       'HESI': '📋',
-      'Nursing Certifications': 'IMAGE',
+      'Nursing Certifications': '<img src="/static/Nursing_Certifications_Image.png" alt="Nursing Certifications" style="width: 60px; height: 60px; object-fit: contain;">',
       'Pharmacology': '💊'
     };
 
@@ -68,29 +68,22 @@
         const container = document.getElementById('categoriesContainer');
         
         container.innerHTML = Object.entries(categories).map(([key, data]) => {
-          const iconValue = categoryIcons[key] || '📚';
+          const icon = categoryIcons[key] || '📚';
           const color = categoryColors[key] || '#2f61f3';
-          const moduleCount = data.modules.length;
           
           // Determine the link based on whether we skip the category page
           let href;
           if (skipCategoryPage.includes(key)) {
+            // For Patient Care Management and HESI: go to quiz with category (module dropdown will show)
             href = `/quiz?category=${encodeURIComponent(key)}`;
           } else {
+            // For other categories: go to category page first
             href = `/category/${encodeURIComponent(key)}`;
-          }
-          
-          // Render icon - either emoji or image
-          let iconHTML;
-          if (iconValue === 'IMAGE' && key === 'Nursing Certifications') {
-            iconHTML = `<img src="/static/Nursing_Certifications_Image.png" alt="Nursing Certifications" class="category-icon">`;
-          } else {
-            iconHTML = `<div class="category-icon">${iconValue}</div>`;
           }
           
           return `
             <a href="${href}" class="category-card" style="--accent-color: ${color}">
-              ${iconHTML}
+              <div class="category-icon">${icon}</div>
               <h2>${key}</h2>
               <div class="card-arrow">→</div>
             </a>
