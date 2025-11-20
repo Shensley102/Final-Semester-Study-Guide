@@ -52,7 +52,7 @@
     const categoryIcons = {
       'Patient Care Management': '👥',
       'HESI': '📋',
-      'Nursing Certifications': '🏆',
+      'Nursing Certifications': 'IMAGE', // Special marker for image
       'Pharmacology': '💊'
     };
 
@@ -68,7 +68,7 @@
         const container = document.getElementById('categoriesContainer');
         
         container.innerHTML = Object.entries(categories).map(([key, data]) => {
-          const icon = categoryIcons[key] || '📚';
+          const iconValue = categoryIcons[key] || '📚';
           const color = categoryColors[key] || '#2f61f3';
           const moduleCount = data.modules.length;
           
@@ -82,9 +82,17 @@
             href = `/category/${encodeURIComponent(key)}`;
           }
           
+          // Render icon - either emoji or image
+          let iconHTML;
+          if (iconValue === 'IMAGE' && key === 'Nursing Certifications') {
+            iconHTML = `<img src="/static/nursing-certifications.png" alt="Nursing Certifications" class="category-icon-image">`;
+          } else {
+            iconHTML = `<div class="category-icon">${iconValue}</div>`;
+          }
+          
           return `
             <a href="${href}" class="category-card" style="--accent-color: ${color}">
-              <div class="category-icon">${icon}</div>
+              ${iconHTML}
               <h2>${key}</h2>
               <div class="card-arrow">→</div>
             </a>
