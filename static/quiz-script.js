@@ -735,7 +735,7 @@ function endRun(){
       retryMissedBtn.classList.remove('hidden');
       const missedCount = document.getElementById('missedCount');
       if (missedCount) {
-        missedCount.textContent = ` ${lastQuizMissedQuestions.length} `;
+        missedCount.textContent = lastQuizMissedQuestions.length;
       }
     } else {
       retryMissedBtn.classList.add('hidden');
