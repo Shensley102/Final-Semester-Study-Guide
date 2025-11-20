@@ -52,7 +52,7 @@
     const categoryIcons = {
       'Patient Care Management': '👥',
       'HESI': '📋',
-      'Nursing Certifications': 'IMAGE', // Special marker for image
+      'Nursing Certifications': 'IMAGE',
       'Pharmacology': '💊'
     };
 
@@ -75,17 +75,15 @@
           // Determine the link based on whether we skip the category page
           let href;
           if (skipCategoryPage.includes(key)) {
-            // For Patient Care Management and HESI: go to quiz with category (module dropdown will show)
             href = `/quiz?category=${encodeURIComponent(key)}`;
           } else {
-            // For other categories: go to category page first
             href = `/category/${encodeURIComponent(key)}`;
           }
           
           // Render icon - either emoji or image
           let iconHTML;
           if (iconValue === 'IMAGE' && key === 'Nursing Certifications') {
-            iconHTML = `<img src="/static/nursing-certifications.png" alt="Nursing Certifications" class="category-icon-image">`;
+            iconHTML = `<img src="/static/Nursing_Certifications_Image.png" alt="Nursing Certifications" class="category-icon">`;
           } else {
             iconHTML = `<div class="category-icon">${iconValue}</div>`;
           }
