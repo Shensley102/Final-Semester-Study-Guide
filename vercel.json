@@ -4,15 +4,20 @@
     {
       "src": "study_tool.py",
       "use": "@vercel/python"
+    },
+    {
+      "src": "static/**",
+      "use": "@vercel/static"
     }
   ],
   "routes": [
     {
+      "src": "/static/(.*)",
+      "dest": "/static/$1"
+    },
+    {
       "src": "/(.*)",
       "dest": "study_tool.py"
     }
-  ],
-  "env": {
-    "FLASK_APP": "study_tool.py"
-  }
+  ]
 }
