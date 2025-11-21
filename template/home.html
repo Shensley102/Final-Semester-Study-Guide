@@ -1,130 +1,281 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nurse Success Study Hub - Interactive Quiz Application">
-  <title>Nurse Success Study Hub</title>
-  <link rel="stylesheet" href="/static/style.css">
-  <link rel="stylesheet" href="/static/home-style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Vercel Analytics -->
-  <script defer src="https://cdn.vercel-analytics.com/v1/web.js"></script>
-</head>
-<body>
-  <div class="container">
-    <!-- Header -->
-    <header class="hub-header">
-      <h1>🏥 Nurse Success Study Hub</h1>
-      <p class="tagline">Master your nursing knowledge with targeted study modules</p>
-    </header>
+/* ===== Home Page Specific Styles ===== */
 
-    <!-- Search Bar -->
-    <div class="search-container">
-      <input 
-        type="text" 
-        id="searchInput" 
-        class="search-bar" 
-        placeholder="Search study categories..."
-      >
-    </div>
+.hub-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px 0;
+}
 
-    <!-- Categories Grid -->
-    <main class="categories-grid" id="categoriesContainer">
-      <!-- Categories will be loaded here by JavaScript -->
-    </main>
+.hub-header h1 {
+  margin: 0 0 12px 0;
+  font-size: clamp(32px, 5vw, 52px);
+  background: linear-gradient(135deg, #2f61f3 0%, #45B7D1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
 
-    <!-- Footer -->
-    <footer class="hub-footer">
-      <p>&copy; 2025 Nurse Success Study Hub. Study smarter, succeed faster.</p>
-    </footer>
-  </div>
+.hub-header .tagline {
+  font-size: clamp(16px, 2.5vw, 20px);
+  color: var(--ink-soft);
+  margin: 0;
+  font-weight: 500;
+}
 
-  <script>
-    const categoryColors = {
-      'Patient Care Management': '#FF6B6B',
-      'HESI': '#4ECDC4',
-      'Nursing Certifications': '#45B7D1',
-      'Pharmacology': '#96CEB4'
-    };
+/* Search Container */
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
 
-    const categoryIcons = {
-      'Patient Care Management': '👥',
-      'HESI': '📋',
-      'Nursing Certifications': '🏆',
-      'Pharmacology': '💊'
-    };
+.search-bar {
+  width: 100%;
+  max-width: 500px;
+  padding: 14px 18px;
+  font-size: 16px;
+  border: 2px solid var(--border);
+  border-radius: 50px;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
 
-    // Categories that skip the middle category page and go straight to quiz
-    const skipCategoryPage = ['Patient Care Management', 'HESI'];
+.search-bar:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(47, 97, 243, 0.15);
+}
 
-    async function loadCategories() {
-      try {
-        const res = await fetch('/api/categories');
-        if (!res.ok) throw new Error('Failed to load categories');
-        
-        const categories = await res.json();
-        const container = document.getElementById('categoriesContainer');
-        
-        container.innerHTML = Object.entries(categories).map(([key, data]) => {
-          const icon = categoryIcons[key] || '📚';
-          const color = categoryColors[key] || '#2f61f3';
-          const moduleCount = data.modules.length;
-          
-          // Determine the link based on whether we skip the category page
-          let href;
-          if (skipCategoryPage.includes(key)) {
-            // For Patient Care Management and HESI: go to quiz with category (module dropdown will show)
-            href = `/quiz?category=${encodeURIComponent(key)}`;
-          } else {
-            // For other categories: go to category page first
-            href = `/category/${encodeURIComponent(key)}`;
-          }
-          
-          // Special handling for Nursing Certifications - use image instead of icon
-          if (key === 'Nursing Certifications') {
-            return `
-              <a href="${href}" class="category-card category-card-image" style="--accent-color: ${color}">
-                <img src="/static/Nursing_Certifications_Image.png" alt="Nursing Certifications" class="category-card-img">
-                <div class="card-arrow">→</div>
-              </a>
-            `;
-          }
-          
-          return `
-            <a href="${href}" class="category-card" style="--accent-color: ${color}">
-              <div class="category-icon">${icon}</div>
-              <h2>${key}</h2>
-              <div class="card-arrow">→</div>
-            </a>
-          `;
-        }).join('');
-      } catch (error) {
-        console.error('Error loading categories:', error);
-        document.getElementById('categoriesContainer').innerHTML = `
-          <div style="grid-column: 1/-1; padding: 40px; text-align: center; color: var(--danger);">
-            <p>Error loading categories. Please refresh the page.</p>
-          </div>
-        `;
-      }
-    }
+.search-bar::placeholder {
+  color: var(--ink-soft);
+}
 
-    // Search functionality
-    document.getElementById('searchInput').addEventListener('input', (e) => {
-      const searchTerm = e.target.value.toLowerCase();
-      const cards = document.querySelectorAll('.category-card');
-      
-      cards.forEach(card => {
-        const title = card.querySelector('h2')?.textContent.toLowerCase() || '';
-        const isImageCard = card.classList.contains('category-card-image');
-        const matchesSearch = title.includes(searchTerm) || (isImageCard && 'nursing certifications'.includes(searchTerm));
-        card.style.display = matchesSearch ? '' : 'none';
-      });
-    });
+/* Categories Grid */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin: 40px 0;
+}
 
-    // Load categories on page load
-    loadCategories();
-  </script>
-</body>
-</html>
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 24px;
+  background: var(--card);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  min-height: 220px;
+}
+
+.category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent-color);
+  transition: height 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-color);
+}
+
+.category-card:hover::before {
+  height: 6px;
+}
+
+.category-icon {
+  font-size: 60px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.category-card h2 {
+  margin: 0 0 12px 0;
+  font-size: clamp(20px, 2.5vw, 28px);
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.module-count {
+  display: none;
+}
+
+.card-arrow {
+  font-size: 24px;
+  color: var(--accent-color);
+  opacity: 0;
+  transition: all 0.3s ease;
+  margin-top: 12px;
+}
+
+.category-card:hover .card-arrow {
+  opacity: 1;
+  transform: translateX(4px);
+}
+
+/* Special styling for image-based category card */
+.category-card-image {
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+}
+
+.category-card-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent-color);
+  transition: height 0.3s ease;
+  z-index: 2;
+}
+
+.category-card-image:hover::before {
+  height: 6px;
+}
+
+.category-card-img {
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.category-card-image:hover .category-card-img {
+  transform: scale(1.05);
+}
+
+.category-card-image .card-arrow {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.category-card-image:hover .card-arrow {
+  background: rgba(255, 255, 255, 1);
+  transform: translateX(4px);
+}
+
+/* Hub Footer */
+.hub-footer {
+  text-align: center;
+  padding: 40px 0 20px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  border-top: 1px solid var(--border);
+  margin-top: 60px;
+}
+
+/* Back Link Style */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.back-link:hover {
+  background: rgba(47, 97, 243, 0.1);
+  transform: translateX(-4px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hub-header {
+    margin-bottom: 30px;
+  }
+
+  .hub-header h1 {
+    font-size: 28px;
+  }
+
+  .categories-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .category-card {
+    padding: 30px 20px;
+    min-height: 200px;
+  }
+
+  .category-card-image {
+    min-height: 200px;
+  }
+
+  .category-card-img {
+    min-height: 200px;
+  }
+
+  .category-icon {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .categories-grid {
+    gap: 16px;
+  }
+
+  .category-card {
+    padding: 24px 16px;
+    min-height: 180px;
+  }
+
+  .category-card-image {
+    min-height: 180px;
+  }
+
+  .category-card-img {
+    min-height: 180px;
+  }
+
+  .category-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+
+  .category-card h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+}
