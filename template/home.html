@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nurse Success Study Hub - Interactive Quiz Application">
+  <title>Nurse Success Study Hub</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/home-style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Vercel Analytics -->
+  <script defer src="https://cdn.vercel-analytics.com/v1/web.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <header class="hub-header">
+      <h1>🏥 Nurse Success Study Hub</h1>
+      <p class="tagline">Master your nursing knowledge with targeted study modules</p>
+    </header>
+
+    <!-- Search Bar -->
+    <div class="search-container">
+      <input 
+        type="text" 
+        id="searchInput" 
+        class="search-bar" 
+        placeholder="Search study categories..."
+      >
+    </div>
+
+    <!-- Categories Grid -->
+    <main class="categories-grid" id="categoriesContainer">
+      <!-- Categories will be loaded here by JavaScript -->
+    </main>
+
+    <!-- Footer -->
+    <footer class="hub-footer">
+      <p>&copy; 2025 Nurse Success Study Hub. Study smarter, succeed faster.</p>
+    </footer>
+  </div>
+
+  <script>
+    const categoryColors = {
+      'Patient Care Management': '#FF6B6B',
+      'HESI': '#4ECDC4',
+      'Nursing Certifications': '#45B7D1',
+      'Pharmacology': '#96CEB4'
+    };
+
+    const categoryIcons = {
+      'Patient Care Management': '👥',
+      'HESI': '📋',
+      'Nursing Certifications': '🏆',
+      'Pharmacology': '💊'
+    };
+
+    // Categories that skip the middle category page and go straight to quiz
+    const skipCategoryPage = ['Patient Care Management', 'HESI'];
+
+    async function loadCategories() {
+      try {
+        const res = await fetch('/api/categories');
+        if (!res.ok) throw new Error('Failed to load categories');
+        
+        const categories = await res.json();
+        const container = document.getElementById('categoriesContainer');
+        
+        container.innerHTML = Object.entries(categories).map(([key, data]) => {
+          const icon = categoryIcons[key] || '📚';
+          const color = categoryColors[key] || '#2f61f3';
+          const moduleCount = data.modules.length;
+          
+          // Determine the link based on whether we skip the category page
+          let href;
+          if (skipCategoryPage.includes(key)) {
+            // For Patient Care Management and HESI: go to quiz with category (module dropdown will show)
+            href = `/quiz?category=${encodeURIComponent(key)}`;
+          } else {
+            // For other categories: go to category page first
+            href = `/category/${encodeURIComponent(key)}`;
+          }
+          
+          return `
+            <a href="${href}" class="category-card" style="--accent-color: ${color}">
+              <div class="category-icon">${icon}</div>
+              <h2>${key}</h2>
+              <div class="card-arrow">→</div>
+            </a>
+          `;
+        }).join('');
+      } catch (error) {
+        console.error('Error loading categories:', error);
+        document.getElementById('categoriesContainer').innerHTML = `
+          <div style="grid-column: 1/-1; padding: 40px; text-align: center; color: var(--danger);">
+            <p>Error loading categories. Please refresh the page.</p>
+          </div>
+        `;
+      }
+    }
+
+    // Search functionality
+    document.getElementById('searchInput').addEventListener('input', (e) => {
+      const searchTerm = e.target.value.toLowerCase();
+      const cards = document.querySelectorAll('.category-card');
+      
+      cards.forEach(card => {
+        const title = card.querySelector('h2').textContent.toLowerCase();
+        card.style.display = title.includes(searchTerm) ? '' : 'none';
+      });
+    });
+
+    // Load categories on page load
+    loadCategories();
+  </script>
+</body>
+</html>
