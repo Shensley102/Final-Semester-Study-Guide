@@ -67,7 +67,14 @@
         const categories = await res.json();
         const container = document.getElementById('categoriesContainer');
         
-        container.innerHTML = Object.entries(categories).map(([key, data]) => {
+        // Sort categories to put Nursing Certifications last
+        const sortedEntries = Object.entries(categories).sort((a, b) => {
+          if (a[0] === 'Nursing Certifications') return 1;
+          if (b[0] === 'Nursing Certifications') return -1;
+          return 0;
+        });
+        
+        container.innerHTML = sortedEntries.map(([key, data]) => {
           const icon = categoryIcons[key] || '📚';
           const color = categoryColors[key] || '#2f61f3';
           const moduleCount = data.modules.length;
@@ -82,14 +89,14 @@
             href = `/category/${encodeURIComponent(key)}`;
           }
           
-          // Special handling for Nursing Certifications - use GitHub raw URL
+          // Special handling for Nursing Certifications - large card with full image
           if (key === 'Nursing Certifications') {
             return `
-              <a href="${href}" class="category-card" style="--accent-color: ${color}">
+              <a href="${href}" class="category-card large-card" style="--accent-color: ${color}">
                 <img src="https://raw.githubusercontent.com/Shensley102/Final-Semester-Study-Guide/refs/heads/main/images/Nursing_Certifications_Image.png" 
                      alt="Nursing Certifications"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-                <div style="display:none; font-size: 60px; margin-bottom: 16px;">${icon}</div>
+                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div style="display:none; font-size: 80px;">${icon}</div>
                 <div class="card-arrow">→</div>
               </a>
             `;
@@ -120,7 +127,9 @@
       
       cards.forEach(card => {
         const title = card.querySelector('h2')?.textContent.toLowerCase() || '';
-        card.style.display = title.includes(searchTerm) ? '' : 'none';
+        const hasImage = card.classList.contains('large-card');
+        const matchesSearch = title.includes(searchTerm) || (hasImage && 'nursing certifications'.includes(searchTerm));
+        card.style.display = matchesSearch ? '' : 'none';
       });
     });
 
