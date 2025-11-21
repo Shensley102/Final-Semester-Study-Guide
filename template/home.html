@@ -70,20 +70,23 @@
         container.innerHTML = Object.entries(categories).map(([key, data]) => {
           const icon = categoryIcons[key] || '📚';
           const color = categoryColors[key] || '#2f61f3';
+          const moduleCount = data.modules.length;
           
           // Determine the link based on whether we skip the category page
           let href;
           if (skipCategoryPage.includes(key)) {
+            // For Patient Care Management and HESI: go to quiz with category (module dropdown will show)
             href = `/quiz?category=${encodeURIComponent(key)}`;
           } else {
+            // For other categories: go to category page first
             href = `/category/${encodeURIComponent(key)}`;
           }
           
-          // Special handling for Nursing Certifications - use image instead of icon
+          // ONLY CHANGE: Special handling for Nursing Certifications - use image
           if (key === 'Nursing Certifications') {
             return `
-              <a href="${href}" class="category-card category-card-image" style="--accent-color: ${color}">
-                <img src="/static/Nursing_Certifications_Image.png" alt="Nursing Certifications" class="category-card-img">
+              <a href="${href}" class="category-card" style="--accent-color: ${color}">
+                <img src="/static/Nursing_Certifications_Image.png" alt="Nursing Certifications" style="width: 100%; height: auto; max-width: 200px; margin-bottom: 16px;">
                 <div class="card-arrow">→</div>
               </a>
             `;
@@ -114,9 +117,7 @@
       
       cards.forEach(card => {
         const title = card.querySelector('h2')?.textContent.toLowerCase() || '';
-        const isImageCard = card.classList.contains('category-card-image');
-        const matchesSearch = title.includes(searchTerm) || (isImageCard && 'nursing certifications'.includes(searchTerm));
-        card.style.display = matchesSearch ? '' : 'none';
+        card.style.display = title.includes(searchTerm) ? '' : 'none';
       });
     });
 
