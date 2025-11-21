@@ -82,6 +82,16 @@
             href = `/category/${encodeURIComponent(key)}`;
           }
           
+          // Special handling for Nursing Certifications - use image instead of icon
+          if (key === 'Nursing Certifications') {
+            return `
+              <a href="${href}" class="category-card category-card-image" style="--accent-color: ${color}">
+                <img src="/static/Nursing_Certifications_Image.png" alt="Nursing Certifications" class="category-card-img">
+                <div class="card-arrow">→</div>
+              </a>
+            `;
+          }
+          
           return `
             <a href="${href}" class="category-card" style="--accent-color: ${color}">
               <div class="category-icon">${icon}</div>
@@ -106,8 +116,10 @@
       const cards = document.querySelectorAll('.category-card');
       
       cards.forEach(card => {
-        const title = card.querySelector('h2').textContent.toLowerCase();
-        card.style.display = title.includes(searchTerm) ? '' : 'none';
+        const title = card.querySelector('h2')?.textContent.toLowerCase() || '';
+        const isImageCard = card.classList.contains('category-card-image');
+        const matchesSearch = title.includes(searchTerm) || (isImageCard && 'nursing certifications'.includes(searchTerm));
+        card.style.display = matchesSearch ? '' : 'none';
       });
     });
 
