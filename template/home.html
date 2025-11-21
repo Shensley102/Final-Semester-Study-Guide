@@ -52,7 +52,7 @@
     const categoryIcons = {
       'Patient Care Management': '👥',
       'HESI': '📋',
-      'Nursing Certifications': '<img src="/static/Nursing_Certifications_Image.png" alt="Nursing Certifications" style="width: 60px; height: 60px; object-fit: contain;">',
+      'Nursing Certifications': '🏆',
       'Pharmacology': '💊'
     };
 
@@ -70,6 +70,7 @@
         container.innerHTML = Object.entries(categories).map(([key, data]) => {
           const icon = categoryIcons[key] || '📚';
           const color = categoryColors[key] || '#2f61f3';
+          const moduleCount = data.modules.length;
           
           // Determine the link based on whether we skip the category page
           let href;
