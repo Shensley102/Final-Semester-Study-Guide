@@ -8,6 +8,14 @@ app = Flask(__name__,
             static_url_path='/static',
             template_folder='../template')
 
+# Add CORS headers to all responses
+@app.after_request
+def after_request(response):
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type,Authorization')
+    response.headers.add('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS')
+    return response
+
 # Study categories and their modules
 STUDY_CATEGORIES = {
     'Patient Care Management': {
@@ -159,3 +167,7 @@ def get_module(module_name):
         return jsonify({'error': f'Invalid JSON: {str(e)}'}), 500
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
+
+# Vercel serverless function handler
+app.debug = False
