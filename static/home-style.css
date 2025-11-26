@@ -8,7 +8,7 @@
 
 .hub-header h1 {
   margin: 0 0 12px 0;
-  font-size: clamp(32px, 5vw, 52px);
+  font-size: clamp(48px, 7.5vw, 78px);
   background: linear-gradient(135deg, #2f61f3 0%, #45B7D1 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -18,7 +18,7 @@
 }
 
 .hub-header .tagline {
-  font-size: clamp(16px, 2.5vw, 20px);
+  font-size: clamp(24px, 3.75vw, 30px);
   color: var(--ink-soft);
   margin: 0;
   font-weight: 500;
@@ -234,7 +234,11 @@
   }
 
   .hub-header h1 {
-    font-size: 28px;
+    font-size: 42px;
+  }
+
+  .hub-header .tagline {
+    font-size: 24px;
   }
 
   .categories-grid {
