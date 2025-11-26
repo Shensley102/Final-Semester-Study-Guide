@@ -56,6 +56,13 @@
       'Pharmacology': '💊'
     };
 
+    const categoryImages = {
+      'Patient Care Management': 'https://raw.githubusercontent.com/Shensley102/Final-Semester-Study-Guide/refs/heads/main/images/Nursing_Leadership_Image.png',
+      'HESI': 'https://raw.githubusercontent.com/Shensley102/Final-Semester-Study-Guide/refs/heads/main/images/Nursing_Hesi_Exam_Prep_Image.png',
+      'Nursing Certifications': 'https://raw.githubusercontent.com/Shensley102/Final-Semester-Study-Guide/refs/heads/main/images/Nursing_Advanced_Certifications.png',
+      'Pharmacology': 'https://raw.githubusercontent.com/Shensley102/Final-Semester-Study-Guide/refs/heads/main/images/Nursing_Pharmacology_Image.png'
+    };
+
     // Categories that skip the middle category page and go straight to quiz
     const skipCategoryPage = ['Patient Care Management', 'HESI'];
 
@@ -67,45 +74,37 @@
         const categories = await res.json();
         const container = document.getElementById('categoriesContainer');
         
-        // Sort categories to put Nursing Certifications last
-        const sortedEntries = Object.entries(categories).sort((a, b) => {
-          if (a[0] === 'Nursing Certifications') return 1;
-          if (b[0] === 'Nursing Certifications') return -1;
-          return 0;
-        });
+        // Define the order for 2x2 grid: top-left, top-right, bottom-left, bottom-right
+        const orderedCategories = [
+          'Patient Care Management',
+          'HESI',
+          'Pharmacology',
+          'Nursing Certifications'
+        ];
         
-        container.innerHTML = sortedEntries.map(([key, data]) => {
+        container.innerHTML = orderedCategories.map((key) => {
+          const data = categories[key];
+          if (!data) return '';
+          
           const icon = categoryIcons[key] || '📚';
           const color = categoryColors[key] || '#2f61f3';
-          const moduleCount = data.modules.length;
+          const imageUrl = categoryImages[key];
           
           // Determine the link based on whether we skip the category page
           let href;
           if (skipCategoryPage.includes(key)) {
-            // For Patient Care Management and HESI: go to quiz with category (module dropdown will show)
             href = `/quiz?category=${encodeURIComponent(key)}`;
           } else {
-            // For other categories: go to category page first
             href = `/category/${encodeURIComponent(key)}`;
           }
           
-          // Special handling for Nursing Certifications - large card with full image
-          if (key === 'Nursing Certifications') {
-            return `
-              <a href="${href}" class="category-card large-card" style="--accent-color: ${color}">
-                <img src="https://raw.githubusercontent.com/Shensley102/Final-Semester-Study-Guide/refs/heads/main/images/Nursing_Certifications_Image.png" 
-                     alt="Nursing Certifications"
-                     onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div style="display:none; font-size: 80px;">${icon}</div>
-                <div class="card-arrow">→</div>
-              </a>
-            `;
-          }
-          
+          // All cards now use image format
           return `
-            <a href="${href}" class="category-card" style="--accent-color: ${color}">
-              <div class="category-icon">${icon}</div>
-              <h2>${key}</h2>
+            <a href="${href}" class="category-card image-card" style="--accent-color: ${color}">
+              <img src="${imageUrl}" 
+                   alt="${key}"
+                   onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+              <div class="fallback-icon" style="display:none; font-size: 80px;">${icon}</div>
               <div class="card-arrow">→</div>
             </a>
           `;
@@ -126,9 +125,8 @@
       const cards = document.querySelectorAll('.category-card');
       
       cards.forEach(card => {
-        const title = card.querySelector('h2')?.textContent.toLowerCase() || '';
-        const hasImage = card.classList.contains('large-card');
-        const matchesSearch = title.includes(searchTerm) || (hasImage && 'nursing certifications'.includes(searchTerm));
+        const alt = card.querySelector('img')?.alt.toLowerCase() || '';
+        const matchesSearch = alt.includes(searchTerm);
         card.style.display = matchesSearch ? '' : 'none';
       });
     });
