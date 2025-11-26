@@ -35,7 +35,7 @@ body {
   position: relative;
   overflow-x: hidden;
   
-  /* ===== Terrazzo Background (Blue + Cool Grey Chips) ===== */
+  /* ===== Terrazzo Background (Blue + Cool Grey Chips) - 1% size ===== */
   background-color: #f4f6f8;
   background-image:
     /* Large fragments */
@@ -65,34 +65,34 @@ body {
     conic-gradient(from -101deg at 97% 63%, var(--chip-gray) 0deg 50deg, transparent 80deg),
 
     /* Tiny fragments for noise */
-    radial-gradient(circle at 12% 22%, var(--chip-ice) 0 6px, transparent 7px),
-    radial-gradient(circle at 46% 6%, var(--chip-blue) 0 5px, transparent 6px),
-    radial-gradient(circle at 71% 19%, var(--chip-gray) 0 5px, transparent 6px),
-    radial-gradient(circle at 84% 8%, var(--chip-sky) 0 4px, transparent 5px),
-    radial-gradient(circle at 23% 51%, var(--chip-navy) 0 5px, transparent 6px),
-    radial-gradient(circle at 38% 32%, var(--chip-ice) 0 4px, transparent 5px),
-    radial-gradient(circle at 58% 47%, var(--chip-slate) 0 6px, transparent 7px),
-    radial-gradient(circle at 67% 63%, var(--chip-sky) 0 5px, transparent 6px),
-    radial-gradient(circle at 82% 54%, var(--chip-blue) 0 4px, transparent 5px),
-    radial-gradient(circle at 94% 77%, var(--chip-gray) 0 5px, transparent 6px),
-    radial-gradient(circle at 18% 92%, var(--chip-sky) 0 4px, transparent 5px),
-    radial-gradient(circle at 42% 71%, var(--chip-blue) 0 5px, transparent 6px),
-    radial-gradient(circle at 61% 92%, var(--chip-ice) 0 4px, transparent 5px),
-    radial-gradient(circle at 79% 89%, var(--chip-slate) 0 5px, transparent 6px),
-    radial-gradient(circle at 9% 72%, var(--chip-gray) 0 4px, transparent 5px);
+    radial-gradient(circle at 12% 22%, var(--chip-ice) 0 0.06px, transparent 0.07px),
+    radial-gradient(circle at 46% 6%, var(--chip-blue) 0 0.05px, transparent 0.06px),
+    radial-gradient(circle at 71% 19%, var(--chip-gray) 0 0.05px, transparent 0.06px),
+    radial-gradient(circle at 84% 8%, var(--chip-sky) 0 0.04px, transparent 0.05px),
+    radial-gradient(circle at 23% 51%, var(--chip-navy) 0 0.05px, transparent 0.06px),
+    radial-gradient(circle at 38% 32%, var(--chip-ice) 0 0.04px, transparent 0.05px),
+    radial-gradient(circle at 58% 47%, var(--chip-slate) 0 0.06px, transparent 0.07px),
+    radial-gradient(circle at 67% 63%, var(--chip-sky) 0 0.05px, transparent 0.06px),
+    radial-gradient(circle at 82% 54%, var(--chip-blue) 0 0.04px, transparent 0.05px),
+    radial-gradient(circle at 94% 77%, var(--chip-gray) 0 0.05px, transparent 0.06px),
+    radial-gradient(circle at 18% 92%, var(--chip-sky) 0 0.04px, transparent 0.05px),
+    radial-gradient(circle at 42% 71%, var(--chip-blue) 0 0.05px, transparent 0.06px),
+    radial-gradient(circle at 61% 92%, var(--chip-ice) 0 0.04px, transparent 0.05px),
+    radial-gradient(circle at 79% 89%, var(--chip-slate) 0 0.05px, transparent 0.06px),
+    radial-gradient(circle at 9% 72%, var(--chip-gray) 0 0.04px, transparent 0.05px);
 
   background-size:
-    /* Large fragments tile */
-    360px 340px, 360px 340px, 360px 340px, 360px 340px, 360px 340px,
-    /* Medium fragments tile */
-    280px 300px, 280px 300px, 280px 300px, 280px 300px, 280px 300px,
-    /* Small fragments tile */
-    240px 230px, 240px 230px, 240px 230px, 240px 230px, 240px 230px,
-    240px 230px, 240px 230px, 240px 230px, 240px 230px, 240px 230px,
-    /* Tiny fragments tile */
-    200px 200px, 200px 200px, 200px 200px, 200px 200px, 200px 200px,
-    200px 200px, 200px 200px, 200px 200px, 200px 200px, 200px 200px,
-    200px 200px, 200px 200px, 200px 200px, 200px 200px, 200px 200px;
+    /* Large fragments tile - 1% of original */
+    3.6px 3.4px, 3.6px 3.4px, 3.6px 3.4px, 3.6px 3.4px, 3.6px 3.4px,
+    /* Medium fragments tile - 1% of original */
+    2.8px 3px, 2.8px 3px, 2.8px 3px, 2.8px 3px, 2.8px 3px,
+    /* Small fragments tile - 1% of original */
+    2.4px 2.3px, 2.4px 2.3px, 2.4px 2.3px, 2.4px 2.3px, 2.4px 2.3px,
+    2.4px 2.3px, 2.4px 2.3px, 2.4px 2.3px, 2.4px 2.3px, 2.4px 2.3px,
+    /* Tiny fragments tile - 1% of original */
+    2px 2px, 2px 2px, 2px 2px, 2px 2px, 2px 2px,
+    2px 2px, 2px 2px, 2px 2px, 2px 2px, 2px 2px,
+    2px 2px, 2px 2px, 2px 2px, 2px 2px, 2px 2px;
 
   background-repeat: repeat;
 }
