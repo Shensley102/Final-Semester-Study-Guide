@@ -11,6 +11,14 @@
   --radius: 12px;
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  
+  /* Tunable chip palette to adjust the mix without editing each gradient */
+  --chip-navy: #0f2746;
+  --chip-blue: #2f8be6;
+  --chip-sky: #5db7ff;
+  --chip-ice: #b5d8f0;
+  --chip-gray: #aeb4bd;
+  --chip-slate: #7a7f89;
 }
 
 /* ===== Base Styles ===== */
@@ -24,145 +32,69 @@ body {
   font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: var(--ink);
   line-height: 1.6;
-  background-color: #dfe3e8;
   position: relative;
   overflow-x: hidden;
-}
+  
+  /* ===== Terrazzo Background (Blue + Cool Grey Chips) ===== */
+  background-color: #f4f6f8;
+  background-image:
+    /* Large fragments */
+    conic-gradient(from 12deg at 14% 18%, var(--chip-blue) 0deg 90deg, transparent 100deg),
+    conic-gradient(from 88deg at 68% 12%, var(--chip-navy) 0deg 130deg, transparent 150deg),
+    conic-gradient(from -34deg at 32% 74%, var(--chip-gray) 0deg 80deg, transparent 110deg),
+    conic-gradient(from 143deg at 79% 68%, var(--chip-sky) 0deg 95deg, transparent 125deg),
+    conic-gradient(from -57deg at 9% 63%, var(--chip-ice) 0deg 120deg, transparent 150deg),
 
-body::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-image: 
-    /* Row 1 - Large irregular shapes */
-    linear-gradient(37deg, rgba(47, 97, 243, 0.7) 0%, rgba(47, 97, 243, 0.7) 100%),
-    linear-gradient(-82deg, rgba(69, 183, 209, 0.6) 0%, rgba(69, 183, 209, 0.6) 100%),
-    linear-gradient(125deg, rgba(31, 47, 89, 0.8) 0%, rgba(31, 47, 89, 0.8) 100%),
-    linear-gradient(-15deg, rgba(47, 97, 243, 0.65) 0%, rgba(47, 97, 243, 0.65) 100%),
-    linear-gradient(68deg, rgba(150, 150, 150, 0.5) 0%, rgba(150, 150, 150, 0.5) 100%),
-    
-    /* Row 2 - Medium irregular shapes */
-    linear-gradient(-43deg, rgba(69, 183, 209, 0.7) 0%, rgba(69, 183, 209, 0.7) 100%),
-    linear-gradient(95deg, rgba(31, 47, 89, 0.75) 0%, rgba(31, 47, 89, 0.75) 100%),
-    linear-gradient(-128deg, rgba(47, 97, 243, 0.6) 0%, rgba(47, 97, 243, 0.6) 100%),
-    linear-gradient(22deg, rgba(150, 150, 150, 0.45) 0%, rgba(150, 150, 150, 0.45) 100%),
-    linear-gradient(-75deg, rgba(69, 183, 209, 0.55) 0%, rgba(69, 183, 209, 0.55) 100%),
-    
-    /* Row 3 - More large shapes */
-    linear-gradient(158deg, rgba(31, 47, 89, 0.7) 0%, rgba(31, 47, 89, 0.7) 100%),
-    linear-gradient(-92deg, rgba(47, 97, 243, 0.68) 0%, rgba(47, 97, 243, 0.68) 100%),
-    linear-gradient(48deg, rgba(150, 150, 150, 0.48) 0%, rgba(150, 150, 150, 0.48) 100%),
-    linear-gradient(-165deg, rgba(69, 183, 209, 0.62) 0%, rgba(69, 183, 209, 0.62) 100%),
-    
-    /* Row 4 - Small angular pieces */
-    linear-gradient(12deg, rgba(31, 47, 89, 0.65) 0%, rgba(31, 47, 89, 0.65) 100%),
-    linear-gradient(-138deg, rgba(47, 97, 243, 0.58) 0%, rgba(47, 97, 243, 0.58) 100%),
-    linear-gradient(87deg, rgba(69, 183, 209, 0.6) 0%, rgba(69, 183, 209, 0.6) 100%),
-    linear-gradient(-52deg, rgba(150, 150, 150, 0.42) 0%, rgba(150, 150, 150, 0.42) 100%),
-    
-    /* Row 5 - Very small pieces */
-    linear-gradient(105deg, rgba(31, 47, 89, 0.7) 0%, rgba(31, 47, 89, 0.7) 100%),
-    linear-gradient(-27deg, rgba(47, 97, 243, 0.55) 0%, rgba(47, 97, 243, 0.55) 100%),
-    linear-gradient(143deg, rgba(69, 183, 209, 0.58) 0%, rgba(69, 183, 209, 0.58) 100%),
-    linear-gradient(-98deg, rgba(150, 150, 150, 0.46) 0%, rgba(150, 150, 150, 0.46) 100%),
-    
-    /* Row 6 - Additional density */
-    linear-gradient(72deg, rgba(31, 47, 89, 0.68) 0%, rgba(31, 47, 89, 0.68) 100%),
-    linear-gradient(-115deg, rgba(69, 183, 209, 0.64) 0%, rgba(69, 183, 209, 0.64) 100%),
-    linear-gradient(35deg, rgba(47, 97, 243, 0.62) 0%, rgba(47, 97, 243, 0.62) 100%),
-    
-    /* Row 7 - Tiny fragments */
-    linear-gradient(-8deg, rgba(31, 47, 89, 0.6) 0%, rgba(31, 47, 89, 0.6) 100%),
-    linear-gradient(162deg, rgba(150, 150, 150, 0.44) 0%, rgba(150, 150, 150, 0.44) 100%),
-    linear-gradient(-133deg, rgba(47, 97, 243, 0.57) 0%, rgba(47, 97, 243, 0.57) 100%);
-  
-  background-size:
-    /* Row 1 sizes - large irregular */
-    28px 35px, 32px 24px, 25px 38px, 29px 26px, 22px 31px,
-    /* Row 2 sizes - medium */
-    24px 28px, 27px 33px, 21px 25px, 26px 22px, 23px 29px,
-    /* Row 3 sizes - more large */
-    31px 27px, 28px 36px, 24px 30px, 26px 32px,
-    /* Row 4 sizes - small angular */
-    15px 19px, 18px 16px, 17px 21px, 16px 18px,
-    /* Row 5 sizes - very small */
-    12px 15px, 14px 11px, 13px 16px, 11px 14px,
-    /* Row 6 sizes - additional density */
-    20px 24px, 22px 26px, 19px 23px,
-    /* Row 7 sizes - tiny */
-    8px 11px, 10px 9px, 9px 12px;
-  
-  background-position:
-    /* Row 1 positions */
-    7% 12%, 23% 28%, 42% 8%, 58% 35%, 71% 19%,
-    /* Row 2 positions */
-    11% 52%, 28% 67%, 39% 48%, 54% 72%, 68% 58%,
-    /* Row 3 positions */
-    15% 83%, 34% 91%, 49% 78%, 65% 88%,
-    /* Row 4 positions */
-    19% 38%, 31% 15%, 46% 42%, 62% 22%,
-    /* Row 5 positions */
-    25% 61%, 37% 74%, 52% 55%, 76% 69%,
-    /* Row 6 positions */
-    82% 33%, 89% 77%, 93% 44%,
-    /* Row 7 positions */
-    4% 46%, 85% 14%, 96% 62%;
-  
-  background-repeat: no-repeat;
-  clip-path: polygon(
-    /* Creating irregular angular shapes through clipping */
-    0 0, 100% 0, 100% 100%, 0 100%
-  );
-}
+    /* Medium fragments */
+    conic-gradient(from 31deg at 46% 23%, var(--chip-blue) 0deg 75deg, transparent 105deg),
+    conic-gradient(from 111deg at 18% 44%, var(--chip-slate) 0deg 70deg, transparent 100deg),
+    conic-gradient(from -16deg at 73% 36%, var(--chip-sky) 0deg 65deg, transparent 95deg),
+    conic-gradient(from 169deg at 56% 59%, var(--chip-gray) 0deg 85deg, transparent 115deg),
+    conic-gradient(from -121deg at 88% 47%, var(--chip-navy) 0deg 70deg, transparent 105deg),
 
-body::after {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background-image: 
-    /* Additional layer for more density - tiny sharp fragments */
-    linear-gradient(45deg, rgba(31, 47, 89, 0.5) 0%, rgba(31, 47, 89, 0.5) 100%),
-    linear-gradient(-72deg, rgba(47, 97, 243, 0.45) 0%, rgba(47, 97, 243, 0.45) 100%),
-    linear-gradient(118deg, rgba(69, 183, 209, 0.48) 0%, rgba(69, 183, 209, 0.48) 100%),
-    linear-gradient(-31deg, rgba(150, 150, 150, 0.38) 0%, rgba(150, 150, 150, 0.38) 100%),
-    linear-gradient(93deg, rgba(31, 47, 89, 0.52) 0%, rgba(31, 47, 89, 0.52) 100%),
-    linear-gradient(-157deg, rgba(47, 97, 243, 0.48) 0%, rgba(47, 97, 243, 0.48) 100%),
-    linear-gradient(64deg, rgba(69, 183, 209, 0.51) 0%, rgba(69, 183, 209, 0.51) 100%),
-    linear-gradient(-103deg, rgba(150, 150, 150, 0.41) 0%, rgba(150, 150, 150, 0.41) 100%),
-    linear-gradient(28deg, rgba(31, 47, 89, 0.54) 0%, rgba(31, 47, 89, 0.54) 100%),
-    linear-gradient(-89deg, rgba(47, 97, 243, 0.47) 0%, rgba(47, 97, 243, 0.47) 100%),
-    linear-gradient(137deg, rgba(69, 183, 209, 0.49) 0%, rgba(69, 183, 209, 0.49) 100%),
-    linear-gradient(-44deg, rgba(150, 150, 150, 0.39) 0%, rgba(150, 150, 150, 0.39) 100%),
-    linear-gradient(81deg, rgba(31, 47, 89, 0.56) 0%, rgba(31, 47, 89, 0.56) 100%),
-    linear-gradient(-121deg, rgba(47, 97, 243, 0.5) 0%, rgba(47, 97, 243, 0.5) 100%),
-    linear-gradient(17deg, rgba(69, 183, 209, 0.46) 0%, rgba(69, 183, 209, 0.46) 100%),
-    linear-gradient(-66deg, rgba(31, 47, 89, 0.53) 0%, rgba(31, 47, 89, 0.53) 100%),
-    linear-gradient(152deg, rgba(150, 150, 150, 0.43) 0%, rgba(150, 150, 150, 0.43) 100%),
-    linear-gradient(-12deg, rgba(47, 97, 243, 0.49) 0%, rgba(47, 97, 243, 0.49) 100%),
-    linear-gradient(99deg, rgba(69, 183, 209, 0.52) 0%, rgba(69, 183, 209, 0.52) 100%),
-    linear-gradient(-176deg, rgba(31, 47, 89, 0.51) 0%, rgba(31, 47, 89, 0.51) 100%);
-  
+    /* Small fragments */
+    conic-gradient(from 42deg at 27% 13%, var(--chip-blue) 0deg 45deg, transparent 75deg),
+    conic-gradient(from -79deg at 63% 9%, var(--chip-ice) 0deg 55deg, transparent 85deg),
+    conic-gradient(from 117deg at 41% 42%, var(--chip-sky) 0deg 50deg, transparent 80deg),
+    conic-gradient(from -147deg at 14% 82%, var(--chip-gray) 0deg 60deg, transparent 90deg),
+    conic-gradient(from 96deg at 52% 87%, var(--chip-blue) 0deg 55deg, transparent 85deg),
+    conic-gradient(from -18deg at 76% 81%, var(--chip-navy) 0deg 50deg, transparent 80deg),
+    conic-gradient(from 163deg at 92% 25%, var(--chip-ice) 0deg 60deg, transparent 90deg),
+    conic-gradient(from -134deg at 35% 58%, var(--chip-slate) 0deg 55deg, transparent 85deg),
+    conic-gradient(from 23deg at 4% 36%, var(--chip-sky) 0deg 45deg, transparent 75deg),
+    conic-gradient(from -101deg at 97% 63%, var(--chip-gray) 0deg 50deg, transparent 80deg),
+
+    /* Tiny fragments for noise */
+    radial-gradient(circle at 12% 22%, var(--chip-ice) 0 6px, transparent 7px),
+    radial-gradient(circle at 46% 6%, var(--chip-blue) 0 5px, transparent 6px),
+    radial-gradient(circle at 71% 19%, var(--chip-gray) 0 5px, transparent 6px),
+    radial-gradient(circle at 84% 8%, var(--chip-sky) 0 4px, transparent 5px),
+    radial-gradient(circle at 23% 51%, var(--chip-navy) 0 5px, transparent 6px),
+    radial-gradient(circle at 38% 32%, var(--chip-ice) 0 4px, transparent 5px),
+    radial-gradient(circle at 58% 47%, var(--chip-slate) 0 6px, transparent 7px),
+    radial-gradient(circle at 67% 63%, var(--chip-sky) 0 5px, transparent 6px),
+    radial-gradient(circle at 82% 54%, var(--chip-blue) 0 4px, transparent 5px),
+    radial-gradient(circle at 94% 77%, var(--chip-gray) 0 5px, transparent 6px),
+    radial-gradient(circle at 18% 92%, var(--chip-sky) 0 4px, transparent 5px),
+    radial-gradient(circle at 42% 71%, var(--chip-blue) 0 5px, transparent 6px),
+    radial-gradient(circle at 61% 92%, var(--chip-ice) 0 4px, transparent 5px),
+    radial-gradient(circle at 79% 89%, var(--chip-slate) 0 5px, transparent 6px),
+    radial-gradient(circle at 9% 72%, var(--chip-gray) 0 4px, transparent 5px);
+
   background-size:
-    6px 8px, 7px 6px, 5px 9px, 8px 7px, 6px 10px,
-    9px 7px, 7px 11px, 8px 6px, 6px 9px, 10px 8px,
-    7px 9px, 9px 6px, 8px 10px, 6px 7px, 7px 8px,
-    9px 11px, 8px 9px, 6px 8px, 7px 10px, 10px 7px;
-  
-  background-position:
-    3% 5%, 14% 11%, 21% 23%, 33% 17%, 41% 31%,
-    56% 9%, 63% 26%, 74% 13%, 81% 37%, 88% 21%,
-    6% 43%, 17% 56%, 27% 49%, 38% 64%, 47% 53%,
-    59% 71%, 69% 47%, 78% 59%, 86% 73%, 94% 51%;
-  
-  background-repeat: no-repeat;
+    /* Large fragments tile */
+    360px 340px, 360px 340px, 360px 340px, 360px 340px, 360px 340px,
+    /* Medium fragments tile */
+    280px 300px, 280px 300px, 280px 300px, 280px 300px, 280px 300px,
+    /* Small fragments tile */
+    240px 230px, 240px 230px, 240px 230px, 240px 230px, 240px 230px,
+    240px 230px, 240px 230px, 240px 230px, 240px 230px, 240px 230px,
+    /* Tiny fragments tile */
+    200px 200px, 200px 200px, 200px 200px, 200px 200px, 200px 200px,
+    200px 200px, 200px 200px, 200px 200px, 200px 200px, 200px 200px,
+    200px 200px, 200px 200px, 200px 200px, 200px 200px, 200px 200px;
+
+  background-repeat: repeat;
 }
 
 .container {
