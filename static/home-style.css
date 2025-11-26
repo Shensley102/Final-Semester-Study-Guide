@@ -54,12 +54,15 @@
   color: var(--ink-soft);
 }
 
-/* Categories Grid */
+/* Categories Grid - 2x2 Layout */
 .categories-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
   margin: 40px 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .category-card {
@@ -79,7 +82,7 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  min-height: 280px;
+  min-height: 320px;
 }
 
 .category-card::before {
@@ -127,6 +130,15 @@
   transition: all 0.3s ease;
   margin-top: auto;
   padding-top: 12px;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
 }
 
 .category-card:hover .card-arrow {
@@ -134,23 +146,15 @@
   transform: translateX(4px);
 }
 
-/* Special Large Card for Nursing Certifications */
-.category-card.large-card {
-  grid-column: 1 / -1;
+/* Image Cards - All cards use images now */
+.category-card.image-card {
+  padding: 0;
   min-height: 320px;
-  padding: 20px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
 }
 
-.category-card.large-card img {
+.category-card.image-card img {
   width: 100%;
   height: 100%;
-  max-width: none;
-  max-height: none;
   object-fit: cover;
   position: absolute;
   top: 0;
@@ -159,31 +163,17 @@
   bottom: 0;
 }
 
-.category-card.large-card .card-arrow {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 12px 16px;
-  border-radius: 8px;
-  font-size: 24px;
-  font-weight: bold;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  z-index: 2;
-  margin: 0;
-}
-
-.category-card.large-card:hover .card-arrow {
-  background: rgba(255, 255, 255, 1);
-  transform: translateX(4px);
-}
-
-.category-card.large-card div[style*="display:none"] {
+.category-card.image-card .fallback-icon {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+}
+
+.category-card.image-card:hover .card-arrow {
+  background: rgba(255, 255, 255, 1);
+  transform: translateX(4px);
 }
 
 /* Hub Footer */
@@ -219,10 +209,6 @@
   .categories-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  .category-card.large-card {
-    grid-column: 1 / -1;
-  }
 }
 
 @media (max-width: 768px) {
@@ -241,14 +227,14 @@
 
   .category-card {
     padding: 30px 20px;
-    min-height: 240px;
+    min-height: 280px;
   }
 
   .category-icon {
     font-size: 48px;
   }
 
-  .category-card.large-card {
+  .category-card.image-card {
     min-height: 280px;
   }
 }
@@ -260,7 +246,7 @@
 
   .category-card {
     padding: 24px 16px;
-    min-height: 220px;
+    min-height: 240px;
   }
 
   .category-icon {
@@ -273,7 +259,7 @@
     margin-bottom: 8px;
   }
 
-  .category-card.large-card {
+  .category-card.image-card {
     min-height: 240px;
   }
 }
