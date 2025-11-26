@@ -58,9 +58,9 @@
 
     const categoryImages = {
       'Patient Care Management': 'https://raw.githubusercontent.com/Shensley102/Final-Semester-Study-Guide/refs/heads/main/images/Nursing_Leadership_Image.png',
-      'HESI': 'https://raw.githubusercontent.com/Shensley102/Final-Semester-Study-Guide/refs/heads/main/images/Nursing_Hesi_Exam_Prep_Image.png',
+      'HESI': 'https://raw.githubusercontent.com/Shensley102/Final-Semester-Study-Guide/refs/heads/main/images/Nursing_Pharmacology_Image.png',
       'Nursing Certifications': 'https://raw.githubusercontent.com/Shensley102/Final-Semester-Study-Guide/refs/heads/main/images/Nursing_Advanced_Certifications.png',
-      'Pharmacology': 'https://raw.githubusercontent.com/Shensley102/Final-Semester-Study-Guide/refs/heads/main/images/Nursing_Pharmacology_Image.png'
+      'Pharmacology': 'https://raw.githubusercontent.com/Shensley102/Final-Semester-Study-Guide/refs/heads/main/images/Nursing_Hesi_Exam_Prep_Image.png'
     };
 
     // Categories that skip the middle category page and go straight to quiz
@@ -74,7 +74,7 @@
         const categories = await res.json();
         const container = document.getElementById('categoriesContainer');
         
-        // Define the order for 2x2 grid: top-left, top-right, bottom-left, bottom-right
+        // Define the order for 4x1 grid: left to right
         const orderedCategories = [
           'Patient Care Management',
           'HESI',
@@ -104,7 +104,7 @@
               <img src="${imageUrl}" 
                    alt="${key}"
                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-              <div class="fallback-icon" style="display:none; font-size: 80px;">${icon}</div>
+              <div class="fallback-icon" style="display:none; font-size: 60px;">${icon}</div>
               <div class="card-arrow">→</div>
             </a>
           `;
