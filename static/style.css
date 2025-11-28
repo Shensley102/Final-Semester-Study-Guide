@@ -11,14 +11,6 @@
   --radius: 12px;
   --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-  
-  /* Tunable chip palette to adjust the mix without editing each gradient */
-  --chip-navy: #0f2746;
-  --chip-blue: #2f8be6;
-  --chip-sky: #5db7ff;
-  --chip-ice: #b5d8f0;
-  --chip-gray: #aeb4bd;
-  --chip-slate: #7a7f89;
 }
 
 /* ===== Base Styles ===== */
@@ -35,65 +27,65 @@ body {
   position: relative;
   overflow-x: hidden;
   
-  /* ===== Terrazzo Background (Blue + Cool Grey Chips) - 1% size ===== */
-  background-color: #f4f6f8;
+  /* ===== Rough Paper Texture Background ===== */
+  background-color: #e8e8e8;
   background-image:
-    /* Large fragments */
-    conic-gradient(from 12deg at 14% 18%, var(--chip-blue) 0deg 90deg, transparent 100deg),
-    conic-gradient(from 88deg at 68% 12%, var(--chip-navy) 0deg 130deg, transparent 150deg),
-    conic-gradient(from -34deg at 32% 74%, var(--chip-gray) 0deg 80deg, transparent 110deg),
-    conic-gradient(from 143deg at 79% 68%, var(--chip-sky) 0deg 95deg, transparent 125deg),
-    conic-gradient(from -57deg at 9% 63%, var(--chip-ice) 0deg 120deg, transparent 150deg),
-
-    /* Medium fragments */
-    conic-gradient(from 31deg at 46% 23%, var(--chip-blue) 0deg 75deg, transparent 105deg),
-    conic-gradient(from 111deg at 18% 44%, var(--chip-slate) 0deg 70deg, transparent 100deg),
-    conic-gradient(from -16deg at 73% 36%, var(--chip-sky) 0deg 65deg, transparent 95deg),
-    conic-gradient(from 169deg at 56% 59%, var(--chip-gray) 0deg 85deg, transparent 115deg),
-    conic-gradient(from -121deg at 88% 47%, var(--chip-navy) 0deg 70deg, transparent 105deg),
-
-    /* Small fragments */
-    conic-gradient(from 42deg at 27% 13%, var(--chip-blue) 0deg 45deg, transparent 75deg),
-    conic-gradient(from -79deg at 63% 9%, var(--chip-ice) 0deg 55deg, transparent 85deg),
-    conic-gradient(from 117deg at 41% 42%, var(--chip-sky) 0deg 50deg, transparent 80deg),
-    conic-gradient(from -147deg at 14% 82%, var(--chip-gray) 0deg 60deg, transparent 90deg),
-    conic-gradient(from 96deg at 52% 87%, var(--chip-blue) 0deg 55deg, transparent 85deg),
-    conic-gradient(from -18deg at 76% 81%, var(--chip-navy) 0deg 50deg, transparent 80deg),
-    conic-gradient(from 163deg at 92% 25%, var(--chip-ice) 0deg 60deg, transparent 90deg),
-    conic-gradient(from -134deg at 35% 58%, var(--chip-slate) 0deg 55deg, transparent 85deg),
-    conic-gradient(from 23deg at 4% 36%, var(--chip-sky) 0deg 45deg, transparent 75deg),
-    conic-gradient(from -101deg at 97% 63%, var(--chip-gray) 0deg 50deg, transparent 80deg),
-
-    /* Tiny fragments for noise */
-    radial-gradient(circle at 12% 22%, var(--chip-ice) 0 0.06px, transparent 0.07px),
-    radial-gradient(circle at 46% 6%, var(--chip-blue) 0 0.05px, transparent 0.06px),
-    radial-gradient(circle at 71% 19%, var(--chip-gray) 0 0.05px, transparent 0.06px),
-    radial-gradient(circle at 84% 8%, var(--chip-sky) 0 0.04px, transparent 0.05px),
-    radial-gradient(circle at 23% 51%, var(--chip-navy) 0 0.05px, transparent 0.06px),
-    radial-gradient(circle at 38% 32%, var(--chip-ice) 0 0.04px, transparent 0.05px),
-    radial-gradient(circle at 58% 47%, var(--chip-slate) 0 0.06px, transparent 0.07px),
-    radial-gradient(circle at 67% 63%, var(--chip-sky) 0 0.05px, transparent 0.06px),
-    radial-gradient(circle at 82% 54%, var(--chip-blue) 0 0.04px, transparent 0.05px),
-    radial-gradient(circle at 94% 77%, var(--chip-gray) 0 0.05px, transparent 0.06px),
-    radial-gradient(circle at 18% 92%, var(--chip-sky) 0 0.04px, transparent 0.05px),
-    radial-gradient(circle at 42% 71%, var(--chip-blue) 0 0.05px, transparent 0.06px),
-    radial-gradient(circle at 61% 92%, var(--chip-ice) 0 0.04px, transparent 0.05px),
-    radial-gradient(circle at 79% 89%, var(--chip-slate) 0 0.05px, transparent 0.06px),
-    radial-gradient(circle at 9% 72%, var(--chip-gray) 0 0.04px, transparent 0.05px);
-
+    /* Paper grain texture - fine noise */
+    radial-gradient(circle at 13% 47%, rgba(0, 0, 0, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 67% 13%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 89% 82%, rgba(0, 0, 0, 0.015) 0%, transparent 50%),
+    radial-gradient(circle at 31% 91%, rgba(255, 255, 255, 0.025) 0%, transparent 50%),
+    radial-gradient(circle at 52% 24%, rgba(0, 0, 0, 0.018) 0%, transparent 50%),
+    radial-gradient(circle at 8% 68%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 94% 37%, rgba(0, 0, 0, 0.022) 0%, transparent 50%),
+    radial-gradient(circle at 43% 56%, rgba(255, 255, 255, 0.028) 0%, transparent 50%),
+    radial-gradient(circle at 78% 71%, rgba(0, 0, 0, 0.016) 0%, transparent 50%),
+    radial-gradient(circle at 22% 15%, rgba(255, 255, 255, 0.024) 0%, transparent 50%),
+    
+    /* Medium grain texture */
+    radial-gradient(circle at 37% 62%, rgba(0, 0, 0, 0.025) 0%, transparent 40%),
+    radial-gradient(circle at 71% 28%, rgba(255, 255, 255, 0.035) 0%, transparent 40%),
+    radial-gradient(circle at 18% 84%, rgba(0, 0, 0, 0.02) 0%, transparent 40%),
+    radial-gradient(circle at 84% 51%, rgba(255, 255, 255, 0.03) 0%, transparent 40%),
+    radial-gradient(circle at 56% 9%, rgba(0, 0, 0, 0.028) 0%, transparent 40%),
+    radial-gradient(circle at 4% 33%, rgba(255, 255, 255, 0.022) 0%, transparent 40%),
+    radial-gradient(circle at 91% 76%, rgba(0, 0, 0, 0.019) 0%, transparent 40%),
+    radial-gradient(circle at 47% 95%, rgba(255, 255, 255, 0.026) 0%, transparent 40%),
+    
+    /* Larger variations for depth */
+    radial-gradient(circle at 63% 44%, rgba(0, 0, 0, 0.012) 0%, transparent 60%),
+    radial-gradient(circle at 26% 73%, rgba(255, 255, 255, 0.015) 0%, transparent 60%),
+    radial-gradient(circle at 88% 19%, rgba(0, 0, 0, 0.014) 0%, transparent 60%),
+    radial-gradient(circle at 11% 58%, rgba(255, 255, 255, 0.018) 0%, transparent 60%),
+    radial-gradient(circle at 74% 87%, rgba(0, 0, 0, 0.016) 0%, transparent 60%),
+    radial-gradient(circle at 39% 22%, rgba(255, 255, 255, 0.013) 0%, transparent 60%),
+    
+    /* Subtle directional grain */
+    linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.005) 50%, transparent 100%),
+    linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.008) 50%, transparent 100%),
+    linear-gradient(45deg, transparent 0%, rgba(0, 0, 0, 0.004) 50%, transparent 100%),
+    linear-gradient(135deg, transparent 0%, rgba(255, 255, 255, 0.006) 50%, transparent 100%);
+  
   background-size:
-    /* Large fragments tile - 1% of original */
-    3.6px 3.4px, 3.6px 3.4px, 3.6px 3.4px, 3.6px 3.4px, 3.6px 3.4px,
-    /* Medium fragments tile - 1% of original */
-    2.8px 3px, 2.8px 3px, 2.8px 3px, 2.8px 3px, 2.8px 3px,
-    /* Small fragments tile - 1% of original */
-    2.4px 2.3px, 2.4px 2.3px, 2.4px 2.3px, 2.4px 2.3px, 2.4px 2.3px,
-    2.4px 2.3px, 2.4px 2.3px, 2.4px 2.3px, 2.4px 2.3px, 2.4px 2.3px,
-    /* Tiny fragments tile - 1% of original */
-    2px 2px, 2px 2px, 2px 2px, 2px 2px, 2px 2px,
-    2px 2px, 2px 2px, 2px 2px, 2px 2px, 2px 2px,
-    2px 2px, 2px 2px, 2px 2px, 2px 2px, 2px 2px;
-
+    /* Fine noise patterns */
+    3px 3px, 4px 4px, 3.5px 3.5px, 4.2px 4.2px, 3.8px 3.8px,
+    4.5px 4.5px, 3.2px 3.2px, 4.8px 4.8px, 3.6px 3.6px, 4.1px 4.1px,
+    /* Medium grain */
+    8px 8px, 9px 9px, 7.5px 7.5px, 8.5px 8.5px, 9.2px 9.2px,
+    7.8px 7.8px, 8.8px 8.8px, 9.5px 9.5px,
+    /* Larger variations */
+    15px 15px, 16px 16px, 14.5px 14.5px, 15.5px 15.5px, 16.5px 16.5px, 14px 14px,
+    /* Directional grain */
+    100% 200px, 200px 100%, 100% 150px, 150px 100%;
+  
+  background-position:
+    0 0, 2px 2px, 1px 3px, 3px 1px, 2px 4px,
+    4px 2px, 1px 1px, 3px 4px, 4px 3px, 2px 1px,
+    0 0, 4px 4px, 2px 5px, 5px 2px, 3px 6px,
+    6px 3px, 4px 1px, 5px 5px,
+    0 0, 8px 8px, 4px 10px, 10px 4px, 6px 12px, 12px 6px,
+    0 0, 0 0, 0 0, 0 0;
+  
   background-repeat: repeat;
 }
 
