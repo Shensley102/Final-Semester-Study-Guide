@@ -82,6 +82,7 @@ function prettifyModuleName(name) {
     'HESI_Delegating': 'HESI Delegating',
     'HESI_Leadership': 'HESI Leadership',
     'Hesi_Management': 'HESI Management',
+    'HESI_Comprehensive': 'HESI Comprehensive',
   };
   if (map[normalized]) return map[normalized];
 
