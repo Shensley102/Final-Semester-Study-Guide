@@ -609,4 +609,1328 @@
     "rationale": "For many adults, residual volumes up to about 500 mL may be returned to the stomach and the feeding continued, depending on agency policy and overall assessment. Returning the residual helps maintain electrolyte balance. The nurse should also follow protocols regarding rechecking residuals and monitoring for intolerance.",
     "type": "single_select"
   }
+  {
+    "id": "Module_1_Q1",
+    "stem": "When answering an NCLEX-style multiple-choice item, which action should the nurse take FIRST?",
+    "options": [
+      "Read the answer options before reading the stem.",
+      "Choose the option that sounds most familiar.",
+      "Read the stem carefully and identify the client issue and key words.",
+      "Quickly eliminate two options and guess between the remaining two."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Effective test taking begins with understanding exactly what the question is asking. Carefully reading the stem and identifying the client problem and key words allows the nurse to apply knowledge and prioritize safety before looking at the options.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q2",
+    "stem": "A question stem contains the words first, priority, and most important. Which client need should the nurse consider FIRST when selecting an answer?",
+    "options": [
+      "Psychosocial needs",
+      "Airway, breathing, circulation, and safety needs",
+      "Completion of ordered diagnostic tests",
+      "Administration of routine medications"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Priority questions require the nurse to consider physiologic safety first. Airway, breathing, circulation, and overall safety take precedence over psychosocial needs, tests, or routine medications unless the question clearly indicates otherwise.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q3",
+    "stem": "A question asks, 'Which client statement indicates a need for FURTHER teaching?' What is the MOST helpful test-taking strategy?",
+    "options": [
+      "Look for the option that describes what the nurse should do.",
+      "Choose the longest option because it usually has the most information.",
+      "Select the option that looks different from the others.",
+      "Identify the option that describes incorrect, unsafe, or nontherapeutic client understanding."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "When a question asks for the statement indicating a need for further teaching, the test taker should look for the option that shows incorrect or unsafe understanding. The other strategies are test-taking myths and do not reliably lead to correct answers.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q4",
+    "stem": "Which strategies are helpful when answering a select-all-that-apply NCLEX item? (Select all that apply.)",
+    "options": [
+      "Read each option as a separate true/false statement in relation to the stem.",
+      "Assume that there are always at least three correct responses.",
+      "Select options that directly address the client's problem or issue in the stem.",
+      "Automatically eliminate all options that contain absolute words such as always or never.",
+      "Choose options that all focus on the same body system or topic."
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "rationale": "For select-all-that-apply questions, each option should be considered individually as true or false in relation to the stem, and options that directly address the client problem are more likely to be correct. The number of correct answers varies, absolute words are not always wrong, and correct responses may involve different systems.",
+    "type": "multi_select"
+  },
+  {
+    "id": "Module_1_Q5",
+    "stem": "A nursing student is preparing for the NCLEX-RN. Which study behavior BEST supports long-term retention of material?",
+    "options": [
+      "Cramming large amounts of content the night before the exam",
+      "Reading the textbook passively without taking breaks",
+      "Using spaced, active review with frequent self-testing",
+      "Highlighting every sentence in the textbook"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Spaced, active review with self-testing (retrieval practice) is supported by learning science as the most effective method for long-term retention. Cramming, passive reading, and excessive highlighting do not promote deep learning or recall under pressure.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q6",
+    "stem": "The night before the NCLEX-RN exam, which activity is MOST appropriate for the student nurse?",
+    "options": [
+      "Staying up late to review as many topics as possible",
+      "Engaging in relaxing activities and obtaining adequate sleep",
+      "Trying a new energy drink to stay alert during the exam",
+      "Taking a sedative that has never been used before to ensure sleep"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Rest, relaxation, and a normal sleep schedule help optimize concentration and recall during the exam. Sleep deprivation, untested stimulants, or new sedatives may impair performance or cause side effects.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q7",
+    "stem": "During the NCLEX exam, the nurse encounters a question about an unfamiliar condition. What is the BEST strategy?",
+    "options": [
+      "Leave the question unanswered and return to it at the end.",
+      "Make an educated guess using general nursing principles and safety priorities.",
+      "Choose the option that includes a specific medication dose.",
+      "Select the option that sounds the most complicated."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Every question must be answered on the NCLEX. When content is unfamiliar, the nurse should apply general nursing principles such as safety, ABCs, and the nursing process to make the safest educated guess rather than guessing randomly.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q8",
+    "stem": "A nurse accidentally administers the wrong dose of a medication and immediately notifies the provider and completes an incident report. The nurse's error is BEST described as:",
+    "options": [
+      "Negligence with concealment",
+      "Malpractice with appropriate follow-up actions",
+      "Battery",
+      "Defamation"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Medication errors can constitute malpractice, which is professional negligence. Promptly notifying the provider and completing an incident report demonstrate appropriate follow-up and commitment to client safety.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q9",
+    "stem": "Which situation BEST exemplifies negligence by a nurse?",
+    "options": [
+      "Applying restraints with a provider's prescription and performing regular checks",
+      "Failing to raise the side rails for a confused client who then falls from bed",
+      "Administering a medication after obtaining informed consent",
+      "Documenting only objective assessment findings"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Negligence is the failure to use the degree of care that a reasonably prudent nurse would use. Not raising side rails for a confused client is a failure to provide standard safety precautions and directly contributes to the client's injury.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q10",
+    "stem": "A nurse is caring for a client scheduled for surgery who has received preoperative opioids. The client suddenly says, 'I do not really understand why I need this surgery.' What is the nurse's PRIORITY action?",
+    "options": [
+      "Explain the procedure again in simple terms.",
+      "Ask the client to sign the consent form quickly before the medication takes full effect.",
+      "Notify the surgeon that further informed-consent discussion is needed.",
+      "Tell the client that the consent cannot be revoked after preoperative medications are given."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The provider performing the procedure is responsible for informed consent. The client's statement shows lack of understanding, so the nurse must notify the surgeon to provide additional explanation. The nurse may reinforce, but not replace, the provider's explanation, and consent can be withdrawn at any time.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q11",
+    "stem": "Which task is MOST appropriate to delegate to an experienced unlicensed assistive personnel (UAP)?",
+    "options": [
+      "Assessing lung sounds after a client receives a nebulizer treatment",
+      "Teaching a client how to use an incentive spirometer",
+      "Obtaining vital signs on a stable postoperative client",
+      "Evaluating whether a client's pain has improved after analgesic administration"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "UAPs can perform noninvasive, routine tasks such as obtaining vital signs for stable clients. Assessment, teaching, and evaluation require RN judgment and cannot be delegated.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q12",
+    "stem": "The nurse suspects elder abuse in a hospitalized client. What is the BEST nursing action?",
+    "options": [
+      "Confront the suspected abuser in front of the client.",
+      "Ignore suspicions unless the client verbally reports abuse.",
+      "Document findings objectively and follow facility policy for mandatory reporting.",
+      "Wait to see if additional injuries appear before acting."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Nurses are mandatory reporters of suspected abuse. The nurse must document objective findings and follow agency and legal reporting requirements even if the client does not confirm the abuse. Confrontation and delay are unsafe.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q13",
+    "stem": "A client with a living will and a durable power of attorney for health care is admitted. Which statement by the nurse indicates CORRECT understanding of these documents?",
+    "options": [
+      "The living will appoints the person who can make all financial decisions.",
+      "The durable power of attorney for health care designates who will make medical decisions if the client becomes unable to do so.",
+      "These documents replace the need for informed consent for procedures.",
+      "These documents are only valid if signed within 24 hours of hospital admission."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A durable power of attorney for health care names a surrogate decision maker for medical decisions when the client is incapacitated. A living will outlines the client's wishes regarding end-of-life care. They do not address finances, do not replace informed consent, and remain valid beyond 24 hours.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q14",
+    "stem": "In which situation is the nurse legally REQUIRED to break client confidentiality?",
+    "options": [
+      "The client admits to not taking a prescribed medication.",
+      "The client states an intent to harm a specific person.",
+      "The client requests a copy of the medical record.",
+      "The client asks the nurse not to share laboratory results with the provider."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "When a client makes a specific threat to harm self or others, the nurse has a duty to warn and protect potential victims. This may require breaking confidentiality. The other situations do not justify violating confidentiality.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q15",
+    "stem": "During a mass-casualty incident, which client should the nurse categorize as PRIORITY (emergent) for treatment?",
+    "options": [
+      "Client with a small laceration to the forearm that is controlled with direct pressure",
+      "Client with an open femur fracture and absent distal pulses",
+      "Client with superficial burns to both hands but stable vital signs",
+      "Client with fixed, dilated pupils and no spontaneous respirations"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Emergent clients have life-threatening injuries that are likely to survive with immediate treatment. An open femur fracture with absent pulses indicates compromised circulation that may be salvageable. Minor injuries are delayed, and a client with no respirations and fixed pupils is typically classified as expectant.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q16",
+    "stem": "A client is restrained with soft wrist restraints. Which nursing action is MOST appropriate?",
+    "options": [
+      "Tie the restraints in a double knot to prevent removal.",
+      "Remove the restraints only once per shift for range-of-motion exercises.",
+      "Secure the restraints to the side rails of the bed.",
+      "Assess skin integrity and circulation at least every 2 hours and as needed."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Clients in restraints must be frequently assessed for skin integrity, circulation, comfort, and continued need for the restraint, typically at least every 2 hours. Restraints should be tied to the bed frame with a quick-release knot and removed regularly for range of motion.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q17",
+    "stem": "A charge nurse is assigning clients on a medical-surgical unit. Which assignment is MOST appropriate for an LPN/LVN?",
+    "options": [
+      "Newly admitted client with chest pain requiring initial assessment and care planning",
+      "Client 1 day postoperative requiring wound care and administration of oral medications",
+      "Unstable client with active gastrointestinal bleeding",
+      "Client returning immediately from surgery who needs an initial postoperative assessment"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "LPNs/LVNs can care for stable clients with predictable outcomes, including performing sterile dressing changes and giving oral medications. Initial assessments, unstable conditions, and new admissions require RN assessment and decision-making.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q18",
+    "stem": "The nurse is delegating tasks to an experienced unlicensed assistive personnel (UAP) on a medical\u2013surgical unit. Which tasks are appropriate to delegate? (Select all that apply.)",
+    "options": [
+      "Assisting a stable client with morning hygiene and bathing",
+      "Teaching a client how to self-administer insulin injections",
+      "Obtaining routine vital signs for a client 3 days after surgery",
+      "Evaluating whether a client's pain has decreased after receiving an analgesic",
+      "Feeding a client with advanced dementia who has a history of aspiration pneumonia"
+    ],
+    "correct": [
+      "A",
+      "C"
+    ],
+    "rationale": "UAPs may perform noninvasive, routine tasks such as hygiene and obtaining vital signs for stable clients. Teaching, evaluation, and care for clients at high risk for aspiration require RN assessment and cannot be delegated.",
+    "type": "multi_select"
+  },
+  {
+    "id": "Module_1_Q19",
+    "stem": "Which assessment finding in a client with hypovolemic shock indicates that treatment has been effective?",
+    "options": [
+      "Heart rate 132 beats/min and thready",
+      "Urine output 40 mL/hr",
+      "Systolic blood pressure 78 mm Hg",
+      "Cool, clammy skin and delayed capillary refill"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Adequate renal perfusion is reflected by a urine output of at least about 30 mL/hr in adults. Persistent tachycardia, hypotension, and cool clammy skin indicate ongoing hypoperfusion and ineffective treatment.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q20",
+    "stem": "A client with suspected diabetes insipidus is being evaluated. Which laboratory value is MOST consistent with this diagnosis?",
+    "options": [
+      "Serum sodium 130 mEq/L (130 mmol/L)",
+      "Serum sodium 152 mEq/L (152 mmol/L)",
+      "Urine specific gravity 1.030",
+      "Urine output 20 mL/hr"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "In diabetes insipidus, large amounts of dilute urine lead to hypernatremia and dehydration. A sodium level of 152 mEq/L is elevated and consistent with this condition. Low urine output and concentrated urine would suggest the opposite problem.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q21",
+    "stem": "Which assessment provides the MOST reliable indicator of overall fluid volume status in an adult client?",
+    "options": [
+      "Blood pressure measured once at rest",
+      "Skin turgor over the back of the hand",
+      "Daily body weight",
+      "Number of times the client voids per day"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Daily weight reflects small changes in overall fluid balance; a change of 1 kg is roughly equivalent to 1 L of fluid. Blood pressure, turgor, and frequency of voiding can be influenced by other factors and are less sensitive indicators.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q22",
+    "stem": "A client's laboratory results reveal a potassium level of 2.8 mEq/L (2.8 mmol/L). Which assessment finding should the nurse EXPECT?",
+    "options": [
+      "Bounding peripheral pulses",
+      "Muscle weakness and leg cramps",
+      "Hyperactive deep tendon reflexes",
+      "Tall, peaked T waves on the ECG"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Hypokalemia can cause muscle weakness, cramps, and potentially life-threatening dysrhythmias. Tall, peaked T waves are associated with hyperkalemia, not hypokalemia.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q23",
+    "stem": "Arterial blood gas results are: pH 7.30, PaCO2 32 mm Hg, HCO3\u2212 18 mEq/L. How should the nurse interpret these results?",
+    "options": [
+      "Respiratory alkalosis",
+      "Metabolic acidosis with partial respiratory compensation",
+      "Metabolic acidosis without compensation",
+      "Metabolic alkalosis"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The low pH (acidemia) and low HCO3\u2212 indicate metabolic acidosis. The PaCO2 is also low, showing that the lungs are blowing off CO2 to compensate, so this is partially compensated metabolic acidosis.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q24",
+    "stem": "Which nursing action primarily interrupts the mode of transmission in the chain of infection?",
+    "options": [
+      "Performing hand hygiene between client contacts",
+      "Using sterile instruments during invasive procedures",
+      "Maintaining the client's skin integrity",
+      "Ensuring that susceptible clients receive recommended vaccines"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Hand hygiene is the single most important measure to prevent the spread of microorganisms from one client or surface to another, thereby interrupting the mode of transmission. Sterile technique and intact skin address portals of entry, and vaccines reduce host susceptibility.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q25",
+    "stem": "A client with suspected sepsis has a temperature of 39.1\u00b0C (102.4\u00b0F), heart rate 118/min, respiratory rate 24/min, and blood pressure 88/50 mm Hg. Which prescription should the nurse implement FIRST?",
+    "options": [
+      "Obtain blood cultures from two sites.",
+      "Administer broad-spectrum IV antibiotics.",
+      "Start a large-bore IV line and begin fluid resuscitation.",
+      "Apply oxygen via nasal cannula at 2 L/min."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Septic shock involves profound vasodilation and hypoperfusion. Rapid fluid resuscitation is the first priority to restore circulating volume and improve blood pressure, followed by cultures and antibiotics. Oxygen is important but will not correct hypotension.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q26",
+    "stem": "Which client is at GREATEST risk for developing deep vein thrombosis (DVT)?",
+    "options": [
+      "A 24-year-old client with well-controlled asthma who ambulates freely",
+      "A 40-year-old client who had a vaginal delivery 6 hours ago",
+      "A 72-year-old client who had hip replacement surgery yesterday",
+      "A 15-year-old client with acute appendicitis awaiting surgery"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Advanced age, major orthopedic surgery, and limited mobility place the 72-year-old client at highest risk for venous thromboembolism. The other clients have fewer risk factors or less immobility.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q27",
+    "stem": "A client taking long-term corticosteroids for chronic obstructive pulmonary disease (COPD) is being discharged. Which instruction is MOST important for the nurse to include?",
+    "options": [
+      "Stop the medication if you feel better to avoid side effects.",
+      "Take the medication on an empty stomach with a full glass of water.",
+      "Do not stop this medication abruptly; it must be tapered under medical supervision.",
+      "Avoid all vaccinations while taking this medication."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Long-term corticosteroid therapy suppresses the adrenal glands. Abrupt discontinuation can precipitate acute adrenal insufficiency, which is life-threatening. The dose must be tapered gradually as directed by the provider.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q28",
+    "stem": "The nurse is teaching a client with heart failure about daily self-management. Which instructions should the nurse include? (Select all that apply.)",
+    "options": [
+      "Weigh yourself every morning at the same time using the same scale.",
+      "Report a weight gain of 2\u20133 lb (1\u20131.5 kg) in a single day to your provider.",
+      "Restrict all physical activity to avoid becoming short of breath.",
+      "Take an extra dose of your prescribed diuretic if your ankles begin to swell.",
+      "Limit sodium intake as directed by your provider or dietitian."
+    ],
+    "correct": [
+      "A",
+      "B",
+      "E"
+    ],
+    "rationale": "Daily weights and prompt reporting of rapid weight gain help detect fluid retention early. Sodium restriction also helps prevent volume overload. Complete activity restriction and self-adjusting diuretic doses are unsafe and may worsen the condition.",
+    "type": "multi_select"
+  },
+  {
+    "id": "Module_1_Q29",
+    "stem": "A client with chronic obstructive pulmonary disease (COPD) is receiving oxygen at 6 L/min via nasal cannula. The nurse notes a decreased level of consciousness. What is the PRIORITY action?",
+    "options": [
+      "Increase the oxygen flow rate to 10 L/min.",
+      "Decrease the oxygen flow rate to 1\u20132 L/min as prescribed and monitor closely.",
+      "Discontinue the oxygen immediately.",
+      "Place the client in a supine position with the head of bed flat."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "High oxygen concentrations in some clients with COPD can reduce the drive to breathe and lead to CO2 retention. Oxygen is still needed but should usually be administered at the lowest effective flow rate, commonly 1\u20132 L/min via nasal cannula, while monitoring for improvement.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q30",
+    "stem": "The nurse is caring for a client with an acute asthma exacerbation. Which finding indicates WORSENING respiratory distress?",
+    "options": [
+      "Increased wheezing with a productive cough",
+      "Decreased wheezing with very diminished breath sounds",
+      "Respiratory rate decreasing from 30 to 22/min with clear breath sounds",
+      "Oxygen saturation improving from 90% to 96%"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "In a client with asthma, suddenly diminished or absent breath sounds may indicate severe airway obstruction or impending respiratory failure. Increased wheezing with good air movement and improved vital signs usually reflect a positive response to treatment.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q31",
+    "stem": "A client with a chest tube accidentally pulls it out while turning in bed. What is the nurse's FIRST action?",
+    "options": [
+      "Notify the health care provider immediately.",
+      "Apply an occlusive dressing taped on three sides over the insertion site.",
+      "Reinsert the chest tube using sterile technique.",
+      "Place the client in the Trendelenburg position."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "If a chest tube is accidentally removed, the priority is to prevent air from entering the pleural space while allowing air to escape. Applying an occlusive dressing taped on three sides acts as a one-way valve until the provider can reinsert the tube.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q32",
+    "stem": "The nurse is caring for a client on mechanical ventilation when the high-pressure alarm suddenly sounds. Which cause should the nurse SUSPECT first?",
+    "options": [
+      "A leak in the endotracheal tube cuff",
+      "Disconnection of the ventilator tubing from the endotracheal tube",
+      "Secretions or kinking of the ventilator tubing",
+      "Resolution of pulmonary edema"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "High-pressure alarms usually indicate increased resistance to airflow, commonly caused by secretions, biting the tube, water in the tubing, or kinks. Low-pressure alarms are more consistent with disconnection or leaks.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q33",
+    "stem": "A client with left-sided heart failure is MOST likely to exhibit which symptom?",
+    "options": [
+      "Jugular venous distention and hepatomegaly",
+      "Dependent peripheral edema and weight gain",
+      "Crackles in the lungs and dyspnea on exertion",
+      "Polyuria and weight loss"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Left-sided heart failure leads to pulmonary congestion, causing crackles, dyspnea, and orthopnea. Jugular venous distention and peripheral edema are more typical of right-sided heart failure.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q34",
+    "stem": "A client with chest pain is diagnosed with an ST-elevation myocardial infarction (STEMI). Which prescription should the nurse implement FIRST?",
+    "options": [
+      "Administer sublingual nitroglycerin.",
+      "Obtain a 12-lead electrocardiogram (ECG).",
+      "Give chewable aspirin as soon as possible if not contraindicated.",
+      "Schedule the client for an outpatient stress test."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Early administration of chewable aspirin in suspected MI helps inhibit platelet aggregation and reduce mortality. Nitroglycerin and ECGs are also important but aspirin should be given as soon as possible unless contraindicated.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q35",
+    "stem": "A client receiving a blood transfusion develops chills, fever, and low back pain. What is the nurse's PRIORITY action?",
+    "options": [
+      "Slow the transfusion rate and reassess in 30 minutes.",
+      "Stop the transfusion immediately and maintain IV access with normal saline.",
+      "Administer acetaminophen and continue the transfusion.",
+      "Notify the provider when the transfusion is complete."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Chills, fever, and low back pain suggest an acute hemolytic transfusion reaction. The transfusion must be stopped immediately, and normal saline should be infused to keep the IV line open while the blood and tubing are returned to the blood bank for analysis.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q36",
+    "stem": "Which assessment findings are EARLY signs of hypoxemia in an adult client? (Select all that apply.)",
+    "options": [
+      "Restlessness and anxiety",
+      "Cyanosis of the lips and nail beds",
+      "Tachycardia",
+      "Bradycardia",
+      "Increased respiratory rate"
+    ],
+    "correct": [
+      "A",
+      "C",
+      "E"
+    ],
+    "rationale": "Early manifestations of hypoxemia include restlessness, anxiety, tachycardia, and tachypnea as the body attempts to compensate. Cyanosis and bradycardia are typically late signs of severe hypoxia.",
+    "type": "multi_select"
+  },
+  {
+    "id": "Module_1_Q37",
+    "stem": "A client with peptic ulcer disease is prescribed omeprazole. Which instruction is MOST appropriate for the nurse to give?",
+    "options": [
+      "Take this medication with meals to improve absorption.",
+      "Stop taking this medication once your heartburn improves.",
+      "Swallow the capsule whole; do not crush or chew it.",
+      "Take an antacid at the exact same time as this medication."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Omeprazole is a proton pump inhibitor that is usually formulated as a delayed-release capsule. Crushing or chewing can destroy the enteric coating and reduce effectiveness. Therapy is typically continued as prescribed, and antacids are usually separated from other medications.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q38",
+    "stem": "Which finding in a client with an upper gastrointestinal bleed requires IMMEDIATE intervention?",
+    "options": [
+      "Dark, tarry stools (melena)",
+      "Positive occult blood test in the stool",
+      "Vomiting bright red blood (hematemesis)",
+      "Mild abdominal discomfort after eating"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Bright red hematemesis indicates active, potentially massive upper gastrointestinal bleeding and requires rapid assessment and intervention. Melena and positive occult blood suggest slower or smaller amounts of bleeding.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q39",
+    "stem": "Total parenteral nutrition (TPN) is infusing through a central line. Which nursing action is PRIORITY?",
+    "options": [
+      "Weigh the client once a week.",
+      "Check blood glucose levels regularly as prescribed.",
+      "Abruptly discontinue TPN once the client begins oral intake.",
+      "Use the central line for TPN and blood transfusions at the same time."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "TPN solutions are hypertonic and high in glucose; clients are at risk for hyperglycemia and hypoglycemia. Frequent blood glucose monitoring is essential. TPN should be tapered rather than stopped abruptly, and the TPN lumen is usually dedicated to that solution only.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q40",
+    "stem": "The nurse aspirates 350 mL of residual from a client's nasogastric tube before a scheduled bolus feeding. The client has no complaints of discomfort or distention. What is the BEST action?",
+    "options": [
+      "Hold the feeding and notify the health care provider immediately.",
+      "Discard the residual and continue the feeding as ordered.",
+      "Return the residual to the stomach and proceed according to agency protocol.",
+      "Clamp the tube for 8 hours before attempting another feeding."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "For many adults, residual volumes up to about 500 mL may be returned to the stomach and the feeding continued, depending on agency policy and overall assessment. Returning the residual helps maintain electrolyte balance. The nurse should also follow protocols regarding rechecking residuals and monitoring for intolerance.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q41",
+    "stem": "Which behavior by a client with hepatitis B indicates a need for FURTHER teaching?",
+    "options": [
+      "I will avoid sharing razors or toothbrushes with anyone.",
+      "I will make sure my sexual partners are tested and vaccinated.",
+      "I can donate blood once my liver tests are normal again.",
+      "I will use condoms during sexual activity."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Clients with hepatitis B should never donate blood because the virus can be transmitted through blood and body fluids even when liver enzymes normalize. Avoiding shared personal items and using condoms help reduce transmission.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q42",
+    "stem": "A client with acute pancreatitis reports severe abdominal pain. Which nursing intervention is MOST appropriate?",
+    "options": [
+      "Encourage a high-fat diet to prevent weight loss.",
+      "Maintain NPO status and administer IV fluids as prescribed.",
+      "Place the client in a flat supine position for comfort.",
+      "Encourage small amounts of alcohol to stimulate appetite."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Acute pancreatitis is managed with bowel rest (NPO), pain control, and aggressive IV fluid resuscitation. High-fat foods and alcohol can stimulate the pancreas and worsen inflammation.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q43",
+    "stem": "A client with a new colostomy asks how to prevent skin breakdown around the stoma. Which response by the nurse is BEST?",
+    "options": [
+      "Empty the pouch only when it is completely full.",
+      "Use hot water to clean the skin around the stoma.",
+      "Ensure that the pouch opening fits closely around the stoma without exposing skin.",
+      "Avoid using any barrier products on the skin around the stoma."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "A properly fitted pouch that closely encircles the stoma prevents effluent from contacting the skin and reduces the risk for irritation and breakdown. The pouch should be emptied when one-third to one-half full, and warm water with gentle barrier products may be used.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q44",
+    "stem": "Which assessment findings are MOST consistent with hypothyroidism? (Select all that apply.)",
+    "options": [
+      "Weight gain and fatigue",
+      "Cold intolerance and dry skin",
+      "Tachycardia and anxiety",
+      "Bradycardia and constipation",
+      "Heat intolerance and diaphoresis"
+    ],
+    "correct": [
+      "A",
+      "B",
+      "D"
+    ],
+    "rationale": "Hypothyroidism slows metabolic processes, leading to weight gain, fatigue, cold intolerance, dry skin, bradycardia, and constipation. Tachycardia, anxiety, heat intolerance, and diaphoresis are more consistent with hyperthyroidism.",
+    "type": "multi_select"
+  },
+  {
+    "id": "Module_1_Q45",
+    "stem": "A client with diabetes insipidus is receiving desmopressin. The client reports sudden weight gain and decreased urine output. What is the PRIORITY nursing action?",
+    "options": [
+      "Hold the next dose of desmopressin and notify the health care provider.",
+      "Encourage the client to increase oral fluid intake.",
+      "Increase the next dose of desmopressin as ordered.",
+      "Document the findings as expected with this medication."
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Desmopressin can cause water intoxication and hyponatremia if the dose is too high, manifested by weight gain and decreased urine output. The medication should be held and the provider notified for dose adjustment.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q46",
+    "stem": "A client with chronic kidney disease is being educated about dietary changes. Which food choice indicates UNDERSTANDING of the teaching?",
+    "options": [
+      "Baked chicken with white rice",
+      "Orange juice and a banana",
+      "Tomato soup with a grilled cheese sandwich",
+      "Baked potato topped with yogurt and cheese"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Clients with chronic kidney disease are often advised to limit potassium and phosphorus. Baked chicken with white rice is relatively low in potassium and phosphorus compared with bananas, tomato products, potatoes, and dairy.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q47",
+    "stem": "Which statement by a client with a urinary tract infection (UTI) requires FURTHER teaching?",
+    "options": [
+      "I will drink plenty of fluids throughout the day.",
+      "I should wipe from front to back after using the bathroom.",
+      "I will stop taking the antibiotic when I feel better.",
+      "I will empty my bladder after sexual intercourse."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Antibiotics for UTIs should be taken for the full prescribed course even if symptoms improve to prevent recurrence and resistance. Adequate fluids, proper perineal hygiene, and voiding after intercourse help prevent UTIs.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q48",
+    "stem": "A male client with benign prostatic hyperplasia (BPH) reports difficulty starting urination and a weak stream. Which nursing instruction is BEST?",
+    "options": [
+      "Drink less fluid to decrease the need to void.",
+      "Avoid caffeine and alcohol, which can worsen urinary symptoms.",
+      "Insert an indwelling urinary catheter at home when needed.",
+      "Assume that urinary hesitancy is a normal part of aging."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Caffeine and alcohol can increase bladder irritability and urinary frequency, worsening BPH symptoms. Clients should not self-catheterize without specific instruction, and urinary hesitancy should be assessed, not dismissed as normal aging.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q49",
+    "stem": "A client using combined oral contraceptives should be instructed to report which symptom IMMEDIATELY?",
+    "options": [
+      "Mild weight gain over several months",
+      "Breast tenderness before menses",
+      "Severe leg pain and unilateral swelling",
+      "Nausea in the morning"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Severe unilateral leg pain and swelling may indicate deep vein thrombosis, a serious complication of estrogen-containing contraceptives. Mild weight gain, breast tenderness, and nausea are common side effects that usually are not emergencies.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q50",
+    "stem": "A client with syndrome of inappropriate antidiuretic hormone secretion (SIADH) will likely have which prescription?",
+    "options": [
+      "Encourage oral fluids up to 3 L/day.",
+      "Restrict fluid intake and monitor serum sodium levels.",
+      "Administer hypotonic IV fluids such as 0.45% saline.",
+      "Eliminate all sodium from the client's diet."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "SIADH causes water retention and dilutional hyponatremia. Treatment typically includes fluid restriction and close monitoring of sodium. Additional free water or hypotonic fluids would worsen hyponatremia.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q51",
+    "stem": "A client with nephrolithiasis (kidney stones) is prescribed tamsulosin. What is the EXPECTED outcome of this medication?",
+    "options": [
+      "Dissolution of the kidney stone",
+      "Relaxation of smooth muscle in the urinary tract to facilitate stone passage",
+      "Prevention of urinary tract infections",
+      "Reduction of urine output to decrease pain"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Tamsulosin is an alpha-adrenergic blocker that relaxes smooth muscle in the ureter and bladder neck, which can help a stone pass more easily. It does not dissolve stones, prevent infection, or intentionally reduce urine output.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q52",
+    "stem": "Which finding in a client with a head injury suggests increasing intracranial pressure (ICP)?",
+    "options": [
+      "Equal, reactive pupils and stable vital signs",
+      "Decreased blood pressure with tachycardia",
+      "Widened pulse pressure with bradycardia",
+      "Improved level of consciousness and orientation"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Cushing's triad of widening pulse pressure, bradycardia, and irregular respirations is a late but classic sign of increased ICP. Equal, reactive pupils and improved mental status indicate stability or improvement.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q53",
+    "stem": "A client with a right-sided cerebrovascular accident (CVA) is most likely to exhibit which deficit?",
+    "options": [
+      "Expressive aphasia with difficulty forming words",
+      "Impulsivity and poor judgment about safety",
+      "Slow, cautious behavior and depression",
+      "Loss of language comprehension only"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Right-hemisphere strokes commonly cause spatial-perceptual deficits, impulsivity, and poor judgment, leading to high safety risk. Expressive aphasia and slow, cautious behavior are more typical of left-hemisphere strokes.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q54",
+    "stem": "The nurse is caring for a client with a spinal cord injury at T4 who reports a severe headache and has a flushed face with blood pressure 190/110 mm Hg. What is the nurse's PRIORITY concern?",
+    "options": [
+      "Spinal shock",
+      "Autonomic dysreflexia from noxious stimuli below the level of injury",
+      "Hypovolemic shock from internal bleeding",
+      "Improving neurologic function"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Clients with spinal cord injuries at or above T6 are at risk for autonomic dysreflexia, a life-threatening hypertensive emergency often triggered by a full bladder, constipation, or tight clothing. Immediate assessment and removal of the stimulus are required.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q55",
+    "stem": "Which nursing actions are PRIORITY for a client at risk for seizures? (Select all that apply.)",
+    "options": [
+      "Pad the side rails of the bed.",
+      "Maintain airway equipment and suction at the bedside.",
+      "Keep tongue blades available to insert during a seizure.",
+      "Apply soft wrist restraints at all times.",
+      "Ensure the bed is in the lowest position."
+    ],
+    "correct": [
+      "A",
+      "B",
+      "E"
+    ],
+    "rationale": "Seizure precautions focus on safety and airway support: padding side rails, keeping suction and oxygen at the bedside, and maintaining the bed in the lowest position. Tongue blades and routine restraints are contraindicated and may cause injury.",
+    "type": "multi_select"
+  },
+  {
+    "id": "Module_1_Q56",
+    "stem": "A client with Parkinson's disease is at high risk for which problem?",
+    "options": [
+      "Diarrhea and weight loss",
+      "Falls related to shuffling gait and rigidity",
+      "Hypertension and tachycardia",
+      "Improved fine motor skills"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Parkinson's disease is characterized by bradykinesia, rigidity, and a shuffling gait, all of which significantly increase fall risk. Constipation, not diarrhea, is more common, and motor skills are impaired rather than improved.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q57",
+    "stem": "A client with myasthenia gravis is being taught about anticholinesterase medication. Which statement shows UNDERSTANDING of the teaching?",
+    "options": [
+      "I will take my medication just before meals to improve chewing and swallowing.",
+      "If I feel weak, I should skip the next dose.",
+      "If I miss a dose, I should double the next one.",
+      "I can stop this medication abruptly when I feel better."
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Anticholinesterase medications should be timed so peak effect occurs during meals to improve chewing and swallowing and reduce aspiration risk. Doses should not be skipped, doubled, or stopped abruptly without provider guidance.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q58",
+    "stem": "A client with a long-leg cast reports increasing pain unrelieved by medication, with pale, cool toes and decreased pulses. What is the nurse's PRIORITY concern?",
+    "options": [
+      "Infection beneath the cast",
+      "Compartment syndrome causing impaired circulation",
+      "Deep vein thrombosis in the opposite leg",
+      "Allergic reaction to the cast material"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Severe pain out of proportion to the injury, along with pallor, coolness, and decreased pulses, suggests compartment syndrome. This is an emergency that requires rapid intervention to restore circulation and prevent permanent damage.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q59",
+    "stem": "The nurse is teaching a client with osteoporosis about lifestyle modifications. Which statement indicates a NEED for further teaching?",
+    "options": [
+      "I will perform weight-bearing exercise as tolerated.",
+      "I will avoid smoking and excessive alcohol use.",
+      "I will increase my intake of calcium and vitamin D.",
+      "I will limit all physical activity to prevent fractures."
+    ],
+    "correct": [
+      "D"
+    ],
+    "rationale": "Clients with osteoporosis should engage in regular weight-bearing exercise to maintain bone density and muscle strength. Completely avoiding activity can worsen bone loss and increase fall risk. Smoking and heavy alcohol use should be avoided.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q60",
+    "stem": "A parent asks when the infant should be able to sit unsupported. The nurse responds that this milestone typically occurs at about:",
+    "options": [
+      "2 months of age",
+      "4 months of age",
+      "6\u20138 months of age",
+      "12 months of age"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Most infants can sit without support by about 6\u20138 months of age. At 2\u20134 months, they have less trunk control, and by 12 months many are standing or walking.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q61",
+    "stem": "Which toy is MOST appropriate for a hospitalized 18-month-old toddler?",
+    "options": [
+      "Board game with small pieces",
+      "Push\u2013pull toy such as a toy lawn mower",
+      "Complex jigsaw puzzle",
+      "Chapter book to read silently"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Toddlers benefit from gross-motor, movement-oriented toys such as push\u2013pull toys. Board games, complex puzzles, and chapter books are better suited to older children.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q62",
+    "stem": "A child with moderate dehydration is being assessed. Which finding is MOST concerning?",
+    "options": [
+      "Capillary refill of 2 seconds",
+      "Tachycardia and decreased urine output",
+      "Moist mucous membranes",
+      "Presence of tears when crying"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Tachycardia and decreased urine output are early signs of significant dehydration and hypovolemia in children. Moist mucous membranes and tear production suggest adequate hydration.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q63",
+    "stem": "A child presents with inspiratory stridor, a barking cough, and a low-grade fever. Which condition does the nurse SUSPECT?",
+    "options": [
+      "Epiglottitis",
+      "Croup (laryngotracheobronchitis)",
+      "Asthma",
+      "Bronchiolitis"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Croup is characterized by a barky cough, inspiratory stridor, hoarseness, and low-grade fever due to upper airway inflammation. Epiglottitis usually has higher fever, drooling, and severe distress.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q64",
+    "stem": "A child with suspected epiglottitis is admitted to the emergency department. Which action is PRIORITY?",
+    "options": [
+      "Obtain a throat culture with a tongue depressor.",
+      "Place the child in a supine position.",
+      "Keep emergency intubation equipment at the bedside and avoid examining the throat.",
+      "Give the child water to drink to assess swallowing ability."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "In epiglottitis, any attempt to visualize the throat can precipitate complete airway obstruction. The priority is to maintain a patent airway by keeping the child calm, avoiding throat examination, and having intubation equipment ready.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q65",
+    "stem": "The parent of a child with cystic fibrosis asks about pancreatic enzymes. Which statement indicates CORRECT understanding?",
+    "options": [
+      "These enzymes are taken with meals and snacks to improve digestion.",
+      "These enzymes will cure the underlying disease.",
+      "The enzymes should be taken on an empty stomach.",
+      "The enzymes should be chewed thoroughly before swallowing."
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Pancreatic enzymes are given with all meals and snacks to aid digestion and nutrient absorption in cystic fibrosis. They do not cure the disease and are typically swallowed whole or sprinkled on food without chewing the enteric-coated beads.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q66",
+    "stem": "A school-age child with rheumatic fever is being discharged. Which parent statement indicates a need for MORE teaching?",
+    "options": [
+      "I will make sure my child takes all prescribed antibiotics.",
+      "We will follow up regularly with the cardiologist.",
+      "Once this illness is over, my child will never need antibiotics again.",
+      "I will watch for signs of shortness of breath or chest pain."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Children with a history of rheumatic fever may require long-term or prophylactic antibiotics to prevent recurrent streptococcal infections and further heart damage. The other statements reflect appropriate understanding.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q67",
+    "stem": "An infant with congenital heart disease becomes cyanotic and dyspneic during feeding. What is the nurse's FIRST action?",
+    "options": [
+      "Continue feeding to maintain adequate calorie intake.",
+      "Place the infant in a knee\u2013chest position.",
+      "Apply continuous soft restraints to the infant's arms and legs.",
+      "Immediately insert a nasogastric tube for feeding."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The knee\u2013chest position increases systemic vascular resistance and decreases venous return, which can reduce right-to-left shunting and improve oxygenation in infants experiencing a hypercyanotic spell.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q68",
+    "stem": "A pregnant client reports drinking only one glass of wine most days. Which response by the nurse is MOST appropriate?",
+    "options": [
+      "One glass of wine is safe during the second trimester.",
+      "Any alcohol during pregnancy can increase the risk of fetal alcohol spectrum disorders.",
+      "You may drink alcohol as long as you avoid binge drinking.",
+      "Alcohol is safe as long as you drink plenty of water with it."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "No amount of alcohol has been proven safe during pregnancy. Even low to moderate intake can contribute to fetal alcohol spectrum disorders, so complete abstinence is recommended.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q69",
+    "stem": "Which assessment finding in a pregnant client is MOST concerning for preeclampsia with severe features?",
+    "options": [
+      "Blood pressure of 138/86 mm Hg",
+      "Mild pedal edema at the end of the day",
+      "Persistent headache with visual disturbances",
+      "Increased urinary frequency without dysuria"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Severe preeclampsia may present with very high blood pressure and signs of central nervous system irritation such as persistent headache, visual changes, or right upper quadrant pain. Mild edema and urinary frequency alone are common discomforts of pregnancy.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q70",
+    "stem": "A client at 30 weeks' gestation presents with regular contractions and cervical dilation of 3 cm. Which intervention is PRIORITY for suspected preterm labor?",
+    "options": [
+      "Encourage ambulation to speed labor progress.",
+      "Administer tocolytic medications as prescribed.",
+      "Perform a vaginal exam every 15 minutes.",
+      "Discontinue fetal monitoring to reduce maternal anxiety."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Tocolytic medications may be used to suppress uterine contractions and delay preterm birth, allowing time for corticosteroids or transfer to an appropriate facility. Ambulation, frequent exams, and stopping monitoring are inappropriate.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q71",
+    "stem": "The nurse is caring for a postpartum client with a boggy uterus and heavy lochia. What is the PRIORITY nursing action?",
+    "options": [
+      "Notify the health care provider immediately without intervening.",
+      "Begin firm fundal massage to promote uterine contraction.",
+      "Start a second IV line for blood transfusion.",
+      "Record the findings and reassess in 1 hour."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "A boggy uterus with heavy bleeding indicates uterine atony and postpartum hemorrhage. The first action is to perform firm fundal massage to stimulate contraction, while also assessing bladder status and notifying the provider as needed.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q72",
+    "stem": "Which finding in a newborn of a diabetic mother requires further evaluation?",
+    "options": [
+      "Blood glucose of 35 mg/dL (1.9 mmol/L)",
+      "Respiratory rate of 40/min",
+      "Pink body with acrocyanosis of the hands and feet",
+      "Heart rate of 140/min"
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Infants of diabetic mothers are at high risk for hypoglycemia. A blood glucose of 35 mg/dL is low and requires prompt feeding or IV glucose, depending on symptoms and protocol.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q73",
+    "stem": "A Rh-negative mother has delivered a Rh-positive infant. Which action is MOST important?",
+    "options": [
+      "Administer Rho(D) immune globulin within 72 hours as prescribed.",
+      "Encourage the mother to increase fluid intake.",
+      "Avoid breastfeeding for at least 1 week.",
+      "Give the infant the measles\u2013mumps\u2013rubella (MMR) vaccine."
+    ],
+    "correct": [
+      "A"
+    ],
+    "rationale": "Rho(D) immune globulin prevents maternal sensitization to Rh-positive fetal red blood cells, reducing the risk of hemolytic disease in future pregnancies. It should be administered within 72 hours of delivery when indicated.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q74",
+    "stem": "A client delivers a macrosomic infant. This client is at increased risk for which postpartum complication?",
+    "options": [
+      "Hypotension from decreased blood volume",
+      "Postpartum hemorrhage from uterine atony",
+      "Hyperemesis gravidarum",
+      "Placenta previa in the current pregnancy"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Birth of a very large infant stretches the uterus and predisposes the client to uterine atony and postpartum hemorrhage. Placenta previa and hyperemesis gravidarum are unrelated to infant size.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q75",
+    "stem": "The nurse is teaching new parents about safe sleep for their newborn. Which statements indicate CORRECT understanding? (Select all that apply.)",
+    "options": [
+      "Our baby will sleep on the back for every sleep.",
+      "We will keep soft blankets and stuffed animals in the crib for comfort.",
+      "We will place the baby to sleep in a separate crib or bassinet in our room.",
+      "We will avoid overheating the baby with extra clothing and blankets.",
+      "We will put the baby to sleep on the stomach during naps to strengthen muscles."
+    ],
+    "correct": [
+      "A",
+      "C",
+      "D"
+    ],
+    "rationale": "Safe sleep practices to reduce the risk of SIDS include placing the infant on the back, using a firm sleep surface in a separate crib or bassinet, and avoiding overheating. Soft bedding, stuffed animals, and prone sleeping increase risk.",
+    "type": "multi_select"
+  },
+  {
+    "id": "Module_1_Q76",
+    "stem": "A client states, I don't think I can go on living like this. Which response by the nurse is MOST therapeutic?",
+    "options": [
+      "You shouldn't feel that way; things will get better.",
+      "Why do you feel so hopeless?",
+      "Are you thinking about hurting yourself? Tell me more about what you're feeling.",
+      "You have a lot to live for; think about your family."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The nurse must directly assess for suicidal thoughts in a supportive, nonjudgmental way. Asking about self-harm and encouraging expression of feelings is therapeutic. Minimizing the client's feelings or offering clich\u00e9s is not helpful.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q77",
+    "stem": "A client with schizophrenia reports hearing voices that say, You are worthless. What is the BEST nursing response?",
+    "options": [
+      "Those voices are not real, so just ignore them.",
+      "What are the voices saying, and how are they affecting you right now?",
+      "Your medication will make the voices go away immediately.",
+      "Everyone hears voices sometimes; it's nothing to worry about."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "The nurse should assess the content of hallucinations and the client's response while acknowledging the client's experience. Dismissing the voices or making unrealistic promises about medication is nontherapeutic.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q78",
+    "stem": "A client with bipolar disorder in the manic phase is hyperactive and intrusive with other clients. What is the PRIORITY nursing intervention?",
+    "options": [
+      "Encourage the client to attend all group activities.",
+      "Provide a structured environment with one-to-one activities.",
+      "Confront the client publicly about inappropriate behavior.",
+      "Place the client in continuous seclusion for the entire shift."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Clients in acute mania benefit from a low-stimulation, structured environment and simple one-to-one activities. Large groups and public confrontation increase stimulation, and seclusion should be used only when less restrictive measures fail and safety is at risk.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q79",
+    "stem": "Which statement by a client taking a selective serotonin reuptake inhibitor (SSRI) for depression requires IMMEDIATE follow-up?",
+    "options": [
+      "I still feel very tired during the day.",
+      "I have less interest in eating than before.",
+      "I started taking St. John's wort along with my antidepressant.",
+      "It has been 3 weeks, and I feel only a little better."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Combining SSRIs with St. John's wort can increase serotonin levels and risk for serotonin syndrome, a potentially life-threatening condition. Fatigue, mild appetite changes, and gradual improvement over several weeks are common.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q80",
+    "stem": "A client with an anxiety disorder is experiencing a panic attack. Which intervention is MOST appropriate?",
+    "options": [
+      "Leave the client alone to calm down.",
+      "Use short, simple sentences and remain with the client in a quiet environment.",
+      "Encourage the client to explore childhood experiences.",
+      "Provide detailed explanations of all nursing procedures."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "During a panic attack, the nurse should stay with the client, speak calmly using short sentences, and reduce environmental stimuli. Insight-oriented exploration and lengthy explanations are not effective until anxiety has decreased.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q81",
+    "stem": "A client with obsessive\u2013compulsive disorder performs lengthy handwashing rituals that interfere with meals. What is the BEST initial nursing intervention?",
+    "options": [
+      "Forbid the ritual to help the client overcome the behavior.",
+      "Allow the ritual within reasonable limits and gradually set time limits.",
+      "Ignore the ritual completely.",
+      "Punish the client whenever the ritual occurs."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Initially, rituals associated with OCD are allowed within reasonable limits because they help reduce anxiety. Over time, the nurse and client can work together to gradually limit the time spent on rituals. Forbidding or punishing rituals increases anxiety.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q82",
+    "stem": "A military veteran with post-traumatic stress disorder (PTSD) reports frequent nightmares and flashbacks. Which nursing intervention is MOST therapeutic?",
+    "options": [
+      "Encourage the client to suppress all thoughts of the trauma.",
+      "Promote participation in a support group with other veterans.",
+      "Discourage discussion about the traumatic event.",
+      "Advise the client to avoid seeking counseling unless symptoms worsen."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Support groups with others who have experienced similar trauma can reduce isolation and provide validation and coping strategies. Avoidance and suppression of trauma-related thoughts generally worsen PTSD symptoms over time.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q83",
+    "stem": "A client with an eating disorder is being monitored for refeeding syndrome during nutritional rehabilitation. Which finding is MOST concerning?",
+    "options": [
+      "Mild peripheral edema in the ankles",
+      "Decreased serum phosphorus and potassium levels",
+      "Gradual weight gain of 1\u20132 lb (0.5\u20131 kg) per week",
+      "Increased appetite at meal times"
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Refeeding syndrome is a potentially fatal complication marked by rapid shifts of electrolytes, especially phosphorus and potassium, when nutrition is reintroduced. Falling electrolyte levels are more concerning than mild edema or gradual weight gain.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q84",
+    "stem": "Which potassium level should the nurse identify as WITHIN the normal adult range?",
+    "options": [
+      "2.9 mEq/L (2.9 mmol/L)",
+      "3.4 mEq/L (3.4 mmol/L)",
+      "4.0 mEq/L (4.0 mmol/L)",
+      "5.8 mEq/L (5.8 mmol/L)"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "The normal adult serum potassium range is approximately 3.5\u20135.0 mEq/L. A value of 4.0 mEq/L is normal. Values of 2.9 and 3.4 indicate hypokalemia, and 5.8 indicates hyperkalemia.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q85",
+    "stem": "A client with hepatitis exhibits jaundice, dark urine, and elevated liver enzymes. Which additional instruction is MOST appropriate?",
+    "options": [
+      "You should stay as active as possible and avoid rest.",
+      "Avoid alcohol and other medications that can damage the liver.",
+      "Increase your intake of high-fat foods to gain weight.",
+      "Sharing needles does not transmit hepatitis viruses."
+    ],
+    "correct": [
+      "B"
+    ],
+    "rationale": "Clients with hepatitis should avoid alcohol and hepatotoxic medications to prevent further liver damage. Rest and a balanced, not high-fat, diet are recommended, and blood exposure (including shared needles) is a common transmission route.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q86",
+    "stem": "Which finding is MOST characteristic of Parkinson's disease rather than multiple sclerosis or myasthenia gravis?",
+    "options": [
+      "Demyelination of neurons in the central nervous system",
+      "Fluctuating muscle weakness that improves with rest",
+      "Resting tremor, muscular rigidity, and bradykinesia",
+      "Sudden loss of consciousness with postictal confusion"
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Parkinson's disease is characterized by a resting tremor, rigidity, and bradykinesia due to dopamine depletion in the basal ganglia. Demyelination occurs in multiple sclerosis, fluctuating weakness in myasthenia gravis, and loss of consciousness with seizures.",
+    "type": "single_select"
+  },
+  {
+    "id": "Module_1_Q87",
+    "stem": "A client taking lithium for bipolar disorder has a serum level of 2.0 mEq/L (2.0 mmol/L). Which nursing action is PRIORITY?",
+    "options": [
+      "Administer the next scheduled dose of lithium.",
+      "Encourage the client to increase dietary salt intake.",
+      "Hold the medication and notify the health care provider of possible toxicity.",
+      "Document the level as therapeutic and continue monitoring."
+    ],
+    "correct": [
+      "C"
+    ],
+    "rationale": "Lithium levels above about 1.5 mEq/L are usually considered toxic. A level of 2.0 mEq/L requires holding the medication, notifying the provider, and assessing for clinical signs of toxicity such as tremors, confusion, and gastrointestinal upset.",
+    "type": "single_select"
+  }
 ]
