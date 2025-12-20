@@ -89,6 +89,77 @@ body {
   background-repeat: repeat;
 }
 
+/* ===== Terrazzo Background (Blue + Cool Grey Chips) ===== */
+.terrazzo-background {
+  /* Tunable chip palette to adjust the mix without editing each gradient */
+  --chip-navy: #0f2746;
+  --chip-blue: #2f8be6;
+  --chip-sky: #5db7ff;
+  --chip-ice: #b5d8f0;
+  --chip-gray: #aeb4bd;
+  --chip-slate: #7a7f89;
+
+  background-color: #f4f6f8;
+  background-image:
+    /* Large fragments */
+    conic-gradient(from 12deg at 14% 18%, var(--chip-blue) 0deg 90deg, transparent 100deg),
+    conic-gradient(from 88deg at 68% 12%, var(--chip-navy) 0deg 130deg, transparent 150deg),
+    conic-gradient(from -34deg at 32% 74%, var(--chip-gray) 0deg 80deg, transparent 110deg),
+    conic-gradient(from 143deg at 79% 68%, var(--chip-sky) 0deg 95deg, transparent 125deg),
+    conic-gradient(from -57deg at 9% 63%, var(--chip-ice) 0deg 120deg, transparent 150deg),
+
+    /* Medium fragments */
+    conic-gradient(from 31deg at 46% 23%, var(--chip-blue) 0deg 75deg, transparent 105deg),
+    conic-gradient(from 111deg at 18% 44%, var(--chip-slate) 0deg 70deg, transparent 100deg),
+    conic-gradient(from -16deg at 73% 36%, var(--chip-sky) 0deg 65deg, transparent 95deg),
+    conic-gradient(from 169deg at 56% 59%, var(--chip-gray) 0deg 85deg, transparent 115deg),
+    conic-gradient(from -121deg at 88% 47%, var(--chip-navy) 0deg 70deg, transparent 105deg),
+
+    /* Small fragments */
+    conic-gradient(from 42deg at 27% 13%, var(--chip-blue) 0deg 45deg, transparent 75deg),
+    conic-gradient(from -79deg at 63% 9%, var(--chip-ice) 0deg 55deg, transparent 85deg),
+    conic-gradient(from 117deg at 41% 42%, var(--chip-sky) 0deg 50deg, transparent 80deg),
+    conic-gradient(from -147deg at 14% 82%, var(--chip-gray) 0deg 60deg, transparent 90deg),
+    conic-gradient(from 96deg at 52% 87%, var(--chip-blue) 0deg 55deg, transparent 85deg),
+    conic-gradient(from -18deg at 76% 81%, var(--chip-navy) 0deg 50deg, transparent 80deg),
+    conic-gradient(from 163deg at 92% 25%, var(--chip-ice) 0deg 60deg, transparent 90deg),
+    conic-gradient(from -134deg at 35% 58%, var(--chip-slate) 0deg 55deg, transparent 85deg),
+    conic-gradient(from 23deg at 4% 36%, var(--chip-sky) 0deg 45deg, transparent 75deg),
+    conic-gradient(from -101deg at 97% 63%, var(--chip-gray) 0deg 50deg, transparent 80deg),
+
+    /* Tiny fragments for noise */
+    radial-gradient(circle at 12% 22%, var(--chip-ice) 0 6px, transparent 7px),
+    radial-gradient(circle at 46% 6%, var(--chip-blue) 0 5px, transparent 6px),
+    radial-gradient(circle at 71% 19%, var(--chip-gray) 0 5px, transparent 6px),
+    radial-gradient(circle at 84% 8%, var(--chip-sky) 0 4px, transparent 5px),
+    radial-gradient(circle at 23% 51%, var(--chip-navy) 0 5px, transparent 6px),
+    radial-gradient(circle at 38% 32%, var(--chip-ice) 0 4px, transparent 5px),
+    radial-gradient(circle at 58% 47%, var(--chip-slate) 0 6px, transparent 7px),
+    radial-gradient(circle at 67% 63%, var(--chip-sky) 0 5px, transparent 6px),
+    radial-gradient(circle at 82% 54%, var(--chip-blue) 0 4px, transparent 5px),
+    radial-gradient(circle at 94% 77%, var(--chip-gray) 0 5px, transparent 6px),
+    radial-gradient(circle at 18% 92%, var(--chip-sky) 0 4px, transparent 5px),
+    radial-gradient(circle at 42% 71%, var(--chip-blue) 0 5px, transparent 6px),
+    radial-gradient(circle at 61% 92%, var(--chip-ice) 0 4px, transparent 5px),
+    radial-gradient(circle at 79% 89%, var(--chip-slate) 0 5px, transparent 6px),
+    radial-gradient(circle at 9% 72%, var(--chip-gray) 0 4px, transparent 5px);
+
+  background-size:
+    /* Large fragments tile */
+    360px 340px, 360px 340px, 360px 340px, 360px 340px, 360px 340px,
+    /* Medium fragments tile */
+    280px 300px, 280px 300px, 280px 300px, 280px 300px, 280px 300px,
+    /* Small fragments tile */
+    240px 230px, 240px 230px, 240px 230px, 240px 230px, 240px 230px,
+    240px 230px, 240px 230px, 240px 230px, 240px 230px, 240px 230px,
+    /* Tiny fragments tile */
+    200px 200px, 200px 200px, 200px 200px, 200px 200px, 200px 200px,
+    200px 200px, 200px 200px, 200px 200px, 200px 200px, 200px 200px,
+    200px 200px, 200px 200px, 200px 200px, 200px 200px, 200px 200px;
+
+  background-repeat: repeat;
+}
+
 .container {
   max-width: 1400px;
   margin: 0 auto;
